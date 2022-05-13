@@ -1,0 +1,147 @@
+DICTION             34     202112 Modifiers (REACTION SF 8)       3000003400001 
+(PHY)      Uncertain if corrected for decay during irradiation    3000003400002 
+1K2        Modifier for Legendre or cosine coefficients of the    3000003400003 
+            form k**2 d-sig/d-Omega = Sum(a(L)*p(L)), where       3000003400004 
+            k = wave vector                                       3000003400005 
+2AG        times 2 * isotopic abund. and stat. weight factor      3000003400006 
+2G         times 2 * statistical weight factor                    3000003400007 
+2L2        Modifier for Legendre or cosine coefficients of the    3000003400008 
+            form d-sig/d-Omega = (1/2)Sum((2L+1)*a(L)*p(L))       3000003400009 
+4AG        times 4 * isotopic abund. and stat. weight factor      3000003400010 
+4PI        times 4 pi                                             3000003400011 
+AA         Adler-Adler formalism                                  3000003400012 
+            for resonance parameters                              3000003400013 
+AG         times isotopic abund. and stat. weight factor          3000003400014 
+AL1        Coefficients for first-order associated Legendre       3000003400015 
+            functions of the first kind                           3000003400016 
+AMP        Amplitude (for resonance parameters)                   3000003400017 
+ANA        Analyzing power                                        3000003400018 
+ASY        Asymmetry of polarization of outgoing particles        3000003400019 
+AXX        Tensor analyzing power, Cartesian coord.               3000003400020O
+AYY        Tensor analyz.power,inc.proj.spin normal to scatt.plane3000003400021O
+            Tensor analyzing power, incident projectile spin      3000003400022O
+            normal to scattering plane                            3000003400023O
+AZZ        Tensor analyz.power,inc.proj.spin parall.to scatt.plane3000003400024O
+            Tensor analyzing power, incident projectile spin      3000003400025O
+            parallel to beam direction in scattering plane        3000003400026O
+C          Spin correlation parameter                             3000003400027 
+CH         per electric charge                                    3000003400028 
+COS        Cosine coefficients                                    3000003400029 
+CS2        Coefficients of the form d-sig/d-Omega = a(0) +        3000003400030 
+            a(1)*sin**2(theta) + a(2)*sin**2(theta)*cos(theta) +  3000003400031 
+            a(3)*sin**2(theta)*cos**2(theta)                      3000003400032 
+D          Spin rotation parameter                                3000003400033I
+D4PI       Divided by 4 pi                                        3000003400034 
+DSP        Difference for spins parallel - antiparallel           3000003400035 
+DT         production thick/thin target yield                     3000003400036O
+EOB        End-of-bombardment thick/thin target yield             3000003400037 
+FRC        Fractional                                             3000003400038 
+G          times statistical weight factor                        3000003400039 
+HYD        hydrogen part                                          3000003400040 
+IPA        integrated over partial angular range                  3000003400041O
+K          Spin transfer parameter                                3000003400042 
+L4P        Modifier for Legendre or cos coefficients of the form  3000003400043 
+            4pi*d-sig/d-Omega =Sum((2L+1)*a(L)*p(L))              3000003400044 
+LEG        Legendre coefficients                                  3000003400045 
+LIM        Modifier for a resonance integral given for a          3000003400046 
+                          limited EN-range only                   3000003400047 
+MOT        relative to Mott scattering                            3000003400048 
+MXD        Spectrum rel.to Maxw.distr.of given temperature        3000003400049 
+NCP        Non-coplanar                                           3000003400050 
+NPD        Normalized to probability distribution                 3000003400051 
+NSF        Non-spin-flip                                          3000003400052 
+PHY        Physical yield                                         3000003400053 
+PP         Inc.proj.parallel/perpendicular to reac.plane          3000003400054 
+RAB        times natural isotopic abundance, divided by isotopic  3000003400055 
+            abundance of target of first term of REACTION sum     3000003400056 
+RES        at peak of resonance                                   3000003400057 
+RG         times (2J(i)+1) * (2J(j)+1)                            3000003400058 
+RM         Reich-Moore formalism                                  3000003400059 
+            for resonance parameters                              3000003400060 
+RMT        R-matrix formalism                                     3000003400061 
+            for resonance parameters                              3000003400062 
+RNV        Non-1/v part                                           3000003400063 
+            of cross-section or resonance-integral                3000003400064 
+RRE        relative to square-root(E)                             3000003400065 
+RS         Times 4pi/sigma                                        3000003400066 
+            Modifier for diff.cross-sections 4pi/sig d-sig/d-Omega3000003400067 
+            and for Legendre or cosine coefficients of the form:  3000003400068 
+            (4pi/sig)*(d-sig/d-Omega) = Sum(a(L)*p(L))            3000003400069 
+RS0        Modifier for Legendre or cosine coefficients of the    3000003400070 
+            form:                                                 3000003400071 
+            (d-sig/d-Omega)/(d-sig/d-Omega at 0 deg)=Sum(a(L)*p(L)3000003400072 
+RSD        Modifier for Legendre or cosine coefficients of the    3000003400073 
+            form:                                                 3000003400074 
+            (d-sig/d-Omega)/(d-sig/d-Omega at 90 deg) =           3000003400075 
+            = 1 +Sum(a(L)*p(L))                                   3000003400076 
+            Also modifier for angular distributions of the form:  3000003400077 
+            sig(theta)/sig(90deg) and for the anisotropy-coeff    3000003400078 
+            sig(0)/sig(90deg)                                     3000003400079 
+RSL        Modifier for Legendre or cosine coefficients of the    3000003400080 
+            form:                                                 3000003400081 
+            (4pi/sig)*(d-sig/d-Omega)=Sum((2L+1)*a(L)*p(L))       3000003400082 
+RTE        times square-root(E)                                   3000003400083 
+RTH        relative to Rutherford scattering                      3000003400084 
+RV         1/v part only                                          3000003400085 
+S0         times total peak cross section                         3000003400086 
+S2T        Coefficients of the form: d-sig/d-Omega =              3000003400087 
+            a(0) + a(1)*sin**2(theta) + a(2)*sin**2(2*theta)      3000003400088 
+SAT        Saturation yield                                       3000003400089 
+SF         Spin flip                                              3000003400090 
+SFC        Coefficients for a sum in power of sin**2              3000003400091 
+SQ         Quantity squared                                       3000003400092 
+SRF        Spin rotation function                                 3000003400093 
+SS         Spin-spin cross section                                3000003400094 
+TAP        Tensor analyzing power, spherical coordinates          3000003400095 
+TM         per 1 MeV target thickness (for thick target yields)   3000003400096O
+TMP        at temperature other than the room temperature         3000003400097 
+TST        Total spin transfer                                    3000003400098 
+TT         Measured for thick target                              3000003400099 
+TTA        Thin target approximation                              3000003400100 
+VAP        Vector analyzing power, spherical coordinates          3000003400101 
+VGT        Vogt formalism                                         3000003400102 
+            for resonance parameters                              3000003400103 
+           =======================================================3000003400104 
+           The following modifiers may be added to any quantity   3000003400105 
+           code without entry in Dictionary 36.  These general    3000003400106 
+           quantity modifiers must be coded after any modifier    3000003400107 
+           included in Dictionary 36.                             3000003400108 
+           =======================================================3000003400109 
+(A)        Uncertain if corrected for natural isotopic abund.     3000003400110 
+            Unclear whether corrected for natural isotopic        3000003400111 
+            abundance of target. To be used only when data are    3000003400112 
+            given for an isotope, but were measured on a target   3000003400113 
+            with natural isotopic composition.                    3000003400114 
+            For enriched targets use modifier 'FCT' instead.      3000003400115 
+A          Data times natural isotopic abundance                  3000003400116 
+            To be used only when data are given for an isotope,   3000003400117 
+            but were measured on a target with natural isotopic   3000003400118 
+            composition. For enriched targets use modifier        3000003400119 
+            'FCT' instead.                                        3000003400120 
+DAM        Divided by atomic mass of the target nucleus           3000003400121 
+AV         Average                                                3000003400122 
+FCT        times a factor (see text)                              3000003400123 
+MSC        Approximate definition only, see REACTION text         3000003400124 
+            ==Note==This is approximate definition only, see text 3000003400125 
+            General purpose modifier for unusual data types. Exact3000003400126 
+            definition is given in free text following the        3000003400127 
+            reaction code. Use with code from dict.36 which is    3000003400128 
+            closest to data given.                                3000003400129 
+RAW        Raw data (see REACTION text)                           3000003400130 
+REL        Relative data                                          3000003400131 
+            To be combined with arbitrary units.                  3000003400132 
+            Otherwise use 'FCT'.                                  3000003400133 
+BRA        Bremsstrahlung spectrum average                        3000003400134 
+BRS        Average over part of bremsstrahlung spectrum           3000003400135 
+EPI        Epithermal neutron spectrum average                    3000003400136 
+FIS        Fission spectrum average                               3000003400137 
+FST        Fast reactor neutron spectrum average                  3000003400138 
+MXW        Maxwellian average                                     3000003400139 
+            The appropriate spectrum temperature is to be given   3000003400140 
+            under data heading 'KT', or the mean energy under     3000003400141 
+            'EN-MEAN' (if given by author) or 'EN-DUMMY' (if      3000003400142 
+            assumed by compiler).                                 3000003400143 
+            ==Note== 'MXW' previously meant 'thermal Maxwellian   3000003400144 
+            average'.                                             3000003400145 
+SDT        Slowing-down time average                              3000003400146 
+SPA        Spectrum average                                       3000003400147 

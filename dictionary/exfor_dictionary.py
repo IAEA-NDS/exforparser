@@ -1,4 +1,3 @@
-from textwrap import indent
 import requests
 from bs4 import BeautifulSoup
 import glob
@@ -10,8 +9,7 @@ import pandas as pd
 
 sys.path.append("../")
 from path import DICTIONARY_PATH, DICTIONARY_URL
-from parser.utilities import flatten_list
-from mongodb import POST_DB, post_one_mongodb, post_many_mongodb
+from mongodb import POST_DB, post_one_mongodb
 from .abbreviations import abbreviations
 
 # pd.reset_option("display.max_columns")
@@ -39,9 +37,8 @@ def skip_unused_lines(d):
 
 def get_local_dict_num():
     local_dict_files = glob.glob(os.path.join(DICTIONARY_PATH, "trans.*"))
-
-    # globing local dictionary files
-    x = ["9000"]
+    # check local dictionary files
+    x = []
     for d in local_dict_files:
         x += [re.split(r"\.", os.path.basename(d))[1]]
 
@@ -59,7 +56,8 @@ def get_latest_dict_num():
 
 
 def download_latest_dict():
-    # get the latest dictionary from https://nds.iaea.org/nrdc/ndsx4/trans/dicts/  trans.9124
+    # get the latest dictionary from https://nds.iaea.org/nrdc/ndsx4/trans/dicts/ 
+    # filename must be in sequence e.g. trans.9124
     local_max = get_local_dict_num()
     latest = get_latest_dict_num()
 
@@ -147,19 +145,16 @@ def get_diction_difinition(latest) -> dict:
 
 
 def parse_dictionary(latest):
-    # 1. read by the fixed width and get DICTION tags
-    # 2. separate each raws into columns (draft)
-
-    ## From diction 950, we need to get definitions of each diction
+    ## From diction 950, get definitions of each diction
     diction_def = get_diction_difinition(latest)
 
-    ## start to read dictionary
+    ## start parsing all dictions
     file = dict_filename(latest)
     with open(file) as f:
         lines = f.readlines()
 
         new = False
-        for line in lines:  # iter(f.readline, 'ENDDICTION'):
+        for line in lines:  
             if line.startswith("DICTION"):
                 diction = []
                 new = True
@@ -421,7 +416,7 @@ def conv_dictionary_tojson(diction_def, diction_num, diction) -> dict:
                 or not cont
             ):
                 cont = False
-                flag = d[79:80]  # obsolute or not
+                flag = d[79:80]  # obsolute flag
 
                 ### get EXFOR code
                 if d[17] == " " and d[18].isalpha():
@@ -478,16 +473,14 @@ def conv_dictionary_tojson(diction_def, diction_num, diction) -> dict:
         """
         pass
 
-    # print(json.dumps(diction_dict, indent=1))
     return diction_dict
 
 
 class Diction:
-    def __init__(self):  # , diction_num):# ,diction_num=None):
+    def __init__(self):
         self.diction_num = None
         # self.diction = self.read_diction()
         # self.incident_en_heads =self.get_incident_en_heads()
-        pass
 
     def read_diction(self, diction_num):
         if diction_num:
@@ -526,15 +519,6 @@ class Diction:
             if diction[h]["param2"] == "DATA" and diction[h]["active"]
         ]
 
-    def get_incident_e_heads(self):
-        ## diction 24: Data heads, get_dx
-        diction_num = "24"
-        diction = self.read_diction(diction_num)
-        return [
-            h
-            for h in diction.keys()
-            if diction[h]["param2"] == "E" and diction[h]["active"]
-        ]
 
     def get_data_err_heads(self):
         ## diction 24: Data heads, get_dy
@@ -547,6 +531,17 @@ class Diction:
         ]
 
 
+    def get_incident_e_heads(self):
+        ## diction 24: Data heads, measured energy/level
+        diction_num = "24"
+        diction = self.read_diction(diction_num)
+        return [
+            h
+            for h in diction.keys()
+            if diction[h]["param2"] == "E" and diction[h]["active"]
+        ]
+
+
     def get_level_heads(self):
         ## diction 24: Data heads
         diction_num = "24"
@@ -556,6 +551,7 @@ class Diction:
             for h in diction.keys()
             if diction[h]["param2"] == "L" and diction[h]["active"]
         ]
+
 
     def get_unit_factor(self, datahead):
         ## diction 25: Data units

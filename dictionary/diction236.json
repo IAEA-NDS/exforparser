@@ -1,0 +1,3276 @@
+{
+  "diction_num": "236",
+  "diction_def": "Quantities (REACTION SF 5-8)",
+  "parameters": {
+    "(CUM),SIG": {
+      "x4code": "(CUM),SIG",
+      "description": "(cross section (uncertain if cumulative))(cross section, uncertain if cumulative)",
+      "param2": "B",
+      "active": true
+    },
+    "(CUM),SIG/RAT": {
+      "x4code": "(CUM),SIG/RAT",
+      "description": "(cross section ratio (uncertain if cumulative))",
+      "param2": "NO",
+      "active": true
+    },
+    "(CUM)/M+,SIG": {
+      "x4code": "(CUM)/M+,SIG",
+      "description": "(cross section,including isomeric transition ,uncertainty if cum)",
+      "param2": "B",
+      "active": true
+    },
+    "(M),INT": {
+      "x4code": "(M),INT",
+      "description": "(cross section integrate over incident energy, uncertainty if isomeric transition including )",
+      "param2": "B*E",
+      "active": true
+    },
+    "(M),RI": {
+      "x4code": "(M),RI",
+      "description": "(resonance integral (uncertainty if isomeric transition including ))",
+      "param2": "B",
+      "active": true
+    },
+    "(M),SIG": {
+      "x4code": "(M),SIG",
+      "description": "(cross section (uncertainty if isomeric transition incl))",
+      "param2": "B",
+      "active": true
+    },
+    ",DA,*,4PI": {
+      "x4code": ",DA,*,4PI",
+      "description": "(angular distribution of particle specified * 4pi)",
+      "param2": "B",
+      "active": true
+    },
+    ",DA,,IPA": {
+      "x4code": ",DA,,IPA",
+      "description": "(differencial cs integrated over partial angular range)",
+      "param2": "B",
+      "active": false
+    },
+    ",INT": {
+      "x4code": ",INT",
+      "description": "(cross-section integral over incident energy)",
+      "param2": "B*E",
+      "active": true
+    },
+    ",INT,,RAB": {
+      "x4code": ",INT,,RAB",
+      "description": "(cross section integrate incident e.*abundance (nat)/abundance (nuclide of 1st term))",
+      "param2": "B*E",
+      "active": true
+    },
+    ",INT,,RTE": {
+      "x4code": ",INT,,RTE",
+      "description": "(cross-section integral over incident energy*sqrt(e))",
+      "param2": "BERE",
+      "active": true
+    },
+    ",INT/DA,,4PI": {
+      "x4code": ",INT/DA,,4PI",
+      "description": "(4pi * integral over incident energy of angle distribution )",
+      "param2": "B*E",
+      "active": true
+    },
+    ",IPA": {
+      "x4code": ",IPA",
+      "description": "(differencial cs integrated over partial angular range)",
+      "param2": "B",
+      "active": true
+    },
+    ",IPA,*": {
+      "x4code": ",IPA,*",
+      "description": "(differencial cs integrate over particle angle range of particle specified )",
+      "param2": "B",
+      "active": true
+    },
+    ",RI,,LIM": {
+      "x4code": ",RI,,LIM",
+      "description": "(resonance integral for limited energy range)",
+      "param2": "B",
+      "active": true
+    },
+    ",RI,,RNV/LIM": {
+      "x4code": ",RI,,RNV/LIM",
+      "description": "(resonance integrate , non 1/v, limited energy range)",
+      "param2": "B",
+      "active": true
+    },
+    ",SIF,,TMP": {
+      "x4code": ",SIF,,TMP",
+      "description": "(self-indication function at other than room tmp.)",
+      "param2": "NO",
+      "active": true
+    },
+    ",SIG,,HYD": {
+      "x4code": ",SIG,,HYD",
+      "description": "(cross section of hydrogen in hydride molecule)",
+      "param2": "B",
+      "active": true
+    },
+    ",SIG,,RAB": {
+      "x4code": ",SIG,,RAB",
+      "description": "(cs * abundance (nat)/abundance (nuclide of 1st term))",
+      "param2": "B",
+      "active": true
+    },
+    ",SIG,,RES/RTE": {
+      "x4code": ",SIG,,RES/RTE",
+      "description": "(cross section * square root(e) at resonance)",
+      "param2": "BRE",
+      "active": true
+    },
+    ",SIG,,TMP": {
+      "x4code": ",SIG,,TMP",
+      "description": "(cross section at other than the room temperature erature)",
+      "param2": "B",
+      "active": true
+    },
+    ",SIG,ER": {
+      "x4code": ",SIG,ER",
+      "description": "(unspecified evapolation residual production cross section)",
+      "param2": "B",
+      "active": true
+    },
+    ",SIG,ER,SFC": {
+      "x4code": ",SIG,ER,SFC",
+      "description": "(s-factor for unspecified evaporation residue)",
+      "param2": "B*E",
+      "active": true
+    },
+    ",TRN,,TMP": {
+      "x4code": ",TRN,,TMP",
+      "description": "(transmission at other than the room temperature erature)",
+      "param2": "NO",
+      "active": true
+    },
+    "CN,SIG": {
+      "x4code": "CN,SIG",
+      "description": "(cross section, compound nucleus contribution)",
+      "param2": "B",
+      "active": true
+    },
+    "CON,SIG": {
+      "x4code": "CON,SIG",
+      "description": "(production cross section for continuous gammas)",
+      "param2": "B",
+      "active": true
+    },
+    "CUM,INT": {
+      "x4code": "CUM,INT",
+      "description": "(cumulative cross-section, integrate over incident energy)",
+      "param2": "B*E",
+      "active": true
+    },
+    "CUM,SIG": {
+      "x4code": "CUM,SIG",
+      "description": "(cumulative cross section)(cumulative cross section, including formation of product nucleus via radioactive decay and isomeric transition)",
+      "param2": "B",
+      "active": true
+    },
+    "CUM,SIG,,RAB": {
+      "x4code": "CUM,SIG,,RAB",
+      "description": "(cumulative cs * abundance (nat)/abundance (nuclide of 1st term))",
+      "param2": "B",
+      "active": true
+    },
+    "CUM/(M),SIG": {
+      "x4code": "CUM/(M),SIG",
+      "description": "(cumulative cross section (uncertainty isomeric transition including ))",
+      "param2": "B",
+      "active": true
+    },
+    "CUM/M-,SIG": {
+      "x4code": "CUM/M-,SIG",
+      "description": "(cumulative cross section, excluding isomeric transition )",
+      "param2": "B",
+      "active": true
+    },
+    "CUM/UND,SIG": {
+      "x4code": "CUM/UND,SIG",
+      "description": "(cumulative cross section, undefined reaction)",
+      "param2": "B",
+      "active": false
+    },
+    "DI,SGV": {
+      "x4code": "DI,SGV",
+      "description": "(thermonuclear reaction rate, direct integrate coneutron )",
+      "param2": "B*V",
+      "active": true
+    },
+    "DI,SIG": {
+      "x4code": "DI,SIG",
+      "description": "(cross section, direct interaction contribution)",
+      "param2": "B",
+      "active": true
+    },
+    "DIS,SIG": {
+      "x4code": "DIS,SIG",
+      "description": "(production cross section for discrete gammas)",
+      "param2": "B",
+      "active": true
+    },
+    "DL/GRP,SIG": {
+      "x4code": "DL/GRP,SIG",
+      "description": "(cross section of delayed production f.given .half-life group )",
+      "param2": "B",
+      "active": true
+    },
+    "DL/GRP,SIG,N": {
+      "x4code": "DL/GRP,SIG,N",
+      "description": "(delayed neutron emission cs for given half-life group)",
+      "param2": "B",
+      "active": true
+    },
+    "EM,SIG": {
+      "x4code": "EM,SIG",
+      "description": "(emission cross section)(emission cross section excluding elastic scattering)",
+      "param2": "B",
+      "active": true
+    },
+    "FA/COH,SIG": {
+      "x4code": "FA/COH,SIG",
+      "description": "(free-atom coherent scattering cross section)",
+      "param2": "B",
+      "active": true
+    },
+    "FA/INC,SIG": {
+      "x4code": "FA/INC,SIG",
+      "description": "(free-atom incoherent scattering cross section)",
+      "param2": "B",
+      "active": true
+    },
+    "IND,SIG": {
+      "x4code": "IND,SIG",
+      "description": "(independent cross section)(independent cross section for direct formation of the product nucleus)",
+      "param2": "B",
+      "active": false
+    },
+    "IND,SIG/RAT": {
+      "x4code": "IND,SIG/RAT",
+      "description": "(independent cross section ratio)(independent cross section for direct formation of the product nucleus, isomeric ratio)",
+      "param2": "NO",
+      "active": false
+    },
+    "IND/(M),SIG": {
+      "x4code": "IND/(M),SIG",
+      "description": "(independent cross section (isomeric transition uncertain))",
+      "param2": "B",
+      "active": false
+    },
+    "IND/M+,SIG": {
+      "x4code": "IND/M+,SIG",
+      "description": "(independent cross section , including isomeric transition )",
+      "param2": "B",
+      "active": false
+    },
+    "LON,SIG,,DSP": {
+      "x4code": "LON,SIG,,DSP",
+      "description": "(cs differencial (longitudinal spins, parallel - antiparallel))",
+      "param2": "B",
+      "active": true
+    },
+    "M+,RI": {
+      "x4code": "M+,RI",
+      "description": "(resonance integral, including via isomer.transition )",
+      "param2": "B",
+      "active": true
+    },
+    "M+,SIG": {
+      "x4code": "M+,SIG",
+      "description": "(cross section, including formation via isomeric transition )",
+      "param2": "B",
+      "active": true
+    },
+    "M-,SIG": {
+      "x4code": "M-,SIG",
+      "description": "(cross section, excluding isomeric transition)",
+      "param2": "B",
+      "active": false
+    },
+    "NUM,SIG,*": {
+      "x4code": "NUM,SIG,*",
+      "description": "(cs for production of n product particles specified )",
+      "param2": "B",
+      "active": true
+    },
+    "PAR,SIG,G,RAB": {
+      "x4code": "PAR,SIG,G,RAB",
+      "description": "(partial gamma pro.cs*abundance (nat)/abundance (nuclide 1st term))",
+      "param2": "B",
+      "active": true
+    },
+    "SEQ,SIG": {
+      "x4code": "SEQ,SIG",
+      "description": "(cross section for specified reaction sequence)",
+      "param2": "B",
+      "active": true
+    },
+    "TRS,SIG,,DSP": {
+      "x4code": "TRS,SIG,,DSP",
+      "description": "(cs differencial (transv.spins, parallel - antiparallel))",
+      "param2": "B",
+      "active": true
+    },
+    "UND,SIG": {
+      "x4code": "UND,SIG",
+      "description": "(cross section, undefined reaction)(cross section, without defined reaction channel, outgoing particles represent only sum of emitted nucleons.)",
+      "param2": "B",
+      "active": false
+    },
+    "UNW,INT": {
+      "x4code": "UNW,INT",
+      "description": "(unweighted production cs integral over incident energy)",
+      "param2": "B*E",
+      "active": true
+    },
+    "UNW,SIG": {
+      "x4code": "UNW,SIG",
+      "description": "(unweighted production cross section)(production cross section, not weighted by multiplicity of outgoing particle)",
+      "param2": "B",
+      "active": true
+    },
+    "CN/PAR,SIG": {
+      "x4code": "CN/PAR,SIG",
+      "description": "(partial cross section, compound nucleus contrib)",
+      "param2": "B",
+      "active": true
+    },
+    "CN/PAR,SIG,,RES": {
+      "x4code": "CN/PAR,SIG,,RES",
+      "description": "(particle c/s, compound nucleus contrib.at resonance)",
+      "param2": "B",
+      "active": true
+    },
+    "CN/SEQ/PAR,SIG": {
+      "x4code": "CN/SEQ/PAR,SIG",
+      "description": "(partial cross section, specified sequence ,compound nuclide contr)",
+      "param2": "B",
+      "active": true
+    },
+    "DI/PAR,SIG": {
+      "x4code": "DI/PAR,SIG",
+      "description": "(partial cross section, direct interaction contrib.)",
+      "param2": "B",
+      "active": true
+    },
+    "EM/PAR,SIG": {
+      "x4code": "EM/PAR,SIG",
+      "description": "(partial emission cross section)(partial emission cross section excluding elastic scattering)",
+      "param2": "B",
+      "active": true
+    },
+    "EP,SIG": {
+      "x4code": "EP,SIG",
+      "description": "(cross section for electric polarity given)(electric multipole component of cross section for polarity specified)",
+      "param2": "B",
+      "active": true
+    },
+    "EP,SIG,,SFC": {
+      "x4code": "EP,SIG,,SFC",
+      "description": "(s-factor for electric polarity given)(s-factor for electric multipole component of cross section for polarity specified)",
+      "param2": "B*E",
+      "active": true
+    },
+    "EP/PAR,INT": {
+      "x4code": "EP/PAR,INT",
+      "description": "(integral c/s over incident energy for electrical polarized given)",
+      "param2": "B*E",
+      "active": true
+    },
+    "EP/PAR,SIG": {
+      "x4code": "EP/PAR,SIG",
+      "description": "(partial cross section for electric polarized given)",
+      "param2": "B",
+      "active": true
+    },
+    "EP/PAR,SIG,,SFC": {
+      "x4code": "EP/PAR,SIG,,SFC",
+      "description": "(s-factor for electric polarity given, partial)",
+      "param2": "B*E",
+      "active": true
+    },
+    "ISP,SIG": {
+      "x4code": "ISP,SIG",
+      "description": "(cross section, partial for intermediate product)",
+      "param2": "B",
+      "active": true
+    },
+    "ISP/PAR,SIG": {
+      "x4code": "ISP/PAR,SIG",
+      "description": "(cross section, partial for final and intermediate products)",
+      "param2": "B",
+      "active": true
+    },
+    "MP,SIG": {
+      "x4code": "MP,SIG",
+      "description": "(cross section for magnetic polarity given)(magnetic multipole component of cross section for polarity specified)",
+      "param2": "B",
+      "active": true
+    },
+    "PAR,DA,*,4PI": {
+      "x4code": "PAR,DA,*,4PI",
+      "description": "(partial differencial particle emission cross section d/da*4pi)",
+      "param2": "B",
+      "active": true
+    },
+    "PAR,DA,,IPA": {
+      "x4code": "PAR,DA,,IPA",
+      "description": "(partial differencial cs integrated over partial angle range)",
+      "param2": "B",
+      "active": false
+    },
+    "PAR,INT": {
+      "x4code": "PAR,INT",
+      "description": "(cs integral over incident energy f.given level)",
+      "param2": "B*E",
+      "active": true
+    },
+    "PAR,INT/DA": {
+      "x4code": "PAR,INT/DA",
+      "description": "(integral over incident energy of particle ang distribution )",
+      "param2": "BEDA",
+      "active": true
+    },
+    "PAR,INT/DA,*": {
+      "x4code": "PAR,INT/DA,*",
+      "description": "(integral over incident energy of particle ang distribution particle )",
+      "param2": "BEDA",
+      "active": true
+    },
+    "PAR,INT/DA,*,4PI": {
+      "x4code": "PAR,INT/DA,*,4PI",
+      "description": "(4pi*integral over incident energy of angle distribution particle )",
+      "param2": "B*E",
+      "active": true
+    },
+    "PAR,INT/DA,,4PI": {
+      "x4code": "PAR,INT/DA,,4PI",
+      "description": "(4pi * integral over incident energy of particle angle distribution )",
+      "param2": "B*E",
+      "active": true
+    },
+    "PAR,IPA": {
+      "x4code": "PAR,IPA",
+      "description": "(partial differencial cs integrated over partial angle range)",
+      "param2": "B",
+      "active": true
+    },
+    "PAR,IPA,*": {
+      "x4code": "PAR,IPA,*",
+      "description": "(partial differencial cs integrate ov.particle angle rang,f.particle specified )",
+      "param2": "B",
+      "active": true
+    },
+    "PAR,SIG,*": {
+      "x4code": "PAR,SIG,*",
+      "description": "(partial cross section for particle specified)",
+      "param2": "B",
+      "active": true
+    },
+    "PAR,SIG,G,RES": {
+      "x4code": "PAR,SIG,G,RES",
+      "description": "(partial gamma-production cross section at resonance)",
+      "param2": "B",
+      "active": true
+    },
+    "PAR/CON,SIG": {
+      "x4code": "PAR/CON,SIG",
+      "description": "(production cs for continuous gammas of given energy range)",
+      "param2": "B",
+      "active": true
+    },
+    "PAR/CUM,SIG,G": {
+      "x4code": "PAR/CUM,SIG,G",
+      "description": "(partial cumulative gamma production cross section)",
+      "param2": "B",
+      "active": true
+    },
+    "PAR/DIS,SIG": {
+      "x4code": "PAR/DIS,SIG",
+      "description": "(production cs for discrete gammas of given energy range)",
+      "param2": "B",
+      "active": true
+    },
+    "SEQ/PAR,SIG": {
+      "x4code": "SEQ/PAR,SIG",
+      "description": "(partial cross section, specified reaction sequence )",
+      "param2": "B",
+      "active": true
+    },
+    "(CUM),TTY,,EOB": {
+      "x4code": "(CUM),TTY,,EOB",
+      "description": "(eob thick target yield, uncertain if cumulative)",
+      "param2": "TTY",
+      "active": true
+    },
+    "(CUM),TTY,,PHY": {
+      "x4code": "(CUM),TTY,,PHY",
+      "description": "(physical thick target yield, uncertainty if cumulative)",
+      "param2": "TTT",
+      "active": true
+    },
+    "(M),TTY,,EOB": {
+      "x4code": "(M),TTY,,EOB",
+      "description": "(eob thick target yield , uncertainty if isomeric transition including )",
+      "param2": "TTY",
+      "active": true
+    },
+    "(M),TTY,,PHY": {
+      "x4code": "(M),TTY,,PHY",
+      "description": "(physical thick target yield ,uncertainty if isomeric transition including )",
+      "param2": "TTT",
+      "active": true
+    },
+    "(M),TTY,,SAT": {
+      "x4code": "(M),TTY,,SAT",
+      "description": "(saturated thick target yield , uncertainty if isomeric transition including )",
+      "param2": "TTY",
+      "active": true
+    },
+    ",MLT,*,TT": {
+      "x4code": ",MLT,*,TT",
+      "description": "(thick target multiplicity of particle specified)",
+      "param2": "YLD",
+      "active": true
+    },
+    ",MLT,,TT": {
+      "x4code": ",MLT,,TT",
+      "description": "(multiplicity for thick target,number particle /incident )",
+      "param2": "YLD",
+      "active": true
+    },
+    ",MLT,,TT/CH": {
+      "x4code": ",MLT,,TT/CH",
+      "description": "(multiplicity for thick target per elect. charge)",
+      "param2": "YLDC",
+      "active": true
+    },
+    ",MLT/DA,,TT/CH": {
+      "x4code": ",MLT/DA,,TT/CH",
+      "description": "(particle multiplicity f.thick target d/da per electric charge)",
+      "param2": "YDAC",
+      "active": true
+    },
+    ",MLT/DA/DE,,TT": {
+      "x4code": ",MLT/DA/DE,,TT",
+      "description": "(particle multiplicity f.thick target d2/da/de)",
+      "param2": "YAE",
+      "active": true
+    },
+    ",MLT/DA/DE,,TT/CH": {
+      "x4code": ",MLT/DA/DE,,TT/CH",
+      "description": "(particle multiplicity f.thick target d2/da/de per electric charge)",
+      "param2": "YAEC",
+      "active": true
+    },
+    ",MLT/DE,,TT/NPD   1/E": {
+      "x4code": ",MLT/DE,,TT/NPD   1/E",
+      "description": "(particle multiplicity f.thick target d/de probable distribution )",
+      "param2": "",
+      "active": true
+    },
+    ",MLT/IPA/DE,,TT/NPD": {
+      "x4code": ",MLT/IPA/DE,,TT/NPD",
+      "description": "(particle multiplicity for thick targetd/de normalized to probability distribution)",
+      "param2": "",
+      "active": true
+    },
+    "                  1/E": {
+      "x4code": "                  1/E",
+      "description": "(multiplicity f.thick tar.d2/da/de in.ov.angle ran.pro.dis.)",
+      "param2": "",
+      "active": true
+    },
+    ",PY,,TT": {
+      "x4code": ",PY,,TT",
+      "description": "(production yield for thick target,number of nuclide /incident )",
+      "param2": "YLD",
+      "active": true
+    },
+    ",PY,,TT/CH": {
+      "x4code": ",PY,,TT/CH",
+      "description": "(thick target product yield per electric charge)",
+      "param2": "YLDC",
+      "active": true
+    },
+    ",PY/DA,,TT": {
+      "x4code": ",PY/DA,,TT",
+      "description": "(differencial product yield d/da for thick target) (differential product yield for thick target with respect to angle of outgoing particle)",
+      "param2": "YDA",
+      "active": true
+    },
+    ",PY/DA,,TT/CH": {
+      "x4code": ",PY/DA,,TT/CH",
+      "description": "(thick target production yield d/da per electric charge)",
+      "param2": "YDAC",
+      "active": true
+    },
+    ",PY/DA/DE,,TT/CH": {
+      "x4code": ",PY/DA/DE,,TT/CH",
+      "description": "(thick target production yield d/da/de per electric charge)",
+      "param2": "YAEC",
+      "active": true
+    },
+    ",PY/DE,,TT/NPD    1/E": {
+      "x4code": ",PY/DE,,TT/NPD    1/E",
+      "description": "(differencial production yield d/de f.thick target probable distribution )",
+      "param2": "",
+      "active": true
+    },
+    ",PY/IPA,,TT": {
+      "x4code": ",PY/IPA,,TT",
+      "description": "(production yield d/da f.thick target,integrate angle range)",
+      "param2": "YLD",
+      "active": true
+    },
+    ",PY/IPA/DE,,TT": {
+      "x4code": ",PY/IPA/DE,,TT",
+      "description": "(production yield d/da/de f.thick target,integrate angle range)",
+      "param2": "YDE",
+      "active": true
+    },
+    ",TTY,,(PHY)": {
+      "x4code": ",TTY,,(PHY)",
+      "description": "(thick/thin-target yield, uncertainty if physical)(thick/thin-target yield, uncertain if it is physical yield)",
+      "param2": "TTT",
+      "active": true
+    },
+    ",TTY,,TM": {
+      "x4code": ",TTY,,TM",
+      "description": "(production thick target yield/1 mev thn.)(production thick/thin-target yieldfor 1 mev target thickness)",
+      "param2": "TTTE",
+      "active": false
+    },
+    ",TTY/DEN,,PHY": {
+      "x4code": ",TTY/DEN,,PHY",
+      "description": "(physical thick target yield differencial by incident energy)",
+      "param2": "TTTE",
+      "active": true
+    },
+    ",TTY/MLT": {
+      "x4code": ",TTY/MLT",
+      "description": "(outgoing particle multiplicity f.thick tgt,factor of beam current )",
+      "param2": "YLDC",
+      "active": false
+    },
+    ",TTY/MLT/DA/DE": {
+      "x4code": ",TTY/MLT/DA/DE",
+      "description": "(thick target multiplicity d/da/de,factor of beam current)",
+      "param2": "YAEC",
+      "active": false
+    },
+    ",TTY/PY": {
+      "x4code": ",TTY/PY",
+      "description": "(thick-target production yld(factor of incident beam current ))",
+      "param2": "YLDC",
+      "active": false
+    },
+    ",TTY/PY/DA": {
+      "x4code": ",TTY/PY/DA",
+      "description": "(thk-target prd.yld(factor of incident beam current )d/da)(thick target product yield, given as number of nuclei as function of incident beam current, differential by angle)",
+      "param2": "YDAC",
+      "active": false
+    },
+    ",TTY/PY/DA/DE": {
+      "x4code": ",TTY/PY/DA/DE",
+      "description": "(thk-target prd.yld(factor of incident beam current )d/dade)",
+      "param2": "YAEC",
+      "active": false
+    },
+    "CUM,TTY,,(PHY)": {
+      "x4code": "CUM,TTY,,(PHY)",
+      "description": "(cumulative thick target yield, uncertainty if physical)",
+      "param2": "TTT",
+      "active": true
+    },
+    "CUM,TTY,,PHY": {
+      "x4code": "CUM,TTY,,PHY",
+      "description": "(physical thick/thin-target yield, cumulative)",
+      "param2": "TTT",
+      "active": true
+    },
+    "CUM,TTY/DEN,,PHY": {
+      "x4code": "CUM,TTY/DEN,,PHY",
+      "description": "(cumulative physical thick target yield differencial by incident energy)",
+      "param2": "TTTE",
+      "active": true
+    },
+    "IND,TTY,,DT": {
+      "x4code": "IND,TTY,,DT",
+      "description": "(independent production thick/thin-target yld (unsat.))",
+      "param2": "TTY",
+      "active": false
+    },
+    "IND,TTY,,PHY": {
+      "x4code": "IND,TTY,,PHY",
+      "description": "(physical thick/thin-target yield, independent)",
+      "param2": "TTT",
+      "active": false
+    },
+    "IND/M+,TTY,,EOB": {
+      "x4code": "IND/M+,TTY,,EOB",
+      "description": "(independent eob thick target yield, including isomeric transition )",
+      "param2": "TTY",
+      "active": false
+    },
+    "M+,TTY,,(PHY)": {
+      "x4code": "M+,TTY,,(PHY)",
+      "description": "(thick target yield ,including isomeric tran.,uncertainty if physical)",
+      "param2": "TTT",
+      "active": true
+    },
+    "M+,TTY,,EOB": {
+      "x4code": "M+,TTY,,EOB",
+      "description": "(eob thick target yield, including isomeric transition)",
+      "param2": "TTY",
+      "active": true
+    },
+    "M+,TTY,,PHY": {
+      "x4code": "M+,TTY,,PHY",
+      "description": "(physical thick target yield including isomeric transition )",
+      "param2": "TTT",
+      "active": true
+    },
+    "M+,TTY,,SAT": {
+      "x4code": "M+,TTY,,SAT",
+      "description": "(saturation thick target yield including isomeric transition )",
+      "param2": "TTY",
+      "active": true
+    },
+    "M+,TTY/DEN,,PHY": {
+      "x4code": "M+,TTY/DEN,,PHY",
+      "description": "(physical thick target yield dif.by incident energy incident isomeric tran.)",
+      "param2": "TTTE",
+      "active": true
+    },
+    "M-,TTY,,EOB": {
+      "x4code": "M-,TTY,,EOB",
+      "description": "(eob thick target yield excluding isomeric transition)",
+      "param2": "TTY",
+      "active": false
+    },
+    "M-,TTY,,PHY": {
+      "x4code": "M-,TTY,,PHY",
+      "description": "(physical thick target yield , excluding isomeric transition)",
+      "param2": "TTT",
+      "active": false
+    },
+    "M-,TTY,,SAT": {
+      "x4code": "M-,TTY,,SAT",
+      "description": "(saturation thick target yield , excluding isomeric transit.)",
+      "param2": "TTY",
+      "active": false
+    },
+    "PAR,MLT,*,TT": {
+      "x4code": "PAR,MLT,*,TT",
+      "description": "(partial multiplicity of particle specified f. thick target )",
+      "param2": "YLD",
+      "active": true
+    },
+    "PAR,MLT,,TT/CH": {
+      "x4code": "PAR,MLT,,TT/CH",
+      "description": "(partial thick target mulit. per electric charge)",
+      "param2": "YLDC",
+      "active": true
+    },
+    "PAR,MLT,G,TT/CH": {
+      "x4code": "PAR,MLT,G,TT/CH",
+      "description": "(partial thick target gamma multiplicity per electric charge)",
+      "param2": "YLDC",
+      "active": true
+    },
+    "PAR,PY,,TT/CH": {
+      "x4code": "PAR,PY,,TT/CH",
+      "description": "(partial product yield for thick target per electric charge)",
+      "param2": "YLDC",
+      "active": true
+    },
+    "PAR,TTY/MLT,G": {
+      "x4code": "PAR,TTY/MLT,G",
+      "description": "(thick target multiplicity,factor of beam current , for g)",
+      "param2": "YLDC",
+      "active": false
+    },
+    "PAR,TTY/MLT/DA": {
+      "x4code": "PAR,TTY/MLT/DA",
+      "description": "(partial thick target multiplicity d/da,factor of beam current )",
+      "param2": "YDAC",
+      "active": false
+    },
+    "PAR,TTY/MLT/DA,G": {
+      "x4code": "PAR,TTY/MLT/DA,G",
+      "description": "(thick target multiplicity d/da,factor of beam current , for g)",
+      "param2": "YDAC",
+      "active": false
+    },
+    "PAR,TTY/PY/DA": {
+      "x4code": "PAR,TTY/PY/DA",
+      "description": "(partial thk-target prd.yld(factor of incident beam current )d/da)",
+      "param2": "YDAC",
+      "active": false
+    },
+    ",ALF,,RES": {
+      "x4code": ",ALF,,RES",
+      "description": "(capture-to-fission (alpha) ratio at resonance)",
+      "param2": "NO",
+      "active": true
+    },
+    ",ETA": {
+      "x4code": ",ETA",
+      "description": "(neutron yield (eta)) reaction(sf3) is non (or abs below (n,n')",
+      "param2": "YLD",
+      "active": true
+    },
+    ",MLT/DA,G/FF      1/A": {
+      "x4code": ",MLT/DA,G/FF      1/A",
+      "description": "(gamma multiplicity as factor of fission fragment angle)",
+      "param2": "",
+      "active": false
+    },
+    ",NU/DA/DE,LF+HF/N": {
+      "x4code": ",NU/DA/DE,LF+HF/N",
+      "description": "(differencial prompt neutron multiplicity d/da(lf+hf)/de(n))",
+      "param2": "FYAE",
+      "active": true
+    },
+    ",NU/DA/DE,N+*F/N": {
+      "x4code": ",NU/DA/DE,N+*F/N",
+      "description": "(differencial prompt neutron multiplicity d/da(n+fragment specified )/de(n))",
+      "param2": "FYAE",
+      "active": true
+    },
+    ",NU/DE,,RRE": {
+      "x4code": ",NU/DE,,RRE",
+      "description": "(differencial fission neutron multiplicity relative to square root(e))",
+      "param2": "FYET",
+      "active": true
+    },
+    ",PN/DE            1/E": {
+      "x4code": ",PN/DE            1/E",
+      "description": "(energy spectrum of delayed neutrons emitt.by specified prec.)",
+      "param2": "",
+      "active": true
+    },
+    "DL/CUM,NU": {
+      "x4code": "DL/CUM,NU",
+      "description": "(cumulative delayed neutron yield)(cumulative delayed neutron yield from an individual precursor, including formation of product nucleus via radioactive decay and isomeric transition)",
+      "param2": "FY",
+      "active": true
+    },
+    "DL/GRP,NU": {
+      "x4code": "DL/GRP,NU",
+      "description": "(delayed neutron yield for given half-life group)",
+      "param2": "FY",
+      "active": true
+    },
+    "DL/GRP/PAR,NU": {
+      "x4code": "DL/GRP/PAR,NU",
+      "description": "(partial delayed neutron yield for given half-life group)",
+      "param2": "FY",
+      "active": true
+    },
+    "DL/IND,NU": {
+      "x4code": "DL/IND,NU",
+      "description": "(independent delayed neutron yield)(independent delayed neutron yield from an individual precursor)",
+      "param2": "FY",
+      "active": true
+    },
+    "ISP/PR/FRG,NU": {
+      "x4code": "ISP/PR/FRG,NU",
+      "description": "(multiplicity of prompt neutrons from fragment specified ,partial.f.intermediate production )",
+      "param2": "FY",
+      "active": true
+    },
+    "NUM,PN": {
+      "x4code": "NUM,PN",
+      "description": "(probab.for the emission of n delayed neutrons)",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA/DA": {
+      "x4code": "PAR,DA/DA",
+      "description": "(partial double differencial cross section d2/da/da)(partial double-differencial cross section with respect to 2 angles referring to 2 outgoing particles)",
+      "param2": "DA2",
+      "active": true
+    },
+    "PAR,DA/DA,*/*": {
+      "x4code": "PAR,DA/DA,*/*",
+      "description": "(partial double differencial cross section d2/da(*)/da(*))",
+      "param2": "DA2",
+      "active": true
+    },
+    "PAR,MLT,*,RES": {
+      "x4code": "PAR,MLT,*,RES",
+      "description": "(partial multiplicity of particle specified at resonance)",
+      "param2": "YLD",
+      "active": true
+    },
+    "PAR,MLT/DA,*": {
+      "x4code": "PAR,MLT/DA,*",
+      "description": "(partial multiplicity d/da for particle specified)",
+      "param2": "YDA",
+      "active": true
+    },
+    "PAR,MLT/DA,,TT/CH": {
+      "x4code": "PAR,MLT/DA,,TT/CH",
+      "description": "(partial thick target multiplicity d/da per electric charge)",
+      "param2": "YDAC",
+      "active": true
+    },
+    "PAR,MLT/DA,G,TT/CHYDAC": {
+      "x4code": "PAR,MLT/DA,G,TT/CHYDAC",
+      "description": "(partial thick target gamma multiplicity d/da per electric charge )",
+      "param2": "",
+      "active": true
+    },
+    "PAR,PN": {
+      "x4code": "PAR,PN",
+      "description": "(partial delayed neutron emission probability)",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,PY/DA,,TT": {
+      "x4code": "PAR,PY/DA,,TT",
+      "description": "(partial differencial product yield d/da for thick target)",
+      "param2": "YDA",
+      "active": true
+    },
+    "PAR,PY/DA,,TT/CH": {
+      "x4code": "PAR,PY/DA,,TT/CH",
+      "description": "(partial dif.production yield d/da for thick target per e.charge )",
+      "param2": "YDAC",
+      "active": true
+    },
+    "PAR,PY/IPA,,TT": {
+      "x4code": "PAR,PY/IPA,,TT",
+      "description": "(partial production yield d/da for thick target ,integrate angle range)",
+      "param2": "YLD",
+      "active": true
+    },
+    "PR,NU/DA": {
+      "x4code": "PR,NU/DA",
+      "description": "(differencial prompt.neutron multiplicity d/da(n))(differential prompt fission neutron multiplicity with respect to outgoing angle of neutron)",
+      "param2": "FYDA",
+      "active": true
+    },
+    "PR,NU/DA,,RSD": {
+      "x4code": "PR,NU/DA,,RSD",
+      "description": "(differencial prompt.neutron multiplicity d/da(n) relative to 90 deg)",
+      "param2": "NO",
+      "active": true
+    },
+    "PR,NU/DA,N+*F": {
+      "x4code": "PR,NU/DA,N+*F",
+      "description": "(differencial prompt neutron multiplicity d/da(n+fragment specified))",
+      "param2": "FYDA",
+      "active": true
+    },
+    "PR,NU/DA/DE,,RS0": {
+      "x4code": "PR,NU/DA/DE,,RS0",
+      "description": "(differencial prompt.neutron multiplicity d/da/de relative to 0 deg)",
+      "param2": "NO",
+      "active": true
+    },
+    "PR,NU/DA/DE,N+*F/NFYAE": {
+      "x4code": "PR,NU/DA/DE,N+*F/NFYAE",
+      "description": "(differencial prompt neutron multiplicity d/da(n+fragment specified )/de(n))",
+      "param2": "",
+      "active": true
+    },
+    "PR,NU/DE,,MXD": {
+      "x4code": "PR,NU/DE,,MXD",
+      "description": "(prompt neutron spectrum relative to maxwellian distribution of given temperature )",
+      "param2": "NO",
+      "active": true
+    },
+    "PR,NU/DE,,NPD     1/E": {
+      "x4code": "PR,NU/DE,,NPD     1/E",
+      "description": "(prompt fission neutron spectrum in probability)",
+      "param2": "",
+      "active": true
+    },
+    "PR,NU/DE,,RRE": {
+      "x4code": "PR,NU/DE,,RRE",
+      "description": "(prompt neutron spectrum relative to square root(e))",
+      "param2": "FYET",
+      "active": true
+    },
+    "PR,NU/TKE": {
+      "x4code": "PR,NU/TKE",
+      "description": "(prompt neutron multiplicity for a given total kinetic energy)",
+      "param2": "FY",
+      "active": true
+    },
+    "PR/FRG,NU": {
+      "x4code": "PR/FRG,NU",
+      "description": "(multiplicity of prompt neutrons from the fragment specified)",
+      "param2": "FY",
+      "active": true
+    },
+    "PR/FRG,NU,HF": {
+      "x4code": "PR/FRG,NU,HF",
+      "description": "(multiplicity of prompt neutrons from the heavy fragment)",
+      "param2": "FY",
+      "active": true
+    },
+    "PR/FRG,NU,LF": {
+      "x4code": "PR/FRG,NU,LF",
+      "description": "(multiplicity of prompt neutrons from the light fragment)",
+      "param2": "FY",
+      "active": true
+    },
+    "PR/FRG,NU/TKE": {
+      "x4code": "PR/FRG,NU/TKE",
+      "description": "(multiplicity of primary neutron from the fragment specified at given tke)",
+      "param2": "FY",
+      "active": true
+    },
+    "PR/NUM,NU": {
+      "x4code": "PR/NUM,NU",
+      "description": "(probability for emission of n prompt neutrons)",
+      "param2": "NO",
+      "active": true
+    },
+    "PR/TER,NU/DA,N+*F": {
+      "x4code": "PR/TER,NU/DA,N+*F",
+      "description": "(differencial prompt neutron multiplicity d/da(n+fragment specified ),ternary fis)",
+      "param2": "FYDA",
+      "active": true
+    },
+    "PRE,MLT,G": {
+      "x4code": "PRE,MLT,G",
+      "description": "(pre-neutron emisson fission gamma multiplicity)",
+      "param2": "FY",
+      "active": true
+    },
+    "PRE/PR,NU": {
+      "x4code": "PRE/PR,NU",
+      "description": "(prompt neutron multiplicity for a given primary fragment )",
+      "param2": "FY",
+      "active": true
+    },
+    "PRE/PR/FRG,NU": {
+      "x4code": "PRE/PR/FRG,NU",
+      "description": "(multiplicity of prompt neutrons from the primary fragment specified)",
+      "param2": "FY",
+      "active": true
+    },
+    "SEQ/PAR,DA/DA,*/*": {
+      "x4code": "SEQ/PAR,DA/DA,*/*",
+      "description": "(partial angle correlated of specified particle ,specified reaction sequence )",
+      "param2": "DA2",
+      "active": true
+    },
+    "COH/IM,AMP": {
+      "x4code": "COH/IM,AMP",
+      "description": "(coherent scattering length (imaginary part))",
+      "param2": "L",
+      "active": true
+    },
+    ",PY/DA": {
+      "x4code": ",PY/DA",
+      "description": "(differential product yield d/da)(differential product yield with respect to angle of outgoing particle)",
+      "param2": "YDA",
+      "active": true
+    },
+    ",PY/DA/DE": {
+      "x4code": ",PY/DA/DE",
+      "description": "(differential product yield d/da/de)(differential product yield with respect to angle and energy of outgoing particle)",
+      "param2": "YAE",
+      "active": true
+    },
+    "CUM,PY,,TT": {
+      "x4code": "CUM,PY,,TT",
+      "description": "(cumulative product yield for a thick target)",
+      "param2": "YLD",
+      "active": true
+    },
+    "IND,PY": {
+      "x4code": "IND,PY",
+      "description": "(independent product yield)(independent product yield for direct formation of the product nucleus)",
+      "param2": "YLD",
+      "active": false
+    },
+    "NUM,PY": {
+      "x4code": "NUM,PY",
+      "description": "(probab.for the production of n reaction products)",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,*+*": {
+      "x4code": ",DA,*+*",
+      "description": "(angular distribution of particle pair specified)",
+      "param2": "DA",
+      "active": true
+    },
+    ",DA,*+FF,RSD": {
+      "x4code": ",DA,*+FF,RSD",
+      "description": "(angle distribution of specified particle vs.fission fragment ,relative 90 deg.)",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,*,RS": {
+      "x4code": ",DA,*,RS",
+      "description": "(angular distribution of particle specified * 4pi/sigma)",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,*,RSD": {
+      "x4code": ",DA,*,RSD",
+      "description": "(angular distribution of particle specified relative 90 deg.)",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,*,RTH": {
+      "x4code": ",DA,*,RTH",
+      "description": "(differencial cs d/da for specified particle relative to ruth.scatt.)",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,*,TT/RSD": {
+      "x4code": ",DA,*,TT/RSD",
+      "description": "(angle distribution of particle specified relative 90deg.f.thick target )",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,,ASY": {
+      "x4code": ",DA,,ASY",
+      "description": "(asymmetry of distribution of outgoing particles)",
+      "param2": "NO",
+      "active": false
+    },
+    ",DA,,MOT": {
+      "x4code": ",DA,,MOT",
+      "description": "(differential cs d/da relative to mott scattering)",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,,RES": {
+      "x4code": ",DA,,RES",
+      "description": "(differential cross section d/da at resonance)",
+      "param2": "DA",
+      "active": true
+    },
+    ",DA,,RS/TMP": {
+      "x4code": ",DA,,RS/TMP",
+      "description": "(differential c/s d/da * 4pi/sigma at other than room temperature erature)",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,,RS0": {
+      "x4code": ",DA,,RS0",
+      "description": "(differential c/s d/da relative to 0 deg.)(angular distribution, differencial sig/sig(0deg))",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,,RSD": {
+      "x4code": ",DA,,RSD",
+      "description": "(differential c/s d/da relative to 90 deg.)(angular distribution, differencial sig/sig(90deg))",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,,RTH": {
+      "x4code": ",DA,,RTH",
+      "description": "(differential cs d/da relative to rutherf.scatt.)(angular distribution, relative to scattering by point nucleus (rutherford scattering))",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,,TMP": {
+      "x4code": ",DA,,TMP",
+      "description": "(differencial cross section d/da at other than room temperature .)",
+      "param2": "DA",
+      "active": true
+    },
+    ",DA,FF,RSD/RES": {
+      "x4code": ",DA,FF,RSD/RES",
+      "description": "(angle distribution of fission fragment relative to 90 deg. at res.)",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA/TYA,P": {
+      "x4code": ",DA/TYA,P",
+      "description": "(differencial cross section with resp.to treim.-yang angle)",
+      "param2": "DA",
+      "active": true
+    },
+    ",INT/DA": {
+      "x4code": ",INT/DA",
+      "description": "(integral over incident energy of angle distribution )(integral over incident energy of angular distribution)",
+      "param2": "BEDA",
+      "active": true
+    },
+    ",INT/DA,,RES": {
+      "x4code": ",INT/DA,,RES",
+      "description": "(integral over incident energy of angle distribution at res.)",
+      "param2": "BED.",
+      "active": true
+    },
+    ",INT/DE,RSD": {
+      "x4code": ",INT/DE,RSD",
+      "description": "(integrate over incident energy , of spectrum of res.nuclide )",
+      "param2": "B",
+      "active": true
+    },
+    "CN,DA": {
+      "x4code": "CN,DA",
+      "description": "(differential c/s d/da, compound nucleus contrib)",
+      "param2": "DA",
+      "active": true
+    },
+    "CUM,DA,,RSD": {
+      "x4code": "CUM,DA,,RSD",
+      "description": "(differencial c/s d/da relative to 90 deg., cumulative)",
+      "param2": "NO",
+      "active": true
+    },
+    "DI,DA": {
+      "x4code": "DI,DA",
+      "description": "(differential c/s d/da,direct interaction coneutron )",
+      "param2": "DA",
+      "active": true
+    },
+    "EM,DA": {
+      "x4code": "EM,DA",
+      "description": "(particle emission angular distribution)(differential emission cross section excluding elastic scattering)",
+      "param2": "DA",
+      "active": true
+    },
+    "IND,DA": {
+      "x4code": "IND,DA",
+      "description": "(differential cross section d/da, direct formation)",
+      "param2": "DA",
+      "active": false
+    },
+    "PRE,DA,LF": {
+      "x4code": "PRE,DA,LF",
+      "description": "(angle distrib. of primary light fission fragment )",
+      "param2": "DA",
+      "active": true
+    },
+    "SEQ,DA": {
+      "x4code": "SEQ,DA",
+      "description": "(differencial cross section for specified reaction sequence )(differencial cs for partial reaction specified by sequence of outgoing particles)",
+      "param2": "DA",
+      "active": false
+    },
+    "SEQ,DA,*": {
+      "x4code": "SEQ,DA,*",
+      "description": "(angular distribution of particle specified ,specified reaction sequence )",
+      "param2": "DA",
+      "active": true
+    },
+    "TER,DA,*": {
+      "x4code": "TER,DA,*",
+      "description": "(angle distribution of particle specified ,ternary fission)",
+      "param2": "DA",
+      "active": true
+    },
+    "TER,DA,*,RSD": {
+      "x4code": "TER,DA,*,RSD",
+      "description": "(angular distribution alphas rel 90 deg.,ternary fission )",
+      "param2": "NO",
+      "active": true
+    },
+    "TER,DA,N": {
+      "x4code": "TER,DA,N",
+      "description": "(angle distribution of fission neutrons,ternary fission)",
+      "param2": "DA",
+      "active": true
+    },
+    "DI/PAR,DA": {
+      "x4code": "DI/PAR,DA",
+      "description": "(partial differencial c/s d/da,direct interaction contr)",
+      "param2": "DA",
+      "active": true
+    },
+    "EM/PAR,DA": {
+      "x4code": "EM/PAR,DA",
+      "description": "(particle emission partial differencial c/s d/da)(differential partial emission cross section excluding elastic scattering)",
+      "param2": "DA",
+      "active": true
+    },
+    "EP,DA": {
+      "x4code": "EP,DA",
+      "description": "(partial differencial c/s d/da for electric polarized given)",
+      "param2": "DA",
+      "active": true
+    },
+    "NN/PAR,DA,,NSF": {
+      "x4code": "NN/PAR,DA,,NSF",
+      "description": "(non-spin-flip probability (1-s(nn))*partial d/da)",
+      "param2": "DA",
+      "active": true
+    },
+    "PAR,DA,*": {
+      "x4code": "PAR,DA,*",
+      "description": "(partial angular distribution of particle specified)",
+      "param2": "DA",
+      "active": true
+    },
+    "PAR,DA,*,RAB": {
+      "x4code": "PAR,DA,*,RAB",
+      "description": "(partial angle distribution of particle specified*abundance (nat)/abundance (nuclide 1st term))",
+      "param2": "DA",
+      "active": true
+    },
+    "PAR,DA,*,RSD": {
+      "x4code": "PAR,DA,*,RSD",
+      "description": "(partial differencial c/s d/da relative to 90 deg.)(differencial partial cross section for production of particle specified , relative to value at 90 degrees)",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA,,RS": {
+      "x4code": "PAR,DA,,RS",
+      "description": "(partial differencial cross section d/da * 4pi/sigma)",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA,,RS/TT": {
+      "x4code": "PAR,DA,,RS/TT",
+      "description": "(partial differencial cs d/da * 4pi/sigma f.thick target)",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA,,RS0": {
+      "x4code": "PAR,DA,,RS0",
+      "description": "(partial differencial c/s d/da relative to 0 deg.)(partial cross section, differencial sig/sig(0deg))",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA,,RSD": {
+      "x4code": "PAR,DA,,RSD",
+      "description": "(partial differencial cross section d/da relative to 90 deg)",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA,,RTH": {
+      "x4code": "PAR,DA,,RTH",
+      "description": "(partial differencial cs d/da relative to rutherf.scatt.)",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA,,TT": {
+      "x4code": "PAR,DA,,TT",
+      "description": "(thick-target angular distribution , partial reaction)",
+      "param2": "DA",
+      "active": true
+    },
+    "PAR,DA,G,RES": {
+      "x4code": "PAR,DA,G,RES",
+      "description": "(partial differencial cross section d/da at ressonance)",
+      "param2": "DA",
+      "active": true
+    },
+    "PAR/ICL,DA": {
+      "x4code": "PAR/ICL,DA",
+      "description": "(partial differencial c.s. d/da uncorrelated for other channels emit.the same particle )",
+      "param2": "DA",
+      "active": true
+    },
+    "PAR/ICL,DA,*": {
+      "x4code": "PAR/ICL,DA,*",
+      "description": "(partial differencial c.s. d/da(*) uncorrelated for other channels emit. same particle )",
+      "param2": "DA",
+      "active": true
+    },
+    "PAR/ICL,DA,,4PI": {
+      "x4code": "PAR/ICL,DA,,4PI",
+      "description": "(particle differencial c.s. d/da uncorrelated for other channels emit.the same particle *4pi)",
+      "param2": "B",
+      "active": true
+    },
+    "PAR/IND,DA": {
+      "x4code": "PAR/IND,DA",
+      "description": "(partial angular distribution, direct formation)",
+      "param2": "DA",
+      "active": false
+    },
+    "PAR/M-,DA,G": {
+      "x4code": "PAR/M-,DA,G",
+      "description": "(angle distribution of discrete gammas excluding isomeric transition )",
+      "param2": "DA",
+      "active": false
+    },
+    "SEQ/PAR,DA,*": {
+      "x4code": "SEQ/PAR,DA,*",
+      "description": "(partial angle distribution of specified particle ,specified reaction sequence )",
+      "param2": "DA",
+      "active": true
+    },
+    ",DA,*,COS": {
+      "x4code": ",DA,*,COS",
+      "description": "(coeff. of cosine expansion for particle specified )",
+      "param2": "DA",
+      "active": true
+    },
+    ",DA,*,COS/RS": {
+      "x4code": ",DA,*,COS/RS",
+      "description": "(cos.coefficient 4pi/sig d/da=sum(2l+1)a(l)cos**l) angular distribution of particle specified, cosine-coeff. of the form 4pi/sig d-sig/d-omega = 1+sum(a(l)cos**l))",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,*,COS/RSD": {
+      "x4code": ",DA,*,COS/RSD",
+      "description": "(cos.coefficient (d/da)/(d/da90deg)=1+sum(a(l)cos**l))",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,*,LEG": {
+      "x4code": ",DA,*,LEG",
+      "description": "(legendle coefficient d/da=a(0)+sum(a(l)*p(l)) for particle specified )",
+      "param2": "DA",
+      "active": true
+    },
+    ",DA,*,LEG/RS": {
+      "x4code": ",DA,*,LEG/RS",
+      "description": "(legendre coefficient 4pi/sig d/da=1+sum(a(l)))(differential cs with respect to specified particle, legendre coeff. of the form 4pi/sig d-sig/d-omega = 1 + sum( a(l)p(l) )",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,*,LEG/RSD": {
+      "x4code": ",DA,*,LEG/RSD",
+      "description": "(legendle coefficient d/da=1+sum(a(l))relative 90deg f.specified particle )",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,*,LEG/RSL": {
+      "x4code": ",DA,*,LEG/RSL",
+      "description": "(legendle coefficient 4pi/sig d/da=1+sum((2l+1)a(l)p(l)))",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,*,S2T": {
+      "x4code": ",DA,*,S2T",
+      "description": "(sine**2 coefficient d/da=a(0)+sum(a(l)sin**2(l*theta)))",
+      "param2": "DA",
+      "active": true
+    },
+    ",DA,*,S2T/RS0": {
+      "x4code": ",DA,*,S2T/RS0",
+      "description": "(coefficient d/da relative to 0deg=1+sum(a(l)sin**2(l*theta)))",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,*,S2T/RSD": {
+      "x4code": ",DA,*,S2T/RSD",
+      "description": "(coefficient d/darelative 90deg=a(0)+sum(a(l)sin**2(l*theta)))",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,,COS": {
+      "x4code": ",DA,,COS",
+      "description": "(cosine coefficient d/da = a(0)+sum(a(l)cos**l))(differencial cs, cosine-coeff. of the form d-sig/d-omega = a(0) + sum( a(l)cos**l ))",
+      "param2": "DA",
+      "active": true
+    },
+    ",DA,,COS/1K2": {
+      "x4code": ",DA,,COS/1K2",
+      "description": "(cosine coefficient k**2 d/da = sum(a(l)cos**l))(differencial cs, cosine-coeff. of the form k**2 d-sig/d-omega = sum(a(l)*cos**l) )",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,,COS/RS": {
+      "x4code": ",DA,,COS/RS",
+      "description": "(cosine coefficient 4pi/sig d/da=1+sum(a(l)cos**l))",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,,COS/RSD": {
+      "x4code": ",DA,,COS/RSD",
+      "description": "(cosne coefficient (d/da)/(d/da,90deg)=sum(a(l)cos**l))",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,,CS2": {
+      "x4code": ",DA,,CS2",
+      "description": "(cos coefficient d/da=a(0)+sum(a(l)*sin**2*cos**l))",
+      "param2": "DA",
+      "active": true
+    },
+    ",DA,,LEG": {
+      "x4code": ",DA,,LEG",
+      "description": "(legendre coefficient d/da=a(0)+sum(a(l)*p(l)))(differencial cs, legendre coeff. of the form d-sig/d-omega = a(0) + sum( a(l)*p(l) ))",
+      "param2": "DA",
+      "active": true
+    },
+    ",DA,,LEG/1K2": {
+      "x4code": ",DA,,LEG/1K2",
+      "description": "(legendre coefficient k**2 d/da=sum(a(l)*p(l)))(differencial cs, legendre coeff. of the form k**2 d-sig/d-omega = sum ( a(l)*p(l) ))",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,,LEG/2L2": {
+      "x4code": ",DA,,LEG/2L2",
+      "description": "(legendre coefficient d/da=1/2sum((2l+1)a(l)*p(l)))",
+      "param2": "DA",
+      "active": true
+    },
+    ",DA,,LEG/L4P": {
+      "x4code": ",DA,,LEG/L4P",
+      "description": "(legendre coefficient 4pi d/da=sum((2l+1)a(l)*p(l)))",
+      "param2": "DA",
+      "active": false
+    },
+    ",DA,,LEG/RS": {
+      "x4code": ",DA,,LEG/RS",
+      "description": "(legendre coefficient 4pi/sig d/da=1+sum(a(l)*p(l)))",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,,LEG/RS0": {
+      "x4code": ",DA,,LEG/RS0",
+      "description": "(legendle coefficient (d/da)/(d/da,0deg)=sum(a(l)*p(l)))",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,,LEG/RSD": {
+      "x4code": ",DA,,LEG/RSD",
+      "description": "(legendle coefficient d/da=1+sum(a(l)) relative 90deg.)(differencial cs, legendre coeff. of the form 4pi/sig(90deg) d-sig/d-omega =    = 1 + sum(a(l)*p(l)))",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,,LEG/RSL": {
+      "x4code": ",DA,,LEG/RSL",
+      "description": "(legendle coefficient 4pi/sig d/da=sum((2l+1)a(l)*p(l)))",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA,,LEG/RTH": {
+      "x4code": ",DA,,LEG/RTH",
+      "description": "(legendle coefficient (d/da)/(d/da)ruth.=a(0)+sum(a(l)*p(l)))",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA/DE,,LEG/RS": {
+      "x4code": ",DA/DE,,LEG/RS",
+      "description": "(legendre coeff. d2/da/de'=sum(a(e',l)*p(l)))",
+      "param2": "NO",
+      "active": true
+    },
+    "EM,DA,,LEG": {
+      "x4code": "EM,DA,,LEG",
+      "description": "(legendle coefficient d/da=a(0)+sum(a(l)*p(l)) for emis. c/s)",
+      "param2": "DA",
+      "active": true
+    },
+    "EM,DA,,LEG/RSL": {
+      "x4code": "EM,DA,,LEG/RSL",
+      "description": "(legendle coefficient for fit to (4pi/sig)d/da emission c/s)",
+      "param2": "NO",
+      "active": true
+    },
+    "EM,DA/DE,,LEG/RSL": {
+      "x4code": "EM,DA/DE,,LEG/RSL",
+      "description": "(legendle coefficient for fit to double-differencial emission cs)",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA,*,COS": {
+      "x4code": "PAR,DA,*,COS",
+      "description": "(cosine coefficient for fit to partial d/da of particle specified)",
+      "param2": "DA",
+      "active": true
+    },
+    "PAR,DA,*,COS/RSD": {
+      "x4code": "PAR,DA,*,COS/RSD",
+      "description": "(partial cos coef(d/da)/(d/da,90deg)=sum(a(l)cos**l) of particle specified(differencial partial cross section for particle specified, cosine-coeff. of the form (d-sig/d-omega)/(d-sig/d-omega at 90 deg) =    sum ( a(l)cos**l ))",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA,*,LEG": {
+      "x4code": "PAR,DA,*,LEG",
+      "description": "(legendle coefficient for fit to partialparticle emission d/da)",
+      "param2": "DA",
+      "active": true
+    },
+    "PAR,DA,*,LEG/RS": {
+      "x4code": "PAR,DA,*,LEG/RS",
+      "description": "(legendle coefficient particle 4pi/sig d/da=1+sum(a(l)p(l)))",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA,*,LEG/RSD": {
+      "x4code": "PAR,DA,*,LEG/RSD",
+      "description": "(legendle cf.partial 4pi/sig(90dg)d/da=1+sum a(l)p(l))",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA,,COS": {
+      "x4code": "PAR,DA,,COS",
+      "description": "(cosine coefficient for fit to partial d/da)(differencial partial cs, cosine-coeff.of the form d-sig/d-omega = a(0) + sum( a(l)cos**l ))",
+      "param2": "DA",
+      "active": true
+    },
+    "PAR,DA,,COS/RS": {
+      "x4code": "PAR,DA,,COS/RS",
+      "description": "(particle cos coefficient 4pi/sig d/da=1+sum(a(l)cos**l))",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA,,COS/RSD": {
+      "x4code": "PAR,DA,,COS/RSD",
+      "description": "(partial cos coef(d/da)/(d/da,90deg)=sum(a(l)cos**l))",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA,,LEG": {
+      "x4code": "PAR,DA,,LEG",
+      "description": "(legendre coefficient for fit to partial d/da)(differencial partial cs, legendre-coeff.of the form d-sig/d-omega = a(0) + sum( a(l)*p(l) ))",
+      "param2": "DA",
+      "active": true
+    },
+    "PAR,DA,,LEG/1K2": {
+      "x4code": "PAR,DA,,LEG/1K2",
+      "description": "(partial legendle coefficient fit to k**2 d/da=sum(a(l)*p(l)))",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA,,LEG/2L2": {
+      "x4code": "PAR,DA,,LEG/2L2",
+      "description": "(legendle coefficient fit to partl d/da=1/2sum(2l+1)a(l)p(l))",
+      "param2": "DA",
+      "active": true
+    },
+    "PAR,DA,,LEG/RS": {
+      "x4code": "PAR,DA,,LEG/RS",
+      "description": "(legendle coefficient fit particle 4pi/sig d/da=1+sum(a(l)p(l)))",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA,,LEG/RS0": {
+      "x4code": "PAR,DA,,LEG/RS0",
+      "description": "(legendle coefficient fit to partial (d/da)/(d/da,0deg))",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA,,LEG/RSD": {
+      "x4code": "PAR,DA,,LEG/RSD",
+      "description": "(partial legendle coef(4pi/sig,90deg)d/da=1+sum(a(l)p(l)))",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA,,LEG/RSL": {
+      "x4code": "PAR,DA,,LEG/RSL",
+      "description": "(particle legendle coef(4pi/sig)d/da=sum((2l+1)a(l)p(l)))",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,DA,,S2T": {
+      "x4code": "PAR,DA,,S2T",
+      "description": "(coefficient partial d/da=a(0)+sum(a(l)sin**2(l*theta)))",
+      "param2": "DA",
+      "active": true
+    },
+    "PR,DA,N,LEG/RS": {
+      "x4code": "PR,DA,N,LEG/RS",
+      "description": "(legendle coefficient 4pi/sig d/da=1+sum(a(l)p(l)),pr neuts.)",
+      "param2": "NO",
+      "active": true
+    },
+    ",FM/DA,,AL1": {
+      "x4code": ",FM/DA,,AL1",
+      "description": "(legendle coefficient of 1st kind for spin-pol.probable * d/da)",
+      "param2": "DA",
+      "active": true
+    },
+    ",POL,*": {
+      "x4code": ",POL,*",
+      "description": "(spin-polarization probability of particle specified )",
+      "param2": "NO",
+      "active": true
+    },
+    ",POL/DA": {
+      "x4code": ",POL/DA",
+      "description": "(spin-polarization probability d/da)(differential spin-polarization probability with respect to angle of emission)",
+      "param2": "NO",
+      "active": true
+    },
+    ",POL/DA,*": {
+      "x4code": ",POL/DA,*",
+      "description": "(differencial spin-polariz. probable d/da of particle specified)",
+      "param2": "NO",
+      "active": true
+    },
+    ",POL/DA,*,ASY/PP": {
+      "x4code": ",POL/DA,*,ASY/PP",
+      "description": "(asymmetry parallel/perpend of particle specified)",
+      "param2": "NO",
+      "active": true
+    },
+    ",POL/DA,*,VAP": {
+      "x4code": ",POL/DA,*,VAP",
+      "description": "(vector analyzing power, it(11) for particle specified)",
+      "param2": "NO",
+      "active": true
+    },
+    ",POL/DA,,ANA/LEG": {
+      "x4code": ",POL/DA,,ANA/LEG",
+      "description": "(analyzing power,legendle coefficient d/da=a(0)+sum(a(l)*p(l)))",
+      "param2": "NO",
+      "active": true
+    },
+    ",POL/DA,,ASY/PP": {
+      "x4code": ",POL/DA,,ASY/PP",
+      "description": "(asymmetry as a function of incident parallel/perpend.)",
+      "param2": "NO",
+      "active": true
+    },
+    ",POL/DA,,ASY/PP/RES": {
+      "x4code": ",POL/DA,,ASY/PP/RES",
+      "description": "",
+      "param2": "",
+      "active": true
+    },
+    ",POL/DA,,AYY": {
+      "x4code": ",POL/DA,,AYY",
+      "description": "(tensor analyzing power,incident projectile spin normal scatt.pl)",
+      "param2": "NO",
+      "active": false
+    },
+    ",POL/DA,,LEG": {
+      "x4code": ",POL/DA,,LEG",
+      "description": "(legendre coefficient for fit to spin-pol. probability)",
+      "param2": "NO",
+      "active": true
+    },
+    ",POL/DA/DA/DE,*,ANA": {
+      "x4code": ",POL/DA/DA/DE,*,ANA",
+      "description": "(analyzing power d2/da(*)/da(*))",
+      "param2": "",
+      "active": true
+    },
+    ",POL/DA/DA/DE,,ANANO": {
+      "x4code": ",POL/DA/DA/DE,,ANANO",
+      "description": "(analyzing power da1/da2/de1 for 2 particles)",
+      "param2": "",
+      "active": true
+    },
+    ",POL/DA/DE": {
+      "x4code": ",POL/DA/DE",
+      "description": "(differencial spin-pol.probab.with respect to angle and energy)",
+      "param2": "NO",
+      "active": true
+    },
+    ",POL/DA/DE,*": {
+      "x4code": ",POL/DA/DE,*",
+      "description": "(double-differencial spin-pol.probab.f.particle specified)",
+      "param2": "NO",
+      "active": true
+    },
+    ",POL/DA/DE,*,ANA": {
+      "x4code": ",POL/DA/DE,*,ANA",
+      "description": "(analyzing power da/de for particle specified)",
+      "param2": "NO",
+      "active": true
+    },
+    ",POL/DA/DE,*,VAP": {
+      "x4code": ",POL/DA/DE,*,VAP",
+      "description": "(vector analyzing power,it(11)/da(*)/de(*), f.particle specified )",
+      "param2": "NO",
+      "active": true
+    },
+    ",POL/DA/DE,*/*,ANANO": {
+      "x4code": ",POL/DA/DE,*/*,ANANO",
+      "description": "(analyzing power d2/da/de for specified particle pair)",
+      "param2": "",
+      "active": true
+    },
+    ",POL/DA/DE,,ASY": {
+      "x4code": ",POL/DA/DE,,ASY",
+      "description": "(asymm.of polarized particle with respect to angle and energy )",
+      "param2": "NO",
+      "active": true
+    },
+    ",POL/DA/DE,,TST": {
+      "x4code": ",POL/DA/DE,,TST",
+      "description": "(total spin transfer with respect to angle and energy)",
+      "param2": "NO",
+      "active": true
+    },
+    ",POL/DA2/DE2,*/*,ANA": {
+      "x4code": ",POL/DA2/DE2,*/*,ANA",
+      "description": "(polarization d/da1(*)/da2(*)/de1(*)/de2(*))",
+      "param2": "",
+      "active": true
+    },
+    ",POL/DT,,ANA": {
+      "x4code": ",POL/DT,,ANA",
+      "description": "(analyzing power with respect to 4-momentum transfer)",
+      "param2": "NO",
+      "active": true
+    },
+    "20,POL/DA,*,TAP": {
+      "x4code": "20,POL/DA,*,TAP",
+      "description": "(tensor analyzing power, t20 for particle specified)",
+      "param2": "NO",
+      "active": true
+    },
+    "20/PAR,POL/DA,*,TAP": {
+      "x4code": "20/PAR,POL/DA,*,TAP",
+      "description": "(tensor analyzing power, t20/da(*)/de(*))",
+      "param2": "",
+      "active": true
+    },
+    "21,POL/DA,*,TAP": {
+      "x4code": "21,POL/DA,*,TAP",
+      "description": "(tensor analyzing power, t21 for particle specified)",
+      "param2": "NO",
+      "active": true
+    },
+    "21/PAR,POL/DA,*,TAP": {
+      "x4code": "21/PAR,POL/DA,*,TAP",
+      "description": "(tensor analyzing power, t21/da(*)/de(*))",
+      "param2": "",
+      "active": true
+    },
+    "22,POL/DA,*,TAP": {
+      "x4code": "22,POL/DA,*,TAP",
+      "description": "(tensor analyzing power, t22 for particle specified)",
+      "param2": "NO",
+      "active": true
+    },
+    "22/PAR,POL/DA,*,TAP": {
+      "x4code": "22/PAR,POL/DA,*,TAP",
+      "description": "(tensor analyzing power, t22/da(*)/de(*))",
+      "param2": "",
+      "active": true
+    },
+    "LL,POL/DA,*,D": {
+      "x4code": "LL,POL/DA,*,D",
+      "description": "(spin rotation parameter, d(ll), for particle specified )",
+      "param2": "NO",
+      "active": true
+    },
+    "LL,POL/DA/DE,*,D": {
+      "x4code": "LL,POL/DA/DE,*,D",
+      "description": "(double differencial spin rotat. parameter f.particle specified d(ll))",
+      "param2": "NO",
+      "active": true
+    },
+    "LL,POL/DA2/DE2,*/*,D": {
+      "x4code": "LL,POL/DA2/DE2,*/*,D",
+      "description": "(double differencial spin rotation parameter, d(ll))",
+      "param2": "",
+      "active": true
+    },
+    "LL/PAR,POL/DA,,D": {
+      "x4code": "LL/PAR,POL/DA,,D",
+      "description": "(spin-rotation parameter, d(ll), particle reaction)",
+      "param2": "NO",
+      "active": true
+    },
+    "LON,POL,,DSP/ASY": {
+      "x4code": "LON,POL,,DSP/ASY",
+      "description": "(spin-spin asymmetry for longitudinal spin states)",
+      "param2": "NO",
+      "active": true
+    },
+    "LS,POL/DA,*,D": {
+      "x4code": "LS,POL/DA,*,D",
+      "description": "(spin rotation parameter, d(ls), for particle specified )",
+      "param2": "NO",
+      "active": true
+    },
+    "LS,POL/DA/DE,*,D": {
+      "x4code": "LS,POL/DA/DE,*,D",
+      "description": "(double differencial spin rotat. parameter f.particle specified d(ls))",
+      "param2": "NO",
+      "active": true
+    },
+    "LS,POL/DA2/DE2,*/*,D": {
+      "x4code": "LS,POL/DA2/DE2,*/*,D",
+      "description": "(double-differencial spin rotation parameter d(ls))",
+      "param2": "",
+      "active": true
+    },
+    "LS/PAR,POL/DA,,D": {
+      "x4code": "LS/PAR,POL/DA,,D",
+      "description": "(spin-rotation parameter, d(ls), particle reaction)",
+      "param2": "NO",
+      "active": true
+    },
+    "NN,POL/DA,*,D": {
+      "x4code": "NN,POL/DA,*,D",
+      "description": "(spin-depolarization parameter,d(nn),f.particle specified )",
+      "param2": "NO",
+      "active": true
+    },
+    "NN,POL/DA/DE,*,D": {
+      "x4code": "NN,POL/DA/DE,*,D",
+      "description": "(double differencial spin rotat. parameter f.particle specified d(nn))",
+      "param2": "NO",
+      "active": true
+    },
+    "NN,POL/DA2/DE2,*/*,D": {
+      "x4code": "NN,POL/DA2/DE2,*/*,D",
+      "description": "(double differencial spin-flip probable d/da/de, s(nn))",
+      "param2": "",
+      "active": true
+    },
+    "NN/PAR,POL/DA,*,ANA": {
+      "x4code": "NN/PAR,POL/DA,*,ANA",
+      "description": "(spin rotation parameter d(nn),factor of 4-momentumn transfer)",
+      "param2": "",
+      "active": true
+    },
+    "NN/PAR,POL/DA,,D": {
+      "x4code": "NN/PAR,POL/DA,,D",
+      "description": "(spin-depolarization parameter , d(nn), particle react.)",
+      "param2": "NO",
+      "active": true
+    },
+    "NN/PAR,POL/DA,,K": {
+      "x4code": "NN/PAR,POL/DA,,K",
+      "description": "(spin-transfer parameter, k(nn), particle reaction)",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,FM/DA,,AL1/RS": {
+      "x4code": "PAR,FM/DA,,AL1/RS",
+      "description": "(4pi/sig polarized * d/da legendle coefficient of 1st kind)(product of spin-polarization probability and partial differential cross section, coefficients of associated legendre functions of the first kind * 4pi/sigma)",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,POL/DA": {
+      "x4code": "PAR,POL/DA",
+      "description": "(differencial spin-polarization probable for partial react.)",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,POL/DA,*,VAP": {
+      "x4code": "PAR,POL/DA,*,VAP",
+      "description": "(vector analyzing power,particle react.,it11 for particle specified )",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,POL/DA,,ANA/LEG": {
+      "x4code": "PAR,POL/DA,,ANA/LEG",
+      "description": "(partial analyzing power)",
+      "param2": "",
+      "active": true
+    },
+    "PAR,POL/DA,,ASY/PPNO": {
+      "x4code": "PAR,POL/DA,,ASY/PPNO",
+      "description": "(partial asymmetry, incident parallel/perpendicular))",
+      "param2": "",
+      "active": true
+    },
+    "PAR,POL/DA,,TST": {
+      "x4code": "PAR,POL/DA,,TST",
+      "description": "(partial total spin transfer with respect to angle)",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,POL/DA,G": {
+      "x4code": "PAR,POL/DA,G",
+      "description": "(differencial polarization for gamma-ray specified d/da)",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,POL/DA,N+A": {
+      "x4code": "PAR,POL/DA,N+A",
+      "description": "(differencial spin-polarized probable for partial react.,relative angle )",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,POL/DA/DA,*/*,ANA": {
+      "x4code": "PAR,POL/DA/DA,*/*,ANA",
+      "description": "(differential spin-polarization probability with respect to relative angle specified partiles, partial reaction)",
+      "param2": "",
+      "active": true
+    },
+    "PAR,POL/DA/DA/DE,,ANA": {
+      "x4code": "PAR,POL/DA/DA/DE,,ANA",
+      "description": "",
+      "param2": "",
+      "active": true
+    },
+    "PAR,POL/DA/DE,*/*,ANA": {
+      "x4code": "PAR,POL/DA/DE,*/*,ANA",
+      "description": "(partial analyzing power da1/da2/de1 f. 2 particles)",
+      "param2": "",
+      "active": true
+    },
+    "SL,POL/DA,*,D": {
+      "x4code": "SL,POL/DA,*,D",
+      "description": "(spin rotation parameter, d(sl), for particle specified )",
+      "param2": "NO",
+      "active": true
+    },
+    "SL,POL/DA/DE,*,D": {
+      "x4code": "SL,POL/DA/DE,*,D",
+      "description": "(double differencial spin rotat. parameter f.particle specified , d(sl))",
+      "param2": "NO",
+      "active": true
+    },
+    "SL,POL/DA2/DE2,*/*,D": {
+      "x4code": "SL,POL/DA2/DE2,*/*,D",
+      "description": "(double-differencial spin rotation parameter d(sl))",
+      "param2": "",
+      "active": true
+    },
+    "SL/PAR,POL/DA,,D": {
+      "x4code": "SL/PAR,POL/DA,,D",
+      "description": "(spin-rotation parameter, d(sl), particle reaction)",
+      "param2": "NO",
+      "active": true
+    },
+    "SS,POL/DA,*,D": {
+      "x4code": "SS,POL/DA,*,D",
+      "description": "(spin rotation parameter, d(ss), for particle specified )",
+      "param2": "NO",
+      "active": true
+    },
+    "SS,POL/DA/DE,*,D": {
+      "x4code": "SS,POL/DA/DE,*,D",
+      "description": "(double differencial spin rotat.parameter f.particle specified , d(ss))",
+      "param2": "NO",
+      "active": true
+    },
+    "SS,POL/DA2/DE2,*/*,D": {
+      "x4code": "SS,POL/DA2/DE2,*/*,D",
+      "description": "(double-differencial spin rotation parameter d(ss))",
+      "param2": "",
+      "active": true
+    },
+    "SS/PAR,POL/DA,*,ANA": {
+      "x4code": "SS/PAR,POL/DA,*,ANA",
+      "description": "(spin rotation parameter d(ss),factor of 4-momentumn transfer)",
+      "param2": "",
+      "active": true
+    },
+    "SS/PAR,POL/DA,,D": {
+      "x4code": "SS/PAR,POL/DA,,D",
+      "description": "(spin-rotation parameter, d(ss), particle reaction)",
+      "param2": "NO",
+      "active": true
+    },
+    "TRS,POL,,DSP/ASY": {
+      "x4code": "TRS,POL,,DSP/ASY",
+      "description": "(spin-spin asymmetry for transverse spin states)",
+      "param2": "NO",
+      "active": true
+    },
+    ",DE,*+*": {
+      "x4code": ",DE,*+*",
+      "description": "(energy spectrum of correlated particles specified )",
+      "param2": "DE",
+      "active": true
+    },
+    ",DE,*+*+*": {
+      "x4code": ",DE,*+*+*",
+      "description": "(energy spectrum of correlated particles specified )",
+      "param2": "DE",
+      "active": true
+    },
+    ",DP": {
+      "x4code": ",DP",
+      "description": "(differencial cross section with respect to linear momentumn )",
+      "param2": "DP",
+      "active": true
+    },
+    ",DT": {
+      "x4code": ",DT",
+      "description": "(differencial c/s with respect to 4-momentumn transfer squared)",
+      "param2": "D4",
+      "active": true
+    },
+    "DI,DE": {
+      "x4code": "DI,DE",
+      "description": "(energy spectrum of outgoing particle ,dir.interaction coneutron )",
+      "param2": "DE",
+      "active": true
+    },
+    "DL/GRP,DE,N       1/E": {
+      "x4code": "DL/GRP,DE,N       1/E",
+      "description": "(energy spectrum for specific delayed neutron group)",
+      "param2": "",
+      "active": false
+    },
+    "DL/GRP,NU/DE": {
+      "x4code": "DL/GRP,NU/DE",
+      "description": "(energy spectrum for specific delayed neutron group)",
+      "param2": "FYDE",
+      "active": true
+    },
+    "EM,DE": {
+      "x4code": "EM,DE",
+      "description": "(particle emission energy spectrum)(particle emission energy spectrum, excluding elastic scattering)",
+      "param2": "DE",
+      "active": true
+    },
+    "LP,DP": {
+      "x4code": "LP,DP",
+      "description": "(differencial cs with respect to longitudinal secondary momentum)",
+      "param2": "DP",
+      "active": true
+    },
+    "LP,IPA/DP": {
+      "x4code": "LP,IPA/DP",
+      "description": "(cs differencial by long.section lin.momentumn ,integrate over angle range)",
+      "param2": "DP",
+      "active": true
+    },
+    "LP,IPA/DP,*": {
+      "x4code": "LP,IPA/DP,*",
+      "description": "(cs dif.by lon.section li.momentumn integrate ov.an.ran.,partial spe.)",
+      "param2": "DP",
+      "active": true
+    },
+    "LP,IPA/DP,*/*": {
+      "x4code": "LP,IPA/DP,*/*",
+      "description": "(differencial cs d/da(*)/dp(*) integrated over angle range)",
+      "param2": "DP",
+      "active": true
+    },
+    "LP/PAR,DP": {
+      "x4code": "LP/PAR,DP",
+      "description": "(partial differencial cross section with respect to . longitudinal linear momentum)",
+      "param2": "DP",
+      "active": true
+    },
+    "PAR,DE": {
+      "x4code": "PAR,DE",
+      "description": "(spectrum of outgoing particles for specified level)",
+      "param2": "DE",
+      "active": true
+    },
+    "PAR,DE,*": {
+      "x4code": "PAR,DE,*",
+      "description": "(spectrum of particle specified for specified level)",
+      "param2": "DE",
+      "active": true
+    },
+    "PAR,DP,*+*": {
+      "x4code": "PAR,DP,*+*",
+      "description": "(differencial cs with respect to section momentum of particle pair)",
+      "param2": "DP",
+      "active": true
+    },
+    "PR,DE,N": {
+      "x4code": "PR,DE,N",
+      "description": "(differencial cross section with respect to primary fission neutron energy)",
+      "param2": "DE",
+      "active": true
+    },
+    "PRE,DE,*F": {
+      "x4code": "PRE,DE,*F",
+      "description": "(energy spectrum of primary fission fragment specified )",
+      "param2": "DE",
+      "active": true
+    },
+    "PRE,DE,LF+HF": {
+      "x4code": "PRE,DE,LF+HF",
+      "description": "(sum of primary fragment energy ,total kinetic energy spectrum)",
+      "param2": "DE",
+      "active": true
+    },
+    "TER,DE,*": {
+      "x4code": "TER,DE,*",
+      "description": "(energy spectr.of particle specified ,ternary fission )",
+      "param2": "DE",
+      "active": true
+    },
+    "TP,DP": {
+      "x4code": "TP,DP",
+      "description": "(differencial cs with respect to transv.secondary momentum)",
+      "param2": "DP",
+      "active": true
+    },
+    ",DA/DA": {
+      "x4code": ",DA/DA",
+      "description": "(double differencial cross section d2/da/da)(double-differencial cross section with respect to 2 angles referring to 2 outgoing particles)",
+      "param2": "DA2",
+      "active": true
+    },
+    ",DA/DA,*+*/*": {
+      "x4code": ",DA/DA,*+*/*",
+      "description": "(angular correlated betw.specified particles,relative angle)",
+      "param2": "DA2",
+      "active": false
+    },
+    ",DA/DA,*/*": {
+      "x4code": ",DA/DA,*/*",
+      "description": "(angular correlation betw.specified particles)",
+      "param2": "DA2",
+      "active": true
+    },
+    ",DA/DA,*/*+*": {
+      "x4code": ",DA/DA,*/*+*",
+      "description": "(double differencial cross section d2/da(*)/da(*+*))",
+      "param2": "DA2",
+      "active": true
+    },
+    ",DA/DA,A/A+A,NCP": {
+      "x4code": ",DA/DA,A/A+A,NCP",
+      "description": "(angle correlated betw.alphas,relative angle,non-coplanar)",
+      "param2": "DA2",
+      "active": true
+    },
+    ",DA/DA,P+P": {
+      "x4code": ",DA/DA,P+P",
+      "description": "(angular correlation of protons (relative angle))",
+      "param2": "DA2",
+      "active": true
+    },
+    ",DA/DE,*": {
+      "x4code": ",DA/DE,*",
+      "description": "(double differencial cross section d2/da/de of particle specified )",
+      "param2": "DAE",
+      "active": true
+    },
+    ",DA/DE,*,RSD": {
+      "x4code": ",DA/DE,*,RSD",
+      "description": "(double differencial cs d2/da/de of particle specified relative 90deg.)",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA/DE,,RSD": {
+      "x4code": ",DA/DE,,RSD",
+      "description": "(double differencial cross section d2/da/de relative to 90 deg.)",
+      "param2": "NO",
+      "active": true
+    },
+    ",DA/DE,,TMP": {
+      "x4code": ",DA/DE,,TMP",
+      "description": "(double differencial cross section d2/da/de at other than room temperature .)",
+      "param2": "DAE",
+      "active": true
+    },
+    ",IPA/DE": {
+      "x4code": ",IPA/DE",
+      "description": "(double-differencial cs integrate over partial angle range)",
+      "param2": "DE",
+      "active": true
+    },
+    ",IPA/DE,G": {
+      "x4code": ",IPA/DE,G",
+      "description": "(double-differencial gamma cs integrate over particle angle range)",
+      "param2": "DE",
+      "active": true
+    },
+    ",IPA/DE,RSD": {
+      "x4code": ",IPA/DE,RSD",
+      "description": "(double-differencial cs f.residual integrate over particle angle range)",
+      "param2": "DE",
+      "active": true
+    },
+    ",IPA/DP": {
+      "x4code": ",IPA/DP",
+      "description": "(double-differencial cs d2/dp/da integrate over particle angle range)",
+      "param2": "DP",
+      "active": true
+    },
+    ",IPP/DA": {
+      "x4code": ",IPP/DA",
+      "description": "(double-differencial cs d2/dp/da integrate over particle momentumn range)",
+      "param2": "DA",
+      "active": true
+    },
+    "DI,DA/DE": {
+      "x4code": "DI,DA/DE",
+      "description": "(double differencial c/s d2/da/dedir.interaction contr)",
+      "param2": "DAE",
+      "active": true
+    },
+    "EM,DA/DE": {
+      "x4code": "EM,DA/DE",
+      "description": "(double differencial emission cross section, d/da/de)",
+      "param2": "DAE",
+      "active": true
+    },
+    "ICL,DA/DE,*/*": {
+      "x4code": "ICL,DA/DE,*/*",
+      "description": "(d2/da(*)/de(*)uncorrelated for oth.channel emit.same particle )",
+      "param2": "DAE",
+      "active": true
+    },
+    "ICL,IPA/DE,*/*": {
+      "x4code": "ICL,IPA/DE,*/*",
+      "description": "(d2/da(*)/de(*)uncertainty f.ot.channel emission same partial integrate ov.an.)",
+      "param2": "DE",
+      "active": true
+    },
+    "IND,DA/DE": {
+      "x4code": "IND,DA/DE",
+      "description": "(double differencial c/s d2/da/de, direct formation)",
+      "param2": "DAE",
+      "active": false
+    },
+    "NN,DA/DE,,NSF": {
+      "x4code": "NN,DA/DE,,NSF",
+      "description": "(non-spin-flip probability (1-s(nn))*d2/da/de)",
+      "param2": "DAE",
+      "active": true
+    },
+    "PAR,DA/DE": {
+      "x4code": "PAR,DA/DE",
+      "description": "(partial double differencial cross-section)(partial double-differencial cross section for specific level of residual nucleus)",
+      "param2": "DAE",
+      "active": true
+    },
+    "PAR,DA/DE,*/*": {
+      "x4code": "PAR,DA/DE,*/*",
+      "description": "(particle double differencial cross-section d2/da(*)/de(*))",
+      "param2": "DAE",
+      "active": true
+    },
+    "PAR,IPA/DE,*+*": {
+      "x4code": "PAR,IPA/DE,*+*",
+      "description": "(partial d/da(*+*)/de(*+*) integrate over particle angle range)",
+      "param2": "DE",
+      "active": true
+    },
+    "PR,DA/DE": {
+      "x4code": "PR,DA/DE",
+      "description": "(double differential spectra of prompt fission particles)",
+      "param2": "DAE",
+      "active": true
+    },
+    "SEQ,DA/DE": {
+      "x4code": "SEQ,DA/DE",
+      "description": "(double-differencial cs for specified reaction sequence )(double-differencial cs for partial reaction specified by sequence of outgoing particles)",
+      "param2": "DAE",
+      "active": true
+    },
+    "TER,DA/DE,*": {
+      "x4code": "TER,DA/DE,*",
+      "description": "(double-differencial cs d2/da/de of particle specified ,ternary fission )",
+      "param2": "DAE",
+      "active": true
+    },
+    ",DA/DA/DE": {
+      "x4code": ",DA/DA/DE",
+      "description": "(triple differencial cross section d3/da/da/de)(triple-differencial cross section with respect to two angles and secondary energy of outgoing particles)",
+      "param2": "D3A",
+      "active": false
+    },
+    ",DA/DA/DE,*/*+*/*": {
+      "x4code": ",DA/DA/DE,*/*+*/*",
+      "description": "(triple differencial cross section d3/da(*)/da(*+*)/de(*))",
+      "param2": "D3A",
+      "active": true
+    },
+    ",DA/DA/DE,*/*/*": {
+      "x4code": ",DA/DA/DE,*/*/*",
+      "description": "(triple differencial cross section d3/da(*)/da(*)/de(*))",
+      "param2": "D3A",
+      "active": true
+    },
+    ",DA/DA/DE,*/*/*+*": {
+      "x4code": ",DA/DA/DE,*/*/*+*",
+      "description": "(triple differencial cs d3/da(*)/da(*)/de(relative energy *-*))",
+      "param2": "D3A",
+      "active": true
+    },
+    ",DA/DA/DE,*/*/*,NCP": {
+      "x4code": ",DA/DA/DE,*/*/*,NCP",
+      "description": "(triple-differencial cross section with respect to angles and relative energies of specified particles)",
+      "param2": "",
+      "active": true
+    },
+    ",DA/DA/DP,*/*+*/*+*": {
+      "x4code": ",DA/DA/DP,*/*+*/*+*",
+      "description": "",
+      "param2": "",
+      "active": true
+    },
+    ",DA/DE/DE,*/*/*": {
+      "x4code": ",DA/DE/DE,*/*/*",
+      "description": "(triple differencial cross section d3/da(*)/de(*)/de(*))",
+      "param2": "D3",
+      "active": true
+    },
+    ",DA2/DE2,*/*": {
+      "x4code": ",DA2/DE2,*/*",
+      "description": "(quadruple differencial cs d4/da(*)/de(*)/da(*)/de(*))",
+      "param2": "D4A",
+      "active": true
+    },
+    "PAR,DA/DA/DE": {
+      "x4code": "PAR,DA/DA/DE",
+      "description": "(partial triple differencial cross-section)(partial triple-differencial cross section for specific level of residual nucleus with respect to 2 angles and secondary energy of outgoing particles)",
+      "param2": "D3A",
+      "active": true
+    },
+    "PAR,DA/DA/DE,*/*/*D3A": {
+      "x4code": "PAR,DA/DA/DE,*/*/*D3A",
+      "description": "(partial triple differencial cross section d3/da(*)/da(*)/de(*))",
+      "param2": "",
+      "active": true
+    },
+    "PAR,DA/DA/DE,*/*/*+*": {
+      "x4code": "PAR,DA/DA/DE,*/*/*+*",
+      "description": "",
+      "param2": "",
+      "active": true
+    },
+    "SEQ,DA/DA/DE,P/P/PD3A": {
+      "x4code": "SEQ,DA/DA/DE,P/P/PD3A",
+      "description": "(triple-differencial cs d3/da(p)/da(p)/de(p),specified r.sequence )",
+      "param2": "",
+      "active": true
+    },
+    "SEQ,DA/DA/DE,T/N/RSD": {
+      "x4code": "SEQ,DA/DA/DE,T/N/RSD",
+      "description": "(triple-differencial cs for two proton angles and secondary proton energy, for reaction specified by sequence of outgoing particles)",
+      "param2": "",
+      "active": true
+    },
+    "(CUM),FY": {
+      "x4code": "(CUM),FY",
+      "description": "(fission-product yield (uncertain if cumulative))",
+      "param2": "FY",
+      "active": true
+    },
+    "(CUM),FY,,FRC": {
+      "x4code": "(CUM),FY,,FRC",
+      "description": "(fractional fission product yield (uncertain if cumulative))",
+      "param2": "NO",
+      "active": true
+    },
+    "(SEC),AKE,*F": {
+      "x4code": "(SEC),AKE,*F",
+      "description": "(average kinetic energy of fission fragments (uncertain if secondary))",
+      "param2": "E",
+      "active": true
+    },
+    "(SEC),AKE,LF+HF": {
+      "x4code": "(SEC),AKE,LF+HF",
+      "description": "(average total kinetic energy of light and heavy fission fragment uncertainty if secondary)",
+      "param2": "E",
+      "active": true
+    },
+    "(SEC),ZP": {
+      "x4code": "(SEC),ZP",
+      "description": "(most probable charge of fission fragment ,post-n-emission uncertain if secondary)",
+      "param2": "NO",
+      "active": true
+    },
+    ",AKE,*": {
+      "x4code": ",AKE,*",
+      "description": "(average kinetic energy of specified particle)",
+      "param2": "E",
+      "active": false
+    },
+    ",AKE,*F": {
+      "x4code": ",AKE,*F",
+      "description": "(average kinetic energy of specified fragment)",
+      "param2": "E",
+      "active": false
+    },
+    ",AKE,LF+HF": {
+      "x4code": ",AKE,LF+HF",
+      "description": "(average total kinetic energy of light and heavy fission fragment )",
+      "param2": "E",
+      "active": false
+    },
+    ",AKE/DA,*": {
+      "x4code": ",AKE/DA,*",
+      "description": "(average kinetic energy of specified particle given angle)",
+      "param2": "E",
+      "active": false
+    },
+    ",AP,*F,RES": {
+      "x4code": ",AP,*F,RES",
+      "description": "(most probable mass of fragment specified at resonance )",
+      "param2": "NO",
+      "active": true
+    },
+    ",FY,G": {
+      "x4code": ",FY,G",
+      "description": "(fission gamma yld for fission fragment specified)",
+      "param2": "FY",
+      "active": true
+    },
+    ",KE,,TT": {
+      "x4code": ",KE,,TT",
+      "description": "(kinetic energy of reaction production for thick target)",
+      "param2": "E",
+      "active": true
+    },
+    ",KE,LF+HF": {
+      "x4code": ",KE,LF+HF",
+      "description": "(total kinetic energy of light/heavy fragment pair specified )",
+      "param2": "E",
+      "active": true
+    },
+    ",KEM": {
+      "x4code": ",KEM",
+      "description": "(temperature erature of maxwellian distribution of reaction product)",
+      "param2": "E",
+      "active": true
+    },
+    ",KEP,HF": {
+      "x4code": ",KEP,HF",
+      "description": "(most probable kinetic energy of heavy fragments)",
+      "param2": "E",
+      "active": true
+    },
+    ",KEP,LF": {
+      "x4code": ",KEP,LF",
+      "description": "(most probable kinetic energy of light fragments)",
+      "param2": "E",
+      "active": true
+    },
+    "BIN,AKE,FF": {
+      "x4code": "BIN,AKE,FF",
+      "description": "(average kinetic energy of binary fission fragment )",
+      "param2": "E",
+      "active": true
+    },
+    "BIN/TER,DA/RAT,FF": {
+      "x4code": "BIN/TER,DA/RAT,FF",
+      "description": "(binary/ternary differential fission fragment distribution d/da)",
+      "param2": "NO",
+      "active": true
+    },
+    "CHG,FY/DE": {
+      "x4code": "CHG,FY/DE",
+      "description": "(total element fission yield of differencial d/d(fragment energy ))",
+      "param2": "FYDE",
+      "active": true
+    },
+    "CHG/TER,FY": {
+      "x4code": "CHG/TER,FY",
+      "description": "(total element yield of fission production ,ternary fission )",
+      "param2": "FY",
+      "active": true
+    },
+    "CHG/TER/CRN,FY": {
+      "x4code": "CHG/TER/CRN,FY",
+      "description": "(total element yield of ternary fission product pair specified)",
+      "param2": "FY",
+      "active": true
+    },
+    "CHN,FY/DE": {
+      "x4code": "CHN,FY/DE",
+      "description": "(total chain yield, fission production differencial d/d(fragment en))",
+      "param2": "FYDE",
+      "active": true
+    },
+    "CHN,SIG": {
+      "x4code": "CHN,SIG",
+      "description": "(total chain yield cross section f. fission products)",
+      "param2": "B",
+      "active": true
+    },
+    "CUM,FY,,FRC": {
+      "x4code": "CUM,FY,,FRC",
+      "description": "(fractional cumulative fission product yield)",
+      "param2": "NO",
+      "active": true
+    },
+    "CUM,FY/RAT": {
+      "x4code": "CUM,FY/RAT",
+      "description": "(cumulative fission-product yield isomeric ratio)",
+      "param2": "NO",
+      "active": true
+    },
+    "DL/GRP,KE": {
+      "x4code": "DL/GRP,KE",
+      "description": "(kinetic energy of delayed reaction production f.given half-life group )",
+      "param2": "E",
+      "active": true
+    },
+    "FIS,AKE,FF": {
+      "x4code": "FIS,AKE,FF",
+      "description": "(average kinetic energy of fragments of high energy fiss)",
+      "param2": "E",
+      "active": true
+    },
+    "IND,AKE/DA": {
+      "x4code": "IND,AKE/DA",
+      "description": "(average kinetic energy at given angle, direct formation)",
+      "param2": "E",
+      "active": false
+    },
+    "IND,FY,,FRC": {
+      "x4code": "IND,FY,,FRC",
+      "description": "(fractional independent fission product yield)",
+      "param2": "NO",
+      "active": true
+    },
+    "IND,FY,,RES": {
+      "x4code": "IND,FY,,RES",
+      "description": "(independent fission-product yield at resonance)",
+      "param2": "FY",
+      "active": true
+    },
+    "IND,FY/DE": {
+      "x4code": "IND,FY/DE",
+      "description": "(differencial independent fission product yield d/d(fragment energy ))",
+      "param2": "FYDE",
+      "active": true
+    },
+    "IND,FY/RAT": {
+      "x4code": "IND,FY/RAT",
+      "description": "(independent fission-product yield ratio)(independent fission fragment yield, isomeric ratio)",
+      "param2": "NO",
+      "active": true
+    },
+    "IND/CRN,FY": {
+      "x4code": "IND/CRN,FY",
+      "description": "(independent fission -production yield for fragment pair specified)",
+      "param2": "FY",
+      "active": true
+    },
+    "IND/M+,FY": {
+      "x4code": "IND/M+,FY",
+      "description": "(independent fission-product yield, including isomeric transition )",
+      "param2": "FY",
+      "active": false
+    },
+    "IND/TER,FY": {
+      "x4code": "IND/TER,FY",
+      "description": "(independent fission-production yield for ternary fission)",
+      "param2": "FY",
+      "active": true
+    },
+    "IND/TER/CRN,FY": {
+      "x4code": "IND/TER/CRN,FY",
+      "description": "(independent fission-production yield for fragment pair specified, ternary fission )",
+      "param2": "FY",
+      "active": true
+    },
+    "ISP/IND,FY": {
+      "x4code": "ISP/IND,FY",
+      "description": "(independent fission-product yield partial for intermediate products)",
+      "param2": "FY",
+      "active": true
+    },
+    "ISP/PRE,AKE,LF+HF": {
+      "x4code": "ISP/PRE,AKE,LF+HF",
+      "description": "(average total kinetic energy of primary fragment , partial for intermediate production )",
+      "param2": "E",
+      "active": true
+    },
+    "ISP/PRE,FY": {
+      "x4code": "ISP/PRE,FY",
+      "description": "(pre-neutron-emission fission yield, partial for intermediate product)",
+      "param2": "FY",
+      "active": true
+    },
+    "ISP/PRE,KE": {
+      "x4code": "ISP/PRE,KE",
+      "description": "(kinetic energy of specified primary fragment , partial for intermediate production )",
+      "param2": "E",
+      "active": true
+    },
+    "ISP/PRE,KE,LF+HF": {
+      "x4code": "ISP/PRE,KE,LF+HF",
+      "description": "(total kinetic energy of specified primary fragment , partial for intermediate production )",
+      "param2": "E",
+      "active": true
+    },
+    "ISP/SEC,FY": {
+      "x4code": "ISP/SEC,FY",
+      "description": "(post-neutron-emission fission yield, partial for intermediate product)",
+      "param2": "FY",
+      "active": true
+    },
+    "ISP/SEC,KE": {
+      "x4code": "ISP/SEC,KE",
+      "description": "(kinetic energy of post-n-emission production specified , partial for intermed.production )",
+      "param2": "E",
+      "active": true
+    },
+    "NUM,FY": {
+      "x4code": "NUM,FY",
+      "description": "(probability for production of n fission particles)",
+      "param2": "NO",
+      "active": true
+    },
+    "NUM,FY,*": {
+      "x4code": "NUM,FY,*",
+      "description": "(probability for production of n fission particle specified )",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,AP,HF": {
+      "x4code": "PAR,AP,HF",
+      "description": "(most probable mass of heavy fragment f.given excit.energy )",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR,FY/DA,*+*F": {
+      "x4code": "PAR,FY/DA,*+*F",
+      "description": "(partial differencial fission yields d/da(*+fission fragment specified))",
+      "param2": "FYDA",
+      "active": true
+    },
+    "PAR,FY/DE,LF/HF": {
+      "x4code": "PAR,FY/DE,LF/HF",
+      "description": "(fission primary yld at given light and heavy fragment energy )",
+      "param2": "FYDE",
+      "active": true
+    },
+    "PAR,KE": {
+      "x4code": "PAR,KE",
+      "description": "(kinetic energy of reaction production f.given energy group )",
+      "param2": "E",
+      "active": true
+    },
+    "PAR,ZP": {
+      "x4code": "PAR,ZP",
+      "description": "(most probable charge, for fragment energy given)",
+      "param2": "NO",
+      "active": true
+    },
+    "PAR/CHN,FY": {
+      "x4code": "PAR/CHN,FY",
+      "description": "(total chain yield of fission production f.given excit.energy )",
+      "param2": "FY",
+      "active": true
+    },
+    "PAR/IND,FY,G": {
+      "x4code": "PAR/IND,FY,G",
+      "description": "(absolute yield of primary fission gammas of def.energy)(absolute yield of prompt fission gammas of a definite energy or energy range)",
+      "param2": "FY",
+      "active": false
+    },
+    "PAR/PRE,FY": {
+      "x4code": "PAR/PRE,FY",
+      "description": "(primary fragment fission yield for given excitation energ)",
+      "param2": "FY",
+      "active": true
+    },
+    "PAR/PRE,FY,G": {
+      "x4code": "PAR/PRE,FY,G",
+      "description": "(partial yield of gammas vs. primary fragment mass)",
+      "param2": "FY",
+      "active": true
+    },
+    "PR,AKE/DA,N": {
+      "x4code": "PR,AKE/DA,N",
+      "description": "(av.e of primary neutron at given angle(neutron))(average kinetic energy of prompt neutron at a given angle of neutron)",
+      "param2": "E",
+      "active": false
+    },
+    "PR,FY,G": {
+      "x4code": "PR,FY,G",
+      "description": "(prompt fission gamma yields for fission fragment specified)",
+      "param2": "FY",
+      "active": true
+    },
+    "PR,FY/DE": {
+      "x4code": "PR,FY/DE",
+      "description": "(energy spectrum of prompt fission particles)",
+      "param2": "FYDE",
+      "active": true
+    },
+    "PR,FY/TKE": {
+      "x4code": "PR,FY/TKE",
+      "description": "(yield of promopt fission particles at given tke)",
+      "param2": "FY",
+      "active": true
+    },
+    "PR,KE": {
+      "x4code": "PR,KE",
+      "description": "(kinetic energy averaged for prompt production specified)",
+      "param2": "E",
+      "active": true
+    },
+    "PR,KE,N": {
+      "x4code": "PR,KE,N",
+      "description": "(av.kinetic energy of prompt neutron f.fission fragment specified)",
+      "param2": "E",
+      "active": true
+    },
+    "PR,KE/DA,N/N+LF": {
+      "x4code": "PR,KE/DA,N/N+LF",
+      "description": "(av.kinetic energy of neutron , function of ang(n+light fragment ))",
+      "param2": "E",
+      "active": true
+    },
+    "PR,KE/TKE,N": {
+      "x4code": "PR,KE/TKE,N",
+      "description": "(kinetic energy averaged for prompt neutron v.s. tke)",
+      "param2": "E",
+      "active": true
+    },
+    "PR,KEM": {
+      "x4code": "PR,KEM",
+      "description": "(temperature .of maxwellian distribution of prompt production specified)",
+      "param2": "E",
+      "active": true
+    },
+    "PR/FRG,FY,G": {
+      "x4code": "PR/FRG,FY,G",
+      "description": "(yield of prompt fission gammas from the fragment specified)",
+      "param2": "FY",
+      "active": true
+    },
+    "PR/PAR,AKE,N": {
+      "x4code": "PR/PAR,AKE,N",
+      "description": "(average energy f.specified group of prompt neutrons)",
+      "param2": "E",
+      "active": false
+    },
+    "PR/PAR,FY,G": {
+      "x4code": "PR/PAR,FY,G",
+      "description": "(prompt fission gamma yield for specified fragment & gamma energy)",
+      "param2": "FY",
+      "active": true
+    },
+    "PR/PAR,KE": {
+      "x4code": "PR/PAR,KE",
+      "description": "(kinetic energy of prompt reaction products, partial)",
+      "param2": "E",
+      "active": true
+    },
+    "PRE,AKE,FF": {
+      "x4code": "PRE,AKE,FF",
+      "description": "(average kinetic energy of primary fragment)(average kinetic energy of primary fission fragments)",
+      "param2": "E",
+      "active": true
+    },
+    "PRE,AKE,HF": {
+      "x4code": "PRE,AKE,HF",
+      "description": "(average kinetic energy of primary heavy fragment )",
+      "param2": "E",
+      "active": true
+    },
+    "PRE,AKE,LF": {
+      "x4code": "PRE,AKE,LF",
+      "description": "(average kinetic energy of primary light fragment )",
+      "param2": "E",
+      "active": true
+    },
+    "PRE,AKE,LF+HF": {
+      "x4code": "PRE,AKE,LF+HF",
+      "description": "(average total kinetic energy for primary fission fragment )",
+      "param2": "E",
+      "active": true
+    },
+    "PRE,AP": {
+      "x4code": "PRE,AP",
+      "description": "(most probable mass of fission fragment , pre-n-emission)",
+      "param2": "NO",
+      "active": true
+    },
+    "PRE,AP,*F": {
+      "x4code": "PRE,AP,*F",
+      "description": "(most probable mass, pre-n-emission of fragment specified )",
+      "param2": "NO",
+      "active": true
+    },
+    "PRE,AP/DA,FF": {
+      "x4code": "PRE,AP/DA,FF",
+      "description": "(ceneutron of mass distribution of primary fission fragment ,dependent on angle)",
+      "param2": "NO",
+      "active": true
+    },
+    "PRE,FY/DE": {
+      "x4code": "PRE,FY/DE",
+      "description": "(primary fission-product yield d/d(kinetic energy ))",
+      "param2": "FYDE",
+      "active": true
+    },
+    "PRE,FY/DE,*F": {
+      "x4code": "PRE,FY/DE,*F",
+      "description": "(primary fragment fission yield d/de(fragment specified ))",
+      "param2": "FYDE",
+      "active": true
+    },
+    "PRE,FY/DE,G": {
+      "x4code": "PRE,FY/DE,G",
+      "description": "(energy spectrum of gammas vs. primary fragment mass)",
+      "param2": "FYDE",
+      "active": true
+    },
+    "PRE,FY/DE,LF+HF": {
+      "x4code": "PRE,FY/DE,LF+HF",
+      "description": "(differencial primary fission product yield with respect to . total kinetic energy)",
+      "param2": "FYDE",
+      "active": true
+    },
+    "PRE,KE": {
+      "x4code": "PRE,KE",
+      "description": "(kinetic energy of primary fission fragments specified )",
+      "param2": "E",
+      "active": true
+    },
+    "PRE,KE,*F": {
+      "x4code": "PRE,KE,*F",
+      "description": "(kinetic energy of primary fission fragments specified )",
+      "param2": "E",
+      "active": false
+    },
+    "PRE,KE,LF+HF": {
+      "x4code": "PRE,KE,LF+HF",
+      "description": "(total kinetic energy of primary fission fragments specified )",
+      "param2": "E",
+      "active": true
+    },
+    "PRE,KEP,*F": {
+      "x4code": "PRE,KEP,*F",
+      "description": "(most probable kinetic energy of primary fission fragment specified )",
+      "param2": "E",
+      "active": true
+    },
+    "PRE/PR,KE,*": {
+      "x4code": "PRE/PR,KE,*",
+      "description": "(kinetic energy of prompt particle specified for a given primary fragment )",
+      "param2": "E",
+      "active": true
+    },
+    "PRE/TER,AP,*F": {
+      "x4code": "PRE/TER,AP,*F",
+      "description": "(most probable mass of primary fragment specified ternary fission )",
+      "param2": "NO",
+      "active": true
+    },
+    "PRE/TER,FY": {
+      "x4code": "PRE/TER,FY",
+      "description": "(primary-fission production yield, ternary fission)",
+      "param2": "FY",
+      "active": true
+    },
+    "PRV,AKE,*F": {
+      "x4code": "PRV,AKE,*F",
+      "description": "(provisional average kinetic energy of fragment specified)",
+      "param2": "E",
+      "active": true
+    },
+    "PRV,AP,HF": {
+      "x4code": "PRV,AP,HF",
+      "description": "(most probable provisional mass for heavy fragment ) (most probable provisional mass for heavy fragments)",
+      "param2": "NO",
+      "active": true
+    },
+    "PRV,AP,LF": {
+      "x4code": "PRV,AP,LF",
+      "description": "(most probable provisional mass for light fragment ) (most probable provisional mass for light fragments)",
+      "param2": "NO",
+      "active": true
+    },
+    "PRV,FY": {
+      "x4code": "PRV,FY",
+      "description": "(fission product yield for a provisional mass specified)",
+      "param2": "FY",
+      "active": true
+    },
+    "PRV,FY/DE,LF+HF": {
+      "x4code": "PRV,FY/DE,LF+HF",
+      "description": "(differencial provisional fission product yield with respect to . total kinetic energy)",
+      "param2": "FYDE",
+      "active": true
+    },
+    "PRV,KE,LF+HF": {
+      "x4code": "PRV,KE,LF+HF",
+      "description": "(total kinetic energy of fission fragments, provisional mass specified)",
+      "param2": "E",
+      "active": true
+    },
+    "SEC,AKE,*F": {
+      "x4code": "SEC,AKE,*F",
+      "description": "(average kinetic energy of post-neut-emission fragment )",
+      "param2": "E",
+      "active": true
+    },
+    "SEC,AKE,LF+HF": {
+      "x4code": "SEC,AKE,LF+HF",
+      "description": "(average total kinetic energy for post-neutr-emission fragment )(average total kinetic energy for post-neutron-emission fission fragments)",
+      "param2": "E",
+      "active": true
+    },
+    "SEC,AP": {
+      "x4code": "SEC,AP",
+      "description": "(most probable mass of fission fragment ,post-n-emission )",
+      "param2": "NO",
+      "active": true
+    },
+    "SEC,AP,*F": {
+      "x4code": "SEC,AP,*F",
+      "description": "(most probable mass of post-n-emission fragment specified )",
+      "param2": "NO",
+      "active": true
+    },
+    "SEC,FY": {
+      "x4code": "SEC,FY",
+      "description": "(post-neutron-emission fission-production yield (mass yield))",
+      "param2": "FY",
+      "active": true
+    },
+    "SEC,FY/DE": {
+      "x4code": "SEC,FY/DE",
+      "description": "(post-neutron-emisson fission yield d/de(ke))",
+      "param2": "FYDE",
+      "active": true
+    },
+    "SEC,FY/DE,*F": {
+      "x4code": "SEC,FY/DE,*F",
+      "description": "(secondary fragment fission yield d/de(fragment specified ))",
+      "param2": "FYDE",
+      "active": true
+    },
+    "SEC,FY/DE,LF+HF": {
+      "x4code": "SEC,FY/DE,LF+HF",
+      "description": "(differencial secondary fission product yield with respect to . total kinetic energy)",
+      "param2": "FYDE",
+      "active": true
+    },
+    "SEC,KE": {
+      "x4code": "SEC,KE",
+      "description": "(kinetic energy of post-n-emission product.specified)",
+      "param2": "E",
+      "active": true
+    },
+    "SEC,KE,FF": {
+      "x4code": "SEC,KE,FF",
+      "description": "(av.kinetic energy of post-n-emission fragment specified)",
+      "param2": "E",
+      "active": false
+    },
+    "SEC,KE,LF+HF": {
+      "x4code": "SEC,KE,LF+HF",
+      "description": "(total kinetic energy of lig./heav.post-n-emis.fragment pair)",
+      "param2": "E",
+      "active": true
+    },
+    "SEC,KEP,*F": {
+      "x4code": "SEC,KEP,*F",
+      "description": "(most probable kinetic energy of post-n-emission fragment specified )",
+      "param2": "E",
+      "active": true
+    },
+    "SEC,KEP,LF+HF": {
+      "x4code": "SEC,KEP,LF+HF",
+      "description": "(most probable total kinetic energy of post-n-emission fragment )",
+      "param2": "E",
+      "active": true
+    },
+    "SEC,ZP": {
+      "x4code": "SEC,ZP",
+      "description": "(most probable charge of fission fragment ,post-n-emission )",
+      "param2": "NO",
+      "active": true
+    },
+    "SEC/TER,AKE,*F": {
+      "x4code": "SEC/TER,AKE,*F",
+      "description": "(av.kinetic energy of post-neut-emission fragment ,ternary fission )",
+      "param2": "E",
+      "active": true
+    },
+    "SEC/TER,AKE,LF+HF": {
+      "x4code": "SEC/TER,AKE,LF+HF",
+      "description": "(av.total kinetic energy of post-neut-emission fragment ,ternary fission )",
+      "param2": "E",
+      "active": true
+    },
+    "SEC/TER,KE,*F": {
+      "x4code": "SEC/TER,KE,*F",
+      "description": "(kinetic energy of post-neut-emission fragment ,ternary fission )",
+      "param2": "E",
+      "active": true
+    },
+    "TER,AKE,*": {
+      "x4code": "TER,AKE,*",
+      "description": "(average kinetic energy of particle specified , ternary fission )",
+      "param2": "E",
+      "active": false
+    },
+    "TER,AKE,*F": {
+      "x4code": "TER,AKE,*F",
+      "description": "(average kinetic energy of fragment specified , ternary fission )",
+      "param2": "E",
+      "active": true
+    },
+    "TER,AKE,LF+HF": {
+      "x4code": "TER,AKE,LF+HF",
+      "description": "(average kinetic energy sum f.light and heavy fragment ,ternary f.)",
+      "param2": "E",
+      "active": true
+    },
+    "TER,AP": {
+      "x4code": "TER,AP",
+      "description": "(most probable mass of ternary fission fragment )(most probable mass of fission fragments from ternary fission for a given element)",
+      "param2": "NO",
+      "active": true
+    },
+    "TER,AP,*F": {
+      "x4code": "TER,AP,*F",
+      "description": "(most probable mass of ternary fission fragment specified )",
+      "param2": "NO",
+      "active": true
+    },
+    "TER,DA/KE,*": {
+      "x4code": "TER,DA/KE,*",
+      "description": "(kinetic energy angular distribution of particle specified ,ternary fission )",
+      "param2": "E",
+      "active": false
+    },
+    "TER,FY,*": {
+      "x4code": "TER,FY,*",
+      "description": "(yield of specified particle from ternary fission)",
+      "param2": "FY",
+      "active": true
+    },
+    "TER,FY,,RES": {
+      "x4code": "TER,FY,,RES",
+      "description": "(fission-product yield, ternary fission at resonance)",
+      "param2": "FY",
+      "active": true
+    },
+    "TER,FY,LCP": {
+      "x4code": "TER,FY,LCP",
+      "description": "(light-charged-particle yield, ternary fission)",
+      "param2": "FY",
+      "active": true
+    },
+    "TER,FY/DA": {
+      "x4code": "TER,FY/DA",
+      "description": "(differencial fission yield dy/da for ternary fission)",
+      "param2": "FYDA",
+      "active": true
+    },
+    "TER,FY/DA,*+*F": {
+      "x4code": "TER,FY/DA,*+*F",
+      "description": "(differencial fission yield dy/da(*+fragment specified ),ternary fission )",
+      "param2": "FYDA",
+      "active": true
+    },
+    "TER,FY/DA/DE": {
+      "x4code": "TER,FY/DA/DE",
+      "description": "(differencial fission yield dy/da/de for ternary fission)",
+      "param2": "FYAE",
+      "active": true
+    },
+    "TER,FY/DA/DE,*+*F/*": {
+      "x4code": "TER,FY/DA/DE,*+*F/*",
+      "description": "",
+      "param2": "",
+      "active": true
+    },
+    "TER,FY/DE": {
+      "x4code": "TER,FY/DE",
+      "description": "(differencial fission yield dy/de for ternary fission)",
+      "param2": "FYDE",
+      "active": true
+    },
+    "TER,FY/DE,*F": {
+      "x4code": "TER,FY/DE,*F",
+      "description": "(ternary fission fragment yield d/de(fragment specified ))",
+      "param2": "FYDE",
+      "active": true
+    },
+    "TER,FY/DE,A": {
+      "x4code": "TER,FY/DE,A",
+      "description": "(differencial fission alph.yield dy/de correlated w.fragment)(differential fission alpha yield dy(a)/decorrelated with a and/or z of ternary fissiofragment)",
+      "param2": "FYDE",
+      "active": true
+    },
+    "TER,KE,*": {
+      "x4code": "TER,KE,*",
+      "description": "(kinetic energy for ternary fission production specified)",
+      "param2": "E",
+      "active": true
+    },
+    "TER,KE/TKE": {
+      "x4code": "TER,KE/TKE",
+      "description": "(kinetic energy for ternary fission v.s. tke)",
+      "param2": "E",
+      "active": true
+    },
+    "TER,KEP": {
+      "x4code": "TER,KEP",
+      "description": "(most probable kinetic energy of ternary fission production )",
+      "param2": "E",
+      "active": true
+    },
+    "TER,KEP,*": {
+      "x4code": "TER,KEP,*",
+      "description": "(most probable kinetic energy of ternary fission production specified )",
+      "param2": "E",
+      "active": true
+    },
+    "TER,KEP,A": {
+      "x4code": "TER,KEP,A",
+      "description": "(most probable kinetic energy of ternary fission alp)",
+      "param2": "E",
+      "active": true
+    },
+    "TER,ZP,*F": {
+      "x4code": "TER,ZP,*F",
+      "description": "(most probable charge of ternary fission fragment specified )",
+      "param2": "NO",
+      "active": true
+    },
+    "TER/CHG,FY": {
+      "x4code": "TER/CHG,FY",
+      "description": "(total element yield of fission production ,ternary fission )",
+      "param2": "FY",
+      "active": false
+    },
+    "TER/PAR,KE,N": {
+      "x4code": "TER/PAR,KE,N",
+      "description": "(kinetic energy of neutron assoc.to production lev.specified ternary fission )",
+      "param2": "E",
+      "active": true
+    },
+    "TER/PAR,MLT,G/LCP": {
+      "x4code": "TER/PAR,MLT,G/LCP",
+      "description": "(gamma multiplicity ,ternary fission with light chg.particle eng.given )",
+      "param2": "FY",
+      "active": true
+    },
+    ",AKE,*,RES": {
+      "x4code": ",AKE,*,RES",
+      "description": "(average kinetic energy of specified particle at resonance )",
+      "param2": "E",
+      "active": false
+    },
+    ",WID,,RM/S0": {
+      "x4code": ",WID,,RM/S0",
+      "description": "(reich-moore res. width * total peak cross section )",
+      "param2": "B*E",
+      "active": true
+    },
+    ",WID,,SQ/S0": {
+      "x4code": ",WID,,SQ/S0",
+      "description": "(resonance width squared * total peak cross section)",
+      "param2": "BE2.",
+      "active": true
+    },
+    ",WID/STR,,RG": {
+      "x4code": ",WID/STR,,RG",
+      "description": "(resonance strength * (2j(i)+1)*(2j(j)+1))(resonance strength given as (2j+1) * * gamma(i)*gamma(j) / gamma(tot))",
+      "param2": "E  .",
+      "active": true
+    },
+    "EP,STF": {
+      "x4code": "EP,STF",
+      "description": "(strength function for electrical polarity given)",
+      "param2": "NO .",
+      "active": true
+    },
+    "MP,STF": {
+      "x4code": "MP,STF",
+      "description": "(strength function for magnetic polarity given)",
+      "param2": "NO .",
+      "active": true
+    },
+    "PAR,WID/RED,,RMT": {
+      "x4code": "PAR,WID/RED,,RMT",
+      "description": "(r-matrix reduced resonance width f.partial reaction)",
+      "param2": "E  .",
+      "active": true
+    },
+    "PAR,WID/STR,,RG": {
+      "x4code": "PAR,WID/STR,,RG",
+      "description": "(partial resonance strength * (2j(i)+1)*(2j(j)+1))",
+      "param2": "E  .",
+      "active": true
+    },
+    "PRE,AKE,LF+HF,RES": {
+      "x4code": "PRE,AKE,LF+HF,RES",
+      "description": "(average total kinetic energy for primary fission fragment at res.)",
+      "param2": "E",
+      "active": true
+    }
+  }
+}
