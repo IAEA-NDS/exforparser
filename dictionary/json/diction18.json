@@ -1,0 +1,181 @@
+{
+  "diction_num": "18",
+  "diction_def": "Facilities",
+  "parameters": {
+    "ACCEL": {
+      "x4code": "ACCEL",
+      "description": "Accelerator",
+      "active": true
+    },
+    "BETAT": {
+      "x4code": "BETAT",
+      "description": "Betatron",
+      "active": true
+    },
+    "CCW": {
+      "x4code": "CCW",
+      "description": "Cockcroft-walton accelerator",
+      "active": true
+    },
+    "CYCLO": {
+      "x4code": "CYCLO",
+      "description": "Cyclotron",
+      "active": true
+    },
+    "CYCTM": {
+      "x4code": "CYCTM",
+      "description": "Tandem cyclotrons",
+      "active": true
+    },
+    "CYGFF": {
+      "x4code": "CYGFF",
+      "description": "Cyclograaff",
+      "active": true
+    },
+    "DYNAM": {
+      "x4code": "DYNAM",
+      "description": "Dynamitron",
+      "active": true
+    },
+    "ESTRG": {
+      "x4code": "ESTRG",
+      "description": "Electron storage ring",
+      "active": true
+    },
+    "FNS": {
+      "x4code": "FNS",
+      "description": "Fusion neutron source",
+      "active": true
+    },
+    "FRS": {
+      "x4code": "FRS",
+      "description": "Fragment separator",
+      "active": false
+    },
+    "ICTR": {
+      "x4code": "ICTR",
+      "description": "Insulated core transformer accelerator",
+      "active": true
+    },
+    "INTFM": {
+      "x4code": "INTFM",
+      "description": "Interferometer",
+      "active": true
+    },
+    "ISOCY": {
+      "x4code": "ISOCY",
+      "description": "Isochronous cyclotron",
+      "active": true
+    },
+    "LASER": {
+      "x4code": "LASER",
+      "description": "Laser system",
+      "active": true
+    },
+    "LCEXP": {
+      "x4code": "LCEXP",
+      "description": "Location of experiment",
+      "active": true
+    },
+    "LINAC": {
+      "x4code": "LINAC",
+      "description": "Linear accelerator",
+      "active": true
+    },
+    "MESON": {
+      "x4code": "MESON",
+      "description": "Meson facility",
+      "active": false
+    },
+    "MICRT": {
+      "x4code": "MICRT",
+      "description": "Microtron",
+      "active": true
+    },
+    "OLMS": {
+      "x4code": "OLMS",
+      "description": "On-line mass separator",
+      "active": true
+    },
+    "PRJFS": {
+      "x4code": "PRJFS",
+      "description": "Secondary beam from projectile fragment separator",
+      "active": false
+    },
+    "SPECC": {
+      "x4code": "SPECC",
+      "description": "Crystal spectrometer",
+      "active": true
+    },
+    "SPECD": {
+      "x4code": "SPECD",
+      "description": "Double mass spectrometer",
+      "active": true
+    },
+    "SPECM": {
+      "x4code": "SPECM",
+      "description": "Mass spectrometer",
+      "active": true
+    },
+    "SRING": {
+      "x4code": "SRING",
+      "description": "Storage ring",
+      "active": true
+    },
+    "SYNCH": {
+      "x4code": "SYNCH",
+      "description": "Synchrotron",
+      "active": true
+    },
+    "SYNCY": {
+      "x4code": "SYNCY",
+      "description": "Synchro cyclotron",
+      "active": true
+    },
+    "VDG": {
+      "x4code": "VDG",
+      "description": "Van de graaff",
+      "active": true
+    },
+    "VDGT": {
+      "x4code": "VDGT",
+      "description": "Tandem van de graaff",
+      "active": true
+    },
+    "CHOPF": {
+      "x4code": "CHOPF",
+      "description": "Fast chopper",
+      "active": true
+    },
+    "CHOPS": {
+      "x4code": "CHOPS",
+      "description": "Slow chopper",
+      "active": true
+    },
+    "CRASS": {
+      "x4code": "CRASS",
+      "description": "Critical assembly",
+      "active": true
+    },
+    "NGEN": {
+      "x4code": "NGEN",
+      "description": "Neutron generator",
+      "active": true
+    },
+    "OSCIP": {
+      "x4code": "OSCIP",
+      "description": "Pile oscillator",
+      "active": true
+    },
+    "REAC": {
+      "x4code": "REAC",
+      "description": "Reactor",
+      "active": true
+    },
+    "SELVE": {
+      "x4code": "SELVE",
+      "description": "Velocity selector",
+      "active": true
+    }
+  }
+}

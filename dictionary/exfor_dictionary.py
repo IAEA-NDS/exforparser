@@ -89,7 +89,7 @@ def dict_filename(latest):
 
 
 def diction_json_file(diction_num):
-    return os.path.join("dictionary", "diction" + diction_num + ".json")
+    return os.path.join("dictionary/json/", "diction" + diction_num + ".json")
 
 
 def write_diction_json(diction_num, diction_dict):
@@ -159,7 +159,7 @@ def parse_dictionary(latest):
                 diction = []
                 new = True
                 diction_num = re.split("\s{2,}", line)[1]
-                fname = "".join([DICTIONARY_PATH, "Diction", diction_num, ".dat"])
+                fname = "".join([DICTIONARY_PATH, "original/", "diction", diction_num, ".dat"])
 
                 o = open(fname, "w")
                 # o.write("# " + line[:66] + "\n")

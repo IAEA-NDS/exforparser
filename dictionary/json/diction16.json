@@ -1,0 +1,121 @@
+{
+  "diction_num": "16",
+  "diction_def": "Status",
+  "parameters": {
+    "APRVD": {
+      "x4code": "APRVD",
+      "description": "Approved by author",
+      "active": true
+    },
+    "BERMN": {
+      "x4code": "BERMN",
+      "description": "Data converted from file of b.berman",
+      "active": true
+    },
+    "CPX": {
+      "x4code": "CPX",
+      "description": "Data taken from data file of mcgowan, et al.",
+      "active": true
+    },
+    "CURVE": {
+      "x4code": "CURVE",
+      "description": "Data read from a curve",
+      "active": true
+    },
+    "DASTR": {
+      "x4code": "DASTR",
+      "description": "Data converted from dastar file",
+      "active": true
+    },
+    "NACRE": {
+      "x4code": "NACRE",
+      "description": "Converted from nacre files",
+      "active": true
+    },
+    "NCHKD": {
+      "x4code": "NCHKD",
+      "description": "Authenticity not confirmed",
+      "active": true
+    },
+    "NDD": {
+      "x4code": "NDD",
+      "description": "Data converted from neudada file",
+      "active": true
+    },
+    "PENTZ": {
+      "x4code": "PENTZ",
+      "description": "Data converted from gma input file of w.p.poenitz",
+      "active": true
+    },
+    "PRELM": {
+      "x4code": "PRELM",
+      "description": "Preliminary data",
+      "active": true
+    },
+    "RCALC": {
+      "x4code": "RCALC",
+      "description": "Ratio to standard calculated by other than author",
+      "active": true
+    },
+    "RIDER": {
+      "x4code": "RIDER",
+      "description": "Data converted from file of b.f.rider",
+      "active": true
+    },
+    "SCSRS": {
+      "x4code": "SCSRS",
+      "description": "Data converted from scisrs file",
+      "active": true
+    },
+    "SGMBS": {
+      "x4code": "SGMBS",
+      "description": "Data converted from sigmabase",
+      "active": true
+    },
+    "TABLE": {
+      "x4code": "TABLE",
+      "description": "Data presented by authors",
+      "active": true
+    },
+    "UNOBT": {
+      "x4code": "UNOBT",
+      "description": "Data unobtainable from author",
+      "active": true
+    },
+    "COREL": {
+      "x4code": "COREL",
+      "description": "Data correlated with another data set",
+      "active": true
+    },
+    "CRCTD": {
+      "x4code": "CRCTD",
+      "description": "Data corrected by other than author",
+      "active": true
+    },
+    "DEP": {
+      "x4code": "DEP",
+      "description": "Dependent data",
+      "active": true
+    },
+    "RNORM": {
+      "x4code": "RNORM",
+      "description": "Data renormalized by other than author",
+      "active": true
+    },
+    "SUPPL": {
+      "x4code": "SUPPL",
+      "description": "Supplemental information compiled separately",
+      "active": true
+    },
+    "OUTDT": {
+      "x4code": "OUTDT",
+      "description": "Normalization out-of-date",
+      "active": true
+    },
+    "SPSDD": {
+      "x4code": "SPSDD",
+      "description": "Data superseded or withdrawn",
+      "active": true
+    }
+  }
+}
