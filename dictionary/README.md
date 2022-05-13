@@ -1,6 +1,6 @@
 ## EXFOR dictionary
 The latest the latest EXFOR dictionary is available at https://nds.iaea.org/nrdc/ndsx4/trans/dicts/. 
-The EXFOR dictionary consists of 40 definitions of so called DICTION. The definitions of DICTIONs can be found in DICTION 950 which looks like as below.
+The EXFOR dictionary consists of 40 definitions of so called DICTION. The definitions of DICTIONs can be found in DICTION 950 which looks like as below. For example, the institute codes that is coded under the INSTITUTE identifire in BIB block are difined in [DICTION   3](original/diction25.dat). The most important DICTION would be [DICTION   236](original/diction236.dat), which defines all possible combinations of reaction strings.
 
 ```
 DICTION            950     202112 List of Dictionaries            3000095000001 
@@ -49,7 +49,10 @@ ENDDICTION          40          0                                 3000095099999
 
 
 ## EXFOR dictionary parser
-``exfor_dictionary.py`` will download the latest dictionary, trans.9*** while running ``python exfor_dictionary.py``. Then divide it into the unit of DICTION and store original format files in ``original`` directory and JSON converted files in ``json`` directory. Note that because of the EXFOR dictionary's troublesome formats, parsing all information is not yet possible. Currentry, JSON files include information that can be parsed and used for the　main EXFOR parser.
+The EXFOR dictionary parser, ``exfor_dictionary.py``, will download the latest dictionary, trans.9***,  everytime it runs and the parser divides it into the unit of DICTION and store original format files in ``original`` directory and JSON converted files in ``json`` directory. While conversion, many abbreviations in the descritption will be expanded. You can check the [DICTION   236](json/diction236.json) for example.
+
+Note that because of the EXFOR dictionary's troublesome formats, parsing all information is not yet possible. Currentry, JSON files include information that can be parsed and used for the main EXFOR parser. 
+
 
 ## EXFOR dictionary parser API
 The API will be available soon, pelase ask API KEY to use it.
