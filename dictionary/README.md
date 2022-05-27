@@ -1,6 +1,6 @@
 ## EXFOR dictionary
 The latest EXFOR dictionary is available at https://nds.iaea.org/nrdc/ndsx4/trans/dicts/. 
-The EXFOR dictionary consists of approx. 40 definitions of the EXFOR codes in identifiers in so called DICTION. The definitions of each DICTION can be found in DICTION 950 which looks like as below. For example, the institute codes that are coded under INSTITUTE identifier in BIB block are defined in [DICTION   3](original/diction25.dat). The most important DICTION would be [DICTION   236](original/diction236.dat), which defines all possible combinations of reaction strings.
+The EXFOR dictionary consists of approx. 40 definitions of types of the EXFOR codes used in identifiers,  which is so called DICTION. The definitions of each DICTION can be found in [DICTION   950](original/diction950.dat) which looks like as below. For example, the institute codes that are coded under INSTITUTE identifier in BIB block are defined in [DICTION    3](original/diction3.dat). The most important DICTION would be [DICTION   236](original/diction236.dat), which defines all possible combinations of reaction strings.
 
 ```
 DICTION            950     202112 List of Dictionaries            3000095000001 
@@ -75,10 +75,9 @@ payload = json.dumps(
 headers = {
     "Content-Type": "application/json",
     "Access-Control-Request-Headers": "*",
-    "api-key": <API-KEY>",
+    "api-key": <API-KEY>,
 }
 
 response = requests.request("POST", url, headers=headers, data=payload)
-
 print(json.dumps(response.json(), indent=2))
 ```

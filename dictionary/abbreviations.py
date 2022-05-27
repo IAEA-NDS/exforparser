@@ -93,7 +93,7 @@ reaction_abbr = {
     "part.": "particle",
     "partl.": "particle",
     "proj.": "projectile",
-    "prod.": "product",     # for FY and other
+    "prod.": "product",  # for FY and other
     "prod.": "production",  # for ttY
     "pr.": "primary",
     "prim.": "primary",

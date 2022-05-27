@@ -56,7 +56,7 @@ def get_latest_dict_num():
 
 
 def download_latest_dict():
-    # get the latest dictionary from https://nds.iaea.org/nrdc/ndsx4/trans/dicts/ 
+    # get the latest dictionary from https://nds.iaea.org/nrdc/ndsx4/trans/dicts/
     # filename must be in sequence e.g. trans.9124
     local_max = get_local_dict_num()
     latest = get_latest_dict_num()
@@ -154,12 +154,14 @@ def parse_dictionary(latest):
         lines = f.readlines()
 
         new = False
-        for line in lines:  
+        for line in lines:
             if line.startswith("DICTION"):
                 diction = []
                 new = True
                 diction_num = re.split("\s{2,}", line)[1]
-                fname = "".join([DICTIONARY_PATH, "original/", "diction", diction_num, ".dat"])
+                fname = "".join(
+                    [DICTIONARY_PATH, "original/", "diction", diction_num, ".dat"]
+                )
 
                 o = open(fname, "w")
                 # o.write("# " + line[:66] + "\n")
@@ -173,10 +175,11 @@ def parse_dictionary(latest):
                 diction_dict = conv_dictionary_tojson(diction_def, diction_num, diction)
 
                 ## save as JSON
-                write_diction_json(diction_num, diction_dict)
+                if diction_dict:
+                    write_diction_json(diction_num, diction_dict)
 
                 ## post to mongodb
-                if POST_DB:
+                if diction_dict and POST_DB:
                     post_one_mongodb("dictionary", diction_dict)
 
                 continue
@@ -320,7 +323,6 @@ def conv_dictionary_tojson(diction_def, diction_num, diction) -> dict:
                 "parameters": parames,
             }
 
-
     elif int(diction_num) == 24:
         ### DICTION 24: Data headings
         from .abbreviations import head_unit_abbr
@@ -360,7 +362,6 @@ def conv_dictionary_tojson(diction_def, diction_num, diction) -> dict:
             "parameters": parames,
         }
 
-
     elif int(diction_num) == 25:
         ### DICTION 25: Data units
         from .abbreviations import head_unit_abbr
@@ -393,7 +394,6 @@ def conv_dictionary_tojson(diction_def, diction_num, diction) -> dict:
                 "parameters": parames,
             }
             desc = []
-
 
     elif int(diction_num) == 236:
         """
@@ -479,7 +479,7 @@ def conv_dictionary_tojson(diction_def, diction_num, diction) -> dict:
 class Diction:
     def __init__(self):
         self.diction_num = None
-        # self.diction = self.read_diction()
+
         # self.incident_en_heads =self.get_incident_en_heads()
 
     def read_diction(self, diction_num):
@@ -488,70 +488,86 @@ class Diction:
             with open(file) as json_file:
                 return json.load(json_file)["parameters"]
 
-
     def get_incident_en_heads(self):
         ## diction 24: Data heads, get_x
-        diction_num = "24"
-        diction = self.read_diction(diction_num)
+        diction = self.read_diction("24")
         return [
             h
             for h in diction.keys()
-            if diction[h]["param2"] == "A" and diction[h]["active"]
+            if diction[h]["param2"] == "A" and diction[h]["active"] and "-DN" not in h and "-NM" not in h
         ]
 
     def get_incident_en_err_heads(self):
         ## diction 24: Data heads, get_dx
-        diction_num = "24"
-        diction = self.read_diction(diction_num)
+        diction = self.read_diction("24")
         return [
             h
             for h in diction.keys()
-            if diction[h]["param2"] == "B" and diction[h]["active"]
+            if diction[h]["param2"] == "B" and diction[h]["active"] and "-DN" not in h and "-NM" not in h
         ]
 
     def get_data_heads(self):
-        ## diction 24: Data heads, get_y
-        diction_num = "24"
-        diction = self.read_diction(diction_num)
+        ## diction 24: Data heads, for y
+        diction = self.read_diction("24")
         return [
             h
             for h in diction.keys()
-            if diction[h]["param2"] == "DATA" and diction[h]["active"]
+            if diction[h]["param2"] == "DATA" and diction[h]["active"] and "-DN" not in h and "-NM" not in h
         ]
-
 
     def get_data_err_heads(self):
-        ## diction 24: Data heads, get_dy
-        diction_num = "24"
-        diction = self.read_diction(diction_num)
+        ## diction 24: Data heads, for d_y
+        diction = self.read_diction("24")
         return [
             h
             for h in diction.keys()
-            if diction[h]["param2"] == "DATA_E" and diction[h]["active"]
+            if diction[h]["param2"] == "DATA_E" and diction[h]["active"] and "-DN" not in h and "-NM" not in h
         ]
 
-
-    def get_incident_e_heads(self):
-        ## diction 24: Data heads, measured energy/level
-        diction_num = "24"
-        diction = self.read_diction(diction_num)
+    def get_outgoing_e_heads(self):
+        ## diction 24: Data heads, measured energy
+        diction = self.read_diction("24")
         return [
             h
             for h in diction.keys()
             if diction[h]["param2"] == "E" and diction[h]["active"]
         ]
 
-
     def get_level_heads(self):
-        ## diction 24: Data heads
-        diction_num = "24"
-        diction = self.read_diction(diction_num)
+        ## diction 24: Data heads, measured level
+        diction = self.read_diction("24")
         return [
             h
             for h in diction.keys()
             if diction[h]["param2"] == "L" and diction[h]["active"]
         ]
 
+    def get_level_angle(self):
+        ## diction 24: Data heads, measured level
+        diction = self.read_diction("24")
+        return [
+            h
+            for h in diction.keys()
+            if diction[h]["param2"] == "G" and diction[h]["active"]
+        ]
+
+    def get_mass_heads(self):
+        ## diction 24: Data heads, get_x
+        diction = self.read_diction("24")
+        return [
+            h
+            for h in diction.keys()
+            if diction[h]["param2"] == "J" and diction[h]["active"]
+        ]
+
+    def get_elem_heads(self):
+        ## diction 24: Data heads, get_x
+        diction = self.read_diction("24")
+        return [
+            h
+            for h in diction.keys()
+            if diction[h]["param2"] == "I" and diction[h]["active"]
+        ]
 
     def get_unit_factor(self, datahead):
         ## diction 25: Data units
@@ -560,7 +576,11 @@ class Diction:
         factor = diction[datahead][
             "unit conversion factor"
         ]  # if diction[datahead]["active"]
-        return factor
+        if factor == '':
+            return 1.0
+        else:
+            return factor
+
 
 
 
