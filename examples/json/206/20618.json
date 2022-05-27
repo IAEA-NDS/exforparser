@@ -1,0 +1,220 @@
+{
+  "title": "Measurement Of The Neutron Induced Fission Cross  Sections Of Uranium 235 And Plutonium 239 In The Mev  Energy Range",
+  "references": [
+    {
+      "x4code": "(C,76ANL,,208,1976)",
+      "publication year": "1976"
+    }
+  ],
+  "authors": [
+    {
+      "name": "I.Szabo"
+    },
+    {
+      "name": "J.P.Marquette"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2FR CAD"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "VDG",
+      "x4code": "2FR CAD"
+    }
+  ],
+  "entry_number": "20618",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Separation of isotopic contributions made. No further",
+            " details given."
+          ]
+        }
+      }
+    },
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Corrected for",
+            " - Spurious neutrons of 12C(d,n)13N reaction",
+            " - Background",
+            " - Air atenuation and elastic scattering of neutrons",
+            "   in wall chambers"
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            " Two fission chambers for fission measurement"
+          ]
+        },
+        "1": {
+          "x4code": "(BF3)",
+          "freetext": [
+            "  Two directional counters for flux measurement"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Statistical errors, efficiency and position",
+            " incertitudes in detectors accounted"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Neutron flux determination"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG,2FR CAD"
+          ],
+          "freetext": [
+            " 5-MeV Van de Graaff"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-T)",
+          "freetext": [
+            " below 3.8 MeV"
+          ]
+        },
+        "1": {
+          "x4code": "(D-D)",
+          "freetext": [
+            " above 3.9 MeV"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            " To discreminate scattered neutrons and parasite",
+            " neutrons"
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "O",
+            "ent": "20567001",
+            "author": "I.Szabo+",
+            "ref": "C,70ANL,,257,1970"
+          },
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": {
+            "type": "O",
+            "ent": "20569001",
+            "author": "I.Szabo+",
+            "ref": "C,71KNOX,2,573,1971"
+          },
+          "freetext": [
+            ""
+          ]
+        },
+        "2": {
+          "x4code": {
+            "type": "O",
+            "ent": "20570001",
+            "author": "I.Szabo+",
+            "ref": "C,73KIEV,3,27,1973"
+          },
+          "freetext": [
+            ""
+          ]
+        },
+        "3": {
+          "x4code": {
+            "type": "I",
+            "ent": null,
+            "author": "I.Szabo+",
+            "ref": "C,70HELSINKI,1,229,1970"
+          },
+          "freetext": [
+            "",
+            " Description on the fission chambers"
+          ]
+        },
+        "4": {
+          "x4code": {
+            "type": "I",
+            "ent": null,
+            "author": "J.L.Leroy+",
+            "ref": "C,70HELSINKI,1,243,1970"
+          },
+          "freetext": [
+            "",
+            " Description on the directional counter"
+          ]
+        }
+      }
+    }
+  }
+}

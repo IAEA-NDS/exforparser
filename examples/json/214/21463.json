@@ -1,0 +1,335 @@
+{
+  "title": "-Measurement Of Fission Cross Sections For Neutrons  Of Energies In The Range 40-500 Kev.-",
+  "references": [
+    {
+      "x4code": "(C,65SALZBURG,1,219,196503)",
+      "publication year": "1965"
+    }
+  ],
+  "authors": [
+    {
+      "name": "P.H.White"
+    },
+    {
+      "name": "J.G.Hodgkinson"
+    },
+    {
+      "name": "G.J.Wall"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2UK ALD"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "VDG",
+      "x4code": "2UK ALD"
+    }
+  ],
+  "entry_number": "21463",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-233(N,F),,SIG)",
+        "target": "92-U-233",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(92-U-234(N,F),,SIG)",
+        "target": "92-U-234",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(92-U-236(N,F),,SIG)",
+        "target": "92-U-236",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(93-NP-237(N,F),,SIG)",
+        "target": "93-NP-237",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(94-PU-241(N,F),,SIG)",
+        "target": "94-PU-241",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "((92-U-234(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "010": {
+      "XX": {
+        "x4code": "((92-U-236(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "011": {
+      "XX": {
+        "x4code": "((93-NP-237(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "012": {
+      "XX": {
+        "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "013": {
+      "XX": {
+        "x4code": "((94-PU-241(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".For differences in the neutron flux upon sample",
+            " and monitor foil, for background from neutrons",
+            " scattered from the laboratory walls, for foil",
+            " thickness, for neutron flux and energy variation",
+            " across the fissile foil, for neutron scattering in",
+            " the fission counters and the neutron source."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            " Fission chamber filled with mixture of 90",
+            "        percent xenon and 10 percent C-O2  .",
+            "        In some cases with high alpha background",
+            "        a mixture of 90 percent krypton and 10",
+            "        percent C-O(2) was used, at a lower pressure",
+            "        of 200-400 torr."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            "  Statistics 0.7 % (both sample + monitor),"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            "  N-energy and flux variations across the",
+            "         fissile foils (0.1 %) error"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            "  Scattering corrections error (0.1 %),"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            "  Max foil thickness correction error",
+            "         (0.5-1.0 %),"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-4)",
+          "freetext": [
+            "  Max extrapolation error of the fission",
+            "    fragment spectrum to zero bias (0.2-0.5 )%"
+          ]
+        },
+        "5": {
+          "x4code": "(ERR-5)",
+          "freetext": [
+            "  Error of assay of the foil (0.8 %),"
+          ]
+        },
+        "6": {
+          "x4code": "(ERR-6)",
+          "freetext": [
+            "  Uncertainty of the U-235(N,F) cross section",
+            "          (3 %)."
+          ]
+        },
+        "7": {
+          "x4code": "(ERR-7)",
+          "freetext": [
+            "  Typical compound errors are 2. % of for",
+            "         the ratio,"
+          ]
+        },
+        "8": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            "  Error 3.5 percent for the cross section."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG,2UK ALD"
+          ],
+          "freetext": [
+            " 5 MV Van de Graaff."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            " Lithium-nitride targets 50-100 micro-grams/",
+            " cm*cm thick, evaporated onto Ag backings and",
+            " bombarded with 60-70 micro-ampere protons. The",
+            " proton energy was stable within 3 keV."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Back-to-back foils of sample and U-235 in the",
+            " same neutron beam to compare the cross sections."
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(FF)",
+          "freetext": [
+            "    Fission fragments."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Some chemical separation was made using an ion",
+            " exchange technique. The foils were painted on to",
+            " platinum backings, 0.013 cm thick from an acetone",
+            " solution of the nitrate. Low geometry alpha counting",
+            " and coulometric assay were used to determine the",
+            " weight of the samples. More details about each sample",
+            " each subwork. Two U-235 samples were used. The",
+            " first one had an isotopic composition of 99.33%",
+            " of U-235, 0.11 % of U-234, 0.25% of  U-236, and",
+            " 0.31% of  U-238, thickness 0.5 mg/cm*cm, assay",
+            " error 1.0 percent, impurity 2.4 percent. The",
+            " second one had a composition of 1.19 % of U-234,",
+            " 92.95 % of U-235, 0.18 % of U-236, and 5.68 % of",
+            " U-238, thickness 0.5 mg/cm*cm, assay error 0.7%,",
+            " impurity 0.7 percent."
+          ]
+        }
+      }
+    }
+  }
+}

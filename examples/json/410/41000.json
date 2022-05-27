@@ -1,0 +1,102 @@
+{
+  "title": " Determination Of The Excitation Cross-Section Of The  Isomeric State Of Au-198 Arising In The (N,G) Reaction  Induced By Dt Neutrons.",
+  "references": [
+    {
+      "x4code": "(C,87KIEV,3,329,198709)",
+      "publication year": "1987"
+    }
+  ],
+  "authors": [
+    {
+      "name": "V.K.Maydanyuk"
+    },
+    {
+      "name": "V.M.Neplyuev"
+    },
+    {
+      "name": "G.I.Primenko"
+    },
+    {
+      "name": "A.I.Sanzhur"
+    },
+    {
+      "name": "V.K.Tarakanov"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "4UKRKGU"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "41000",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198-M,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198-M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(GELI)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Errors Are Not Specified"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(D-T)",
+          "freetext": [
+            " Neutron yield > 10**1 n/sec ."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            " Activation times 0.5-2 hr.",
+            " Cooling time 0.5 - 150 hr. Measurement time 10 hr."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Au foils of 50-200 micron thickness."
+          ]
+        }
+      }
+    }
+  }
+}

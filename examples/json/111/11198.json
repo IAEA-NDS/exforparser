@@ -1,0 +1,150 @@
+{
+  "title": "Long Wavelength Crystal Spectrometer And The Neutron Absorption Cross Sections Of Gold And Boron",
+  "references": [
+    {
+      "x4code": "(J,NSE,8,453,1960)",
+      "publication year": "1960"
+    },
+    {
+      "x4code": "(J,BAP,2,42(NA11),1956)",
+      "publication year": "1956"
+    }
+  ],
+  "authors": [
+    {
+      "name": "F.T.Gould"
+    },
+    {
+      "name": "T.I.Taylor"
+    },
+    {
+      "name": "W.W.Havens Jr"
+    },
+    {
+      "name": "B.M.Rustad"
+    },
+    {
+      "name": "E.Melkonian"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USACOL"
+    },
+    {
+      "x4code": "1USABNL"
+    }
+  ],
+  "#doi": [
+    "10.13182/NSE60-A25832"
+  ],
+  "entry_number": "11198",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(5-B-0(N,ABS),,SIG)",
+        "target": "5-B-0",
+        "process": "N,ABS",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(79-AU-197(N,TOT),,SIG)",
+        "target": "79-AU-197",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,,DERIV)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(5-B-0(N,TOT),,TRN)",
+        "target": "5-B-0",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "TRN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(5-B-0(N,TOT),,TRN)",
+        "target": "5-B-0",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "TRN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(5-B-0(N,TOT),,TRN)",
+        "target": "5-B-0",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "TRN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(5-B-0(N,TOT),,TRN)",
+        "target": "5-B-0",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "TRN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {}
+}

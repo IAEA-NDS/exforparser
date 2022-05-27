@@ -1,0 +1,166 @@
+{
+  "title": " Subthermal Fission Cross-Section Measurements For  U-233,U-235 And Pu-239",
+  "references": [
+    {
+      "x4code": "(C,88MITO,,91,1988)",
+      "publication year": "1988"
+    }
+  ],
+  "authors": [
+    {
+      "name": "C.Wagemans"
+    },
+    {
+      "name": "P.Schillebeeckx"
+    },
+    {
+      "name": "A.Deruytter"
+    },
+    {
+      "name": "R.Barthelemy"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2ZZZGEL"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "LINAC",
+      "x4code": "2ZZZGEL"
+    }
+  ],
+  "entry_number": "22080",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-233(N,F),,SIG)",
+        "target": "92-U-233",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(SIBAR)",
+          "freetext": [
+            " 2 Large surface barrier detectors,20 cm2"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Standard deviations which includes all errors",
+            " except the uncertainty on the normalization integrals."
+          ]
+        },
+        "1": {
+          "x4code": "(MONIT-ERR)",
+          "freetext": [
+            " uncertainty in the normalization"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "LINAC,2ZZZGEL"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(PHOTO)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            " 8.2m flight path"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(3-LI-6(N,T)2-HE-4,,SIG)"
+          ],
+          "freetext": [
+            " neutron flux determination"
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(FF)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  }
+}

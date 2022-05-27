@@ -1,0 +1,76 @@
+{
+  "id": "20868-020-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG,,SPA)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Am-241+Al in Al-container neutron source.",
+            "Am-241+Al neutron source in aluminium container;",
+            "72.0 x 12.0 mm (h x diam.); amount of radioactive",
+            "material - 5Ci; neutron emission rate",
+            "4.4 x 10**4 n/sec; anisotropy factor 1.042.",
+            " The source consists of a homogeneous mixture of A1",
+            " and 241AmO(2)."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".About 0.1 mg/cm2 Pu electroplated onto a 1 mm thick",
+            " nickel backing. Isotopic composition, 98.358% Pu-239,",
+            " 1.613% Pu-240, 0.029% Pu-241 and less",
+            "                                than 0.0005% Pu-242."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "KEV"
+    ],
+    "data": {
+      "0": [
+        500.0
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        1700.0
+      ],
+      "1": [
+        60.0
+      ]
+    }
+  }
+}

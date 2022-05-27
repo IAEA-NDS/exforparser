@@ -1,0 +1,36 @@
+{
+  "id": "30159-023-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        0.4
+      ],
+      "1": [
+        190.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "title": "Total Fission Cross Section Measurements Using Solid State Track Detectors",
+  "references": [
+    {
+      "x4code": "(C,69ROORKEE,2,289,196912)",
+      "publication year": "1969"
+    },
+    {
+      "x4code": "(P,BARC-474,1,197006)",
+      "publication year": "1970"
+    },
+    {
+      "x4code": "(P,BARC/I-79,55,1970)",
+      "publication year": "1970"
+    }
+  ],
+  "authors": [
+    {
+      "name": "R.H.Iyer"
+    },
+    {
+      "name": "R.Sampathkumar"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "3INDTRM"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "CCW"
+    }
+  ],
+  "entry_number": "30035",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(90-TH-232(N,F),,SIG)",
+        "target": "90-TH-232",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(92-U-233(N,F),,SIG)",
+        "target": "92-U-233",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(93-NP-237(N,F),,SIG)",
+        "target": "93-NP-237",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(95-AM-241(N,F),,SIG)",
+        "target": "95-AM-241",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(TRD)",
+          "freetext": [
+            "  Lexan polycarbonate plastic track detector"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "No information given"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "CCW"
+          ],
+          "freetext": [
+            "    Cascade generator"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(D-T)",
+          "freetext": [
+            "    d(t,n) reaction"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Fission cross sections determined by detection",
+            "and counting of fission fragment tracks in lexan",
+            "polycarbonate plastic."
+          ]
+        }
+      }
+    },
+    "MISC-COL": {
+      "XX": {
+        "0": {
+          "x4code": "(MISC)",
+          "freetext": [
+            " Column gives the number of determinations"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-238(N,F),,SIG)"
+          ],
+          "freetext": [
+            "",
+            "  Sigma U-238(n,fission) = 1.20 Barns at",
+            "14.1 MeV"
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(FF)",
+          "freetext": [
+            "   Fission fragments"
+          ]
+        }
+      }
+    }
+  }
+}

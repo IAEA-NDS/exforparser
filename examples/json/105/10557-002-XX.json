@@ -1,0 +1,96 @@
+{
+  "id": "10557-002-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,FIS)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-198,2.698D,B-,,,DG,412.)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Statistical uncertainty."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Data errors include statistical errors,",
+            " uncertainties in source calibration,and uncertainties",
+            " in the NBS standard flux"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Detector calibrated using NBS standard flux and",
+            "thermal cross section of gold"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "5 gold foils, 2 at 2.5 mil and 3 at 5.0 mil thickness."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-MEAN",
+      "DATA",
+      "ERR-S",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        2.1
+      ],
+      "1": [
+        79.9
+      ],
+      "2": [
+        1.3
+      ],
+      "3": [
+        2.9
+      ]
+    }
+  }
+}

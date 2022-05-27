@@ -1,0 +1,270 @@
+{
+  "title": "The Propagation Of Resonance-Energy Neutrons In Uranium",
+  "references": [
+    {
+      "x4code": "(J,AE,19,(3),292,1965)",
+      "publication year": "1965"
+    },
+    {
+      "x4code": "(J,SJA,19,1210,1965)",
+      "publication year": "1965"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Yu.Ya.Stavisskii"
+    },
+    {
+      "name": "L.E.Sherman"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "4RUSFEI"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "41635",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(25-MN-55(N,G)25-MN-56,,SIG,,MXW)",
+        "target": "25-MN-55",
+        "process": "N,G",
+        "sf4": "25-MN-56",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(49-IN-115(N,G)49-IN-116,,SIG,,MXW)",
+        "target": "49-IN-115",
+        "process": "N,G",
+        "sf4": "49-IN-116",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(53-I-127(N,G)53-I-128,,SIG,,MXW)",
+        "target": "53-I-127",
+        "process": "N,G",
+        "sf4": "53-I-128",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,MXW)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(92-U-238(N,G)92-U-239,,SIG,,MXW)",
+        "target": "92-U-238",
+        "process": "N,G",
+        "sf4": "92-U-239",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG,,MXW)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG,,MXW)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "1": {
+        "x4code": "((92-U-235(N,F),,SIG,,SPA)/(92-U-238(N,F),,SIG,,SPA))",
+        "freetext": [
+          ""
+        ]
+      },
+      "XX": {
+        "x4code": "((92-U-235(N,F),,SIG,,SPA)/(92-U-238(N,F),,SIG,,SPA))((92-U-235(N,F),,SIG,,SPA)/(79-AU-197(N,G)79-AU-198,,SIG,,SPA))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "010": {
+      "XX": {
+        "x4code": "(25-MN-55(N,G)25-MN-56,,SIG,,SPA)",
+        "target": "25-MN-55",
+        "process": "N,G",
+        "sf4": "25-MN-56",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "011": {
+      "XX": {
+        "x4code": "(49-IN-115(N,G)49-IN-116,,SIG,,SPA)",
+        "target": "49-IN-115",
+        "process": "N,G",
+        "sf4": "49-IN-116",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "012": {
+      "XX": {
+        "x4code": "(53-I-127(N,G)53-I-128,,SIG,,SPA)",
+        "target": "53-I-127",
+        "process": "N,G",
+        "sf4": "53-I-128",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "013": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,SPA)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "014": {
+      "XX": {
+        "x4code": "(92-U-238(N,G)92-U-239,,SIG,,SPA)",
+        "target": "92-U-238",
+        "process": "N,G",
+        "sf4": "92-U-239",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "015": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG,,SPA)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "016": {
+      "XX": {
+        "x4code": "(53-I-127(N,G)53-I-128,,SIG,,SPA)",
+        "target": "53-I-127",
+        "process": "N,G",
+        "sf4": "53-I-128",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "017": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,SPA)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {}
+}

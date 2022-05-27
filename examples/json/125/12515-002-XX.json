@@ -1,0 +1,72 @@
+{
+  "id": "12515-002-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "SPECC"
+          ],
+          "freetext": [
+            "    CRYSTAL SPECTROMETER"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(5-B-0(N,A),,SIG)"
+          ],
+          "freetext": [
+            "",
+            " BASED ON BORON THERMAL N,ALPHA=759B."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR",
+      "MONIT"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        2.5e-08
+      ],
+      "1": [
+        688.0
+      ],
+      "2": [
+        60.0
+      ],
+      "3": [
+        759.0
+      ]
+    }
+  }
+}

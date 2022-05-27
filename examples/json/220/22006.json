@@ -1,0 +1,1825 @@
+{
+  "title": "-Capture Cross Sections And Gamma-Ray Spectra From  The Interaction Of 0.5 To 3.0 Mev Neutron With  Nuclei In The Mass Range A=63 To 209 .",
+  "references": [
+    {
+      "x4code": "(J,NSE,112,87,1992)",
+      "publication year": "1992"
+    },
+    {
+      "x4code": "(J,NSE,93,43,1986)",
+      "publication year": "1986"
+    },
+    {
+      "x4code": "(J,NSE,96,343,1987)",
+      "publication year": "1987"
+    }
+  ],
+  "authors": [
+    {
+      "name": "J.Voignier"
+    },
+    {
+      "name": "S.Joly"
+    },
+    {
+      "name": "G.Grenier"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2FR BRC"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "VDG",
+      "x4code": "2FR BRC"
+    }
+  ],
+  "entry_number": "22006",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(29-CU-0(N,G),,SIG)",
+        "target": "29-CU-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(29-CU-63(N,G)29-CU-64,,SIG)",
+        "target": "29-CU-63",
+        "process": "N,G",
+        "sf4": "29-CU-64",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(29-CU-65(N,G)29-CU-66,,SIG)",
+        "target": "29-CU-65",
+        "process": "N,G",
+        "sf4": "29-CU-66",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(39-Y-89(N,G)39-Y-90,,SIG)",
+        "target": "39-Y-89",
+        "process": "N,G",
+        "sf4": "39-Y-90",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(40-ZR-0(N,G),,SIG)",
+        "target": "40-ZR-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(41-NB-93(N,G)41-NB-94,,SIG)",
+        "target": "41-NB-93",
+        "process": "N,G",
+        "sf4": "41-NB-94",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(57-LA-139(N,G)57-LA-140,,SIG)",
+        "target": "57-LA-139",
+        "process": "N,G",
+        "sf4": "57-LA-140",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "(64-GD-0(N,G),,SIG)",
+        "target": "64-GD-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "015": {
+      "XX": {
+        "x4code": "(65-TB-159(N,G)65-TB-160,,SIG)",
+        "target": "65-TB-159",
+        "process": "N,G",
+        "sf4": "65-TB-160",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "016": {
+      "XX": {
+        "x4code": "(73-TA-181(N,G)73-TA-182,,SIG)",
+        "target": "73-TA-181",
+        "process": "N,G",
+        "sf4": "73-TA-182",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "017": {
+      "XX": {
+        "x4code": "(74-W-0(N,G),,SIG)",
+        "target": "74-W-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "022": {
+      "XX": {
+        "x4code": "(75-RE-0(N,G),,SIG)",
+        "target": "75-RE-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "023": {
+      "XX": {
+        "x4code": "(78-PT-0(N,G),,SIG)",
+        "target": "78-PT-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "024": {
+      "XX": {
+        "x4code": "(81-TL-0(N,G),,SIG)",
+        "target": "81-TL-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "025": {
+      "XX": {
+        "x4code": "(81-TL-203(N,G)81-TL-204,,SIG)",
+        "target": "81-TL-203",
+        "process": "N,G",
+        "sf4": "81-TL-204",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "026": {
+      "XX": {
+        "x4code": "(81-TL-205(N,G)81-TL-206,,SIG)",
+        "target": "81-TL-205",
+        "process": "N,G",
+        "sf4": "81-TL-206",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "027": {
+      "XX": {
+        "x4code": "(83-BI-209(N,G)83-BI-210,,SIG)",
+        "target": "83-BI-209",
+        "process": "N,G",
+        "sf4": "83-BI-210",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "028": {
+      "XX": {
+        "x4code": "(76-OS-190(N,G)76-OS-191,,SIG)",
+        "target": "76-OS-190",
+        "process": "N,G",
+        "sf4": "76-OS-191",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "029": {
+      "XX": {
+        "x4code": "(76-OS-192(N,G)76-OS-193,,SIG)",
+        "target": "76-OS-192",
+        "process": "N,G",
+        "sf4": "76-OS-193",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "030": {
+      "XX": {
+        "x4code": "(78-PT-194(N,G)78-PT-195,,SIG)",
+        "target": "78-PT-194",
+        "process": "N,G",
+        "sf4": "78-PT-195",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "031": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "032": {
+      "XX": {
+        "x4code": "(21-SC-45(N,G)21-SC-46,,SIG)",
+        "target": "21-SC-45",
+        "process": "N,G",
+        "sf4": "21-SC-46",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "033": {
+      "XX": {
+        "x4code": "(22-TI-0(N,G),,SIG)",
+        "target": "22-TI-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "034": {
+      "XX": {
+        "x4code": "(37-RB-0(N,G),,SIG)",
+        "target": "37-RB-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "035": {
+      "XX": {
+        "x4code": "(42-MO-0(N,G),,SIG)",
+        "target": "42-MO-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "036": {
+      "XX": {
+        "x4code": "(53-I-127(N,G)53-I-128,,SIG)",
+        "target": "53-I-127",
+        "process": "N,G",
+        "sf4": "53-I-128",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "037": {
+      "XX": {
+        "x4code": "(55-CS-133(N,G)55-CS-134,,SIG)",
+        "target": "55-CS-133",
+        "process": "N,G",
+        "sf4": "55-CS-134",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "038": {
+      "XX": {
+        "x4code": "(58-CE-0(N,G),,SIG)",
+        "target": "58-CE-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "039": {
+      "XX": {
+        "x4code": "(59-PR-141(N,G)59-PR-142,,SIG)",
+        "target": "59-PR-141",
+        "process": "N,G",
+        "sf4": "59-PR-142",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "040": {
+      "XX": {
+        "x4code": "(67-HO-165(N,G)67-HO-166,,SIG)",
+        "target": "67-HO-165",
+        "process": "N,G",
+        "sf4": "67-HO-166",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "041": {
+      "XX": {
+        "x4code": "(71-LU-0(N,G),,SIG)",
+        "target": "71-LU-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "042": {
+      "XX": {
+        "x4code": "(21-SC-45(N,G)21-SC-46,,DA/DE)",
+        "target": "21-SC-45",
+        "process": "N,G",
+        "sf4": "21-SC-46",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "043": {
+      "XX": {
+        "x4code": "(22-TI-0(N,G),,DA/DE)",
+        "target": "22-TI-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "044": {
+      "XX": {
+        "x4code": "(29-CU-0(N,G),,DA/DE)",
+        "target": "29-CU-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "045": {
+      "XX": {
+        "x4code": "(29-CU-63(N,G)29-CU-64,,DA/DE)",
+        "target": "29-CU-63",
+        "process": "N,G",
+        "sf4": "29-CU-64",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "046": {
+      "XX": {
+        "x4code": "(29-CU-65(N,G)29-CU-66,,DA/DE)",
+        "target": "29-CU-65",
+        "process": "N,G",
+        "sf4": "29-CU-66",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "047": {
+      "XX": {
+        "x4code": "(37-RB-0(N,G),,DA/DE)",
+        "target": "37-RB-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "048": {
+      "XX": {
+        "x4code": "(39-Y-89(N,G)39-Y-90,,DA/DE)",
+        "target": "39-Y-89",
+        "process": "N,G",
+        "sf4": "39-Y-90",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "049": {
+      "XX": {
+        "x4code": "(92-U-238(N,G)92-U-239,,SIG)",
+        "target": "92-U-238",
+        "process": "N,G",
+        "sf4": "92-U-239",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "050": {
+      "XX": {
+        "x4code": "(41-NB-93(N,G)41-NB-94,,DA/DE)",
+        "target": "41-NB-93",
+        "process": "N,G",
+        "sf4": "41-NB-94",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "051": {
+      "XX": {
+        "x4code": "(42-MO-0(N,G),,DA/DE)",
+        "target": "42-MO-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "052": {
+      "XX": {
+        "x4code": "(53-I-127(N,G)53-I-128,,DA/DE)",
+        "target": "53-I-127",
+        "process": "N,G",
+        "sf4": "53-I-128",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "053": {
+      "XX": {
+        "x4code": "(55-CS-133(N,G)55-CS-134,,DA/DE)",
+        "target": "55-CS-133",
+        "process": "N,G",
+        "sf4": "55-CS-134",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "054": {
+      "XX": {
+        "x4code": "(57-LA-139(N,G)57-LA-140,,DA/DE)",
+        "target": "57-LA-139",
+        "process": "N,G",
+        "sf4": "57-LA-140",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "055": {
+      "XX": {
+        "x4code": "(58-CE-0(N,G),,DA/DE)",
+        "target": "58-CE-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "056": {
+      "XX": {
+        "x4code": "(59-PR-141(N,G)59-PR-142,,DA/DE)",
+        "target": "59-PR-141",
+        "process": "N,G",
+        "sf4": "59-PR-142",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "057": {
+      "XX": {
+        "x4code": "(64-GD-0(N,G),,DA/DE)",
+        "target": "64-GD-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "058": {
+      "XX": {
+        "x4code": "(64-GD-155(N,G)64-GD-156,,DA/DE)",
+        "target": "64-GD-155",
+        "process": "N,G",
+        "sf4": "64-GD-156",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "059": {
+      "XX": {
+        "x4code": "(64-GD-156(N,G)64-GD-157,,DA/DE)",
+        "target": "64-GD-156",
+        "process": "N,G",
+        "sf4": "64-GD-157",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "060": {
+      "XX": {
+        "x4code": "(64-GD-157(N,G)64-GD-158,,DA/DE)",
+        "target": "64-GD-157",
+        "process": "N,G",
+        "sf4": "64-GD-158",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "061": {
+      "XX": {
+        "x4code": "(64-GD-158(N,G)64-GD-159,,DA/DE)",
+        "target": "64-GD-158",
+        "process": "N,G",
+        "sf4": "64-GD-159",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "062": {
+      "XX": {
+        "x4code": "(64-GD-160(N,G)64-GD-161,,DA/DE)",
+        "target": "64-GD-160",
+        "process": "N,G",
+        "sf4": "64-GD-161",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "063": {
+      "XX": {
+        "x4code": "(65-TB-159(N,G)65-TB-160,,DA/DE)",
+        "target": "65-TB-159",
+        "process": "N,G",
+        "sf4": "65-TB-160",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "064": {
+      "XX": {
+        "x4code": "(67-HO-165(N,G)67-HO-166,,DA/DE)",
+        "target": "67-HO-165",
+        "process": "N,G",
+        "sf4": "67-HO-166",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "065": {
+      "XX": {
+        "x4code": "(71-LU-0(N,G),,DA/DE)",
+        "target": "71-LU-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "066": {
+      "XX": {
+        "x4code": "(73-TA-181(N,G)73-TA-182,,DA/DE)",
+        "target": "73-TA-181",
+        "process": "N,G",
+        "sf4": "73-TA-182",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "067": {
+      "XX": {
+        "x4code": "(74-W-0(N,G),,DA/DE)",
+        "target": "74-W-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "068": {
+      "XX": {
+        "x4code": "(74-W-182(N,G)74-W-183,,DA/DE)",
+        "target": "74-W-182",
+        "process": "N,G",
+        "sf4": "74-W-183",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "069": {
+      "XX": {
+        "x4code": "(74-W-183(N,G)74-W-184,,DA/DE)",
+        "target": "74-W-183",
+        "process": "N,G",
+        "sf4": "74-W-184",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "070": {
+      "XX": {
+        "x4code": "(74-W-184(N,G)74-W-185,,DA/DE)",
+        "target": "74-W-184",
+        "process": "N,G",
+        "sf4": "74-W-185",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "071": {
+      "XX": {
+        "x4code": "(74-W-186(N,G)74-W-187,,DA/DE)",
+        "target": "74-W-186",
+        "process": "N,G",
+        "sf4": "74-W-187",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "072": {
+      "XX": {
+        "x4code": "(75-RE-0(N,G),,DA/DE)",
+        "target": "75-RE-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "073": {
+      "XX": {
+        "x4code": "(76-OS-190(N,G)76-OS-191,,DA/DE)",
+        "target": "76-OS-190",
+        "process": "N,G",
+        "sf4": "76-OS-191",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "074": {
+      "XX": {
+        "x4code": "(76-OS-192(N,G)76-OS-193,,DA/DE)",
+        "target": "76-OS-192",
+        "process": "N,G",
+        "sf4": "76-OS-193",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "075": {
+      "XX": {
+        "x4code": "(78-PT-0(N,G),,DA/DE)",
+        "target": "78-PT-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "076": {
+      "XX": {
+        "x4code": "(78-PT-194(N,G)78-PT-195,,DA/DE)",
+        "target": "78-PT-194",
+        "process": "N,G",
+        "sf4": "78-PT-195",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "077": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,DA/DE)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "078": {
+      "XX": {
+        "x4code": "(81-TL-0(N,G),,DA/DE)",
+        "target": "81-TL-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "079": {
+      "XX": {
+        "x4code": "(83-BI-209(N,G)83-BI-210,,DA/DE)",
+        "target": "83-BI-209",
+        "process": "N,G",
+        "sf4": "83-BI-210",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "080": {
+      "XX": {
+        "x4code": "(92-U-238(N,G)92-U-239,,DA/DE)",
+        "target": "92-U-238",
+        "process": "N,G",
+        "sf4": "92-U-239",
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "096": {
+      "XX": {
+        "x4code": "(21-SC-45(N,G)21-SC-46,,MLT,,,DERIV)",
+        "target": "21-SC-45",
+        "process": "N,G",
+        "sf4": "21-SC-46",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "097": {
+      "XX": {
+        "x4code": "(22-TI-0(N,G),,MLT,,,DERIV)",
+        "target": "22-TI-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "098": {
+      "XX": {
+        "x4code": "(37-RB-0(N,G),,MLT,,,DERIV)",
+        "target": "37-RB-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "099": {
+      "XX": {
+        "x4code": "(42-MO-0(N,G),,MLT,,,DERIV)",
+        "target": "42-MO-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "100": {
+      "XX": {
+        "x4code": "(53-I-127(N,G)53-I-128,,MLT,,,DERIV)",
+        "target": "53-I-127",
+        "process": "N,G",
+        "sf4": "53-I-128",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "101": {
+      "XX": {
+        "x4code": "(55-CS-133(N,G)55-CS-134,,MLT,,,DERIV)",
+        "target": "55-CS-133",
+        "process": "N,G",
+        "sf4": "55-CS-134",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "102": {
+      "XX": {
+        "x4code": "(58-CE-0(N,G),,MLT,,,DERIV)",
+        "target": "58-CE-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "103": {
+      "XX": {
+        "x4code": "(59-PR-141(N,G)59-PR-142,,MLT,,,DERIV)",
+        "target": "59-PR-141",
+        "process": "N,G",
+        "sf4": "59-PR-142",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "104": {
+      "XX": {
+        "x4code": "(67-HO-165(N,G)67-HO-166,,MLT,,,DERIV)",
+        "target": "67-HO-165",
+        "process": "N,G",
+        "sf4": "67-HO-166",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "105": {
+      "XX": {
+        "x4code": "(71-LU-0(N,G),,MLT,,,DERIV)",
+        "target": "71-LU-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "106": {
+      "XX": {
+        "x4code": "(76-OS-190(N,G)76-OS-191,,MLT,,,DERIV)",
+        "target": "76-OS-190",
+        "process": "N,G",
+        "sf4": "76-OS-191",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "107": {
+      "XX": {
+        "x4code": "(76-OS-192(N,G)76-OS-193,,MLT,,,DERIV)",
+        "target": "76-OS-192",
+        "process": "N,G",
+        "sf4": "76-OS-193",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "108": {
+      "XX": {
+        "x4code": "(78-PT-194(N,G)78-PT-195,,MLT,,,DERIV)",
+        "target": "78-PT-194",
+        "process": "N,G",
+        "sf4": "78-PT-195",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "109": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,MLT,,,DERIV)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "110": {
+      "XX": {
+        "x4code": "(92-U-238(N,G)92-U-239,,MLT,,,DERIV)",
+        "target": "92-U-238",
+        "process": "N,G",
+        "sf4": "92-U-239",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "111": {
+      "XX": {
+        "x4code": "(29-CU-0(N,G),,SIG,,,DERIV)",
+        "target": "29-CU-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "112": {
+      "XX": {
+        "x4code": "(64-GD-0(N,G),,SIG,,,DERIV)",
+        "target": "64-GD-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "113": {
+      "XX": {
+        "x4code": "(74-W-0(N,G),,SIG,,,DERIV)",
+        "target": "74-W-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "114": {
+      "XX": {
+        "x4code": "(81-TL-0(N,G),,SIG,,,DERIV)",
+        "target": "81-TL-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "115": {
+      "XX": {
+        "x4code": "(40-ZR-0(N,G),,DA/DE)",
+        "target": "40-ZR-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA/DE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "116": {
+      "XX": {
+        "x4code": "(29-CU-63(N,G)29-CU-64,,MLT,,,DERIV)",
+        "target": "29-CU-63",
+        "process": "N,G",
+        "sf4": "29-CU-64",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "117": {
+      "XX": {
+        "x4code": "(29-CU-65(N,G)29-CU-66,,MLT,,,DERIV)",
+        "target": "29-CU-65",
+        "process": "N,G",
+        "sf4": "29-CU-66",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "118": {
+      "XX": {
+        "x4code": "(39-Y-89(N,G)39-Y-90,,MLT,,,DERIV)",
+        "target": "39-Y-89",
+        "process": "N,G",
+        "sf4": "39-Y-90",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "119": {
+      "XX": {
+        "x4code": "(41-NB-93(N,G)41-NB-94,,MLT,,,DERIV)",
+        "target": "41-NB-93",
+        "process": "N,G",
+        "sf4": "41-NB-94",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "120": {
+      "XX": {
+        "x4code": "(57-LA-139(N,G)57-LA-140,,MLT,,,DERIV)",
+        "target": "57-LA-139",
+        "process": "N,G",
+        "sf4": "57-LA-140",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "121": {
+      "XX": {
+        "x4code": "(64-GD-155(N,G)64-GD-156,,MLT,,,DERIV)",
+        "target": "64-GD-155",
+        "process": "N,G",
+        "sf4": "64-GD-156",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "122": {
+      "XX": {
+        "x4code": "(64-GD-156(N,G)64-GD-157,,MLT,,,DERIV)",
+        "target": "64-GD-156",
+        "process": "N,G",
+        "sf4": "64-GD-157",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "123": {
+      "XX": {
+        "x4code": "(64-GD-157(N,G)64-GD-158,,MLT,,,DERIV)",
+        "target": "64-GD-157",
+        "process": "N,G",
+        "sf4": "64-GD-158",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "124": {
+      "XX": {
+        "x4code": "(64-GD-158(N,G)64-GD-159,,MLT,,,DERIV)",
+        "target": "64-GD-158",
+        "process": "N,G",
+        "sf4": "64-GD-159",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "125": {
+      "XX": {
+        "x4code": "(64-GD-160(N,G)64-GD-161,,MLT,,,DERIV)",
+        "target": "64-GD-160",
+        "process": "N,G",
+        "sf4": "64-GD-161",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "126": {
+      "XX": {
+        "x4code": "(65-TB-159(N,G)65-TB-160,,MLT,,,DERIV)",
+        "target": "65-TB-159",
+        "process": "N,G",
+        "sf4": "65-TB-160",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "127": {
+      "XX": {
+        "x4code": "(73-TA-181(N,G)73-TA-182,,MLT,,,DERIV)",
+        "target": "73-TA-181",
+        "process": "N,G",
+        "sf4": "73-TA-182",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "128": {
+      "XX": {
+        "x4code": "(74-W-182(N,G)74-W-183,,MLT,,,DERIV)",
+        "target": "74-W-182",
+        "process": "N,G",
+        "sf4": "74-W-183",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "129": {
+      "XX": {
+        "x4code": "(74-W-183(N,G)74-W-184,,MLT,,,DERIV)",
+        "target": "74-W-183",
+        "process": "N,G",
+        "sf4": "74-W-184",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "130": {
+      "XX": {
+        "x4code": "(74-W-184(N,G)74-W-185,,MLT,,,DERIV)",
+        "target": "74-W-184",
+        "process": "N,G",
+        "sf4": "74-W-185",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "131": {
+      "XX": {
+        "x4code": "(74-W-186(N,G)74-W-187,,MLT,,,DERIV)",
+        "target": "74-W-186",
+        "process": "N,G",
+        "sf4": "74-W-187",
+        "residual": null,
+        "sf5": null,
+        "sf6": "MLT",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Spectrum fitting method."
+          ]
+        }
+      }
+    },
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "-For gamma ray attenuation in the samples",
+            "-For gamma-ray efficiency of spectrometer.",
+            "-For neutron source anisotropy",
+            "-For neutron attenuation in the sample and in the air",
+            "-For self shielding correction",
+            "-For multiple scattering correction"
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(NAICR)",
+          "freetext": [
+            "  NaI scintillator for prompt gammas in anti-",
+            " Compton and first-escape modes. 7.6cm diameter, 15.2cm",
+            " long NaI scintillator surrounded by an annular NaI",
+            " crystal.Energy resolution for E-gamma=1.836 MeV was",
+            " 8.5% in anti-Compton mode, 12% in first-escape mode."
+          ]
+        },
+        "1": {
+          "x4code": "(LONGC)",
+          "freetext": [
+            " Two BF3 counters for neutron fluence detection."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Consists of :"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-S,1.5,30.)",
+          "freetext": [
+            " Statistical error."
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Efficiency of gamma ray spectrometer error 6.%"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-2,2.0,4.0)",
+          "freetext": [
+            "  Error of the neutron long counter",
+            "        efficiency."
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-3,1.0,2.5)",
+          "freetext": [
+            " Error of the gamma ray attenuation in",
+            "        the sample."
+          ]
+        },
+        "5": {
+          "x4code": "(ERR-4,0.5,2.)",
+          "freetext": [
+            " Error due to the neutron source",
+            "               anisotropy"
+          ]
+        },
+        "6": {
+          "x4code": "(ERR-5,0.5,2.5)",
+          "freetext": [
+            " Error due to neutron transmission",
+            "        through sample."
+          ]
+        },
+        "7": {
+          "x4code": "(ERR-6,0.2,2.8)",
+          "freetext": [
+            " Error due to neutron multiple",
+            "        scattering in sample."
+          ]
+        },
+        "8": {
+          "x4code": "(ERR-7,1.5,4.)",
+          "freetext": [
+            " Error due to extrapolation of gamma",
+            "        strength function."
+          ]
+        },
+        "9": {
+          "x4code": "(ERR-8,0.2,0.8)",
+          "freetext": [
+            " Error due to self-shielding effect.",
+            " Total relative error on the capture x-sect 7.0 -31.0"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG,2FR BRC"
+          ],
+          "freetext": [
+            " 4 MV Van de Graaff generator."
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "1": {
+        "0": {
+          "freetext": [
+            " Neutron energy spread corresponding to 1 mg/cm**2"
+          ]
+        }
+      },
+      "XX": {
+        "0": {
+          "freetext": [
+            " tritium target +- 55.keV at 1 MeV, +-33 keV at 3.MeV."
+          ]
+        }
+      },
+      "2": {
+        "0": {
+          "freetext": [
+            " Neutron flux with energy spread between 40 and 80 keV."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            "  Sample to detector distance 80 cm."
+          ]
+        },
+        "1": {
+          "x4code": "(GSPEC)",
+          "freetext": [
+            "  Prompt gamma ray technique with extrapolation",
+            " of the pulse height spectrum to zero energy by means",
+            " of a statistical model calculation ."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(5-B-10(N,A)3-LI-7,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " 50 or 60 mm diameter disks of 1.5 to 16 mm thick.",
+            " 99.9% chemical purity (except Gd).Samples were placed",
+            " at 0 deg and 6 cm from lithium or tritium target."
+          ]
+        }
+      }
+    }
+  }
+}

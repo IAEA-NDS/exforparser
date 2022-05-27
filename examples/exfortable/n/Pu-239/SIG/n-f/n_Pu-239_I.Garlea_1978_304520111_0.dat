@@ -1,0 +1,11 @@
+# entry       : 30452 
+# subentry    : 011 
+# pointer     : 1 
+# reaction    : (94-PU-239(N,F),,SIG,,SPA) 
+# year        : 1978 
+# author      : I.Garlea 
+# institute   : 3RUMPIT 
+# reference   : (J,RRP,23,409,1978) 
+# facilitie   : {'type': 'REAC', 'x4code': '3RUMPIT'}
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
+      7.60000E-01      0.00000E+00      1.78000E+03      0.00000E+00       # Lab                   

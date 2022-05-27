@@ -1,0 +1,111 @@
+{
+  "title": "Absolute Measurements Of The 197Au(N,Gamma)198Au Cross  Section For Fast Neutrons",
+  "references": [
+    {
+      "x4code": "(J,NSE,109,215,9110)",
+      "publication year": "1991"
+    }
+  ],
+  "authors": [
+    {
+      "name": "S.Sakamoto"
+    },
+    {
+      "name": "E.Quang"
+    },
+    {
+      "name": "G.F.Knoll"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USAMHG"
+    },
+    {
+      "x4code": "2JPNTOK"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "13519",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "CORRECTED FOR:",
+            "- FRACTION OF ACTIVITY DUE TO ROOM-RETURN NEUTRONS",
+            "- NEUTRON SCATTERING FROM COMPONENTS OF IRRADIATION",
+            "  PACKAGE",
+            "- INCIDENT ENERGY SPECTRUM"
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(NAICR)",
+          "freetext": [
+            " PAIR OF NAI(TL) DETECTORS IN NEAR-4PI GEOMETRY",
+            " TO MEASURE 412-KEV GAMMA RAYS FROM 198AU."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            "",
+            "NEUTRON EMISSION RATES OF PHOTONEUTRON SOURCE",
+            " CALIBRATED USING MANGANESE BATH METHOD. MN ACTIVITY",
+            " INDUCED BY EACH SOURCE COMPARED TO REFERENCE 252CF",
+            " SOURCE."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "HIGH PURITY (99.99%) GOLD FOIL, 0.025-MM THICKNESS."
+          ]
+        }
+      }
+    }
+  }
+}

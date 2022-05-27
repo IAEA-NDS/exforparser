@@ -1,0 +1,229 @@
+{
+  "title": "Cross Section Of The Am-241(N,Gamma)Am-242 Reaction For A Neutron Spectrum Similar To The Fission Spectrum",
+  "references": [
+    {
+      "x4code": "(J,SJA,30,452,1971)",
+      "publication year": "1971"
+    },
+    {
+      "x4code": "(J,AE,30,(4),369,1971)",
+      "publication year": "1971"
+    }
+  ],
+  "authors": [
+    {
+      "name": "N.I.Ivanova"
+    },
+    {
+      "name": "A.N.Kobzev"
+    },
+    {
+      "name": "N.G.Krylov"
+    },
+    {
+      "name": "A.A.Lbov"
+    },
+    {
+      "name": "N.P.Martynov"
+    },
+    {
+      "name": "A.E.Trikanov"
+    },
+    {
+      "name": "A.I.Shelamkov"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "4RUSKUR"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "40190",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(95-AM-241(N,G)95-AM-242-G,,SIG,,FIS)",
+        "target": "95-AM-241",
+        "process": "N,G",
+        "sf4": "95-AM-242-G",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": [
+          "Average of six measurements."
+        ]
+      }
+    },
+    "003": {
+      "1": {
+        "x4code": "(95-AM-241(N,G)95-AM-242-G,,SIG,,FIS)",
+        "target": "95-AM-241",
+        "process": "N,G",
+        "sf4": "95-AM-242-G",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(95-AM-241(N,G)95-AM-242-G,,SIG,,FIS)",
+        "target": "95-AM-241",
+        "process": "N,G",
+        "sf4": "95-AM-242-G",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      },
+      "3": {
+        "x4code": "(95-AM-241(N,G)95-AM-242-G,,SIG,,FIS)",
+        "target": "95-AM-241",
+        "process": "N,G",
+        "sf4": "95-AM-242-G",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      },
+      "4": {
+        "x4code": "(95-AM-241(N,G)95-AM-242-G,,SIG,,FIS)",
+        "target": "95-AM-241",
+        "process": "N,G",
+        "sf4": "95-AM-242-G",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      },
+      "5": {
+        "x4code": "(95-AM-241(N,G)95-AM-242-G,,SIG,,FIS)",
+        "target": "95-AM-241",
+        "process": "N,G",
+        "sf4": "95-AM-242-G",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      },
+      "6": {
+        "x4code": "(95-AM-241(N,G)95-AM-242-G,,SIG,,FIS)",
+        "target": "95-AM-241",
+        "process": "N,G",
+        "sf4": "95-AM-242-G",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,FIS)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "For background.",
+            "For decay at activation.",
+            "For decay scheme."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(SCIN)",
+          "freetext": [
+            " Scintillation plastic detector 53 x 1 mm in size",
+            "and an FEU-11B photomultiplier was used to measure",
+            "beta-activity.",
+            "Different registration thresholds, corresponding to",
+            "beta energy ~150-300 keV.",
+            "Calibration by Sr-90 (E-beta 0.54 MeV), Tl( 0.765 MeV),",
+            "Au-198( 0.963 MeV).",
+            "Efficiency for Am-242 was 13.7 and 11 % depending from",
+            "threshold value."
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Neutron spectrum was close to fission spectrum and",
+            "had following energy distribution",
+            "   energy (MeV)       per-cent",
+            "    0 - 0.1            3.8",
+            "    0.1-0.4            19.3",
+            "    0.4-0.9            26.9",
+            "    0.9-1.4            15.0",
+            "    1.4-3.0            23.8",
+            "    above 3.0          11.2"
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(B-)",
+          "freetext": [
+            "  Decay beta"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "~ 1 mg of Am-241 chloride, alpha-activity ~7.2E+2",
+            "decay/min, gamma-activity ~2.7E+3 quanta/min.",
+            "In quartz cassettes, placed in Cd sheets of 0.5 mm",
+            "thickness.",
+            "With each Cd sheet Au-197 foil of ~2mg - for neutron",
+            "flux control."
+          ]
+        }
+      }
+    }
+  }
+}

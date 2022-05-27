@@ -1,0 +1,201 @@
+{
+  "title": "U233,U235,Pu239 Fission Cross Sections For 0.3-2.5 Mev Neutrons.",
+  "references": [
+    {
+      "x4code": "(J,AE,13,(4),366,1962)",
+      "publication year": "1962"
+    },
+    {
+      "x4code": "(J,SJA,13,974,1963)",
+      "publication year": "1963"
+    },
+    {
+      "x4code": "(R,ICD-4,339,1967)",
+      "publication year": "1967"
+    }
+  ],
+  "authors": [
+    {
+      "name": "G.N.Smirenkin"
+    },
+    {
+      "name": "B.G.Nesterov"
+    },
+    {
+      "name": "I.I.Bondarenko"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "4RUSFEI"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "VDG"
+    }
+  ],
+  "entry_number": "40650",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-233(N,F),,SIG)",
+        "target": "92-U-233",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " For background of neutrons scattered in target and",
+            " walls of chamber - less 3.%."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(IOCH)",
+          "freetext": [
+            " Double ionization chamber for fission fragments"
+          ]
+        },
+        "1": {
+          "x4code": "(BF3)",
+          "freetext": [
+            " Boron counter of 30 mm diameter and 70% B-10 in",
+            " paraffin block. For relative measurements of neutron",
+            " yields in direction of fissile layers."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Statistical uncertainty."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Normalization uncertainty (5.-10%). Max."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-T)",
+          "freetext": [
+            "  T(p,n)He-3 reaction on solid tritium target of",
+            "  about 25 keV thickness."
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "R",
+            "ent": null,
+            "author": "Vatset+",
+            "ref": "J,AE,7,(2),172,1959"
+          },
+          "freetext": [
+            " Details of boron",
+            "                                 counter construction."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Layers of about 1.5 mg/cm**2 thickness and 38mm",
+            " diameter. Uranium oxide enriched in U-235 to 92.1%.",
+            " Uranium U-233 oxide with admixtures of U-238 - 4.8%,",
+            " U-234 - 2.4%, U-235 - 0.7%.",
+            " Pu-239 with admixtures of Pu-240 - 1.8%."
+          ]
+        }
+      }
+    }
+  }
+}

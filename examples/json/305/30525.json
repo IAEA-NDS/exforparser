@@ -1,0 +1,270 @@
+{
+  "title": "The Fission Cross-Section Of Pu-239 For Neutrons In The Energy Interval From 0.009 Ev To 0.6 Ev.",
+  "references": [
+    {
+      "x4code": "(J,RRP,24,(5),437,1979)",
+      "publication year": "1979"
+    }
+  ],
+  "authors": [
+    {
+      "name": "I.Berceanu"
+    },
+    {
+      "name": "C.Borcea"
+    },
+    {
+      "name": "I.M.Brincus"
+    },
+    {
+      "name": "A.Buta"
+    },
+    {
+      "name": "A.Constantinescu"
+    },
+    {
+      "name": "F.Cirstoiu"
+    },
+    {
+      "name": "A.Izbasescu"
+    },
+    {
+      "name": "I.Lazar"
+    },
+    {
+      "name": "I.Mihai"
+    },
+    {
+      "name": "M.Petrascu"
+    },
+    {
+      "name": "M.Petrovici"
+    },
+    {
+      "name": "V.Simion"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "3RUMBUC"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "CHOPS",
+      "x4code": "3RUMBUC"
+    }
+  ],
+  "entry_number": "30525",
+  "reactions": {
+    "002": {
+      "1": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(94-PU-239(N,F),,SIG,,RTE)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "RTE",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "1": {
+        "x4code": "(94-PU-239(N,0),,EN)",
+        "target": "94-PU-239",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "EN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(94-PU-239(N,EL),,WID/RED,,2G)",
+        "target": "94-PU-239",
+        "process": "N,EL",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID/RED",
+        "sf7": null,
+        "sf8": "2G",
+        "sf9": null,
+        "freetext": []
+      },
+      "3": {
+        "x4code": "(94-PU-239(N,F),,WID)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "4": {
+        "x4code": "(94-PU-239(N,G),,WID)",
+        "target": "94-PU-239",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "5": {
+        "x4code": "(94-PU-239(N,TOT),,WID)",
+        "target": "94-PU-239",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "6": {
+        "x4code": "(94-PU-239(N,0),,J)",
+        "target": "94-PU-239",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "J",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(SCIN)",
+          "freetext": [
+            " 2 pi gas scintillation counter."
+          ]
+        },
+        "1": {
+          "x4code": "(NAICR)",
+          "freetext": [
+            " For n-flux determination, 477.61 keV gamma ray",
+            "resulting from B-10(n,alpha)Li-7 was detected with a",
+            "NaI spectrometer."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "CHOPS,3RUMBUC"
+          ],
+          "freetext": [
+            "",
+            "Rotation speed up to 10000 rpm, the rotor is 110 mm in",
+            "diameter with slits of 2 mm width.  The working speed",
+            "was chosen 5000 rpm and stability of the rotation",
+            "frequency being better than 0.5% for long-term",
+            "operation."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(REAC)",
+          "freetext": [
+            " VVR-S reactor, horizontal channel."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            " Time of flight.  Path = 5.057 m.",
+            " The best conditions were achieved by choosing 16 micro",
+            " sec for the channel width and 5000 rpm for the rotor",
+            " speed."
+          ]
+        }
+      }
+    },
+    "MONIT-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": null,
+            "ent": "30089002",
+            "author": "C.BORCEA+",
+            "ref": "R,IFA-NR-33,(1970),197007"
+          },
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(94-PU-239(N,F),,SIG)"
+          ],
+          "freetext": [
+            " at 0.0253 eV."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "99.88% Pu-239, 0.12% Pu-240.",
+            "The targets were obtained by electrospraying using a",
+            "solution of plutonium acetate in metanol.",
+            " 169.31 micro-g/cm2 (thick) and 10.09 micro-g/cm2(thin)",
+            "thicknesses having 20 mm in diameter."
+          ]
+        }
+      }
+    }
+  }
+}

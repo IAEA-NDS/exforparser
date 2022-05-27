@@ -1,0 +1,15 @@
+# entry       : 21463 
+# subentry    : 006 
+# pointer     : XX 
+# reaction    : (94-PU-239(N,F),,SIG) 
+# year        : 1965 
+# author      : P.H.White 
+# institute   : 2UK ALD 
+# reference   : (C,65SALZBURG,1,219,196503) 
+# facilitie   : {'type': 'VDG', 'x4code': '2UK ALD'}
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
+      4.00000E-02      1.00000E-02      1.45000E+03      5.00000E+01       # Lab                   
+      6.70000E-02      1.00000E-02      1.46000E+03      5.00000E+01       # Lab                   
+      1.27000E-01      7.00000E-03      1.51000E+03      5.00000E+01       # Lab                   
+      3.12000E-01      7.00000E-03      1.52000E+03      5.00000E+01       # Lab                   
+      5.50000E-01      1.00000E-02      1.56000E+03      5.00000E+01       # Lab                   

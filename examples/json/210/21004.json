@@ -1,0 +1,234 @@
+{
+  "title": "-14.7 Mev Neutron Capture Cross Section Measurements  With Activation Technique-",
+  "references": [
+    {
+      "x4code": "(J,PS,21,(1),21,8001)",
+      "publication year": "1980"
+    },
+    {
+      "x4code": "(P,KDK-32,12,7904)",
+      "publication year": "1979"
+    },
+    {
+      "x4code": "(R,LUNF-D6-3032,7904)",
+      "publication year": "1979"
+    },
+    {
+      "x4code": "(P,KDK-23,13,7804)",
+      "publication year": "1978"
+    },
+    {
+      "x4code": "(P,EANDC(OR)-115L,7207)",
+      "publication year": "1972"
+    },
+    {
+      "x4code": "(J,NKA,23,175,7802)",
+      "publication year": "1978"
+    }
+  ],
+  "authors": [
+    {
+      "name": "G.Magnusson"
+    },
+    {
+      "name": "P.Andersson"
+    },
+    {
+      "name": "I.Berquist"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2SWDLND"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "VDG  "
+    }
+  ],
+  "entry_number": "21004",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(25-MN-55(N,G)25-MN-56,,SIG)",
+        "target": "25-MN-55",
+        "process": "N,G",
+        "sf4": "25-MN-56",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(53-I-127(N,G)53-I-128,,SIG)",
+        "target": "53-I-127",
+        "process": "N,G",
+        "sf4": "53-I-128",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(74-W-186(N,G)74-W-187,,SIG)",
+        "target": "74-W-186",
+        "process": "N,G",
+        "sf4": "74-W-187",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198-G,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198-G",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(11-NA-23(N,G)11-NA-24,,SIG)",
+        "target": "11-NA-23",
+        "process": "N,G",
+        "sf4": "11-NA-24",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(39-Y-89(N,G)39-Y-90-M,,SIG)",
+        "target": "39-Y-89",
+        "process": "N,G",
+        "sf4": "39-Y-90-M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(56-BA-138(N,G)56-BA-139,,SIG)",
+        "target": "56-BA-138",
+        "process": "N,G",
+        "sf4": "56-BA-139",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".FOR -",
+            " GAMMA-RAY ATTENUATION IN THE SAMPLE(LESS THAN 10 PC),",
+            " CASCADE SUMMING EFFECTS (ABOUT 20 PC FOR NA, Y AND W,",
+            "  AND ABOUT A FEW PERCENT FOR THE OTHER ELEMENTS),",
+            " SECONDARY NEUTRONS,",
+            " ROOM-SCATTERED NEUTRONS AND",
+            " SAMPLE THICKNESS."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(LONGC)",
+          "freetext": [
+            " A LONG COUNTER TO MONITOR THE NEUTRON FLUX."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".THE FOLLOWING UNCERTAINTIES HAVE BEEN TAKEN INTO",
+            " ACCOUNT,",
+            " - STATISTICS,",
+            " - DETERMINATION OF THE GE(LI) DETECTOR EFFICIENCY,",
+            " - MONITOR CROSS-SECTION,",
+            " - ACTIVITY BUILD-UP,",
+            " - DECAY FACTOR."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG  "
+          ],
+          "freetext": [
+            " A 500 KEV VAN DE GRAAFF ACCELERATOR."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            "",
+            " TITANIUM TARGET ON ALUMINUM BACKING."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            " ACTIVATION."
+          ]
+        }
+      }
+    }
+  }
+}

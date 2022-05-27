@@ -1,0 +1,83 @@
+{
+  "title": "Fast Neutron Activation Cross Section Of Au197.",
+  "references": [
+    {
+      "x4code": "(J,PR,122,1280,61)",
+      "publication year": "1961"
+    },
+    {
+      "x4code": "(P,WASH-1068,5,6605)",
+      "publication year": "1966"
+    },
+    {
+      "x4code": "(W,COX,66)",
+      "publication year": "1966"
+    }
+  ],
+  "authors": [
+    {
+      "name": "S.A.Cox"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USAANL"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "12213",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(NAICR)",
+          "freetext": [
+            " NAI CRYSTAL"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            " ACTIVATION"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG)"
+          ],
+          "freetext": [
+            "",
+            " NORMALIZED TO U-235 FISSION ABOVE 200",
+            " KEV.",
+            "BELOW 200 KEV, SHAPE RELATIVE TO B-10 (N,ALPHA)."
+          ]
+        }
+      }
+    }
+  }
+}

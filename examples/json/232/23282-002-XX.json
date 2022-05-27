@@ -1,0 +1,267 @@
+{
+  "id": "23282-002-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,MXW)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW",
+    "sf9": null,
+    "freetext": [
+      " MACS"
+    ]
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "MACS at kT=25 keV was defined",
+            " = 2/sqrt(PI) * Kmax * SIGexp, where",
+            "SIGexp - exp. cross section,",
+            "Kmax - coefficient 0.955 for kT=25 keV, calculated by",
+            "using exp.measurements from REL-REFs of C.Lederer+ and",
+            "G.Feinberg and gold cross section from ENDF/B-VII.1,",
+            "see formula 7 in C,20014DEBREC,(102),2014 ."
+          ]
+        }
+      }
+    },
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "For gamma absorption and scattering in materials :",
+            "for Au - 0.9801 for Be - 0.9286.",
+            "For neutron scattering ( mainly in Cu backing) - 0.977.",
+            "For the flat sample - 1.263 .",
+            "For decay during irradiation, cooling, measurement",
+            "for Au - 0.06718, for Be - 0.00353.",
+            "For difference of exp. quasi-Maxwellian spectrum from",
+            " true Maxwellian neutron spectrum of kT=25 keV - 0.955"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total uncertainty ~ 4% .",
+            " Considered uncertainties:"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Counting statistics for Au - 0.7%"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Counting statistics for Be  - 0.3%"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Correction factor for decay of Au - 0.01%"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " Correction factor for decay of Be - 0.01%"
+          ]
+        },
+        "5": {
+          "x4code": "(ERR-4)",
+          "freetext": [
+            " Correction for gamma absorption and scattering",
+            "        for Au - 0.3%"
+          ]
+        },
+        "6": {
+          "x4code": "(ERR-5)",
+          "freetext": [
+            " Correction for gamma absorption and scattering",
+            "        for Be - 0.3%"
+          ]
+        },
+        "7": {
+          "x4code": "(ERR-6)",
+          "freetext": [
+            " Ratio of gamma detection intensities Be to Au",
+            "        - 1.8%"
+          ]
+        },
+        "8": {
+          "x4code": "(ERR-7)",
+          "freetext": [
+            " Correction for the flat sample - 2%"
+          ]
+        },
+        "9": {
+          "x4code": "(ERR-8)",
+          "freetext": [
+            " Correction for neutron scattering - 0.3%"
+          ]
+        },
+        "10": {
+          "x4code": "(ERR-9)",
+          "freetext": [
+            " Correction for true Maxwellian spectrum - 1.5%"
+          ]
+        },
+        "11": {
+          "x4code": "(ERR-10)",
+          "freetext": [
+            " Au sample thickness - 1.5% ."
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "R",
+            "ent": "23152001",
+            "author": "C.Lederer+",
+            "ref": "J,PR/C,83,034608,2011"
+          },
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": {
+            "type": "R",
+            "ent": "O2230001",
+            "author": "C.Lederer+",
+            "ref": "J,PR/C,85,055809,2012"
+          },
+          "freetext": [
+            ""
+          ]
+        },
+        "2": {
+          "x4code": {
+            "type": "R",
+            "ent": "O1983001",
+            "author": "G.Feinberg+",
+            "ref": "J,PR/C,85,055810,2012"
+          },
+          "freetext": [
+            "",
+            " Neutron spectrum."
+          ]
+        },
+        "3": {
+          "x4code": {
+            "type": "A",
+            "ent": "23284001",
+            "author": "G.Feinberg+",
+            "ref": "J,PR/C,85,055810,2012"
+          },
+          "freetext": [
+            "",
+            " MACS=616+-17 mb."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1",
+      "ERR-2",
+      "ERR-3",
+      "ERR-4",
+      "ERR-5",
+      "ERR-6",
+      "ERR-7",
+      "ERR-8",
+      "ERR-9",
+      "ERR-10"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        0.3
+      ],
+      "1": [
+        0.01
+      ],
+      "2": [
+        0.01
+      ],
+      "3": [
+        0.3
+      ],
+      "4": [
+        0.3
+      ],
+      "5": [
+        1.8
+      ],
+      "6": [
+        2.0
+      ],
+      "7": [
+        0.3
+      ],
+      "8": [
+        1.5
+      ],
+      "9": [
+        1.5
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "KT",
+      "DATA",
+      "ERR-T",
+      "ERR-S"
+    ],
+    "units": [
+      "KEV",
+      "MB",
+      "MB",
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        25.0
+      ],
+      "1": [
+        645.0
+      ],
+      "2": [
+        25.0
+      ],
+      "3": [
+        0.7
+      ]
+    }
+  }
+}

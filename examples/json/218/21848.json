@@ -1,0 +1,198 @@
+{
+  "title": "-The Neutron Capture Cross Section Of Gold In The  Kev Energy Region-.",
+  "references": [
+    {
+      "x4code": "(J,JNE,22,505,6808)",
+      "publication year": "1968"
+    },
+    {
+      "x4code": "(C,67KARLSR,1,67,6711)",
+      "publication year": "1967"
+    },
+    {
+      "x4code": "(R,KFK-635,6710)",
+      "publication year": "1967"
+    }
+  ],
+  "authors": [
+    {
+      "name": "W.P.Poenitz"
+    },
+    {
+      "name": "D.Kompe"
+    },
+    {
+      "name": "H.O.Menlove"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2GERKFK"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "VDG  "
+    }
+  ],
+  "entry_number": "21848",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".FOR-",
+            " - THE RELATION BETWEEN THE EXPERIMENTALLY",
+            "   DETERMINED AVERAGE CROSS SECTION AND THE",
+            "   AVERAGE ENERGY,",
+            " - CAPTURE EVENTS WHICH ARE DUE TO NEUTRONS",
+            "   SCATTERED IN THE SAMPLE BOTH ELASTICALLY",
+            "   OR INELASTICALLY,",
+            " - RESONANCE SELF-SHIELDING,",
+            " - THE COUNT RATE IN THE GREY NEUTRON DETECTOR",
+            "   DUE TO THE LOWER NEUTRON GROUP,",
+            " - AIR SCATTERING OF THE NEUTRONS,",
+            " - THE FACT THAT THE FRACTION OF THE PULSE-HEIGHT",
+            "   SPECTRA FROM THE CAPTURE TANK ABOVE THE",
+            "   DISCRIMINATOR BIAS LEVEL WAS SLIGHTLY INCREASED",
+            "   WITH INCREASING ENERGY."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(STANK)",
+          "freetext": [
+            " THE GAMMA-RAY DETECTOR WAS A 110 CM DIA.",
+            " TANK FILLED WITH 800 LITERS OF LIQUID SCINTILLATOR",
+            " SOLUTION WITH 12 PHOTOMULTIPLIERS AT THE SURFACE",
+            " OF THE TANK."
+          ]
+        },
+        "1": {
+          "x4code": "(NAICR)",
+          "freetext": [
+            " A GREY NEUTRON DETECTOR WAS USED TO MONITOR",
+            " THE NEUTRON FLUX. THE DETECTOR, THAT HAS A FLAT",
+            " DETECTION EFFICIENCY CURVE OVER THE KEV NEUTRON",
+            " ENERGY REGION, CONSISTED OF A PARAFFIN PILE VIEWED",
+            " BY A 4 INCH BY 5 INCH NAI(TL) DETECTOR."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " TOTAL UNCERTAINTY GIVEN IN DATA TABLE.",
+            ".OTHER UNCERTAINTIES VARY WITH NEUTRON ENERGY AND",
+            " THE DIFFERENT CONTRIBUTIONS ARE GIVEN IN TABLE 3",
+            " AS FOLLOWS,",
+            " - STATISTICAL ERROR OF THE N,G COUNTS  0.8-3.0 PC,",
+            " - STATISTICAL ERROR OF THE NEUTRON",
+            "   COUNTS                               0.5-2.5 PC,",
+            " - GREY NEUTRON DETECTOR EFFICIENCY     0.0-0.7 PC,",
+            " - CORRECTION FOR ELASTICALLY SCATTERED",
+            "   NEUTRONS AND RESON. SELF-SHIELDING   0.0-1.0 PC,",
+            " - CORRECTIONS FOR INELASTICALLY",
+            "   SCATTERED NEUTRONS                   0.0-0.4 PC,",
+            " - CORRECTION FOR SCATTERING OF",
+            "   NEUTRONS IN AIR                      0.0-0.4 PC,",
+            " - CONTRIBUTION OF LOW-ENERGY NEUTRONS  0.0-2.0 PC,",
+            " - ANISOTROPIC EFFECT ON THE EFFICIENCY",
+            "   OF THE GREY NEUTRON DETECTOR         0.0-2.0 PC,",
+            " - CORRECTION FOR CHANGE OF MAXIMUM",
+            "   GAMMA-RAY ENERGY                     0.0-0.5 PC,",
+            " - BIAS SHIFT IN THE CAPTURE GAMMA-RAY",
+            "   CHANNEL                              1.0     PC,",
+            " - UNCERTAINTY IN THE FIT OF THE 2.2MEV",
+            "   GAMMA-RAY SPECTRA OF THE NEUTRON",
+            "   COUNTER                              1.0-2.1 PC,",
+            " - GAMMA-SPECTRUM FRACTION CHANGE       0.0-4.0 PC,",
+            " - NORMALIZATION AT 30 KEV              3.0     PC.",
+            " THE ERROR IS 0.0 AT THE NORMALIZATION POINT."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG  "
+          ],
+          "freetext": [
+            " 3 MEV VAN DE GRAAFF ACCELERATOR."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            " THE LI-7(P,N) REACTION, USING A TARGET OF",
+            " A METALLIC LI LAYER EVAPORATED ON A TANTALUM",
+            " BACKING."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-197(N,G)79-AU-198,,SIG)"
+          ],
+          "freetext": [
+            " A FITTED VALUE AT",
+            " 30 KEV WAS USED FOR NORMALIZATION."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".THE GOLD SAMPLE WAS A 1 MM THICK DISK WITH A",
+            " DIAMETER OF 9 CM."
+          ]
+        }
+      }
+    }
+  }
+}

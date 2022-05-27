@@ -1,0 +1,150 @@
+{
+  "title": "Neutron Capture Cross Sections In The Kev Region. Part 1. Methods Of Measurement And Analysis.",
+  "references": [
+    {
+      "x4code": "(J,AP,10,455,60)",
+      "publication year": "1960"
+    }
+  ],
+  "authors": [
+    {
+      "name": "E.G.Bilpuch"
+    },
+    {
+      "name": "L.W.Weston"
+    },
+    {
+      "name": "H.W.Weston"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USADKE"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "11187",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(5-B-10(N,A)3-LI-7,,SIG)",
+        "target": "5-B-10",
+        "process": "N,A",
+        "sf4": "3-LI-7",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(5-B-10(N,TOT),,SIG)",
+        "target": "5-B-10",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(92-U-238(N,G)92-U-239,,SIG)",
+        "target": "92-U-238",
+        "process": "N,G",
+        "sf4": "92-U-239",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(78-PT-198(N,G)78-PT-199,,SIG)",
+        "target": "78-PT-198",
+        "process": "N,G",
+        "sf4": "78-PT-199",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(79-AU-197(N,EL),,STF)",
+        "target": "79-AU-197",
+        "process": "N,EL",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "STF",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "(92-U-238(N,EL),,STF)",
+        "target": "92-U-238",
+        "process": "N,EL",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "STF",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {}
+}

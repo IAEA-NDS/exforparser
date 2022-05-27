@@ -1,0 +1,106 @@
+{
+  "id": "21193-006-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198-G,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198-G",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".DATA DERIVED FROM AVERAGE CROSS-SECTION AT 30 KEV OF",
+            " MANGANESE BATH AND ACTIVATION FLUX MEASUREMENTS USING",
+            " THE AVERAGE RATIO BETWEEN THIS AND THE 64 KEV CROSS-",
+            " SECTION FROM PRESENT AND PREVIOUS MEASUREMENTS."
+          ]
+        }
+      }
+    },
+    "ASSUMED": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-197(N,G)79-AU-198-G,,SIG,,REL)"
+          ],
+          "freetext": [
+            " CROSS-",
+            " SECTION AT 30 KEV RELATIVE TO THAT AT 64 KEV TAKEN AS",
+            " MEAN OF VALUE FROM THIS WORK AND TWO PREVIOUS WORKS."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " CALCULATED ASSUMING THAT THE DIFFERENCE",
+            "            BETWEEN THE RESULTS OF THE MANGANESE BATH",
+            "            METHOD AND THE ACTIVATION METHOD OF FLUX",
+            "            MEASUREMENT ARE DUE TO SYSTEMATIC ERRORS."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " CALCULATED ASSUMING THAT THE DIFFERENCE",
+            "            BETWEEN THESE TWO METHODS ARE DUE TO",
+            "            RANDOM ERRORS."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ASSUM"
+    ],
+    "units": [
+      "ARB-UNITS"
+    ],
+    "data": {
+      "0": [
+        1.679
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-1",
+      "ERR-S"
+    ],
+    "units": [
+      "KEV",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        64.0
+      ],
+      "1": [
+        0.357
+      ],
+      "2": [
+        0.014
+      ],
+      "3": [
+        0.009
+      ]
+    }
+  }
+}

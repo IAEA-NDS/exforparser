@@ -1,0 +1,92 @@
+{
+  "title": "Absolute Measurements Of The Fast Neutron Capture Cross  Section Of Au-197",
+  "references": [
+    {
+      "x4code": "(P,DOE-NDC-57,113,1990)",
+      "publication year": "1990"
+    }
+  ],
+  "authors": [
+    {
+      "name": "S.Sakamoto"
+    },
+    {
+      "name": "E.Quang"
+    },
+    {
+      "name": "G.Knoll"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USAUSA"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "REAC"
+    }
+  ],
+  "entry_number": "14040",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(SCIN)",
+          "freetext": [
+            " NaI(Tl) detectors in near 4Pi geometry"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "REAC"
+          ],
+          "freetext": [
+            "   Ford Nuclear reractor"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Gold foil"
+          ]
+        }
+      }
+    }
+  }
+}

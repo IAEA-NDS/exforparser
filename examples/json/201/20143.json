@@ -1,0 +1,237 @@
+{
+  "title": " Precise 2200 M/Sec Fission Cross-Sections Of Pu-239  And U-235",
+  "references": [
+    {
+      "x4code": "(C,70HELSINKI,1,117,197006)",
+      "publication year": "1970"
+    },
+    {
+      "x4code": "(J,JNE,27,(9),645,197309)",
+      "publication year": "1973"
+    },
+    {
+      "x4code": "(J,ANE,1,(5),311,197405)",
+      "publication year": "1974"
+    },
+    {
+      "x4code": "(W,WAGEMANS,19800527)",
+      "publication year": "1980"
+    },
+    {
+      "x4code": "(C,68WASH,1,491,196803)",
+      "publication year": "1968"
+    }
+  ],
+  "authors": [
+    {
+      "name": "A.J.Deruytter"
+    },
+    {
+      "name": "W.Becker"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2ZZZGEL"
+    },
+    {
+      "x4code": "2BLGMOL"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "REAC",
+      "x4code": "2BLGMOL"
+    },
+    {
+      "type": "CHOPS",
+      "x4code": "2BLGMOL"
+    }
+  ],
+  "entry_number": "20143",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,ARE)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "ARE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": [
+          " The 2200 m/s fission cross-sections."
+        ]
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,ARE)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "ARE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Straight line fit through 20 points between 0.005 and",
+            " 0.1 eV for 2200 m/sec values and integrals."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(SIBAR)",
+          "freetext": [
+            "    One large Au-Si surface barrier detector was",
+            " used for the detection of fission fragments and alpha-",
+            " particles from B-10. The detection of the alphas and",
+            " fission fragments was made with excellent pulse-height",
+            " resolution in low geometry."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "REAC,2BLGMOL"
+          ],
+          "freetext": [
+            " Belgian BR2 high flux reactor."
+          ]
+        },
+        "1": {
+          "x4code": [
+            "REAC,2BLGMOL"
+          ],
+          "freetext": [
+            "    Slow chopper."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            "",
+            " at the tangential beam tube T-7."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(5-B-10(N,A)3-LI-7,,SIG)"
+          ],
+          "freetext": [
+            " = 3835 +- 5 barn at 2200 m/sec",
+            " Evaporated boron layer.",
+            " The absolute B-10 contents was determined from direct",
+            " weighing in vacuum and correction for chemical and",
+            " isotopic analysis.",
+            " Isotopic composition of the elemental boron, B-weight,",
+            "        sample B64         * sample B74",
+            " B-10 * 20.127 +- 0.046    * 20.330 +- 0.065",
+            " B-11 * 79.873 +- 0.046    * 79.670 +- 0.065",
+            " boron (weights in micro-g B-10)",
+            "      * 146.28 +- 0.38     * 99.11  +- 0.26"
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "M",
+            "ent": "20131001",
+            "author": "A.J.Deruytter+",
+            "ref": "J,JNE,25,263,197107"
+          },
+          "freetext": [
+            " - value",
+            "of fission integral cited."
+          ]
+        }
+      }
+    }
+  }
+}

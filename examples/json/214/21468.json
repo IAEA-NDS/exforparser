@@ -1,0 +1,210 @@
+{
+  "title": "-Fission Cross Sections Of U-238,U-235,U-233,Pu-239  And Th-232 For 14 Mev Neutrons -.",
+  "references": [
+    {
+      "x4code": "(R,AERE-NP/R-1996,,5606)",
+      "publication year": "1956"
+    }
+  ],
+  "authors": [
+    {
+      "name": "C.A.Uttley"
+    },
+    {
+      "name": "J.A.Phillips"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2UK HAR"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "VDG  "
+    }
+  ],
+  "entry_number": "21468",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-238(N,F),,SIG)",
+        "target": "92-U-238",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": [
+          " CROSS SECTION."
+        ]
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": [
+          " CROSS SECTION."
+        ]
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(92-U-233(N,F),,SIG)",
+        "target": "92-U-233",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": [
+          " CROSS SECTION."
+        ]
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": [
+          " CROSS SECTION."
+        ]
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(90-TH-232(N,F),,SIG)",
+        "target": "90-TH-232",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": [
+          " CROSS SECTION."
+        ]
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".CORRECTED FOR THE STOPPING OF FISSION FRAGMENTS IN",
+            " THE FOIL (0.5 TO 2.9 PC), DISCIMINATOR BIAS, AND",
+            " SCATTERING OF NEUTRONS BETWWEEN THE TARGET AND THE",
+            " FOILS (3 PC)."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            " BACK-TO-BACK FISSION CHAMBER, WITH FISSILE",
+            " DEPOSITS ON THICK PLATINUM DISCS. CHAMBER FILLED",
+            " WITH A MIXTURE OF 95 PERCENT ARGON AND CARBON DIOXIDE",
+            " AT A PRESSURE OF 10 CM HG."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".QUOTED ERRORS INCLUDE THE UNCERTAINTY IN THE MASS",
+            " OF THE FISSILE DEPOSIT, THE STATISTICAL UNCERATINTY",
+            " IN THE NUMBER OF FISSIONS ( LESS THAN 1 PC), THE",
+            " UNCERTAINTY IN THE DISTANCE BETWEEN THE NEUTRON",
+            " SOURCE AND THE SAMPLE FOIL ( 2 PC IN SOLID ANGLE FOR",
+            " THE FISSILE FOIL, AND 1 PC FOR THE ALPHA MONITOR).",
+            " FOR THE RELATIVE MEASUREMENTS THE UNCERTAINTY IN THE",
+            " U-238 REFERENCE CROSS SECTION IS INCLUDED."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG  "
+          ],
+          "freetext": [
+            " VAN DER GRAAFF."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            "",
+            " TARGET."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".FISSION FRAGMENT DETECTION."
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".KNOWN MASS OF ENRICHED FISSILE ISOTOPES, NO DETAILS."
+          ]
+        }
+      }
+    }
+  }
+}

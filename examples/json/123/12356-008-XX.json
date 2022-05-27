@@ -1,0 +1,84 @@
+{
+  "id": "12356-008-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            " Fission chamber"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " No details on sources of uncertainties."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-233(N,F),,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.0253
+      ],
+      "1": [
+        742.8
+      ],
+      "2": [
+        4.4
+      ],
+      "3": [
+        527.4
+      ],
+      "4": [
+        3.1
+      ]
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "id": "23284-005-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,MXW)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW",
+    "sf9": null,
+    "freetext": [
+      " MACS"
+    ]
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Total uncertainty"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Standard deviation for proton energy distribution",
+            "~20 keV for broad-energy beam, obtained by gold",
+            " degrader of 2 microm thickness."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-HL",
+      "ERR-IDD",
+      "KT"
+    ],
+    "units": [
+      "D",
+      "NO-DIM",
+      "KEV"
+    ],
+    "data": {
+      "0": [
+        0.0012
+      ],
+      "1": [
+        0.0004
+      ],
+      "2": [
+        28.0
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        620.0
+      ],
+      "1": [
+        16.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "20584-007-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        24.0
+      ],
+      "1": [
+        1.66
+      ],
+      "2": [
+        0.07
+      ]
+    }
+  }
+}

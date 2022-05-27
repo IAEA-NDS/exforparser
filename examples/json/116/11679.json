@@ -1,0 +1,419 @@
+{
+  "title": "Capture-Cross-Section Studies For 30-220-Kev Neutrons Using A New Technique.",
+  "references": [
+    {
+      "x4code": "(J,PR,159,1007,67)",
+      "publication year": "1967"
+    }
+  ],
+  "authors": [
+    {
+      "name": "R.L.Macklin"
+    },
+    {
+      "name": "J.H.Gibbons"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USAORL"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "11679",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(23-V-0(N,G),,SIG)",
+        "target": "23-V-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(26-FE-0(N,G),,SIG)",
+        "target": "26-FE-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(28-NI-0(N,G),,SIG)",
+        "target": "28-NI-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": [
+          " MB."
+        ]
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(38-SR-86(N,G)38-SR-87,,SIG)",
+        "target": "38-SR-86",
+        "process": "N,G",
+        "sf4": "38-SR-87",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(38-SR-87(N,G)38-SR-88,,SIG)",
+        "target": "38-SR-87",
+        "process": "N,G",
+        "sf4": "38-SR-88",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(39-Y-89(N,G)39-Y-90,,SIG)",
+        "target": "39-Y-89",
+        "process": "N,G",
+        "sf4": "39-Y-90",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(41-NB-93(N,G)41-NB-94,,SIG)",
+        "target": "41-NB-93",
+        "process": "N,G",
+        "sf4": "41-NB-94",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "(45-RH-103(N,G)45-RH-104,,SIG)",
+        "target": "45-RH-103",
+        "process": "N,G",
+        "sf4": "45-RH-104",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "010": {
+      "XX": {
+        "x4code": "(47-AG-0(N,G),,SIG)",
+        "target": "47-AG-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "011": {
+      "XX": {
+        "x4code": "(52-TE-122(N,G)52-TE-123,,SIG)",
+        "target": "52-TE-122",
+        "process": "N,G",
+        "sf4": "52-TE-123",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "012": {
+      "XX": {
+        "x4code": "(52-TE-123(N,G)52-TE-124,,SIG)",
+        "target": "52-TE-123",
+        "process": "N,G",
+        "sf4": "52-TE-124",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "013": {
+      "XX": {
+        "x4code": "(52-TE-124(N,G)52-TE-125,,SIG)",
+        "target": "52-TE-124",
+        "process": "N,G",
+        "sf4": "52-TE-125",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "014": {
+      "XX": {
+        "x4code": "(52-TE-125(N,G)52-TE-126,,SIG)",
+        "target": "52-TE-125",
+        "process": "N,G",
+        "sf4": "52-TE-126",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "015": {
+      "XX": {
+        "x4code": "(52-TE-126(N,G)52-TE-127,,SIG)",
+        "target": "52-TE-126",
+        "process": "N,G",
+        "sf4": "52-TE-127",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "016": {
+      "XX": {
+        "x4code": "(52-TE-128(N,G)52-TE-129,,SIG)",
+        "target": "52-TE-128",
+        "process": "N,G",
+        "sf4": "52-TE-129",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "017": {
+      "XX": {
+        "x4code": "(52-TE-130(N,G)52-TE-131,,SIG)",
+        "target": "52-TE-130",
+        "process": "N,G",
+        "sf4": "52-TE-131",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "018": {
+      "XX": {
+        "x4code": "(53-I-127(N,G)53-I-128,,SIG)",
+        "target": "53-I-127",
+        "process": "N,G",
+        "sf4": "53-I-128",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "019": {
+      "XX": {
+        "x4code": "(63-EU-0(N,G),,SIG)",
+        "target": "63-EU-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "020": {
+      "XX": {
+        "x4code": "(71-LU-175(N,G)71-LU-176,,SIG)",
+        "target": "71-LU-175",
+        "process": "N,G",
+        "sf4": "71-LU-176",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "021": {
+      "XX": {
+        "x4code": "(71-LU-176(N,G)71-LU-177,,SIG)",
+        "target": "71-LU-176",
+        "process": "N,G",
+        "sf4": "71-LU-177",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "022": {
+      "XX": {
+        "x4code": "(74-W-0(N,G),,SIG)",
+        "target": "74-W-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "023": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "024": {
+      "XX": {
+        "x4code": "(82-PB-204(N,G)82-PB-205,,SIG)",
+        "target": "82-PB-204",
+        "process": "N,G",
+        "sf4": "82-PB-205",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(SCIN)",
+          "freetext": [
+            " LIQUID SCINTILLATION COUNTER"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " STANDARD DEVIATION. INCLUDES UNCERTAINTY IN",
+            " STANDARD CROSS SECTION."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            " LI-7(P,N) SOURCE"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(73-TA-0(N,G),,SIG)"
+          ],
+          "freetext": [
+            "",
+            " BASED ON TA (N,GAMMA) = 810 * (EN**-0.697) MB."
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "id": "30607-002-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " Direct measurement of neutron flux."
+    ]
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-198,,DG,412.)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " The errors consist of the following,(in %)"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-SYS)",
+          "freetext": [
+            " Systematic uncertainty (see below)"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Statistical uncertainty (see below)",
+            " -----------------------------------------------------",
+            " Random error (ERR-S)     *  Systematic error=(ERR-SYS)",
+            " -----------------------------------------------------",
+            ".0 point drift       1.  *.proton n.in prop.count.  1.",
+            ".Bg.from building    1.  *.n-p scatt.Sigma(monit.)  0.5",
+            ".Sample-target dist. 1.5 *.Correct.Of n-flux meas't 1.",
+            ".Av.n-energy         0.5 *.Recoil p-spect. Half-area",
+            ".Target alignm't     1.  * probability              1.",
+            ".Self-absorp.of g.   0.3 *.Correct.of back scatt.   1.",
+            ".412keV g.measurem't 1.  *.Eff.of gamma counting    1.5",
+            "                         *.Correct.of g.Self-absorp.1.",
+            "                         *.Correct.along rad.direction",
+            "                             of gamma               0.5",
+            "                         *.Background              0.5",
+            "                         *.Sample weighing          0.1",
+            "   Sum    =          2.6 *   Sum            =       2.8",
+            " -----------------------------------------------------",
+            "            total error  =  3.8%.",
+            " -----------------------------------------------------"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(1-H-1(N,EL)1-H-1,,SIG)"
+          ],
+          "freetext": [
+            "",
+            " The monitor reference is not mentioned.",
+            " The hydrogen proportional counter was used to",
+            "determine neutron flux."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".The sample was suspended in the iron wire-ring(diam.",
+            " 10 cm) with the brass strings."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-ERR",
+      "ERR-SYS",
+      "ERR-S"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        0.5
+      ],
+      "1": [
+        2.8
+      ],
+      "2": [
+        2.6
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "KEV",
+      "MB",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        462.0,
+        991.0,
+        1190.0,
+        1490.0
+      ],
+      "1": [
+        149.4,
+        78.2,
+        77.4,
+        67.0
+      ],
+      "2": [
+        5.7,
+        3.0,
+        2.9,
+        2.6
+      ]
+    }
+  }
+}

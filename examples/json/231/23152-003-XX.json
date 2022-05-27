@@ -1,0 +1,203 @@
+{
+  "id": "23152-003-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,MXW,DERIV)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW",
+    "sf9": "DERIV",
+    "freetext": [
+      " Maxwell average cross section (MACS)"
+    ]
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-SYS,3.0,3.5)",
+          "freetext": [
+            " Systematic uncertainty (3.0-3.5%)"
+          ]
+        }
+      }
+    },
+    "MISC-COL": {
+      "XX": {
+        "0": {
+          "x4code": "(MISC1)",
+          "freetext": [
+            "  Contribution to MACS from En < 5 keV"
+          ]
+        },
+        "1": {
+          "x4code": "(MISC2)",
+          "freetext": [
+            "  Contribution to MACS from En > 400 keV"
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "R",
+            "ent": "23067001",
+            "author": "C.Massimi+",
+            "ref": "J,PR/C,81,044616,2010"
+          },
+          "freetext": [
+            "",
+            " Resonance parameters at En < 5 keV for MACS calculatio"
+          ]
+        },
+        "1": {
+          "x4code": {
+            "type": "D",
+            "ent": "22099001",
+            "author": "W.Ratynski+",
+            "ref": "J,PR/C,37,595,1988"
+          },
+          "freetext": [
+            "",
+            " 582 +/- 9 mb at kT=30 keV"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "KT",
+      "DATA",
+      "ERR-T",
+      "MISC1",
+      "MISC2"
+    ],
+    "units": [
+      "KEV",
+      "MB",
+      "MB",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": {
+      "0": [
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0,
+        12.5,
+        15.0,
+        17.5,
+        20.0,
+        25.0,
+        30.0,
+        35.0,
+        40.0,
+        45.0,
+        50.0,
+        60.0,
+        70.0,
+        85.0,
+        100.0
+      ],
+      "1": [
+        1970.0,
+        1729.0,
+        1550.0,
+        1412.0,
+        1302.0,
+        1212.0,
+        1044.0,
+        927.0,
+        841.0,
+        775.0,
+        678.0,
+        611.0,
+        560.0,
+        521.0,
+        490.0,
+        464.0,
+        423.0,
+        392.0,
+        357.0,
+        330.0
+      ],
+      "2": [
+        70.0,
+        61.0,
+        54.0,
+        49.0,
+        46.0,
+        42.0,
+        37.0,
+        33.0,
+        30.0,
+        27.0,
+        24.0,
+        22.0,
+        20.0,
+        18.0,
+        17.0,
+        16.0,
+        14.0,
+        13.0,
+        12.0,
+        10.0
+      ],
+      "3": [
+        0.496,
+        0.422,
+        0.365,
+        0.32,
+        0.283,
+        0.253,
+        0.197,
+        0.159,
+        0.132,
+        0.112,
+        0.084,
+        0.066,
+        0.053,
+        0.044,
+        0.037,
+        0.032,
+        0.025,
+        0.02,
+        0.015,
+        0.012
+      ],
+      "4": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.001,
+        0.002,
+        0.005,
+        0.012,
+        0.029,
+        0.052
+      ]
+    }
+  }
+}

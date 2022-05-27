@@ -1,0 +1,122 @@
+{
+  "title": "Measurement Of The Neutron Capture Cross Section Of  Holmium-165 And Gold-197",
+  "references": [
+    {
+      "x4code": "(J,NSE,52,299,197311)",
+      "publication year": "1973"
+    },
+    {
+      "x4code": "(R,UCRL-74447,197306)",
+      "publication year": "1973"
+    }
+  ],
+  "authors": [
+    {
+      "name": "J.B.Czirr"
+    },
+    {
+      "name": "M.L.Stelts"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USALRL"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "LINAC"
+    }
+  ],
+  "entry_number": "10305",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(67-HO-165(N,G)67-HO-166,,SIG)",
+        "target": "67-HO-165",
+        "process": "N,G",
+        "sf4": "67-HO-166",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(SCIN)",
+          "freetext": [
+            " Capture gammas and fission neutrons detected",
+            " using deuterated benzene liquid scintillator."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Data errors include corrections for",
+            " background effects, normalization constants,",
+            " self-shielding effects, scattering effects and",
+            " statistical errors."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "LINAC"
+          ],
+          "freetext": [
+            " Livermore linear accelerator"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(PHD)",
+          "freetext": [
+            " Pulse-height discrimination"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Gold and holmium foils"
+          ]
+        }
+      }
+    }
+  }
+}

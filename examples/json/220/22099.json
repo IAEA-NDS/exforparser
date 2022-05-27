@@ -1,0 +1,269 @@
+{
+  "title": "Neutron Capture Cross Section Of 197Au: A Standard For  Stellar Nucleosynthesis",
+  "references": [
+    {
+      "x4code": "(J,PR/C,37,595,1988)",
+      "publication year": "1988"
+    }
+  ],
+  "authors": [
+    {
+      "name": "W.Ratynski"
+    },
+    {
+      "name": "F.Kaeppeler"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2GERKFK"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "VDG",
+      "x4code": "2GERKFK"
+    }
+  ],
+  "entry_number": "22099",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,SPA)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,MXW,DERIV)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,MXW,DERIV)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Corrected for",
+            " - solid angle for extended sources",
+            " - gamma-ray self-absorption",
+            " - neutron scattering in target"
+          ]
+        }
+      }
+    },
+    "DECAY-MON": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(4-BE-7,,DG,478.,0.1045)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(SCIN)",
+          "freetext": [
+            " 6Li glass detector to monitor neutrons"
+          ]
+        },
+        "1": {
+          "x4code": "(HPGE)",
+          "freetext": [
+            " Coaxial HPGe detector (energy resolution of",
+            " 1.7 keV at 1.33 MeV)"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " sample thickness - Au                    (0.6%)"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " counting statistics - Au                 (0.4%)"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " counting statistics - Be                 (0.3%)"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-4)",
+          "freetext": [
+            " gamma-ray efficiency ratio - Be/Au       (0.3%)"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-5)",
+          "freetext": [
+            " solid angle for extended sources         (0.6%)"
+          ]
+        },
+        "5": {
+          "x4code": "(ERR-6)",
+          "freetext": [
+            " gamma-ray intensity per decay - Au       (0.1%)"
+          ]
+        },
+        "6": {
+          "x4code": "(ERR-7)",
+          "freetext": [
+            " gamma-ray intensity per decay - Be       (0.4%)"
+          ]
+        },
+        "7": {
+          "x4code": "(ERR-8)",
+          "freetext": [
+            " gamma-ray self-absorption  - Au          (0.3%)"
+          ]
+        },
+        "8": {
+          "x4code": "(ERR-9)",
+          "freetext": [
+            " gamma-ray self-absorption  - Be          (0.5%)"
+          ]
+        },
+        "9": {
+          "x4code": "(ERR-10,0.1,0.4)",
+          "freetext": [
+            " neutron scattering in target(0.1-0.4%)"
+          ]
+        },
+        "10": {
+          "x4code": "(ERR-11)",
+          "freetext": [
+            "      decay constant - Au                (0.1%)"
+          ]
+        },
+        "11": {
+          "x4code": "(ERR-12,,0.1)",
+          "freetext": [
+            " decay constant - Be               (<0.1%)"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG,2GERKFK"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            " Metallic Li layers (100 keV thick, 3, 4 or",
+            " 6 mm diam.) on Cu backing (1.0, 0.7 or 0.5 mm thick)",
+            " or Ag/Pt backing (0.2 mm thick) irradiated by protons",
+            " at 1912 keV and less than 1 uA/mm2."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            " Irradiated for 1 to 4 hrs and typically",
+            " counted for 16-24 hrs (Au) and 1-2 hrs (Be)"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(3-LI-7(P,N)4-BE-7,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "O",
+            "ent": "O1963001",
+            "author": "W.Ratynski+",
+            "ref": "J,PR/C,37,595,1988"
+          },
+          "freetext": [
+            "",
+            " 7Li(p,n)7Be neutron spectrum compiled separately"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Spherical segment of Au (0.02 and 0.05 mm thick)"
+          ]
+        }
+      }
+    }
+  }
+}

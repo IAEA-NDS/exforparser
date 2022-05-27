@@ -1,0 +1,51 @@
+{
+  "id": "11762-006-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "A THIN FOIL OF GOLD WAS EMPLOYED"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.0253
+      ],
+      "1": [
+        96.5
+      ],
+      "2": [
+        0.7
+      ]
+    }
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "title": "Measurement Of The Neutron Radiative Capture Cross- Section Of Au-197 At 30 Kev.",
+  "references": [
+    {
+      "x4code": "(J,CNP,6,(1),23,198402)",
+      "publication year": "1984"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Zhu Shengyun"
+    },
+    {
+      "name": "Jiang Songsheng"
+    },
+    {
+      "name": "Chen Ying"
+    },
+    {
+      "name": "Luo Dexing"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "3CPRAEP"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "VDG",
+      "x4code": "3CPRAEP"
+    }
+  ],
+  "entry_number": "30689",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Corrected for neutron scattering and attenuation in the",
+            "target and sample.",
+            "Detail is given in the text."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(NAICR)",
+          "freetext": [
+            "  7.5cm dia. * 7.5 cm long, NaI(Tl) detector"
+          ]
+        },
+        "1": {
+          "x4code": "(BF3)",
+          "freetext": [
+            " for 7Be activity measurement"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            "  3.05% total error includes:"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Uncertainty in 7Be-activity measurement - 0.5%"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Uncertainty in gamma-detection",
+            "                          efficiency of 7Be - 1.5%"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " Uncertainty in gamma branching - 1.5%"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-4)",
+          "freetext": [
+            " Uncertainty in 198Au-activity measurement - 0.5"
+          ]
+        },
+        "5": {
+          "x4code": "(ERR-5)",
+          "freetext": [
+            " Uncertainty in gamma-detection",
+            "                          efficiency of 198Au - 1.5%"
+          ]
+        },
+        "6": {
+          "x4code": "(ERR-6)",
+          "freetext": [
+            " Uncertainty in gamma-ray self-absorption",
+            "        correction - 1.0%"
+          ]
+        },
+        "7": {
+          "x4code": "(ERR-7)",
+          "freetext": [
+            " Uncertainty in no.of atoms in sample - 0.1 %"
+          ]
+        },
+        "8": {
+          "x4code": "(ERR-8)",
+          "freetext": [
+            " Uncertainty in neutron flux attenuation",
+            "        correction - 1.0%"
+          ]
+        },
+        "9": {
+          "x4code": "(ERR-9)",
+          "freetext": [
+            " Uncertainty in background scattering corr. 0.1%"
+          ]
+        },
+        "10": {
+          "x4code": "(ERR-10)",
+          "freetext": [
+            " Uncertainty in av.neutron energy 0.3%"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG,3CPRAEP"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            " Be-7 activity is used as reference.",
+            ".Neutron flux was determined by measuring produced Be-7",
+            "in Li-F target. (478 keV gamma of Be-7).",
+            ".Using gamma standard sources, Au-198,Cs-137,Mn-56,",
+            " Sc-46 and Na-24 as detector efficiency calibration,",
+            " 15.65% detector efficiency was obtained for",
+            "Be-7 detection.",
+            ".4Pi-beta coincidence was used for Au-198 activity",
+            " measurement, and its detection efficiency was 38.87%"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Absolute.  See 'METHOD'."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " 99.9% gold; thickness = 0.03 cm,diam. = 1.9 cm."
+          ]
+        }
+      }
+    }
+  }
+}

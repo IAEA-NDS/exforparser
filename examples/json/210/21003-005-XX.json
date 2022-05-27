@@ -1,0 +1,89 @@
+{
+  "id": "21003-005-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198-G,,SIG,,FIS)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198-G",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-198-G,2.6965D,DG,411.8,0.9553)"
+          ],
+          "freetext": [
+            "",
+            ".Taken from M.J.Martin et al.,Nucl.Data Tabl.,A8,",
+            " 1(1970) by the author."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".High purity metallic foil, 50microm thick as",
+            " a hollow cylinder, 12.5mm diam. by 22.5mm height,",
+            " enclosing the source."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "KT-DUMMY",
+      "ERR-1",
+      "ERR-2",
+      "ERR-3"
+    ],
+    "units": [
+      "MEV",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        1.42
+      ],
+      "1": [
+        1.0
+      ],
+      "2": [
+        1.2
+      ],
+      "3": [
+        1.7
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        76.2
+      ],
+      "1": [
+        1.8
+      ]
+    }
+  }
+}

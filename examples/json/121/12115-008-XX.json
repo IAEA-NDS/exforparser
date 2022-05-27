@@ -1,0 +1,67 @@
+{
+  "id": "12115-008-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.032,
+        0.042,
+        0.059,
+        0.084,
+        0.118,
+        0.176
+      ],
+      "1": [
+        0.009,
+        0.011,
+        0.013,
+        0.016,
+        0.018,
+        0.021
+      ],
+      "2": [
+        0.947,
+        0.838,
+        0.833,
+        0.53,
+        0.409,
+        0.378
+      ]
+    }
+  }
+}

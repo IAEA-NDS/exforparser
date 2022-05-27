@@ -1,0 +1,149 @@
+{
+  "title": "Absolute Measurements Of Fission Cross Sections For  235U And 239Pu Fission Induced By 14.7 Mev Neutron  Using The Associated Particle Method",
+  "references": [
+    {
+      "x4code": "(J,CNP,5,45,1983)",
+      "publication year": "1983"
+    },
+    {
+      "x4code": "(R,IAEA-336,343,1984)",
+      "publication year": "1984"
+    },
+    {
+      "x4code": "(C,82ANTWER,,55,1982)",
+      "publication year": "1982"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Li Jingwen"
+    },
+    {
+      "name": "Li Anli"
+    },
+    {
+      "name": "Rong Chaofan"
+    },
+    {
+      "name": "Ye Zhongyuan"
+    },
+    {
+      "name": "Wu Jingxia"
+    },
+    {
+      "name": "Hao Xiuhong"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "3CPRAEP"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "CCW",
+      "x4code": "3CPRAEP"
+    }
+  ],
+  "entry_number": "30634",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Corrected for",
+            " - fission detector efficiency",
+            " - neutron flux attenuation in samples",
+            " - fission events due to other isotopes in the sample"
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            " Cylindrical fission ionization chamber",
+            " (100 mm in diam., 50 mm in length) filled with",
+            " methan (1 atm)"
+          ]
+        },
+        "1": {
+          "x4code": "(SCIN)",
+          "freetext": [
+            " Plastic scintillator for alpha detection at",
+            " 135 deg"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "CCW,3CPRAEP"
+          ],
+          "freetext": [
+            " 600 kV Cockroft-Walton accelerator"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(D-T)",
+          "freetext": [
+            " 220.keV deuterons on T-Ti target (0.6-1 mg/cm2)",
+            " backed by Mo (0.2 mm thick)"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ASSOP)",
+          "freetext": [
+            " Absolute measurement by time correlated",
+            " associated particle technique"
+          ]
+        }
+      }
+    }
+  }
+}

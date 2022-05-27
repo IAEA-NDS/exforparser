@@ -1,0 +1,45 @@
+{
+  "id": "21520-009-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " 2200 m/sec, mean value",
+      " from two determinations, viz. 1.With U-235",
+      " as monitor, and 2.With B-10 as monitor."
+    ]
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.0253
+      ],
+      "1": [
+        738.0
+      ],
+      "2": [
+        7.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,325 @@
+{
+  "title": "   Absolute Measurements Of The Fission Cross-Sections  For Important Nuclides",
+  "references": [
+    {
+      "x4code": "(J,YK,,(4),19,1986)",
+      "publication year": "1986"
+    },
+    {
+      "x4code": "(R,INDC(CCP)-268,19,1986)",
+      "publication year": "1986"
+    },
+    {
+      "x4code": "(R,INDC(CCP)-302,33,1989)",
+      "publication year": "1989"
+    },
+    {
+      "x4code": "(J,YK,,(4),3,1987)",
+      "publication year": "1987"
+    },
+    {
+      "x4code": "(R,INDC(CCP)-284,3,1987)",
+      "publication year": "1987"
+    },
+    {
+      "x4code": "(R,INDC(CCP)-365,23,1994)",
+      "publication year": "1994"
+    }
+  ],
+  "authors": [
+    {
+      "name": "V.I.Shpakov"
+    },
+    {
+      "name": "I.D.Alkhazov"
+    },
+    {
+      "name": "E.A.Ganza"
+    },
+    {
+      "name": "L.V.Drapchinskij"
+    },
+    {
+      "name": "V.A.Kalinin"
+    },
+    {
+      "name": "S.S.Kovalenko"
+    },
+    {
+      "name": "I.O.Kostochkin"
+    },
+    {
+      "name": "V.N.Kuzmin"
+    },
+    {
+      "name": ""
+    },
+    {
+      "name": "L.M.Solin"
+    },
+    {
+      "name": "A.V.Fomichev"
+    },
+    {
+      "name": "M.Josch"
+    },
+    {
+      "name": "K.Merla"
+    },
+    {
+      "name": "G.Musiol"
+    },
+    {
+      "name": "H.Optlepp"
+    },
+    {
+      "name": "G.Pausch"
+    },
+    {
+      "name": "C.Herbach"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "4RUSRI"
+    },
+    {
+      "x4code": "2GERDRE"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "VDG",
+      "x4code": "4RUSRI"
+    },
+    {
+      "type": "VDGT",
+      "x4code": "2GERDRE"
+    }
+  ],
+  "entry_number": "40927",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-233(N,F),,SIG)",
+        "target": "92-U-233",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(93-NP-237(N,F),,SIG)",
+        "target": "93-NP-237",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            "    Multilayer ionization chambers for fission",
+            "           fragments"
+          ]
+        },
+        "1": {
+          "x4code": "(SIBAR)",
+          "freetext": [
+            "   Surface-barrier silicon detectors for",
+            "          alpha-particles"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            "  Error due to random coincidence"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            "  Error due to zero-extrapolation of",
+            "         fission counts"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-4)",
+          "freetext": [
+            "  Error-caused by the fission-fragments in",
+            "         samples"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-5)",
+          "freetext": [
+            "  Error caused by the associated particles",
+            "         background"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-6)",
+          "freetext": [
+            "  Error arising due to the neutron scattering",
+            "          in the neutron cone"
+          ]
+        },
+        "5": {
+          "x4code": "(ERR-7)",
+          "freetext": [
+            "  Error arising due to the effective target",
+            "          thickness caused by the neutron cone"
+          ]
+        },
+        "6": {
+          "x4code": "(ERR-8)",
+          "freetext": [
+            "  Error due to the surface-density of the",
+            "         fissioning layers"
+          ]
+        },
+        "7": {
+          "x4code": "(ERR-9)",
+          "freetext": [
+            "  Error due to the fissioning layer",
+            "         inhomogenity"
+          ]
+        },
+        "8": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            "  Statistical error"
+          ]
+        },
+        "9": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            "  Total error"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG,4RUSRI"
+          ],
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": [
+            "VDG,4RUSRI"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(D-D)",
+          "freetext": [
+            " Deuteron energy 2.7 MeV."
+          ]
+        },
+        "1": {
+          "x4code": "(D-T)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ASSOP)",
+          "freetext": [
+            "  Method of the time-correlated associated",
+            "         particles"
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "M",
+            "ent": null,
+            "author": "R.Arlt+",
+            "ref": "C,79KNOX,,990,1979"
+          },
+          "freetext": [
+            "",
+            "  Time-correlated associated particle method."
+          ]
+        },
+        "1": {
+          "x4code": {
+            "type": "M",
+            "ent": null,
+            "author": "C.M.Herbach+",
+            "ref": "R,TU-05-06-87,1985"
+          },
+          "freetext": [
+            " Experim.details"
+          ]
+        },
+        "2": {
+          "x4code": {
+            "type": "M",
+            "ent": null,
+            "author": "C.M.Herbach+",
+            "ref": "R,TU-05-07-85,1985"
+          },
+          "freetext": [
+            " Experim.details"
+          ]
+        }
+      }
+    }
+  }
+}

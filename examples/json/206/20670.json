@@ -1,0 +1,464 @@
+{
+  "title": "-Measurement Of Cross Sections For 14 Mev Neutron   Capture-",
+  "references": [
+    {
+      "x4code": "(J,NP/A,264,105,760621)",
+      "publication year": "1976"
+    },
+    {
+      "x4code": "(J,OSA,7,121,70)",
+      "publication year": "1970"
+    },
+    {
+      "x4code": "(J,OAW,174,567,65)",
+      "publication year": "1965"
+    },
+    {
+      "x4code": "(T,SCHWERER,,74)",
+      "publication year": "1974"
+    }
+  ],
+  "authors": [
+    {
+      "name": "O.Schwerer"
+    },
+    {
+      "name": "M.Winkler-Rohatsch"
+    },
+    {
+      "name": "H.Warhanek"
+    },
+    {
+      "name": "G.Winkler"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2AUSIRK"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "CCW  "
+    },
+    {
+      "x4code": "200KEV"
+    }
+  ],
+  "entry_number": "20670",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(17-CL-37(N,G)17-CL-38,,SIG)",
+        "target": "17-CL-37",
+        "process": "N,G",
+        "sf4": "17-CL-38",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": [
+          "     CAPTURE CROSS SECTION."
+        ]
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(19-K-41(N,G)19-K-42,,SIG)",
+        "target": "19-K-41",
+        "process": "N,G",
+        "sf4": "19-K-42",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(22-TI-50(N,G)22-TI-51,,SIG)",
+        "target": "22-TI-50",
+        "process": "N,G",
+        "sf4": "22-TI-51",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(23-V-51(N,G)23-V-52,,SIG)",
+        "target": "23-V-51",
+        "process": "N,G",
+        "sf4": "23-V-52",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(25-MN-55(N,G)25-MN-56,,SIG)",
+        "target": "25-MN-55",
+        "process": "N,G",
+        "sf4": "25-MN-56",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(31-GA-71(N,G)31-GA-72,,SIG)",
+        "target": "31-GA-71",
+        "process": "N,G",
+        "sf4": "31-GA-72",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(37-RB-87(N,G)37-RB-88,,SIG)",
+        "target": "37-RB-87",
+        "process": "N,G",
+        "sf4": "37-RB-88",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "(39-Y-89(N,G)39-Y-90-M,,SIG)",
+        "target": "39-Y-89",
+        "process": "N,G",
+        "sf4": "39-Y-90-M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "010": {
+      "XX": {
+        "x4code": "(52-TE-130(N,G)52-TE-131-G,,SIG)",
+        "target": "52-TE-130",
+        "process": "N,G",
+        "sf4": "52-TE-131-G",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "011": {
+      "XX": {
+        "x4code": "(52-TE-130(N,G)52-TE-131-M,,SIG)",
+        "target": "52-TE-130",
+        "process": "N,G",
+        "sf4": "52-TE-131-M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "012": {
+      "XX": {
+        "x4code": "(53-I-127(N,G)53-I-128,,SIG)",
+        "target": "53-I-127",
+        "process": "N,G",
+        "sf4": "53-I-128",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "013": {
+      "XX": {
+        "x4code": "(56-BA-138(N,G)56-BA-139,,SIG)",
+        "target": "56-BA-138",
+        "process": "N,G",
+        "sf4": "56-BA-139",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "014": {
+      "XX": {
+        "x4code": "(57-LA-139(N,G)57-LA-140,,SIG)",
+        "target": "57-LA-139",
+        "process": "N,G",
+        "sf4": "57-LA-140",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "015": {
+      "XX": {
+        "x4code": "(58-CE-142(N,G)58-CE-143,,SIG)",
+        "target": "58-CE-142",
+        "process": "N,G",
+        "sf4": "58-CE-143",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "016": {
+      "XX": {
+        "x4code": "(74-W-186(N,G)74-W-187,,SIG)",
+        "target": "74-W-186",
+        "process": "N,G",
+        "sf4": "74-W-187",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "017": {
+      "XX": {
+        "x4code": "(78-PT-198(N,G)78-PT-199-G,,SIG)",
+        "target": "78-PT-198",
+        "process": "N,G",
+        "sf4": "78-PT-199-G",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "018": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198-G,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198-G",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".FOR SELF-ABSORPTION OF GAMMA-RAYS IN THE SAMPLES.",
+            ".(BETWEEN 1 AND 8.2 PC).",
+            ".FOR GAMMA-PILE-UP IN THE DETECTORS DURING PULSE",
+            " RISE.",
+            ".FOR COINCIDENT GAMMA-PULSES DUE TO CASCADE GAMMA-",
+            " RAYS.",
+            ".FOR LOW ENERGY NEUTRONS-",
+            ".SCATTERED FROM THE WALLS OF THE ACCELERATOR ROOM-",
+            "  6.8+-0.9X10E-6 PC/CM2 OF THE INCIDENT FLUX FOR",
+            "  THERMAL,1.6+-0.2X10E-6 PC/CM2 FOR EPITHERMAL",
+            "  NEUTRONS(DETERMINATION WITH GOLD FOILS AND CADMIUM-",
+            "  ABSORBERS).",
+            "  1.9+-0.4X10E-4 PC/CM2 FOR 6-14 MEV AND 1.3+-0.3",
+            "  X10E-4 PC/CM2 FOR 10-14 MEV NEUTRONS(DETERMINATION",
+            "  BY THRESHOLD REACTIONS).",
+            ".SCATTERED IN TARGET HOLDER-1.22X10E-2,RELATIVE TO THE",
+            "  MAGNITUDE OF THE INCIDENT FLUX.",
+            ".SECONDARY NEUTRONS, PRODUCED IN THE SOURCE-TARGET-",
+            "  BETWEEN 1.5 AND 36.0 PC RELATIVE TO THE MEASURED",
+            "  ACTIVITY.",
+            ".SECONDARY NEUTRONS, PRODUCED IN THE SAMPLES- BETWEEN",
+            "  0.4 AND 30.0 PC."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            "",
+            " SCHWERER S THESIS, UNIVERSITY OF VIENNA, 1974.",
+            " FOR 50TI,51V,89Y,130TE,186W,197AU THE RESOLUTION OF",
+            " THE DETECTOR SYSTEM IS 4.2KEV AT 1.33 MEV (FWHM).",
+            " FOR 37CL,41K,55MN,71GA,87RB,127I,138BA,139LA,",
+            " 142CE,198PT THE RESOLUTION IS 2.2 KEV."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".FOR THE INCIDENT FLUX-",
+            "  1.2PC UNCERTAINTY FOR THE STANDARD,",
+            "  1.5PC FOR THE EFFICIENCY OF THE NAI(TL) CRYSTAL,",
+            "  1.0PC STATISTICAL ERROR FOR COUNTING THE 24NA-",
+            "   ACTIVITY,",
+            "  BETWEEN 1 AND 3 PC FOR THE SPATIAL FLUX",
+            "   DISTRIBUTION IN THE SAMPLES.",
+            ".FOR THE ACTIVITY MEASUREMENT-",
+            "  5.0PC FOR THE EFFICIENCY OF THE GELI-DETECTORS,"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "CCW  ",
+            "200KEV"
+          ],
+          "freetext": [
+            " COCKCROFT-WALTON TYPE ACCELERATOR (200KEV) OF",
+            " THE VIENNA INSTITUT FUER RADIUMFORSCHUNG UND",
+            " KERNPHYSIK."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            "",
+            " NEUTRONS."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            " ACTIVATION METHOD WAS USED, TO MEASURE THE",
+            " N-GAMMA CROSS SECTIONS."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(13-AL-27(N,A)11-NA-24,,SIG)"
+          ],
+          "freetext": [
+            "",
+            " THE SAMPLES WERE SANDWICHED BETWEEN 2",
+            " AL-FOILS (PURITY BETTER THAN 99.85PC) DURING",
+            " IRRADIATION.THE ACTIVITY OF THE REACTION 27AL(N,",
+            " ALPHA)24NA WAS MEASURED BY A 7.6CMX7.6CM NAI(TL)",
+            " CRYSTAL AND THE CROSS SECTION FOR THIS REACTION",
+            " TAKEN AS 114.2MB+-1.2PC AT 14.6+-0.2MEV(H.VONACH ET",
+            " AL.,Z.PHYS.237(1970)155)TAKEN,TO DETERMINE THE",
+            " MAGNITUDE OF THE INCIDENT FLUX.",
+            "  2.0PC FOR THE AMOUNT OF SELFABSORPTION IN 199PT,",
+            "  UP TO 5.0 PC FOR THE LITERATURE DECAY CONSTANTS.",
+            ".FOR THE CORRECTIONS OF LOW ENERGY NEUTRONS-",
+            "  70.0PC FOR 198PT,",
+            "  14.0PC FOR THE OTHERS."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".SHAPE-METAL SHEETS OR POWDER IN THIN-WALLED PLEXI-",
+            " GLASS CONTAINERS, NATURAL ISOTOPIC COMPOSITION.",
+            ".DIAMETER-16MM.",
+            ".37CL AS BACL2 POWDER-99.998PC PURITY.",
+            ".41K  AS KI    POWDER-SUPERPURE ACC. TO MERCK",
+            " LABORATORIES, GERMANY.",
+            ".50TI AS METAL SHEET -99.97PC.",
+            ".51V  AS V2O5  POWDER-99.0PC .",
+            ".55MN AS MN3O4 POWDER-99.995PC.",
+            ".71GA AS GA2O3 POWDER-99.999PC.",
+            ".87RB AS RBCL  POWDER-SUPERPURE.",
+            ".89Y  AS Y2O3  POWDER-99.9999PC.",
+            ".127I AS KI    POWDER-SUPERPURE.",
+            ".130TE",
+            "      AS TEO2  POWDER-99.999PC.",
+            ".138BA AS BACL2 POWDER-99.998PC.",
+            ".139LA AS LA2O3 POWDER-99.999PC.",
+            ".142CE AS CEO2  POWDER-99.9PC.",
+            ".186W  AS WO3   POWDER-99.9PC.",
+            ".198PT AS METAL SHEET -99.97PC.",
+            ".197AU AS METAL SHEET -99.99PC."
+          ]
+        }
+      }
+    }
+  }
+}

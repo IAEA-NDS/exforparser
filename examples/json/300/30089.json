@@ -1,0 +1,74 @@
+{
+  "title": "Absolute Measurement Of Pu-239 Fission Cross-Section For 2200 M/S Neutrons",
+  "references": [
+    {
+      "x4code": "(R,IFA-NR-33,(1970),197007)",
+      "publication year": "1970"
+    },
+    {
+      "x4code": "(R,STI/DOC/10-125,37,197104)",
+      "publication year": "1971"
+    },
+    {
+      "x4code": "(R,IFA-NR-22,196507)",
+      "publication year": "1965"
+    }
+  ],
+  "authors": [
+    {
+      "name": "C.Borcea"
+    },
+    {
+      "name": "A.Borza"
+    },
+    {
+      "name": "A.Buta"
+    },
+    {
+      "name": "A.Isbasescu"
+    },
+    {
+      "name": "L.Marinescu"
+    },
+    {
+      "name": "I.Mihai"
+    },
+    {
+      "name": "T.Nascutiu"
+    },
+    {
+      "name": "M.Petrascu"
+    },
+    {
+      "name": "V.Savu"
+    },
+    {
+      "name": "V.Simion"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "3RUMBUC"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "30089",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {}
+}

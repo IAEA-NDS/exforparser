@@ -1,0 +1,192 @@
+{
+  "title": "Absolute Measurement Of Neutron Induced Fission  Cross-Sections Of 235U, 238U, 237Np And 239Pu",
+  "references": [
+    {
+      "x4code": "(C,91JUELIC,,510,1991)",
+      "publication year": "1991"
+    }
+  ],
+  "authors": [
+    {
+      "name": "K.Merla"
+    },
+    {
+      "name": "P.Hausch"
+    },
+    {
+      "name": "C.M.Herbach"
+    },
+    {
+      "name": "G.Musiol"
+    },
+    {
+      "name": "G.Pausch"
+    },
+    {
+      "name": "U.Todt"
+    },
+    {
+      "name": "L.V.Drapchinskiy"
+    },
+    {
+      "name": "V.A.Kalinin"
+    },
+    {
+      "name": "V.I.Shpakov"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2GERDRE"
+    },
+    {
+      "x4code": "4RUSRI"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "22304",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(92-U-238(N,F),,SIG)",
+        "target": "92-U-238",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(93-NP-237(N,F),,SIG)",
+        "target": "93-NP-237",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(92-U-238(N,F),,SIG)",
+        "target": "92-U-238",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(93-NP-237(N,F),,SIG)",
+        "target": "93-NP-237",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(D-D,D-T)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ASSOP)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "title": "Some Nuclear Properties Of Fermium-257.",
+  "references": [
+    {
+      "x4code": "(J,JIN,35,1063,197304)",
+      "publication year": "1973"
+    }
+  ],
+  "authors": [
+    {
+      "name": "J.F.Wild"
+    },
+    {
+      "name": "E.K.Hulet"
+    },
+    {
+      "name": "R.W.Lougheed"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USALRL"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "10341",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(100-FM-257(N,F),,SIG,,MXW)",
+        "target": "100-FM-257",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(98-CF-253(N,F),,SIG,,MXW)",
+        "target": "98-CF-253",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG,,MXW)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(TRD)",
+          "freetext": [
+            " Mica track detector"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Data error given is standard deviation."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(THCOL)",
+          "freetext": [
+            " Thermal column of Livermore pool type reactor."
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Spectrum temperature 40 degr(C)."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-197(N,G)79-AU-198,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  }
+}

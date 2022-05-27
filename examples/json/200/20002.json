@@ -1,0 +1,245 @@
+{
+  "title": "-Average Values Of The Fission Cross Section And Alpha  For 94-Pu-239 In The Neutron Energy Range 100 Ev To  30 Kev.- (Eandc(Uk)-96), -Measurements Of Eta, Alpha And Neutron Cross-Sections  For 94-Pu-239 On The Harwell Neutron Time-Of-Flight  Spectrometer.- (66Paris,2,117).",
+  "references": [
+    {
+      "x4code": "(R,EANDC(UK)-96,1968)",
+      "publication year": "1968"
+    },
+    {
+      "x4code": "(C,66PARIS,2,117,196610)",
+      "publication year": "1966"
+    },
+    {
+      "x4code": "(W,SCHOMBERG,196810)",
+      "publication year": "1968"
+    }
+  ],
+  "authors": [
+    {
+      "name": "B.H.Patrick"
+    },
+    {
+      "name": "M.G.Schomberg"
+    },
+    {
+      "name": "M.G.Sowerby"
+    },
+    {
+      "name": "J.E.Jolly"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2UK HAR"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "LINAC",
+      "x4code": "2UK HAR"
+    }
+  ],
+  "entry_number": "20002",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG,,AV)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG,,AV)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG,,AV)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(94-PU-239(N,NON),,ETA)",
+        "target": "94-PU-239",
+        "process": "N,NON",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "ETA",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Measured transmission, fission neutron yield and",
+            " neutron spectrum.",
+            ".Sigma(total) derived from transmission.",
+            ".Eta derived from transmission, yield (corrected for",
+            " single elastic scattering) and the neutron spectrum.",
+            ".Sigma(fission) derived from normalized ETA and",
+            " sigma(total) using    sigma(fission) =",
+            "  eta*(sigma(total)-sigma(scattering))/nu-bar(prompt),",
+            " assuming nu-bar(prompt) = 2.864 (constant) and taking",
+            " for sigma(scattering) an estimate based on resonance",
+            " parameters (BNL-325,2nd ed,Suppl.2 and KFK-120/1/1V3)",
+            " and on sigma(potential) = 10.3+-0.5 b (C.A.Uttley,",
+            " EANDC(UK)-40 l ,unpublished)."
+          ]
+        }
+      }
+    },
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Background subtracted using black resonance technique.",
+            " Permanent resonance filters are",
+            " low energy run  sodium, high energy run  aluminium.",
+            ".Corrected for single elastic scattering in sample",
+            " (high Z), sample impurities (low Z)  and in the",
+            " aluminium windows of the sample container."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(BF3,NAICR)",
+          "freetext": [
+            "  Liquid scintillator with pulse shape",
+            " discrimination against gamma radiation for fission",
+            " yield measurements, boron-10 slab viewed by Na-I",
+            " crystals for neutron spectrum measurements and"
+          ]
+        },
+        "1": {
+          "x4code": "(GLASD)",
+          "freetext": [
+            "    Lithium loaded glass detectors for both",
+            " neutron spectrum measurements and transmission",
+            " measurements."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "LINAC,2UK HAR"
+          ],
+          "freetext": [
+            " 45 MeV Harwell electron linear accel."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(PHOTO)",
+          "freetext": [
+            "    Photo neutrons from booster target used,",
+            " neutron pulse width (immoderated) = 220 ns."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF,TRN)",
+          "freetext": [
+            "  Time of flight paths = 97.55 m and 34.9 m,",
+            "           timing channel width = 125 ns."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(94-PU-239(N,ABS),,ETA)"
+          ],
+          "freetext": [
+            "",
+            "       Normalized between 65.39 eV and",
+            " 65.94 eV to ETA = 1.547+-3% which was found",
+            " by the low energy measurement.",
+            ".This measurement was normalized at 10.95 eV to ETA =",
+            " 2.041 (F.D.Brooks et al.,AERE-M-1709(1966)),",
+            ".which itself has been normalized at thermal energy.",
+            ".Sigma(fission) has been normalized through eta."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Three samples of 2.9 inch diameter contained in",
+            "  3.0 inch diameter 12 inch long aluminum cylinders.",
+            " 1.8% 94-Pu-240 for  N = 0.02433 at/b,",
+            " 1.8% 94-Pu-240 for  N = 0.00440 at/b  and",
+            " 3.2% 94-Pu-240 for  N = 0.00115 at/b."
+          ]
+        }
+      }
+    }
+  }
+}

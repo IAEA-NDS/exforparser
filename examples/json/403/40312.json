@@ -1,0 +1,215 @@
+{
+  "title": "Measurement Of Alpha(E)=Sigc(E)/Sigf(E) Of Pu-239 For The 0.007 Ev - 12. Kev Neutrons.",
+  "references": [
+    {
+      "x4code": "(J,SJA,41,655,1976)",
+      "publication year": "1976"
+    },
+    {
+      "x4code": "(J,AE,41,(1),45,197607)",
+      "publication year": "1976"
+    },
+    {
+      "x4code": "(R,JINR-P-0031,1976)",
+      "publication year": "1976"
+    },
+    {
+      "x4code": "(R,INDC(CCP)-95,1976)",
+      "publication year": "1976"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Yu.V.Ryabov"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "4ZZZDUB"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "REAC",
+      "x4code": "4ZZZDUB"
+    }
+  ],
+  "entry_number": "40312",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(94-PU-239(N,ABS),,ALF,,AV)",
+        "target": "94-PU-239",
+        "process": "N,ABS",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "ALF",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(94-PU-239(N,ABS),,ALF)",
+        "target": "94-PU-239",
+        "process": "N,ABS",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "ALF",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG,,AV)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Comparison of gamma and fission-neutron counting rates",
+            "as function of time-of-flight"
+          ]
+        }
+      }
+    },
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Constant background : <1% at thermal energy.",
+            " Background of fast neutrons and gamma rays from",
+            "reactor was determined by black resonance filters",
+            "method to be",
+            "0.8% ( fission) and 5.2% (capture) at 100-200 eV range,",
+            "3.8%                20%               1.-1.5 keV,",
+            "14 %                56%               10-12 keV",
+            " of the total counts."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(SOLST)",
+          "freetext": [
+            " Stilbene crystal of 70 mm diameter, equipped by",
+            " FEU-82."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Error of measurement systematic",
+            "and normalization error is 10 - 20%"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "REAC,4ZZZDUB"
+          ],
+          "freetext": [
+            " Pulse fast reactor"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(REAC)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            " Time-of-flight, resolution 0.23 microsec/m,",
+            " flight path 251.6 m."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Absolute measurement"
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(N,G)",
+          "freetext": [
+            " Prompt fission neutrons, capture and fission",
+            "gamma rays."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Metallic plutonium sample 28. mm diameter.",
+            "Pu-240 content is 1.75%,",
+            "thickness of the sample is 2.13e21 nuclei/cm2"
+          ]
+        }
+      }
+    }
+  }
+}

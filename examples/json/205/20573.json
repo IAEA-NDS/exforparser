@@ -1,0 +1,163 @@
+{
+  "title": "-Capture Cross-Section Of Au-197 Between 10 Kev And  500 Kev -",
+  "references": [
+    {
+      "x4code": "(C,75WASH,2,957,7503)",
+      "publication year": "1975"
+    },
+    {
+      "x4code": "(C,73KARLSR,,33,7305)",
+      "publication year": "1973"
+    },
+    {
+      "x4code": "(C,73KARLSR,,51,7305)",
+      "publication year": "1973"
+    },
+    {
+      "x4code": "(C,73KIEV,3,3,7305)",
+      "publication year": "1973"
+    },
+    {
+      "x4code": "(R,CEA-N-1662,,7308)",
+      "publication year": "1973"
+    }
+  ],
+  "authors": [
+    {
+      "name": "E.Fort"
+    },
+    {
+      "name": "C.Le Rigoleur"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2FR CAD"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "VDG  "
+    }
+  ],
+  "entry_number": "20573",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,AV)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".FOR NEUTRON SCATTERING, SELF-SHIELDING, GAMMA-",
+            " ATTENUATION IN SAMPLE, NONLINEARITY OF WEIGHTING",
+            " FUNCTION...SPECIAL CARE GIVEN TO CORRECTION OF",
+            " NEUTRON SENSITIVITY OF GAMMA DETECTOR."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            "",
+            "         IN A QUARTZ CONTAINER."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".UNCERTAINTIES, ADDED QUADRATICALLY, ABOUT 3.5 PERC.."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG  "
+          ],
+          "freetext": [
+            "  VAN DE GRAAFF."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            "  LI-7(P,N)"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".NEUTRON FLUX MEASURED WITH B-10-I-NA(TL) DETECTOR OR",
+            " LI-6 GLASS SCINTILLATOR. ABSOLUTE EFFICIENCY OF",
+            " THESE DETECTORS DETERMINED WITH STANDARD DETECTORS."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".0.002911 AND 0.005831 ATOM/BARN, DIAM. 2.5 CM."
+          ]
+        }
+      }
+    }
+  }
+}

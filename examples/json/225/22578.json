@@ -1,0 +1,357 @@
+{
+  "title": ".N, Gamma Cross Section Mesurement For Ceveral Elements",
+  "references": [
+    {
+      "x4code": "(J,NAT,142,392,193808)",
+      "publication year": "1938"
+    }
+  ],
+  "authors": [
+    {
+      "name": "H.Von Halban Jr"
+    },
+    {
+      "name": "L.Kowarski"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2FR PCF"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "22578",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(13-AL-27(N,G)13-AL-28,,SIG,,SPA)",
+        "target": "13-AL-27",
+        "process": "N,G",
+        "sf4": "13-AL-28",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(23-V-51(N,G)23-V-52,,SIG,,SPA)",
+        "target": "23-V-51",
+        "process": "N,G",
+        "sf4": "23-V-52",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(25-MN-55(N,G)25-MN-56,,SIG,,SPA)",
+        "target": "25-MN-55",
+        "process": "N,G",
+        "sf4": "25-MN-56",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(28-NI-58(N,G)28-NI-59,,SIG,,SPA)",
+        "target": "28-NI-58",
+        "process": "N,G",
+        "sf4": "28-NI-59",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(29-CU-65(N,G)29-CU-66,,SIG,,SPA)",
+        "target": "29-CU-65",
+        "process": "N,G",
+        "sf4": "29-CU-66",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(33-AS-75(N,G)33-AS-76,,SIG,,SPA)",
+        "target": "33-AS-75",
+        "process": "N,G",
+        "sf4": "33-AS-76",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(34-SE-0(N,G),,SIG,,SPA)",
+        "target": "34-SE-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "(35-BR-79(N,G)35-BR-80,,SIG,,SPA)",
+        "target": "35-BR-79",
+        "process": "N,G",
+        "sf4": "35-BR-80",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "010": {
+      "XX": {
+        "x4code": "(35-BR-81(N,G)35-BR-82,,SIG,,SPA)",
+        "target": "35-BR-81",
+        "process": "N,G",
+        "sf4": "35-BR-82",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "011": {
+      "XX": {
+        "x4code": "(46-PD-106(N,G)46-PD-107,,SIG,,SPA)",
+        "target": "46-PD-106",
+        "process": "N,G",
+        "sf4": "46-PD-107",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "012": {
+      "XX": {
+        "x4code": "(47-AG-107(N,G)47-AG-108,,SIG,,SPA)",
+        "target": "47-AG-107",
+        "process": "N,G",
+        "sf4": "47-AG-108",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "013": {
+      "XX": {
+        "x4code": "(47-AG-109(N,G)47-AG-110,,SIG,,SPA)",
+        "target": "47-AG-109",
+        "process": "N,G",
+        "sf4": "47-AG-110",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "014": {
+      "XX": {
+        "x4code": "(51-SB-121(N,G)51-SB-122,,SIG,,SPA)",
+        "target": "51-SB-121",
+        "process": "N,G",
+        "sf4": "51-SB-122",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "015": {
+      "XX": {
+        "x4code": "(52-TE-0(N,G),,SIG,,SPA)",
+        "target": "52-TE-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "016": {
+      "XX": {
+        "x4code": "(53-I-127(N,G)53-I-128,,SIG,,SPA)",
+        "target": "53-I-127",
+        "process": "N,G",
+        "sf4": "53-I-128",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "017": {
+      "XX": {
+        "x4code": "(56-BA-138(N,G)56-BA-139,,SIG,,SPA)",
+        "target": "56-BA-138",
+        "process": "N,G",
+        "sf4": "56-BA-139",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "018": {
+      "XX": {
+        "x4code": "(66-DY-164(N,G)66-DY-165,,SIG,,SPA)",
+        "target": "66-DY-164",
+        "process": "N,G",
+        "sf4": "66-DY-165",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "019": {
+      "XX": {
+        "x4code": "(74-W-0(N,G),,SIG,,SPA)",
+        "target": "74-W-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "020": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,SPA)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "021": {
+      "XX": {
+        "x4code": "(81-TL-0(N,G),,SIG,,SPA)",
+        "target": "81-TL-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Errors not Given"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(PHOTO)",
+          "freetext": [
+            " Th-D2o Source"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  }
+}

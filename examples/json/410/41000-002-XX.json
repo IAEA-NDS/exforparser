@@ -1,0 +1,116 @@
+{
+  "id": "41000-002-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198-M,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198-M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-198-M,2.27D,DG,180.)"
+          ],
+          "freetext": [
+            "",
+            " Decay data from N.G.Gusev+,B, \"Kvantovoe izluchenie",
+            "radionuklidov\",page 296,1977, Moscow, Atomizdat."
+          ]
+        }
+      }
+    },
+    "DECAY-MON": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-196-M2,9.7HR,DG,188.)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-197(N,2N)79-AU-196-M,,SIG)"
+          ],
+          "freetext": [
+            "",
+            " From V.K.Maydanyuk+,\"Prikladnaya yadernaya",
+            " spektroskopiya\", vol.13, page 180, 1984,",
+            " Leningrad, Energoatomizdat."
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "A",
+            "ent": null,
+            "author": "V.L.Demekhin+",
+            "ref": "C,84ALMAAT,329,1984"
+          },
+          "freetext": [
+            "",
+            " 400 +- 140 microbarn ."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": {
+      "0": [
+        14.6
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "MICRO-B",
+      "MICRO-B",
+      "MB",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        500.0
+      ],
+      "1": [
+        200.0
+      ],
+      "2": [
+        142.0
+      ],
+      "3": [
+        8.0
+      ]
+    }
+  }
+}

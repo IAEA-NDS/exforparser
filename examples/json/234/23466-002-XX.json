@@ -1,0 +1,98 @@
+{
+  "id": "23466-002-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,MXW)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "ERR-S",
+      "ERR-1",
+      "ERR-2",
+      "ERR-3",
+      "ERR-4",
+      "ERR-5",
+      "ERR-6",
+      "ERR-7",
+      "ERR-8",
+      "ERR-9"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        0.7
+      ],
+      "1": [
+        0.3
+      ],
+      "2": [
+        0.1
+      ],
+      "3": [
+        0.04
+      ],
+      "4": [
+        1.5
+      ],
+      "5": [
+        0.01
+      ],
+      "6": [
+        0.1
+      ],
+      "7": [
+        1.9
+      ],
+      "8": [
+        1.3
+      ],
+      "9": [
+        1.6
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "KT",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "KEV",
+      "MB",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        30.0
+      ],
+      "1": [
+        612.0
+      ],
+      "2": [
+        20.0
+      ]
+    }
+  }
+}

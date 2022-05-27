@@ -1,0 +1,62 @@
+{
+  "id": "10698-003-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG,,FIS)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "PuO2 deposits, 99.9% 239Pu, on 20-mil platinum foil.",
+            "Mass deposit uncertain to 1.4%."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-DUMMY",
+      "DATA",
+      "ERR-T",
+      "ERR-S",
+      "ERR-SYS"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        1.1
+      ],
+      "1": [
+        1.79
+      ],
+      "2": [
+        0.041
+      ],
+      "3": [
+        0.96
+      ],
+      "4": [
+        2.05
+      ]
+    }
+  }
+}

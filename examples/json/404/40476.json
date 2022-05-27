@@ -1,0 +1,200 @@
+{
+  "title": "The Neutron Fission Cross-Section Of U-235 And Pu-239 At 2, 24, 55 And 144 Kev",
+  "references": [
+    {
+      "x4code": "(R,YK-22,3,1976)",
+      "publication year": "1976"
+    },
+    {
+      "x4code": "(R,INDC(CCP)-105,3,1976)",
+      "publication year": "1976"
+    },
+    {
+      "x4code": "(C,75KIEV,6,67,1975)",
+      "publication year": "1975"
+    },
+    {
+      "x4code": "(R,INDC(CCP)-099,(6),67,1975)",
+      "publication year": "1975"
+    },
+    {
+      "x4code": "(C,77KIEV,3,131,1977)",
+      "publication year": "1977"
+    },
+    {
+      "x4code": "(R,INDC(CCP)-118,131,1977)",
+      "publication year": "1977"
+    },
+    {
+      "x4code": "(J,AE,42,56,1977)",
+      "publication year": "1977"
+    },
+    {
+      "x4code": "(J,SJA,42,62,1977)",
+      "publication year": "1977"
+    }
+  ],
+  "authors": [
+    {
+      "name": "K.D.Zhuravlev"
+    },
+    {
+      "name": "N.I.Kroshkin"
+    },
+    {
+      "name": "L.V.Karin"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "4RUSNIR"
+    }
+  ],
+  "#doi": [
+    "10.1007/BF01119709"
+  ],
+  "facilities": [
+    {
+      "type": "REAC",
+      "x4code": "4RUSNIR"
+    }
+  ],
+  "entry_number": "40476",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "1": {
+        "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      },
+      "XX": {
+        "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))((94-PU-239(N,F),,SIG,,,DERIV)/(92-U-235(N,F),,SIG,,,DERIV))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "005": {
+      "1": {
+        "x4code": "((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "006": {
+      "1": {
+        "x4code": "((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "010": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            " For FF detection"
+          ]
+        },
+        "1": {
+          "x4code": "(IOCH)",
+          "freetext": [
+            "  For alpha-particles detection from B-10(N,",
+            " ALPHA)Li-7 reaction used to determine ratio of neutron",
+            "beam at E to that at thermal energy E0 ."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Not specified."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "REAC,4RUSNIR"
+          ],
+          "freetext": [
+            "  Reactor SM-2"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(REAC)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  }
+}

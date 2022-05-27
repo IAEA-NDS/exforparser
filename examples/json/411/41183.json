@@ -1,0 +1,206 @@
+{
+  "title": " Neutron Radiation Cross-Sections For The 232Th  And 197Au Nuclei In The 0.37 - 1 Mev Range",
+  "references": [
+    {
+      "x4code": "(J,YK,,(1),13,1993)",
+      "publication year": "1993"
+    },
+    {
+      "x4code": "(R,INDC(CCP)-317,13,1993)",
+      "publication year": "1993"
+    },
+    {
+      "x4code": "(R,INDC(CCP)-389,1,1995)",
+      "publication year": "1995"
+    }
+  ],
+  "authors": [
+    {
+      "name": "A.N.Davletshin"
+    },
+    {
+      "name": "E.V.Teplov"
+    },
+    {
+      "name": "A.O.Tipunkov"
+    },
+    {
+      "name": "S.V.Tikhonov"
+    },
+    {
+      "name": "V.A.Tolstikov"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "4RUSFEI"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "VDG",
+      "x4code": "4RUSFEI"
+    }
+  ],
+  "entry_number": "41183",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "1": {
+        "x4code": "(90-TH-232(N,G)90-TH-233,,SIG)",
+        "target": "90-TH-232",
+        "process": "N,G",
+        "sf4": "90-TH-233",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(90-TH-232(N,G)90-TH-233,,SIG)",
+        "target": "90-TH-232",
+        "process": "N,G",
+        "sf4": "90-TH-233",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "  Corrections were calculated by the Monte-Carlo",
+            "  method. Corrections on neutron background at the",
+            "  detector position lays in the interval 1.6-2.4 % ,",
+            "  in the gold sample - up to 0.9 % ,",
+            "  in the thorium sample - 0.0 % ."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(GELI)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Error consists of the sum of experimental and",
+            "        calculation errors"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1,0.3,0.5)",
+          "freetext": [
+            " Statistical error of calculated by",
+            "Monte-Carlo code values."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG,4RUSFEI"
+          ],
+          "freetext": [
+            "  KG-2.5 FEI accelerator"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-T)",
+          "freetext": [
+            "  ScT2 targets of 0.64-0.90 mg/cm**2 thickness.",
+            "Air cooled."
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Energy resolution represents spectrum dispersion",
+            " of the neutrons impinging detectors"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "M",
+            "ent": "40968001",
+            "author": "A.N.Davletshin+",
+            "ref": "J,AE,65,343,1988"
+          },
+          "freetext": [
+            " Issue 5.",
+            " Details of experimental method."
+          ]
+        },
+        "1": {
+          "x4code": {
+            "type": "M",
+            "ent": "40968001",
+            "author": "A.N.Davletshin+",
+            "ref": "J,SJA,65,913,1988"
+          },
+          "freetext": [
+            "",
+            "           Engl.translation of J,AE,65."
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "title": " Neutron Radiative Capture Cross-Section For 232Th  And 197Au Nuclei In The 0.8 - 2.5 Mev Neutron Energy  Range",
+  "references": [
+    {
+      "x4code": "(J,YK,,(1),41,1992)",
+      "publication year": "1992"
+    },
+    {
+      "x4code": "(R,INDC(CCP)-349,41,1992)",
+      "publication year": "1992"
+    },
+    {
+      "x4code": "(R,INDC(CCP)-375,1,1994)",
+      "publication year": "1994"
+    },
+    {
+      "x4code": "(R,INDC(CCP)-0349,1992)",
+      "publication year": "1992"
+    }
+  ],
+  "authors": [
+    {
+      "name": "A.N.Davletshin"
+    },
+    {
+      "name": "E.V.Teplov"
+    },
+    {
+      "name": "A.O.Tipunkov"
+    },
+    {
+      "name": "V.A.Tolstikov"
+    },
+    {
+      "name": "I.A.Korzh"
+    },
+    {
+      "name": "V.D.Ovdienko"
+    },
+    {
+      "name": "N.M.Pravdivyy"
+    },
+    {
+      "name": "N.T.Sklyar"
+    },
+    {
+      "name": "V.A.Mishchenko"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "4RUSFEI"
+    },
+    {
+      "x4code": "4UKRIJD"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "VDG",
+      "x4code": "4UKRIJD"
+    }
+  ],
+  "entry_number": "41121",
+  "reactions": {
+    "002": {
+      "1": {
+        "x4code": "(90-TH-232(N,G)90-TH-233,,SIG)",
+        "target": "90-TH-232",
+        "process": "N,G",
+        "sf4": "90-TH-233",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(90-TH-232(N,G)90-TH-233,,SIG)",
+        "target": "90-TH-232",
+        "process": "N,G",
+        "sf4": "90-TH-233",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "ASSUMED": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-197(N,G)79-AU-198,,SIG)"
+          ],
+          "freetext": [
+            " At thermal"
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG)"
+          ],
+          "freetext": [
+            "           energy;",
+            " were used to define fission chamber efficiency."
+          ]
+        }
+      }
+    },
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Corrections were made on neutrons scattered on",
+            " experimental hardware and on experimental hall",
+            " background ."
+          ]
+        }
+      }
+    },
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-198-G,2.696D,DG,411.8,0.9555)"
+          ],
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(91-PA-233,27.0D,DG,311.9,0.36)"
+          ],
+          "freetext": [
+            " for Th sample,",
+            "after b- decay."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            "  Flowing fission chamber with U-235 layer of",
+            " 0.405 mg/cm**2, enrichment 99.99 % .",
+            "Registration efficiency 0.979+-03.% was defined using",
+            "thermal c-s for Au(n,g) 98.8 b +-0.3% and for U(n,f)",
+            "582.2 b +-0.2% ."
+          ]
+        },
+        "1": {
+          "x4code": "(BF3)",
+          "freetext": [
+            "    For neutron flux monitoring"
+          ]
+        },
+        "2": {
+          "x4code": "(GELI)",
+          "freetext": [
+            "  For activation obtained in Au and Th samples;",
+            " detection efficiency dependence from gamma-energy in",
+            "0.24-0.66 MeV range was defined by 9 gamma-lines of",
+            "standard gamma-sources Ba-133, Eu-152, Cs-137.",
+            "Efficiency for Au - 3.398E-2 +-3.4%,",
+            "           for Th - 2.148E-2+-3.5% .",
+            "    Additional test measurement was made in FEI to",
+            "check efficiency for Au using thermal neutron",
+            "irradiation, other Ge(Li) detector by 4PI-Beta-gamma",
+            "coincidence method."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            "  Total error"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1,2.,3.1)",
+          "freetext": [
+            " Error of correction for scattered",
+            "neutrons and background; 2% for Th, <3.1% for Au,",
+            " 2.1 % for fission chamber (U)."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG,4UKRIJD"
+          ],
+          "freetext": [
+            "   Electrostatic accelerator EG-5"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-T)",
+          "freetext": [
+            " Titan-tritium targets of 1mg/cm**2 cooled by air."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            " Activation by thermal and fast neutrons."
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "R",
+            "ent": null,
+            "author": "W.L.Zijp+",
+            "ref": "R,EUR-7164,1981"
+          },
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": {
+            "type": "R",
+            "ent": null,
+            "author": "E.Browne+",
+            "ref": "B,BROWNE,,,1986"
+          },
+          "freetext": [
+            "",
+            " Two references for thermal neutron activation c-s,",
+            " decay data used in analysis."
+          ]
+        }
+      }
+    }
+  }
+}

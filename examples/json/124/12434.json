@@ -1,0 +1,170 @@
+{
+  "title": "Normalization Of The Pu239 And Pu241 Fission Cross  Sections.",
+  "references": [
+    {
+      "x4code": "(P,HW-48893,98,195703)",
+      "publication year": "1957"
+    },
+    {
+      "x4code": "(P,HW-47012,50,195612)",
+      "publication year": "1956"
+    },
+    {
+      "x4code": "(P,HW-44525,34,1950)",
+      "publication year": "1950"
+    }
+  ],
+  "authors": [
+    {
+      "name": "B.R.Leonard Jr"
+    },
+    {
+      "name": "W.J.Friesen"
+    },
+    {
+      "name": "E.J.Seppi"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USAHAN"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "SPECC",
+      "x4code": "1USAHAN"
+    }
+  ],
+  "entry_number": "12434",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": [
+          "  - average from seven measurements."
+        ]
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG,,,DERIV)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG,,,DERIV)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    },
+    "006": {
+      "1": {
+        "x4code": "((94-PU-239(N,F),,SIG,,,DERIV)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(94-PU-241(N,F),,SIG)",
+        "target": "94-PU-241",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "(94-PU-241(N,F),,SIG,,,DERIV)",
+        "target": "94-PU-241",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(PROPC)",
+          "freetext": [
+            " The resulting activity of the gold and hence",
+            "the neutron flux of the irradiation was determined by",
+            "a measurement of the beta activity of the gold foil in",
+            "a calibrated 4Pi beta proportional counter."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "SPECC,1USAHAN"
+          ],
+          "freetext": [
+            " Crystal spectrometer"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "title": "Measurements Of The Fission Cross Section Of 239Pu By  Neutrons With Energy From 10 Ev To 100 Kev",
+  "references": [
+    {
+      "x4code": "(J,AE,46,154,1979)",
+      "publication year": "1979"
+    },
+    {
+      "x4code": "(J,SJA,46,178,1979)",
+      "publication year": "1979"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Yu.V.Ryabov"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "4RUSJIA"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "REAC",
+      "x4code": "4ZZZDUB"
+    },
+    {
+      "type": "LINAC",
+      "x4code": "4ZZZDUB"
+    }
+  ],
+  "entry_number": "40487",
+  "reactions": {
+    "002": {
+      "1": {
+        "x4code": "(94-PU-239(N,F),,SIG,,AV)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(94-PU-239(N,F),,SIG,,AV)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      },
+      "3": {
+        "x4code": "(94-PU-239(N,F),,SIG,,AV)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      },
+      "4": {
+        "x4code": "(94-PU-239(N,F),,SIG,,AV)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG,,AV)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            " Multylayer ionization chamber"
+          ]
+        },
+        "1": {
+          "x4code": "(BF3)",
+          "freetext": [
+            " Set of NWI-62 proportional counters filled with",
+            " BF3 (82.3% B-10) for neutron spectrum measurement."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "REAC,4ZZZDUB"
+          ],
+          "freetext": [
+            "  Reactor IBR-30"
+          ]
+        },
+        "1": {
+          "x4code": [
+            "REAC,4ZZZDUB"
+          ],
+          "freetext": [
+            " Linear electronic accelerator LEU-40"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "(MONIT)": {
+          "x4code": [
+            "(94-PU-239(N,F),,INT)"
+          ],
+          "freetext": [
+            " Fission integral in",
+            " 100-200 eV range (1831+/-41.8 b*eV) by averaging some",
+            " experimental results normalized to thermal cross",
+            " section of 742.5+/-3.7 b."
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(5-B-10(N,A)3-LI-7,,SIG)"
+          ],
+          "freetext": [
+            " Shape normalization"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "239Pu (120 mg, 2.19E-05 at/b thick) with 1.7% of 240Pu"
+          ]
+        }
+      }
+    }
+  }
+}

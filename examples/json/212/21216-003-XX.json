@@ -1,0 +1,66 @@
+{
+  "id": "21216-003-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198-G,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198-G",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".A CORRECTION FACTOR OF ABOUT 10 PERCENT, CALCULATED",
+            " WITH A MONTE CARLO CODE, FOR MULTIPLE SCATTERING",
+            " HAVE BEEN APPLIED."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        1.68,
+        1.93,
+        2.44
+      ],
+      "1": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "2": [
+        59.0,
+        55.0,
+        45.0
+      ],
+      "3": [
+        4.0,
+        4.0,
+        4.0
+      ]
+    }
+  }
+}

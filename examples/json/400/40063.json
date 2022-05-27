@@ -1,0 +1,516 @@
+{
+  "title": " The Fission And Total Cross-Sections Measurement For  Heavy Elements Isotopes By Monochromatic Neutrons  Using Mechanical Selector.",
+  "references": [
+    {
+      "x4code": "(C,55GENEVA,4,259,195508)",
+      "publication year": "1955"
+    },
+    {
+      "x4code": "(J,AE,6,(5),569,195905)",
+      "publication year": "1959"
+    },
+    {
+      "x4code": "(C,55GENEVA,4,216,195508)",
+      "publication year": "1955"
+    },
+    {
+      "x4code": "(J,SJA,6,(5),420,196012)",
+      "publication year": "1960"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Ju.V.Adamchuk"
+    },
+    {
+      "name": "V.F.Gerasimov"
+    },
+    {
+      "name": "B.V.Efimov"
+    },
+    {
+      "name": "V.S.Zenkevich"
+    },
+    {
+      "name": "V.I.Mostovoy"
+    },
+    {
+      "name": "M.I.Pevzner"
+    },
+    {
+      "name": "A.P.Tsitovich"
+    },
+    {
+      "name": "A.A.Chernyshov"
+    },
+    {
+      "name": "S.S.Moskalev"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "4ZZZDUB"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "REAC"
+    }
+  ],
+  "entry_number": "40063",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(93-NP-237(N,0),,EN)",
+        "target": "93-NP-237",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "EN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(93-NP-237(N,EL),,STF)",
+        "target": "93-NP-237",
+        "process": "N,EL",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "STF",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(92-U-233(N,0),,EN)",
+        "target": "92-U-233",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "EN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(92-U-235(N,0),,EN)",
+        "target": "92-U-235",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "EN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "1": {
+        "x4code": "(94-PU-239(N,0),,EN)",
+        "target": "94-PU-239",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "EN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(94-PU-239(N,F),,WID)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "3": {
+        "x4code": "(94-PU-239(N,F),,SIG,,RES)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "RES",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "1": {
+        "x4code": "(94-PU-241(N,0),,EN)",
+        "target": "94-PU-241",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "EN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(94-PU-241(N,F),,WID)",
+        "target": "94-PU-241",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "3": {
+        "x4code": "(94-PU-241(N,F),,SIG,,RES)",
+        "target": "94-PU-241",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "RES",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(93-NP-237(N,0),,EN)",
+        "target": "93-NP-237",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "EN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "(95-AM-241(N,0),,EN)",
+        "target": "95-AM-241",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "EN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "010": {
+      "XX": {
+        "x4code": "(93-NP-237(N,TOT),,SIG)",
+        "target": "93-NP-237",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "011": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "012": {
+      "XX": {
+        "x4code": "(93-NP-237(N,TOT),,SIG)",
+        "target": "93-NP-237",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "013": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "014": {
+      "XX": {
+        "x4code": "(94-PU-241(N,F),,SIG)",
+        "target": "94-PU-241",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "015": {
+      "XX": {
+        "x4code": "(94-PU-241(N,F),,SIG)",
+        "target": "94-PU-241",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "016": {
+      "XX": {
+        "x4code": "(95-AM-241(N,TOT),,SIG)",
+        "target": "95-AM-241",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "017": {
+      "XX": {
+        "x4code": "(95-AM-241(N,TOT),,SIG)",
+        "target": "95-AM-241",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "018": {
+      "XX": {
+        "x4code": "(92-U-233(N,F),,SIG)",
+        "target": "92-U-233",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "019": {
+      "XX": {
+        "x4code": "(95-AM-241(N,TOT),,SIG)",
+        "target": "95-AM-241",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "020": {
+      "XX": {
+        "x4code": "(95-AM-241(N,ABS),,SIG)",
+        "target": "95-AM-241",
+        "process": "N,ABS",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "021": {
+      "XX": {
+        "x4code": "(93-NP-237(N,TOT),,RI,,LIM)",
+        "target": "93-NP-237",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "RI",
+        "sf7": null,
+        "sf8": "LIM",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "022": {
+      "XX": {
+        "x4code": "(95-AM-241(N,TOT),,SIG)",
+        "target": "95-AM-241",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "023": {
+      "XX": {
+        "x4code": "(93-NP-237(N,0),,D)",
+        "target": "93-NP-237",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "D",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(BF3)",
+          "freetext": [
+            " Two types of BF3 counters:",
+            " in thermal energy range - 20 cm long, 6 cm diameter,",
+            " BF3 pressure 150 mm Hg;",
+            " seven counters of 20 cm long, 2cm diameter,",
+            " BF3 pressure 600 mm Hg."
+          ]
+        },
+        "1": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            " Ionization chamber with layers of fissile",
+            "substance as oxide. (Ar + 10% C-O2) filled at pressure",
+            "40-70 cm Hg."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "REAC"
+          ],
+          "freetext": [
+            " Reactor RFT and mechanical selector"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(REAC)",
+          "freetext": [
+            "    Reactor",
+            " Energy calibration was made by AU and In resonances",
+            " and also by skip of Be cross-section.",
+            " Total cross-sections for B and Li-6 were measured as",
+            " test."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            " Time-of-flight method"
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(N)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "12490-003-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(SOLST)",
+          "freetext": [
+            "    SOLID STATE DETECTOR"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR",
+      "MONIT"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "PER-CENT",
+      "B"
+    ],
+    "data": {
+      "0": [
+        3.0,
+        14.9
+      ],
+      "1": [
+        1.8,
+        2.56
+      ],
+      "2": [
+        6.0,
+        6.0
+      ],
+      "3": [
+        1.16,
+        2.13
+      ]
+    }
+  }
+}

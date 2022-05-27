@@ -1,0 +1,70 @@
+{
+  "id": "11447-126-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,MXW)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-198-G,2.7D,B)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Thermal spectrum"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": {
+      "0": [
+        0.0253
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        96.4
+      ],
+      "1": [
+        10.0
+      ]
+    }
+  }
+}

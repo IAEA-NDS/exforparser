@@ -1,0 +1,14 @@
+# entry       : 10267 
+# subentry    : 044 
+# pointer     : 1 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG,,AV) 
+# year        : 1976 
+# author      : R.Gwin 
+# institute   : 1USAORL 
+# reference   : (J,NSE,59,79,1976) 
+# facilitie   : {'type': 'LINAC', 'x4code': '1USAORL'}
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
+      2.00000E-02      0.00000E+00      9.40000E+02      5.00000E+01       # Lab                   
+      3.00000E-02      0.00000E+00      7.10000E+02      4.00000E+01       # Lab                   
+      4.00000E-02      0.00000E+00      5.80000E+02      4.00000E+01       # Lab                   
+      5.00000E-02      0.00000E+00      4.90000E+02      3.00000E+01       # Lab                   

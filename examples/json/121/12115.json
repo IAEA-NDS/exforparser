@@ -1,0 +1,264 @@
+{
+  "title": "Neutron Activation Cross Sections.",
+  "references": [
+    {
+      "x4code": "(J,PR,128,2717,1962)",
+      "publication year": "1962"
+    }
+  ],
+  "authors": [
+    {
+      "name": "J.A.Miskel"
+    },
+    {
+      "name": "K.V.Marsh"
+    },
+    {
+      "name": "M.Lindner"
+    },
+    {
+      "name": "R.J.Nagle"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USALRL"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "VDG",
+      "x4code": "1USABNL"
+    },
+    {
+      "type": "VDG",
+      "x4code": "1USALAS"
+    }
+  ],
+  "entry_number": "12115",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(72-HF-180(N,G)72-HF-181,,SIG)",
+        "target": "72-HF-180",
+        "process": "N,G",
+        "sf4": "72-HF-181",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(73-TA-181(N,G)73-TA-182,,SIG)",
+        "target": "73-TA-181",
+        "process": "N,G",
+        "sf4": "73-TA-182",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(73-TA-181(N,G)73-TA-182,,SIG)",
+        "target": "73-TA-181",
+        "process": "N,G",
+        "sf4": "73-TA-182",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(74-W-186(N,G)74-W-187,,SIG)",
+        "target": "74-W-186",
+        "process": "N,G",
+        "sf4": "74-W-187",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(74-W-186(N,G)74-W-187,,SIG)",
+        "target": "74-W-186",
+        "process": "N,G",
+        "sf4": "74-W-187",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "(90-TH-232(N,G)90-TH-233,,SIG)",
+        "target": "90-TH-232",
+        "process": "N,G",
+        "sf4": "90-TH-233",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "010": {
+      "XX": {
+        "x4code": "(90-TH-232(N,G)90-TH-233,,SIG)",
+        "target": "90-TH-232",
+        "process": "N,G",
+        "sf4": "90-TH-233",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(NAICR)",
+          "freetext": [
+            " for gammas (all products except Th-232)"
+          ]
+        },
+        "1": {
+          "x4code": "(PROPC)",
+          "freetext": [
+            " for betas (Pa-232, decay product of Th-232)"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR,,10.)",
+          "freetext": [
+            " Maximum total error from all sources",
+            " of uncertainties"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG,1USABNL"
+          ],
+          "freetext": [
+            " Brookhaven Van de Graaff generator"
+          ]
+        },
+        "1": {
+          "x4code": [
+            "VDG,1USABNL"
+          ],
+          "freetext": [
+            " Los Alamos high-energy Van de Graaff and",
+            " Los Alamos low-energy Van de Graaff generators"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONIT-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": null,
+            "ent": null,
+            "author": "R.L.Henkel",
+            "ref": "R,LA-2114,1957"
+          },
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  }
+}

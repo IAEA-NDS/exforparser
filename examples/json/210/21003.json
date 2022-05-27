@@ -1,0 +1,220 @@
+{
+  "title": " Measurement And Calculation Of Average  Activation Cross Sections In The Spontaneous  Fission Neutron Field Of 252-Cf",
+  "references": [
+    {
+      "x4code": "(J,NSE,69,333,197902)",
+      "publication year": "1979"
+    },
+    {
+      "x4code": "(S,IAEA-208,(2),227,1978)",
+      "publication year": "1978"
+    },
+    {
+      "x4code": "(P,NEANDC(E)-192,(5),84,197804)",
+      "publication year": "1978"
+    },
+    {
+      "x4code": "(P,NEANDC(E)-182,(5),84,197704)",
+      "publication year": "1977"
+    }
+  ],
+  "authors": [
+    {
+      "name": "W.Mannhart"
+    },
+    {
+      "name": "W.G.Alberts"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2GERPTB"
+    }
+  ],
+  "#doi": [],
+  "facilities": [],
+  "entry_number": "21003",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(49-IN-113(N,INL)49-IN-113-M,,SIG,,FIS)",
+        "target": "49-IN-113",
+        "process": "N,INL",
+        "sf4": "49-IN-113-M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(49-IN-115(N,G)49-IN-116-M1+M2,,SIG,,FIS)",
+        "target": "49-IN-115",
+        "process": "N,G",
+        "sf4": "49-IN-116-M1+M2",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(49-IN-115(N,INL)49-IN-115-M,,SIG,,FIS)",
+        "target": "49-IN-115",
+        "process": "N,INL",
+        "sf4": "49-IN-115-M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198-G,,SIG,,FIS)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198-G",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(79-AU-197(N,2N)79-AU-196-G,,SIG,,FIS)",
+        "target": "79-AU-197",
+        "process": "N,2N",
+        "sf4": "79-AU-196-G",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".For -",
+            " counting losses due to dead time and pile-up-",
+            "     0.5 - 4.5%,",
+            " true coincidences - 1-3%,",
+            " gamma attenuation - 1-2%."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(GELI)",
+          "freetext": [
+            " 70 cm3."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total uncertainty includes individual",
+            " contributions that combined quadratically -"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-S,0.3,0.7)",
+          "freetext": [
+            " 0.3 to 0.7 for counting statistics,"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " 1% for photopeak efficiency calibration,"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            "  1.2% for effective neutron path length, and"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            "  1.7% for source strength determination.",
+            " The quoted uncertainties correspond to",
+            " a confidence level of 68%."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Outdoor irradiation facility of PTB."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(CF252)",
+          "freetext": [
+            " Two single sources of 300microg of",
+            " Cf-252 each in a ceramic tablet, doubly",
+            " encapsulated by zircaloy cylinders 10mm diam.",
+            " by 10mm high with a wall thickness of 1.5mm."
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Cf-252 neutron field with total source strength",
+            " of 1.33 by 10**9 neutrons per sec., Giving an",
+            " integrated flux in 4pi over the samples of",
+            " 10**13 to 10**15 neutrons."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  }
+}

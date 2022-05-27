@@ -1,0 +1,70 @@
+{
+  "id": "12509-002-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            "    BACK-TO-BACK FISSION COUNTER"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG)"
+          ],
+          "freetext": [
+            "",
+            " BASED ON U235 THERMAL FISSION=580B."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR",
+      "MONIT"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.0253
+      ],
+      "1": [
+        715.0
+      ],
+      "2": [
+        15.0
+      ],
+      "3": [
+        580.0
+      ]
+    }
+  }
+}

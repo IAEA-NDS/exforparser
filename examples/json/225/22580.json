@@ -1,0 +1,298 @@
+{
+  "title": " Absolute Cross-Sections For The Capture Of Neutrons  Of 200 And 900 Kev Energy.",
+  "references": [
+    {
+      "x4code": "(J,NAT,163,366,194903)",
+      "publication year": "1949"
+    }
+  ],
+  "authors": [
+    {
+      "name": "L.E.Beghian"
+    },
+    {
+      "name": "H.H.Halban"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2UK OXF"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "22580",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(13-AL-27(N,G)13-AL-28,,SIG)",
+        "target": "13-AL-27",
+        "process": "N,G",
+        "sf4": "13-AL-28",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(25-MN-55(N,G)25-MN-56,,SIG)",
+        "target": "25-MN-55",
+        "process": "N,G",
+        "sf4": "25-MN-56",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(29-CU-65(N,G)29-CU-66,,SIG)",
+        "target": "29-CU-65",
+        "process": "N,G",
+        "sf4": "29-CU-66",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(33-AS-75(N,G)33-AS-76,,SIG)",
+        "target": "33-AS-75",
+        "process": "N,G",
+        "sf4": "33-AS-76",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "((46-PD-106(N,G)46-PD-107,,SIG)+(46-PD-108(N,G)46-PD-109,,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(46-PD-110(N,G)46-PD-111,,SIG)",
+        "target": "46-PD-110",
+        "process": "N,G",
+        "sf4": "46-PD-111",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(47-AG-107(N,G)47-AG-108,,SIG)",
+        "target": "47-AG-107",
+        "process": "N,G",
+        "sf4": "47-AG-108",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "(49-IN-115(N,G)49-IN-116-M1,M+,SIG)",
+        "target": "49-IN-115",
+        "process": "N,G",
+        "sf4": "49-IN-116-M1",
+        "residual": null,
+        "sf5": "M+",
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "010": {
+      "XX": {
+        "x4code": "(51-SB-121(N,G)51-SB-122,,SIG)",
+        "target": "51-SB-121",
+        "process": "N,G",
+        "sf4": "51-SB-122",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "011": {
+      "XX": {
+        "x4code": "(53-I-127(N,G)53-I-128,,SIG)",
+        "target": "53-I-127",
+        "process": "N,G",
+        "sf4": "53-I-128",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "012": {
+      "XX": {
+        "x4code": "(56-BA-130(N,G)56-BA-131,,SIG)",
+        "target": "56-BA-130",
+        "process": "N,G",
+        "sf4": "56-BA-131",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "013": {
+      "XX": {
+        "x4code": "(52-TE-130(N,G)52-TE-131,,SIG)",
+        "target": "52-TE-130",
+        "process": "N,G",
+        "sf4": "52-TE-131",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "014": {
+      "XX": {
+        "x4code": "(74-W-186(N,G)74-W-187,,SIG)",
+        "target": "74-W-186",
+        "process": "N,G",
+        "sf4": "74-W-187",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "015": {
+      "XX": {
+        "x4code": "(78-PT-198(N,G)78-PT-199,,SIG)",
+        "target": "78-PT-198",
+        "process": "N,G",
+        "sf4": "78-PT-199",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "016": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Cross-section for element (except Mn) was determined",
+            "by measuring the ratio of its B-activity to that of",
+            "manganese at radiation by photo-source in air, and",
+            "also the ratio of self-absorption of its B-rays to",
+            "B-rays of manganese."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(GEMUC)",
+          "freetext": [
+            " Geiger-Mueller counter."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(TH-BE)",
+          "freetext": [
+            " Radiothorium-beryllium photo-source."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            " Irradiation by photo-source in air."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " No information."
+          ]
+        }
+      }
+    }
+  }
+}

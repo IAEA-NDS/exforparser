@@ -1,0 +1,193 @@
+{
+  "title": " Cross Section For Radiative Capture Of Neutrons By Au-197. An Analysis Of Sources Of Systematic Errors In Measurement Of Activation.",
+  "references": [
+    {
+      "x4code": "(J,AE,65,(5),343,198810)",
+      "publication year": "1988"
+    },
+    {
+      "x4code": "(J,AE,58,(3),183,1985)",
+      "publication year": "1985"
+    },
+    {
+      "x4code": "(J,SJA,65,(5),913,1988)",
+      "publication year": "1988"
+    },
+    {
+      "x4code": "(J,SJA,58,(3),216,1985)",
+      "publication year": "1985"
+    }
+  ],
+  "authors": [
+    {
+      "name": "A.N.Davletshin"
+    },
+    {
+      "name": "V.N.Korytchenko"
+    },
+    {
+      "name": "A.O.Tipunkov"
+    },
+    {
+      "name": "S.V.Tikhonov"
+    },
+    {
+      "name": "V.A.Tolstikov"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "4RUSFEI"
+    }
+  ],
+  "#doi": [
+    "10.1007/BF01121251",
+    "10.1007/BF01125358"
+  ],
+  "facilities": [
+    {
+      "type": "VDG",
+      "x4code": "4RUSFEI"
+    }
+  ],
+  "entry_number": "40968",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198-G,(M),SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": "SIG",
+        "sf6": null,
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Thorough investigation of systematic errors was made",
+            " and corresponding corrections in earlier results",
+            " introduced"
+          ]
+        }
+      }
+    },
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-198-G,2.7D,DG,142.)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(GELI)",
+          "freetext": [
+            " Ge(Li) gamma-spectrometer to measure the",
+            " Au sample induced activity."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            "  Total error is square root of the quadratic",
+            "         sum of all errors"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Error due to the active nuclei number",
+            "         uncertainty"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Error due to the Ge-Li detector efficiency",
+            "         uncertainty"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-7)",
+          "freetext": [
+            " Error due to the number of atoms in a sample",
+            "        of gold"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-9)",
+          "freetext": [
+            " Error due to the sample geometrical factor",
+            "        correction"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG,4RUSFEI"
+          ],
+          "freetext": [
+            "  Cascade Generator"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-T,P-LI7)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            "    Activation"
+          ]
+        }
+      }
+    }
+  }
+}

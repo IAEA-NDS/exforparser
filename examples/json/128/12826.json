@@ -1,0 +1,180 @@
+{
+  "title": "Measurements Of The 14 Mev Fission Cross-Sections For  235U And 239Pu",
+  "references": [
+    {
+      "x4code": "(C,82ANTWER,,58,1982)",
+      "publication year": "1982"
+    }
+  ],
+  "authors": [
+    {
+      "name": "M.Mahdavi"
+    },
+    {
+      "name": "G.F.Knoll"
+    },
+    {
+      "name": "J.C.Robertson"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USAMHG"
+    },
+    {
+      "x4code": "1USANMX"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "CCW",
+      "x4code": "1USAMHG"
+    }
+  ],
+  "entry_number": "12826",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,DA,FF,COS/RSD)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA",
+        "sf7": "FF",
+        "sf8": "COS/RSD",
+        "sf9": null,
+        "freetext": [
+          " w(theta)=1+a*cos**2(theta)"
+        ]
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,DA,FF,COS/RSD)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "DA",
+        "sf7": "FF",
+        "sf8": "COS/RSD",
+        "sf9": null,
+        "freetext": [
+          " w(theta)=1+a*cos**2(theta)"
+        ]
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Corrected for",
+            " - fragment emission anisotropy",
+            " - angular distribution normalization to Lab.",
+            " - scattering in Pt backings",
+            " - scattering in other structure materials",
+            " - foil isotopic composition",
+            " - dsigma/dEn adjustment for Fe(n,p) cross section",
+            " - detector efficiency"
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(TRD)",
+          "freetext": [
+            " Polyester track-etch film for fission events",
+            " covering 110 deg arc on a sphere of 5.08 cm radius",
+            " centered on the fissionable deposit."
+          ]
+        },
+        "1": {
+          "x4code": "(PROPC)",
+          "freetext": [
+            " 4pi-beta gas flow proportional counter",
+            " for flux monitor foil activity determination"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "CCW,1USAMHG"
+          ],
+          "freetext": [
+            " 150 kV accelerator of Univ. Michigan",
+            " Neutron Experimental Bay"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(D-T)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Sample deposit (1 mg/cm2  thick, 0.794 cm diam.)",
+            " on Pt foil (0.508 mm thick)"
+          ]
+        }
+      }
+    }
+  }
+}

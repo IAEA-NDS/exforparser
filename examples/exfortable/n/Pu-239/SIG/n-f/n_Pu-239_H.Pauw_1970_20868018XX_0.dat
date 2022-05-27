@@ -1,0 +1,11 @@
+# entry       : 20868 
+# subentry    : 018 
+# pointer     : XX 
+# reaction    : (94-PU-239(N,F),,SIG,,FIS) 
+# year        : 1970 
+# author      : H.Pauw 
+# institute   : 2NEDAMS 
+# reference   : (R,INDC(NED)-3,1970) 
+# facilitie   : None
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
+      1.42000E+00      0.00000E+00      1.80000E+03      6.00000E+01       # Lab                   

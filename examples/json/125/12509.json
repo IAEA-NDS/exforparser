@@ -1,0 +1,86 @@
+{
+  "title": "Thermal-Neutron Fission Cross Section Of Pu239 And Pu240.",
+  "references": [
+    {
+      "x4code": "(P,ORNL-2081,102,5611)",
+      "publication year": "1956"
+    }
+  ],
+  "authors": [
+    {
+      "name": "W.W.Pratt"
+    },
+    {
+      "name": "F.J.Muckenthaler"
+    },
+    {
+      "name": "E.G.Sliver"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USAORL"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "12509",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "((94-PU-239(N,F),,SIG,,MXW)/(92-U-235(N,F),,SIG,,MXW))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(94-PU-240(N,F),,SIG)",
+        "target": "94-PU-240",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "((94-PU-240(N,F),,SIG,,MXW)/(92-U-235(N,F),,SIG,,MXW))",
+        "freetext": [
+          ""
+        ]
+      }
+    }
+  },
+  "experimental_conditions": {
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "NEUTRON TEMPERATURE ESTIMATED TO BE 495 DEGR(K)."
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "title": "7Li(P,N) 7Be Cross Section From Threshold To 1960 Kev And Precise Measurement Of The 197Au(N,Gamma) Spectrum-Averaged Cross Section At 30 Kev",
+  "references": [
+    {
+      "x4code": "(J,PR/C,99,034616,2019)",
+      "publication year": "2019"
+    }
+  ],
+  "authors": [
+    {
+      "name": "G.Martin-Hernandez"
+    },
+    {
+      "name": "P.Mastinu"
+    },
+    {
+      "name": "E.M.Gonzalez"
+    },
+    {
+      "name": "R.Capote"
+    },
+    {
+      "name": "H.Lubian"
+    },
+    {
+      "name": "M.Macias"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "3CUBPLY"
+    },
+    {
+      "x4code": "2ITYPAD"
+    },
+    {
+      "x4code": "3ZZZIAE"
+    }
+  ],
+  "#doi": [
+    "10.1103/PhysRevC.99.034616"
+  ],
+  "facilities": [
+    {
+      "type": "VDG",
+      "x4code": "2ITYPAD"
+    }
+  ],
+  "entry_number": "23536",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,SPA)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {}
+  },
+  "experimental_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-198-G,2.6941D,DG,412.,0.9562)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " The total uncertainty determined by",
+            "the following partial uncertainties:",
+            "- The uncertainty in the 197Au(n,g) reaction yield is:"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Counting statistics                     - 0.6%"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " determination of the detector efficiency",
+            "ratio between the 478 and the 412 keV gamma lines",
+            "from 7Be and 198Au decays                        - 0.8%"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG,2ITYPAD"
+          ],
+          "freetext": [
+            " 7-MV CN Van de Graaff accelerator in",
+            "the Laboratori Nazionali di Legnaro"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            " 0.25 mm of Li on 0.1 mm of Cu.",
+            "Proton energy Tp = 1881.08 keV and a FWHM = 1.25 keV",
+            "Samples placed on the target external surface."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": "(GSPEC)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "O",
+            "ent": "O2433001",
+            "author": "G.Martin-Hernandez+",
+            "ref": "J,PR/C,99,034616,2019"
+          },
+          "freetext": [
+            "",
+            " 7Li(p,n)7Be reaction cross section and thick target",
+            "yield reported in the same publication."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Gold foils of about 0.1 mm thickness, 12 mm diameter,",
+            "and 99.99 % purity and mass 0.2161 and 0.2150 g."
+          ]
+        }
+      }
+    }
+  }
+}

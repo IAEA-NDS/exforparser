@@ -1,0 +1,48 @@
+{
+  "title": "Au197(N,Gamma)Au198 Activation Cross Section Between 0.14 And 1.22Mev.",
+  "references": [
+    {
+      "x4code": "(R,EANDC(US)-79,72,65)",
+      "publication year": "1965"
+    }
+  ],
+  "authors": [
+    {
+      "name": "H.A.Grench"
+    },
+    {
+      "name": "K.L.Coop"
+    },
+    {
+      "name": "H.O.Menlove"
+    },
+    {
+      "name": "F.J.Vaughn"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USALOK"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "12192",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {}
+}

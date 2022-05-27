@@ -1,0 +1,71 @@
+{
+  "id": "13519-003-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " TOTAL UNCERTAINTY",
+            "CONTRIBUTIONS TO TOTAL UNCERTAINTY:",
+            "- NEUTRON YIELD OF 252CF SOURCE (1.00%)",
+            "- DECAY CORRECTION OF 252CF SOURCE (0.07%)",
+            "- COUNTING STATISTICS OF BATH MEASUREMENTS (0.2%)",
+            "- SOURCE TARGET SPACING (1.5%)",
+            "- ROOM-RETURN CORRECTIONS (2.0%)",
+            "- SCATTERING CORRECTIONS (0.04%)",
+            "- COUNTING STATISTICS GOLD FOIL (0.5%)",
+            "- GAMMA COUNTING EFFICIENCY (0.5%)"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(PHOTO)",
+          "freetext": [
+            " NA-BE SOURCE"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "KEV",
+      "MB",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        967.0
+      ],
+      "1": [
+        99.7
+      ],
+      "2": [
+        2.8
+      ]
+    }
+  }
+}

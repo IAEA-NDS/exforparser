@@ -1,0 +1,223 @@
+{
+  "title": "-Energy Dependence Of U-233, U-235, Pu-239 Fast  Neutron Cross Sections.-",
+  "references": [
+    {
+      "x4code": "(C,55GENEVA,4,425,195508)",
+      "publication year": "1955"
+    },
+    {
+      "x4code": "(J,JPR,17,565,195607)",
+      "publication year": "1956"
+    }
+  ],
+  "authors": [
+    {
+      "name": "D.Szteinsznaider"
+    },
+    {
+      "name": "V.Naggiar"
+    },
+    {
+      "name": "F.Netter"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2FR SAC"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "VDG",
+      "x4code": "2FR SAC"
+    }
+  ],
+  "entry_number": "21515",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG,,AV)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": [
+          " Averaged over energy interval",
+          "                          given in  DATA section"
+        ]
+      }
+    },
+    "003": {},
+    "004": {
+      "XX": {
+        "x4code": "((94-PU-239(N,F),,SIG)/(92-U-233(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(92-U-233(N,F),,SIG)",
+        "target": "92-U-233",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG,,AV)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": [
+          " Averaged over energy interval",
+          "                         given in DATA section"
+        ]
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Excited state of be-7 at 435 KeV.",
+            ".Fissions induced by scattered neutrons."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            " Fission chamber for the comparison of",
+            " U-235 and U-233 with Pu-239,"
+          ]
+        },
+        "1": {
+          "x4code": "(LONGC)",
+          "freetext": [
+            " Long counter as a monitor for the",
+            " measurement of the Pu-239 cross section shape",
+            " between 1500 and 2000 KeV. The efficiency of this",
+            " counter as a function of the energy has been",
+            " measured with a recoil proton counter."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            "  2% normalization error,"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            "  2% statistical error,",
+            ".       Errors caused by scattered neutrons."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG,2FR SAC"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            " Proton energy dispersion about 0.5%",
+            " for a current of 8 micro-ampere. Li-layer prepared",
+            " by thermal evaporation on a tantalum carrier, 0.3",
+            " mm thick, 200 micro-gram/cm*cm."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(STTA)",
+          "freetext": [
+            "  .Back-to-back foils used to compare two",
+            "         cross sections."
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(FF)",
+          "freetext": [
+            "    Fission fragments."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".2 milligram Pu containing 1% impurities (uranium)",
+            ".20 mg U-235 enriched uranium obtained with an",
+            " isotope separator, U-238/U-235 = 6.72+-0.10.",
+            ".0.7 mg U-233 target containing 50 % natural",
+            " uranium. Also a 20 mg natural U-target."
+          ]
+        }
+      }
+    }
+  }
+}

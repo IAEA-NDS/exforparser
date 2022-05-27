@@ -1,0 +1,96 @@
+{
+  "id": "22370-002-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,AV)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "AV",
+    "sf9": null,
+    "freetext": [
+      " AVERAGED OVER",
+      "           ENERGY INTERVAL GIVEN IN DATA SECTION"
+    ]
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " .METALLIC PLATE 1.8*1.8 CM2, THICKNESS 0.716 G/CM2,",
+            "  PURITY 99.999 PC"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "EV",
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.0134,
+        0.0213,
+        0.0338,
+        0.0538,
+        0.0855,
+        0.136,
+        0.217,
+        0.347,
+        0.554,
+        0.886
+      ],
+      "1": [
+        0.0213,
+        0.0338,
+        0.0538,
+        0.0855,
+        0.136,
+        0.217,
+        0.347,
+        0.554,
+        0.886,
+        1.438
+      ],
+      "2": [
+        117.7,
+        94.1,
+        75.7,
+        61.2,
+        49.4,
+        40.3,
+        33.4,
+        28.3,
+        25.3,
+        24.7
+      ],
+      "3": [
+        2.9,
+        2.3,
+        1.8,
+        1.5,
+        1.2,
+        1.0,
+        0.8,
+        0.7,
+        0.7,
+        0.6
+      ]
+    }
+  }
+}

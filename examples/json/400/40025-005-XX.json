@@ -1,0 +1,229 @@
+{
+  "id": "40025-005-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG,,AV)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "AV",
+    "sf9": null,
+    "freetext": [
+      " Resolution 15 nsec/m"
+    ]
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Normalization was done by known low-lying resonances",
+            "SIg0*GAMMAfis ,known with 2% accuracy, from 3 rel.refs."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-S,5.,15.)",
+          "freetext": [
+            " Statistical error"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "REAC,4ZZZDUB"
+          ],
+          "freetext": [
+            " Fast pulsed reactor with microtron"
+          ]
+        }
+      }
+    },
+    "MISC-COL": {
+      "XX": {
+        "0": {
+          "x4code": "(MISC)",
+          "freetext": [
+            " Data from rel.ref. of G.James"
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "R",
+            "ent": null,
+            "author": "H.Darrien+",
+            "ref": "C,66PARIS,11,195,1966"
+          },
+          "freetext": [
+            "",
+            " Nuclear data for reactors, v.11,p.195,IAEA,Vienna,1967"
+          ]
+        },
+        "1": {
+          "x4code": {
+            "type": "R",
+            "ent": null,
+            "author": "Yu.V.Ryabov+",
+            "ref": "J,YF,5,925,1967"
+          },
+          "freetext": [
+            ""
+          ]
+        },
+        "2": {
+          "x4code": {
+            "type": "R",
+            "ent": null,
+            "author": "Yu.V.Ryabov+",
+            "ref": "J,SNP,5,657,1967"
+          },
+          "freetext": [
+            "",
+            " Engl.translation of Yad.Fiz."
+          ]
+        },
+        "3": {
+          "x4code": {
+            "type": "A",
+            "ent": null,
+            "author": "G.James+",
+            "ref": "R,AERE-M-2068,1968"
+          },
+          "freetext": [
+            " See MISC"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-RSL"
+    ],
+    "units": [
+      "NSEC/M"
+    ],
+    "data": {
+      "0": [
+        15.0
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA",
+      "MISC"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.1,
+        10.1,
+        20.0
+      ],
+      "1": [
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.1,
+        10.1,
+        20.0,
+        29.6
+      ],
+      "2": [
+        21.63,
+        18.78,
+        7.3,
+        12.3,
+        18.33,
+        7.34,
+        6.57,
+        7.03,
+        10.93,
+        5.56,
+        3.61,
+        3.65,
+        2.65,
+        2.36,
+        2.13,
+        2.55,
+        2.32,
+        2.22,
+        2.09,
+        2.05
+      ],
+      "3": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        3.85,
+        3.07,
+        2.95,
+        2.45,
+        2.5,
+        2.19,
+        2.14,
+        2.25,
+        2.06,
+        1.71,
+        1.57
+      ]
+    }
+  }
+}

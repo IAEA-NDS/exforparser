@@ -1,0 +1,65 @@
+{
+  "id": "31770-004-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,FIS,CRCTD)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": "CRCTD",
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "R",
+            "ent": "30641015",
+            "author": "Z.Dezso",
+            "ref": "C,82ANTWER,,418,1982"
+          },
+          "freetext": [
+            "",
+            "Original data given."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "KT-DUMMY"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": {
+      "0": [
+        1.42
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "ERR-S"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        75.5
+      ],
+      "1": [
+        0.1
+      ]
+    }
+  }
+}

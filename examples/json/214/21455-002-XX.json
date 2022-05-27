@@ -1,0 +1,189 @@
+{
+  "id": "21455-002-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".A 1/V-shape was assumed for the boron cross section",
+            "B-10(N,A)Li-7 so that the ratios of the counting",
+            "rates of the Pu and B chambers are proportional to",
+            "SIGfis*SQRT(E) , provided corrections."
+          ]
+        }
+      }
+    },
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".For absorption in the Pu-layer, for background,",
+            " for absorption effects in the boron chamber."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(EN-ERR-DIG)",
+          "freetext": [
+            " Digitizing error in scale X (energy),",
+            " reflect non-linearity of scale.",
+            "Quantization error (one pixel)for scale X - 0.1876 %."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-DIG)",
+          "freetext": [
+            " Digitizing error in scale Y (data),",
+            " reflect non-linearity of scale.",
+            "Quantization errors (one pixel)for scale Y - 2.342 b ."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(94-PU-239(N,F),,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "N",
+            "ent": null,
+            "author": "Hanford",
+            "ref": "R,BNL-325,1955"
+          },
+          "freetext": [
+            "",
+            "Data are compared with data of Hanford from BNL-325",
+            " ( digitized from the same fig.15) :",
+            "    0.30223E-01 683.61",
+            "    0.34837E-01 643.28",
+            "    0.40156E-01 605.29",
+            "    0.45300E-01 572.06",
+            "    0.50022E-01 555.30",
+            "    0.55477E-01 540.87",
+            "    0.60205E-01 517.16",
+            "    0.64785E-01 507.52",
+            "    0.70012E-01 493.19",
+            "    0.80030E-01 478.65",
+            "    0.90310E-01 468.84",
+            "    0.10017     463.77"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM",
+      "MONIT",
+      "EN-ERR-DIG",
+      "ERR-DIG"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "PER-CENT",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.0253
+      ],
+      "1": [
+        729.0
+      ],
+      "2": [
+        0.94171
+      ],
+      "3": [
+        5.5823
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "EV",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.0039324,
+        0.0049331,
+        0.0059323,
+        0.006982,
+        0.007976,
+        0.0089541,
+        0.009968,
+        0.010955,
+        0.011936,
+        0.013008,
+        0.013932,
+        0.014919,
+        0.015917,
+        0.016977,
+        0.017952,
+        0.018985,
+        0.019905,
+        0.020872,
+        0.021977,
+        0.02294,
+        0.023856,
+        0.024897
+      ],
+      "1": [
+        1702.7,
+        1521.6,
+        1415.5,
+        1316.6,
+        1250.5,
+        1172.8,
+        1113.9,
+        1064.3,
+        1012.5,
+        979.42,
+        941.7,
+        887.59,
+        880.32,
+        856.67,
+        830.7,
+        811.77,
+        795.2,
+        790.34,
+        769.08,
+        743.16,
+        766.44,
+        726.47
+      ]
+    }
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "title": "Measurement Of Absolute Fission Cross Sections For 252Cf Spontaneous Fission Neutrons.",
+  "references": [
+    {
+      "x4code": "(J,ANS,50,154,8511)",
+      "publication year": "1985"
+    },
+    {
+      "x4code": "(R,IAEA-335,320,8506)",
+      "publication year": "1985"
+    }
+  ],
+  "authors": [
+    {
+      "name": "I.G.Schroder"
+    },
+    {
+      "name": "Li Linpei"
+    },
+    {
+      "name": "D.M.Gilliam"
+    },
+    {
+      "name": "E.D.Mcgarry"
+    },
+    {
+      "name": "C.M.Eisenhauer"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USANBS"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "12953",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG,,FIS)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(92-U-238(N,F),,SIG,,FIS)",
+        "target": "92-U-238",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG,,FIS)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "((92-U-238(N,F),,SIG,,FIS)/(92-U-235(N,F),,SIG,,FIS))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "((94-PU-239(N,F),,SIG,,FIS)/(92-U-235(N,F),,SIG,,FIS))",
+        "freetext": [
+          ""
+        ]
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            " DOUBLE 235U FISSION CHAMBERS"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "ERROR INCLUDES CONTRIBUTIONS FROM NEUTRON SCATTERING,",
+            "FROM UNDETECTED FISSION FRAGMENTS, FROM GEOMETRY, AND",
+            "ERRORS FROM COUNTING, FROM MASS OF DEPOSIT, FROM SOURCE",
+            "STRENGTH AND FROM FISSION IN OTHER ISOTOPES."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(CF252)",
+          "freetext": [
+            " NBS 252CF IRRADIATION FACILITY"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "SOURCE CALIBRATED AGAINST NATIONAL STANDARD RA-BE",
+            "PHOTONEUTRON SOURCE IN NBS MANGANOUS SULFATE BATH",
+            "FACILITY"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "NBS FISSIONABLE ISOTOPE MASS STANDARDS AND WORKING",
+            "DEPOSITS."
+          ]
+        }
+      }
+    }
+  }
+}

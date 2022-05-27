@@ -1,0 +1,61 @@
+{
+  "id": "21520-008-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " 2200 m/sec value."
+    ]
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG)"
+          ],
+          "freetext": [
+            " 2200 m/sec value."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T",
+      "MONIT"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.0253
+      ],
+      "1": [
+        737.0
+      ],
+      "2": [
+        9.0
+      ],
+      "3": [
+        577.0
+      ]
+    }
+  }
+}

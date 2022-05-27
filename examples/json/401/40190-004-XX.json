@@ -1,0 +1,55 @@
+{
+  "id": "40190-004-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,FIS)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "METHOD": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Au-197 capture c-s was measured by plastic scintillator",
+            "for checking possible systematic errors in measurement",
+            "method. Obtained value of C-S agrees with value 150mb",
+            "from I.V.Gordeev+,Yaderno-fizicheskie konstanty,M.,",
+            "Atomizdat,p.316, 1963 year."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-DUMMY",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        1.0
+      ],
+      "1": [
+        140.0
+      ],
+      "2": [
+        15.0
+      ]
+    }
+  }
+}

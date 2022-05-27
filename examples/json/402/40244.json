@@ -1,0 +1,1055 @@
+{
+  "title": " Radiative Capture Cross-Section Measurements  For Fast Neutrons.",
+  "references": [
+    {
+      "x4code": "(C,58GENEVA,15,50,1958)",
+      "publication year": "1958"
+    }
+  ],
+  "authors": [
+    {
+      "name": "A.I.Leipunskiy"
+    },
+    {
+      "name": "O.D.Kazachkovskiy"
+    },
+    {
+      "name": "G.Ja.Artyukhov"
+    },
+    {
+      "name": "A.I.Baryshnikov"
+    },
+    {
+      "name": "T.S.Belanova"
+    },
+    {
+      "name": "V.I.Galkov"
+    },
+    {
+      "name": "Yu.Ja.Stavisskiy"
+    },
+    {
+      "name": "E.A.Stumbur"
+    },
+    {
+      "name": "L.E.Sherman"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "4RUSFEI"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "LINAC"
+    }
+  ],
+  "entry_number": "40244",
+  "reactions": {
+    "028": {
+      "XX": {
+        "x4code": "(29-CU-65(N,G)29-CU-66,,SIG)",
+        "target": "29-CU-65",
+        "process": "N,G",
+        "sf4": "29-CU-66",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "063": {
+      "XX": {
+        "x4code": "(53-I-127(N,G)53-I-128,,SIG)",
+        "target": "53-I-127",
+        "process": "N,G",
+        "sf4": "53-I-128",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "065": {
+      "XX": {
+        "x4code": "(11-NA-23(N,G)11-NA-24,,SIG)",
+        "target": "11-NA-23",
+        "process": "N,G",
+        "sf4": "11-NA-24",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "066": {
+      "XX": {
+        "x4code": "(12-MG-26(N,G)12-MG-27,,SIG)",
+        "target": "12-MG-26",
+        "process": "N,G",
+        "sf4": "12-MG-27",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "067": {
+      "XX": {
+        "x4code": "(13-AL-27(N,G)13-AL-28,,SIG)",
+        "target": "13-AL-27",
+        "process": "N,G",
+        "sf4": "13-AL-28",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "068": {
+      "XX": {
+        "x4code": "(14-SI-30(N,G)14-SI-31,,SIG)",
+        "target": "14-SI-30",
+        "process": "N,G",
+        "sf4": "14-SI-31",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "069": {
+      "XX": {
+        "x4code": "(17-CL-37(N,G)17-CL-38,,SIG)",
+        "target": "17-CL-37",
+        "process": "N,G",
+        "sf4": "17-CL-38",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "070": {
+      "XX": {
+        "x4code": "(23-V-51(N,G)23-V-52,,SIG)",
+        "target": "23-V-51",
+        "process": "N,G",
+        "sf4": "23-V-52",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "072": {
+      "XX": {
+        "x4code": "(28-NI-64(N,G)28-NI-65,,SIG)",
+        "target": "28-NI-64",
+        "process": "N,G",
+        "sf4": "28-NI-65",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "073": {
+      "XX": {
+        "x4code": "(30-ZN-68(N,G)30-ZN-69,,SIG)",
+        "target": "30-ZN-68",
+        "process": "N,G",
+        "sf4": "30-ZN-69",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "074": {
+      "XX": {
+        "x4code": "(35-BR-79(N,G)35-BR-80,,SIG)",
+        "target": "35-BR-79",
+        "process": "N,G",
+        "sf4": "35-BR-80",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "075": {
+      "XX": {
+        "x4code": "(35-BR-81(N,G)35-BR-82,,SIG)",
+        "target": "35-BR-81",
+        "process": "N,G",
+        "sf4": "35-BR-82",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "076": {
+      "XX": {
+        "x4code": "(42-MO-100(N,G)42-MO-101,,SIG)",
+        "target": "42-MO-100",
+        "process": "N,G",
+        "sf4": "42-MO-101",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "077": {
+      "XX": {
+        "x4code": "(47-AG-107(N,G)47-AG-108,,SIG)",
+        "target": "47-AG-107",
+        "process": "N,G",
+        "sf4": "47-AG-108",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "078": {
+      "XX": {
+        "x4code": "(49-IN-115(N,G)49-IN-116-M1+M2,,SIG)",
+        "target": "49-IN-115",
+        "process": "N,G",
+        "sf4": "49-IN-116-M1+M2",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "079": {
+      "XX": {
+        "x4code": "(56-BA-138(N,G)56-BA-139,,SIG)",
+        "target": "56-BA-138",
+        "process": "N,G",
+        "sf4": "56-BA-139",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "080": {
+      "XX": {
+        "x4code": "(74-W-186(N,G)74-W-187,,SIG)",
+        "target": "74-W-186",
+        "process": "N,G",
+        "sf4": "74-W-187",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "081": {
+      "XX": {
+        "x4code": "(80-HG-204(N,G)80-HG-205,,SIG)",
+        "target": "80-HG-204",
+        "process": "N,G",
+        "sf4": "80-HG-205",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "082": {
+      "XX": {
+        "x4code": "(82-PB-208(N,G)82-PB-209,,SIG)",
+        "target": "82-PB-208",
+        "process": "N,G",
+        "sf4": "82-PB-209",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "083": {
+      "XX": {
+        "x4code": "(90-TH-232(N,G)90-TH-233,,SIG)",
+        "target": "90-TH-232",
+        "process": "N,G",
+        "sf4": "90-TH-233",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "084": {
+      "XX": {
+        "x4code": "(92-U-238(N,G)92-U-239,,SIG)",
+        "target": "92-U-238",
+        "process": "N,G",
+        "sf4": "92-U-239",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "085": {
+      "XX": {
+        "x4code": "(11-NA-23(N,G)11-NA-24,,SIG)",
+        "target": "11-NA-23",
+        "process": "N,G",
+        "sf4": "11-NA-24",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "086": {
+      "XX": {
+        "x4code": "(12-MG-26(N,G)12-MG-27,,SIG)",
+        "target": "12-MG-26",
+        "process": "N,G",
+        "sf4": "12-MG-27",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "087": {
+      "XX": {
+        "x4code": "(13-AL-27(N,G)13-AL-28,,SIG)",
+        "target": "13-AL-27",
+        "process": "N,G",
+        "sf4": "13-AL-28",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "088": {
+      "XX": {
+        "x4code": "(14-SI-30(N,G)14-SI-31,,SIG)",
+        "target": "14-SI-30",
+        "process": "N,G",
+        "sf4": "14-SI-31",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "089": {
+      "XX": {
+        "x4code": "(17-CL-37(N,G)17-CL-38,,SIG)",
+        "target": "17-CL-37",
+        "process": "N,G",
+        "sf4": "17-CL-38",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "090": {
+      "XX": {
+        "x4code": "(23-V-51(N,G)23-V-52,,SIG)",
+        "target": "23-V-51",
+        "process": "N,G",
+        "sf4": "23-V-52",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "091": {
+      "XX": {
+        "x4code": "(25-MN-55(N,G)25-MN-56,,SIG)",
+        "target": "25-MN-55",
+        "process": "N,G",
+        "sf4": "25-MN-56",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "092": {
+      "XX": {
+        "x4code": "(28-NI-64(N,G)28-NI-65,,SIG)",
+        "target": "28-NI-64",
+        "process": "N,G",
+        "sf4": "28-NI-65",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "093": {
+      "XX": {
+        "x4code": "(29-CU-65(N,G)29-CU-66,,SIG)",
+        "target": "29-CU-65",
+        "process": "N,G",
+        "sf4": "29-CU-66",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "094": {
+      "XX": {
+        "x4code": "(30-ZN-68(N,G)30-ZN-69,,SIG)",
+        "target": "30-ZN-68",
+        "process": "N,G",
+        "sf4": "30-ZN-69",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "095": {
+      "XX": {
+        "x4code": "(35-BR-79(N,G)35-BR-80,,SIG)",
+        "target": "35-BR-79",
+        "process": "N,G",
+        "sf4": "35-BR-80",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "096": {
+      "XX": {
+        "x4code": "(35-BR-81(N,G)35-BR-82,,SIG)",
+        "target": "35-BR-81",
+        "process": "N,G",
+        "sf4": "35-BR-82",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "097": {
+      "XX": {
+        "x4code": "(42-MO-100(N,G)42-MO-101,,SIG)",
+        "target": "42-MO-100",
+        "process": "N,G",
+        "sf4": "42-MO-101",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "098": {
+      "XX": {
+        "x4code": "(47-AG-107(N,G)47-AG-108,,SIG)",
+        "target": "47-AG-107",
+        "process": "N,G",
+        "sf4": "47-AG-108",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "099": {
+      "XX": {
+        "x4code": "(49-IN-115(N,G)49-IN-116-M1+M2,,SIG)",
+        "target": "49-IN-115",
+        "process": "N,G",
+        "sf4": "49-IN-116-M1+M2",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "100": {
+      "XX": {
+        "x4code": "(56-BA-138(N,G)56-BA-139,,SIG)",
+        "target": "56-BA-138",
+        "process": "N,G",
+        "sf4": "56-BA-139",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "101": {
+      "XX": {
+        "x4code": "(74-W-186(N,G)74-W-187,,SIG)",
+        "target": "74-W-186",
+        "process": "N,G",
+        "sf4": "74-W-187",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "102": {
+      "XX": {
+        "x4code": "(80-HG-204(N,G)80-HG-205,,SIG)",
+        "target": "80-HG-204",
+        "process": "N,G",
+        "sf4": "80-HG-205",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "103": {
+      "XX": {
+        "x4code": "(82-PB-208(N,G)82-PB-209,,SIG)",
+        "target": "82-PB-208",
+        "process": "N,G",
+        "sf4": "82-PB-209",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "104": {
+      "XX": {
+        "x4code": "(92-U-238(N,G)92-U-239,,SIG)",
+        "target": "92-U-238",
+        "process": "N,G",
+        "sf4": "92-U-239",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "105": {
+      "XX": {
+        "x4code": "(25-MN-55(N,G)25-MN-56,,SIG)",
+        "target": "25-MN-55",
+        "process": "N,G",
+        "sf4": "25-MN-56",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "106": {
+      "XX": {
+        "x4code": "(29-CU-0(N,G),,SIG)",
+        "target": "29-CU-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "107": {
+      "XX": {
+        "x4code": "(30-ZN-0(N,G),,SIG)",
+        "target": "30-ZN-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "108": {
+      "XX": {
+        "x4code": "(34-SE-0(N,G),,SIG)",
+        "target": "34-SE-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "109": {
+      "XX": {
+        "x4code": "(35-BR-0(N,G),,SIG)",
+        "target": "35-BR-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "110": {
+      "XX": {
+        "x4code": "(38-SR-0(N,G),,SIG)",
+        "target": "38-SR-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "111": {
+      "XX": {
+        "x4code": "(40-ZR-0(N,G),,SIG)",
+        "target": "40-ZR-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "112": {
+      "XX": {
+        "x4code": "(42-MO-0(N,G),,SIG)",
+        "target": "42-MO-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "113": {
+      "XX": {
+        "x4code": "(47-AG-0(N,G),,SIG)",
+        "target": "47-AG-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "114": {
+      "XX": {
+        "x4code": "(48-CD-0(N,G),,SIG)",
+        "target": "48-CD-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "115": {
+      "XX": {
+        "x4code": "(50-SN-0(N,G),,SIG)",
+        "target": "50-SN-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "116": {
+      "XX": {
+        "x4code": "(51-SB-0(N,G),,SIG)",
+        "target": "51-SB-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "117": {
+      "XX": {
+        "x4code": "(56-BA-0(N,G),,SIG)",
+        "target": "56-BA-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "118": {
+      "XX": {
+        "x4code": "(73-TA-0(N,G),,SIG)",
+        "target": "73-TA-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "119": {
+      "XX": {
+        "x4code": "(74-W-0(N,G),,SIG)",
+        "target": "74-W-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "120": {
+      "XX": {
+        "x4code": "(80-HG-0(N,G),,SIG)",
+        "target": "80-HG-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "121": {
+      "XX": {
+        "x4code": "(81-TL-0(N,G),,SIG)",
+        "target": "81-TL-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "122": {
+      "XX": {
+        "x4code": "(82-PB-0(N,G),,SIG)",
+        "target": "82-PB-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "123": {
+      "XX": {
+        "x4code": "(83-BI-209(N,G)83-BI-210,,SIG)",
+        "target": "83-BI-209",
+        "process": "N,G",
+        "sf4": "83-BI-210",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "124": {
+      "XX": {
+        "x4code": "(73-TA-181(N,G)73-TA-182,,SIG)",
+        "target": "73-TA-181",
+        "process": "N,G",
+        "sf4": "73-TA-182",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "125": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "126": {
+      "XX": {
+        "x4code": "(90-TH-232(N,G)90-TH-233,,SIG)",
+        "target": "90-TH-232",
+        "process": "N,G",
+        "sf4": "90-TH-233",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "127": {
+      "XX": {
+        "x4code": "(27-CO-59(N,G)27-CO-60,,SIG)",
+        "target": "27-CO-59",
+        "process": "N,G",
+        "sf4": "27-CO-60",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "LINAC"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "O",
+            "ent": "40421001",
+            "author": "V.N.Kononov+",
+            "ref": "J,AE,5,564,1958"
+          },
+          "freetext": [
+            "",
+            " Entry 40421-Revised data from Table 4 of C,58GENEVA,",
+            "excluding data for Co-59(see SUB. 40244127)"
+          ]
+        },
+        "1": {
+          "x4code": {
+            "type": "O",
+            "ent": "40374001",
+            "author": "T.S.Belanova",
+            "ref": "J,ZET,34,574,1958"
+          },
+          "freetext": [
+            "",
+            " Data of Table 5 of C,58GENEVA."
+          ]
+        }
+      }
+    }
+  }
+}

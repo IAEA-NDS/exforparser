@@ -1,0 +1,365 @@
+{
+  "title": "- Absolute Measurements Of Neutron Radiative Capture   Cross-Sections For Na-23, Cr, Mn-55, Fe, Ni, Rh-103,   Ta, Au-197, U-238 In The Range 10 To 600 Kev -.   (In Frensh)",
+  "references": [
+    {
+      "x4code": "(R,CEA-R-4788,7610)",
+      "publication year": "1976"
+    },
+    {
+      "x4code": "(C,75WASH,2,953,7503)",
+      "publication year": "1975"
+    },
+    {
+      "x4code": "(C,73KARLSR,,33,7305)",
+      "publication year": "1973"
+    },
+    {
+      "x4code": "(C,73KARLSR,,51,7305)",
+      "publication year": "1973"
+    },
+    {
+      "x4code": "(C,73KIEV,3,3,7305)",
+      "publication year": "1973"
+    },
+    {
+      "x4code": "(R,CEA-N-1661,7308)",
+      "publication year": "1973"
+    }
+  ],
+  "authors": [
+    {
+      "name": "C.Le Rigoleur"
+    },
+    {
+      "name": "A.Arnaud"
+    },
+    {
+      "name": "J.Taste"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2FR CAD"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "VDG  "
+    }
+  ],
+  "entry_number": "20572",
+  "reactions": {
+    "002": {
+      "1": {
+        "x4code": "(11-NA-23(N,0),,EN)",
+        "target": "11-NA-23",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "EN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(11-NA-23(N,G),,ARE,,FCT)",
+        "target": "11-NA-23",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "ARE",
+        "sf7": null,
+        "sf8": "FCT",
+        "sf9": null,
+        "freetext": [
+          " FACTOR IS 1./(2*(PI**2)*(LAMBDA**2))."
+        ]
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(24-CR-0(N,G),,SIG)",
+        "target": "24-CR-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(24-CR-0(N,G),,SIG,,AV)",
+        "target": "24-CR-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(25-MN-55(N,G)25-MN-56,,SIG)",
+        "target": "25-MN-55",
+        "process": "N,G",
+        "sf4": "25-MN-56",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(25-MN-55(N,G)25-MN-56,,SIG,,AV)",
+        "target": "25-MN-55",
+        "process": "N,G",
+        "sf4": "25-MN-56",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(26-FE-0(N,G),,SIG)",
+        "target": "26-FE-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(26-FE-0(N,G),,SIG,,AV)",
+        "target": "26-FE-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "(28-NI-0(N,G),,SIG)",
+        "target": "28-NI-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "010": {
+      "XX": {
+        "x4code": "(28-NI-0(N,G),,SIG,,AV)",
+        "target": "28-NI-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "011": {
+      "XX": {
+        "x4code": "(45-RH-103(N,G)45-RH-104,,SIG)",
+        "target": "45-RH-103",
+        "process": "N,G",
+        "sf4": "45-RH-104",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "012": {
+      "XX": {
+        "x4code": "(45-RH-103(N,G)45-RH-104,,SIG,,AV)",
+        "target": "45-RH-103",
+        "process": "N,G",
+        "sf4": "45-RH-104",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "013": {
+      "XX": {
+        "x4code": "(73-TA-0(N,G),,SIG)",
+        "target": "73-TA-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "014": {
+      "XX": {
+        "x4code": "(73-TA-0(N,G),,SIG,,AV)",
+        "target": "73-TA-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "015": {
+      "XX": {
+        "x4code": "(92-U-0(N,G),,SIG,,AV)",
+        "target": "92-U-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "016": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,AV)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".FOR NEUTRON SCATTERING, SELF-SHIELDING, GAMMA-",
+            " ATTENUATION IN SAMPLE, NONLINEARITY OF WEIGHTING",
+            " FUNCTION...SPECIAL CARE GIVEN TO CORRECTION OF",
+            " NEUTRON SENSITIVITY OF GAMMA DETECTOR."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            "",
+            "         IN A QUARTZ CONTAINER.",
+            ".NEUTRON FLUX MEASURED WITH B-10-I-NA(TL) DETECTOR OR",
+            " LI-6 GLASS SCINTILLATOR. ABSOLUTE EFFICIENCY OF",
+            " THESE DETECTORS DETERMINED WITH STANDARD DETECTORS."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".CAPTURE X-SECT. BELIEVED TO BE ACCURATE 4-8 PERC.,",
+            " ONE STANDARD DEVIATION AND ALL ERRORS ADDED",
+            " QUADRATICALY."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG  "
+          ],
+          "freetext": [
+            "  VAN DE GRAAFF."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            "  LI-7(P,N)"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  }
+}

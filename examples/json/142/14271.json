@@ -1,0 +1,199 @@
+{
+  "title": "Cross Sections For 239Pu(N,F) And 241Pu(N,F) In The Range En =0.01 Ev To 200 Mev",
+  "references": [
+    {
+      "x4code": "(J,NSE,165,224,2010)",
+      "publication year": "2010"
+    }
+  ],
+  "authors": [
+    {
+      "name": "F.Tovesson"
+    },
+    {
+      "name": "T.S.Hill"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USALAS"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "LINAC",
+      "x4code": "1USALAS"
+    }
+  ],
+  "entry_number": "14271",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(94-PU-241(N,F),,SIG)",
+        "target": "94-PU-241",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "((94-PU-241(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(94-PU-241(N,F),,SIG)",
+        "target": "94-PU-241",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Cross sections were determined from ratio of 235U and",
+            "Pu fission. The ratio of atoms in the measured Pu and",
+            "reference U sample, N(Pu)/N(U) was determined from",
+            "measured cross-section ratio for thermal energy of",
+            "25.3 meV."
+          ]
+        }
+      }
+    },
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Data corrected for dead time"
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(IOCH)",
+          "freetext": [
+            "Parallel plate ionization chambers were used to",
+            "detect fission  fragments. Chambers are operated in",
+            "pulse mode and provide fast timing  signals and good",
+            "energy resolution. Thin <200 mu-g/cm2 fissionable",
+            "samples  are placed on a cathode plate  kept at",
+            "negative voltage, nominally -300 V. The anode was the",
+            "readout  plate. It was kept at ground potential and",
+            "read out  with a current sensitive preamplifier. The",
+            "plate spacing  is 12 mm, and the chamber is filled",
+            "with P-10 gas (90% argon + 10% methane)  at the",
+            "pressure of 165 kPa."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "LINAC,1USALAS"
+          ],
+          "freetext": [
+            " Experiment performed at LANSCE facility"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Six different samples were used for this experiment:",
+            "239Pu, 240Pu, 241Pu, 242Pu, 235U, and 238U. The 239Pu,",
+            "240Pu, and 242Pu foils were 10 cm in diameter",
+            "239Pu :    239Pu - 15.05 +- 0.1  mg",
+            "           240Pu -  0.135 mg",
+            "           241Pu -  0.001 mg",
+            "241Pu :    238Pu  - 0.001 mg",
+            "           239Pu  - 0.091 mg",
+            "           240Pu  - 0.341 mg",
+            "           241Pu  - 1.821 mg",
+            "           242Pu  - 0.216 mg",
+            "           241Am  - 8.6E-04 mg",
+            "242Pu :  used for background determination",
+            "         mass 9.912+-0.007 mg",
+            "235U  : monitor sample, used in each measurement to",
+            "        reduce any systematic effects between runs",
+            "238U  : used to monitor accelerator off-time current"
+          ]
+        }
+      }
+    }
+  }
+}

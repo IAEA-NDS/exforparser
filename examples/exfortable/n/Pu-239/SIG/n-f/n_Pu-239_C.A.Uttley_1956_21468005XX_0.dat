@@ -1,0 +1,11 @@
+# entry       : 21468 
+# subentry    : 005 
+# pointer     : XX 
+# reaction    : (94-PU-239(N,F),,SIG) 
+# year        : 1956 
+# author      : C.A.Uttley 
+# institute   : 2UK HAR 
+# reference   : (R,AERE-NP/R-1996,,5606) 
+# facilitie   : {'x4code': 'VDG  '}
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
+      1.41000E+01      1.50000E-01      2.58000E+03      9.00000E+01       # Lab                   

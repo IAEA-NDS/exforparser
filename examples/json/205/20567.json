@@ -1,0 +1,215 @@
+{
+  "title": "New Absolute Measurement Of The Neutron-Induced  Fission Cross Sections Of 235U, 239Pu, And 241Pu From  17 Kev To 1 Mev",
+  "references": [
+    {
+      "x4code": "(C,70ANL,,257,1970)",
+      "publication year": "1970"
+    },
+    {
+      "x4code": "(C,76ANL,,208,1976)",
+      "publication year": "1976"
+    },
+    {
+      "x4code": "(C,70HELSINKI,1,229,1970)",
+      "publication year": "1970"
+    }
+  ],
+  "authors": [
+    {
+      "name": "I.Szabo"
+    },
+    {
+      "name": "G.Filippi"
+    },
+    {
+      "name": "J.L.Huet"
+    },
+    {
+      "name": "J.L.Leroy"
+    },
+    {
+      "name": "J.P.Marquette"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2FR CAD"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "VDG",
+      "x4code": "2FR CAD"
+    }
+  ],
+  "entry_number": "20567",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(94-PU-241(N,F),,SIG)",
+        "target": "94-PU-241",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Corrected for",
+            " - extrapolation of fission fragment spectrum to",
+            "   zero bias",
+            " - fission fragment loss in foil",
+            " - scattering in chamber structure",
+            " - distance",
+            " - background in fission chamber",
+            " - air attenuation"
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": "(BF3)",
+          "freetext": [
+            " Calibrated by the associated particle method,",
+            " manganese sulphate bath method and proton recoil",
+            " counter method."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG,2FR CAD"
+          ],
+          "freetext": [
+            " 5 MeV Van de Graaff"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            " below 550 keV"
+          ]
+        },
+        "1": {
+          "x4code": "(P-T)",
+          "freetext": [
+            "   above 550 keV"
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Energy spreads varied from 3 keV at 25 keV neutron",
+            " energy to 16 keV at 540 keV neutron energy."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            " for background supression"
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "O",
+            "ent": "20569001",
+            "author": "I.Szabo+",
+            "ref": "C,71KNOX,2,573,1971"
+          },
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": {
+            "type": "O",
+            "ent": "20570001",
+            "author": "I.Szabo+",
+            "ref": "C,73KIEV,3,27,1973"
+          },
+          "freetext": [
+            ""
+          ]
+        },
+        "2": {
+          "x4code": {
+            "type": "O",
+            "ent": "20618001",
+            "author": "I.Szabo+",
+            "ref": "C,76ANL,,208,1976"
+          },
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  }
+}

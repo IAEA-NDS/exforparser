@@ -1,0 +1,493 @@
+{
+  "title": " Cross Sections And Resonance Integrals For The Fission  Of 239Pu, Am, Cm, And 249Cf",
+  "references": [
+    {
+      "x4code": "(J,AE,39,285,1975)",
+      "publication year": "1975"
+    },
+    {
+      "x4code": "(J,SJA,39,907,1975)",
+      "publication year": "1975"
+    },
+    {
+      "x4code": "(R,YK-19,3,1975)",
+      "publication year": "1975"
+    },
+    {
+      "x4code": "(R,INDC(CCP)-68,3,1975)",
+      "publication year": "1975"
+    }
+  ],
+  "authors": [
+    {
+      "name": "K.D.Zhuravlev"
+    },
+    {
+      "name": "N.I.Kroshkin"
+    },
+    {
+      "name": "A.P.Chetverikov"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "4RUSNIR"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "REAC",
+      "x4code": "4RUSNIR"
+    }
+  ],
+  "entry_number": "40436",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG,,MXW)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(95-AM-241(N,F),,SIG,,MXW)",
+        "target": "95-AM-241",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(95-AM-242-M(N,F),,SIG,,MXW)",
+        "target": "95-AM-242-M",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(96-CM-244(N,F),,SIG,,MXW)",
+        "target": "96-CM-244",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(96-CM-245(N,F),,SIG,,MXW)",
+        "target": "96-CM-245",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(96-CM-246(N,F),,SIG,,MXW)",
+        "target": "96-CM-246",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(96-CM-247(N,F),,SIG,,MXW)",
+        "target": "96-CM-247",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "(96-CM-248(N,F),,SIG,,MXW)",
+        "target": "96-CM-248",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "010": {
+      "XX": {
+        "x4code": "(98-CF-249(N,F),,SIG,,MXW)",
+        "target": "98-CF-249",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "MXW",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "011": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,RI)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "RI",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "012": {
+      "XX": {
+        "x4code": "(95-AM-241(N,F),,RI)",
+        "target": "95-AM-241",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "RI",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "013": {
+      "XX": {
+        "x4code": "(95-AM-242-M(N,F),,RI)",
+        "target": "95-AM-242-M",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "RI",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "014": {
+      "XX": {
+        "x4code": "(95-AM-243(N,F),,RI)",
+        "target": "95-AM-243",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "RI",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "015": {
+      "XX": {
+        "x4code": "(96-CM-244(N,F),,RI)",
+        "target": "96-CM-244",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "RI",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "016": {
+      "XX": {
+        "x4code": "(96-CM-245(N,F),,RI)",
+        "target": "96-CM-245",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "RI",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "017": {
+      "XX": {
+        "x4code": "(96-CM-246(N,F),,RI)",
+        "target": "96-CM-246",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "RI",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "018": {
+      "XX": {
+        "x4code": "(96-CM-247(N,F),,RI)",
+        "target": "96-CM-247",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "RI",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "019": {
+      "XX": {
+        "x4code": "(96-CM-248(N,F),,RI)",
+        "target": "96-CM-248",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "RI",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "020": {
+      "XX": {
+        "x4code": "(98-CF-249(N,F),,RI)",
+        "target": "98-CF-249",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "RI",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Corrections : 1)Back scattering of alpha-particles",
+            "in calculating the nuclei number in target,",
+            "2)Isotopic composition of samples,",
+            "3)Temperature of reactor neutron Maxwellian spectrum",
+            " was evaluated in according to REL-REF,",
+            "4) g(T) factor was used for taking into account",
+            "a difference of fission cross-section from 1/v",
+            "dependence,",
+            "5) Cadmium correction."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            " Double fission chamber for registration",
+            "        of the fission fragments."
+          ]
+        },
+        "1": {
+          "x4code": "(IOCH)",
+          "freetext": [
+            "  2PI-ionization chamber for determination of",
+            "        the alpha-counting  of U-235 and Pu-239 nuclei."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total error,including statistical error of",
+            "  measurements, error of nuclei number determination."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Uncertainty of target  nuclei number."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "REAC,4RUSNIR"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(REAC)",
+          "freetext": [
+            "         SM-2 reactor,40mm water layer at reactor",
+            "      horizontal channel exit"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "        Cadmium difference method. Thickness of",
+            " cadmium screen is equal 1.0 mm.Cadmium ratio about 40."
+          ]
+        }
+      }
+    },
+    "MONIT-REF": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(FF)",
+          "freetext": [
+            " Fission fragments"
+          ]
+        },
+        "1": {
+          "x4code": "(A)",
+          "freetext": [
+            "  Alpha-particles"
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "R",
+            "ent": null,
+            "author": "V.A.Tsykanov+",
+            "ref": "J,AE,22,(5),411,1967"
+          },
+          "freetext": [
+            " For reactor",
+            "  Maxwellian spectrum neutron temperature evaluation."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "U-235 target includes (89.11+-0.18)% of U-235,",
+            " (0.61+-0.05)% of U-236,(9.09+-0.16)% of U-238,",
+            " (1.19+-0.03)% of U-234.",
+            "Pu-239 target includes (98.891+-0.005)% of Pu-239,",
+            " (0.109+-0.005)% of Pu-240.",
+            "Am-241 and Cf-249 targets include 100 percent",
+            "of fissionable substance.",
+            "Am-242m target includes (88.97+-0.009)% of Am-241,",
+            " (1.03+-0.05)% of Am-242m,(10.00+-0.09)% of Am-243.",
+            "Am-243 target includes (0.524+-0.019)% of Am-241,",
+            " (99.476+-0.019)% of Am-243.Weight about 300.microgram.",
+            "Relative isotopes contents for Curium.",
+            "Cm-244: Cm-244 -1.0, Cm-245 <2.E-4, Cm-246 -6.28E-3,",
+            "        Cm-247 -5.E-5, Cm-248 <3.E-4.",
+            "Cm-245: Cm-244 -1.167, Cm-245 -1.000, Cm-246 -0.3060,",
+            "        Cm-247 -1.9E-3, Cm-248 -1.E-3.",
+            "Cm-246: Cm-244 -3.9E-3, Cm-245 -2.44E-4, Cm-246 -1.000,",
+            "        Cm-247 -2.04E-4, Cm-248 <5.6E-3.",
+            "Cm-247: Cm-244 -6.98E-3, Cm-245 -1.09E-3,",
+            "        Cm-246 -0.2384, Cm-247 -1.000, Cm-248 <=2.2E-2.",
+            "Cm-248: Cm-244 -5.93E-2, Cm-245 -2.4E-4,",
+            "     Cm-246 -2.1278E-2, Cm-247 -3.84E-3, Cm-248 -1.000.",
+            "Targets on aluminum disks of 75mm diameter and 0.1 mm",
+            "thickness."
+          ]
+        }
+      }
+    }
+  }
+}

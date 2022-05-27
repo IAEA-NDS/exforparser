@@ -1,0 +1,159 @@
+{
+  "title": "Fission Cross-Section Of Pu-239 At 13.1 To 15.4 Mev",
+  "references": [
+    {
+      "x4code": "(R,INR-688,196602)",
+      "publication year": "1966"
+    }
+  ],
+  "authors": [
+    {
+      "name": "T.Czyzewski"
+    },
+    {
+      "name": "P.Decowski"
+    },
+    {
+      "name": "B.Fryszczyn"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "3POLIPJ"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "VDG"
+    }
+  ],
+  "entry_number": "30084",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " The ratio of the quantities of Pu-239 to those of",
+            " U-238 in the targets was obtained by measuring the",
+            " alpha-activity by semiconductor detector.The overall",
+            " error in the measurement of the quantity of Pu-239 was",
+            " 2 per cent, U-238 3 per cent."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(TRD)",
+          "freetext": [
+            " pieces of mica were used to detect fission",
+            " fragments."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Statistical errors of sigma are given only"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG"
+          ],
+          "freetext": [
+            " neutrons were obtained from the T(d,n)He-4 reac-",
+            " tion by bombarding with deuterons accelerated to an",
+            " energy of 440 keV in Van-de-Graaff accelerator."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(D-T)",
+          "freetext": [
+            ",a thin titanium target (0.280 mg/cm2) in which",
+            " tritium gas was absorbed."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Counter ratio of U-238 and Pu-239 samples was",
+            " used.Plutonium samples were placed simultaneously at",
+            " various angles of neutron emission. Plutonium samples",
+            " along with the uranium samples were placed in shields",
+            " made from cadmium foil of a thickness of 0.5 mm."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-238(N,F),,SIG)"
+          ],
+          "freetext": [
+            "",
+            " Plutonium sigma fission  was  measured",
+            " relatively to that of U-238 and normalized to sigma",
+            " fission of U-238 from K.Parker,AWRE-0-79/1963."
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(FF)",
+          "freetext": [
+            " fission fragments"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Samples were made in the form of layers on disks of a",
+            " diameter of 6mm with the thickness of plutonium =",
+            "  0.26 mg/cm2."
+          ]
+        }
+      }
+    }
+  }
+}

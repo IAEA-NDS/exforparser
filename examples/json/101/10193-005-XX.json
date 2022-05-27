@@ -1,0 +1,48 @@
+{
+  "id": "10193-005-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "EN"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": {
+      "0": [
+        14.0
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MICRO-B",
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        938.0
+      ],
+      "1": [
+        25.0
+      ]
+    }
+  }
+}

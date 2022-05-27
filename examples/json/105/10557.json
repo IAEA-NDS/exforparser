@@ -1,0 +1,127 @@
+{
+  "title": "Absorption Cross-Section Measurements For  Californium-252 Spontaneous Fission Neutrons.",
+  "references": [
+    {
+      "x4code": "(J,NSE,58,361,197512)",
+      "publication year": "1975"
+    }
+  ],
+  "authors": [
+    {
+      "name": "L.Green"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USABET"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "10557",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,FIS)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(90-TH-232(N,G)90-TH-233,,SIG,,FIS)",
+        "target": "90-TH-232",
+        "process": "N,G",
+        "sf4": "90-TH-233",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "((90-TH-232(N,G)90-TH-233,,SIG,,FIS)/(79-AU-197(N,G)79-AU-198,,SIG,,FIS))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "((73-TA-181(N,G)73-TA-182,,SIG,,FIS)/(79-AU-197(N,G)79-AU-198,,SIG,,FIS))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "((42-MO-98(N,G)42-MO-99,,SIG,,FIS)/(79-AU-197(N,G)79-AU-198,,SIG,,FIS))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "((29-CU-63(N,G)29-CU-64,,SIG,,FIS)/(79-AU-197(N,G)79-AU-198,,SIG,,FIS))",
+        "freetext": [
+          ""
+        ]
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Data corrected for room-return neutrons and epicadmium",
+            "activation, and foil perturbations."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(GELI)",
+          "freetext": [
+            " Germanium-lithium detector"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(CF252)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            " Activation of irradiated sample foils"
+          ]
+        }
+      }
+    }
+  }
+}

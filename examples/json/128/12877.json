@@ -1,0 +1,296 @@
+{
+  "title": "Subthreshold Fission Cross Section Of 240Pu And The  Fission Cross Sections Of 235U And 239Pu",
+  "references": [
+    {
+      "x4code": "(J,NSE,88,567,1984)",
+      "publication year": "1984"
+    }
+  ],
+  "authors": [
+    {
+      "name": "L.W.Weston"
+    },
+    {
+      "name": "J.H.Todd"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USAORL"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "LINAC",
+      "x4code": "1USAORL"
+    }
+  ],
+  "entry_number": "12877",
+  "reactions": {
+    "002": {
+      "1": {
+        "x4code": "(94-PU-240(N,0),,EN)",
+        "target": "94-PU-240",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "EN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "XX": {
+        "x4code": "(((94-PU-240(N,EL),,WID)*(94-PU-240(N,F),,WID))/(94-PU-240(N,TOT),,WID))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(94-PU-240(N,F),,SIG)",
+        "target": "94-PU-240",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(((94-PU-240(N,EL),,WID)*(94-PU-240(N,F),,WID))/(94-PU-240(N,TOT),,WID))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(94-PU-240(N,F),,SIG,,AV)",
+        "target": "94-PU-240",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG,,AV)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG,,AV)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "010": {
+      "XX": {
+        "x4code": "(94-PU-240(N,F),,SIG,,AV)",
+        "target": "94-PU-240",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "011": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG,,AV)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "012": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG,,AV)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Constant-in-time background was small for flux monitors",
+            " and the 235U and 239Pu fission plates but appreciable",
+            " for 240Pu, which was determined accurately.",
+            "No correction was made for the time dependent",
+            "  background (less than 0.5%)."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            " Fission chamber and 10BF3 chamber"
+          ]
+        },
+        "1": {
+          "x4code": "(GLASD)",
+          "freetext": [
+            " 0.5-mm 6Li glass scintillation detector"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "LINAC,1USAORL"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(PHOTO)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            " 18.897+/-0.006 m (to the 1st signal plate of",
+            " the fission chamber)"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(5-B-10(N,A)3-LI-7,,SIG)"
+          ],
+          "freetext": [
+            " for flux shape below 1 keV"
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(3-LI-6(N,T)2-HE-4,,SIG)"
+          ],
+          "freetext": [
+            " for flux shape above 1 keV"
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "I",
+            "ent": "12766001",
+            "author": "L.W.Weston+",
+            "ref": "J,NSE,84,248,1983"
+          },
+          "freetext": [
+            "",
+            " Details of normalization procedure"
+          ]
+        }
+      }
+    }
+  }
+}

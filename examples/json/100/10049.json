@@ -1,0 +1,478 @@
+{
+  "title": "Measurements Of Cross Sections For Radiative Capture Of 1-Kev To 1-Mev Neutrons By Mo, Rh, Gd, Ta, W, Re, Au And U-238",
+  "references": [
+    {
+      "x4code": "(C,70HELSINKI,2,265,1970)",
+      "publication year": "1970"
+    },
+    {
+      "x4code": "(J,NP/A,146,337,1970)",
+      "publication year": "1970"
+    },
+    {
+      "x4code": "(C,71KNOX,1,252,197103)",
+      "publication year": "1971"
+    },
+    {
+      "x4code": "(R,GA-10194,197005)",
+      "publication year": "1970"
+    }
+  ],
+  "authors": [
+    {
+      "name": "M.P.Fricke"
+    },
+    {
+      "name": "W.M.Lopez"
+    },
+    {
+      "name": "S.J.Friesenhahn"
+    },
+    {
+      "name": "A.D.Carlson"
+    },
+    {
+      "name": "D.G.Costello"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USAGRT"
+    }
+  ],
+  "#doi": [
+    "10.1016/0375-9474(70)90729-3"
+  ],
+  "facilities": [
+    {
+      "type": "LINAC",
+      "x4code": "1USAGRT"
+    }
+  ],
+  "entry_number": "10049",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(42-MO-0(N,G),,SIG)",
+        "target": "42-MO-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(64-GD-0(N,G),,SIG)",
+        "target": "64-GD-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(73-TA-0(N,G),,SIG)",
+        "target": "73-TA-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(74-W-0(N,G),,SIG)",
+        "target": "74-W-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(75-RE-0(N,G),,SIG)",
+        "target": "75-RE-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(92-U-238(N,G)92-U-239,,SIG)",
+        "target": "92-U-238",
+        "process": "N,G",
+        "sf4": "92-U-239",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "010": {
+      "1": {
+        "x4code": "(64-GD-155(N,EL),,WID,,2G)",
+        "target": "64-GD-155",
+        "process": "N,EL",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID",
+        "sf7": null,
+        "sf8": "2G",
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(64-GD-155(N,G),,WID)",
+        "target": "64-GD-155",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "012": {
+      "1": {
+        "x4code": "(64-GD-157(N,EL),,WID,,2G)",
+        "target": "64-GD-157",
+        "process": "N,EL",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID",
+        "sf7": null,
+        "sf8": "2G",
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(64-GD-157(N,G),,WID)",
+        "target": "64-GD-157",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "013": {
+      "1": {
+        "x4code": "(64-GD-155(N,G),,WID,,AV)",
+        "target": "64-GD-155",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(64-GD-155(N,EL),,WID/RED,,AV)",
+        "target": "64-GD-155",
+        "process": "N,EL",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID/RED",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "015": {
+      "XX": {
+        "x4code": "(64-GD-155(N,0),,D)",
+        "target": "64-GD-155",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "D",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "016": {
+      "XX": {
+        "x4code": "(64-GD-155(N,EL),,STF)",
+        "target": "64-GD-155",
+        "process": "N,EL",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "STF",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "017": {
+      "XX": {
+        "x4code": "(64-GD-155(N,EL),,STF)",
+        "target": "64-GD-155",
+        "process": "N,EL",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "STF",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "018": {
+      "XX": {
+        "x4code": "(64-GD-157(N,G),,WID,,AV)",
+        "target": "64-GD-157",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "019": {
+      "XX": {
+        "x4code": "(64-GD-157(N,EL),,WID/RED,,AV)",
+        "target": "64-GD-157",
+        "process": "N,EL",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID/RED",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "020": {
+      "XX": {
+        "x4code": "(64-GD-157(N,0),,D)",
+        "target": "64-GD-157",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "D",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "021": {
+      "XX": {
+        "x4code": "(64-GD-157(N,EL),,STF)",
+        "target": "64-GD-157",
+        "process": "N,EL",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "STF",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "022": {
+      "XX": {
+        "x4code": "(64-GD-157(N,EL),,STF)",
+        "target": "64-GD-157",
+        "process": "N,EL",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "STF",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "023": {
+      "XX": {
+        "x4code": "(64-GD-155(N,G)64-GD-156,,SIG)",
+        "target": "64-GD-155",
+        "process": "N,G",
+        "sf4": "64-GD-156",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "024": {
+      "XX": {
+        "x4code": "(64-GD-157(N,G)64-GD-158,,SIG)",
+        "target": "64-GD-157",
+        "process": "N,G",
+        "sf4": "64-GD-158",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(SCIN)",
+          "freetext": [
+            " Large liquid scintillator viewed by photo-",
+            "multipliers."
+          ]
+        },
+        "1": {
+          "x4code": "(HE3SP)",
+          "freetext": [
+            " Below 80 keV, flux determined using He3",
+            "proportional counters which were calibrated using",
+            "B-10(n,alpha) reaction."
+          ]
+        },
+        "2": {
+          "x4code": "(PROPC)",
+          "freetext": [
+            " Above 80 keV, flux determined relative to n-p",
+            "scattering using methane proportional counter."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "LINAC,1USAGRT"
+          ],
+          "freetext": [
+            " Electron linac."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(PHOTO)",
+          "freetext": [
+            " Photo-neutrons produced by 45-MeV electrons",
+            "on a tungsten-alloy target. Neutrons moderated in",
+            "lead or uranium and in polyethylene. B-10 filter used",
+            "to prevent overlap of low-energy neutrons from",
+            "different bursts."
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "O",
+            "ent": "10211001",
+            "author": "M.P.Fricke+",
+            "ref": "J,ANS,14,352,1971"
+          },
+          "freetext": [
+            " Rh data from",
+            " the same facility."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "The samples used for the capture measurements were all",
+            "high purity metal disks approximately 11 cm in diam.",
+            "and ranged in thickness from 0.1 to 0. 25 cm. Except",
+            "for the 238U sample which was composed of depleted",
+            "uranium (99.8% 238U), the isotopic composition of the",
+            "samples was that of the naturally occurring element."
+          ]
+        }
+      }
+    }
+  }
+}

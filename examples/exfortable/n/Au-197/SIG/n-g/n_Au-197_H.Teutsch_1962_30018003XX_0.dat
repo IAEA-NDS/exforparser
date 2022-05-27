@@ -1,0 +1,11 @@
+# entry       : 30018 
+# subentry    : 003 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG,,RV,DERIV) 
+# year        : 1962 
+# author      : H.Teutsch 
+# institute   : 3RUMBUC 
+# reference   : (J,NUK,4,165,196206) 
+# facilitie   : None
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
+      2.53000E-08      0.00000E+00      9.89000E+04      3.00000E+02       # Lab                   

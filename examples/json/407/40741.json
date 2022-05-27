@@ -1,0 +1,140 @@
+{
+  "title": " Neutron-Induced Fission Cross Sections Of Th232 And  U238 In The Energy Range 3-11Mev And U233, U235,  Np237 And Pu239 In The Energy Range 3-8 Mev.",
+  "references": [
+    {
+      "x4code": "(C,58GENEVA,16,136(2149),5809)",
+      "publication year": "1958"
+    }
+  ],
+  "authors": [
+    {
+      "name": "S.P.Kalinin"
+    },
+    {
+      "name": "V.M.Pankratov"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "4CCPKUR"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "CYCLO"
+    }
+  ],
+  "entry_number": "40741",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(90-TH-232(N,F),,SIG)",
+        "target": "90-TH-232",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(92-U-233(N,F),,SIG)",
+        "target": "92-U-233",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(93-NP-237(N,F),,SIG)",
+        "target": "93-NP-237",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(92-U-238(N,F),,SIG)",
+        "target": "92-U-238",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(IOCH)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "CYCLO"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-T)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  }
+}

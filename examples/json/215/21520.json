@@ -1,0 +1,287 @@
+{
+  "title": "-Fission Cross Section Measurement Of U-235 And  Pu-239 For Low Energy Neutrons.-",
+  "references": [
+    {
+      "x4code": "(C,65SALZBURG,1,255,196503)",
+      "publication year": "1965"
+    }
+  ],
+  "authors": [
+    {
+      "name": "G.Fraysse"
+    },
+    {
+      "name": "A.Prosdocimi"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2ZZZISP"
+    },
+    {
+      "x4code": "2FR SAC"
+    },
+    {
+      "x4code": "2FR CAD"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "SPECC",
+      "x4code": "2FR SAC"
+    },
+    {
+      "type": "REAC",
+      "x4code": "2FR SAC"
+    }
+  ],
+  "entry_number": "21520",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": [
+          " 2200 m/sec value obtained",
+          " from a fit to the sigma(F)/sigma(B(N,a)) data",
+          " of the world recommended shape."
+        ]
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": [
+          " 2200 m/sec value obtained",
+          " by fitting to the sigma(F)/sigma(B(N,a)) data",
+          " the world recommended shape."
+        ]
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": [
+          " 2200 m/sec value."
+        ]
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": [
+          " 2200 m/sec, mean value",
+          " from two determinations, viz. 1.With U-235",
+          " as monitor, and 2.With B-10 as monitor."
+        ]
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Presence in the neutron beam of neutrons with",
+            " harmonic wave-lengths (ff-counting and B-counting)",
+            ".Background noise (B-counting)",
+            ".Dead time (FF counting, B- counting, fission foil",
+            "  Alpha counting).",
+            ".Geometrical efficiency (FF counting, B- counting,",
+            " fission foil alpha-counting)",
+            ".Discrimination and selfabsorption (alpha spectra)",
+            ".Backscattering (ff-counting, B-counting, fission",
+            " foil alpha counting)",
+            ".Isotopic composition (fission foils)",
+            ".Alpha pile up (Pu- measurements)",
+            ".Different neutron flux upon target and monitor.",
+            ".Neutron beam profile."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(SOLST)",
+          "freetext": [
+            " A solid state detector in low geometry",
+            " (0.01 of 2*pi) for counting the fission fragments",
+            " the energy resolution was about 2 percent, 1 cm**2",
+            " sensitive area, resistivity 450 Ohm*cm, 30 volt",
+            " bias."
+          ]
+        },
+        "1": {
+          "x4code": "(COIN,SCIN,SCIN)",
+          "freetext": [
+            " At the energy of 0.275 eV, the",
+            " fission fragments are counted with two xenon",
+            " filled scintillators detecting the two coincident",
+            " fragments in a 4*pi geometry. Pressure 1.5 atm.,",
+            " Energy resolution about 20 percent. The xenon gas",
+            " was purified by circulation over a calcium purifier",
+            " heated at 400 deg C."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " The total error given includes all the errors,",
+            " except those due to the uncertainties in the",
+            " isotopic composition and chemical purity of the",
+            " boron foils."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "SPECC,2FR SAC"
+          ],
+          "freetext": [
+            " Crystal spectrometer ( Three orien-",
+            "            tations used),"
+          ]
+        },
+        "1": {
+          "x4code": [
+            "SPECC,2FR SAC"
+          ],
+          "freetext": [
+            " El-3 reactor in saclay, 18 mw power."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(REAC)",
+          "freetext": [
+            "  Reactor neutrons."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(STTA)",
+          "freetext": [
+            " Comparison of fission foils with natural boron",
+            " foils at 3 energies. The 2200 m/sec value is",
+            " obtained by fitting the cross section shape to",
+            " these 3 data points."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Boron foils deposited by electron bombardment under",
+            " vacuum on aluminium backings weighted before their",
+            " removal from the vacuum system. Elemental boron was",
+            " used, containing 19.81 at. Percent of B-10. However",
+            " the preparation of the foil may enrich the foil in",
+            " B-10 to about 20.3 at.Perc. This effect has not been",
+            " checked and is one of the main sources of error of",
+            " the experiment. Two layers are used - 3.329e+18",
+            " atoms/cm**2, and 4.183e+18 atoms/cm**2.",
+            ".Fissile foil preparation fully described in nucl.",
+            " Instr. Meth 21(1963)161. Plastic foils of about 25",
+            " micrograms/cm**2 are metallized with an evaporated",
+            " aluminium layer to reduce strongly the light",
+            " transmission. Fissile layers deposited by electro-",
+            " spraying of an acetate uranium or plutonium solution.",
+            " In U-layer, composed of a mixture of U-O2(CH3COO)2 and",
+            " U-O2(CH3COO)3, 2/3 of the total weight was fissile",
+            " material. More details in Table 1 of reference."
+          ]
+        }
+      }
+    }
+  }
+}

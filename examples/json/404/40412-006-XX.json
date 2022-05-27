@@ -1,0 +1,172 @@
+{
+  "id": "40412-006-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG,,AV)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "AV",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total error includes"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-S,,1.)",
+          "freetext": [
+            "      Standard deviation"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Uncertainty due to background subtraction"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Uncertainty in normalization"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " Uncertainty in energy dependence of",
+            "        10-B(n,alpha+gamma) cross-section"
+          ]
+        }
+      }
+    },
+    "MONIT-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": null,
+            "ent": null,
+            "author": "M.Sowerby+",
+            "ref": "R,AERE-R-7273,1973"
+          },
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "(MONIT)": {
+          "x4code": [
+            "(94-PU-239(N,F),,SIG,,AV)"
+          ],
+          "freetext": [
+            " Average in energy",
+            "range from EN-NRM-MIN to EN-NRM-MAX cross-section from",
+            "MONIT-REF, used for normalization."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1",
+      "ERR-2",
+      "ERR-3",
+      "EN-NRM-MIN",
+      "EN-NRM-MAX",
+      "MONIT"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "KEV",
+      "KEV",
+      "B"
+    ],
+    "data": {
+      "0": [
+        1.0
+      ],
+      "1": [
+        6.0
+      ],
+      "2": [
+        3.0
+      ],
+      "3": [
+        30.0
+      ],
+      "4": [
+        40.0
+      ],
+      "5": [
+        1.6
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        10.0,
+        20.0,
+        30.0,
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "1": [
+        20.0,
+        30.0,
+        40.0,
+        50.0,
+        60.0,
+        70.0,
+        80.0
+      ],
+      "2": [
+        1.628,
+        1.622,
+        1.6,
+        1.559,
+        1.595,
+        1.598,
+        1.52
+      ],
+      "3": [
+        0.112,
+        0.11,
+        0.109,
+        0.106,
+        0.108,
+        0.109,
+        0.103
+      ]
+    }
+  }
+}

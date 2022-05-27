@@ -1,0 +1,65 @@
+{
+  "id": "10267-043-2",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " CO MODE+OR MODE"
+    ]
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total uncertainty"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Uncertainty in the neutron flux"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "ERR-1",
+      "DATA      2",
+      "ERR-T     2"
+    ],
+    "units": [
+      "KEV",
+      "PER-CENT",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        30.0
+      ],
+      [
+        3.0
+      ],
+      [
+        0.6
+      ],
+      [
+        0.05
+      ]
+    ]
+  }
+}

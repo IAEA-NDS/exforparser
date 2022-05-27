@@ -1,0 +1,156 @@
+{
+  "id": "22099-002-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,SPA)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Average of eight cross sections:",
+            " 589(9) mb, 598(8) mb, 574(8) mb, 590(8) mb,",
+            " 587(9) mb, 582(8) mb, 576(8) mb, 595(9) mb"
+          ]
+        }
+      }
+    },
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-198,,DG,412.,0.955)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total uncertainty",
+            "        irradiation history, time factors - negligible"
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "C",
+            "ent": null,
+            "author": "R.Reifarth+",
+            "ref": "J,EPJ/P,133,424,2018"
+          },
+          "freetext": [
+            "",
+            " The reported value (586+/-8 mb) is revised to",
+            "  622.7 +/- 6.2 mb for spherical 197Au samples,",
+            "  651.6 +/- 6.5 mb for flat 197Au samples."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1",
+      "ERR-2",
+      "ERR-3",
+      "ERR-4",
+      "ERR-5",
+      "ERR-6",
+      "ERR-7",
+      "ERR-8",
+      "ERR-9",
+      "ERR-11"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        0.6
+      ],
+      "1": [
+        0.4
+      ],
+      "2": [
+        0.3
+      ],
+      "3": [
+        0.3
+      ],
+      "4": [
+        0.6
+      ],
+      "5": [
+        0.1
+      ],
+      "6": [
+        0.4
+      ],
+      "7": [
+        0.3
+      ],
+      "8": [
+        0.5
+      ],
+      "9": [
+        0.1
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "KT-DUMMY",
+      "KT-DUM-ERR",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "MB",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        25.0
+      ],
+      "1": [
+        0.5
+      ],
+      "2": [
+        586.0
+      ],
+      "3": [
+        8.0
+      ]
+    }
+  }
+}

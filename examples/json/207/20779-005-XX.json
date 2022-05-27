@@ -1,0 +1,164 @@
+{
+  "id": "20779-005-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Quadrature sum of the following uncertainties:",
+            "      - Statistics including background subtraction"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Extrapolation to zero pulse height       (0.3%)"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Loss of fissions                        (0.15%)"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " Number of atoms per cm2                 (1.36%)"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-4)",
+          "freetext": [
+            " Neutron attenuation in target backing   (0.36%)"
+          ]
+        },
+        "5": {
+          "x4code": "(ERR-5)",
+          "freetext": [
+            " Neutron attenuation in front face of",
+            "         fission chamber                         (0.3%)"
+          ]
+        },
+        "6": {
+          "x4code": "(ERR-6)",
+          "freetext": [
+            " Fissions due to other isotopes          (0.17%)"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "x4code": "(94-PU-239,ENR=0.9914)",
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": "(94-PU-238,ENR=0.000046)",
+          "freetext": [
+            ""
+          ]
+        },
+        "2": {
+          "x4code": "(94-PU-240,ENR=0.00855)",
+          "freetext": [
+            ""
+          ]
+        },
+        "3": {
+          "x4code": "(94-PU-242,ENR=0.0000038)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1",
+      "ERR-2",
+      "ERR-3",
+      "ERR-4",
+      "ERR-5",
+      "ERR-6"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        0.3
+      ],
+      "1": [
+        0.15
+      ],
+      "2": [
+        1.36
+      ],
+      "3": [
+        0.36
+      ],
+      "4": [
+        0.3
+      ],
+      "5": [
+        0.17
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-ERR",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        13.9,
+        14.6
+      ],
+      "1": [
+        0.13,
+        0.13
+      ],
+      "2": [
+        2.321,
+        2.29
+      ],
+      "3": [
+        0.058,
+        0.052
+      ]
+    }
+  }
+}

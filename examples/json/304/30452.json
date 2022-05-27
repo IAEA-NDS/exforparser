@@ -1,0 +1,302 @@
+{
+  "title": "Measuring Of A Few Integral Data In The Sigma Sigma  Neutron Field",
+  "references": [
+    {
+      "x4code": "(J,RRP,23,409,1978)",
+      "publication year": "1978"
+    },
+    {
+      "x4code": "(S,IAEA-208,(2),309,1976)",
+      "publication year": "1976"
+    }
+  ],
+  "authors": [
+    {
+      "name": "I.Garlea"
+    },
+    {
+      "name": "C.Miron"
+    },
+    {
+      "name": "M.Lupu"
+    },
+    {
+      "name": "P.Ilie"
+    },
+    {
+      "name": "A.Thurzo"
+    },
+    {
+      "name": "N.Stanica"
+    },
+    {
+      "name": "F.Popa"
+    },
+    {
+      "name": "G.Fodor"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "3RUMPIT"
+    },
+    {
+      "x4code": "3RUMBUC"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "REAC",
+      "x4code": "3RUMPIT"
+    }
+  ],
+  "entry_number": "30452",
+  "reactions": {
+    "003": {
+      "XX": {
+        "x4code": "(49-IN-115(N,G)49-IN-116-M,,SIG,,SPA)",
+        "target": "49-IN-115",
+        "process": "N,G",
+        "sf4": "49-IN-116-M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(49-IN-115(N,INL)49-IN-115-M,,SIG,,SPA)",
+        "target": "49-IN-115",
+        "process": "N,INL",
+        "sf4": "49-IN-115-M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(28-NI-58(N,P)27-CO-58,,SIG,,SPA)",
+        "target": "28-NI-58",
+        "process": "N,P",
+        "sf4": "27-CO-58",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "010": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG,,SPA)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "011": {
+      "1": {
+        "x4code": "(94-PU-239(N,F),,SIG,,SPA)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "((94-PU-239(N,F),,SIG,,SPA)/(92-U-235(N,F),,SIG,,SPA))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "012": {
+      "1": {
+        "x4code": "(93-NP-237(N,F),,SIG,,SPA)",
+        "target": "93-NP-237",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "((93-NP-237(N,F),,SIG,,SPA)/(92-U-235(N,F),,SIG,,SPA))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "013": {
+      "1": {
+        "x4code": "(92-U-238(N,F),,SIG,,SPA)",
+        "target": "92-U-238",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "((92-U-238(N,F),,SIG,,SPA)/(92-U-235(N,F),,SIG,,SPA))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "014": {
+      "1": {
+        "x4code": "(92-U-233(N,F),,SIG,,SPA)",
+        "target": "92-U-233",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "((92-U-233(N,F),,SIG,,SPA)/(92-U-235(N,F),,SIG,,SPA))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "015": {
+      "1": {
+        "x4code": "(94-PU-241(N,F),,SIG,,SPA)",
+        "target": "94-PU-241",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "((94-PU-241(N,F),,SIG,,SPA)/(92-U-235(N,F),,SIG,,SPA))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "016": {
+      "1": {
+        "x4code": "(90-TH-232(N,F),,SIG,,SPA)",
+        "target": "90-TH-232",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "((90-TH-232(N,F),,SIG,,SPA)/(92-U-235(N,F),,SIG,,SPA))",
+        "freetext": [
+          ""
+        ]
+      }
+    }
+  },
+  "experimental_conditions": {
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "REAC,3RUMPIT"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(THCOL)",
+          "freetext": [
+            " Thermal column of VVRS-IFA reactor with the",
+            " standard neutron field, Sigma-Sigma facility"
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Fast reactor spectrum calculated with ANISN code and",
+            " ENDF/B-III library is mentioned by I.Girlea et al.,",
+            " \"Neutron spectrum measurements performed in Sigma-",
+            "  Sigma facility by means of the proton recoil",
+            "  counters\" to be published."
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "N",
+            "ent": null,
+            "author": "J.Grundl+",
+            "ref": "S,IAEA-208,(1),53,1978"
+          },
+          "freetext": [
+            " Table II-B",
+            " Average energy = 0.76 MeV",
+            " Median energy  =  400 keV",
+            " E(P=0.95)      =   20 keV",
+            " E(P=0.05)      =  2.9 MeV",
+            "where fraction of spectrum below E(P=0.95) or above",
+            "  E(P=0.05) is 5%."
+          ]
+        }
+      }
+    }
+  }
+}

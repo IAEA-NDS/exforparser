@@ -1,0 +1,171 @@
+{
+  "title": "-The Fission Cross Sections Of U-233, U-235, U-238  And Pu-239 For Neutrons In The Energy Range 0.030  Mev To 3.0 Mev-.",
+  "references": [
+    {
+      "x4code": "(J,PPS/A,70,573,1957)",
+      "publication year": "1957"
+    },
+    {
+      "x4code": "(J,PPS/A,70,639,1957)",
+      "publication year": "1957"
+    },
+    {
+      "x4code": "(J,PHY,22,1187(125),195611)",
+      "publication year": "1956"
+    }
+  ],
+  "authors": [
+    {
+      "name": "W.D.Allen"
+    },
+    {
+      "name": "A.T.G.Ferguson"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2UK HAR"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "CCW",
+      "x4code": "2UK HAR"
+    }
+  ],
+  "entry_number": "21075",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-233(N,F),,SIG)",
+        "target": "92-U-233",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(92-U-238(N,F),,SIG)",
+        "target": "92-U-238",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Normalisation error from neutron flux",
+            " about 3% at one standard deviation."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Statistical error."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "CCW,2UK HAR"
+          ],
+          "freetext": [
+            " Electrostatic generator."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            " Proton bombardment of lithium."
+          ]
+        },
+        "1": {
+          "x4code": null,
+          "freetext": [
+            "",
+            " Both gas targets and zirconium tritide."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(1-H-1(N,EL)1-H-1,,SIG)"
+          ],
+          "freetext": [
+            " Proton recoil counter for",
+            " neutron flux measurement, PPS/A,70,639."
+          ]
+        }
+      }
+    }
+  }
+}

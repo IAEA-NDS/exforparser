@@ -1,0 +1,251 @@
+{
+  "title": "Au197(N,G)Au198 Cross-Section Measurements Between 0.2  And 3.0 Mev",
+  "references": [
+    {
+      "x4code": "(J,AKE,26,80,1975)",
+      "publication year": "1975"
+    },
+    {
+      "x4code": "(P,INDC(EUR)-9,22,1976)",
+      "publication year": "1976"
+    },
+    {
+      "x4code": "(P,NEANDC(E)-172,(3),22,1976)",
+      "publication year": "1976"
+    },
+    {
+      "x4code": "(P,INDC(EUR)-8,26,1975)",
+      "publication year": "1975"
+    },
+    {
+      "x4code": "(P,NEANDC(E)-162,(3),26,1975)",
+      "publication year": "1975"
+    },
+    {
+      "x4code": "(P,INDC(EUR)-7,207,1974)",
+      "publication year": "1974"
+    },
+    {
+      "x4code": "(P,NEANDC(E)-161,207,1974)",
+      "publication year": "1974"
+    },
+    {
+      "x4code": "(P,INDC(EUR)-5,75,1973)",
+      "publication year": "1973"
+    },
+    {
+      "x4code": "(P,EANDC(E)-157,(1),75,1973)",
+      "publication year": "1973"
+    }
+  ],
+  "authors": [
+    {
+      "name": "A.Paulsen"
+    },
+    {
+      "name": "R.Widera"
+    },
+    {
+      "name": "H.Liskien"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2ZZZGEL"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "VDG",
+      "x4code": "2ZZZGEL"
+    }
+  ],
+  "entry_number": "20419",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198-G,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198-G",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198-G,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198-G",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Corrected for",
+            " -Neutron attenuation in sample                  (1.5%)",
+            " -Sample/neutron detector solid angle difference (6.0%)",
+            " -Sample/calibration source absorption difference(0.3%)",
+            " -Difference depth activity distribution of",
+            "   calibration source                            (0.3%)",
+            " -Difference radial activity distribution of",
+            "   calibration source                            (0.5%)",
+            " -Thermal neutrons                               (2.5%)",
+            " -Neutron inscattering                           (2.0%)",
+            " -Chemical purity                               (0.01%)",
+            " -Neutron survival factor                        (3.0%)",
+            " -Neutron flux variations in time               (0.05%)"
+          ]
+        }
+      }
+    },
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-198-G,2.67D,DG,412.)"
+          ],
+          "freetext": [
+            "",
+            " Measurement assumes that all neutron capture events",
+            "  populate the ground state.",
+            " Measurements for 2.5 half-lives indicate a population",
+            "  of 0.2+/-0.3% for the metastable state at 812 keV."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(HPGE)",
+          "freetext": [
+            " Photopeak efficiency calibration based on 4-pi",
+            " beta-gamma coincidence."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total uncertainty"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-SYS)",
+          "freetext": [
+            " Systematic component including",
+            " -Efficiency of activity detector                (1.5%)",
+            " -Neutron fluence at recoil detector distance    (2.8%)",
+            " -Neutron attenuation in sample                  (0.3%)",
+            " -Effective sample distance                      (1.0%)",
+            " -Sample/neutron detector solid angle difference (0.5%)",
+            " -Number of sample atoms                         (0.1%)",
+            " -Decay constant                                 (0.1%)",
+            " -Sample/calibration source absorption difference(0.1%)",
+            " -Difference depth activity distribution of",
+            "   calibration source                            (0.1%)",
+            " -Difference radial activity distribution of",
+            "   calibration source                            (0.2%)",
+            " -Thermal neutrons                               (2.5%)",
+            " -Neutron inscattering                           (0.3%)",
+            " -Chemical purity                               (0.01%)",
+            " -Neutron survival factor                        (0.1%)",
+            " -Neutron flux variations in time               (0.02%)"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Random component including",
+            " -Statistics of activity determination           (0.5%)",
+            " -Neutron fluence at recoil detector distance    (1.0%)",
+            " -Effective sample distance                      (0.3%)"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG,2ZZZGEL"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            " En = 200 and 300 keV"
+          ]
+        },
+        "1": {
+          "x4code": "(P-T)",
+          "freetext": [
+            "   En > 0.3 MeV"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            " Irradiation lasted typically 7 hrs."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(1-H-1(N,EL)1-H-1,,SIG)"
+          ],
+          "freetext": [
+            "",
+            "1200 Torr CH4 for En>0.5 MeV and 580 Torr H2+20 Torr",
+            " CH4 for En < 500 keV."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Au sheets of 38 mm diam. and 0.5 mm thick mounted at",
+            " about 74 mm from the neutron source."
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "title": " Measurement And Normalization Of The Relative Pu-239  Fission Cross-Section In The Low Resonance Region",
+  "references": [
+    {
+      "x4code": "(J,JNE,26,293,1972)",
+      "publication year": "1972"
+    },
+    {
+      "x4code": "(C,70HELSINKI,1,151,1970)",
+      "publication year": "1970"
+    },
+    {
+      "x4code": "(W,DERUYTTER,197205)",
+      "publication year": "1972"
+    }
+  ],
+  "authors": [
+    {
+      "name": "A.J.Deruytter"
+    },
+    {
+      "name": "C.Wagemans"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2ZZZGEL"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "LINAC",
+      "x4code": "2ZZZGEL"
+    }
+  ],
+  "entry_number": "20132",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,RI)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "RI",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,ARE)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "ARE",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(SIBAR)",
+          "freetext": [
+            "    Large Au-Si surface barrier detector."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "LINAC,2ZZZGEL"
+          ],
+          "freetext": [
+            "  Electron linear accelerator of CBNM."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Photo neutrons of a mercury cooled natural",
+            " uranium target, moderated by a 2.8 cm tick",
+            " polyethylene sheet with a 1 mm thick B-10 decoupler.",
+            " A piece of natural uranium is incorporated in the",
+            " central part of the moderator to reduce the intensity",
+            " of the target gamma-flash."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            "      Time of flight, well collimated short",
+            " flight path of about 8 m."
+          ]
+        }
+      }
+    },
+    "MONIT-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": null,
+            "ent": "20143005",
+            "author": "A.J.Deruytter",
+            "ref": "C,70HELSINKI,1,117,1970"
+          },
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(94-PU-238(N,F),,ARE)"
+          ],
+          "freetext": [
+            "",
+            "  normalized to the fission integral",
+            " from 0.02001 to 0.06001 eV = 25.15 +- 0.13 barn*eV"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Back-to-back Pu-240 and B-10 layer, 120 mu-gr/cm2 Pu",
+            " and 103 mu-gr/cm2 B-10 (92% enriched).",
+            ".isotopic composition in atomic per-cent,",
+            " Pu-238 less  0.005,  Pu-239  99.956 +- 0.010",
+            " Pu-241 less  0.005,  Pu-240   0.044 +- 0.010"
+          ]
+        }
+      }
+    }
+  }
+}

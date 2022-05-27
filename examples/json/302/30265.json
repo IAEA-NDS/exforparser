@@ -1,0 +1,336 @@
+{
+  "title": "Average Cross Sections For Alpha-Beryllium Neutron  Sources",
+  "references": [
+    {
+      "x4code": "(J,AHP,33,363,1973)",
+      "publication year": "1973"
+    }
+  ],
+  "authors": [
+    {
+      "name": "G.Peto"
+    },
+    {
+      "name": "J.Csikai"
+    },
+    {
+      "name": "G.M.Shuriet"
+    },
+    {
+      "name": "I.Jozsa"
+    },
+    {
+      "name": "V.Asztalos"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "3HUNKOS"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "30265",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(13-AL-27(N,P)12-MG-27,,SIG,,SPA)",
+        "target": "13-AL-27",
+        "process": "N,P",
+        "sf4": "12-MG-27",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(14-SI-28(N,P)13-AL-28,,SIG,,SPA)",
+        "target": "14-SI-28",
+        "process": "N,P",
+        "sf4": "13-AL-28",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(15-P-31(N,P)14-SI-31,,SIG,,SPA)",
+        "target": "15-P-31",
+        "process": "N,P",
+        "sf4": "14-SI-31",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "((34-SE-77(N,INL)34-SE-77-M,,SIG,,A/SPA)+(34-SE-76(N,G)34-SE-77-M,,SIG,,A/SPA))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(35-BR-79(N,INL)35-BR-79-M,,SIG,,SPA)",
+        "target": "35-BR-79",
+        "process": "N,INL",
+        "sf4": "35-BR-79-M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(35-BR-79(N,G)35-BR-80-M,,SIG,,SPA)",
+        "target": "35-BR-79",
+        "process": "N,G",
+        "sf4": "35-BR-80-M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(35-BR-79(N,G)35-BR-80-G,,SIG,,SPA)",
+        "target": "35-BR-79",
+        "process": "N,G",
+        "sf4": "35-BR-80-G",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "((38-SR-87(N,INL)38-SR-87-M,,SIG,,A/SPA)+(38-SR-86(N,G)38-SR-87-M,,SIG,,A/SPA))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "010": {
+      "XX": {
+        "x4code": "(39-Y-89(N,INL)39-Y-89-M,,SIG,,SPA)",
+        "target": "39-Y-89",
+        "process": "N,INL",
+        "sf4": "39-Y-89-M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "011": {
+      "XX": {
+        "x4code": "((48-CD-111(N,INL)48-CD-111-M,,SIG,,A/SPA)+(48-CD-110(N,G)48-CD-111-M,,SIG,,A/SPA))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "012": {
+      "XX": {
+        "x4code": "(49-IN-115(N,INL)49-IN-115-M,,SIG,,SPA)",
+        "target": "49-IN-115",
+        "process": "N,INL",
+        "sf4": "49-IN-115-M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "013": {
+      "XX": {
+        "x4code": "(49-IN-115(N,G)49-IN-116-M,,SIG,,SPA)",
+        "target": "49-IN-115",
+        "process": "N,G",
+        "sf4": "49-IN-116-M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "014": {
+      "XX": {
+        "x4code": "(53-I-127(N,G)53-I-128,,SIG,,SPA)",
+        "target": "53-I-127",
+        "process": "N,G",
+        "sf4": "53-I-128",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "015": {
+      "XX": {
+        "x4code": "((56-BA-135(N,INL)56-BA-135-M,,SIG,,A/SPA)+(56-BA-134(N,G)56-BA-135-M,,SIG,,A/SPA))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "016": {
+      "XX": {
+        "x4code": "((56-BA-137(N,INL)56-BA-137-M,,SIG,,A/SPA)+(56-BA-136(N,G)56-BA-137-M,,SIG,,A/SPA))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "017": {
+      "XX": {
+        "x4code": "((80-HG-199(N,INL)80-HG-199-M,,SIG,,SPA)+(80-HG-198(N,G)80-HG-199-M,,SIG,,SPA))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "018": {
+      "XX": {
+        "x4code": "(79-AU-197(N,INL)79-AU-197-M,,SIG,,SPA)",
+        "target": "79-AU-197",
+        "process": "N,INL",
+        "sf4": "79-AU-197-M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "019": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,SPA)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "020": {
+      "XX": {
+        "x4code": "(82-PB-204(N,INL)82-PB-204-M,,SIG,,SPA)",
+        "target": "82-PB-204",
+        "process": "N,INL",
+        "sf4": "82-PB-204-M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "021": {
+      "XX": {
+        "x4code": "(45-RH-103(N,G)45-RH-104-G/M,,SIG/RAT,,SPA)",
+        "target": "45-RH-103",
+        "process": "N,G",
+        "sf4": "45-RH-104-G/M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG/RAT",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Errors include",
+            " - Uncertainty of neutron flux determination",
+            " - Uncertainty of counting efficiency",
+            " - Statistical errors."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(PU-BE,PO-BE)",
+          "freetext": [
+            " Alpha-beryllium sources (Pu-Be and Po-Be)",
+            "The following alpha-beryllium sources were used:",
+            " .Two Pu-Be sources with neutron yields of 5.3*10**6n/s",
+            "  +-10% and 5.5*10**5 n/s +-10%.",
+            " .A Po-Be source with  approximately  10**6n/s.",
+            "The neutron flux was established to be isotropic beyond",
+            " 5 cm from the source centre, using the P-31(n,p)Si-31",
+            " reaction."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            " The neutron source was arranged in a non-",
+            " scattering geometry."
+          ]
+        }
+      }
+    }
+  }
+}

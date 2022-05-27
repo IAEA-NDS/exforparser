@@ -1,0 +1,73 @@
+{
+  "id": "20670-018-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198-G,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198-G",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "HALF-LIFE": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(HL,79-AU-198-G)"
+          ],
+          "freetext": [
+            "",
+            ".HALFLIFE TAKEN FROM NUCL.DATA SHEETS 5-2-48 (1962)",
+            " BY AUTHOR."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MEV"
+    ],
+    "data": {
+      "0": [
+        14.6
+      ],
+      "1": [
+        0.2
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR",
+      "HL"
+    ],
+    "units": [
+      "MB",
+      "MB",
+      "D"
+    ],
+    "data": {
+      "0": [
+        2.1
+      ],
+      "1": [
+        1.2
+      ],
+      "2": [
+        2.698
+      ]
+    }
+  }
+}

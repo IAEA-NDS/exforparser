@@ -1,0 +1,162 @@
+{
+  "title": "Thermal Neutron Absorption Cross Section Measurement  For Gold",
+  "references": [
+    {
+      "x4code": "(J,CST,7,848,1965)",
+      "publication year": "1965"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Lu Hanlin"
+    },
+    {
+      "name": "Yuan Hanrong"
+    },
+    {
+      "name": "Deng Xinlu"
+    },
+    {
+      "name": "Ye Chuntang"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "3CPRAEP"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "REAC",
+      "x4code": "3CPRAEP"
+    }
+  ],
+  "entry_number": "30914",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(79-AU-197(N,TOT),,SIG)",
+        "target": "79-AU-197",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "For the total cross section corrections have been made",
+            "for the secondary-neutron effect and dead time of",
+            "detecting system. For the absorption cross section",
+            "of gold corrections have been made for the reflected-",
+            "neutron effect, secondary-neutron effect, escaped-",
+            "neutron effect and the boundary effect of the sample."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(BF3)",
+          "freetext": [
+            " Using 80% enriched boron-10."
+          ]
+        },
+        "1": {
+          "x4code": "(D4PI)",
+          "freetext": [
+            " using manganese sulphate solution as detector",
+            "medium."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Errors have been considered for:",
+            "  * counting statistics,",
+            "  * energy resolution and",
+            "  * energy calibration of the crystal spectrometer."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "REAC,3CPRAEP"
+          ],
+          "freetext": [
+            " Heavy-water reactor."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(REAC)",
+          "freetext": [
+            " Neutron beams from the heavy-water reactor were",
+            "first collimated and then reached a NaCl(200) mono-",
+            "chromator. Through Bragg diffraction in NaCl(200) the",
+            "monoenergetic 0.0253 eV neutrons were selected. Between",
+            "the NaCl(200) monochromator and the measured sample a",
+            "mechanical monochromator was inserted in order to cut",
+            "off the neutrons with high energy."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(MANGB)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Gold foils, purity 99.9%, diameter 4.2 cm, thickness",
+            "1.527g/cm2."
+          ]
+        }
+      }
+    }
+  }
+}

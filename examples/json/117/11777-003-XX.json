@@ -1,0 +1,53 @@
+{
+  "id": "11777-003-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,MXW)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "MONIT"
+    ],
+    "units": [
+      "B"
+    ],
+    "data": {
+      "0": [
+        2.53
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN-DUMMY",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.0253
+      ],
+      "1": [
+        97.0
+      ],
+      "2": [
+        6.0
+      ]
+    }
+  }
+}

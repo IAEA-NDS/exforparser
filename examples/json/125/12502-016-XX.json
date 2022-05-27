@@ -1,0 +1,97 @@
+{
+  "id": "12502-016-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": "cannot parse",
+          "freetext": [
+            "",
+            " Based on Pu-239 eta/nu=0.75 at 0.0253 eV"
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(N)",
+          "freetext": [
+            " Neutrons"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM",
+      "MONIT"
+    ],
+    "units": [
+      "EV",
+      "NO-DIM"
+    ],
+    "data": {
+      "0": [
+        0.0253
+      ],
+      "1": [
+        0.75
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "B"
+    ],
+    "data": {
+      "0": [
+        4.05e-07,
+        4.18e-07,
+        4.3e-07,
+        4.4e-07,
+        4.6e-07,
+        4.7e-07,
+        4.85e-07,
+        5e-07,
+        5.15e-07,
+        5.35e-07,
+        5.55e-07,
+        5.7e-07
+      ],
+      "1": [
+        540.0,
+        470.0,
+        380.0,
+        335.0,
+        280.0,
+        245.0,
+        215.0,
+        190.0,
+        170.0,
+        145.0,
+        130.0,
+        118.0
+      ]
+    }
+  }
+}

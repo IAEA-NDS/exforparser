@@ -1,0 +1,215 @@
+{
+  "title": "Dependence Of 14Mev Radiative Neutron Capture On Mass  Number",
+  "references": [
+    {
+      "x4code": "(J,PL/B,36,557,197110)",
+      "publication year": "1971"
+    }
+  ],
+  "authors": [
+    {
+      "name": "D.Drake"
+    },
+    {
+      "name": "I.Bergqvist"
+    },
+    {
+      "name": "D.K.Mcdaniels"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USALAS"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "VDGT"
+    }
+  ],
+  "entry_number": "10193",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(64-GD-0(N,G),,SIG)",
+        "target": "64-GD-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(67-HO-165(N,G)67-HO-166,,SIG)",
+        "target": "67-HO-165",
+        "process": "N,G",
+        "sf4": "67-HO-166",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(73-TA-0(N,G),,SIG)",
+        "target": "73-TA-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(82-PB-208(N,G)82-PB-209,,SIG)",
+        "target": "82-PB-208",
+        "process": "N,G",
+        "sf4": "82-PB-209",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(92-U-238(N,G)92-U-239,,SIG)",
+        "target": "92-U-238",
+        "process": "N,G",
+        "sf4": "92-U-239",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "x4code": "(4PI1A)",
+          "freetext": [
+            " 4pi*90 degree cross section value."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(NAICR)",
+          "freetext": [
+            " Anti-compton spectrometer. Center detector",
+            " 15 cm long by 6 cm diameter NaI(Tl) crystal. NaI(Tl)",
+            " annulus 6.3 cm i.d., 25 cm o.d., 31 cm long."
+          ]
+        },
+        "1": {
+          "x4code": "(TELES)",
+          "freetext": [
+            " Proton recoil telescope for absolute flux",
+            " measurement."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Errors given are estimated uncertainties.",
+            " Estimated uncertainty in flux (5%). Gamma detector",
+            " efficiency curve accurate to (10%)."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDGT"
+          ],
+          "freetext": [
+            " TANDEM VAN DE GRAAFF."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-T)",
+          "freetext": [
+            " T(p,n) source. Tritium gas target."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(1-H-0(N,TOT),,SIG)"
+          ],
+          "freetext": [
+            " For absolute flux measurement.",
+            "Gamma detector efficiency measured at 4.4 MeV with",
+            " calibrated Pu-Be source. Used to normalize relative",
+            " efficiency curve obtained with gammas from",
+            " 11B(p,gamma), 12C(p,pgamma), and 89Y(p,gamma)",
+            " reactions."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Cylinders, with weights ranging from 200 to 490 g."
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "id": "41190-002-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-198-G,,DG,411.8)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total error"
+          ]
+        },
+        "1": {
+          "x4code": "(MONIT-ERR,0.6,0.7)",
+          "freetext": [
+            " See MONITOR lines for dependence."
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Error of correction for scattered neutrons",
+            " in Au sample produced activity."
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Error of correction for scattered neutrons",
+            " in fission chamber counting."
+          ]
+        }
+      }
+    },
+    "MISC-COL": {
+      "XX": {
+        "0": {
+          "x4code": "(MISC1)",
+          "freetext": [
+            " Factors  of correction for scattered neutrons",
+            " in Au sample produced activity."
+          ]
+        },
+        "1": {
+          "x4code": "(MISC2)",
+          "freetext": [
+            " Factors  of correction for scattered neutrons",
+            " in fission chamber counting."
+          ]
+        }
+      }
+    },
+    "MONIT-REF": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG)"
+          ],
+          "freetext": [
+            "",
+            " Monitors values used:",
+            " EN+-sqrt(D), keV     C-S, b     c-s error, %",
+            " 515.+-34.            1.137      0.7",
+            " 571.+-34             1.122      0.7",
+            " 627.+-34.            1.118      0.6",
+            " 681.+-32             1.115      0.6",
+            " 729.+-35             1.113      0.6"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Metallic disk 2 cm diameter, o.02 cm thickness,",
+            " mass near 1 gram"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-2"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        0.7
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA",
+      "ERR-T",
+      "MISC1",
+      "ERR-1",
+      "MISC2"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "MB",
+      "PER-CENT",
+      "NO-DIM",
+      "PER-CENT",
+      "NO-DIM"
+    ],
+    "data": {
+      "0": [
+        486.0,
+        539.0,
+        593.0,
+        646.0,
+        692.0
+      ],
+      "1": [
+        41.0,
+        41.0,
+        41.0,
+        41.0,
+        44.0
+      ],
+      "2": [
+        135.0,
+        125.0,
+        111.5,
+        101.5,
+        95.5
+      ],
+      "3": [
+        3.5,
+        4.0,
+        4.0,
+        3.5,
+        4.0
+      ],
+      "4": [
+        0.795,
+        0.809,
+        0.81,
+        0.805,
+        0.807
+      ],
+      "5": [
+        1.0,
+        0.8,
+        2.0,
+        1.0,
+        1.4
+      ],
+      "6": [
+        0.958,
+        0.96,
+        0.95,
+        0.947,
+        0.958
+      ]
+    }
+  }
+}

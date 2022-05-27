@@ -1,0 +1,95 @@
+{
+  "id": "20024-005-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Ring shaped sample, 10.cm inner diam., 14.cm outer",
+            "diam. and 1.cm thick"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.024
+      ],
+      "1": [
+        1.185
+      ],
+      "2": [
+        0.08
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.018,
+        0.034,
+        0.064,
+        0.094,
+        0.125,
+        0.16,
+        0.2,
+        0.3
+      ],
+      "1": [
+        0.835,
+        0.525,
+        0.375,
+        0.29,
+        0.26,
+        0.24,
+        0.21,
+        0.21
+      ],
+      "2": [
+        0.17,
+        0.065,
+        null,
+        0.045,
+        null,
+        null,
+        0.05,
+        0.05
+      ]
+    }
+  }
+}

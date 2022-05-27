@@ -1,0 +1,123 @@
+{
+  "id": "21193-003-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      ".CROSS-SECTION MEASURED USING THE MANGANESE BATH",
+      " METHOD TO MONITOR THE FLUX."
+    ]
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-198-G,2.69D,DG,411.)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " STATISTICAL UNCERTAINTY,"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " DETECTOR EFFICIENCY UNCERTAINTY,"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " SAMPLE SELF-SHIELDING UNCERTAINTY,"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " NEUTRON LOSS UNCERTAINTY,"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " TOTAL UNCERTAINTY.",
+            ".COMPREHENSIVE BREAKDOWN OF ERRORS IN TABLE 2C OF THE",
+            " PUBLICATION."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-S",
+      "ERR-1",
+      "ERR-2",
+      "ERR-3"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        0.6
+      ],
+      "1": [
+        1.2
+      ],
+      "2": [
+        0.5
+      ],
+      "3": [
+        1.7
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        30.0,
+        64.0
+      ],
+      "1": [
+        0.604,
+        0.36
+      ],
+      "2": [
+        0.011,
+        0.008
+      ]
+    }
+  }
+}

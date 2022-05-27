@@ -1,0 +1,137 @@
+{
+  "title": "Normalization And Minimum Values Of The 239Pu Fission  Cross Section",
+  "references": [
+    {
+      "x4code": "(J,NSE,115,164,9310)",
+      "publication year": "1993"
+    }
+  ],
+  "authors": [
+    {
+      "name": "L.W.Weston"
+    },
+    {
+      "name": "J.H.Todd"
+    },
+    {
+      "name": "H.Derrien"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USAORL"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "LINAC"
+    }
+  ],
+  "entry_number": "13548",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Constant-in-time background was small for fission",
+            " chamber and negligible for flux monitor.",
+            "Time dependent background (about 1%) was carefully",
+            " determined.  overlap and self shielding corrections",
+            " made."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(IOCH)",
+          "freetext": [
+            " Parallel plate fission chamber."
+          ]
+        },
+        "1": {
+          "x4code": "(IOCH)",
+          "freetext": [
+            " Flux monitored with a parallel-plate B10",
+            " ionization chamber (2 deposits of 28 microgram/cm**2)."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Statistical uncertainty computed during data",
+            " analysis.",
+            "Systematic uncertainty (0.6%) estimated from",
+            " uncertainties in detector efficiences and constant",
+            " background count rates."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "LINAC"
+          ],
+          "freetext": [
+            " Electron linear accelerator, ORELA"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(PHOTO)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            " Time-of-flight, 20-m flight path"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Parallel plate (100 microgram/cm**2) fission chamber",
+            " containing total of 80 mg of 239Pu on 20 deposits."
+          ]
+        }
+      }
+    }
+  }
+}

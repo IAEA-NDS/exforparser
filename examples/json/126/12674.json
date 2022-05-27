@@ -1,0 +1,112 @@
+{
+  "title": "The Determination Of The 2200 M/Sec Capture Cross Section Of Gold From 5-11.5 Angstrom Units.",
+  "references": [
+    {
+      "x4code": "(R,CR-1765,5609)",
+      "publication year": "1956"
+    }
+  ],
+  "authors": [
+    {
+      "name": "W.W.Havens Jr"
+    },
+    {
+      "name": "F.Gould"
+    },
+    {
+      "name": "T.I.Taylor"
+    },
+    {
+      "name": "B.M.Rustad"
+    },
+    {
+      "name": "E.Melkonian"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USACOL"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "SPECC"
+    }
+  ],
+  "entry_number": "12674",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(79-AU-197(N,TOT),,SIG)",
+        "target": "79-AU-197",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "SPECC"
+          ],
+          "freetext": [
+            " CRYSTAL SPECTROMETER AT BNL GRAPHITE REACTOR"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "MICA CRYSTAL MONOCHROMATOR"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "TWO SAMPLES FROM THE SAME FOIL"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "23282-003-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,MXW,DERIV)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW",
+    "sf9": "DERIV",
+    "freetext": [
+      " MACS"
+    ]
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "MACS at kT=30 keV was derived by extrapolation of MACS",
+            "at 25 keV as MACS(30keV) = 0.901 * MACS(25keV)"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Total uncertainty ~ 4% ."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "KT",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "KEV",
+      "MB",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        30.0
+      ],
+      "1": [
+        626.0
+      ],
+      "2": [
+        25.0
+      ]
+    }
+  }
+}

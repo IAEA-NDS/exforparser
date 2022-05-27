@@ -1,0 +1,51 @@
+{
+  "id": "21200-002-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,AV)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "AV",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-S",
+      "ERR-1",
+      "ERR-T"
+    ],
+    "units": [
+      "KEV",
+      "MB",
+      "MB",
+      "MB",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        22.8
+      ],
+      "1": [
+        684.0
+      ],
+      "2": [
+        5.0
+      ],
+      "3": [
+        12.0
+      ],
+      "4": [
+        13.0
+      ]
+    }
+  }
+}

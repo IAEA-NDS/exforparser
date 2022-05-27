@@ -1,0 +1,145 @@
+{
+  "title": "-Radiative Capture Cross Section Measurements For  Fast Neutrons Using A Large Gd-Loaded Liquid  Scintillator-.",
+  "references": [
+    {
+      "x4code": "(J,NIM,148,(1),77,7801)",
+      "publication year": "1978"
+    }
+  ],
+  "authors": [
+    {
+      "name": "S.K.Gupta"
+    },
+    {
+      "name": "J.Frehaut"
+    },
+    {
+      "name": "R.Bois"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2FR BRC"
+    },
+    {
+      "x4code": "3INDTRM"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "VDG  "
+    }
+  ],
+  "entry_number": "21216",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "((92-U-238(N,G)92-U-239,,SIG)/(92-U-238(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198-G,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198-G",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".THE NEUTRON FLUX MEASUREMENT HAS BEEN CORRECTED FOR",
+            " - NEUTRON ABSORPTION IN AIR",
+            " - NEUTRON ATTENUATION IN SAMPLE",
+            " - ENERGY DEPENDENCE OF THE MONITOR EFFICIENCY."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(STANK)",
+          "freetext": [
+            " A 100 CM DIAMETER SPHERICAL TANK, FILLED",
+            " WITH ORGANIC LIQUID SCINTILLATOR NE323, IN WHICH",
+            " 0.5 PERCENT OF GADOLINIUM WAS DESOLVED.",
+            " MEASURED EFFICIENCIES ARE,",
+            " - 80 PERCENT FOR FISSION NEUTRONS,",
+            " - MORE THAN 95 PERCENT FOR 8 MEV GAMMA RAYS.",
+            ".A DIRCTIONAL COUNTER WAS USED TO MONITOR THE NEUTRON",
+            " FLUX."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".THE ERRORS COME MAINLY FROM THE SUBTRACTION OF LARGE",
+            " GAMMA BACKGROUND."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG  "
+          ],
+          "freetext": [
+            " 4 MV PULSED VAN DE GRAAFF."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            "",
+            " THICK TITANIUM-TRITIUM TARGET."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            "",
+            " BETWEEN CAPUTRE EVENTS AND OTHER EVENTS."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".CHEMICALLY PURE NATURAL ELEMENTS OF AU-197 AND U-238",
+            " IN FORM OF DISCS, 2 CM IN DIAMETER AND 3 MM THICK."
+          ]
+        }
+      }
+    }
+  }
+}

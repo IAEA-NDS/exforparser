@@ -1,0 +1,127 @@
+{
+  "title": "-Fission Cross Section Measurements -.",
+  "references": [
+    {
+      "x4code": "(R,ANL-7320,16,1966)",
+      "publication year": "1966"
+    },
+    {
+      "x4code": "(P,AERE-PR/NP-6,3,196404)",
+      "publication year": "1964"
+    },
+    {
+      "x4code": "(R,EANDC-33U,14,1964)",
+      "publication year": "1964"
+    }
+  ],
+  "authors": [
+    {
+      "name": "G.D.James"
+    },
+    {
+      "name": "D.A.J.Endacott"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2UK HAR"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "LINAC"
+    }
+  ],
+  "entry_number": "21090",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(SCIN)",
+          "freetext": [
+            "  Continuous flow gas scintillator."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Absolute statistical standard deviation."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "LINAC"
+          ],
+          "freetext": [
+            " Harwell 45 MeV linear accelerator."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(EVAP)",
+          "freetext": [
+            "  Neutron booster target."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            "    Time of flight, probably 5 meter flight path."
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(FF)",
+          "freetext": [
+            "    Fission fragments."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ". 40 mg plutonium. No details."
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "id": "40476-010-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Absolute c-s was determined by measured ratio (Subent",
+            "009) and U-235 monitor c-s."
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Thermal neutrons were obtained by two-crystals neutron",
+            "monochromator.",
+            " Energy    Neutron beam          Background",
+            " keV       n/cm**2/s             %",
+            "2.53E-5    2.E+4                 0.5"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Cd(1mm ) filter was used for background measurement."
+          ]
+        }
+      }
+    },
+    "MONIT-REF": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "KEV",
+      "B",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        2.53e-05
+      ],
+      "1": [
+        741.7
+      ],
+      "2": [
+        15.0
+      ],
+      "3": [
+        582.2
+      ],
+      "4": [
+        1.3
+      ]
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": "20823-008-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,,DERIV)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": "DERIV",
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Derived from measured total cross section, corrected",
+            " for thermal inelastic and incoherent scattering."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Uncertainty includes statistics and",
+            "uncertainty in incoherent correction."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "DATA-ERR"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        0.42
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "MILLI-EV",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.0399,
+        0.0471,
+        0.0564,
+        0.0688,
+        0.0856,
+        0.1094,
+        0.1445,
+        0.2,
+        0.294,
+        0.473,
+        1.454,
+        1.669,
+        1.936,
+        2.272,
+        2.608,
+        2.858,
+        3.025,
+        3.145,
+        3.272,
+        3.407,
+        3.55
+      ],
+      "1": [
+        2458.2,
+        2244.3,
+        2075.3,
+        1889.0,
+        1697.8,
+        1485.4,
+        1298.2,
+        1103.2,
+        906.8,
+        715.7,
+        407.5,
+        381.8,
+        354.2,
+        325.6,
+        303.9,
+        290.7,
+        282.5,
+        277.4,
+        271.6,
+        266.3,
+        260.3
+      ]
+    }
+  }
+}

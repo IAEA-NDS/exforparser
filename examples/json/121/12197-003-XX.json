@@ -1,0 +1,70 @@
+{
+  "id": "12197-003-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Cu-65(p,n)Zn-65."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Counted Zn-65 decay gammas."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA",
+      "DATA-ERR2",
+      "DATA-ERR1"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "MB",
+      "MB",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        41.6
+      ],
+      "1": [
+        13.9
+      ],
+      "2": [
+        548.0
+      ],
+      "3": [
+        26.0
+      ],
+      "4": [
+        26.0
+      ]
+    }
+  }
+}

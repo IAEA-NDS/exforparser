@@ -1,0 +1,161 @@
+{
+  "id": "12826-003-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total uncertainty (3.7%) including"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Fission track counting             (1.13%)"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Fission fragment anisotropy        (0.63%)"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Angular dist. normalization to lab (0.48%)"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " Total scattering perturbation      (0.43%)"
+          ]
+        },
+        "5": {
+          "x4code": "(ERR-4)",
+          "freetext": [
+            " Total geometric error              (0.24%)"
+          ]
+        },
+        "6": {
+          "x4code": "(ERR-5)",
+          "freetext": [
+            " Total flux uncertainty              (1.4%)"
+          ]
+        },
+        "7": {
+          "x4code": "(ERR-6)",
+          "freetext": [
+            " Deposit masses                      (1.4%)"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(26-FE-56(N,P)25-MN-56,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(13-AL-27(N,A)11-NA-24,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1",
+      "ERR-2",
+      "ERR-3",
+      "ERR-4",
+      "ERR-5",
+      "ERR-6"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        0.63
+      ],
+      "1": [
+        0.48
+      ],
+      "2": [
+        0.43
+      ],
+      "3": [
+        0.24
+      ],
+      "4": [
+        1.4
+      ],
+      "5": [
+        1.4
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-ERR",
+      "DATA",
+      "ERR-T",
+      "ERR-S"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "B",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        14.63
+      ],
+      "1": [
+        0.02
+      ],
+      "2": [
+        2.44
+      ],
+      "3": [
+        3.7
+      ],
+      "4": [
+        1.13
+      ]
+    }
+  }
+}

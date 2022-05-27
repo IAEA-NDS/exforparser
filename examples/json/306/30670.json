@@ -1,0 +1,246 @@
+{
+  "title": "The Absolute Measurement Of Fast Neutron Fission Cross  Section Of 239Pu",
+  "references": [
+    {
+      "x4code": "(J,CNP,4,131,1982)",
+      "publication year": "1982"
+    },
+    {
+      "x4code": "(C,82ANTWER,,36,1982)",
+      "publication year": "1982"
+    },
+    {
+      "x4code": "(R,HSJ-82291,4,1982)",
+      "publication year": "1982"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Zhou Xianjian"
+    },
+    {
+      "name": "Yan Wuguang"
+    },
+    {
+      "name": "Zhou Huiming"
+    },
+    {
+      "name": "Deng Xinlu"
+    },
+    {
+      "name": "Rong Chaofan"
+    },
+    {
+      "name": "Wu Jingxia"
+    },
+    {
+      "name": "Sun Zhongfa"
+    },
+    {
+      "name": "Zhou Shuhua"
+    },
+    {
+      "name": "Ye Zhongyuan"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "3CPRAEP"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "VDG",
+      "x4code": "3CPRAEP"
+    }
+  ],
+  "entry_number": "30670",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Corrected for",
+            " - 240,241Pu(n,f) and 240(sf)",
+            " - hydrogen number quantification",
+            " - sample self-absorption",
+            " - effective radius",
+            " - fission ionization chamber efficiency",
+            " - recoil proton spectrum",
+            " - neutron scattering",
+            " - neutron transmission loss"
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": "(TELES,SIBAR,SIBAR)",
+          "freetext": [
+            " Recoil proton telescope.",
+            "Two polyethylene films (5.3269 and 3.9358 mg/cm2 thick)",
+            " used at 3.4 - 5.6 MeV, and two polypropylene films",
+            " (0.74345 and 0.47453 mg/cm2 thick) at 1.0-1.6 MeV."
+          ]
+        },
+        "2": {
+          "x4code": "(LONGC)",
+          "freetext": [
+            " to monitor neutron yields at 0 and 30 deg."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total uncertainty consisting of"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " 240,241Pu(n,f) and 240(sf)              (0.8%)"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Hydrogen number quantification   (1.15%-1.50%)"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " Number of 239Pu                         (0.6%)"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-4)",
+          "freetext": [
+            " Telescope efficiency (n-p cross section",
+            " and geometry)                                  (0.9%)"
+          ]
+        },
+        "5": {
+          "x4code": "(ERR-5)",
+          "freetext": [
+            " Fission ionization chamber efficiency   (1.0%)"
+          ]
+        },
+        "6": {
+          "x4code": "(ERR-6,0.0,0.2)",
+          "freetext": [
+            " Recoil proton spectrum      (0.0-0.2%)"
+          ]
+        },
+        "7": {
+          "x4code": "(ERR-7)",
+          "freetext": [
+            " Neutron scattering                  (0.0-0.2%)"
+          ]
+        },
+        "8": {
+          "x4code": "(ERR-8)",
+          "freetext": [
+            " D-D autogeny neutron target         (0.0-1.0%)"
+          ]
+        },
+        "9": {
+          "x4code": "(ERR-9,0.0,2.0)",
+          "freetext": [
+            " Instability                 (0.0-2.0%)"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG,3CPRAEP"
+          ],
+          "freetext": [
+            " 2.5 MV Van de Graaff accelerator"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-T)",
+          "freetext": [
+            " for En=1.0 to 1.6 MeV"
+          ]
+        },
+        "1": {
+          "x4code": "(D-D)",
+          "freetext": [
+            " for En=3.4 to 5.6 MeV"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Recoil proton telescope and the deposit of Pu-239 and",
+            "the mylar film are put in a back-to-back geometry in",
+            "the fission chamber."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "x4code": "(94-PU-239,ENR=0.969)",
+          "freetext": [
+            " 96.9+/-0.8%"
+          ]
+        },
+        "1": {
+          "x4code": "(94-PU-240,ENR=0.030)",
+          "freetext": [
+            "  3.0+/-0.5%"
+          ]
+        },
+        "2": {
+          "x4code": "(94-PU-241,ENR=0.001)",
+          "freetext": [
+            "  0.1+/-0.1%"
+          ]
+        }
+      }
+    }
+  }
+}

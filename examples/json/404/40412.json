@@ -1,0 +1,314 @@
+{
+  "title": "Measurement Of Alpha And The 235U And 239Pu Fission And Capture Cross Sections For 10-80 Kev Neutrons",
+  "references": [
+    {
+      "x4code": "(J,AE,38,82,1975)",
+      "publication year": "1975"
+    },
+    {
+      "x4code": "(J,SJA,38,105,1975)",
+      "publication year": "1975"
+    },
+    {
+      "x4code": "(R,FEI-274,1971)",
+      "publication year": "1971"
+    },
+    {
+      "x4code": "(R,INDC(CCP)-21,1972)",
+      "publication year": "1972"
+    },
+    {
+      "x4code": "(C,71KIEV,1,293,1971)",
+      "publication year": "1971"
+    },
+    {
+      "x4code": "(C,71KIEV,1,301,1971)",
+      "publication year": "1971"
+    },
+    {
+      "x4code": "(R,FEI-290,1972)",
+      "publication year": "1972"
+    },
+    {
+      "x4code": "(J,AE,32,85,1972)",
+      "publication year": "1972"
+    },
+    {
+      "x4code": "(J,SJA,32,95,1972)",
+      "publication year": "1972"
+    },
+    {
+      "x4code": "(R,YK-15,12,1974)",
+      "publication year": "1974"
+    },
+    {
+      "x4code": "(R,INDC(CCP)-57,12,1974)",
+      "publication year": "1974"
+    },
+    {
+      "x4code": "(CCP)",
+      "publication year": "CCP"
+    }
+  ],
+  "authors": [
+    {
+      "name": "V.N.Kononov"
+    },
+    {
+      "name": "E.D.Poletaev"
+    },
+    {
+      "name": "B.D.Yurlov"
+    },
+    {
+      "name": "Yu.S.Prokopets"
+    },
+    {
+      "name": "A.A.Metlev"
+    },
+    {
+      "name": "Yu.Ya.Stavisskiy"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "4RUSFEI"
+    }
+  ],
+  "#doi": [
+    "10.1007/BF01208866",
+    "10.1007/BF01261042"
+  ],
+  "facilities": [
+    {
+      "type": "VDG",
+      "x4code": "4RUSFEI"
+    }
+  ],
+  "entry_number": "40412",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-235(N,ABS),,ALF)",
+        "target": "92-U-235",
+        "process": "N,ABS",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "ALF",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": [
+          " ALF=  Capture-to-fission  CS",
+          "ratio for U-235 in the energy range from 10keV to 1MeV"
+        ]
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG,,AV)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(92-U-235(N,G)92-U-236,,SIG,,AV)",
+        "target": "92-U-235",
+        "process": "N,G",
+        "sf4": "92-U-236",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(94-PU-239(N,ABS),,ALF)",
+        "target": "94-PU-239",
+        "process": "N,ABS",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "ALF",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": [
+          " Capture/Fission cross section",
+          "ratio for Pu-239 in the energy range"
+        ]
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG,,AV)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(94-PU-239(N,G)94-PU-240,,SIG,,AV)",
+        "target": "94-PU-239",
+        "process": "N,G",
+        "sf4": "94-PU-240",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "((94-PU-239(N,F),,SIG,,AV)/(92-U-235(N,F),,SIG,,AV))",
+        "freetext": [
+          ""
+        ]
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Correction for isotopic impurities,correction for",
+            "neutron multiplication in the samples, correction for",
+            "energy dependence nu-bar, correction for multiple",
+            "neutron scattering and resonance self-shielding."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(STANK)",
+          "freetext": [
+            " Large (400. l) liquid scintillation detector",
+            "       loaded with cadmium"
+          ]
+        },
+        "1": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            "   Fast ionization chamber with Cf-252."
+          ]
+        },
+        "2": {
+          "x4code": "(NAICR)",
+          "freetext": [
+            "  NaI(Tl) Crystal of 150x80 mm size detector.",
+            " Amplitude resolution about 13 % at E-gamma=478 keV,",
+            " time resolution 8ns at E-gamma 420.-540. keV."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG,4RUSFEI"
+          ],
+          "freetext": [
+            "  FEI pulsed Van-de-Graaff accelerator.",
+            " Pulse duration 22ns, frequency 300.kHz."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            "    Proton-Lithium-7",
+            "Metal lithium targets were used"
+          ]
+        },
+        "1": {
+          "x4code": "(P-T)",
+          "freetext": [
+            "      Proton-tritium, standard tritium-titanium",
+            "           targets were used"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            "     Time-of-flight method with resolution 18",
+            "nsec/m for neutron energy range from 10 keV to 80 keV",
+            "And energy resolution from 10 keV to 30 keV",
+            "For neutron energy range from 100 keV to 1 MeV",
+            "at working on monoenergetic neutrons.",
+            " Flight path 1.18 m."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Measurement of the capture-to-fission cross-section",
+            "ratios (ALFA) was absolute",
+            "The fission cross-sections have been measured using",
+            "energy dependence of B-10(n,alpha-gamma) reaction as",
+            "given by Sowerby M.G. et al, 70HELSINKI,1,161 and",
+            "Macklin P.L. et al, Phys.Rev., 165, 1147, 1968.",
+            "Normalization of fission cross-section was made over",
+            "energy region 30-40 keV to evaluated data by Sowerby",
+            "et al, Ann. Of Sci. and Eng., V1,No.718,1974."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Four metal Pu-239 discs of 40 mm diameter, 2.9E-03",
+            " nuclei/b thickness.  Total weight 14.5 g.",
+            " Pu-240 content in the sample - 0.2%.",
+            "Triuranium octoxide U3O8 (90.3 percents of U-235)",
+            "Sample of 4.1E-3 U-235-nuclei/b thickness in aluminum",
+            "shell of 40 mm Diameter and 0.5mm wall thickness.",
+            "U3O8 weight - 24.4g.",
+            " Background measurements equivalent scattering samples",
+            " of carbon and lead were used"
+          ]
+        }
+      }
+    }
+  }
+}

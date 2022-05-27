@@ -1,0 +1,263 @@
+{
+  "title": "Cross-Section Measurements In The Intermediate-  Energy Standard Neutron Field",
+  "references": [
+    {
+      "x4code": "(C,88MITO,,1033,1988)",
+      "publication year": "1988"
+    }
+  ],
+  "authors": [
+    {
+      "name": "G.P.Lamaze"
+    },
+    {
+      "name": "C.M.Eisenhauer"
+    },
+    {
+      "name": "J.A.Grundl"
+    },
+    {
+      "name": "E.D.Mcgarry"
+    },
+    {
+      "name": "F.J.Schima"
+    },
+    {
+      "name": "V.Spiegel"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USANBS"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "REAC",
+      "x4code": "1USANBS"
+    }
+  ],
+  "entry_number": "13153",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(49-IN-115(N,INL)49-IN-115-M,,SIG,,FST)",
+        "target": "49-IN-115",
+        "process": "N,INL",
+        "sf4": "49-IN-115-M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FST",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,FST)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FST",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(11-NA-23(N,G)11-NA-24,,SIG,,FST)",
+        "target": "11-NA-23",
+        "process": "N,G",
+        "sf4": "11-NA-24",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FST",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(21-SC-45(N,G)21-SC-46,,SIG,,FST)",
+        "target": "21-SC-45",
+        "process": "N,G",
+        "sf4": "21-SC-46",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FST",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(47-AG-109(N,G)47-AG-110-M,,SIG,,FST)",
+        "target": "47-AG-109",
+        "process": "N,G",
+        "sf4": "47-AG-110-M",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FST",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(27-CO-59(N,G)27-CO-60,,SIG,,FST)",
+        "target": "27-CO-59",
+        "process": "N,G",
+        "sf4": "27-CO-60",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FST",
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(GE-IN)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Contributions to total data uncertainty of 3.0%",
+            " are uncertainties:"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " .Cf source strength 1.1%"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " .Distance measurement 0.6%,"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " .235U cross section ratio 1.6%"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-4)",
+          "freetext": [
+            " .235U scattering 0.6%"
+          ]
+        },
+        "5": {
+          "x4code": "(ERR-5)",
+          "freetext": [
+            " .Fluence transfer statistics 0.9%"
+          ]
+        },
+        "6": {
+          "x4code": "(ERR-6)",
+          "freetext": [
+            " .Extrapolation to zero thickness 1.0%"
+          ]
+        },
+        "7": {
+          "x4code": "(ERR-7)",
+          "freetext": [
+            " .Neutron background 0.3%"
+          ]
+        },
+        "8": {
+          "x4code": "(ERR-8)",
+          "freetext": [
+            " .Gamma counter efficiency 1.0%"
+          ]
+        },
+        "9": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " .Activation statistics 0.6%"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "REAC,1USANBS"
+          ],
+          "freetext": [
+            " NBS 20 MW research reactor + U235 disks"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Fission spectrum, 235U"
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "ISNF spectrum, resembles fast reactor spectrum, but",
+            " has less complex structure. Median energy = 0.58 MeV.",
+            " 98% of fluence between 1.2 keV and 5.6 MeV."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "252Cf/235U ratio for 140Ba-140La count rate is 0.772,",
+            " which gives the FLUENCE transfer"
+          ]
+        }
+      }
+    }
+  }
+}

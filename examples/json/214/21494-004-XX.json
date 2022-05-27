@@ -1,0 +1,178 @@
+{
+  "id": "21494-004-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " 2200 m/sec value."
+    ]
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-8)",
+          "freetext": [
+            "  Error due to the hardening of neutron spectrum",
+            "         by captive in hardening materials"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-9)",
+          "freetext": [
+            "  Error due to beam non-uniformity"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-10)",
+          "freetext": [
+            " Error due to uncertainty of neutron spectrum"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Statistical error"
+          ]
+        }
+      }
+    },
+    "FLAG": {
+      "XX": {
+        "(2.)": {
+          "x4code": "(2.)",
+          "freetext": [
+            " Data from measurement with extracted beam of",
+            " the thermal column."
+          ]
+        },
+        "(3.)": {
+          "x4code": "(3.)",
+          "freetext": [
+            " Data from measurement within the thermal",
+            " column."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG)"
+          ],
+          "freetext": [
+            " 2200 m/sec value 577 b."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN",
+      "MONIT",
+      "ERR-5",
+      "ERR-6",
+      "ERR-7",
+      "ERR-8",
+      "ERR-9",
+      "ERR-10",
+      "ERR-11",
+      "ERR-12",
+      "ERR-13",
+      "ERR-T",
+      "ERR-S"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        0.0253
+      ],
+      "1": [
+        577.0
+      ],
+      "2": [
+        0.5
+      ],
+      "3": [
+        0.4
+      ],
+      "4": [
+        0.4
+      ],
+      "5": [
+        0.1
+      ],
+      "6": [
+        0.1
+      ],
+      "7": [
+        1.0
+      ],
+      "8": [
+        0.5
+      ],
+      "9": [
+        0.5
+      ],
+      "10": [
+        1.0
+      ],
+      "11": [
+        1.8
+      ],
+      "12": [
+        0.5
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "ERR-T",
+      "FLAG"
+    ],
+    "units": [
+      "B",
+      "B",
+      "NO-DIM"
+    ],
+    "data": {
+      "0": [
+        713.0,
+        737.0
+      ],
+      "1": [
+        15.0,
+        17.0
+      ],
+      "2": [
+        2.0,
+        3.0
+      ]
+    }
+  }
+}

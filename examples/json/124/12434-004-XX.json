@@ -1,0 +1,36 @@
+{
+  "id": "12434-004-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG,,,DERIV)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": "DERIV",
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "B"
+    ],
+    "data": {
+      "0": [
+        2.53e-08
+      ],
+      "1": [
+        680.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "title": "-Measurement Of The Fission Cross Sections And Number  Of Prompt Neutrons Emitted During Fission.-",
+  "references": [
+    {
+      "x4code": "(C,58GENEVA,16,106,195809)",
+      "publication year": "1958"
+    }
+  ],
+  "authors": [
+    {
+      "name": "P.Billaud"
+    },
+    {
+      "name": "C.Clair"
+    },
+    {
+      "name": "M.Gaudin"
+    },
+    {
+      "name": "R.Genin"
+    },
+    {
+      "name": "R.Joly"
+    },
+    {
+      "name": "J.L.Leroy"
+    },
+    {
+      "name": "A.Michaudon"
+    },
+    {
+      "name": "J.Ouvry"
+    },
+    {
+      "name": "C.Signarbieux"
+    },
+    {
+      "name": "G.Vendryes"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2FR SAC"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "SPECC",
+      "x4code": "2FR SAC"
+    },
+    {
+      "x4code": "SELVE"
+    }
+  ],
+  "entry_number": "21455",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            " Fission chamber consisting of 4 ionization",
+            " chambers."
+          ]
+        },
+        "1": {
+          "x4code": "(IOCH)",
+          "freetext": [
+            " Ionization chamber with a B-10 layer to",
+            " monitor the incident neutron flux."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "SPECC,2FR SAC"
+          ],
+          "freetext": [
+            " Crystal spectrometer."
+          ]
+        },
+        "1": {
+          "x4code": [
+            "SPECC,2FR SAC"
+          ],
+          "freetext": [
+            " Coarse mechanical selector to eliminate",
+            " higher order Bragg diffractions."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".No details given."
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(FF)",
+          "freetext": [
+            " Fission fragments."
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "I",
+            "ent": null,
+            "author": "P.Hubert+",
+            "ref": "J,JPR,19,79,1958"
+          },
+          "freetext": [
+            "",
+            "#doi.org/10.1051/jphysrad:0195800190107900",
+            " Mechanical selector details."
+          ]
+        },
+        "1": {
+          "x4code": {
+            "type": "O",
+            "ent": "21452001",
+            "author": "P.Billaud+",
+            "ref": "C,58GENEVA,16,106,1958"
+          },
+          "freetext": [
+            "",
+            " U-238 fis. CS in Entry 21452"
+          ]
+        },
+        "2": {
+          "x4code": {
+            "type": "O",
+            "ent": "21453001",
+            "author": "J.Leroy",
+            "ref": "J,JPR,21,617,1960"
+          },
+          "freetext": [
+            "",
+            " NU data of P.Billaud+,C,58GENEVA,16,106,1958 are",
+            " superseded in J.Leroy,J,JPR,21,617,1960, Entry 21453 :",
+            "Subent 002 - U-238, data the same,",
+            "       003 - Th-232 ."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".In each ionization chamber a deposit of 1200 mg,",
+            " 0.8 mg/cm*cm thick, obtained by painting of nitrate",
+            " onto thin aluminum  sheets and calcining."
+          ]
+        }
+      }
+    }
+  }
+}

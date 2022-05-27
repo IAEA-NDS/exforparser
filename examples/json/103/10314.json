@@ -1,0 +1,132 @@
+{
+  "title": "Absolute Measurements Of 235U And 239Pu Fission  Cross-Sections With Photoneutron Sources",
+  "references": [
+    {
+      "x4code": "(J,ANE,5,569,1978)",
+      "publication year": "1978"
+    }
+  ],
+  "authors": [
+    {
+      "name": "M.C.Davis"
+    },
+    {
+      "name": "G.F.Knoll"
+    },
+    {
+      "name": "J.C.Robertson"
+    },
+    {
+      "name": "D.M.Gilliam"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USAMHG"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "10314",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": [
+          ""
+        ]
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Corrected for",
+            " - fragment emission anisotropy",
+            " - angular distribution normalization to lab.",
+            " - D(g,n) reaction in solution",
+            " - parasitic absorption",
+            " - leakage",
+            " - scattering in Pt backings",
+            " - scattering in foil holder (239Pu only)",
+            " - scattering in other structures",
+            " - foil impurities",
+            " - energy spectrum."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(TRD)",
+          "freetext": [
+            " Pair of limited solid angle track-etch detectors"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(PHOTO)",
+          "freetext": [
+            " Photoneutron sources: Na-Be (964 keV),",
+            " La-Be (770 keV), Na-D (265 keV), and Ga-D (140 keV)."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(MANGB)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Efficiency of manganese bath determined relative",
+            " to secondary national standard source NBS-II."
+          ]
+        }
+      }
+    }
+  }
+}

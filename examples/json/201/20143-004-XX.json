@@ -1,0 +1,163 @@
+{
+  "id": "20143-004-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " The 2200 m/s fission cross-sections."
+    ]
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total standard error 0.45% including:"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Statistical error"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " uncertainty in number of 239Pu atoms"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " uncertainty in number of  10B atoms"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " uncertainty in ratio of efficiencies for alpha-",
+            "particles of B and fission fragments"
+          ]
+        },
+        "5": {
+          "x4code": "(ERR-4)",
+          "freetext": [
+            " uncertainty in neutron velocity calibration",
+            " and MONIT-ERR (see Subent 001)."
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(FF)",
+          "freetext": [
+            "       Fission fragments."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Deposited on gold coated quartz disks,",
+            " Pu-239 was deposited as Pu-acetate by electrospraying.",
+            " Isotopic composition in per-cent,",
+            "  Pu-239   99.979, Pu-240   0.02, Pu-241   0.001,",
+            " in Pu-acetate-samples (TP442-1 and TP442-3).",
+            " The amounts of U-235 and Pu-239 on the foils were",
+            " determined from precise low-geometry alpha-counting.",
+            " The neutron induced fission rates were checked as a",
+            " relative control.",
+            " Weights of Pu-samples (weights in micro-g Pu-239) are",
+            " 267.72 +- 0.43 (sample TP442-1) and 1010.40 +- 1.62",
+            " (sample TP442-3)."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.0253
+      ],
+      "1": [
+        3835.0
+      ],
+      "2": [
+        5.0
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T",
+      "ERR-S",
+      "ERR-1",
+      "ERR-2",
+      "ERR-3",
+      "ERR-4"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        2.53e-08
+      ],
+      "1": [
+        741.9
+      ],
+      "2": [
+        3.4
+      ],
+      "3": [
+        0.2
+      ],
+      "4": [
+        0.16
+      ],
+      "5": [
+        0.26
+      ],
+      "6": [
+        0.15
+      ],
+      "7": [
+        0.15
+      ]
+    }
+  }
+}

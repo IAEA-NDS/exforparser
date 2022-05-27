@@ -1,0 +1,100 @@
+{
+  "id": "11791-005-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(94-PU-239(N,F),,SIG)"
+          ],
+          "freetext": [
+            "",
+            " NORMALIZED TO PU-239 FISSION = 430 B AT",
+            " 0.10 EV."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM",
+      "MONIT"
+    ],
+    "units": [
+      "EV",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.1
+      ],
+      "1": [
+        430.0
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        2.53e-09,
+        2.69e-09,
+        2.86e-09,
+        3.05e-09,
+        3.26e-09,
+        3.49e-09,
+        3.75e-09,
+        4.04e-09,
+        4.36e-09,
+        4.73e-09
+      ],
+      "1": [
+        2034.0,
+        1953.0,
+        1930.0,
+        1856.0,
+        1814.0,
+        1725.0,
+        1744.0,
+        1682.0,
+        1614.0,
+        1533.0
+      ],
+      "2": [
+        4.0,
+        3.2,
+        2.6,
+        2.2,
+        1.8,
+        1.6,
+        1.4,
+        1.2,
+        1.1,
+        1.0
+      ]
+    }
+  }
+}

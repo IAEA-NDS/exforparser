@@ -1,0 +1,128 @@
+{
+  "id": "30607-003-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            "  The errors consist of following, (in %)",
+            " -----------------------------------------------------",
+            " Random error     * Angle   =   25 deg   50 and 75 deg",
+            " -----------------------------------------------------",
+            ".Charact.gamma-ray measurem't    1.4   *     1.4",
+            ".Sample target distance          1.5   *     1.5",
+            ".Correct.of g.Self-absorption    0.4   *     0.4",
+            ".Background from building        1.    *     1.",
+            ".Average neutron energy          0.5   *     1.",
+            ".Influence of target alignment   1.    *     2.",
+            "           Sum  =                2.6   *     3.2",
+            " -----------------------------------------------------",
+            " Systematic error * Angle   =    25 deg  50 and 75 deg",
+            " -----------------------------------------------------",
+            ".Ang.div.of neutron beam         2.    *     3.",
+            ".Correct.of scattering           0.5   *     0.5",
+            ".Geometrical correct.of sample",
+            "  and its holder                 1.    *     1",
+            ".Background                      0.5   *     0.5",
+            ".Monitor cross-section           3.8   *     3.8",
+            " (see subentry .002)",
+            "           Sum  =                4.5   *     5.0",
+            " -----------------------------------------------------",
+            " Total error(%.)=5.2 (at 25deg) and 5.9(at 50,75deg)",
+            " -----------------------------------------------------"
+          ]
+        }
+      }
+    },
+    "MONIT-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": null,
+            "ent": "30607002",
+            "author": "CHEN YING+",
+            "ref": "J,CNP,3,(1),52,198102"
+          },
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-197(N,G)79-AU-198,,SIG)"
+          ],
+          "freetext": [
+            " at 462, and 991 keV."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-ERR",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "KEV",
+      "PER-CENT",
+      "MB",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        131.0,
+        266.0,
+        405.0,
+        443.0,
+        683.0,
+        903.0
+      ],
+      "1": [
+        1.0,
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.5
+      ],
+      "2": [
+        284.0,
+        227.0,
+        164.1,
+        151.2,
+        101.3,
+        84.9
+      ],
+      "3": [
+        17.0,
+        13.0,
+        8.5,
+        8.9,
+        6.0,
+        4.4
+      ]
+    }
+  }
+}

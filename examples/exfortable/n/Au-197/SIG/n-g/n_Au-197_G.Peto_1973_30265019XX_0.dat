@@ -1,0 +1,12 @@
+# entry       : 30265 
+# subentry    : 019 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG,,SPA) 
+# year        : 1973 
+# author      : G.Peto 
+# institute   : 3HUNKOS 
+# reference   : (J,AHP,33,363,1973) 
+# facilitie   : None
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
+      4.50000E+00      0.00000E+00      1.30000E+02      2.00000E+01       # Lab                   
+      4.50000E+00      0.00000E+00      1.29000E+02      1.40000E+01       # Lab                   

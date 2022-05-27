@@ -1,0 +1,87 @@
+{
+  "id": "11380-013-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            "      TIME-OF-FLIGHT"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(47-AG-0(N,G),,SIG)"
+          ],
+          "freetext": [
+            "",
+            " BASED ON SILVER CAPTURE=951MB."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM",
+      "MONIT"
+    ],
+    "units": [
+      "MEV",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        30.0
+      ],
+      "1": [
+        951.0
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR",
+      "MONIT"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "PER-CENT",
+      "MB"
+    ],
+    "data": {
+      "0": [
+        0.03
+      ],
+      "1": [
+        0.513
+      ],
+      "2": [
+        20.0
+      ],
+      "3": [
+        951.0
+      ]
+    }
+  }
+}

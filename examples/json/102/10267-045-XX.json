@@ -1,0 +1,52 @@
+{
+  "id": "10267-045-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " CO MODE+OR MODE"
+    ]
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "KEV",
+      "B"
+    ],
+    "data": {
+      "0": [
+        6.87,
+        8.87,
+        11.5,
+        14.8,
+        19.1,
+        24.7,
+        31.9,
+        41.2
+      ],
+      "1": [
+        1.56,
+        1.24,
+        1.08,
+        0.88,
+        0.76,
+        0.63,
+        0.57,
+        0.5
+      ]
+    }
+  }
+}

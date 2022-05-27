@@ -1,0 +1,163 @@
+{
+  "id": "40487-003-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Following sources are considered in addition",
+            " to the counting statistics and 10B(n,a) shape:"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Normalization                           (4.56%)"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-2,,6.1)",
+          "freetext": [
+            " Background (<5.50% below the region",
+            " covered by the background filter, otherwise <6.1%)"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-3,,4.8)",
+          "freetext": [
+            " 10B(n,a) statistics and background (<4.8%)"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(REAC)",
+          "freetext": [
+            " Subcritical booster pulse mode (SBP)"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        4.56
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0,
+        15.0,
+        20.0,
+        30.0,
+        40.0,
+        50.0,
+        60.0,
+        70.0,
+        80.0,
+        90.0
+      ],
+      "1": [
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0,
+        15.0,
+        20.0,
+        30.0,
+        40.0,
+        50.0,
+        60.0,
+        70.0,
+        80.0,
+        90.0,
+        100.0
+      ],
+      "2": [
+        3.034,
+        2.371,
+        2.206,
+        1.997,
+        2.202,
+        2.243,
+        1.876,
+        1.719,
+        1.655,
+        1.597,
+        1.568,
+        1.519,
+        1.496,
+        1.459,
+        1.503,
+        1.487,
+        1.506
+      ],
+      "3": [
+        0.204,
+        0.162,
+        0.151,
+        0.134,
+        0.154,
+        0.153,
+        0.133,
+        0.126,
+        0.124,
+        0.122,
+        0.121,
+        0.124,
+        0.123,
+        0.125,
+        0.136,
+        0.143,
+        0.144
+      ]
+    }
+  }
+}

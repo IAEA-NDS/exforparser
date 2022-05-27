@@ -1,0 +1,160 @@
+{
+  "title": "-Fission Cross Section Of Pu-239 And U-235-.",
+  "references": [
+    {
+      "x4code": "(P,EANDC(E)-150U,116,7205)",
+      "publication year": "1972"
+    },
+    {
+      "x4code": "(P,EANDC(E)-140U,178,7108)",
+      "publication year": "1971"
+    },
+    {
+      "x4code": "(W,THEOBALD,7104)",
+      "publication year": "1971"
+    }
+  ],
+  "authors": [
+    {
+      "name": "J.P.Theobald"
+    },
+    {
+      "name": "J.A.Wartena"
+    },
+    {
+      "name": "F.Poortmans"
+    },
+    {
+      "name": "G.Lanzano"
+    },
+    {
+      "name": "M.Merla"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2ZZZGEL"
+    },
+    {
+      "x4code": "2BLGMOL"
+    },
+    {
+      "x4code": "2ITYCAT"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "LINAC"
+    }
+  ],
+  "entry_number": "20951",
+  "reactions": {
+    "002": {
+      "1": {
+        "x4code": "(94-PU-239(N,F),,SIG,,AV)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": [
+          " DOUBLE COINCIDENCE MEASURE-",
+          " MENTS."
+        ]
+      },
+      "2": {
+        "x4code": "(94-PU-239(N,F),,SIG,,AV)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "AV",
+        "sf9": null,
+        "freetext": [
+          " TRIPLE COINCIDENCE MEASURE-",
+          " MENTS."
+        ]
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".NO INFORMATION GIVEN."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "LINAC"
+          ],
+          "freetext": [
+            " GEEL LINEAR ACCELERATOR."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".NO INFORMATION GIVEN."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(COINC)",
+          "freetext": [
+            " DOUBLE AND TRIPLE COINCIDENCE FOR THE FISSION",
+            " NEUTRONS."
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".NO INFORMATION GIVEN."
+          ]
+        }
+      }
+    }
+  }
+}

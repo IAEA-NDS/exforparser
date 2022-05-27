@@ -1,0 +1,412 @@
+{
+  "title": " Neutron Capture Cross Section Of Rhodium,  Thulium, Iridium And Gold Between 0.5 And 3 Mev",
+  "references": [
+    {
+      "x4code": "(J,NSE,70,53,1979)",
+      "publication year": "1979"
+    },
+    {
+      "x4code": "(C,78HARWELL,,444,1978)",
+      "publication year": "1978"
+    },
+    {
+      "x4code": "(W,GRENIER,19780320)",
+      "publication year": "1978"
+    },
+    {
+      "x4code": "(C,77KIEV,2,175,1977)",
+      "publication year": "1977"
+    },
+    {
+      "x4code": "(P,INDC(FR)-28,58,1978)",
+      "publication year": "1978"
+    },
+    {
+      "x4code": "(P,NEANDC(E)-194,58,1978)",
+      "publication year": "1978"
+    },
+    {
+      "x4code": "(P,NEANDC(E)-181,45,1977)",
+      "publication year": "1977"
+    },
+    {
+      "x4code": "(C,78HARWELL,,859,1978)",
+      "publication year": "1978"
+    },
+    {
+      "x4code": "(J,NIM,153,493,1978)",
+      "publication year": "1978"
+    }
+  ],
+  "authors": [
+    {
+      "name": "S.Joly"
+    },
+    {
+      "name": "J.Voignier"
+    },
+    {
+      "name": "G.Grenier"
+    },
+    {
+      "name": "D.M.Drake"
+    },
+    {
+      "name": "L.Nilsson"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2FR BRC"
+    },
+    {
+      "x4code": "1USALAS"
+    },
+    {
+      "x4code": "2SWDUPP"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "VDG",
+      "x4code": "2FR BRC"
+    }
+  ],
+  "entry_number": "20787",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(45-RH-103(N,G)45-RH-104,,SIG)",
+        "target": "45-RH-103",
+        "process": "N,G",
+        "sf4": "45-RH-104",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(69-TM-169(N,G)69-TM-170,,SIG)",
+        "target": "69-TM-169",
+        "process": "N,G",
+        "sf4": "69-TM-170",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(77-IR-0(N,G),,SIG)",
+        "target": "77-IR-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(81-TL-0(N,G),,SIG)",
+        "target": "81-TL-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(81-TL-0(N,G),,SIG)",
+        "target": "81-TL-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(81-TL-203(N,G)81-TL-204,,SIG)",
+        "target": "81-TL-203",
+        "process": "N,G",
+        "sf4": "81-TL-204",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "(81-TL-205(N,G)81-TL-206,,SIG)",
+        "target": "81-TL-205",
+        "process": "N,G",
+        "sf4": "81-TL-206",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Gamma-ray spectra are unfolded and extrapolated to",
+            " zero energy with a computed gamma-ray distribution."
+          ]
+        }
+      }
+    },
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Neutron source anisotropy.",
+            ".Background.",
+            ".Spectrometer efficiency.",
+            ".Self-absorption gamma within the sample.",
+            ".Transmission of neutron.",
+            ".Self-absorption of neutrons.",
+            ".Multiple scattering of neutrons."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(LONGC)",
+          "freetext": [
+            " To measure neutron flux."
+          ]
+        },
+        "1": {
+          "x4code": "(NAICR)",
+          "freetext": [
+            " Spectrometer(NaI central crystal,surrounded by",
+            " a NaI, annulus) used in the anti-Compton and first",
+            " escape modes simultaneously (see REL-REF)."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Errors are added quadratically:"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Uncertainty in neutron source anisotropy"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Uncertainty in neutron transmission through",
+            "        the sample"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " Uncertainty in neutron attenuation in the",
+            "        sample"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-4)",
+          "freetext": [
+            " Uncertainty in neutron multiple scattering",
+            "        in the sample"
+          ]
+        },
+        "5": {
+          "x4code": "(ERR-5,,0.1)",
+          "freetext": [
+            " Uncertainty in neutron transmission",
+            "             through the air between the sample and",
+            "             the long counter"
+          ]
+        },
+        "6": {
+          "x4code": "(ERR-6)",
+          "freetext": [
+            " Uncertainty in Target-to-sample distance"
+          ]
+        },
+        "7": {
+          "x4code": "(ERR-7,,0.1)",
+          "freetext": [
+            " Uncertainty in sample mass"
+          ]
+        },
+        "8": {
+          "x4code": "(ERR-8,2.,4.)",
+          "freetext": [
+            " Uncertainty in long counter efficiency"
+          ]
+        },
+        "9": {
+          "x4code": "(ERR-9,,0.5)",
+          "freetext": [
+            " Uncertainty in target-to-long-counter",
+            "             distance"
+          ]
+        },
+        "10": {
+          "x4code": "(ERR-10)",
+          "freetext": [
+            " Uncertainty in average efficiency of the",
+            "        gamma-ray spectrometer"
+          ]
+        },
+        "11": {
+          "x4code": "(ERR-11,1.,10.)",
+          "freetext": [
+            " Uncertainty in extrapolation of the",
+            "                gamma-ray strength function"
+          ]
+        },
+        "12": {
+          "x4code": "(ERR-12,1.,5.)",
+          "freetext": [
+            " Uncertainty in level density"
+          ]
+        },
+        "13": {
+          "x4code": "(ERR-13,7.,18.)",
+          "freetext": [
+            " Uncertainty in relative error of the",
+            "                capture cross section"
+          ]
+        },
+        "14": {
+          "x4code": "(ERR-S,1.5,12.)",
+          "freetext": [
+            " Statistical error",
+            "      Error was from 7% at 0.5 MeV about 20% at 3 MeV."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG,2FR BRC"
+          ],
+          "freetext": [
+            " 4 MV pulsed proton accelerator."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            " Gave neutrons of 500 and 720 keV.",
+            " Pulsed width 1 to 1.5 nano-sec,with a repetition",
+            " rate of 1 MHz and a mean current of 4 micro-A."
+          ]
+        },
+        "1": {
+          "x4code": "(P-T)",
+          "freetext": [
+            " Gave neutrons above 1 MeV."
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "x4code": "(EN-RSL-HW)",
+          "freetext": [
+            " - neutron energy spread"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            " To correct data for gamma-ray background.",
+            ".Prompt gamma-ray spectrum. (see REL-REF)."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Disks 60 mm in diameter and 1.5-3 mm thick, made",
+            " of Rh-103,Tm-169,Au-197 and natural iridium.",
+            ".Chemical purities are meanly 99.99%.",
+            ".Tl-203 and Tl-205 samples were enriched up to 87%",
+            " and 96.4%, respectively"
+          ]
+        }
+      }
+    }
+  }
+}

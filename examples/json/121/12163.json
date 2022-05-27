@@ -1,0 +1,401 @@
+{
+  "title": "Neutron Capture Cross Sections And Resonance Parameters Of Rhenium From 0.01Ev To 30Kev.",
+  "references": [
+    {
+      "x4code": "(J,JNE,22,191,68)",
+      "publication year": "1968"
+    },
+    {
+      "x4code": "(R,GA-8189,6708)",
+      "publication year": "1967"
+    }
+  ],
+  "authors": [
+    {
+      "name": "S.J.Friesenhahn"
+    },
+    {
+      "name": "D.A.Gibbs"
+    },
+    {
+      "name": "E.Haddad"
+    },
+    {
+      "name": "F.H.Frohner"
+    },
+    {
+      "name": "W.M.Lopez"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USAGA"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "LINAC"
+    }
+  ],
+  "entry_number": "12163",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(75-RE-0(N,G),,SIG)",
+        "target": "75-RE-0",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(75-RE-0(N,EL)75-RE-0,POT,SIG)",
+        "target": "75-RE-0",
+        "process": "N,EL",
+        "sf4": "75-RE-0",
+        "residual": null,
+        "sf5": "POT",
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(75-RE-0(N,TOT),,SIG)",
+        "target": "75-RE-0",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(75-RE-0(N,TOT),,SIG)",
+        "target": "75-RE-0",
+        "process": "N,TOT",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(75-RE-185(N,G)75-RE-186,,SIG)",
+        "target": "75-RE-185",
+        "process": "N,G",
+        "sf4": "75-RE-186",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(75-RE-185(N,G)75-RE-186,,SIG)",
+        "target": "75-RE-185",
+        "process": "N,G",
+        "sf4": "75-RE-186",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(75-RE-185(N,G)75-RE-186,,SIG)",
+        "target": "75-RE-185",
+        "process": "N,G",
+        "sf4": "75-RE-186",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "(75-RE-187(N,G)75-RE-188,,SIG)",
+        "target": "75-RE-187",
+        "process": "N,G",
+        "sf4": "75-RE-188",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "010": {
+      "XX": {
+        "x4code": "(75-RE-187(N,G)75-RE-188,,SIG)",
+        "target": "75-RE-187",
+        "process": "N,G",
+        "sf4": "75-RE-188",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "011": {
+      "XX": {
+        "x4code": "(75-RE-187(N,G)75-RE-188,,SIG)",
+        "target": "75-RE-187",
+        "process": "N,G",
+        "sf4": "75-RE-188",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "012": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "013": {
+      "1": {
+        "x4code": "(75-RE-185(N,0),,EN)",
+        "target": "75-RE-185",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "EN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(75-RE-185(N,EL),,WID/RED,,2G)",
+        "target": "75-RE-185",
+        "process": "N,EL",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID/RED",
+        "sf7": null,
+        "sf8": "2G",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "014": {
+      "1": {
+        "x4code": "(75-RE-185(N,0),,EN)",
+        "target": "75-RE-185",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "EN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(75-RE-185(N,G),,WID)",
+        "target": "75-RE-185",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "3": {
+        "x4code": "(75-RE-185(N,EL),,WID,,2G)",
+        "target": "75-RE-185",
+        "process": "N,EL",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID",
+        "sf7": null,
+        "sf8": "2G",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "015": {
+      "1": {
+        "x4code": "(75-RE-187(N,0),,EN)",
+        "target": "75-RE-187",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "EN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(75-RE-187(N,EL),,WID/RED,,2G)",
+        "target": "75-RE-187",
+        "process": "N,EL",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID/RED",
+        "sf7": null,
+        "sf8": "2G",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "016": {
+      "1": {
+        "x4code": "(75-RE-187(N,0),,EN)",
+        "target": "75-RE-187",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "EN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(75-RE-187(N,G),,WID)",
+        "target": "75-RE-187",
+        "process": "N,G",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      },
+      "3": {
+        "x4code": "(75-RE-187(N,EL),,WID,,2G)",
+        "target": "75-RE-187",
+        "process": "N,EL",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "WID",
+        "sf7": null,
+        "sf8": "2G",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "017": {
+      "XX": {
+        "x4code": "(75-RE-185(N,0),,EN)",
+        "target": "75-RE-185",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "EN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "018": {
+      "XX": {
+        "x4code": "(75-RE-187(N,0),,EN)",
+        "target": "75-RE-187",
+        "process": "N,0",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "EN",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(SCIN)",
+          "freetext": [
+            " LARGE LIQUID SCINTILLATOR"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "LINAC"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  }
+}

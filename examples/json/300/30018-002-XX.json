@@ -1,0 +1,204 @@
+{
+  "id": "30018-002-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,RV)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "RV",
+    "sf9": null,
+    "freetext": [
+      "  data given is 1/V portion of",
+      " (n,gamma) cross-section assuming a resonance portion",
+      " of (1.70 Barn)/(wave-length in angstrom)"
+    ]
+  },
+  "measurement_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "After corrections to the experimental data the total",
+            "cross-section was found, to obtain the 1/V absorption",
+            "cross-section from this the following corrections were",
+            "applied",
+            "Spin dependent incoherent scattering taken=.5+-.26 Barn",
+            "thermal inelastic scattering=(.03+-.02)Lambda barn",
+            "contribution of resonance at 4.906eV (1.70)/Lambda barn"
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(BF3)",
+          "freetext": [
+            " bf3 counter of 35 mm diameter"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "REAC,CHOPS"
+          ],
+          "freetext": [
+            " chopper with curved slits"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(REAC)",
+          "freetext": [
+            " reactor, Cd collimator gave 2.5 x 2.5 cm beam"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            " time of flight, rotating speed of chopper was",
+            "      3115 +- 15 revs per minute",
+            "flight path was 3 meters, counter perpendiuclar to the",
+            "beam"
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(N)",
+          "freetext": [
+            " neutron"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Two Au foils of 99.99% purity were placed on",
+            "each other to form plate of 3x3 cm and  average",
+            "thickness of 0.757 grams/cm2"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX"
+    ],
+    "units": [
+      "MILLI-EV",
+      "MILLI-EV"
+    ],
+    "data": {
+      "0": [
+        1.1
+      ],
+      "1": [
+        2.5
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "WVE-LN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "ANGSTROM",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        5.68,
+        5.84,
+        6.0,
+        6.15,
+        6.31,
+        6.47,
+        6.63,
+        6.79,
+        6.94,
+        7.1,
+        7.26,
+        7.42,
+        7.58,
+        7.74,
+        7.89,
+        8.05,
+        8.21,
+        8.37,
+        8.53,
+        8.68,
+        8.84
+      ],
+      "1": [
+        310.0,
+        321.0,
+        327.0,
+        334.0,
+        344.0,
+        347.0,
+        359.0,
+        368.0,
+        383.0,
+        390.0,
+        395.0,
+        397.0,
+        412.0,
+        426.0,
+        435.0,
+        436.0,
+        453.0,
+        461.0,
+        473.0,
+        460.0,
+        472.0
+      ],
+      "2": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        4.0,
+        4.0,
+        4.0,
+        5.0,
+        5.0,
+        6.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0,
+        11.0
+      ]
+    }
+  }
+}

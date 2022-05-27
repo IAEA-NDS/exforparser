@@ -1,0 +1,61 @@
+{
+  "title": "Neutron-Induced Fission Cross Section Of Pu238.",
+  "references": [
+    {
+      "x4code": "(J,PR,162,1070,67)",
+      "publication year": "1967"
+    },
+    {
+      "x4code": "(C,68WASH,1,597,6803)",
+      "publication year": "1968"
+    }
+  ],
+  "authors": [
+    {
+      "name": "D.M.Barton"
+    },
+    {
+      "name": "P.G.Koontz"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USALAS"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "12490",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(94-PU-238(N,F),,SIG)",
+        "target": "94-PU-238",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {}
+}

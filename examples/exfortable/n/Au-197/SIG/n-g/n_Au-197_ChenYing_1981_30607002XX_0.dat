@@ -1,0 +1,14 @@
+# entry       : 30607 
+# subentry    : 002 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG) 
+# year        : 1981 
+# author      : Chen Ying 
+# institute   : 3CPRAEP 
+# reference   : (J,CNP,3,(1),52,1981) 
+# facilitie   : {'type': 'VDG', 'x4code': '3CPRAEP'}
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
+      4.62000E-01      5.00000E-07      1.49400E+02      0.00000E+00       # Lab                   
+      9.91000E-01      5.00000E-07      7.82000E+01      0.00000E+00       # Lab                   
+      1.19000E+00      5.00000E-07      7.74000E+01      0.00000E+00       # Lab                   
+      1.49000E+00      5.00000E-07      6.70000E+01      0.00000E+00       # Lab                   

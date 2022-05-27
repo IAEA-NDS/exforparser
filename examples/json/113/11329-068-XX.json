@@ -1,0 +1,52 @@
+{
+  "id": "11329-068-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.084,
+        0.094,
+        0.1,
+        0.107,
+        0.115,
+        0.123,
+        0.138,
+        0.148,
+        0.16
+      ],
+      "1": [
+        0.275,
+        0.26,
+        0.275,
+        0.246,
+        0.246,
+        0.24,
+        0.238,
+        0.237,
+        0.24
+      ]
+    }
+  }
+}

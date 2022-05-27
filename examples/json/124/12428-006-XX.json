@@ -1,0 +1,104 @@
+{
+  "id": "12428-006-XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "From measurement of alpha and absorption in",
+            "Maxwellian spectrum. Maxwellian sigma=840.6+-8.4b,",
+            "corrected to 2200 m/sec value using Westcott",
+            " (g+rs)=(1.077+-0.0435)"
+          ]
+        }
+      }
+    },
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "The cross-section values include a correction of 0.6%",
+            "to allow for the flux depression in the plutonium",
+            "sample."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            "  Incomplete description."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " The uncertainties in the mass spectrometer",
+            "analysis."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Samples of PuO2 (~1 mg/cm2) containing approximately",
+            "10% of 242Pu."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        0.5
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": {
+      "0": [
+        2.53e-08
+      ],
+      "1": [
+        751.0
+      ],
+      "2": [
+        10.0
+      ]
+    }
+  }
+}

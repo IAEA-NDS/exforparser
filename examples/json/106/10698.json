@@ -1,0 +1,157 @@
+{
+  "title": "Fission Cross Sections Of 235U And 239Pu Averaged Over  252Cf Neutron Spectrum.",
+  "references": [
+    {
+      "x4code": "(J,ANE,5,583,1978)",
+      "publication year": "1978"
+    },
+    {
+      "x4code": "(J,ANS,26,595,197706)",
+      "publication year": "1977"
+    }
+  ],
+  "authors": [
+    {
+      "name": "M.C.Davis"
+    },
+    {
+      "name": "G.F.Knoll"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USAMHG"
+    }
+  ],
+  "#doi": [],
+  "entry_number": "10698",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(92-U-235(N,F),,SIG,,FIS)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(94-PU-239(N,F),,SIG,,FIS)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "FIS",
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Corrected for:",
+            ".counting efficiency calculated from geometric factors,",
+            ".anisotropy of fission fragment yield,",
+            ".nonuniformity of target material deposit,",
+            ".spatial distribution in neutron production.",
+            "Neutron calibration by the manganese bath technique",
+            " required corrections with residual errors for:",
+            ".absorption in the source dry well and in the source",
+            " itself (0.6+-0.2%),",
+            ".fast capture by 32S(n,p) and 16O(n,alpha) reactions",
+            " (0.7+-0.2%), and",
+            ".neutron streaming and penetration (0.2+-0.1%)."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(TRD)",
+          "freetext": [
+            " Latent tracks etched in films."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total uncertainty is the sum in quadrature of",
+            " statistical and systematic uncertainties."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Statistical uncertainty."
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-SYS)",
+          "freetext": [
+            " Systematic uncertainty.",
+            "See Table 3 in main reference for a list of",
+            " contributions to uncertainties."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(CF252)",
+          "freetext": [
+            " Spontaneous fission californium 252."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(MANGB)",
+          "freetext": [
+            " Manganese bath technique"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "252Cf fission rate determined relative to Standard",
+            " Ra-Be photoneutron source, NBS-II."
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(FF)",
+          "freetext": [
+            " Fission fragments"
+          ]
+        }
+      }
+    }
+  }
+}

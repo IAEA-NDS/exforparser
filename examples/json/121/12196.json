@@ -1,0 +1,85 @@
+{
+  "title": "A High Efficiency Detector For Neutron Capture Cross Section Measurements.",
+  "references": [
+    {
+      "x4code": "(J,NIM,31,125,64)",
+      "publication year": "1964"
+    },
+    {
+      "x4code": "(R,GA-6832,65)",
+      "publication year": "1965"
+    }
+  ],
+  "authors": [
+    {
+      "name": "E.Haddad"
+    },
+    {
+      "name": "R.W.Walton"
+    },
+    {
+      "name": "S.J.Friesenhahn"
+    },
+    {
+      "name": "W.M.Lopez"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USAGA"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "LINAC"
+    }
+  ],
+  "entry_number": "12196",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "LINAC"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  }
+}

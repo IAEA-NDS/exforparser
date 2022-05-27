@@ -1,0 +1,108 @@
+{
+  "id": "20868-012-1",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-198-G,3880.MIN,DG,412.,0.96)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "FLAG": {
+      "XX": {
+        "(1.)": {
+          "x4code": "(1.)",
+          "freetext": [
+            " detector without surrounding by B-10 sphere"
+          ]
+        },
+        "(2.)": {
+          "x4code": "(2.)",
+          "freetext": [
+            " detector with surrounding by 2.2 g/cm2 B-10 sphere"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Natural gold sphere 1 cm in diameter."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-RSL"
+    ],
+    "units": [
+      "KEV"
+    ],
+    "data": {
+      "0": [
+        1.0
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "FLAG",
+      "DATA      1",
+      "DATA-ERR  1"
+    ],
+    "units": [
+      "KEV",
+      "NO-DIM",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        21.0,
+        21.0,
+        22.0,
+        22.0
+      ],
+      [
+        1.0,
+        2.0,
+        1.0,
+        2.0
+      ],
+      [
+        null,
+        null,
+        655.0,
+        380.0
+      ],
+      [
+        null,
+        null,
+        40.0,
+        25.0
+      ]
+    ]
+  }
+}

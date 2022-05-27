@@ -1,0 +1,143 @@
+{
+  "id": "11675-026-XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-198,2.70D)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Uncertainty in measured thermal cross section"
+          ]
+        }
+      }
+    },
+    "MONIT-REF": {
+      "XX": {
+        "(MONIT2)": {
+          "x4code": null,
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "(MONIT2)": {
+          "x4code": [
+            "(79-AU-197(N,G)79-AU-198,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "MONIT2",
+      "MONIT2-ERR",
+      "ERR-1"
+    ],
+    "units": [
+      "B",
+      "B",
+      "PER-CENT"
+    ],
+    "data": {
+      "0": [
+        99.0
+      ],
+      "1": [
+        2.0
+      ],
+      "2": [
+        7.0
+      ]
+    }
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "B"
+    ],
+    "data": {
+      "0": [
+        0.145,
+        0.2,
+        0.245,
+        0.305,
+        0.4,
+        0.445,
+        0.495,
+        0.52,
+        0.55,
+        0.595,
+        0.8,
+        1.0,
+        1.19,
+        1.4,
+        1.4,
+        1.4,
+        1.8,
+        2.2,
+        2.55,
+        4.8,
+        5.4
+      ],
+      "1": [
+        0.32,
+        0.278,
+        0.266,
+        0.255,
+        0.195,
+        0.158,
+        0.145,
+        0.16,
+        0.15,
+        0.125,
+        0.105,
+        0.09,
+        0.096,
+        0.082,
+        0.096,
+        0.09,
+        0.067,
+        0.047,
+        0.0445,
+        0.0145,
+        0.0155
+      ]
+    }
+  }
+}
