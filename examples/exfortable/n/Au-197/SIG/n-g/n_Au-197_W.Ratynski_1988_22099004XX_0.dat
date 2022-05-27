@@ -6,7 +6,7 @@
 # author      : W.Ratynski 
 # institute   : 2GERKFK 
 # reference   : (J,PR/C,37,595,1988) 
-# facilitie   : {'type': 'VDG', 'x4code': '2GERKFK'}
+# facility    : {'type': 'VDG', 'x4code': '2GERKFK'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.00000E-02      0.00000E+00      1.20600E+03      1.80000E+01       # Lab                   
       1.50000E-02      0.00000E+00      9.04000E+02      1.30000E+01       # Lab                   

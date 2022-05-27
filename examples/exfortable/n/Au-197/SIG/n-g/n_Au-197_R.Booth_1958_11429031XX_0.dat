@@ -6,6 +6,6 @@
 # author      : R.Booth 
 # institute   : 1USALRL 
 # reference   : (J,PR,112,226,1958) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.40000E-02      5.00000E-03      8.90000E+02      1.90000E+02       # Lab                   

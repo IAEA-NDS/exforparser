@@ -6,6 +6,6 @@
 # author      : V.P.Vertebnij 
 # institute   : 4UKRIJD 
 # reference   : (J,YK,,(1/36),32,1980) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.00000E-03      3.00000E-04      2.50000E+03      5.00000E+02       # Lab                   

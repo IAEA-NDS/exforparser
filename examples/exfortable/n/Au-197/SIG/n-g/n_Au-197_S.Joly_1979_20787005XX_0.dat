@@ -6,7 +6,7 @@
 # author      : S.Joly 
 # institute   : 2FR BRC 
 # reference   : (J,NSE,70,53,1979) 
-# facilitie   : {'type': 'VDG', 'x4code': '2FR BRC'}
+# facility    : {'type': 'VDG', 'x4code': '2FR BRC'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       5.20000E-01      8.00000E-02      1.30000E+02      0.00000E+00       # Lab                   
       7.20000E-01      8.00000E-02      1.00000E+02      0.00000E+00       # Lab                   

@@ -6,7 +6,7 @@
 # author      : G.A.Dorofeev 
 # institute   : 4RUSKUR 
 # reference   : (J,SJA,2,9,1957) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       3.00000E-02      0.00000E+00      1.79000E+03      1.10000E+02       # Lab                   
       2.50000E-01      0.00000E+00      1.58000E+03      1.00000E+02       # Lab                   

@@ -6,6 +6,6 @@
 # author      : J.D.Jenkins 
 # institute   : 1USAORL 
 # reference   : (J,ANS,14,381,7106) 
-# facilitie   : {'x4code': 'REAC'}
+# facility    : {'x4code': 'REAC'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.50000E+00      0.00000E+00      1.20000E+02      0.00000E+00       # Lab                   

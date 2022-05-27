@@ -6,7 +6,7 @@
 # author      : P.Billaud 
 # institute   : 2FR SAC 
 # reference   : (C,58GENEVA,16,106,195809) 
-# facilitie   : {'type': 'SPECC', 'x4code': '2FR SAC'}
+# facility    : {'type': 'SPECC', 'x4code': '2FR SAC'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       3.93240E-09      9.41710E-07      1.70270E+06      0.00000E+00       # Lab                   
       4.93310E-09      9.41710E-07      1.52160E+06      0.00000E+00       # Lab                   

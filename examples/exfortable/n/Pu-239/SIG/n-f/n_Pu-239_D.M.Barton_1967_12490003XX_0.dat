@@ -6,7 +6,7 @@
 # author      : D.M.Barton 
 # institute   : 1USALAS 
 # reference   : (J,PR,162,1070,67) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
-      3.00000E+00      0.00000E+00      1.80000E+03      6.00000E+03       # Lab                   
-      1.49000E+01      0.00000E+00      2.56000E+03      6.00000E+03       # Lab                   
+      3.00000E+00      0.00000E+00      1.80000E+03      1.08000E+02       # Lab                   
+      1.49000E+01      0.00000E+00      2.56000E+03      1.53600E+02       # Lab                   

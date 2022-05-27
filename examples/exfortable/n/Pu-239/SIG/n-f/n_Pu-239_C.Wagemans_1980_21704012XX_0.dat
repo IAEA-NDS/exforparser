@@ -6,7 +6,7 @@
 # author      : C.Wagemans 
 # institute   : 2BLGMOL 
 # reference   : (J,ANE,7,495,1980) 
-# facilitie   : {'type': 'LINAC', 'x4code': '2ZZZGEL'}
+# facility    : {'type': 'LINAC', 'x4code': '2ZZZGEL'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       4.99630E-03      0.00000E+00      2.54430E+03      0.00000E+00       # Lab                   
       4.98350E-03      0.00000E+00      1.97940E+03      0.00000E+00       # Lab                   

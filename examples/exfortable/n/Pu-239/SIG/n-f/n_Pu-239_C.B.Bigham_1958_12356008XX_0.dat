@@ -6,6 +6,6 @@
 # author      : C.B.Bigham 
 # institute   : 1CANCRC 
 # reference   : (C,58GENEVA,16,125,195809) 
-# facilitie   : {'type': 'REAC', 'x4code': '1CANCRC'}
+# facility    : {'type': 'REAC', 'x4code': '1CANCRC'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.53000E-08      0.00000E+00      7.42800E+05      4.40000E+03       # Lab                   

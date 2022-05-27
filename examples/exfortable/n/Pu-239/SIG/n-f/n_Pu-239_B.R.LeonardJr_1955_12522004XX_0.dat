@@ -6,7 +6,7 @@
 # author      : B.R.Leonard Jr 
 # institute   : 1USAHAN 
 # reference   : (C,55GENEVA,4,193,55) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       5.00000E-09      0.00000E+00      1.69300E+06      2.10000E+04       # Lab                   
       2.25000E-08      0.00000E+00      7.32900E+05      8.70000E+03       # Lab                   

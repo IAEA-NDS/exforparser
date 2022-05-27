@@ -6,6 +6,6 @@
 # author      : K.Hirose 
 # institute   : 2JPNJAE 
 # reference   : (J,NST,50,188,2013) 
-# facilitie   : {'type': 'SYNCH', 'x4code': '2JPNJAE'}
+# facility    : {'type': 'SYNCH', 'x4code': '2JPNJAE'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.53000E-08      0.00000E+00      9.74000E+04      0.00000E+00       # Lab                   

@@ -6,7 +6,7 @@
 # author      : E.Fort 
 # institute   : 2FR CAD 
 # reference   : (C,75WASH,2,957,7503) 
-# facilitie   : {'x4code': 'VDG  '}
+# facility    : {'x4code': 'VDG  '}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.21300E-02      4.00000E-05      1.25700E+03      1.50250E+02       # Lab                   
       1.23800E-02      4.00000E-05      1.03820E+03      1.42680E+02       # Lab                   

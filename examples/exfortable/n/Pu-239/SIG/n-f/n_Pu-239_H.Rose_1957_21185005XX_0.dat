@@ -6,6 +6,6 @@
 # author      : H.Rose 
 # institute   : 2UK HAR 
 # reference   : (J,JNE,4,141,1957) 
-# facilitie   : {'type': 'REAC', 'x4code': '2UK HAR'}
+# facility    : {'type': 'REAC', 'x4code': '2UK HAR'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.00000E+00      0.00000E+00      1.79000E+03      4.00000E+01       # Lab                   

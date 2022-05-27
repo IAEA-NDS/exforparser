@@ -1,10 +1,10 @@
-EXFOR_ALL_PATH = "/Users/okumuras/Documents/nucleardata/EXFOR/X4all/"
+EXFOR_ALL_PATH = "/Users/sin/Documents/nucleardata/EXFOR/X4all/"
 INDEX_PICKEL = "pickle/entry.pickle"
 
 DICTIONARY_URL = "https://nds.iaea.org/nrdc/ndsx4/trans/dicts/"
 DICTIONARY_PATH = "dictionary/"
 
-OUT_PATH = "/Users/okumuras/Desktop/"
+OUT_PATH = "/Users/sin/Desktop/"
 
 
 import os

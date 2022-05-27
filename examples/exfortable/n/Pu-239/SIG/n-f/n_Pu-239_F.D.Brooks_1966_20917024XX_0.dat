@@ -6,7 +6,7 @@
 # author      : F.D.Brooks 
 # institute   : 2UK HAR 
 # reference   : (R,AERE-M-1709,196609) 
-# facilitie   : {'type': 'LINAC', 'x4code': '2UK HAR'}
+# facility    : {'type': 'LINAC', 'x4code': '2UK HAR'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.60200E-06      0.00000E+00      1.82700E+04      2.35000E+03       # Lab                   
       1.60700E-06      0.00000E+00      1.87600E+04      2.49000E+03       # Lab                   

@@ -6,7 +6,7 @@
 # author      : B.I.Fursov 
 # institute   : 4RUSFEI 
 # reference   : (J,JEL,17,257,1973) 
-# facilitie   : {'x4code': 'VDG'}
+# facility    : {'x4code': 'VDG'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.36190E+00      3.43000E-03      1.92150E+03      0.00000E+00       # Lab                   
       1.45660E+00      3.43000E-03      1.94000E+03      0.00000E+00       # Lab                   

@@ -6,6 +6,6 @@
 # author      : I.Garlea 
 # institute   : 3RUMPIT 
 # reference   : (J,RRP,26,643,1981) 
-# facilitie   : {'type': 'REAC', 'x4code': '3RUMPIT'}
+# facility    : {'type': 'REAC', 'x4code': '3RUMPIT'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       7.60000E-01      0.00000E+00      4.10300E+02      0.00000E+00       # Lab                   

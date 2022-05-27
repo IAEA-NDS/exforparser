@@ -6,6 +6,6 @@
 # author      : V.N.Kononov 
 # institute   : 4RUSFEI 
 # reference   : (J,SJA,5,1483,1958) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.40000E-02      0.00000E+00      9.54000E+02      5.00000E+00       # Lab                   

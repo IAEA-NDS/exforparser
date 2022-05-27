@@ -5,11 +5,11 @@ import plotly.express as px  # (version 4.7.0)
 import plotly.graph_objects as go
 
 
-# path = "/Users/okumuras/Desktop/exfortable/n/Au-197/SIG/n-g/"
-path = "/Users/okumuras/Desktop/exfortable/n/Pu-239/SIG/n-f/"
+# path = "/Users/sin/Desktop/exfortable/n/Au-197/SIG/n-g/"
+path = "/Users/sin/Desktop/exfortable/n/Pu-239/SIG/n-f/"
 exfiles = os.listdir(path)
-# libfile = "/Users/okumuras/Desktop/exfortable/n/n-Au197-MT102.tendl.2019.dat"
-libfile = "/Users/okumuras/Desktop/exfortable/n/n-Pu239-MT018.tendl.2019.dat"
+# libfile = "n-Au197-MT102.tendl.2019.dat"
+libfile = "n-Pu239-MT018.tendl.2019.dat"
 
 def create_exfordf(path, exfiles):
     dfs = []
@@ -79,7 +79,7 @@ fig = go.Figure()
 fig = go.Figure(
     layout=go.Layout(
         xaxis={
-            "title": "Incident energy [MeV]",
+            "title": "Incident energy [eV]",
             "type": "log",
         },
         yaxis={
@@ -111,7 +111,9 @@ if not exfor_df.empty:
         label = (
             str(exfor_df[exfor_df["entry"] == e]["author"].unique())
             + ","
-            + str(exfor_df[exfor_df["entry"] == e]["year"].unique())
+            # + str(exfor_df[exfor_df["entry"] == e]["year"].unique())
+            # + ","
+            + str(exfor_df[exfor_df["entry"] == e]["entry"].unique())
         )
         label = re.sub("\[|\]|'", "", label)
         fig.add_trace(

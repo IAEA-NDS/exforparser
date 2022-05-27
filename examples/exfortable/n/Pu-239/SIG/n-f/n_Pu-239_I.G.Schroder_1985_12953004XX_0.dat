@@ -6,6 +6,6 @@
 # author      : I.G.Schroder 
 # institute   : 1USANBS 
 # reference   : (J,ANS,50,154,8511) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.00000E+00      0.00000E+00      1.84400E+03      2.40000E+01       # Lab                   

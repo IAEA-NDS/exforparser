@@ -6,6 +6,6 @@
 # author      : R.W.Durham 
 # institute   : 1CANCRC 
 # reference   : (C,66PARIS,2,17(2),196610) 
-# facilitie   : {'type': 'REAC', 'x4code': '1CANCRC'}
+# facility    : {'type': 'REAC', 'x4code': '1CANCRC'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.53000E-08      0.00000E+00      7.51000E+05      1.00000E+04       # Lab                   

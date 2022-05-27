@@ -6,7 +6,7 @@
 # author      : G.Feinberg 
 # institute   : 2ZZZGEL 
 # reference   : (J,PR/C,85,055810,2012) 
-# facilitie   : {'type': 'VDGT', 'x4code': '2ZZZGEL'}
+# facility    : {'type': 'VDGT', 'x4code': '2ZZZGEL'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.80000E-02      0.00000E+00      6.08000E+02      0.00000E+00       # Lab                   
       2.80000E-02      0.00000E+00      6.26000E+02      0.00000E+00       # Lab                   

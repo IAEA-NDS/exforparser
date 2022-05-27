@@ -6,6 +6,6 @@
 # author      : V.I.Shpakov 
 # institute   : 4RUSRI 
 # reference   : (J,YK,,(4),19,1986) 
-# facilitie   : {'type': 'VDG', 'x4code': '4RUSRI'}
+# facility    : {'type': 'VDG', 'x4code': '4RUSRI'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.92000E+00      0.00000E+00      2.01000E+03      0.00000E+00       # Lab                   

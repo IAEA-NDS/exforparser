@@ -6,7 +6,7 @@
 # author      : R.Gwin 
 # institute   : 1USAORL 
 # reference   : (J,NSE,59,79,1976) 
-# facilitie   : {'type': 'LINAC', 'x4code': '1USAORL'}
+# facility    : {'type': 'LINAC', 'x4code': '1USAORL'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       6.87000E-03      0.00000E+00      1.56000E+03      0.00000E+00       # Lab                   
       8.87000E-03      0.00000E+00      1.24000E+03      0.00000E+00       # Lab                   

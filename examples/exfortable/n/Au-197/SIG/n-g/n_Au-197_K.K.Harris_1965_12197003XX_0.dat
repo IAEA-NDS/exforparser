@@ -6,6 +6,6 @@
 # author      : K.K.Harris 
 # institute   : 1USALOK 
 # reference   : (J,NP,69,37,196507) 
-# facilitie   : {'type': 'VDG', 'x4code': '1USALOK'}
+# facility    : {'type': 'VDG', 'x4code': '1USALOK'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       4.16000E-02      1.39000E-02      5.48000E+02      2.60000E+01       # Lab                   

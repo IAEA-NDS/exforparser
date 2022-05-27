@@ -6,7 +6,7 @@
 # author      : J.Blons 
 # institute   : 2FR SAC 
 # reference   : (C,70HELSINKI,1,513,1970) 
-# facilitie   : {'type': 'LINAC', 'x4code': '2FR SAC'}
+# facility    : {'type': 'LINAC', 'x4code': '2FR SAC'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       3.76940E-05      0.00000E+00      3.35430E+03      0.00000E+00       # Lab                   
       3.77200E-05      0.00000E+00      4.83930E+02      0.00000E+00       # Lab                   

@@ -6,7 +6,7 @@
 # author      : F.Froehner 
 # institute   : 2GERKFK 
 # reference   : (W,FROEHNER,7311) 
-# facilitie   : {'x4code': 'VDG  '}
+# facility    : {'x4code': 'VDG  '}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       3.00000E-03      0.00000E+00      3.34000E+03      0.00000E+00       # Lab                   
       5.00000E-03      0.00000E+00      2.18000E+03      0.00000E+00       # Lab                   

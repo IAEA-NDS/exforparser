@@ -6,7 +6,7 @@
 # author      : W.P.Poenitz 
 # institute   : 1USAANL 
 # reference   : (J,NSE,57,300,197508) 
-# facilitie   : {'type': 'DYNAM', 'x4code': '1USAANL'}
+# facility    : {'type': 'DYNAM', 'x4code': '1USAANL'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       4.00000E-01      2.70000E-02      1.77000E+02      1.60000E+01       # Lab                   
       5.00000E-01      2.60000E-02      1.45000E+02      1.30000E+01       # Lab                   

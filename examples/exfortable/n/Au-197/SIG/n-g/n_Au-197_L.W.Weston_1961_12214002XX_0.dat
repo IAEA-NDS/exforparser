@@ -6,7 +6,7 @@
 # author      : L.W.Weston 
 # institute   : 1USAORL 
 # reference   : (J,PR,123,948,61) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       3.02000E-02      0.00000E+00      7.67000E+02      6.00000E+01       # Lab                   
       6.39000E-02      0.00000E+00      4.56000E+02      4.00000E+01       # Lab                   

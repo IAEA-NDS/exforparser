@@ -6,6 +6,6 @@
 # author      : R.G.Allen 
 # institute   : 1USAORL 
 # reference   : (J,PR,96,1297,5412) 
-# facilitie   : {'x4code': 'SPECC'}
+# facility    : {'x4code': 'SPECC'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.53000E-08      0.00000E+00      9.65000E+04      7.00000E+02       # Lab                   

@@ -6,6 +6,6 @@
 # author      : C.A.Uttley 
 # institute   : 2UK HAR 
 # reference   : (R,AERE-NP/R-1996,,5606) 
-# facilitie   : {'x4code': 'VDG  '}
+# facility    : {'x4code': 'VDG  '}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.41000E+01      1.50000E-01      2.58000E+03      9.00000E+01       # Lab                   

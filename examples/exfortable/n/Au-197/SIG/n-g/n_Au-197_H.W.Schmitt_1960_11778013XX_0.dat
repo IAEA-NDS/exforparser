@@ -6,6 +6,6 @@
 # author      : H.W.Schmitt 
 # institute   : 1USAORL 
 # reference   : (J,NP,20,202,1960) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.40000E-02      2.20000E-03      5.32000E+02      6.00000E+01       # Lab                   

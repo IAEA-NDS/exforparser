@@ -6,7 +6,7 @@
 # author      : G.N.Smirenkin 
 # institute   : 4RUSFEI 
 # reference   : (J,AE,13,(4),366,1962) 
-# facilitie   : {'x4code': 'VDG'}
+# facility    : {'x4code': 'VDG'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.90000E-01      0.00000E+00      1.66000E+03      0.00000E+00       # Lab                   
       3.50000E-01      0.00000E+00      1.68000E+03      0.00000E+00       # Lab                   

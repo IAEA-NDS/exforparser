@@ -6,7 +6,7 @@
 # author      : W.P.Poenitz 
 # institute   : 2GERKFK 
 # reference   : (J,JNE,22,505,6808) 
-# facilitie   : {'x4code': 'VDG  '}
+# facility    : {'x4code': 'VDG  '}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.47000E-02      1.30000E-03      6.76000E+02      0.00000E+00       # Lab                   
       2.50000E-02      9.00000E-04      6.39000E+02      0.00000E+00       # Lab                   

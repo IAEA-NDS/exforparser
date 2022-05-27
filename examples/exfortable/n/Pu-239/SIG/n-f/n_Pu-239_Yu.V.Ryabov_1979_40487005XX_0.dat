@@ -6,7 +6,7 @@
 # author      : Yu.V.Ryabov 
 # institute   : 4RUSJIA 
 # reference   : (J,AE,46,154,1979) 
-# facilitie   : {'type': 'REAC', 'x4code': '4ZZZDUB'}
+# facility    : {'type': 'REAC', 'x4code': '4ZZZDUB'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       3.10000E-03      0.00000E+00      2.99400E+03      0.00000E+00       # Lab                   
       3.43000E-03      0.00000E+00      2.73100E+03      0.00000E+00       # Lab                   

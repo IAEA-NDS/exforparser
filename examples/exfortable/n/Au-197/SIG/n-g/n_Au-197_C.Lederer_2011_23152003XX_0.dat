@@ -6,7 +6,7 @@
 # author      : C.Lederer 
 # institute   : 2FR FR  
 # reference   : (J,PR/C,83,034608,2011) 
-# facilitie   : {'type': 'SYNCY', 'x4code': '2ZZZCER'}
+# facility    : {'type': 'SYNCY', 'x4code': '2ZZZCER'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       5.00000E-03      0.00000E+00      1.97000E+03      0.00000E+00       # Lab                   
       6.00000E-03      0.00000E+00      1.72900E+03      0.00000E+00       # Lab                   

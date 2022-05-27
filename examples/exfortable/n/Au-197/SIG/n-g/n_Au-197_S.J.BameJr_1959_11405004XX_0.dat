@@ -6,6 +6,6 @@
 # author      : S.J.Bame Jr 
 # institute   : 1USALAS 
 # reference   : (J,PR,113,256,59) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.80000E-01      3.00000E-02      3.10000E+02      2.00000E+01       # Lab                   

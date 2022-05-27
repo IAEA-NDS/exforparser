@@ -6,6 +6,6 @@
 # author      : S.Sakamoto 
 # institute   : 1USAMHG 
 # reference   : (J,NSE,109,215,9110) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       9.67000E-01      0.00000E+00      9.97000E+01      0.00000E+00       # Lab                   

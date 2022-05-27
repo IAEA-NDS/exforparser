@@ -6,7 +6,7 @@
 # author      : G.D.James 
 # institute   : 2UK HAR 
 # reference   : (R,ANL-7320,16,1966) 
-# facilitie   : {'x4code': 'LINAC'}
+# facility    : {'x4code': 'LINAC'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.01400E-03      0.00000E+00      5.26400E+03      0.00000E+00       # Lab                   
       1.03000E-03      0.00000E+00      5.10700E+03      0.00000E+00       # Lab                   

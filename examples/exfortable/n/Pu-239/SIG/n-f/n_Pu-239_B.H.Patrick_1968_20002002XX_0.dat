@@ -6,7 +6,7 @@
 # author      : B.H.Patrick 
 # institute   : 2UK HAR 
 # reference   : (R,EANDC(UK)-96,1968) 
-# facilitie   : {'type': 'LINAC', 'x4code': '2UK HAR'}
+# facility    : {'type': 'LINAC', 'x4code': '2UK HAR'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.00000E-04      2.50000E-15      1.44000E+04      2.04000E+03       # Lab                   
       1.00040E-04      2.50000E-15      1.63000E+04      1.97000E+03       # Lab                   

@@ -6,6 +6,6 @@
 # author      : V.L.Demekhin 
 # institute   : 4UKRKGU 
 # reference   : (C,86KHARKO,,94,198604) 
-# facilitie   : {'x4code': 'CCW'}
+# facility    : {'x4code': 'CCW'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.70000E+00      0.00000E+00      3.30000E+01      4.00000E+00       # Lab                   

@@ -6,7 +6,7 @@
 # author      : V.Vansola 
 # institute   : 3INDBDA 
 # reference   : (J,RCA,103,817,2015) 
-# facilitie   : {'type': 'VDG', 'x4code': '3INDTRM'}
+# facility    : {'type': 'VDG', 'x4code': '3INDTRM'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.12000E+00      1.20000E-01      6.04410E+01      0.00000E+00       # Lab                   
       2.12000E+00      1.50000E-01      4.05880E+01      0.00000E+00       # Lab                   

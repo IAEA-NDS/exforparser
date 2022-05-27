@@ -6,7 +6,7 @@
 # author      : S.K.Gupta 
 # institute   : 2FR BRC 
 # reference   : (J,NIM,148,(1),77,7801) 
-# facilitie   : {'x4code': 'VDG  '}
+# facility    : {'x4code': 'VDG  '}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.68000E+00      3.00000E-02      5.90000E+01      4.00000E+00       # Lab                   
       1.93000E+00      3.00000E-02      5.50000E+01      4.00000E+00       # Lab                   

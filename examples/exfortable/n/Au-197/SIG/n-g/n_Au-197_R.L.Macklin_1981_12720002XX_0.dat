@@ -6,7 +6,7 @@
 # author      : R.L.Macklin 
 # institute   : 1USAORL 
 # reference   : (J,NSE,79,265,8111) 
-# facilitie   : {'x4code': 'LINAC'}
+# facility    : {'x4code': 'LINAC'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.75000E-03      0.00000E+00      2.48700E+03      0.00000E+00       # Lab                   
       3.00000E-03      0.00000E+00      2.10570E+03      0.00000E+00       # Lab                   

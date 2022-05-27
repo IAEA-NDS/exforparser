@@ -6,7 +6,7 @@
 # author      : A.N.Davletshin 
 # institute   : 4RUSFEI 
 # reference   : (J,AE,65,(5),343,198810) 
-# facilitie   : {'type': 'VDG', 'x4code': '4RUSFEI'}
+# facility    : {'type': 'VDG', 'x4code': '4RUSFEI'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.64000E-01      2.30000E-02      2.75000E+02      0.00000E+00       # Lab                   
       1.66000E-01      2.20000E-02      3.12000E+02      0.00000E+00       # Lab                   

@@ -6,7 +6,7 @@
 # author      : H.Teutsch 
 # institute   : 3RUMBUC 
 # reference   : (J,NUK,4,165,196206) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       5.68000E-16      0.00000E+00      3.10000E+05      2.00000E+03       # Lab                   
       5.84000E-16      0.00000E+00      3.21000E+05      2.00000E+03       # Lab                   

@@ -6,7 +6,7 @@
 # author      : V.A.Tolstikov 
 # institute   : 4RUSFEI 
 # reference   : (J,YK,,(3-4),46,1995) 
-# facilitie   : {'x4code': 'VDG'}
+# facility    : {'x4code': 'VDG'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       4.86000E-01      4.10000E-02      1.35000E+02      0.00000E+00       # Lab                   
       5.39000E-01      4.10000E-02      1.25000E+02      0.00000E+00       # Lab                   

@@ -6,6 +6,6 @@
 # author      : B.R.Leonard Jr 
 # institute   : 1USAHAN 
 # reference   : (P,HW-48893,98,195703) 
-# facilitie   : {'type': 'SPECC', 'x4code': '1USAHAN'}
+# facility    : {'type': 'SPECC', 'x4code': '1USAHAN'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.00000E-07      0.00000E+00      4.30000E+05      1.40000E+04       # Lab                   

@@ -6,7 +6,7 @@
 # author      : Yu.V.Ryabov 
 # institute   : 4ZZZDUB 
 # reference   : (R,JINR-P-2713,196605) 
-# facilitie   : {'type': 'REAC', 'x4code': '4ZZZDUB'}
+# facility    : {'type': 'REAC', 'x4code': '4ZZZDUB'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       5.55000E-06      6.00000E-11      8.60000E+03      0.00000E+00       # Lab                   
       5.65000E-06      6.00000E-11      8.30000E+03      0.00000E+00       # Lab                   

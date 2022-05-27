@@ -6,7 +6,7 @@
 # author      : A.J.Deruytter 
 # institute   : 2ZZZGEL 
 # reference   : (C,70HELSINKI,1,117,197006) 
-# facilitie   : {'type': 'REAC', 'x4code': '2BLGMOL'}
+# facility    : {'type': 'REAC', 'x4code': '2BLGMOL'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       8.60000E-09      0.00000E+00      1.26640E+06      2.90000E+04       # Lab                   
       8.90000E-09      0.00000E+00      1.23460E+06      2.90000E+04       # Lab                   

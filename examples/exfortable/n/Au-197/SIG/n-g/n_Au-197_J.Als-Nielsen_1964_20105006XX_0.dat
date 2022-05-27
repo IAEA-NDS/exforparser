@@ -6,6 +6,6 @@
 # author      : J.Als-Nielsen 
 # institute   : 2DENRIS 
 # reference   : (J,PR,133,B925,196402) 
-# facilitie   : {'x4code': 'SPECC'}
+# facility    : {'x4code': 'SPECC'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.53000E-08      0.00000E+00      9.86000E+04      0.00000E+00       # Lab                   

@@ -6,6 +6,6 @@
 # author      : N.I.Ivanova 
 # institute   : 4RUSKUR 
 # reference   : (J,SJA,30,452,1971) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.00000E+00      0.00000E+00      1.40000E+02      0.00000E+00       # Lab                   

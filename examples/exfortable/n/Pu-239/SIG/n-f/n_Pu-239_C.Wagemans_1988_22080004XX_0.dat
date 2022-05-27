@@ -6,7 +6,7 @@
 # author      : C.Wagemans 
 # institute   : 2ZZZGEL 
 # reference   : (C,88MITO,,91,1988) 
-# facilitie   : {'type': 'LINAC', 'x4code': '2ZZZGEL'}
+# facility    : {'type': 'LINAC', 'x4code': '2ZZZGEL'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.00140E-09      0.00000E+00      2.50760E+06      0.00000E+00       # Lab                   
       2.02560E-09      0.00000E+00      2.62490E+06      0.00000E+00       # Lab                   

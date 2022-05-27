@@ -31,27 +31,26 @@ def simple_xy(locs, data_dict, normalize_factor):
     x_min = []
     x_max = []
     x_mean = []
-
+    
     if data_dict and locs:
-        for l in locs:
+        l = locs[0]
+        factor = float(d.get_unit_factor(data_dict["units"][l])) / normalize_factor
+        x = [p * factor if p is not None else None for p in data_dict["data"][str(l)]]
+        
+        if "-MIN" in data_dict["heads"][l]:
+            x_min = x.copy()
 
-            factor = float(d.get_unit_factor(data_dict["units"][l])) / normalize_factor
-            x = [p * factor if p is not None else None for p in data_dict["data"][str(l)]]
-            
-            if "-MIN" in data_dict["heads"][l]:
-                x_min = x.copy()
+        if "-MAX" in data_dict["heads"][l]:
+            x_max = x.copy()
+        
+        if "-MEAN" in data_dict["heads"][l]:
+            x_mean = x.copy()
 
-            if "-MAX" in data_dict["heads"][l]:
-                x_max = x.copy()
-            
-            if "-MEAN" in data_dict["heads"][l]:
-                x_mean = x.copy()
+    if x_min and x_max:
+        x = [(min + max)/2 if min is not None else None if max is not None else None for min in x_min for max in x_max ]
 
-        if x_min and x_max:
-            x = [(min + max)/2 if min is not None else None if max is not None else None for min in x_min for max in x_max ]
-
-        if x_mean:
-            x = [n for n in x_mean for n in x if n != None] 
+    if x_mean:
+        x = [n for n in x_mean for n in x if n != None]
 
     return x
 
@@ -77,7 +76,7 @@ def table_out(id, dir, file, main_bib_dict, react_dict, df):
                     "# author      :", main_bib_dict["authors"][0]["name"], "\n"
                     "# institute   :", (main_bib_dict["institutes"][0]["x4code"] if main_bib_dict.get("institutes") else None), "\n"
                     "# reference   :", main_bib_dict["references"][0]["x4code"],"\n"
-                    "# facilitie   :", (main_bib_dict["facilities"][0] if main_bib_dict.get("facilities") else None)
+                    "# facility    :", (main_bib_dict["facilities"][0] if main_bib_dict.get("facilities") else None)
                 )
                 print("#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame" )
                 for i, row in df.iterrows():
@@ -143,30 +142,30 @@ def exfortableformat(entnum, subentnum, pointer):
         x_max = []
         x_mean = []
         type = ""
-        for l in locs:
-            if "-CM" in data_dict["units"][l]:
-                type = "Center-of-mass"
+        l = locs[0]
+        if "-CM" in data_dict["units"][l]:
+            type = "Center-of-mass"
 
-            elif "KT" in data_dict["units"][l]:
-                type = "Spectrum temperature"
-            
-            elif "WVE-LN" in data_dict["units"][l]:
-                type = "Wavelength"
+        elif "KT" in data_dict["units"][l]:
+            type = "Spectrum temperature"
+        
+        elif "WVE-LN" in data_dict["units"][l]:
+            type = "Wavelength"
 
-            else:
-                type = "Lab"
+        else:
+            type = "Lab"
 
-            factor = float(d.get_unit_factor(data_dict["units"][l])) / factor_to_mev
-            x = [p * factor if p is not None else None for p in data_dict["data"][str(l)]]
-            
-            if "-MIN" in data_dict["units"][l]:
-                x_min = x.copy()
+        factor = float(d.get_unit_factor(data_dict["units"][l])) / factor_to_mev
+        x = [p * factor if p is not None else None for p in data_dict["data"][str(l)]]
+        
+        if "-MIN" in data_dict["units"][l]:
+            x_min = x.copy()
 
-            if "-MAX" in data_dict["units"][l]:
-                x_max = x.copy()
-            
-            if "-MEAN" in data_dict["units"][l]:
-                x_mean = x.copy()
+        if "-MAX" in data_dict["units"][l]:
+            x_max = x.copy()
+        
+        if "-MEAN" in data_dict["units"][l]:
+            x_mean = x.copy()
 
         if x_min and x_max:
             x = [(min + max)/2 if min is not None else None if max is not None else None for min in x_min for max in x_max ]
@@ -177,6 +176,7 @@ def exfortableformat(entnum, subentnum, pointer):
     ## dx axsis data: EN-ERR, etc
     locs, data_dict = get_colmun_indexes(main, sub, en_heads_err)
     dx = simple_xy(locs, data_dict, factor_to_mev)
+        
     
     ## y axsis data: DATA etc    
     if pointer != "XX" and not None:
@@ -185,9 +185,10 @@ def exfortableformat(entnum, subentnum, pointer):
     else:
         locs, data_dict = get_colmun_indexes(main, sub, data_heads)
     if not locs or not data_dict:
-        print("skip to produce exfortable")
+        print("skip to produce exfortable file")
         return
     y = simple_xy(locs, data_dict, factor_to_milibarn)
+
 
     ## dy axsis data: DATA-ERR etc
     if pointer != "XX" and not None:
@@ -197,7 +198,14 @@ def exfortableformat(entnum, subentnum, pointer):
         locs, data_dict = get_colmun_indexes(main, sub, data_heads_err)
     dy = simple_xy(locs, data_dict, factor_to_milibarn)
 
-    # print(y, dy)
+    if data_dict and locs:
+        l = locs[0]
+        if "PER-CENT" in data_dict["units"][l]:
+            dy = simple_xy(locs, data_dict, 1.0)
+            if len(dy) != len(y) and len(dy) == 1:
+                dy =  dy  * len(y)
+            dy = [ da * er/100 if da is not None and er is not None else None for da, er in zip(y,dy) ]
+
     # print(len(x), len(y), len(dx), len(dy))
 
     if x and y:
@@ -237,7 +245,9 @@ def main():
 
     entry = "12515"
     target = "79-Au-197"
+    # target = "94-Pu-239"
     process = "N,G"
+    # process = "N,F"
     sf4 = "MASS"
     quantity = "SIG"
     sf8 = ["RES", "RTE", "SDT/AV", "SDT"]

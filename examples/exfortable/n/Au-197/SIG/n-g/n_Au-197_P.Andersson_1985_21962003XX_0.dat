@@ -6,7 +6,7 @@
 # author      : P.Andersson 
 # institute   : 2SWDLND 
 # reference   : (J,NP/A,443,404,1985) 
-# facilitie   : {'type': 'VDGT', 'x4code': '2SWDLND'}
+# facility    : {'type': 'VDGT', 'x4code': '2SWDLND'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.03000E+00      1.00000E-01      5.30000E+01      0.00000E+00       # Lab                   
       2.26000E+00      1.00000E-01      4.60000E+01      0.00000E+00       # Lab                   

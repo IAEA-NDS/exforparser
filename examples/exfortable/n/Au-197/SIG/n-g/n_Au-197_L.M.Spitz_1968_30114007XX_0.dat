@@ -6,7 +6,7 @@
 # author      : L.M.Spitz 
 # institute   : 3SAFPEL 
 # reference   : (J,NP/A,121,655,196812) 
-# facilitie   : {'type': 'VDG', 'x4code': '3SAFPEL'}
+# facility    : {'type': 'VDG', 'x4code': '3SAFPEL'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.52000E-02      7.00000E-06      7.45000E+02      1.40000E+02       # Lab                   
       1.60000E-02      0.00000E+00      7.49000E+02      1.16000E+02       # Lab                   

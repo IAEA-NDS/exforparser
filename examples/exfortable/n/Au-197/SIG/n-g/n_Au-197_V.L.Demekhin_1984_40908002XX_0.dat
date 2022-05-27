@@ -6,6 +6,6 @@
 # author      : V.L.Demekhin 
 # institute   : 4UKRKGU 
 # reference   : (C,84ALMAAT,,329,198404) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.46000E+01      0.00000E+00      4.00000E-01      1.00000E-01       # Lab                   

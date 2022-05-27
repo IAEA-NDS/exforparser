@@ -6,7 +6,7 @@
 # author      : R.Richmond 
 # institute   : 2UK HAR 
 # reference   : (J,JNE,2,177,1956) 
-# facilitie   : {'type': 'LINAC', 'x4code': '2UK HAR'}
+# facility    : {'type': 'LINAC', 'x4code': '2UK HAR'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       6.80000E-09      0.00000E+00      1.34400E+06      0.00000E+00       # Lab                   
       8.50000E-09      0.00000E+00      1.19800E+06      0.00000E+00       # Lab                   

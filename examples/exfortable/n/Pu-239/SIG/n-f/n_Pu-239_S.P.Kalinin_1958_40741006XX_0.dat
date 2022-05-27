@@ -6,7 +6,7 @@
 # author      : S.P.Kalinin 
 # institute   : 4CCPKUR 
 # reference   : (C,58GENEVA,16,136(2149),5809) 
-# facilitie   : {'x4code': 'CYCLO'}
+# facility    : {'x4code': 'CYCLO'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       3.00000E+00      0.00000E+00      1.95000E+03      0.00000E+00       # Lab                   
       3.60000E+00      0.00000E+00      2.00000E+03      0.00000E+00       # Lab                   

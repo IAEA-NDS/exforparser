@@ -6,6 +6,6 @@
 # author      : G.Martin-Hernandez 
 # institute   : 3CUBPLY 
 # reference   : (J,PR/C,99,034616,2019) 
-# facilitie   : {'type': 'VDG', 'x4code': '2ITYPAD'}
+# facility    : {'type': 'VDG', 'x4code': '2ITYPAD'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       3.00000E-02      0.00000E+00      5.78000E+02      0.00000E+00       # Lab                   

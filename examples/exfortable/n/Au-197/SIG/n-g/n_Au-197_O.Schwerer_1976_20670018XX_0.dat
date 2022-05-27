@@ -6,6 +6,6 @@
 # author      : O.Schwerer 
 # institute   : 2AUSIRK 
 # reference   : (J,NP/A,264,105,760621) 
-# facilitie   : {'x4code': 'CCW  '}
+# facility    : {'x4code': 'CCW  '}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.46000E+01      2.00000E-01      2.10000E+00      1.20000E+00       # Lab                   

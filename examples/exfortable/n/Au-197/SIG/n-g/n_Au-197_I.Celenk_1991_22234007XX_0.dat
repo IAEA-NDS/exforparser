@@ -6,6 +6,6 @@
 # author      : I.Celenk 
 # institute   : 2TUKANR 
 # reference   : (J,JRN,148,(2),393,9106) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.53000E-08      0.00000E+00      1.07550E+05      0.00000E+00       # Lab                   

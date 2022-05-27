@@ -6,6 +6,6 @@
 # author      : Yu.Ya.Stavisskii 
 # institute   : 4RUSFEI 
 # reference   : (J,AE,19,(3),292,1965) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.53000E-08      0.00000E+00      9.88000E+04      3.00000E+02       # Lab                   

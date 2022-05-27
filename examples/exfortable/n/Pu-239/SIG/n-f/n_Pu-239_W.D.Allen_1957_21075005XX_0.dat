@@ -6,7 +6,7 @@
 # author      : W.D.Allen 
 # institute   : 2UK HAR 
 # reference   : (J,PPS/A,70,573,1957) 
-# facilitie   : {'type': 'CCW', 'x4code': '2UK HAR'}
+# facility    : {'type': 'CCW', 'x4code': '2UK HAR'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       3.00000E-02      0.00000E+00      2.25000E+03      0.00000E+00       # Lab                   
       6.00000E-02      0.00000E+00      1.98000E+03      0.00000E+00       # Lab                   

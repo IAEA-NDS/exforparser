@@ -6,6 +6,6 @@
 # author      : D.Szteinsznaider 
 # institute   : 2FR SAC 
 # reference   : (C,55GENEVA,4,425,195508) 
-# facilitie   : {'type': 'VDG', 'x4code': '2FR SAC'}
+# facility    : {'type': 'VDG', 'x4code': '2FR SAC'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
-      2.00000E+00      0.00000E+00      2.04000E+03      0.00000E+00       # Lab                   
+      1.50000E-01      0.00000E+00      2.04000E+03      0.00000E+00       # Lab                   

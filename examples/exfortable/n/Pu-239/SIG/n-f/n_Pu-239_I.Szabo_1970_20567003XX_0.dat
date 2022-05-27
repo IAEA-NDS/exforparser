@@ -6,7 +6,7 @@
 # author      : I.Szabo 
 # institute   : 2FR CAD 
 # reference   : (C,70ANL,,257,1970) 
-# facilitie   : {'type': 'VDG', 'x4code': '2FR CAD'}
+# facility    : {'type': 'VDG', 'x4code': '2FR CAD'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       3.50000E-02      4.00000E-03      1.53000E+03      7.00000E+01       # Lab                   
       4.90000E-02      5.00000E-03      1.49500E+03      6.00000E+01       # Lab                   

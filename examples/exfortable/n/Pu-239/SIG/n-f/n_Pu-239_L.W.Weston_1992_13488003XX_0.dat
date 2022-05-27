@@ -6,7 +6,7 @@
 # author      : L.W.Weston 
 # institute   : 1USAORL 
 # reference   : (J,NSE,111,415,1992) 
-# facilitie   : {'type': 'LINAC', 'x4code': '1USAORL'}
+# facility    : {'type': 'LINAC', 'x4code': '1USAORL'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       9.99273E-05      0.00000E+00      1.75283E+04      0.00000E+00       # Lab                   
       1.00009E-04      0.00000E+00      1.56023E+04      0.00000E+00       # Lab                   

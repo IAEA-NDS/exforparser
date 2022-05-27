@@ -165,3 +165,6 @@ parser/memo.txt
 mongodb.py
 parser/__init__.py
 JSONexamples/
+pypartest.py
+_trash.py
+_*

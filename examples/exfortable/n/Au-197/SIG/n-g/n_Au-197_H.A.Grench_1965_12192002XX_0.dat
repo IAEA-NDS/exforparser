@@ -6,7 +6,7 @@
 # author      : H.A.Grench 
 # institute   : 1USALOK 
 # reference   : (R,EANDC(US)-79,72,65) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.43000E-01      3.20000E-02      3.32000E+02      1.90000E+01       # Lab                   
       2.23000E-01      3.50000E-02      2.83000E+02      1.60000E+01       # Lab                   

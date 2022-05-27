@@ -6,6 +6,6 @@
 # author      : H.Ihle 
 # institute   : 2GERJUL 
 # reference   : (J,JIN,34,2427,1972) 
-# facilitie   : {'type': 'REAC', 'x4code': '2BLGMOL'}
+# facility    : {'type': 'REAC', 'x4code': '2BLGMOL'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.50000E-08      0.00000E+00      1.00000E+06      0.00000E+00       # Lab                   

@@ -6,6 +6,6 @@
 # author      : Zhu Shengyun 
 # institute   : 3CPRAEP 
 # reference   : (J,CNP,6,(1),23,198402) 
-# facilitie   : {'type': 'VDG', 'x4code': '3CPRAEP'}
+# facility    : {'type': 'VDG', 'x4code': '3CPRAEP'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       3.04500E-02      0.00000E+00      5.92000E+02      0.00000E+00       # Lab                   

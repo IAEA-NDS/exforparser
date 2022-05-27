@@ -6,7 +6,7 @@
 # author      : B.C.Diven 
 # institute   : 1USALAS 
 # reference   : (J,PR,120,556,6010) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.75000E-01      2.50000E-02      3.26000E+02      0.00000E+00       # Lab                   
       2.50000E-01      4.00000E-02      2.72000E+02      0.00000E+00       # Lab                   

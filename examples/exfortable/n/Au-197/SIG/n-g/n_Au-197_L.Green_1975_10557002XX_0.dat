@@ -6,6 +6,6 @@
 # author      : L.Green 
 # institute   : 1USABET 
 # reference   : (J,NSE,58,361,197512) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.10000E+00      0.00000E+00      7.99000E+01      0.00000E+00       # Lab                   

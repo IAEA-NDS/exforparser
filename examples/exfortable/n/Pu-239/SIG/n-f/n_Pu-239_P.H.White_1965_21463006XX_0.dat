@@ -6,7 +6,7 @@
 # author      : P.H.White 
 # institute   : 2UK ALD 
 # reference   : (C,65SALZBURG,1,219,196503) 
-# facilitie   : {'type': 'VDG', 'x4code': '2UK ALD'}
+# facility    : {'type': 'VDG', 'x4code': '2UK ALD'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       4.00000E-02      1.00000E-02      1.45000E+03      5.00000E+01       # Lab                   
       6.70000E-02      1.00000E-02      1.46000E+03      5.00000E+01       # Lab                   

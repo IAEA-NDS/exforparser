@@ -6,7 +6,7 @@
 # author      : A.Paulsen 
 # institute   : 2ZZZGEL 
 # reference   : (J,AKE,26,80,1975) 
-# facilitie   : {'type': 'VDG', 'x4code': '2ZZZGEL'}
+# facility    : {'type': 'VDG', 'x4code': '2ZZZGEL'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.00000E-01      1.70000E-03      2.71100E+02      0.00000E+00       # Lab                   
       3.00000E-01      2.40000E-03      2.07500E+02      0.00000E+00       # Lab                   

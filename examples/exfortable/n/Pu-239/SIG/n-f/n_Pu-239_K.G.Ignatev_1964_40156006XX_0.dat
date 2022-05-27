@@ -6,7 +6,7 @@
 # author      : K.G.Ignatev 
 # institute   : 4RUSITE 
 # reference   : (J,AE,16,(2),110,1964) 
-# facilitie   : {'type': 'CYCLO', 'x4code': '4RUSITE'}
+# facility    : {'type': 'CYCLO', 'x4code': '4RUSITE'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       3.17000E-06      0.00000E+00      1.20000E+04      5.00000E+02       # Lab                   
       3.45000E-06      0.00000E+00      1.05000E+04      5.00000E+02       # Lab                   

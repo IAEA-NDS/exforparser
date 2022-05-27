@@ -6,7 +6,7 @@
 # author      : A.T.G.Ferguson 
 # institute   : 2UK HAR 
 # reference   : (J,JNE/A,10,19,195907) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       1.50000E-01      1.50000E-02      2.70000E+02      1.80000E+01       # Lab                   
       5.50000E-01      3.00000E-02      1.18000E+02      8.00000E+00       # Lab                   

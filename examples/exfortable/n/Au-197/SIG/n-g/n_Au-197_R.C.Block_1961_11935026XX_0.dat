@@ -6,7 +6,7 @@
 # author      : R.C.Block 
 # institute   : 1USAORL 
 # reference   : (C,61SACLAY,,203,6107) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.33000E-04      0.00000E+00      1.23000E+04      0.00000E+00       # Lab                   
       2.45000E-04      0.00000E+00      1.57000E+04      0.00000E+00       # Lab                   

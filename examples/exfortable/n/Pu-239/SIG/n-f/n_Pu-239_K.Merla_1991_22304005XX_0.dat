@@ -6,7 +6,7 @@
 # author      : K.Merla 
 # institute   : 2GERDRE 
 # reference   : (C,91JUELIC,,510,1991) 
-# facilitie   : None
+# facility    : None
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       4.90000E+00      0.00000E+00      1.77300E+03      0.00000E+00       # Lab                   
       8.65000E+00      0.00000E+00      2.39500E+03      0.00000E+00       # Lab                   

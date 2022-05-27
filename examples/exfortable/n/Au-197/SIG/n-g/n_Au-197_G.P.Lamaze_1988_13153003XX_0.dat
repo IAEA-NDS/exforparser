@@ -6,6 +6,6 @@
 # author      : G.P.Lamaze 
 # institute   : 1USANBS 
 # reference   : (C,88MITO,,1033,1988) 
-# facilitie   : {'type': 'REAC', 'x4code': '1USANBS'}
+# facility    : {'type': 'REAC', 'x4code': '1USANBS'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       5.80000E-01      0.00000E+00      4.11000E+02      0.00000E+00       # Lab                   

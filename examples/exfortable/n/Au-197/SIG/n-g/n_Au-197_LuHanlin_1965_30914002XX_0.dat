@@ -6,6 +6,6 @@
 # author      : Lu Hanlin 
 # institute   : 3CPRAEP 
 # reference   : (J,CST,7,848,1965) 
-# facilitie   : {'type': 'REAC', 'x4code': '3CPRAEP'}
+# facility    : {'type': 'REAC', 'x4code': '3CPRAEP'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.53000E-08      0.00000E+00      9.88000E+04      1.70000E+03       # Lab                   

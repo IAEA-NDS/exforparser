@@ -6,7 +6,7 @@
 # author      : L.M.Bollinger 
 # institute   : 1USAANL 
 # reference   : (C,58GENEVA,15,127,195809) 
-# facilitie   : {'type': 'REAC', 'x4code': '1USAORL'}
+# facility    : {'type': 'REAC', 'x4code': '1USAORL'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       4.57000E-07      6.14000E-13      2.82000E+05      0.00000E+00       # Lab                   
       4.71000E-07      6.14000E-13      2.45000E+05      0.00000E+00       # Lab                   

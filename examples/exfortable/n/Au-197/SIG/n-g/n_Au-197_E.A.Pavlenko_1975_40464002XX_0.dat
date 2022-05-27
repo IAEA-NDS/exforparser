@@ -6,7 +6,7 @@
 # author      : E.A.Pavlenko 
 # institute   : 4CCPIJI 
 # reference   : (C,75KIEV,3,171,7506) 
-# facilitie   : {'x4code': 'REAC'}
+# facility    : {'x4code': 'REAC'}
 #     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)           frame
       2.14000E-08      0.00000E+00      1.04000E+05      8.00000E+03       # Lab                   
       2.32000E-08      0.00000E+00      9.85000E+04      6.00000E+03       # Lab                   
