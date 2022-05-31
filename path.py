@@ -1,11 +1,14 @@
-EXFOR_ALL_PATH = "/Users/sin/Documents/nucleardata/EXFOR/X4all/"
-INDEX_PICKEL = "pickle/entry.pickle"
+EXFOR_ALL_PATH = "/Users/okumuras/Documents/nucleardata/EXFOR/X4all/"
+INDEX_PICKEL = "pickles/entry.pickle"
 
 DICTIONARY_URL = "https://nds.iaea.org/nrdc/ndsx4/trans/dicts/"
 DICTIONARY_PATH = "dictionary/"
 
-OUT_PATH = "/Users/sin/Desktop/"
+OUT_PATH = "/Users/okumuras/Desktop/"
 
+MONGOBASE_URI = "https://data.mongodb-api.com/app/data-qfzzc/endpoint/data/beta/"
+API_KEY = "uLxfjSQjf2YCyPxocPHHla22HTHoEA6IGpXBlToaddOqN7V3QHV0iNbVGCuFulTW"
+DB_KEY = "nds:9ZCo6KYA8XYbTy1G"
 
 import os
 
