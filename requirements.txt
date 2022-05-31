@@ -7,3 +7,4 @@ plotly
 pymongo==4.1.1
 pyparsing==3.0.9
 requests==2.27.1
+pymongo[srv]
