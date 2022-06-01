@@ -1,18 +1,24 @@
-from logging import raiseExceptions
+####################################################################
+#
+# This file is part of exfor-parser.
+# Copyright (C) 2022 International Atomic Energy Agency (IAEA)
+# 
+# Disclaimer: The code is still under developments and not ready 
+#             to use. It has beeb made public to share the progress
+#             between collaborators. 
+# Contact:    nds.contact-point@iaea.org
+#
+####################################################################
+
 import re
-import json
-import sys
 
 from .exfor_bib import *
 from .exfor_reaction import *
 from .exfor_data import *
-from .exfor_common import *
+from .utilities import process_time
 
 
-sys.path.append("../")
-from dictionary.exfor_dictionary import Diction
-
-
+# @process_time
 def chop_subentry(subent_body, sec_name):
     """chop subent into section: BIB, COMMON, DATA"""
     body = []
@@ -53,22 +59,6 @@ class Subentry:
         here separate them into BIB and COMMON section
         and get detailed field data
         """
-
-        if subentnum == "001":
-            # self.main = MainSubentry(subent_body)
-            # self.main_common_dict = self.parse_common()
-            pass
-
-        else:
-            # self.sub = ReactionSubentry(subent_body)
-            # self.bib_block = chop_subentry(self.subent_body, "BIB")
-            # self.common_block = chop_subentry(self.subent_body, "COMMON")
-            # self.data_block = chop_subentry(self.subent_body, "DATA")
-
-            # self.sub_mesurement_condition_dict = self.parse_bib_extra_dict()
-            # self.sub_data_dict = self.parse_data()
-            # self.sub_common_dict = self.parse_common()
-            pass
 
 
     def bib_block(self) -> list:
@@ -143,16 +133,4 @@ class MainSubentry(Subentry):
             pass
         else:
             return main_bib_dict(self.bib_block())
-
-
-# class ReactionSubentry(Subentry):
-#     def __init__(self, subentnum, subent_body):
-#         super().__init__(subentnum, subent_body)
-#         self.subentnum = subentnum
-#         self.reaction = self.parse_reaction()
-
-#         self.bib_block = chop_subentry(self.subent_body, "BIB")
-#         self.common_block = chop_subentry(self.subent_body, "COMMON")
-#         self.data_block = chop_subentry(self.subent_body, "DATA")
-
 

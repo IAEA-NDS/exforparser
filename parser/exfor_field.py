@@ -1,5 +1,16 @@
+####################################################################
+#
+# This file is part of exfor-parser.
+# Copyright (C) 2022 International Atomic Energy Agency (IAEA)
+# 
+# Disclaimer: The code is still under developments and not ready 
+#             to use. It has beeb made public to share the progress
+#             between collaborators. 
+# Contact:    nds.contact-point@iaea.org
+#
+####################################################################
+
 from pyparsing import *
-from .utilities import extract_key, combine_dict
 
 capitals = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 special_chars = "@#\":,.;+-*/'<> _^%$()&!?$*~="
@@ -305,6 +316,7 @@ monitor_str = Combine(
     + ZeroOrMore(inparenthes | Word(charinmonitor + alphanums))
 )
 
+
 double_monitorcode = Combine(
     Literal("(")
     + ZeroOrMore(monitor | assumed).suppress()
@@ -312,7 +324,13 @@ double_monitorcode = Combine(
     + Literal(")")
 )
 
-double_monitorcode_after_text = double_monitorcode.suppress() + restOfLine
+## need to implement for 40096
+monit_equal = Combine(
+    Literal("(") + double_monitorcode + Literal("=") + double_monitorcode + Literal(")")
+)
+double_monitor = double_monitorcode | monit_equal
+
+double_monitorcode_after_text = double_monitor.suppress() + restOfLine
 
 
 """ 
@@ -343,9 +361,9 @@ double_monitrefcode = (
         Word(alphanums + charinx4code)
         + ZeroOrMore(
             Literal("(")
-            + Word(alphanums + charinx4code)
+            + Word(alphanums + charinx4code + " ")
             + Literal(")")
-            + Word(alphanums + charinx4code)
+            + Word(alphanums + charinx4code + " ")
         )
     )("ref-ref")
     + Literal(")").suppress()

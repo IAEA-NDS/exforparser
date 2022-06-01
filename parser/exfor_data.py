@@ -1,9 +1,18 @@
-import re
+####################################################################
+#
+# This file is part of exfor-parser.
+# Copyright (C) 2022 International Atomic Energy Agency (IAEA)
+# 
+# Disclaimer: The code is still under developments and not ready 
+#             to use. It has beeb made public to share the progress
+#             between collaborators. 
+# Contact:    nds.contact-point@iaea.org
+#
+####################################################################
 
 from pyparsing import *
 from .exfor_field import *
-from .utilities import corr, flatten_list, ztoelem, numtoisomer
-
+from .utilities import corr, flatten_list, ztoelem, numtoisomer,process_time
 from dictionary.exfor_dictionary import Diction
 
 
@@ -62,7 +71,7 @@ def get_heads(data_block) -> dict:
     return header
 
 
-
+# @process_time
 def recon_data(data_block):
     header = {}
     datatable = []
@@ -379,6 +388,7 @@ def product_expansion(main, sub, reac_dic=None):
         for prod in prod_list:
             add = reac_dic.copy()
             add["residual"] = prod
+            add["np"] = prod_list.index(prod)
             reac_set.append(add)
             # df = df.append(reac, ignore_index=True)
 
@@ -387,6 +397,7 @@ def product_expansion(main, sub, reac_dic=None):
         for mass in data_list or []:
             add = reac_dic.copy()
             add["residual"] = "A=" + mass
+            add["np"] = data_list.index(mass)
             reac_set.append(add)
             # df = df.append(reac, ignore_index=True)
 
@@ -395,6 +406,7 @@ def product_expansion(main, sub, reac_dic=None):
         for elem in data_list or []:
             add = reac_dic.copy()
             add["residual"] = elem
+            add["np"] = data_list.index(elem)
             reac_set.append(add)
             # df = df.append(reac, ignore_index=True)
 
@@ -408,6 +420,7 @@ d = Diction()
 ## get possible heading list
 x_heads = d.get_incident_en_heads()
 
+# @process_time
 def get_inc_energy(main = None, sub = None):
     ## no need to take pointer or flag into account
     en = {}
@@ -439,23 +452,3 @@ def get_inc_energy(main = None, sub = None):
 
     return en
 
-
-
-
-
-
-
-class DataColumnAccess:
-    def __init__(self, block, column):
-        self.block = block
-        self.column = column
-
-    def show_data(self):
-        pass
-
-    def show_head(self):
-        pass
-
-
-class Data:
-    pass

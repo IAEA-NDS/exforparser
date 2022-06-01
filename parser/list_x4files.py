@@ -1,3 +1,15 @@
+####################################################################
+#
+# This file is part of exfor-parser.
+# Copyright (C) 2022 International Atomic Energy Agency (IAEA)
+# 
+# Disclaimer: The code is still under developments and not ready 
+#             to use. It has beeb made public to share the progress
+#             between collaborators. 
+# Contact:    nds.contact-point@iaea.org
+#
+####################################################################
+
 import pandas as pd
 import os
 import time
@@ -59,7 +71,7 @@ def list_exfor_files():
     df = pd.DataFrame(entries, columns=["entry", "last modifid", "hash"])
 
     """ need clean up """
-    df.to_pickle("pickle/entry.pickle")
+    df.to_pickle(INDEX_PICKEL)
 
     return entries
 

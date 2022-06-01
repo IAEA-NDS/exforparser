@@ -1,14 +1,21 @@
-# https://stackoverflow.com/questions/11325135/parsing-a-structured-text-file-in-python-pyparsing
-# https://stackoverflow.com/questions/24478369/parsing-relatively-structured-text-files-in-python-and-inserting-in-mongodb
-# https://stackoverflow.com/questions/59159168/python-parse-semi-structured-text-and-extract-to-structed-data
+####################################################################
+#
+# This file is part of exfor-parser.
+# Copyright (C) 2022 International Atomic Energy Agency (IAEA)
+# 
+# Disclaimer: The code is still under developments and not ready 
+#             to use. It has beeb made public to share the progress
+#             between collaborators. 
+# Contact:    nds.contact-point@iaea.org
+#
+####################################################################
+
 from operator import index
 from pyparsing import *
 import itertools
-import json
 
-from .utilities import extract_key, flatten_list
+from .utilities import extract_key
 from .exfor_field import *
-
 
 def parse_reaction_field(subent_body) -> list:
     s = "".join(subent_body)
@@ -151,18 +158,5 @@ def get_reaction(reaction_field) -> dict:
     return react
 
 
-# class EnryReactions(Entry, Subentry):
-#     def get_reactions(self) -> dict:
-#         reactions = {}
-#         ## get reaction code if the sumentnum >= 002
-#         if len(self.subents_nums) > 1:
-#             for s in self.subents_nums[1:]:
-#                 sub = Subentry(s, self.entry_body[s])
-#                 reactions[s] = sub.parse_reaction()
-#         else:
-#             print("no field contains REACTION")
-
-#         # return json.dumps(reactions, indent=1)
-#         return reactions
 
 

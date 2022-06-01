@@ -1,11 +1,22 @@
+####################################################################
+#
+# This file is part of exfor-parser.
+# Copyright (C) 2022 International Atomic Energy Agency (IAEA)
+# 
+# Disclaimer: The code is still under developments and not ready 
+#             to use. It has beeb made public to share the progress
+#             between collaborators. 
+# Contact:    nds.contact-point@iaea.org
+#
+####################################################################
+
 import pandas as pd
 import os
 import random
-import json
 import pickle
 
 
-from parser.utilities import process_time
+from parser.utilities import process_time, rescue
 from parser.exfor_entry import Entry
 from parser.exfor_subentry import Subentry,MainSubentry
 from parser.exfor_data import product_expansion, get_inc_energy
@@ -25,20 +36,6 @@ def list_entries():
 
 ent = list_entries()
 entries = random.sample(ent, len(ent))
-# entries = [
-#     "22374",
-#     "12515",
-#     "14197",
-#     "32662",
-#     "20471",
-#     "O2105",
-#     "C0727",
-#     "A0408",
-#     "A0306",
-#     "11945",
-#     "11404",
-#     "11201",
-#     ]
 
 run_for = ["SIG"]
 columndef = [
@@ -46,6 +43,7 @@ columndef = [
     "entry",
     "subentry",
     "pointer",
+    "np",
     "year",
     "author",
     "min_inc_en",
@@ -84,6 +82,7 @@ def rescue(processed):
 
 @process_time
 def reaction_indexing():
+    ## Current EXFOR statistics
     ## Number of ENTRY 	     24682 	experimental works
     ## Number of SUBENT     164913  data tables (can contain data of more than one reaction) 
     ## Number of Datasets 	182615 	data tables of reactions 
@@ -166,9 +165,7 @@ def reaction_indexing():
         if reac_set:
             df = save_and_post(reac_set)
             reac_set = []
-        
-    # print(df)
-        
+                
     return df
 
 
@@ -193,5 +190,23 @@ def save_and_post(reac_set):
     return df_all
 
 
+def post_index_to_mongodb():
+    ## indexed pickle to MongoDB
+    df = pd.read_pickle("pickles/reactions_0527.pickle")
+
+    max = len(df.index)
+    print(max)
+    for i in range(int(max/100)):
+        print(i*100, i*100+100)
+        df2 = df.iloc[i*100:i*100+100]
+        post_many_mongodb("reaction_index", df2.to_dict("records"))
+        print("posted", df2 )
+
+
 if __name__ == "__main__":
     reaction_indexing()
+    # post_index_to_mongodb()
+
+
+
+

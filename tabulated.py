@@ -1,3 +1,15 @@
+####################################################################
+#
+# This file is part of exfor-parser.
+# Copyright (C) 2022 International Atomic Energy Agency (IAEA)
+# 
+# Disclaimer: The code is still under developments and not ready 
+#             to use. It has beeb made public to share the progress
+#             between collaborators. 
+# Contact:    nds.contact-point@iaea.org
+#
+####################################################################
+
 from logging import raiseExceptions
 import pandas as pd
 import os
@@ -8,13 +20,12 @@ import matplotlib.pyplot as plt
 from contextlib import redirect_stdout
 
 from path import OUT_PATH
-from exparser import convert_single
-from parser.utilities import process_time, del_outputs
+from parser.utilities import process_time, del_outputs, show_df_option
 from parser.exfor_entry import Entry
 from parser.exfor_subentry import Subentry,MainSubentry
-from parser.exfor_data import get_inc_energy, get_colmun_indexes
+from parser.exfor_data import get_colmun_indexes
 from dictionary.exfor_dictionary import Diction
-
+from plotting.xs import *
 
 d = Diction()
 en_heads = d.get_incident_en_heads()
@@ -23,8 +34,6 @@ data_heads = d.get_data_heads()
 data_heads_err = d.get_data_err_heads()
 mass_heads = d.get_mass_heads()
 elem_heads = d.get_elem_heads()
-
-
 
 def simple_xy(locs, data_dict, normalize_factor):
     x = []
@@ -87,19 +96,21 @@ def table_out(id, dir, file, main_bib_dict, react_dict, df):
         f.close()
 
 
+@process_time
 def exfortableformat(entnum, subentnum, pointer):
-    print("process: ", entnum, subentnum, pointer)
+    print("table: ", entnum, subentnum, pointer)
     entry = Entry(entnum)
     ## parse and save bib data
     main = MainSubentry("001", entry.entry_body["001"])
     sub = Subentry(subentnum, entry.entry_body[subentnum])
     id = entnum + subentnum + pointer
+
     ## just for a test
     # incident_energy = get_inc_energy(main, sub)
-
-    ### generate output filename
+    
     reac_dic = sub.parse_reaction()[pointer]
 
+    ### generate output filename
     dir = os.path.join(
         OUT_PATH,
         "exfortable",
@@ -187,6 +198,14 @@ def exfortableformat(entnum, subentnum, pointer):
     if not locs or not data_dict:
         print("skip to produce exfortable file")
         return
+
+    if locs and data_dict:
+        l = locs[0]
+        print(data_dict["units"][l])
+        if "NO-DIM" in data_dict["units"][l]:
+            print("Data unit is in NO-DIM")
+            return
+        
     y = simple_xy(locs, data_dict, factor_to_milibarn)
 
 
@@ -227,24 +246,25 @@ def exfortableformat(entnum, subentnum, pointer):
         if len(dy) != len(y) and len(dy) == 1:
             dy =  dy  * len(y)
 
-    # df = pd.DataFrame( {"id": id, "Frame": type, "x":x,  "y":y } )
     df = pd.DataFrame( {"id": id, "Frame": type, "x":x, "dx":dx, "y":y ,"dy":dy} ).fillna(0)
-    # print(df)
 
     table_out(id, dir, file, main.main_bib_dict, sub.parse_reaction(), df)
 
     return df
 
 
-@process_time
+# @process_time
 def main():
     try:
-        df1 = pickle.load(open("pickle/reactions_0527.pickle", "rb"))
+        df_reaction = pickle.load(open("pickles/reactions_0527.pickle", "rb"))
     except:
         raiseExceptions
 
-    entry = "12515"
-    target = "79-Au-197"
+    '''
+    specify the reaction system
+    '''
+    # entry = "12515"
+    target = "41-Nb-93"
     # target = "94-Pu-239"
     process = "N,G"
     # process = "N,F"
@@ -253,28 +273,55 @@ def main():
     sf8 = ["RES", "RTE", "SDT/AV", "SDT"]
 
     with pd.option_context("display.float_format", "{:11.3e}".format):
-        df1 = df1[
-        #     # (df1.entry == entry )
-            (df1.target == target.upper())
-            & (df1.process == process.upper()) 
-            & (df1.sf5.isnull())
-            & (df1.sf6 == quantity.upper())
-            & (~df1.sf8.isin(sf8))
-            & (df1.points > 0)
-        #     # # & (df1.sf4 == sf4.upper())
+        df_select = df_reaction[
+        #     # (df_reaction.entry == entry )
+            # (df_reaction.target == target.upper())
+            # & (df_reaction.process == process.upper()) 
+            (df_reaction.sf5.isnull())
+            & (df_reaction.sf6 == quantity.upper())
+            & (~df_reaction.sf8.isin(sf8))
+            & (df_reaction.points > 0)
+        #     # # & (df_reaction.sf4 == sf4.upper())
                     ]
-        print(df1.sort_values(by=["year","entry","subentry"]))
+        print(df_select.sort_values(by=["year","entry","subentry"]))
 
-    df2 = pd.DataFrame()
-    for i, row in df1.iterrows():
-        convert_single(row["entry"], row["subentry"], row["pointer"])
+    # df2 = pd.DataFrame()
+    for _, row in df_select.iterrows():
         df = exfortableformat(row["entry"], row["subentry"], row["pointer"])
-        df2 = pd.concat([df2, df])
+        # df2 = pd.concat([df2, df])
+
+    '''
+    path = os.path.join(
+        OUT_PATH,
+        "exfortable",
+        process.split(",")[0].lower(),
+        target.split("-",1)[1].capitalize(),
+        quantity, #sf6
+        process.replace(",", "-").lower()
+    )
+    exfiles = os.listdir(path)
+
+    # libfile = "n-Au197-MT102.tendl.2019.dat"
+    libfile = os.path.join(
+        "/Users/sin/Documents/nucleardata/exforpyplot2/libraries/",
+        process.split(",")[0].lower(),
+        target.split("-")[1].capitalize() + target.split("-")[2].zfill(3),
+        "tendl.2019/tables/xs",
+        process.split(",")[0].lower() + "-" + target.split("-")[1].capitalize() + target.split("-")[2].zfill(3) + "-MT102.tendl.2019" 
+    )
+
+    exfor_df = create_exfordf(path, exfiles)
+    show_option()
+    print(exfor_df)
+    lib_df = create_libdf(libfile)
+    go_plotly(exfor_df, lib_df)
 
     # print(df2)
-    # # # df2[df2["x(MeV)"] <= 1e-6 ].plot(x ='x(MeV)', y='y(mb)', kind="scatter", logx=True, logy=True)
     df2.plot(x ="x", y="y", kind="scatter", logx=True, logy=True)
     plt.show()
+    '''
+
+
 
 
 if __name__ == "__main__":
@@ -283,7 +330,7 @@ if __name__ == "__main__":
     # print(df)
     
     # del_outputs("json")
-    # del_outputs("exfortable")
+    del_outputs("exfortable")
     main()
 
 

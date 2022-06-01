@@ -1,9 +1,16 @@
-import pandas as pd
+####################################################################
+#
+# This file is part of exfor-parser.
+# Copyright (C) 2022 International Atomic Energy Agency (IAEA)
+# 
+# Disclaimer: The code is still under developments and not ready 
+#             to use. It has beeb made public to share the progress
+#             between collaborators. 
+# Contact:    nds.contact-point@iaea.org
+#
+####################################################################
+
 import os
-import json
-
-
-# to read path.py file one layer above the current path
 import sys
 
 sys.path.append("../")
@@ -25,6 +32,7 @@ def open_read_file(filename=""):
     except:
         raise x4FileOpenError()
 
+
 def open_read_file_line(filename=""):
     """
     separate and convert all subentries into dictionary
@@ -42,6 +50,7 @@ def open_read_file_line(filename=""):
     except:
         raise x4FileOpenError()
 
+
 def diff_check():
     """
     check hash
@@ -58,13 +67,6 @@ class Entry:
         self.entry_body = self.get_entry_body()
         self.subents_nums = self.get_subent_nums()
 
-    # def __getattr__(self, name):
-    #     if name == "x4filename":
-    #         return self.x4filename()
-    #     if name == "entry_body":
-    #         return self.get_entry_body()
-    #     if name == "subents_nums":
-    #         return self.get_subent_nums()
 
     @property
     def entry_number(self):
@@ -158,6 +160,7 @@ class Entry:
     def get_reactions(self) -> dict:
         reactions = {}
         ## get reaction code if the sumentnum >= 002
+        ## this call is very slow for the entry with many subentries
         if len(self.subents_nums) > 1:
             for s in self.subents_nums[1:]:
                 sub = Subentry(s, self.entry_body[s])
@@ -177,75 +180,3 @@ class Entry:
         pass
 
 
-
-
-
-
-    # def get_reactions(self) -> dict:
-    #     all = {}
-
-    #     for s in self.subents:
-    #         '''
-    #         s returns '001', '002'..
-    #         '''
-    #         self.entry_body[s] # subentry will recieve it by **kwargs and extract
-
-    #             print(s)
-    #             sub = Subentry(s, subent_body[s])
-    #             rdict = {}
-
-    #             if s == '001':
-    #                 continue
-    #             else:
-    #                 rdict =  sub.parse_reaction()
-    #                 if rdict is not None:
-    #                     for k in rdict["reaction"].keys():
-    #                         # tmp = {"entry+s+p": self.entnum + s + k, **rdict["reaction"][k] }
-    #                         # tmp = {self.entnum + s + k: rdict["reaction"][k] }
-    #                         all.update( {self.entnum + s + "-" +  k: rdict["reaction"][k] })
-    #             return all
-
-    # self.sub_bib_section = decomp_section(subent_body[self.subentnum], 'BIB')
-    # self.sub_common_section = decomp_section(subent_body[self.subentnum], 'COMMON')
-    # self.data_section = decomp_section(subent_body[self.subentnum], 'DATA')
-
-    # self.reaction_dict = ReactionCode(self.sub_bib_section).get_reaction()
-
-    # datainfo = self.pointer_reaction(self.entnum, self.subentnum, self.reaction_dict)
-
-    # self.mainbib_json(main_bib_dict, datainfo)
-    # process subent
-
-    # sub.mainbib_dictionary()
-    # sub.reaction_dictionary(self.entnum, subent_body)
-
-    # print(s)
-    # sub = Subentry(s, subent_body[s])
-
-    #     if s == '001':
-    #         # print(sub.parse_mainbib())
-    #         # print(sub.parse_common())
-
-    #         mainbib  = sub.parse_mainbib()
-    #         maincommon = sub.parse_common()
-
-    #         self.write_bib_json(mainbib)
-
-    #     else:
-    #         # print(sub.parse_subbib())
-    #         # print(sub.parse_reaction())
-    #         # print(sub.parse_common())
-    #         # print(sub.parse_data())
-
-    #         subentbib = {}
-
-    #         subbib = sub.parse_subbib()
-    #         reaction = sub.parse_reaction()
-    #         subcommon = sub.parse_common()
-    #         data = sub.parse_data()
-
-    #         subentbib = {"SUBBIB": subbib, "REACTION":reaction , "COMMON":subcommon, "DATA":data }
-
-    #         self.write_subent_json(s, subentbib)
-
-    # return dict(**mainbib, **subentbib)

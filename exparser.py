@@ -1,3 +1,15 @@
+####################################################################
+#
+# This file is part of exfor-parser.
+# Copyright (C) 2022 International Atomic Energy Agency (IAEA)
+# 
+# Disclaimer: The code is still under developments and not ready 
+#             to use. It has beeb made public to share the progress
+#             between collaborators. 
+# Contact:    nds.contact-point@iaea.org
+#
+####################################################################
+
 from logging import raiseExceptions
 import pandas as pd
 import os
@@ -6,7 +18,7 @@ import json
 import pickle
 import re
 
-from parser.utilities import process_time, del_outputs
+from parser.utilities import process_time, del_outputs, rescue, show_df_option
 from parser.exfor_entry import Entry
 from parser.exfor_subentry import Subentry, MainSubentry
 from dictionary.exfor_dictionary import *
@@ -114,7 +126,9 @@ def list_entries():
     return ent
 
 
+
 def write_dict_to_json(entnum, dic):
+    # print("write dict to json")
     """
     bib info write into json file
     """
@@ -126,12 +140,43 @@ def write_dict_to_json(entnum, dic):
             os.mkdir(dir)
 
     file = os.path.join(dir, entnum + ".json")
-
-    with open(file, "w") as json_file:
-        json.dump(dic, json_file, indent=2)
+    if os.path.exists(file):
+        return
+    else:
+        with open(file, "w") as json_file:
+            json.dump(dic, json_file, indent=2)
 
     return
 
+
+
+
+@process_time
+def convert_bib(entries):
+    for entnum in entries:
+        ## rescue after crashing
+        if rescue(entnum):
+            continue
+        print(entnum)
+        entry = Entry(entnum)   
+        main = MainSubentry("001",entry.entry_body["001"])
+        if TO_JSON:
+            write_dict_to_json(
+                entnum,
+                dict(
+                    **entry.get_entry_bib_dict(),
+                    **{"experimental_conditions": main.parse_bib_extra_dict()}
+                ),
+            )
+        if POST_DB:
+            post_one_mongodb("entry",
+            dict(
+                    **entry.get_entry_bib_dict(),
+                    **{"experimental_conditions": main.parse_bib_extra_dict()}
+                )
+            )
+    return
+        
 
 @process_time
 def convert_entries(entries):
@@ -288,15 +333,19 @@ def convert_entries(entries):
     return subent_dict
 
 
-# @process_time
+@process_time
 def convert_single(entnum=None, s=None, pointer=None):
+    print("parser: ", entnum, s, pointer)
+    ## rescue after crashing
+    if rescue(entnum+s+pointer):
+        return
 
     entry = Entry(entnum)
-
     ## parse and save bib data
+    
     main = MainSubentry("001", entry.entry_body["001"])
     ent_comm = main.parse_common()
-
+    '''
     if TO_JSON:
         write_dict_to_json(
             entnum,
@@ -308,7 +357,8 @@ def convert_single(entnum=None, s=None, pointer=None):
 
     if POST_DB:
         post_one_mongodb("entry", entry.get_entry_bib_dict())
-
+    
+    '''
 
     sub = Subentry(s, entry.entry_body[s])
     sbuent_reaction = sub.parse_reaction()
@@ -326,10 +376,8 @@ def convert_single(entnum=None, s=None, pointer=None):
         return
         # print("no data")
 
-    """
-    COMMON, and DATA section filtering based on the pointer
-    --> this is get_y
-    """
+
+    ## COMMON, and DATA section filtering based on the pointer
     pattern = "\S+\s+\w"
     repatter = re.compile(pattern)
     pod = [
@@ -347,15 +395,12 @@ def convert_single(entnum=None, s=None, pointer=None):
     ## store the data locations that are not with pointer,
     ## which might be a running column
     dif = set([*range(len(sbuent_data["heads"]))]) - set(opo) - set(pod)
-
     reac_dic = sbuent_reaction[pointer]
     subent_dict = {}
     ## limit to the reaction cross sections
-
     subent_dict["id"] = entnum + "-" + s + "-" + pointer
     subent_dict["reaction"] = reac_dic
     subent_dict["measurement_conditions"] = sbuent_condition
-    # { i: {k: d[k]} for i, d in sbuent_condition.items() for k in d.keys() if k == pointer or k == "XX" }
     subent_dict["common_data"] = sbuent_comm
 
     if pointer == "XX":
@@ -378,18 +423,15 @@ def convert_single(entnum=None, s=None, pointer=None):
 
         subent_dict["data_table"] = data_dict
 
+
     if TO_JSON:
         ## Here, direct conversion from EXFOR to JSON and
         ## save entry-subentry-pointer file
         write_dict_to_json(entnum + "-" + s + "-" + pointer, subent_dict)
-        ## output data in EXFORTABLES like tabulated format in the tree structure
-        # write_exfortables(
-        #     entry.get_entry_bib_dict(), s, pointer, reac_dic, subent_dict["data_table"]
-        # )
+
+
     if POST_DB:
         post_one_mongodb("data", subent_dict)
-
-    # return 
 
 
 
@@ -405,36 +447,61 @@ if __name__ == "__main__":
     # del_outputs("json")
 
     """ read entry number index from pickel """
-    ent = list_entries()
-    entries = random.sample(ent, len(ent))
-    entries = good_example_entries
-    # entries = ["11404"]
-    convert_entries(entries)
+    # ent = list_entries()
+    # entries = random.sample(ent, len(ent))
+    # entries = good_example_entries
+
+    ## convert bib data only
+    # convert_bib(entries)
+
+    ## convert all data in JSON
+    # convert_entries(entries)
+    
     
     ''' run indexing -- takes long time '''
     # df = reaction_indexing()
     # print(df)
 
 
-    ''' convert selected entries '''
-    # del_json()
-    # try:
-    #     df_all = pickle.load(open("pickle/reaction_sig.pickle", "rb"))
-    # except:
-    #     raiseExceptions
+    ''' convert selected entries from reaction_index '''
+    try:
+        df_reaction = pickle.load(open("pickles/reactions_0527.pickle", "rb"))
+    except:
+        raiseExceptions
 
-    # target = "47-AG-107"
-    # process = "N,G"
-    # with pd.option_context("display.float_format", "{:11.3e}".format):
-    #     print(
-    #         df_all[
-    #             (df_all.target == target.upper()) & (df_all.process == process.upper())
-    #         ]
-    #     )
+    # entry = "10081"
+    target = "41-Nb-93"
+    process = "N,G"
+    sf4 = "ELEM/MASS"
+    quantity = "SIG"
+    sf8 = ["RES", "RTE", "SDT/AV", "SDT"]
 
-    # for i, row in df_all[df_all["product"] == "ELEM/MASS"].iterrows():
-    #     convert_entry(row["entry"], row["subentry"], row["pointer"])
-    #     print(row["entry"], row["subentry"], row["pointer"], "  --> processed")
+    with pd.option_context("display.float_format", "{:11.3e}".format):
+        df_select = df_reaction[
+            # (df_reaction.entry == entry )
+            # & (df_reaction.target == target.upper())
+            # & (df_reaction.process == process.upper()) 
+            # & (df_reaction.pointer != "XX") 
+            # & (df_reaction.sf4 == sf4.upper())
+            (df_reaction.sf5.isnull())
+            & (df_reaction.sf6 == quantity.upper())
+            & (~df_reaction.sf8.isin(sf8))
+            & (df_reaction.points > 0)
+            & (df_reaction.sf9.isnull())
+        #     # # & (df_reaction.sf4 == sf4.upper())
+                    ]
+        df_select = df_select.sort_values(by=["year","entry","subentry"])
+
+        # df_select["npcount"] = df_select.groupby(['entry','subentry','pointer'])['pointer'].transform("count")
+
+        # for a, row in df_select.groupby(['entry','subentry','pointer']):
+        #     row['pn'] = [ np+1 for np in range(int(row["npcount"].values[0]))]
+        #     print(row)
+
+
+    for _, row in df_select.iterrows():
+        convert_single(row["entry"], row["subentry"], row["pointer"])
+        print(row["entry"], row["subentry"], row["pointer"], "  --> processed")
     
-    # convert_single("22641", "002", "XX")
+
 

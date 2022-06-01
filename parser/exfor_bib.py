@@ -1,10 +1,18 @@
+####################################################################
+#
+# This file is part of exfor-parser.
+# Copyright (C) 2022 International Atomic Energy Agency (IAEA)
+# 
+# Disclaimer: The code is still under developments and not ready 
+#             to use. It has beeb made public to share the progress
+#             between collaborators. 
+# Contact:    nds.contact-point@iaea.org
+#
+####################################################################
 from pyparsing import *
-
 from .exfor_field import *
 from .utilities import flatten_list
 from collections import defaultdict
-
-
 
 def correct_pub_year(ref):
 
@@ -217,7 +225,7 @@ def bib_measurement_condition_dict(identifier, field_body) -> dict:
                         flag = i
 
                 if not "/" in val[1]:
-                    x4code = double_monitorcode.parse_string(val[1]).asList()
+                    x4code = double_monitor.parse_string(val[1]).asList()
                     after_text = double_monitorcode_after_text.parse_string(val[1])
 
                 else:
