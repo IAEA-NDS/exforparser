@@ -45,7 +45,7 @@ D0635002XX  D0635      002      XX  2003     W.Krolas   3.500e+02   3.500e+02   
 M06350212   M0635      021       2  2003 V.V.Varlamov   1.980e+01   2.760e+01     27    23-V-51        G,2N        23-V-49        23-V-49  None      SIG  None   None  EVAL
 ```
 
-### Conversion of EXFRO to JSON
+### Conversion of EXFOR to JSON
 There are three ways to run the conversion.
 
 1. First you need to download and extract EXFOR master file.
