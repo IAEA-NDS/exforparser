@@ -1,0 +1,196 @@
+{
+  "id": "40087003XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,ABS),,ALF,,AV)",
+    "target": "94-PU-239",
+    "process": "N,ABS",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "ALF",
+    "sf7": null,
+    "sf8": "AV",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(SCIN)",
+          "freetext": [
+            "     In first method the fission effect was",
+            "measured on secondary fast neutron yield from",
+            "metallic foil by counters. Counters were paraffin and",
+            "zinc sulphide covering two photoelectric multipliers.",
+            "Capture gammas and fission gammas were counted",
+            "by NaI crystal."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            "           Statistical errors are given"
+          ]
+        }
+      }
+    },
+    "MONIT-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": null,
+            "ent": "40087009",
+            "author": "F.N.Belyaev+",
+            "ref": "C,70HELSINKI,I,339,1970"
+          },
+          "freetext": [
+            "",
+            " Value was measured in additional experiment,",
+            "see SUBENT 009."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(94-PU-239(N,ABS),,ETA)"
+          ],
+          "freetext": [
+            "",
+            " At 0.03 resonance for normalization"
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(N)",
+          "freetext": [
+            "        Neutrons"
+          ]
+        },
+        "1": {
+          "x4code": "(G)",
+          "freetext": [
+            "        Gammas"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "EV",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        0.03
+      ],
+      [
+        1.728
+      ],
+      [
+        0.026
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA",
+      "ERR-S"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0
+      ],
+      [
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0,
+        2.0,
+        10.0,
+        3.0,
+        4.0,
+        5.0,
+        10.0
+      ],
+      [
+        0.87,
+        1.09,
+        1.24,
+        0.47,
+        0.76,
+        1.71,
+        0.92,
+        0.87,
+        0.75,
+        1.06,
+        0.83,
+        1.23,
+        0.98,
+        0.87,
+        0.67
+      ],
+      [
+        0.03,
+        0.04,
+        0.06,
+        0.05,
+        0.06,
+        0.15,
+        0.1,
+        0.11,
+        0.09,
+        0.07,
+        0.04,
+        0.09,
+        0.13,
+        0.11,
+        0.08
+      ]
+    ]
+  }
+}

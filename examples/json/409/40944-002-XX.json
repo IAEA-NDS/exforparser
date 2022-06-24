@@ -1,0 +1,80 @@
+{
+  "id": "40944002XX",
+  "reaction": {
+    "x4code": "(49-IN-115(N,G)49-IN-116-M,,SIG)",
+    "target": "49-IN-115",
+    "process": "N,G",
+    "sf4": "49-IN-116-M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(49-IN-116-M,,DG,417.)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " METALLIC FOIL"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        2.7
+      ],
+      [
+        340.0
+      ],
+      [
+        20.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        61.0
+      ],
+      [
+        6.0
+      ]
+    ]
+  }
+}

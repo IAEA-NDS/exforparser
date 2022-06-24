@@ -1,0 +1,53 @@
+{
+  "id": "11777004XX",
+  "reaction": {
+    "x4code": "(90-TH-232(N,G)90-TH-233,,SIG,,MXW)",
+    "target": "90-TH-232",
+    "process": "N,G",
+    "sf4": "90-TH-233",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "MONIT"
+    ],
+    "units": [
+      "B"
+    ],
+    "data": [
+      [
+        2.53
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-DUMMY",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.53e-08
+      ],
+      [
+        7.55
+      ],
+      [
+        0.25
+      ]
+    ]
+  }
+}

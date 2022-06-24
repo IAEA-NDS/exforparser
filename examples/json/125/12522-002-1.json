@@ -1,0 +1,57 @@
+{
+  "id": "125220021",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG,,RES)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "RES",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "x4code": "(SHAPE)",
+          "freetext": [
+            " SHAPE ANALYSIS"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-RES",
+      "EN-RES-ERR",
+      "DATA      1",
+      "DATA-ERR  1"
+    ],
+    "units": [
+      "EV",
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.299
+      ],
+      [
+        0.001
+      ],
+      [
+        3190.0
+      ],
+      [
+        50.0
+      ]
+    ]
+  }
+}

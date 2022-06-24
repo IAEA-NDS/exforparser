@@ -1,0 +1,71 @@
+{
+  "id": "40436011XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,RI)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "RI",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "(MONIT)": {
+          "x4code": [
+            "(92-U-235(N,F),,RI)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        275.0
+      ],
+      [
+        5.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.52
+      ],
+      [
+        328.0
+      ],
+      [
+        22.0
+      ]
+    ]
+  }
+}

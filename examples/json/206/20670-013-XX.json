@@ -1,0 +1,53 @@
+{
+  "id": "20670013XX",
+  "reaction": {
+    "x4code": "(56-BA-138(N,G)56-BA-139,,SIG)",
+    "target": "56-BA-138",
+    "process": "N,G",
+    "sf4": "56-BA-139",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MEV"
+    ],
+    "data": [
+      [
+        14.6
+      ],
+      [
+        0.2
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        1.1
+      ],
+      [
+        0.11
+      ]
+    ]
+  }
+}

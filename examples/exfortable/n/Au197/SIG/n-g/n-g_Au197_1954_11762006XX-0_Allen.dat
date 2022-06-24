@@ -1,0 +1,12 @@
+# entry       : 11762 
+# subentry    : 006 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG) 
+# year        : 1954 
+# author      : R.G.Allen 
+# institute   : 1USAORL 
+# reference   : (J,PR,96,1297,5412) 
+# facility    : {'x4code': 'SPECC'} 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      2.53000E-08      0.00000E+00      9.65000E+04      7.00000E+02

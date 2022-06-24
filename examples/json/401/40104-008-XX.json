@@ -1,0 +1,70 @@
+{
+  "id": "40104008XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,EL),,STF)",
+    "target": "94-PU-239",
+    "process": "N,EL",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "STF",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      "  S-WAVE  STRENGTH-FUNCTION"
+    ]
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "ASSUM",
+      "EN-RSL"
+    ],
+    "units": [
+      "MILLI-EV",
+      "MSEC/M"
+    ],
+    "data": [
+      [
+        40.0
+      ],
+      [
+        0.06
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA",
+      "DATA-ERR",
+      "MOMENTUM L"
+    ],
+    "units": [
+      "EV",
+      "EV",
+      "NO-DIM",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        0.0
+      ],
+      [
+        205.0
+      ],
+      [
+        0.000124
+      ],
+      [
+        1.7e-05
+      ],
+      [
+        0.0
+      ]
+    ]
+  }
+}

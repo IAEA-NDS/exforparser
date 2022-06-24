@@ -1,0 +1,64 @@
+{
+  "id": "20105002XX",
+  "reaction": {
+    "x4code": "(2-HE-3(N,P)1-H-3,,SIG)",
+    "target": "2-HE-3",
+    "process": "N,P",
+    "sf4": "1-H-3",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " CROSS SECTION."
+    ]
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".1/V-LEAST-SQUARES FIT FROM 0.0003 TO 11 EV",
+            " INDICATED THAT SIGMA(TOTAL) IS ABOUT SIGMA(N,P),",
+            " THE THERMAL CROSS-SECTION DEDUCED FROM BEST 1/V-FIT"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".HE-3 IN AL-BOX (5*12*36CM), PRESSURE 0.5 ATM"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        5327.0
+      ],
+      [
+        10.0
+      ]
+    ]
+  }
+}

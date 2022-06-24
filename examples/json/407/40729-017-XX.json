@@ -1,0 +1,130 @@
+{
+  "id": "40729017XX",
+  "reaction": {
+    "x4code": "(63-EU-151(N,EL),,STF,,AV)",
+    "target": "63-EU-151",
+    "process": "N,EL",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "STF",
+    "sf7": null,
+    "sf8": "AV",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Monte-Carlo method of analysis."
+          ]
+        }
+      }
+    },
+    "ASSUMED": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(63-EU-151(N,G),,WID,,AV)"
+          ],
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(63-EU-151(N,0),,D)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total error."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Error due to last squares method."
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Error due to resonance parameters fluctuations."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "MOMENTUM L"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        1.4
+      ],
+      [
+        2.6
+      ],
+      [
+        0.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "ERR-T",
+      "ASSUM2",
+      "ASSUM3",
+      "ERR-1",
+      "ERR-2"
+    ],
+    "units": [
+      "NO-DIM",
+      "NO-DIM",
+      "EV",
+      "EV",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        0.00041
+      ],
+      [
+        1.5e-05
+      ],
+      [
+        0.09
+      ],
+      [
+        0.56
+      ],
+      [
+        1.1e-05
+      ],
+      [
+        1.8e-05
+      ]
+    ]
+  }
+}

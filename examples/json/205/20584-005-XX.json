@@ -1,0 +1,36 @@
+{
+  "id": "20584005XX",
+  "reaction": {
+    "x4code": "(92-U-236(N,F),,SIG)",
+    "target": "92-U-236",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA-MAX"
+    ],
+    "units": [
+      "KEV",
+      "B"
+    ],
+    "data": [
+      [
+        24.0
+      ],
+      [
+        0.004
+      ]
+    ]
+  }
+}

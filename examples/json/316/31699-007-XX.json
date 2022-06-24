@@ -1,0 +1,41 @@
+{
+  "id": "31699007XX",
+  "reaction": {
+    "x4code": "(33-AS-75(N,G)33-AS-76,,SIG,,,DERIV)",
+    "target": "33-AS-75",
+    "process": "N,G",
+    "sf4": "33-AS-76",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": "DERIV",
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        4.38
+      ],
+      [
+        0.33
+      ]
+    ]
+  }
+}

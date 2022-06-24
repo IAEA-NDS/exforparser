@@ -1,0 +1,149 @@
+{
+  "id": "400720402",
+  "reaction": {
+    "x4code": "(92-U-238(N,TOT),,TRN)",
+    "target": "92-U-238",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "TRN",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " Exp.transmission."
+    ]
+  },
+  "measurement_conditions": {
+    "METHOD": {
+      "1": {
+        "0": {
+          "freetext": [
+            " Measurement with water tank."
+          ]
+        }
+      },
+      "2": {
+        "0": {
+          "freetext": [
+            " Measurement with long counter."
+          ]
+        }
+      }
+    },
+    "MISC-COL": {
+      "XX": {
+        "0": {
+          "x4code": "(MISC1)",
+          "freetext": [
+            " Sample density, nuclei/cm**3 * 10**24 ."
+          ]
+        },
+        "1": {
+          "x4code": "(MISC2)",
+          "freetext": [
+            " Sample thickness, mm."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Spherical layers.",
+            " For thicknesses 6, 8, 10 mm deluted ( by Pb, Bi )",
+            "layers were used:",
+            "Thickness,mm  Density,nuclei/cm**3 * 10**24",
+            "              U-238   Pb         Bi",
+            "6.          0.0124    0.00945    0.00945",
+            "8.          0.0134    0.00850    0.00850",
+            "10.         0.0138    0.00840    0.00840"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV"
+    ],
+    "data": [
+      [
+        23.0
+      ],
+      [
+        1.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "THICKNESS",
+      "MISC1",
+      "MISC2",
+      "DATA      2",
+      "DATA-ERR  2"
+    ],
+    "units": [
+      "ATOMS/B",
+      "SEE TEXT",
+      "MM",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        0.00474,
+        0.00744,
+        0.00952,
+        0.01072,
+        0.0138,
+        0.01419,
+        0.02365
+      ],
+      [
+        0.0474,
+        0.0124,
+        0.0476,
+        0.0134,
+        0.0138,
+        0.0473,
+        0.0473
+      ],
+      [
+        1.0,
+        6.0,
+        2.0,
+        8.0,
+        10.0,
+        3.0,
+        5.0
+      ],
+      [
+        null,
+        0.9182,
+        0.9162,
+        0.8808,
+        0.821,
+        0.8593,
+        0.7391
+      ],
+      [
+        null,
+        0.004,
+        0.0023,
+        0.006,
+        0.006,
+        0.0027,
+        0.003
+      ]
+    ]
+  }
+}

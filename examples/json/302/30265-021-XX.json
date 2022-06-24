@@ -1,0 +1,58 @@
+{
+  "id": "30265021XX",
+  "reaction": {
+    "x4code": "(45-RH-103(N,G)45-RH-104-G/M,,SIG/RAT,,SPA)",
+    "target": "45-RH-103",
+    "process": "N,G",
+    "sf4": "45-RH-104-G/M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG/RAT",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Pu-alpha-Be neutrons"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        4.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        5.7
+      ],
+      [
+        0.7
+      ]
+    ]
+  }
+}

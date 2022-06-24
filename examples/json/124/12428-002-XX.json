@@ -1,0 +1,96 @@
+{
+  "id": "12428002XX",
+  "reaction": {
+    "x4code": "(92-U-235(N,ABS),,ALF)",
+    "target": "92-U-235",
+    "process": "N,ABS",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "ALF",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Maxwellian sigma for 2 runs=(0.1790+-0.0033) and",
+            " (0.1787+-0.0017), corrected to 2200 m/sec using",
+            "Westcott formalism and g and s from Critoph, CRRP-",
+            "1191(1964)."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " No details on sources of uncertainties."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Bare samples considered: The samples, located at",
+            "opposite ends of an aluminum capsule, each consisted",
+            "of about 25 mg U3O8 spread out over an area of about",
+            "1.1 cm in a small aluminum can. The capsule was",
+            "irradiated close enough to the central plane of the",
+            "reactor for the effects of the vertical flux gradient",
+            "to be negligible."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        680.57
+      ],
+      [
+        2.7
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        2.53e-08
+      ],
+      [
+        0.1765
+      ],
+      [
+        0.0015
+      ]
+    ]
+  }
+}

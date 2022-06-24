@@ -1,0 +1,12 @@
+# entry       : 22234 
+# subentry    : 007 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198-G,,SIG) 
+# year        : 1991 
+# author      : I.Celenk 
+# institute   : 2TUKANR 
+# reference   : (J,JRN,148,(2),393,9106) 
+# facility    : None 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      2.53000E-08      0.00000E+00      1.07550E+05      0.00000E+00

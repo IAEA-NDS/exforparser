@@ -1,0 +1,107 @@
+{
+  "id": "11791004XX",
+  "reaction": {
+    "x4code": "(92-U-235(N,TOT),,SIG)",
+    "target": "92-U-235",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,TOT),,SIG)"
+          ],
+          "freetext": [
+            "",
+            " NORMALIZED TO ABSOLUTE MEASUREMENT AT",
+            " 0.1 EV."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "METALLIC SAMPLE, 93.19 PERCENT U-235."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": [
+      [
+        0.1
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        2.53e-09,
+        2.69e-09,
+        2.86e-09,
+        3.05e-09,
+        3.26e-09,
+        3.49e-09,
+        3.75e-09,
+        4.04e-09,
+        4.36e-09,
+        4.73e-09,
+        1e-07
+      ],
+      [
+        2254.0,
+        2194.0,
+        2116.0,
+        2058.0,
+        1990.0,
+        1934.0,
+        1857.0,
+        1795.0,
+        1723.0,
+        1659.0,
+        311.0
+      ],
+      [
+        0.73,
+        0.74,
+        0.65,
+        0.58,
+        0.5,
+        0.46,
+        0.43,
+        0.34,
+        0.31,
+        0.27,
+        0.15
+      ]
+    ]
+  }
+}

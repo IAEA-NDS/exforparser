@@ -1,0 +1,57 @@
+{
+  "id": "125220022",
+  "reaction": {
+    "x4code": "(94-PU-239(N,TOT),,WID)",
+    "target": "94-PU-239",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "WID",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "x4code": "(SHAPE)",
+          "freetext": [
+            " SHAPE ANALYSIS"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-RES",
+      "EN-RES-ERR",
+      "DATA      2",
+      "DATA-ERR  2"
+    ],
+    "units": [
+      "EV",
+      "EV",
+      "EV",
+      "EV"
+    ],
+    "data": [
+      [
+        0.299
+      ],
+      [
+        0.001
+      ],
+      [
+        0.102
+      ],
+      [
+        0.004
+      ]
+    ]
+  }
+}

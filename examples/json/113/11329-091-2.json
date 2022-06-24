@@ -1,0 +1,41 @@
+{
+  "id": "113290912",
+  "reaction": {
+    "x4code": "(53-I-127(N,0),,D)",
+    "target": "53-I-127",
+    "process": "N,0",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "D",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA      2"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "EV"
+    ],
+    "data": [
+      [
+        10.0
+      ],
+      [
+        200.0
+      ],
+      [
+        13.4
+      ]
+    ]
+  }
+}

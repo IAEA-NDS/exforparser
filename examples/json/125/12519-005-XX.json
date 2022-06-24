@@ -1,0 +1,43 @@
+{
+  "id": "12519005XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,0),,EN)",
+    "target": "94-PU-239",
+    "process": "N,0",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "EN",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            "      TIME-OF-FLIGHT"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "DATA"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        1.2e-05,
+        6e-05
+      ]
+    ]
+  }
+}

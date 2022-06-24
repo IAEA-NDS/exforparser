@@ -1,0 +1,48 @@
+{
+  "id": "121630132",
+  "reaction": {
+    "x4code": "(75-RE-185(N,EL),,WID/RED,,2G)",
+    "target": "75-RE-185",
+    "process": "N,EL",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "WID/RED",
+    "sf7": null,
+    "sf8": "2G",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "MOMENTUM L"
+    ],
+    "units": [
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        0.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA      2",
+      "DATA-ERR  2"
+    ],
+    "units": [
+      "MILLI-EV",
+      "MILLI-EV"
+    ],
+    "data": [
+      [
+        16.0
+      ],
+      [
+        2.0
+      ]
+    ]
+  }
+}

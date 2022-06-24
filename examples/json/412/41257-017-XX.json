@@ -1,0 +1,53 @@
+{
+  "id": "41257017XX",
+  "reaction": {
+    "x4code": "(45-RH-103(N,G)45-RH-104,,SIG,,SPA)",
+    "target": "45-RH-103",
+    "process": "N,G",
+    "sf4": "45-RH-104",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Rh-103 concentration is 1.00"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "KEV"
+    ],
+    "data": [
+      [
+        200.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA"
+    ],
+    "units": [
+      "B"
+    ],
+    "data": [
+      [
+        0.043
+      ]
+    ]
+  }
+}

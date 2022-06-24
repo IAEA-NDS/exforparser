@@ -1,0 +1,62 @@
+{
+  "id": "30400029XX",
+  "reaction": {
+    "x4code": "(40-ZR-90(N,2N)40-ZR-89,,SIG,,FIS)",
+    "target": "40-ZR-90",
+    "process": "N,2N",
+    "sf4": "40-ZR-89",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(40-ZR-89-G,78.4HR,DG,909.1,0.990)"
+          ],
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(40-ZR-89-M,4.18MIN)"
+          ],
+          "freetext": [
+            "  94% isomeric transition"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-DUMMY",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        1.41
+      ],
+      [
+        0.267
+      ],
+      [
+        0.015
+      ]
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "30400036XX",
+  "reaction": {
+    "x4code": "(42-MO-92(N,A)40-ZR-89,,SIG,,FIS)",
+    "target": "42-MO-92",
+    "process": "N,A",
+    "sf4": "40-ZR-89",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": [
+      " Sum of Mo-92(n,a)Zr-89m and Mo-92(n,a)Mo-89g."
+    ]
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(40-ZR-89-G,78.4HR,DG,909.1,0.990)"
+          ],
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(40-ZR-89-M,4.18MIN)"
+          ],
+          "freetext": [
+            "  94% isomeric transition"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-DUMMY",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        1.41
+      ],
+      [
+        0.42
+      ],
+      [
+        0.02
+      ]
+    ]
+  }
+}

@@ -2,10 +2,10 @@
 #
 # This file is part of exfor-parser.
 # Copyright (C) 2022 International Atomic Energy Agency (IAEA)
-# 
-# Disclaimer: The code is still under developments and not ready 
-#             to use. It has beeb made public to share the progress
-#             between collaborators. 
+#
+# Disclaimer: The code is still under developments and not ready
+#             to use. It has been made public to share the progress
+#             among collaborators.
 # Contact:    nds.contact-point@iaea.org
 #
 ####################################################################
@@ -58,7 +58,6 @@ def diff_check():
     pass
 
 
-
 class Entry:
     def __init__(self, entnum):
 
@@ -66,7 +65,6 @@ class Entry:
         self.x4filename = self.x4filename()
         self.entry_body = self.get_entry_body()
         self.subents_nums = self.get_subent_nums()
-
 
     @property
     def entry_number(self):
@@ -82,11 +80,11 @@ class Entry:
     @staticmethod
     def _check_entry_nlen(entnum):
         from parser.exceptions import Incorrectx4Number
+
         if len(entnum) != 5:
             raise Incorrectx4Number(entnum)
         else:
             return True
-
 
     def x4filename(self):
         if self._check_entry_nlen(self.entnum):
@@ -99,7 +97,6 @@ class Entry:
         return open_read_file(
             self.x4filename
         )  # contenain entry body as list of each line
-
 
     def get_entry_body(self) -> dict:
         from parser.exceptions import x4NoBody
@@ -132,7 +129,6 @@ class Entry:
 
         return dict(entry_body)
 
-
     def get_subent_nums(self) -> list:
         """
         get information from subent_body dict that looks like
@@ -140,7 +136,6 @@ class Entry:
         and reaturn the dictionary keys
         """
         return list(self.entry_body.keys())
-
 
     def get_entry_bib_dict(self) -> dict:
         main = MainSubentry("001", self.entry_body["001"])
@@ -151,11 +146,9 @@ class Entry:
         dict["reactions"] = self.get_reactions()
         return dict
 
-
     def get_entry_common_dict(self) -> dict:
         main = MainSubentry("001", self.entry_body["001"])
         return main.main_common_dict
-
 
     def get_reactions(self) -> dict:
         reactions = {}
@@ -171,12 +164,9 @@ class Entry:
         # return json.dumps(reactions, indent=1)
         return reactions
 
-
     def delete_entry(self):
         pass
 
     def update_entry(self):
         """update if hash has been changed"""
         pass
-
-

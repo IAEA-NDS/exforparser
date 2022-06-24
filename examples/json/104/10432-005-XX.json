@@ -1,0 +1,75 @@
+{
+  "id": "10432005XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,EL),,STF)",
+    "target": "79-AU-197",
+    "process": "N,EL",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "STF",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Data errors given include systematic and statistical",
+            " errors."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX"
+    ],
+    "units": [
+      "EV",
+      "EV"
+    ],
+    "data": [
+      [
+        23.0
+      ],
+      [
+        120.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "MOMENTUM L",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "NO-DIM",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        0.0,
+        1.0,
+        2.0
+      ],
+      [
+        0.00016,
+        5e-05,
+        7e-05
+      ],
+      [
+        2e-05,
+        1e-05,
+        2e-05
+      ]
+    ]
+  }
+}

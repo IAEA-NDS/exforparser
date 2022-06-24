@@ -1,0 +1,48 @@
+{
+  "id": "40421002XX",
+  "reaction": {
+    "x4code": "(11-NA-23(N,G)11-NA-24,,SIG)",
+    "target": "11-NA-23",
+    "process": "N,G",
+    "sf4": "11-NA-24",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "EN"
+    ],
+    "units": [
+      "KEV"
+    ],
+    "data": [
+      [
+        24.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.00171
+      ],
+      [
+        0.00027
+      ]
+    ]
+  }
+}

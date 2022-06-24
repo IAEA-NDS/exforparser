@@ -1,0 +1,100 @@
+{
+  "id": "21004003XX",
+  "reaction": {
+    "x4code": "(53-I-127(N,G)53-I-128,,SIG)",
+    "target": "53-I-127",
+    "process": "N,G",
+    "sf4": "53-I-128",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(53-I-128,24.99MIN,DG,442.9,0.16)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "DECAY-MON": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(11-NA-24-G,15.02HR,DG,1368.5,1.00)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(13-AL-27(N,A)11-NA-24,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".KI POWDER, ENCASED IN A CYLINDER OF ALUMINUM FOILS,",
+            " PURITY 99.995 PERCENT, ABUNDANCE 100 PERCENT."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        112.0
+      ],
+      [
+        5.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        0.62
+      ],
+      [
+        0.21
+      ]
+    ]
+  }
+}

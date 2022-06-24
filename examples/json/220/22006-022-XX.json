@@ -1,0 +1,73 @@
+{
+  "id": "22006022XX",
+  "reaction": {
+    "x4code": "(75-RE-0(N,G),,SIG)",
+    "target": "75-RE-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Pressed powder placed in 0.5-mm-thick polyethylene",
+            " cylindrical container"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        6.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        0.5,
+        0.7,
+        1.0,
+        2.5
+      ],
+      [
+        319.0,
+        263.0,
+        200.0,
+        61.0
+      ],
+      [
+        22.0,
+        18.0,
+        14.0,
+        5.0
+      ]
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "23193004XX",
+  "reaction": {
+    "x4code": "(93-NP-237(N,G)93-NP-238,,SIG,,MXW/MSC)",
+    "target": "93-NP-237",
+    "process": "N,G",
+    "sf4": "93-NP-238",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW/MSC",
+    "sf9": null,
+    "freetext": [
+      "Maxwellian averaged cross-section in the energy",
+      " region above 10 meV"
+    ]
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Statistical uncertainty"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM-MIN",
+      "EN-NRM-MAX"
+    ],
+    "units": [
+      "EV",
+      "EV"
+    ],
+    "data": [
+      [
+        0.4
+      ],
+      [
+        0.58
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "KT",
+      "EN-MIN",
+      "DATA",
+      "ERR-S"
+    ],
+    "units": [
+      "EV",
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        0.01
+      ],
+      [
+        155.4
+      ],
+      [
+        0.6
+      ]
+    ]
+  }
+}

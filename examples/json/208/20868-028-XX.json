@@ -1,0 +1,74 @@
+{
+  "id": "20868028XX",
+  "reaction": {
+    "x4code": "(92-U-0(N,F),,SIG,,SPA)",
+    "target": "92-U-0",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Am-241+Al in Al-container neutron source.",
+            "Am-241+Al neutron source in aluminium container;",
+            "72.0 x 12.0 mm (h x diam.); amount of radioactive",
+            "material - 5Ci; neutron emission rate",
+            "4.4 x 10**4 n/sec; anisotropy factor 1.042.",
+            " The source consists of a homogeneous mixture of A1",
+            " and 241AmO(2)."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".About 0.1 mg/cm2 natural uranium electroplated onto",
+            " a 1 mm thick nickel backing."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "KEV"
+    ],
+    "data": [
+      [
+        500.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        200.0
+      ],
+      [
+        40.0
+      ]
+    ]
+  }
+}

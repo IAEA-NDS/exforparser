@@ -1,0 +1,79 @@
+{
+  "id": "11447024XX",
+  "reaction": {
+    "x4code": "(26-FE-58(N,G)26-FE-59,,SIG,,SPA)",
+    "target": "26-FE-58",
+    "process": "N,G",
+    "sf4": "26-FE-59",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(26-FE-59,47.D,B-)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Reactor spectrum"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Fe(2)O(3)"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": [
+      [
+        0.0253
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        36.0
+      ],
+      [
+        20.0
+      ]
+    ]
+  }
+}

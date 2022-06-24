@@ -1,0 +1,36 @@
+{
+  "id": "22578016XX",
+  "reaction": {
+    "x4code": "(53-I-127(N,G)53-I-128,,SIG,,SPA)",
+    "target": "53-I-127",
+    "process": "N,G",
+    "sf4": "53-I-128",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-MEAN",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "B"
+    ],
+    "data": [
+      [
+        0.22
+      ],
+      [
+        0.35
+      ]
+    ]
+  }
+}

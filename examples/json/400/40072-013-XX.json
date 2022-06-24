@@ -1,0 +1,64 @@
+{
+  "id": "40072013XX",
+  "reaction": {
+    "x4code": "(74-W-0(N,G),,SIG)",
+    "target": "74-W-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Final absorption cross sections with errors were",
+            "determined by results averaging obtained from long",
+            "counter and water tank measurements"
+          ]
+        }
+      }
+    },
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Insignificant correction for softening of spectrum into",
+            "samples and into source beryllium can was introduced in",
+            "final average data."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "KEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        24.0
+      ],
+      [
+        300.0
+      ],
+      [
+        25.0
+      ]
+    ]
+  }
+}

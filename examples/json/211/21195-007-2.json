@@ -1,0 +1,67 @@
+{
+  "id": "211950072",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "DATA-ERR  1",
+      "DATA-ERR  2"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        2.0
+      ],
+      [
+        3.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA      2",
+      "MONIT     2"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        1.0,
+        2.25,
+        5.4,
+        14.1
+      ],
+      [
+        1.75,
+        1.99,
+        1.84,
+        2.52
+      ],
+      [
+        1.22,
+        1.31,
+        1.17,
+        2.17
+      ]
+    ]
+  }
+}

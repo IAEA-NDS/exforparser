@@ -1,0 +1,70 @@
+{
+  "id": "11447007XX",
+  "reaction": {
+    "x4code": "(14-SI-30(N,G)14-SI-31,,SIG,,SPA)",
+    "target": "14-SI-30",
+    "process": "N,G",
+    "sf4": "14-SI-31",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(14-SI-31,170.MIN,B-)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Reactor spectrum"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": [
+      [
+        0.0253
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.116
+      ],
+      [
+        20.0
+      ]
+    ]
+  }
+}

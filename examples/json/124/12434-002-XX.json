@@ -1,0 +1,111 @@
+{
+  "id": "12434002XX",
+  "reaction": {
+    "x4code": "(92-U-235(N,F),,SIG)",
+    "target": "92-U-235",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      "  - average from seven measurements."
+    ]
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Uncertainty includes:"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " The standard statistical error of terms other",
+            "than those due to the weight of the U235 fission foil",
+            "and of the gold cross section"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " An uncertainty in the weight of the U235",
+            "fission foil was assumed in arriving at the stated",
+            "uncertainty of the U235 fission cross section."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-197(N,G)79-AU-198,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "x4code": "(92-U-235,ENR=0.9198)",
+          "freetext": [
+            " The weight of the fission foil",
+            "has been tentatively",
+            "established at O. 144 mg/cm2 by comparison alpha",
+            "counting against a standard foil prepared from the",
+            "same material by electrodeposition"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T",
+      "MONIT",
+      "ERR-S",
+      "ERR-1"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B",
+      "B",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        1e-07
+      ],
+      [
+        237.7
+      ],
+      [
+        3.0
+      ],
+      [
+        50.9
+      ],
+      [
+        0.5
+      ],
+      [
+        1.0
+      ]
+    ]
+  }
+}

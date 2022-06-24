@@ -1,0 +1,116 @@
+{
+  "id": "21879005XX",
+  "reaction": {
+    "x4code": "(30-ZN-64(N,P)29-CU-64,,SIG)",
+    "target": "30-ZN-64",
+    "process": "N,P",
+    "sf4": "29-CU-64",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(29-CU-64,,AR,511.)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".UNCERTAINTY IN",
+            " - ANGULAR DISTRIBUTION                   0.077 PER CEN",
+            " - PROTON COUNTING STATISTICS           0.5-0.9 PER CEN",
+            " - DETECTION EFFICIENCY FOR GAMMAS           3. PER CEN",
+            " - GAMMA COUNTING STATISTICS             0.6-3. PER CEN",
+            " - SELF ABSORPTION                          0.7 PER CEN"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "DATA-ERR"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        4.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "B"
+    ],
+    "data": [
+      [
+        2.05,
+        2.116,
+        2.188,
+        2.266,
+        2.442,
+        2.552,
+        2.871,
+        2.992,
+        3.472,
+        3.933,
+        4.259,
+        4.344,
+        4.504
+      ],
+      [
+        0.08,
+        0.08,
+        0.08,
+        0.08,
+        0.09,
+        0.14,
+        0.27,
+        0.32,
+        0.52,
+        0.68,
+        0.74,
+        0.76,
+        0.76
+      ],
+      [
+        0.0094,
+        0.0133,
+        0.0102,
+        0.0114,
+        0.026,
+        0.0317,
+        0.0512,
+        0.0569,
+        0.07608,
+        0.1047,
+        0.1078,
+        0.1121,
+        0.1248
+      ]
+    ]
+  }
+}

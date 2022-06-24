@@ -1,0 +1,12 @@
+# entry       : 30400 
+# subentry    : 012 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG,,FIS) 
+# year        : 1977 
+# author      : Z.Dezso 
+# institute   : 3HUNKOS 
+# reference   : (C,77KIEV,3,32,1977) 
+# facility    : None 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      1.41000E+00      0.00000E+00      1.10000E+02      5.00000E+00

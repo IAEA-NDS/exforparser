@@ -91,6 +91,7 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+/.ipynb_checkpoints
 
 # IPython
 profile_default/
@@ -154,8 +155,10 @@ dmypy.json
 # under development
 geo/
 docker/
-processed.dat
-requirements.txt
+plotting/
+pickles/*.py
+processed*.dat
+error.dat
 use.py
 use.sh
 plot.ipynb
@@ -168,3 +171,5 @@ JSONexamples/
 pypartest.py
 _trash.py
 _*
+# *.dat
+mongo_db_manager.ipynb

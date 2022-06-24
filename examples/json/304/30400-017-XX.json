@@ -1,0 +1,54 @@
+{
+  "id": "30400017XX",
+  "reaction": {
+    "x4code": "(22-TI-46(N,2N)22-TI-45,,SIG,,FIS)",
+    "target": "22-TI-46",
+    "process": "N,2N",
+    "sf4": "22-TI-45",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(22-TI-45,3.08HR,AR,511.0,1.720)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-DUMMY",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        1.41
+      ],
+      [
+        0.093
+      ],
+      [
+        0.031
+      ]
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "12434009XX",
+  "reaction": {
+    "x4code": "(94-PU-241(N,F),,SIG,,,DERIV)",
+    "target": "94-PU-241",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": "DERIV",
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        941.0
+      ],
+      [
+        46.0
+      ],
+      [
+        590.8
+      ],
+      [
+        5.4
+      ]
+    ]
+  }
+}

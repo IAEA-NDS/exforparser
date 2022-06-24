@@ -1,0 +1,98 @@
+{
+  "id": "11407010XX",
+  "reaction": {
+    "x4code": "(35-BR-81(N,G)35-BR-82,,SIG)",
+    "target": "35-BR-81",
+    "process": "N,G",
+    "sf4": "35-BR-82",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(35-BR-82-G,,DG,1030.,0.26)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(49-IN-115(N,G)49-IN-116-M,,SIG)"
+          ],
+          "freetext": [
+            "",
+            "Based on in115 capture=195mb(to 54min"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Lump CBr4 sample."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "MB"
+    ],
+    "data": [
+      [
+        195.0
+      ],
+      [
+        50.0
+      ],
+      [
+        10.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR",
+      "MONIT"
+    ],
+    "units": [
+      "B",
+      "B",
+      "MB"
+    ],
+    "data": [
+      [
+        0.137
+      ],
+      [
+        0.015
+      ],
+      [
+        195.0
+      ]
+    ]
+  }
+}

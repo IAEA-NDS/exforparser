@@ -1,0 +1,12 @@
+# entry       : 11450 
+# subentry    : 037 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG,,FIS) 
+# year        : 1949 
+# author      : D.J.Hughes 
+# institute   : 1USAANL 
+# reference   : (J,PR,75,1781,194906) 
+# facility    : {'type': 'REAC', 'x4code': '1USAANL'} 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      1.00000E+00      0.00000E+00      1.21000E+02      0.00000E+00

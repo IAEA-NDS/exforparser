@@ -1,0 +1,73 @@
+{
+  "id": "411900111",
+  "reaction": {
+    "x4code": "(50-SN-117(N,0),,D)",
+    "target": "50-SN-117",
+    "process": "N,0",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "D",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Type of uncertainty is not explained in the",
+            "article."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Metallic disk 2 cm diameter, o.04 cm thickness,",
+            " mass near 1 gram , Sn-116 content is 97.6+-0.2 pc"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-RES-MIN",
+      "EN-RES-MAX",
+      "DATA-ERR",
+      "DATA      1",
+      "DATA-ERR  1"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "MILLI-EV",
+      "EV",
+      "EV"
+    ],
+    "data": [
+      [
+        300.0
+      ],
+      [
+        700.0
+      ],
+      [
+        20.0
+      ],
+      [
+        55.0
+      ],
+      [
+        5.0
+      ]
+    ]
+  }
+}

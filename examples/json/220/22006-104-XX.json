@@ -1,0 +1,59 @@
+{
+  "id": "22006104XX",
+  "reaction": {
+    "x4code": "(67-HO-165(N,G)67-HO-166,,MLT,,,DERIV)",
+    "target": "67-HO-165",
+    "process": "N,G",
+    "sf4": "67-HO-166",
+    "residual": null,
+    "sf5": null,
+    "sf6": "MLT",
+    "sf7": null,
+    "sf8": null,
+    "sf9": "DERIV",
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Metallic disk  59.134 gram, 50 mm diameter,",
+            " 3.4  mm thick ."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        6.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "PRT/REAC"
+    ],
+    "data": [
+      [
+        0.5
+      ],
+      [
+        3.92
+      ]
+    ]
+  }
+}

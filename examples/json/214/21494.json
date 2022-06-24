@@ -43,7 +43,7 @@
       "XX": {
         "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
         "freetext": [
-          ""
+          " 2200 m/sec value."
         ]
       }
     },
@@ -51,7 +51,7 @@
       "XX": {
         "x4code": "((94-PU-241(N,F),,SIG)/(92-U-235(N,F),,SIG))",
         "freetext": [
-          ""
+          " 2200 m/sec value."
         ]
       }
     },
@@ -92,21 +92,27 @@
     "006": {
       "XX": {
         "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "007": {
       "XX": {
         "x4code": "((94-PU-241(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
-    "008": {},
-    "009": {},
+    "008": {
+      "XX": {
+        "x4code": "((94-PU-239(N,F),,SIG,,MXW)/(92-U-235(N,F),,SIG,,MXW))",
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "((94-PU-241(N,F),,SIG,,MXW)/(92-U-235(N,F),,SIG,,MXW))",
+        "freetext": []
+      }
+    },
     "010": {
       "XX": {
         "x4code": "(94-PU-239(N,F),,SIG)",

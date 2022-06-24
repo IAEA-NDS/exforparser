@@ -1,0 +1,58 @@
+{
+  "id": "21017007XX",
+  "reaction": {
+    "x4code": "(13-AL-27(N,EL)13-AL-27,,SIG,,,DERIV)",
+    "target": "13-AL-27",
+    "process": "N,EL",
+    "sf4": "13-AL-27",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": "DERIV",
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Difference between the total cross section at 273K",
+            " and the capture cross section inferred from",
+            " extrapolation of the total cross section at 33K."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "TEMP",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MICRO-EV",
+      "K",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.5227
+      ],
+      [
+        298.0
+      ],
+      [
+        9.2
+      ],
+      [
+        1.8
+      ]
+    ]
+  }
+}

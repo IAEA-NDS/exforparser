@@ -1,0 +1,63 @@
+{
+  "id": "11778003XX",
+  "reaction": {
+    "x4code": "(30-ZN-0(N,G),,SIG)",
+    "target": "30-ZN-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Not corrected for resonance self-shielding."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-RSL"
+    ],
+    "units": [
+      "KEV",
+      "KEV"
+    ],
+    "data": [
+      [
+        24.0
+      ],
+      [
+        2.2
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.064
+      ],
+      [
+        0.02
+      ]
+    ]
+  }
+}

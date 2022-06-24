@@ -1,0 +1,99 @@
+{
+  "id": "40729005XX",
+  "reaction": {
+    "x4code": "(63-EU-153(N,TOT),,SIG)",
+    "target": "63-EU-153",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Error due to oxygen cross section uncertainty."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Error due to nuclei density definition in",
+            " sample - 1% (thin) - 0.5 % (thick)."
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total error"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Eu2-O3 powder, enrichment 99.1% Of Eu-153, Eu-151 -0.9%",
+            "Thickness (cm): 0.3, 0.5, 0.8, 1.5, 3.0, 5.0, 8.0,10.0,",
+            " 15.0, 20.0, 25.0, 29.5 for direct geometry.",
+            " Diameter 10mm."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1",
+      "ERR-2"
+    ],
+    "units": [
+      "B",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.05
+      ],
+      [
+        1.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL-HW",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.0
+      ],
+      [
+        0.3
+      ],
+      [
+        26.2
+      ],
+      [
+        1.0
+      ]
+    ]
+  }
+}

@@ -2,17 +2,17 @@
 #
 # This file is part of exfor-parser.
 # Copyright (C) 2022 International Atomic Energy Agency (IAEA)
-# 
-# Disclaimer: The code is still under developments and not ready 
-#             to use. It has beeb made public to share the progress
-#             between collaborators. 
+#
+# Disclaimer: The code is still under developments and not ready
+#             to use. It has been made public to share the progress
+#             among collaborators.
 # Contact:    nds.contact-point@iaea.org
 #
 ####################################################################
 
 from pyparsing import *
 from .exfor_field import *
-from .utilities import corr, flatten_list, ztoelem, numtoisomer,process_time
+from .utilities import corr, flatten_list, ztoelem, numtoisomer, process_time
 from dictionary.exfor_dictionary import Diction
 
 
@@ -167,11 +167,16 @@ def recon_data(data_block):
                 dataline = []
                 continue
 
+    # transpose = {
+    #     "data": {
+    #         str(i): [float(corr(row[i])) if row[i] != "" else None for row in datatable]
+    #         for i in range(head_len)
+    #     }
     transpose = {
-        "data": {
-            str(i): [float(corr(row[i])) if row[i] != "" else None for row in datatable]
+        "data": [
+            [float(corr(row[i])) if row[i] != "" else None for row in datatable]
             for i in range(head_len)
-        }
+        ]
     }
 
     return dict(**header, **transpose)
@@ -199,7 +204,7 @@ def get_colmun_indexes(main, sub, x_heads=None):
 
     locs = []
 
-    data_dict = sub.parse_data() 
+    data_dict = sub.parse_data()
 
     if data_dict:
         locs = _get_head_index(data_dict, x_heads)
@@ -212,88 +217,19 @@ def get_colmun_indexes(main, sub, x_heads=None):
 
         if data_dict:
             locs = _get_head_index(data_dict, x_heads)
-        
+
         if locs:
             pass
-        
+
         else:
             data_dict = main.parse_common()
             locs = _get_head_index(data_dict, x_heads)
 
-
-
-    # for y in heads:
-    #     try:
-    #         data_dict = sub.parse_data()
-    #         locs = get_head_index(data_dict, x_heads)
-    #         # index = datasec["heads"].index(y)
-    #     except:
-    #         try:
-    #             data_dict = sub.parse_common()
-    #             locs = get_head_index(data_dict, x_heads)
-    #             # index = datasec["heads"].index(y)
-    #         except:
-    #             try:
-    #                 data_dict = main.parse_common()
-    #                 locs = get_head_index( data_dict, x_heads)
-    #                 # index = datasec["heads"].index(y)
-    #             except:
-    #                 locs = None
-
-
     return locs, data_dict
 
 
-
-def get_more_product_column(main, sub, heads):
-    indexes = []
-    for h in heads:
-        try:
-            datasec = sub.parse_data()
-            indexes += [datasec["heads"].index(h)]
-        except:
-            try:
-                datasec = sub.parse_common()
-                indexes += [datasec["heads"].index(h)]
-            except:
-                try:
-                    datasec = main.parse_common()
-                    indexes += [datasec["heads"].index(h)]
-                except:
-                    index = None
-
-    if indexes:
-        for i in indexes:
-            if "ELEM" in datasec["heads"].index(i):
-                data_list = [
-                    ztoelem(int(float(m))) if not m is None else None
-                    for m in datasec["data"][str(index)]
-                ]
-
-                data_list = [
-                    str(int(float(m))) if not m is None else None
-                    for m in datasec["data"][str(index)]
-                ]
-
-            elif "ISOMER" in datasec["heads"].index(i):
-                data_list = [
-                    numtoisomer(int(float(m))) if not m is None else None
-                    for m in datasec["data"][str(index)]
-                ]
-
-            else:
-                data_list = [
-                    str(int(float(m)))
-                    for m in datasec["data"][str(index)]
-                    if not m is None
-                ]
-
-
-    return data_list
-
-
 def get_product_column(main, sub, head):
-    ## very normal cases
+    ## very normal cases only, not consider the ratio cases whoes HEADs are coded with MASS1 ELEM1
     data_list = []
 
     if head == "CHARGE":
@@ -318,25 +254,26 @@ def get_product_column(main, sub, head):
     if not index is None:
         if head == "ELEMENT":
             data_list = [
-                ztoelem(int(float(m))) 
-                for m in datasec["data"][str(index)] if not m is None 
+                ztoelem(int(float(m)))
+                for m in datasec["data"][str(index)]
+                if not m is None
             ]
 
         elif head == "CHARGE":
             data_list = [
-                str(int(float(m)))
-                for m in datasec["data"][str(index)]   if not m is None 
+                str(int(float(m))) for m in datasec["data"][str(index)] if not m is None
             ]
 
         elif head == "ISOMER":
             data_list = [
-                numtoisomer(int(float(m))) 
-                for m in datasec["data"][str(index)]  if not m is None 
+                numtoisomer(int(float(m)))
+                for m in datasec["data"][str(index)]
+                if not m is None
             ]
 
         elif head == "MASS":
             data_list = [
-                str(int(float(m))) for m in datasec["data"][str(index)] if not m is None 
+                str(int(float(m))) for m in datasec["data"][str(index)] if not m is None
             ]
 
         else:
@@ -362,6 +299,13 @@ def product_expansion(main, sub, reac_dic=None):
             if cil:
                 list_dict[x] = cil
 
+        if len(list_dict["MASS"]) > len(list_dict["ELEMENT"]):
+            list_dict["ELEMENT"] = list_dict["ELEMENT"] * len(list_dict["MASS"])
+            list_dict["CHARGE"] = list_dict["CHARGE"] * len(list_dict["MASS"])
+
+        if len(list_dict["MASS"]) < len(list_dict["ELEMENT"]):
+            list_dict["MASS"] = list_dict["MASS"] * len(list_dict["ELEMENT"])
+
         if list_dict.get("ISOMER"):
             prod_list = [
                 charge + "-" + elem + "-" + mass + "-" + iso
@@ -385,30 +329,33 @@ def product_expansion(main, sub, reac_dic=None):
                 )
             ]
 
+        i = 0
         for prod in prod_list:
             add = reac_dic.copy()
             add["residual"] = prod
-            add["np"] = prod_list.index(prod)
+            add["np"] = int(i)
             reac_set.append(add)
-            # df = df.append(reac, ignore_index=True)
+            i += 1
 
     elif reac_dic["sf4"] == "MASS":
         data_list = get_product_column(main, sub, "MASS")
+        i = 0
         for mass in data_list or []:
             add = reac_dic.copy()
             add["residual"] = "A=" + mass
-            add["np"] = data_list.index(mass)
+            add["np"] = int(i)
             reac_set.append(add)
-            # df = df.append(reac, ignore_index=True)
+            i += 1
 
     elif reac_dic["sf4"] == "ELEM":
         data_list = get_product_column(main, sub, "ELEMENT")
+        i = 0
         for elem in data_list or []:
             add = reac_dic.copy()
             add["residual"] = elem
-            add["np"] = data_list.index(elem)
+            add["np"] = int(i)
             reac_set.append(add)
-            # df = df.append(reac, ignore_index=True)
+            i += 1
 
     else:
         reac_dic["residual"] = reac_dic["sf4"]
@@ -416,12 +363,13 @@ def product_expansion(main, sub, reac_dic=None):
 
     return reac_set
 
+
 d = Diction()
 ## get possible heading list
 x_heads = d.get_incident_en_heads()
 
 # @process_time
-def get_inc_energy(main = None, sub = None):
+def get_inc_energy(main=None, sub=None):
     ## no need to take pointer or flag into account
     en = {}
     locs = []
@@ -431,24 +379,25 @@ def get_inc_energy(main = None, sub = None):
 
     if locs:
         try:
-            factor = (
-                float(d.get_unit_factor(data_dict["units"][locs[0]])) / 1.0e6
-            )
+            factor = float(d.get_unit_factor(data_dict["units"][locs[0]])) / 1.0e6
         except:
             factor = 1.0
 
     if data_dict and locs:
+        ## this is missleading if there are EN-MIN     EN-MAX     EN-MEAN such like in 22356002
         en = {
             "min": min(
-                float(x) for x in data_dict["data"][str(locs[0])] if x is not None)* factor,
+                float(x) for x in data_dict["data"][str(locs[0])] if x is not None
+            )
+            * factor,
             "max": max(
-                float(x) for x in data_dict["data"][str(locs[0])] if x is not None) * factor,
-            "points": int(len(data_dict["data"][str(locs[0])]))
+                float(x) for x in data_dict["data"][str(locs[0])] if x is not None
+            )
+            * factor,
+            "points": int(len(data_dict["data"][str(locs[0])])),
         }
         assert en["min"] <= en["max"]
     else:
         en = {"min": None, "max": None, "points": 0}
-    ## this is missleading if there are EN-MIN     EN-MAX     EN-MEAN such like in 22356002
 
     return en
-

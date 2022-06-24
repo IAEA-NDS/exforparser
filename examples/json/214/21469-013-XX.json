@@ -1,0 +1,117 @@
+{
+  "id": "21469013XX",
+  "reaction": {
+    "x4code": "(92-U-233(N,ABS),,SIG,,MXW)",
+    "target": "92-U-233",
+    "process": "N,ABS",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW",
+    "sf9": null,
+    "freetext": [
+      " Effective absorption",
+      " cross section."
+    ]
+  },
+  "measurement_conditions": {
+    "ASSUMED": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-233(N,F),,NU)"
+          ],
+          "freetext": [
+            " Value taken",
+            " as 2.29 +- 0.03."
+          ]
+        }
+      }
+    },
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Corrected for the fate of a fission neutron",
+            " compared with a thermal neutron."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,ABS),,SIG)"
+          ],
+          "freetext": [
+            " 2200 m/sec value taken",
+            " as 698 +- 7 b."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Solution of enriched U-233."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": [
+      [
+        0.0253
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "MONIT",
+      "MONIT-ERR",
+      "ASSUM",
+      "ASSUM-ERR",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "B",
+      "NO-DIM",
+      "NO-DIM",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        698.0
+      ],
+      [
+        7.0
+      ],
+      [
+        2.29
+      ],
+      [
+        0.03
+      ],
+      [
+        585.0
+      ],
+      [
+        26.0
+      ]
+    ]
+  }
+}

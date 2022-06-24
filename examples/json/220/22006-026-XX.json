@@ -1,0 +1,135 @@
+{
+  "id": "22006026XX",
+  "reaction": {
+    "x4code": "(81-TL-205(N,G)81-TL-206,,SIG)",
+    "target": "81-TL-205",
+    "process": "N,G",
+    "sf4": "81-TL-206",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "MISC-COL": {
+      "XX": {
+        "0": {
+          "x4code": "(MISC1)",
+          "freetext": [
+            " -for neutron source anisotropy,"
+          ]
+        },
+        "1": {
+          "x4code": "(MISC2)",
+          "freetext": [
+            " -for neutron self-absorption by sample,"
+          ]
+        },
+        "2": {
+          "x4code": "(MISC3)",
+          "freetext": [
+            " - for neutron multiple scattering by sample,"
+          ]
+        },
+        "3": {
+          "x4code": "(MISC4)",
+          "freetext": [
+            " - total correction= A1*A2*A3."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Pressed powder placed in 0.5-mm-thick polyethylene",
+            " cylindrical container.",
+            " 40 g weight, 13.6 mm diameter, 23 mm height.",
+            " Tl-203 - 3.6 % , Tl-205 - 96.4 % ."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        6.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA",
+      "ERR-T",
+      "MISC1",
+      "MISC2",
+      "MISC3",
+      "MISC4"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "MB",
+      "MB",
+      "NO-DIM",
+      "NO-DIM",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        0.5,
+        1.0,
+        2.5
+      ],
+      [
+        0.8,
+        0.7,
+        0.6
+      ],
+      [
+        10.0,
+        9.0,
+        4.4
+      ],
+      [
+        4.0,
+        4.0,
+        2.0
+      ],
+      [
+        1.003,
+        1.0,
+        1.006
+      ],
+      [
+        0.852,
+        0.887,
+        0.844
+      ],
+      [
+        1.122,
+        1.089,
+        1.123
+      ],
+      [
+        0.959,
+        0.966,
+        0.953
+      ]
+    ]
+  }
+}

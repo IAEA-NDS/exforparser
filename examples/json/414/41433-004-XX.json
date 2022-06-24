@@ -1,0 +1,85 @@
+{
+  "id": "41433004XX",
+  "reaction": {
+    "x4code": "(92-U-238(N,2N)92-U-237,,SIG,,SPA)",
+    "target": "92-U-238",
+    "process": "N,2N",
+    "sf4": "92-U-237",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": [
+      " Effective cross-",
+      "                                   section"
+    ]
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-237,6.75D,DG,208.)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "     Spallation target was a lead cylinder covered",
+            "      with paraffin moderator.",
+            " Proton beam 1 GeV,total fluence 7.6(+-0.3)E12 PROTONS.",
+            " Neutron fluence (1.6+-0.4)E-3 N/cm2 per primary P."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "  U-235/U-238=0.18+-0.01%",
+            "  uranium sample of 5.14+-0.10 mg mass",
+            "        on the top of Pb(paraffin) target."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        6.0
+      ],
+      [
+        35.0
+      ],
+      [
+        1.0
+      ],
+      [
+        0.1
+      ]
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+# entry       : 11380 
+# subentry    : 013 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG) 
+# year        : 1963 
+# author      : R.L.Macklin 
+# institute   : 1USAORL 
+# reference   : (J,NP,43,353,63) 
+# facility    : None 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      3.00000E-02      0.00000E+00      5.13000E+02      1.02600E+02

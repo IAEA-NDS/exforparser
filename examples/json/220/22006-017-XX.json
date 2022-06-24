@@ -1,0 +1,71 @@
+{
+  "id": "22006017XX",
+  "reaction": {
+    "x4code": "(74-W-0(N,G),,SIG)",
+    "target": "74-W-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " 84 g weight, 60 mm diameter, 1.6 mm height.",
+            " W-180 - 0.14 %, W-182 - 26.41%, W-183 - 14.40%,",
+            " W-184 - 30.64%, W-186 - 28.41% ."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        6.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        0.5,
+        1.0,
+        2.5
+      ],
+      [
+        60.0,
+        64.0,
+        30.0
+      ],
+      [
+        6.0,
+        7.0,
+        4.0
+      ]
+    ]
+  }
+}

@@ -52,33 +52,25 @@
     "004": {
       "XX": {
         "x4code": "((90-TH-232(N,G)90-TH-233,,SIG,,FIS)/(79-AU-197(N,G)79-AU-198,,SIG,,FIS))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "005": {
       "XX": {
         "x4code": "((73-TA-181(N,G)73-TA-182,,SIG,,FIS)/(79-AU-197(N,G)79-AU-198,,SIG,,FIS))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "006": {
       "XX": {
         "x4code": "((42-MO-98(N,G)42-MO-99,,SIG,,FIS)/(79-AU-197(N,G)79-AU-198,,SIG,,FIS))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "007": {
       "XX": {
         "x4code": "((29-CU-63(N,G)29-CU-64,,SIG,,FIS)/(79-AU-197(N,G)79-AU-198,,SIG,,FIS))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     }
   },

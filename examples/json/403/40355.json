@@ -91,39 +91,33 @@
       }
     },
     "006": {
-      "XX": {
+      "1": {
         "x4code": "((92-U-233(N,F),,SIG,,SPA/RAW)//(92-U-233(N,F),,SIG,,SPA/RAW))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       },
       "2": {
         "x4code": "((92-U-233(N,F),,SIG,,SPA/RAW)//(92-U-233(N,F),,SIG,,SPA/RAW))((92-U-233(N,F),,SIG,,SPA)//(92-U-233(N,F),,SIG,,SPA))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "007": {
-      "XX": {
+      "1": {
         "x4code": "((92-U-235(N,F),,SIG,,SPA/RAW)//(92-U-235(N,F),,SIG,,SPA/RAW))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       },
       "2": {
         "x4code": "((92-U-235(N,F),,SIG,,SPA/RAW)//(92-U-235(N,F),,SIG,,SPA/RAW))((92-U-235(N,F),,SIG,,SPA)//(92-U-235(N,F),,SIG,,SPA))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "008": {
-      "XX": {
+      "1": {
+        "x4code": "((94-PU-239(N,F),,SIG,,SPA/RAW)//(94-PU-239(N,F),,SIG,,SPA/RAW)))",
+        "freetext": []
+      },
+      "2": {
         "x4code": "((94-PU-239(N,F),,SIG,,SPA/RAW)//(94-PU-239(N,F),,SIG,,SPA/RAW)))((94-PU-239(N,F),,SIG,,SPA)//(94-PU-239(N,F),,SIG,,SPA))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     }
   },

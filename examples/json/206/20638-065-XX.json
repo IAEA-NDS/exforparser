@@ -1,0 +1,66 @@
+{
+  "id": "20638065XX",
+  "reaction": {
+    "x4code": "(83-BI-209(N,G)83-BI-210,,SIG)",
+    "target": "83-BI-209",
+    "process": "N,G",
+    "sf4": "83-BI-210",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " 2200 m/sec"
+    ]
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(5-B-0(N,ABS),,SIG)"
+          ],
+          "freetext": [
+            " 2200 m/sec value 767 +- 4b."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        0.036
+      ],
+      [
+        0.004
+      ],
+      [
+        767.0
+      ],
+      [
+        4.0
+      ]
+    ]
+  }
+}

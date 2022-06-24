@@ -1,0 +1,87 @@
+{
+  "id": "21017005XX",
+  "reaction": {
+    "x4code": "(13-AL-27(N,TOT),,SIG,,,DERIV)",
+    "target": "13-AL-27",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": "DERIV",
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Extrapolated from straight line fit to measurements",
+            "at 33., 95.5 and 298 Kelvin degr., respectively."
+          ]
+        }
+      }
+    },
+    "MISC-COL": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "MISC"
+    ],
+    "units": [
+      "SEE TEXT"
+    ],
+    "data": [
+      [
+        10.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "TEMP",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MICRO-EV",
+      "K",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.5227,
+        0.5227,
+        0.5227
+      ],
+      [
+        33.0,
+        95.5,
+        298.0
+      ],
+      [
+        50.0,
+        50.9,
+        59.2
+      ],
+      [
+        1.5,
+        0.6,
+        0.9
+      ]
+    ]
+  }
+}

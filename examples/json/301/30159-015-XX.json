@@ -1,0 +1,57 @@
+{
+  "id": "30159015XX",
+  "reaction": {
+    "x4code": "(65-TB-159(N,G)65-TB-160,PAR,SIG)",
+    "target": "65-TB-159",
+    "process": "N,G",
+    "sf4": "65-TB-160",
+    "residual": null,
+    "sf5": "PAR",
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " No information available"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "E-MIN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        0.4
+      ],
+      [
+        3.75
+      ],
+      [
+        129.0
+      ],
+      [
+        9.0
+      ]
+    ]
+  }
+}

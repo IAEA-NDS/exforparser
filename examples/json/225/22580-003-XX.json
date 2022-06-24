@@ -1,0 +1,105 @@
+{
+  "id": "22580003XX",
+  "reaction": {
+    "x4code": "(25-MN-55(N,G)25-MN-56,,SIG)",
+    "target": "25-MN-55",
+    "process": "N,G",
+    "sf4": "25-MN-56",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Absolute cross-section can be calculated directly from",
+            " ratio of two counts and ratio of capture cross-section",
+            " of manganese to hydrogen for thermal neutrons."
+          ]
+        }
+      }
+    },
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(25-MN-56,,B-)"
+          ],
+          "freetext": [
+            " Radioactive manganese was precipitated",
+            " from part of solution and its B-activity measured by",
+            " Geiger-Mueller counter. The same precipitated powder",
+            " was then irradiated by photo-source in air, and its",
+            " B-activity again measured."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(1-H-1(N,TOT),,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Manganese sulphate solution was irradiated by",
+            " radiothorium-beryllium photo-source, under conditions",
+            " in which it's possible to calculate fraction of all",
+            " neutrons captured by manganese."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-RSL"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        0.013
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.9
+      ],
+      [
+        0.0072
+      ],
+      [
+        0.0007
+      ]
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "11679010XX",
+  "reaction": {
+    "x4code": "(47-AG-0(N,G),,SIG)",
+    "target": "47-AG-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL-FW",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.104,
+        0.125,
+        0.15,
+        0.182
+      ],
+      [
+        0.015,
+        0.023,
+        0.021,
+        0.021
+      ],
+      [
+        0.4345,
+        0.4054,
+        0.3423,
+        0.3105
+      ],
+      [
+        0.0305,
+        0.015,
+        0.0248,
+        0.0215
+      ]
+    ]
+  }
+}

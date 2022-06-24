@@ -1,0 +1,43 @@
+{
+  "id": "13023005XX",
+  "reaction": {
+    "x4code": "(28-NI-58(N,P)27-CO-58,,SIG,,FIS)",
+    "target": "28-NI-58",
+    "process": "N,P",
+    "sf4": "27-CO-58",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        1.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA"
+    ],
+    "units": [
+      "MB"
+    ],
+    "data": [
+      [
+        88.1
+      ]
+    ]
+  }
+}

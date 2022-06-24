@@ -1,0 +1,183 @@
+{
+  "id": "11329106XX",
+  "reaction": {
+    "x4code": "(49-IN-0(N,G),,SIG)",
+    "target": "49-IN-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " The weighted indium cross section resulting from",
+      " normalization at 30 keV was defined. (see REL-REF)",
+      " * The capture cross section of indium at 65 keV was",
+      " obtained by measuring the ratio of the 65 to 30 keV",
+      " cross sections.",
+      " * The indium capture cross section at 167 keV was",
+      " determined by normalizing the relative indium cross",
+      " section versus neutron energy curve at 30 and 65 keV",
+      " and reading the value as measured by the shape of the",
+      " U-235 absorption cross section."
+    ]
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            "  An estimated typical standard deviation.",
+            " It includes:"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " The absolute (standard deviation) error in the",
+            " value of the cross section standard at has been",
+            " indicated to be about 6%. (The weighted indium cross",
+            " section resulting from normalization at 30 keV as",
+            " described in the article)",
+            "  * For the measurement of the cross section of other",
+            "    samples relative to the indium standard, at the",
+            "    threshold energies, 30 and 65 keV, other sources",
+            "    of error must be considered:"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " The error in the determination of the net area",
+            " under the time spectrum peak is estimated to be about",
+            " 5% except where noted."
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " The uncertainties in calculating the R.S.P.",
+            " (resonance self-protection) correction for the sample",
+            " the relative to indium, as discussed in Appendix III",
+            " of article (PR,122,182,1961) , are estimated to be",
+            " of order 2%."
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-4)",
+          "freetext": [
+            " The uncertainties in the tank efficiency for",
+            " a sample as compared to indium are determined by two",
+            " considerations. The total efficiency error is",
+            " assigned to be 5%."
+          ]
+        },
+        "5": {
+          "x4code": "(ERR-5)",
+          "freetext": [
+            " The uncertainty in the average path-length",
+            " correction as discussed in Appendix II of the article",
+            " (PR,122,182,1961) is taken as 2%.",
+            " * The uncertainties in sample weight and geometry",
+            "   are negligible."
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "R",
+            "ent": "11778001",
+            "author": "H.W.Schmitt+",
+            "ref": "J,NP,20,202,1960"
+          },
+          "freetext": [
+            " -",
+            "  The best five of these measurements, with their",
+            "standard deviations, were used to provide normalization",
+            "for the present experiment in the following manner:",
+            " The capture tank measurements of the shapes of the",
+            " five cross sections as a function of neutron energy",
+            " were used to extend the spherical shell cross",
+            " sections to 30 keV. Then shell transmission",
+            " measurements compared with capture tank results."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1",
+      "ERR-2",
+      "ERR-3",
+      "ERR-4",
+      "ERR-5"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        6.0
+      ],
+      [
+        5.0
+      ],
+      [
+        2.0
+      ],
+      [
+        5.0
+      ],
+      [
+        2.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.03,
+        0.065,
+        0.167
+      ],
+      [
+        0.007,
+        0.02,
+        0.003
+      ],
+      [
+        0.763,
+        0.448,
+        0.258
+      ],
+      [
+        50.0,
+        40.0,
+        40.0
+      ]
+    ]
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "id": "40547006XX",
+  "reaction": {
+    "x4code": "(92-U-238(N,F),,SIG,,FIS)",
+    "target": "92-U-238",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            "  Error of the NU-BAR of Cf-252"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            "  Error due to the geometrical factor"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            "  Statistical error arising from the weighing",
+            "         of the sample in the 2pi-geometry camera"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-4)",
+          "freetext": [
+            "  Error due to the extrapolation of the",
+            "         alpha-particle spectrum to zero energy",
+            "         arising by the sample weighing in the 2pi-",
+            "         geometry camera"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-5)",
+          "freetext": [
+            "  Error due to the absorption and scattering",
+            "         in a layer arising from the sample weighing"
+          ]
+        },
+        "5": {
+          "x4code": "(ERR-6)",
+          "freetext": [
+            "  Error due to the determination of the fraction",
+            "         of the isotope under investigation"
+          ]
+        },
+        "6": {
+          "x4code": "(ERR-7)",
+          "freetext": [
+            "  Statistical error arising by the number-of-",
+            "         fissions determination"
+          ]
+        },
+        "7": {
+          "x4code": "(ERR-8)",
+          "freetext": [
+            "  Error due to the extrapolation of the fission-",
+            "         fragments spectrum to zero-energy arising by",
+            "         the number-of-fission determination"
+          ]
+        },
+        "8": {
+          "x4code": "(ERR-9)",
+          "freetext": [
+            "  Error due to the absorption in a layer by",
+            "         the number-of-fissions determination"
+          ]
+        },
+        "9": {
+          "x4code": "(ERR-10)",
+          "freetext": [
+            " Error due to the admixture isotopes fission"
+          ]
+        },
+        "10": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            "  Total error (1.68%)"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(CF252)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Spontaneous fission spectrum"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ASSOP)",
+          "freetext": [
+            "   Method of coincidence of fission events",
+            "with associated Cf-252 fission fragments"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1",
+      "ERR-2",
+      "ERR-3",
+      "ERR-4",
+      "ERR-5",
+      "ERR-6",
+      "ERR-7",
+      "ERR-8",
+      "ERR-9",
+      "ERR-10"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.35
+      ],
+      [
+        0.71
+      ],
+      [
+        0.55
+      ],
+      [
+        0.51
+      ],
+      [
+        0.3
+      ],
+      [
+        0.3
+      ],
+      [
+        1.11
+      ],
+      [
+        0.37
+      ],
+      [
+        0.25
+      ],
+      [
+        0.14
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "KT",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        1.406
+      ],
+      [
+        347.0
+      ],
+      [
+        6.0
+      ]
+    ]
+  }
+}

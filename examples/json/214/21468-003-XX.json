@@ -1,0 +1,78 @@
+{
+  "id": "21468003XX",
+  "reaction": {
+    "x4code": "(92-U-235(N,F),,SIG)",
+    "target": "92-U-235",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " CROSS SECTION."
+    ]
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-238(N,F),,SIG)"
+          ],
+          "freetext": [
+            " VALUE TAKEN AS 1.14+-0.03B."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-RSL"
+    ],
+    "units": [
+      "MEV",
+      "MEV"
+    ],
+    "data": [
+      [
+        14.1
+      ],
+      [
+        0.15
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "MONIT",
+      "MONIT-ERR",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        1.14
+      ],
+      [
+        0.03
+      ],
+      [
+        2.2
+      ],
+      [
+        0.07
+      ]
+    ]
+  }
+}

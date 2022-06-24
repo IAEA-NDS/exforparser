@@ -1,0 +1,12 @@
+# entry       : 41635 
+# subentry    : 008 
+# pointer     : XX 
+# reaction    : (94-PU-239(N,F),,SIG,,MXW) 
+# year        : 1965 
+# author      : Yu.Ya.Stavisskii 
+# institute   : 4RUSFEI 
+# reference   : (J,AE,19,(3),292,1965) 
+# facility    : None 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      2.53000E-08      0.00000E+00      7.48000E+05      8.00000E+03

@@ -1,0 +1,75 @@
+{
+  "id": "22006027XX",
+  "reaction": {
+    "x4code": "(83-BI-209(N,G)83-BI-210,,SIG)",
+    "target": "83-BI-209",
+    "process": "N,G",
+    "sf4": "83-BI-210",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " 2 mm thick."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        6.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        0.5,
+        1.0,
+        2.0,
+        2.5,
+        3.0
+      ],
+      [
+        3.0,
+        3.0,
+        4.3,
+        5.9,
+        6.7
+      ],
+      [
+        0.5,
+        0.6,
+        1.1,
+        0.8,
+        1.5
+      ]
+    ]
+  }
+}

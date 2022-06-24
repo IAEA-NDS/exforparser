@@ -1,0 +1,67 @@
+{
+  "id": "21017010XX",
+  "reaction": {
+    "x4code": "(29-CU-0(N,TOT),,SIG)",
+    "target": "29-CU-0",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Extrapolated to 10 m/sec from straight line fit to",
+            " measurements at 80K and 300K"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN"
+    ],
+    "units": [
+      "MICRO-EV"
+    ],
+    "data": [
+      [
+        0.5227
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "TEMP",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "K",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        80.0,
+        303.0
+      ],
+      [
+        831.0,
+        873.0
+      ],
+      [
+        30.0,
+        30.0
+      ]
+    ]
+  }
+}

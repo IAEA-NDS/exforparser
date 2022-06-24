@@ -1,0 +1,76 @@
+{
+  "id": "33004011XX",
+  "reaction": {
+    "x4code": "(27-CO-59(N,2N)27-CO-58,,SIG,,SPA)",
+    "target": "27-CO-59",
+    "process": "N,2N",
+    "sf4": "27-CO-58",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(27-CO-58,,DG,810.81)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "27-CO-59 1.23 CM**2 CIRCULAR Foil OF 3.5 mm thickness",
+            "used"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX"
+    ],
+    "units": [
+      "MEV",
+      "MEV"
+    ],
+    "data": [
+      [
+        0.1
+      ],
+      [
+        100.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        98.0
+      ],
+      [
+        2.69
+      ]
+    ]
+  }
+}

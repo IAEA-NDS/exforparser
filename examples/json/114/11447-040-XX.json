@@ -1,0 +1,71 @@
+{
+  "id": "11447040XX",
+  "reaction": {
+    "x4code": "(34-SE-74(N,G)34-SE-75,,SIG,,SPA/A)",
+    "target": "34-SE-74",
+    "process": "N,G",
+    "sf4": "34-SE-75",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA/A",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(34-SE-75,115.D,XR)"
+          ],
+          "freetext": [
+            "",
+            " Assigned to Se-75 by NNCSC"
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Reactor spectrum"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": [
+      [
+        0.0253
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        22.0
+      ],
+      [
+        40.0
+      ]
+    ]
+  }
+}

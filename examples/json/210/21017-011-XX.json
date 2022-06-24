@@ -1,0 +1,52 @@
+{
+  "id": "21017011XX",
+  "reaction": {
+    "x4code": "(29-CU-0(N,G),,SIG,,,DERIV)",
+    "target": "29-CU-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": "DERIV",
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Derived from extrapolation of the total cross",
+            " section."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        3.77
+      ],
+      [
+        0.12
+      ]
+    ]
+  }
+}

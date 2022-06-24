@@ -1,0 +1,53 @@
+{
+  "id": "31459013XX",
+  "reaction": {
+    "x4code": "(27-CO-59(N,P)26-FE-59,,SIG)",
+    "target": "27-CO-59",
+    "process": "N,P",
+    "sf4": "26-FE-59",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-RSL"
+    ],
+    "units": [
+      "MEV",
+      "MEV"
+    ],
+    "data": [
+      [
+        14.8
+      ],
+      [
+        0.3
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        46.4
+      ],
+      [
+        3.1
+      ]
+    ]
+  }
+}

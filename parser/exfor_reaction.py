@@ -2,20 +2,20 @@
 #
 # This file is part of exfor-parser.
 # Copyright (C) 2022 International Atomic Energy Agency (IAEA)
-# 
-# Disclaimer: The code is still under developments and not ready 
-#             to use. It has beeb made public to share the progress
-#             between collaborators. 
+#
+# Disclaimer: The code is still under developments and not ready
+#             to use. It has been made public to share the progress
+#             among collaborators.
 # Contact:    nds.contact-point@iaea.org
 #
 ####################################################################
 
-from operator import index
-from pyparsing import *
 import itertools
+from pyparsing import *
 
 from .utilities import extract_key
 from .exfor_field import *
+
 
 def parse_reaction_field(subent_body) -> list:
     s = "".join(subent_body)
@@ -53,29 +53,58 @@ def get_reaction(reaction_field) -> dict:
                 val[1].startswith("((")
                 or (
                     val[1].startswith("(")
-                    and val[1].endswith("))")
+                    and val[1].endswith(("))", ")=", ")/", ")+", ")-", ")*", "//"))
                     and not any(i in val[1] for i in ("(PHY))", "(A))"))
                 )
+                # or (any(l in val[1] for l in (")=", ")/", ")+", ")-", ")*"))) # possible in freetext  so will not work
                 or ratio
             ):
                 """
-                catch ratio and skip
+                catch ratio reaction code
                 """
-                if pointer == " ":
-                    pointer = "XX"
-                temp_complex_reaction += val[1]
+                if not ratio:
+                    if pointer == " ":
+                        pointer = "XX"
+                else:
+                    if previous_pointer != "":
+                        pointer = previous_pointer
 
-                if val[1].endswith("))"):
-                    x4reactions_str[pointer] = {
-                        "x4code": temp_complex_reaction,
-                        "freetext": [""],
-                    }
                 ratio = True
-                continue
+                # print(val, pointer, previous_pointer)
+                if "))" in val[1]:
+                    if val[1].endswith("))"):
+                        temp_complex_reaction += val[1]
+                        x4reactions_str[pointer] = {
+                            "x4code": temp_complex_reaction,
+                            "freetext": [],
+                        }
+                        ratio = False
+                    elif not val[1].endswith((")=", ")/", ")+", ")-", ")*", "//")):
+                        ## free text may continue after "))": ratio or ")))": R-Value
+                        parsed = reaction_ratio_end.parse_string(val[1])
+                        temp_complex_reaction += parsed[0]
+                        """
+                        free text after ratio reaction code
+                        """
+                        after_text = reaction_ratio_text.search_string(val[1])
+                        x4reactions_str[pointer] = {
+                            "x4code": temp_complex_reaction,
+                            "freetext": [],
+                        }
+                        ratio = False
+                    else:
+                        ## the case of ratio of ratio that line ends with "))/"
+                        temp_complex_reaction += val[1]
+                else:
+                    temp_complex_reaction += val[1]
 
-            elif val[1].startswith("(") and (
-                not any(l in val[1] for l in (")=", ")/", ")+", ")-", ")*", "))"))
-                or any(i in val[1] for i in ("(PHY))", "(A))"))
+            elif (
+                val[1].startswith("(")
+                and (
+                    not any(l in val[1] for l in (")=", ")/", ")+", ")-", ")*", "))"))
+                    or any(i in val[1] for i in ("(PHY))", "(A))"))
+                )
+                and not ratio
             ):
                 if pointer == " ":
                     pointer = "XX"
@@ -83,14 +112,14 @@ def get_reaction(reaction_field) -> dict:
                 """ not ratio reaction """
                 x4reactioncode = reaction_code.parse_string(val[1])
 
-                if ratio:
-                    continue
+                # if ratio:
+                #     continue
 
-                else:
-                    """separation of reaction elements"""
-                    target = x4reactioncode.get("target")
-                    process = x4reactioncode.get("react_process")
-                    observable = x4reactioncode.get("observable")
+                # else:
+                """separation of reaction elements"""
+                target = x4reactioncode.get("target")
+                process = x4reactioncode.get("react_process")
+                observable = x4reactioncode.get("observable")
 
                 if observable:
                     sf49 = observable.split(",")
@@ -156,7 +185,3 @@ def get_reaction(reaction_field) -> dict:
         react = {}
 
     return react
-
-
-
-

@@ -1,0 +1,13 @@
+# entry       : 14040 
+# subentry    : 002 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG) 
+# year        : 1990 
+# author      : S.Sakamoto 
+# institute   : 1USAUSA 
+# reference   : (P,DOE-NDC-57,113,1990) 
+# facility    : {'x4code': 'REAC'} 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      2.33000E-02      0.00000E+00      6.18000E+02      1.10000E+01
+      9.67000E-01      0.00000E+00      9.97000E+01      2.80000E+00

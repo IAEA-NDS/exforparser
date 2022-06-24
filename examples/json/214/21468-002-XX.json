@@ -1,0 +1,66 @@
+{
+  "id": "21468002XX",
+  "reaction": {
+    "x4code": "(92-U-238(N,F),,SIG)",
+    "target": "92-U-238",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " CROSS SECTION."
+    ]
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".ABSOLUTE MEASUREMENT, NEUTRON FLUX FROM ASSOCIATED",
+            " ALPHA COUNTING."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-RSL"
+    ],
+    "units": [
+      "MEV",
+      "MEV"
+    ],
+    "data": [
+      [
+        14.1
+      ],
+      [
+        0.15
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        1.14
+      ],
+      [
+        0.03
+      ]
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "11447079XX",
+  "reaction": {
+    "x4code": "(50-SN-120(N,G)50-SN-121-G,,SIG,,SPA/A)",
+    "target": "50-SN-120",
+    "process": "N,G",
+    "sf4": "50-SN-121-G",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA/A",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(50-SN-121-G,26.HR,B)"
+          ],
+          "freetext": [
+            " Half-life assigned to",
+            " Sn-121 by NNCSC."
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Reactor spectrum"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": [
+      [
+        0.0253
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.072
+      ],
+      [
+        20.0
+      ]
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "20670011XX",
+  "reaction": {
+    "x4code": "(52-TE-130(N,G)52-TE-131-M,,SIG)",
+    "target": "52-TE-130",
+    "process": "N,G",
+    "sf4": "52-TE-131-M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "HALF-LIFE": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(HL,52-TE-131-M1)"
+          ],
+          "freetext": [
+            "",
+            ".HALFLIFE TAKEN FROM NP/A 93 (1967),436 BY AUTHOR."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MEV"
+    ],
+    "data": [
+      [
+        14.6
+      ],
+      [
+        0.2
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA-MAX",
+      "HL"
+    ],
+    "units": [
+      "MB",
+      "D"
+    ],
+    "data": [
+      [
+        1.85
+      ],
+      [
+        1.25
+      ]
+    ]
+  }
+}

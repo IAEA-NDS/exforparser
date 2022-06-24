@@ -1,0 +1,150 @@
+{
+  "id": "131340032",
+  "reaction": {
+    "x4code": "(90-TH-232(N,F),,SIG)",
+    "target": "90-TH-232",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(90-TH-232,1.405E+10YR)"
+          ],
+          "freetext": [
+            "",
+            " T1/2=1.405E+10 yr in INDC(NDS)-108 and Table IV of",
+            " ANL/NDM-97, but 1.405E+05 Table 2 of Ann.Nucl.Energy",
+            " 15(1988)421."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total uncertainty"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Neutron energy"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Thickness correction"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " Extrapolation correction"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-4)",
+          "freetext": [
+            " Isotopic analysis of reaction sample"
+          ]
+        },
+        "5": {
+          "x4code": "(ERR-5)",
+          "freetext": [
+            " Alpha-decay half-life of reaction sample"
+          ]
+        },
+        "6": {
+          "x4code": "(ERR-6)",
+          "freetext": [
+            " Prompt neutron scattering"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1",
+      "ERR-2",
+      "ERR-3",
+      "ERR-4",
+      "ERR-5",
+      "ERR-6"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        1.0
+      ],
+      [
+        0.3
+      ],
+      [
+        0.3
+      ],
+      [
+        0.4
+      ],
+      [
+        0.39
+      ],
+      [
+        0.67
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-ERR",
+      "EN-RSL-FW",
+      "ERR-T",
+      "DATA      2"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "MEV",
+      "PER-CENT",
+      "B"
+    ],
+    "data": [
+      [
+        14.74
+      ],
+      [
+        0.05
+      ],
+      [
+        0.32
+      ],
+      [
+        1.85
+      ],
+      [
+        0.401
+      ]
+    ]
+  }
+}

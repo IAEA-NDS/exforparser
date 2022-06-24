@@ -1,0 +1,36 @@
+{
+  "id": "30159029XX",
+  "reaction": {
+    "x4code": "(92-U-238(N,G)92-U-239,,SIG)",
+    "target": "92-U-238",
+    "process": "N,G",
+    "sf4": "92-U-239",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "MB"
+    ],
+    "data": [
+      [
+        0.4
+      ],
+      [
+        127.0
+      ]
+    ]
+  }
+}

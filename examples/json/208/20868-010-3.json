@@ -1,5 +1,5 @@
 {
-  "id": "20868-010-3",
+  "id": "208680103",
   "reaction": {
     "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,SPA)",
     "target": "79-AU-197",
@@ -59,11 +59,11 @@
     "units": [
       "MEV"
     ],
-    "data": {
-      "0": [
+    "data": [
+      [
         4.5
       ]
-    }
+    ]
   },
   "data_table": {
     "heads": [

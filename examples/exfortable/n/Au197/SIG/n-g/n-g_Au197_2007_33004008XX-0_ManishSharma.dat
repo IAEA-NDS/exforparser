@@ -1,0 +1,12 @@
+# entry       : 33004 
+# subentry    : 008 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG,,SPA) 
+# year        : 2007 
+# author      : Manish Sharma 
+# institute   : 3INDURJ 
+# reference   : (J,PRM,68,307,2007) 
+# facility    : {'type': 'ACCEL', 'x4code': '4ZZZDUB'} 
+# frame       : 
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      5.00500E+01      4.99500E+01      2.69000E+01      6.70000E-01

@@ -1,0 +1,89 @@
+{
+  "id": "21469012XX",
+  "reaction": {
+    "x4code": "(60-ND-143(N,G)60-ND-144,,SIG,,MXW)",
+    "target": "60-ND-143",
+    "process": "N,G",
+    "sf4": "60-ND-144",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW",
+    "sf9": null,
+    "freetext": [
+      " Cross section."
+    ]
+  },
+  "measurement_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Cross sections for other Nd isotopes were taken",
+            " from BNL-325, first edition."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(5-B-0(N,ABS),,SIG)"
+          ],
+          "freetext": [
+            " 2200 m/sec value taken as 783 b."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".A solution of enriched neodinium oxide, Nd(2)O(3),",
+            " plus HNO3 in heavy water (D2O). The Nd was enriched",
+            " to 76.20% in Nd-143, 7.18% Nd-142, and 13.26% Nd-144."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": [
+      [
+        0.0253
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "MONIT",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        783.0
+      ],
+      [
+        236.0
+      ],
+      [
+        13.0
+      ]
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "id": "20787008XX",
+  "reaction": {
+    "x4code": "(81-TL-203(N,G)81-TL-204,,SIG)",
+    "target": "81-TL-203",
+    "process": "N,G",
+    "sf4": "81-TL-204",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "x4code": "(81-TL-203,ENR=0.87)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1",
+      "ERR-2",
+      "ERR-3",
+      "ERR-4",
+      "ERR-6",
+      "ERR-10"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.2
+      ],
+      [
+        0.2
+      ],
+      [
+        0.1
+      ],
+      [
+        2.0
+      ],
+      [
+        1.5
+      ],
+      [
+        6.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL-HW",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        0.5,
+        1.0,
+        2.5
+      ],
+      [
+        0.08,
+        0.07,
+        0.06
+      ],
+      [
+        53.0,
+        46.0,
+        23.0
+      ],
+      [
+        10.0,
+        9.0,
+        8.0
+      ]
+    ]
+  }
+}

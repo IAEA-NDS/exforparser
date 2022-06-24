@@ -1,0 +1,111 @@
+{
+  "id": "40412004XX",
+  "reaction": {
+    "x4code": "(92-U-235(N,G)92-U-236,,SIG,,AV)",
+    "target": "92-U-235",
+    "process": "N,G",
+    "sf4": "92-U-236",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "AV",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "  Capture CS was determined from ALF and fission CS."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            "  Errors   shown on the data are total error",
+            "which includes error of alpha and fission cross-section",
+            "data"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Uncertainty of fission C-S.",
+            ".See also uncertainties in Subents 002,003."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        6.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        10.0,
+        20.0,
+        30.0,
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      [
+        20.0,
+        30.0,
+        40.0,
+        50.0,
+        60.0,
+        70.0,
+        80.0
+      ],
+      [
+        1.047,
+        0.739,
+        0.736,
+        0.627,
+        0.569,
+        0.523,
+        0.475
+      ],
+      [
+        0.232,
+        0.093,
+        0.083,
+        0.07,
+        0.062,
+        0.056,
+        0.051
+      ]
+    ]
+  }
+}

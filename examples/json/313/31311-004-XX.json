@@ -1,0 +1,53 @@
+{
+  "id": "31311004XX",
+  "reaction": {
+    "x4code": "(25-MN-55(N,G)25-MN-56,,SIG,,MXW)",
+    "target": "25-MN-55",
+    "process": "N,G",
+    "sf4": "25-MN-56",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "EN-DUMMY",
+      "MONIT"
+    ],
+    "units": [
+      "MEV",
+      "B"
+    ],
+    "data": [
+      [
+        2.53e-08
+      ],
+      [
+        755.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        13.3
+      ],
+      [
+        0.08
+      ]
+    ]
+  }
+}

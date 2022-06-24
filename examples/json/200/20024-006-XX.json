@@ -1,0 +1,86 @@
+{
+  "id": "20024006XX",
+  "reaction": {
+    "x4code": "(80-HG-0(N,G),,SIG)",
+    "target": "80-HG-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Mercury powder enclosed in thin walled Lucite rings,",
+            " 2 cm thick, 10.cm inner diam., 14.cm outer diam."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.024
+      ],
+      [
+        1.185
+      ],
+      [
+        0.08
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.0345,
+        0.065,
+        0.125,
+        0.2,
+        0.3
+      ],
+      [
+        0.22,
+        0.135,
+        0.092,
+        0.073,
+        0.052
+      ],
+      [
+        0.05,
+        null,
+        0.014,
+        null,
+        0.008
+      ]
+    ]
+  }
+}

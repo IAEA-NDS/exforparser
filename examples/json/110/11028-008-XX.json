@@ -1,0 +1,51 @@
+{
+  "id": "11028008XX",
+  "reaction": {
+    "x4code": "(17-CL-0(N,ABS),,SIG)",
+    "target": "17-CL-0",
+    "process": "N,ABS",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "ASSUMED G=1.000."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.53e-08
+      ],
+      [
+        33.6
+      ],
+      [
+        0.3
+      ]
+    ]
+  }
+}

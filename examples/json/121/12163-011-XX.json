@@ -1,0 +1,41 @@
+{
+  "id": "12163011XX",
+  "reaction": {
+    "x4code": "(75-RE-187(N,G)75-RE-188,,SIG)",
+    "target": "75-RE-187",
+    "process": "N,G",
+    "sf4": "75-RE-188",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.53e-08
+      ],
+      [
+        75.0
+      ],
+      [
+        4.0
+      ]
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "id": "21891003XX",
+  "reaction": {
+    "x4code": "(49-IN-115(N,G)49-IN-116-M,,SIG,,MXW)",
+    "target": "49-IN-115",
+    "process": "N,G",
+    "sf4": "49-IN-116-M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(49-IN-116-M,54.MIN,DG,1293.,0.85)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "FLAG": {
+      "XX": {
+        "(3.)": {
+          "x4code": "(3.)",
+          "freetext": [
+            " EXPERIMENT 3."
+          ]
+        },
+        "(4.)": {
+          "x4code": "(4.)",
+          "freetext": [
+            " EXPERIMENT 4."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY",
+      "ERR-1"
+    ],
+    "units": [
+      "EV",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        5.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "ERR-T",
+      "FLAG"
+    ],
+    "units": [
+      "B",
+      "B",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        153.9,
+        157.3
+      ],
+      [
+        11.8,
+        11.5
+      ],
+      [
+        3.0,
+        4.0
+      ]
+    ]
+  }
+}

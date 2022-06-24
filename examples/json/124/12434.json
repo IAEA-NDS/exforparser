@@ -104,9 +104,20 @@
     "006": {
       "1": {
         "x4code": "((94-PU-239(N,F),,SIG,,,DERIV)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(94-PU-239(N,F),,SIG,,,DERIV)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": "DERIV",
+        "freetext": []
       }
     },
     "007": {

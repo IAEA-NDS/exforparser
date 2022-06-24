@@ -106,7 +106,14 @@
         ]
       }
     },
-    "006": {},
+    "006": {
+      "XX": {
+        "x4code": "((94-PU-239(N,F),,WID)/(94-PU-239(N,TOT),,WID))",
+        "freetext": [
+          "                          TOTAL  WIDTH"
+        ]
+      }
+    },
     "007": {
       "XX": {
         "x4code": "(94-PU-239(N,0),,D)",
@@ -141,7 +148,14 @@
         ]
       }
     },
-    "009": {},
+    "009": {
+      "XX": {
+        "x4code": "((94-PU-239(N,F),,SIG,,AV)/(94-PU-239(N,ABS),,SIG,,AV))",
+        "freetext": [
+          "  FISSION CROSS-SECTION AND ABSORPTION CROSS SECTION"
+        ]
+      }
+    },
     "010": {
       "XX": {
         "x4code": "(94-PU-239(N,F),,SIG)",

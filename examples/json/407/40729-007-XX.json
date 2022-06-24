@@ -1,0 +1,87 @@
+{
+  "id": "40729007XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,TOT),,SIG)",
+    "target": "79-AU-197",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Error due to nuclei density definition in",
+            " sample - 0.5 % ."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total error"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Enrichment 99.99% .Diameter 10 mm.",
+            " Thickness (cm) : 0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.8,",
+            " 1.0, 1.4, 1.8, 2.2, 2.7, 3.2 in scattering geometry I."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-2"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL-HW",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.0
+      ],
+      [
+        0.3
+      ],
+      [
+        29.0
+      ],
+      [
+        0.4
+      ]
+    ]
+  }
+}

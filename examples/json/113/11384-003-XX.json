@@ -1,0 +1,32 @@
+{
+  "id": "11384003XX",
+  "reaction": {
+    "x4code": "(9-F-19(N,0),,EN)",
+    "target": "9-F-19",
+    "process": "N,0",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "EN",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "DATA"
+    ],
+    "units": [
+      "KEV"
+    ],
+    "data": [
+      [
+        270.0,
+        595.0
+      ]
+    ]
+  }
+}

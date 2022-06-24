@@ -1,0 +1,133 @@
+{
+  "id": "30114004XX",
+  "reaction": {
+    "x4code": "(24-CR-0(N,G),,SIG)",
+    "target": "24-CR-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Corrected for detector efficiency (ratio In/Cr eff.",
+            "assumed 0.831). No correction for self-shielding or",
+            "multiscattering"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            " Lithium target thickness 2 keV. Neutron energy",
+            "determined from proton energy"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(49-IN-0(N,G),,SIG)"
+          ],
+          "freetext": [
+            "",
+            "Basically normalized to value of Gibbons et",
+            "al,Phys.Rev.122,182(1961) at 30 keV,which was based on",
+            "averaged weighted standard (Ag,Sb,In,Au,I) from the",
+            "absolute meas. by Schmitt and Cook,Nucl.Phys.20,202",
+            " (1960) at 24 keV.  Indium capture assumed to follow",
+            "the function  1820 - 39.1*E  for E between 7 and 18 keV",
+            "and  44000/(sqrt(E)*(1+4*E**0.25)) for E between 18 and",
+            "120 keV (units mb and keV). Monitoring by proton charge",
+            "deposited on target and by long counter"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Metal,26.0 Atoms/mb in geometry I."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "KEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        30.0
+      ],
+      [
+        760.0
+      ],
+      [
+        50.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        11.0,
+        57.0,
+        80.0,
+        94.0
+      ],
+      [
+        10.0,
+        null,
+        null,
+        6.0
+      ],
+      [
+        39.6,
+        23.4,
+        5.4,
+        6.6
+      ],
+      [
+        8.9,
+        2.9,
+        1.0,
+        1.1
+      ]
+    ]
+  }
+}

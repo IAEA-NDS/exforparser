@@ -1,0 +1,114 @@
+{
+  "id": "131340042",
+  "reaction": {
+    "x4code": "(92-U-233(N,F),,SIG)",
+    "target": "92-U-233",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-233,1.592E+5YR,A)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total uncertainty"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Thickness correction"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " Extrapolation correction"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-6)",
+          "freetext": [
+            " Prompt neutron scattering"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-2",
+      "ERR-3",
+      "ERR-6"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.3
+      ],
+      [
+        0.3
+      ],
+      [
+        0.25
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-ERR",
+      "EN-RSL-FW",
+      "ERR-T",
+      "DATA      2"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "MEV",
+      "PER-CENT",
+      "B"
+    ],
+    "data": [
+      [
+        14.74
+      ],
+      [
+        0.05
+      ],
+      [
+        0.32
+      ],
+      [
+        0.74
+      ],
+      [
+        2.378
+      ]
+    ]
+  }
+}

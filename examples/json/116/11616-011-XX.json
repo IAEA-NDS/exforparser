@@ -1,0 +1,81 @@
+{
+  "id": "11616011XX",
+  "reaction": {
+    "x4code": "(40-ZR-0(N,G),,SIG)",
+    "target": "40-ZR-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA",
+      "DATA-ERR",
+      "MONIT"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.175,
+        0.25,
+        0.4,
+        0.6,
+        0.8,
+        0.9,
+        1.0
+      ],
+      [
+        0.025,
+        0.04,
+        0.09,
+        0.075,
+        0.066,
+        0.063,
+        0.06
+      ],
+      [
+        0.0101,
+        0.0166,
+        0.0124,
+        0.0128,
+        0.0127,
+        0.0116,
+        0.0071
+      ],
+      [
+        null,
+        null,
+        0.002,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        1.82,
+        1.67,
+        1.5,
+        1.37,
+        1.29,
+        1.3,
+        1.4
+      ]
+    ]
+  }
+}

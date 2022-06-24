@@ -1,0 +1,36 @@
+{
+  "id": "30159020XX",
+  "reaction": {
+    "x4code": "(73-TA-181(N,G)73-TA-182,,SIG)",
+    "target": "73-TA-181",
+    "process": "N,G",
+    "sf4": "73-TA-182",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "MB"
+    ],
+    "data": [
+      [
+        0.4
+      ],
+      [
+        205.0
+      ]
+    ]
+  }
+}

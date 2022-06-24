@@ -1,0 +1,140 @@
+{
+  "id": "20001004XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,WID,,AV)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "WID",
+    "sf7": null,
+    "sf8": "AV",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "x4code": "(SHAPE)",
+          "freetext": [
+            " One level Breit-Wigner analysis combining",
+            " fission, and transmission measurements."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " No information on the source of uncertainty"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "PARITY"
+    ],
+    "units": [
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        1.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-RES-MIN",
+      "EN-RES-MAX",
+      "SPIN J",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "EV",
+      "EV",
+      "NO-DIM",
+      "MILLI-EV",
+      "MILLI-EV"
+    ],
+    "data": [
+      [
+        0.0,
+        0.0,
+        110.0,
+        110.0,
+        220.0,
+        220.0,
+        330.0,
+        330.0,
+        440.0,
+        440.0,
+        550.0,
+        550.0
+      ],
+      [
+        110.0,
+        110.0,
+        220.0,
+        220.0,
+        330.0,
+        330.0,
+        440.0,
+        440.0,
+        550.0,
+        550.0,
+        660.0,
+        660.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      [
+        2065.0,
+        41.0,
+        970.0,
+        30.0,
+        3302.0,
+        22.0,
+        3285.0,
+        43.0,
+        2352.0,
+        38.0,
+        1800.0,
+        5.4
+      ],
+      [
+        840.0,
+        10.0,
+        370.0,
+        8.0,
+        1350.0,
+        5.0,
+        1550.0,
+        11.0,
+        925.0,
+        11.0,
+        1040.0,
+        2.0
+      ]
+    ]
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "id": "10421006XX",
+  "reaction": {
+    "x4code": "(92-U-238(N,G)92-U-239,,SIG)",
+    "target": "92-U-238",
+    "process": "N,G",
+    "sf4": "92-U-239",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Corrected for:",
+            " . capture of neutrons scattered in samples,",
+            " . flux attenuation in samples,",
+            " . transmission thru samples,",
+            " . gamma-ray detection efficiency,",
+            " . detection of non-monoenergetic neutrons,",
+            " . neutron detector efficiency."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(STANK)",
+          "freetext": [
+            " 1300-l liquid scintillator tank for gamma-ray",
+            " detection.",
+            "Grey neutron detector used as neutron flux monitor."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Data errors given include:",
+            " . statistics (1-3%),",
+            " . sample mass (1%),",
+            " . fission gammas (0-5%),",
+            " . capture detection efficiency (6-8%),",
+            " . capture of scattered neutrons (2%),",
+            " . standard error."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-197(N,G)79-AU-198,,SIG)"
+          ],
+          "freetext": [
+            "",
+            " RELATIVE TO AU(N,GAMMA)"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA",
+      "DATA-ERR",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "MB",
+      "MB",
+      "MB",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        400.0,
+        500.0,
+        600.0,
+        700.0,
+        800.0,
+        850.0,
+        900.0,
+        1000.0,
+        1100.0,
+        1200.0
+      ],
+      [
+        27.0,
+        26.0,
+        25.0,
+        24.0,
+        23.0,
+        23.0,
+        23.0,
+        22.0,
+        22.0,
+        21.0
+      ],
+      [
+        111.0,
+        118.0,
+        124.0,
+        138.0,
+        130.0,
+        132.0,
+        143.0,
+        135.0,
+        116.0,
+        106.0
+      ],
+      [
+        10.0,
+        10.0,
+        10.0,
+        12.0,
+        11.0,
+        11.0,
+        12.0,
+        12.0,
+        11.0,
+        10.0
+      ],
+      [
+        165.0,
+        138.0,
+        118.0,
+        100.0,
+        90.0,
+        86.5,
+        84.5,
+        80.5,
+        77.5,
+        75.0
+      ],
+      [
+        6.0,
+        6.0,
+        6.0,
+        7.0,
+        7.0,
+        7.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ]
+    ]
+  }
+}

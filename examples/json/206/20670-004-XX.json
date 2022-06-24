@@ -1,0 +1,53 @@
+{
+  "id": "20670004XX",
+  "reaction": {
+    "x4code": "(22-TI-50(N,G)22-TI-51,,SIG)",
+    "target": "22-TI-50",
+    "process": "N,G",
+    "sf4": "22-TI-51",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MEV"
+    ],
+    "data": [
+      [
+        14.6
+      ],
+      [
+        0.2
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        0.52
+      ],
+      [
+        0.13
+      ]
+    ]
+  }
+}

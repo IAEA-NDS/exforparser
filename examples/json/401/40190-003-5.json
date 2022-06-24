@@ -1,0 +1,229 @@
+{
+  "id": "401900035",
+  "reaction": {
+    "x4code": "(95-AM-241(N,G)95-AM-242-G,,SIG,,FIS)",
+    "target": "95-AM-241",
+    "process": "N,G",
+    "sf4": "95-AM-242-G",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " CS were calculated to 6 samples as:",
+            "  (A*HL)/(N*Q*0.693) , where",
+            "A  - absolute Am-242 activity at the end of activation",
+            "taking into account registration efficiency and",
+            "corrections;",
+            "HL - Am-242 half-life;",
+            "N - Am-241 atoms on sample;",
+            "Q - neutron flux."
+          ]
+        }
+      }
+    },
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(95-AM-242-G,16.01HR,B,667.,,B,625.)"
+          ],
+          "freetext": [
+            "",
+            "40.% of 667 keV, 60.% of 625 keV.",
+            "Beta decay - 83.6 %, electron capture (16.4+-0.3)%."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(IOCH)",
+          "freetext": [
+            " Number of Am-241 atoms was defined by",
+            "alpha-activity measurement in integral ionization",
+            "chamber."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-1,2.,4.)",
+          "freetext": [
+            " Uncertainty in activity measurement(2-4%)"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Uncertainty in half-life Am-242  (2%)"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " Error of neutron flux determination (7%)"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-4)",
+          "freetext": [
+            " Error of number of atoms in sample   (4%)"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-5)",
+          "freetext": [
+            " Error of detector efficiency  (3%)"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            " Beta activity measurement during 4-5 HL of",
+            "Am-242."
+          ]
+        },
+        "1": {
+          "x4code": "(CHSEP)",
+          "freetext": [
+            " Am was separated chemically and purified from",
+            "fission products during 20 hr."
+          ]
+        }
+      }
+    },
+    "MISC-COL": {
+      "XX": {
+        "0": {
+          "x4code": "(MISC1)",
+          "freetext": [
+            " Integral flux, neutron/cm2 , measured by fis.",
+            "chambers."
+          ]
+        },
+        "1": {
+          "x4code": "(MISC2)",
+          "freetext": [
+            " Am-242 absolute activity, decay/min ."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "1": {
+        "0": {
+          "freetext": [
+            " Am-241 atoms 2.32E+18"
+          ]
+        }
+      },
+      "2": {
+        "0": {
+          "freetext": [
+            "              1.23E+18"
+          ]
+        }
+      },
+      "3": {
+        "0": {
+          "freetext": [
+            "              2.06E+18"
+          ]
+        }
+      },
+      "4": {
+        "0": {
+          "freetext": [
+            "              4.9E+17"
+          ]
+        }
+      },
+      "5": {
+        "0": {
+          "freetext": [
+            "              1.89E+18"
+          ]
+        }
+      },
+      "6": {
+        "0": {
+          "freetext": [
+            "              1.22E+17"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY",
+      "ERR-2",
+      "ERR-3",
+      "ERR-4",
+      "ERR-5"
+    ],
+    "units": [
+      "MEV",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        1.0
+      ],
+      [
+        2.0
+      ],
+      [
+        7.0
+      ],
+      [
+        4.0
+      ],
+      [
+        3.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA      5",
+      "MISC1     5",
+      "MISC2     5"
+    ],
+    "units": [
+      "MB",
+      "SEE TEXT",
+      "SEE TEXT"
+    ],
+    "data": [
+      [
+        235.0
+      ],
+      [
+        2000000000000000.0
+      ],
+      [
+        640000.0
+      ]
+    ]
+  }
+}

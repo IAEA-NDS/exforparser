@@ -51,9 +51,7 @@
     "002": {
       "XX": {
         "x4code": "((92-U-233(N,F),,SIG,,MXW)/(92-U-235(N,F),,SIG,,MXW))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "003": {
@@ -119,25 +117,19 @@
     "009": {
       "XX": {
         "x4code": "((94-PU-239(N,F),,SIG,,MXW)/(92-U-235(N,F),,SIG,,MXW))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "010": {
       "XX": {
         "x4code": "((94-PU-239(N,F),,SIG,,MXW)/(92-U-233(N,F),,SIG,,MXW))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "012": {
       "XX": {
         "x4code": "((94-PU-241(N,F),,SIG,,MXW)/(94-PU-239(N,F),,SIG,,MXW))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "013": {

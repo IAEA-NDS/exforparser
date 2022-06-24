@@ -1,0 +1,54 @@
+{
+  "id": "30400010XX",
+  "reaction": {
+    "x4code": "(49-IN-115(N,INL)49-IN-115-M,,SIG,,FIS)",
+    "target": "49-IN-115",
+    "process": "N,INL",
+    "sf4": "49-IN-115-M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(49-IN-115-M,4.5HR,DG,336.25,0.45)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-DUMMY",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        1.41
+      ],
+      [
+        203.4
+      ],
+      [
+        10.7
+      ]
+    ]
+  }
+}

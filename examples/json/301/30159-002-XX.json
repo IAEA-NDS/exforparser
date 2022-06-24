@@ -1,0 +1,36 @@
+{
+  "id": "30159002XX",
+  "reaction": {
+    "x4code": "(49-IN-115(N,G)49-IN-116,,SIG)",
+    "target": "49-IN-115",
+    "process": "N,G",
+    "sf4": "49-IN-116",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "MB"
+    ],
+    "data": [
+      [
+        0.4
+      ],
+      [
+        250.0
+      ]
+    ]
+  }
+}

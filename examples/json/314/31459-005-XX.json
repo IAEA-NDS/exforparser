@@ -1,0 +1,53 @@
+{
+  "id": "31459005XX",
+  "reaction": {
+    "x4code": "(42-MO-92(N,A)40-ZR-89-G,,SIG)",
+    "target": "42-MO-92",
+    "process": "N,A",
+    "sf4": "40-ZR-89-G",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-RSL"
+    ],
+    "units": [
+      "MEV",
+      "MEV"
+    ],
+    "data": [
+      [
+        14.8
+      ],
+      [
+        0.3
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        24.9
+      ],
+      [
+        2.5
+      ]
+    ]
+  }
+}

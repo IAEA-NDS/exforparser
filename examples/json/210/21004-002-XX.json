@@ -1,0 +1,100 @@
+{
+  "id": "21004002XX",
+  "reaction": {
+    "x4code": "(25-MN-55(N,G)25-MN-56,,SIG)",
+    "target": "25-MN-55",
+    "process": "N,G",
+    "sf4": "25-MN-56",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(25-MN-56,2.579HR,DG,846.8,0.987,DG,1810.7,0.272)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "DECAY-MON": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(11-NA-24-G,15.02HR,DG,1368.5,1.00)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(13-AL-27(N,A)11-NA-24-G,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".MN POWDER, ENCASED IN CYLINDER OF THIN AL-FOILS,",
+            " PURITY 99.97 PERCENT, ABUNDANCE 100 PERCENT."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        112.0
+      ],
+      [
+        5.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        0.58
+      ],
+      [
+        0.08
+      ]
+    ]
+  }
+}

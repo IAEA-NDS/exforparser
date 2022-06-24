@@ -1,0 +1,82 @@
+{
+  "id": "11447119XX",
+  "reaction": {
+    "x4code": "(76-OS-190(N,G)76-OS-191,,SIG,,SPA)",
+    "target": "76-OS-190",
+    "process": "N,G",
+    "sf4": "76-OS-191",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Measured natural atom cross section = 2.19 b. Value",
+            " given calculated using Os-190 isotopic abundance =",
+            "  41.0 percent (by NNCSC)"
+          ]
+        }
+      }
+    },
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(76-OS-191-G,17.D,B)"
+          ],
+          "freetext": [
+            " Assigned by",
+            " authors to Os-193. Belongs to Os-191."
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Reactor spectrum"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": [
+      [
+        0.0253
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        8.3
+      ],
+      [
+        20.0
+      ]
+    ]
+  }
+}

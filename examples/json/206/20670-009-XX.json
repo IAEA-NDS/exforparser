@@ -1,0 +1,72 @@
+{
+  "id": "20670009XX",
+  "reaction": {
+    "x4code": "(39-Y-89(N,G)39-Y-90-M,,SIG)",
+    "target": "39-Y-89",
+    "process": "N,G",
+    "sf4": "39-Y-90-M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "HALF-LIFE": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(HL,39-Y-90-M1)"
+          ],
+          "freetext": [
+            "",
+            ".HALFLIFE TAKEN FROM NP/A 94 (1967), 157."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MEV"
+    ],
+    "data": [
+      [
+        14.6
+      ],
+      [
+        0.2
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR",
+      "HL"
+    ],
+    "units": [
+      "MB",
+      "MB",
+      "HR"
+    ],
+    "data": [
+      [
+        0.4
+      ],
+      [
+        0.06
+      ],
+      [
+        3.19
+      ]
+    ]
+  }
+}

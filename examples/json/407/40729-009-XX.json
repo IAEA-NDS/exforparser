@@ -1,0 +1,101 @@
+{
+  "id": "40729009XX",
+  "reaction": {
+    "x4code": "(68-ER-167(N,TOT),,SIG)",
+    "target": "68-ER-167",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Error due to oxygen cross section uncertainty."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Error due to nuclei density definition in",
+            " sample - 1% (thin) - 0.5 % (thick)."
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total error"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "   Er2-O3 powder. Isotopes content:",
+            "   Er-162 < 0.2 %, Er-164 < 0.2 %,  Er-166 - 1.35%,",
+            "   Er-167 - 94.2%, Er-168 - 4.238%, Er-170 - 0.22% .",
+            "  Chemical admixtures  <0.2%. Diameter 10 mm.",
+            "  Thickness (cm) : 0.3, 0.5, 0.8, 1.5, 3.0, 5.0, 8.0,",
+            " 10.0,15.0, 20.0 in direct geometry."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1",
+      "ERR-2"
+    ],
+    "units": [
+      "B",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.05
+      ],
+      [
+        1.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL-HW",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.0
+      ],
+      [
+        0.3
+      ],
+      [
+        25.4
+      ],
+      [
+        0.95
+      ]
+    ]
+  }
+}

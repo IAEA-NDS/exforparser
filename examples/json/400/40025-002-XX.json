@@ -1,0 +1,188 @@
+{
+  "id": "40025002XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,ABS),,ALF,,AV)",
+    "target": "94-PU-239",
+    "process": "N,ABS",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "ALF",
+    "sf7": null,
+    "sf8": "AV",
+    "sf9": null,
+    "freetext": [
+      "  Averaged over energy",
+      " interval given in data section"
+    ]
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " There is taken into account statistical",
+            "           errors and errors connected with",
+            "           normalization of the alpha-value",
+            " Value of ALF     Error associated with calibration",
+            "  0.2              35. %",
+            "  0.5              14.8 %",
+            "  1.                7.4 %",
+            "  1.5               4.9 %"
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "REAC,4ZZZDUB"
+          ],
+          "freetext": [
+            "     Fast pulsed reactor"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            "      Time of flight method with flight path 250m",
+            "           and resolution 220 nsec/m"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,0),,EN)"
+          ],
+          "freetext": [
+            "Determination of ALPHA was carried",
+            "       out on 12 well resolved resonances",
+            "       See Table 4 of Soviet Atomic Energy,30,446,1971"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-RSL"
+    ],
+    "units": [
+      "NSEC/M"
+    ],
+    "data": [
+      [
+        250.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.1,
+        10.1
+      ],
+      [
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.1,
+        10.1,
+        29.5
+      ],
+      [
+        0.73,
+        0.72,
+        0.82,
+        0.6,
+        0.7,
+        0.92,
+        0.7,
+        0.63,
+        0.65,
+        0.78,
+        0.83,
+        0.77,
+        0.71,
+        0.65,
+        0.59,
+        0.44,
+        0.43,
+        0.46,
+        0.36
+      ],
+      [
+        0.05,
+        0.16,
+        0.23,
+        0.12,
+        0.1,
+        0.21,
+        0.16,
+        0.14,
+        0.15,
+        0.13,
+        0.14,
+        0.11,
+        0.08,
+        0.09,
+        0.1,
+        0.08,
+        0.08,
+        0.09,
+        0.08
+      ]
+    ]
+  }
+}

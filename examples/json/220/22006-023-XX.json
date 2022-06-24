@@ -1,0 +1,75 @@
+{
+  "id": "22006023XX",
+  "reaction": {
+    "x4code": "(78-PT-0(N,G),,SIG)",
+    "target": "78-PT-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Disk of 1.5 mm thickness, 60mm diameter."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        6.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        0.5,
+        0.7,
+        1.0,
+        2.0,
+        3.0
+      ],
+      [
+        93.0,
+        76.0,
+        63.0,
+        56.0,
+        31.0
+      ],
+      [
+        7.0,
+        8.0,
+        7.0,
+        6.0,
+        3.0
+      ]
+    ]
+  }
+}

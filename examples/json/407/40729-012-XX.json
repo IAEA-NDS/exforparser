@@ -1,0 +1,87 @@
+{
+  "id": "40729012XX",
+  "reaction": {
+    "x4code": "(92-U-238(N,TOT),,SIG)",
+    "target": "92-U-238",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Error due to nuclei density definition in",
+            " sample - 0.5 % ."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total error"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Natural uranium foil.Diameter 10mm.",
+            " Thickness (cm) : 0.1, 0.05, 0.08, 0.13, 0.19, 0.25,",
+            " 0.30, 0.35 0.39 in scattering geometry II."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-2"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL-HW",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.0
+      ],
+      [
+        0.3
+      ],
+      [
+        24.8
+      ],
+      [
+        0.65
+      ]
+    ]
+  }
+}

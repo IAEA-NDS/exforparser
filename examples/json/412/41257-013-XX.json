@@ -1,0 +1,65 @@
+{
+  "id": "41257013XX",
+  "reaction": {
+    "x4code": "(29-CU-65(N,G)29-CU-66,,SIG,,SPA)",
+    "target": "29-CU-65",
+    "process": "N,G",
+    "sf4": "29-CU-66",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(29-CU-66,5.MIN,B-)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Cu-65  concentration is 0.32"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "KEV"
+    ],
+    "data": [
+      [
+        200.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA"
+    ],
+    "units": [
+      "B"
+    ],
+    "data": [
+      [
+        0.004
+      ]
+    ]
+  }
+}

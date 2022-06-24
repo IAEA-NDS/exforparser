@@ -98,9 +98,7 @@
     "006": {
       "XX": {
         "x4code": "((48-CD-111(N,INL)48-CD-111-M,,SIG,,A/FIS)+(48-CD-110(N,G)48-CD-111-M,,SIG,,A/FIS))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "007": {
@@ -166,9 +164,7 @@
     "011": {
       "XX": {
         "x4code": "((56-BA-135(N,INL)56-BA-135-M,,SIG,,A/FIS)+(56-BA-134(N,G)56-BA-135-M,,SIG,,A/FIS))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "012": {
@@ -204,9 +200,7 @@
     "014": {
       "XX": {
         "x4code": "((38-SR-87(N,INL)38-SR-87-M,,SIG,,A/FIS)+(38-SR-86(N,G)38-SR-87-M,,SIG,,A/FIS))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     }
   },

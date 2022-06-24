@@ -1,0 +1,92 @@
+{
+  "id": "20432003XX",
+  "reaction": {
+    "x4code": "(47-AG-0(N,G),,SIG)",
+    "target": "47-AG-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Multiple scattering correction factor 4.3%"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Ag, 2.98 x 10**(-3) atom/b thick"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-ERR",
+      "ERR-1",
+      "ERR-2",
+      "ERR-3",
+      "ERR-4"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        24.0
+      ],
+      [
+        0.4
+      ],
+      [
+        2.0
+      ],
+      [
+        2.0
+      ],
+      [
+        2.0
+      ],
+      [
+        2.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "ERR-S"
+    ],
+    "units": [
+      "MB",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        1100.0
+      ],
+      [
+        2.4
+      ]
+    ]
+  }
+}

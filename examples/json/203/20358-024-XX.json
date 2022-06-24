@@ -1,0 +1,56 @@
+{
+  "id": "20358024XX",
+  "reaction": {
+    "x4code": "(72-HF-0(N,EL),,STF)",
+    "target": "72-HF-0",
+    "process": "N,EL",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "STF",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-MAX",
+      "EN-MIN",
+      "MOMENTUM L",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "NO-DIM",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        0.15,
+        0.15
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        1.0,
+        2.0
+      ],
+      [
+        1.3e-05,
+        0.00021
+      ],
+      [
+        6e-06,
+        7e-05
+      ]
+    ]
+  }
+}

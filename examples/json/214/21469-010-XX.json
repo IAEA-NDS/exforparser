@@ -1,0 +1,76 @@
+{
+  "id": "21469010XX",
+  "reaction": {
+    "x4code": "(59-PR-141(N,G)59-PR-142,,SIG,,MXW)",
+    "target": "59-PR-141",
+    "process": "N,G",
+    "sf4": "59-PR-142",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(5-B-0(N,ABS),,SIG)"
+          ],
+          "freetext": [
+            " 2200 m/sec value taken as 783 b."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Two solutions of Pr(6)O(11) plus HNO3 in heavy",
+            " water (D2O)."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": [
+      [
+        0.0253
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "MONIT",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        783.0
+      ],
+      [
+        11.6
+      ],
+      [
+        0.2
+      ]
+    ]
+  }
+}

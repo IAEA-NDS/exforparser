@@ -1,0 +1,53 @@
+{
+  "id": "11778005XX",
+  "reaction": {
+    "x4code": "(47-AG-0(N,G),,SIG)",
+    "target": "47-AG-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-RSL"
+    ],
+    "units": [
+      "KEV",
+      "KEV"
+    ],
+    "data": [
+      [
+        24.0
+      ],
+      [
+        2.2
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        1.127
+      ],
+      [
+        0.08
+      ]
+    ]
+  }
+}

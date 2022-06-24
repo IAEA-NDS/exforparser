@@ -1,0 +1,178 @@
+{
+  "id": "11329061XX",
+  "reaction": {
+    "x4code": "(73-TA-0(N,G),,SIG)",
+    "target": "73-TA-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR,,15.)",
+          "freetext": [
+            " A qualitative estimate of the error as",
+            "a function of energy, including the 10% normalization",
+            "to indium, is less than 15% and shown in Fig. 15",
+            "in PR,122,182,1961"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Normalization uncertainty"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(49-IN-0(N,G),,SIG)"
+          ],
+          "freetext": [
+            "",
+            "  * All of the measurements of capture cross sections",
+            "    as a function of energy were made relative to the",
+            "    shape of the capture cross section of indium in",
+            "    addition to normalization to 30 and 65 keV."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        10.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "B"
+    ],
+    "data": [
+      [
+        0.0065,
+        0.0075,
+        0.0085,
+        0.0095,
+        0.0105,
+        0.0115,
+        0.0125,
+        0.0134,
+        0.0144,
+        0.0155,
+        0.01675,
+        0.01825,
+        0.0196,
+        0.02,
+        0.022,
+        0.0232,
+        0.024,
+        0.026,
+        0.0273,
+        0.0288,
+        0.0315,
+        0.0321,
+        0.0345,
+        0.0365,
+        0.0375,
+        0.041,
+        0.042,
+        0.046,
+        0.0462,
+        0.051,
+        0.0535,
+        0.0555,
+        0.061,
+        0.062,
+        0.063,
+        0.0645,
+        0.068,
+        0.0705,
+        0.0795,
+        0.088,
+        0.098,
+        0.11,
+        0.12,
+        0.131,
+        0.144,
+        0.153,
+        0.16,
+        0.166
+      ],
+      [
+        2.132,
+        2.251,
+        1.966,
+        1.746,
+        1.792,
+        1.654,
+        1.24,
+        1.516,
+        1.516,
+        1.332,
+        1.194,
+        1.231,
+        0.9923,
+        1.139,
+        1.047,
+        0.9555,
+        0.9004,
+        0.8544,
+        0.8039,
+        0.7809,
+        0.6983,
+        0.6799,
+        0.6661,
+        0.6615,
+        0.6156,
+        0.5742,
+        0.5604,
+        0.5283,
+        0.5329,
+        0.4943,
+        0.4869,
+        0.4704,
+        0.4594,
+        0.4594,
+        0.464,
+        0.4199,
+        0.3951,
+        0.4043,
+        0.3657,
+        0.3647,
+        0.3353,
+        0.2968,
+        0.2867,
+        0.2848,
+        0.2756,
+        0.2637,
+        0.2618,
+        0.266
+      ]
+    ]
+  }
+}

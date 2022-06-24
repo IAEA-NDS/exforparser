@@ -1,0 +1,56 @@
+{
+  "id": "13860050XX",
+  "reaction": {
+    "x4code": "(51-SB-121(N,G)51-SB-122,,SIG,,FIS)",
+    "target": "51-SB-121",
+    "process": "N,G",
+    "sf4": "51-SB-122",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(51-SB-122-G,2.8D)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        1.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA"
+    ],
+    "units": [
+      "MB"
+    ],
+    "data": [
+      [
+        90.0
+      ]
+    ]
+  }
+}

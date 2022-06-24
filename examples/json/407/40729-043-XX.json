@@ -1,0 +1,90 @@
+{
+  "id": "40729043XX",
+  "reaction": {
+    "x4code": "(67-HO-165(N,G)67-HO-166,,SIG,,,DERIV)",
+    "target": "67-HO-165",
+    "process": "N,G",
+    "sf4": "67-HO-166",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": "DERIV",
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Derived as difference between total and scattering",
+            " cross-sections."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Total error"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Ho2O3 oxide powder, 99.9 % of Ho-165.",
+            " 13.12E-04 nucl/b, 31.58E-04 nucl/b.",
+            " Diameter 30.00 mm, thickness 4.0, 10.0 mm ."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ASSUM1"
+    ],
+    "units": [
+      "B"
+    ],
+    "data": [
+      [
+        3.736
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL-HW",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.0
+      ],
+      [
+        0.3
+      ],
+      [
+        4.1
+      ],
+      [
+        0.9
+      ]
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "30265003XX",
+  "reaction": {
+    "x4code": "(14-SI-28(N,P)13-AL-28,,SIG,,SPA)",
+    "target": "14-SI-28",
+    "process": "N,P",
+    "sf4": "13-AL-28",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(GEMUC)",
+          "freetext": [
+            " GM counter"
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Pu-alpha-Be neutrons"
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(B-)",
+          "freetext": [
+            " decay beta-"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        4.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        54.0
+      ],
+      [
+        11.0
+      ]
+    ]
+  }
+}

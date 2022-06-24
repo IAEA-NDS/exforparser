@@ -2,10 +2,10 @@
 #
 # This file is part of exfor-parser.
 # Copyright (C) 2022 International Atomic Energy Agency (IAEA)
-# 
-# Disclaimer: The code is still under developments and not ready 
-#             to use. It has beeb made public to share the progress
-#             between collaborators. 
+#
+# Disclaimer: The code is still under developments and not ready
+#             to use. It has been made public to share the progress
+#             among collaborators.
 # Contact:    nds.contact-point@iaea.org
 #
 ####################################################################
@@ -161,7 +161,9 @@ nuclide = Combine(
     + Word(nums + alphas + charinreaction)
 )
 
-# inside of reaction string (without parenthes): 63-EU-151(A,N)65-TB-154-M2/M1,,SIG/RAT
+# inside of reaction string (without parenthes):
+# 63-EU-151(A,N)65-TB-154-M2/M1,,SIG/RAT
+# inparenthes is for "(PHY))", "(A))"
 reaction_str = Combine(
     nuclide("target")
     + Literal("(")
@@ -174,30 +176,32 @@ reaction_str = Combine(
 single_reaction = Combine(Literal("(") + reaction_str + Literal(")"))
 
 # or ratio
-charinreactionratio = Literal("=/+-*")
+charinreactionratio = "=/+-*"
 reaction_ratio = Combine(
-    Literal("(") + single_reaction + Literal("=/+-*") + single_reaction + Literal(")")
+    Literal("(")
+    + single_reaction
+    + Word(charinreactionratio)
+    + single_reaction
+    + Literal(")")
 )
-
-
 reaction_code = single_reaction | reaction_ratio
-
 # catch free text after reaction code
 reaction_text = reaction_code.suppress() + restOfLine + lineEnd().suppress()
 
-# separate target - (reaction) - product and other  !!! not used
-reaction_sep = (
-    Literal("(").suppress()
-    + nuclide
-    + Combine(Literal("(") + Word(alphanums + charinreaction) + Literal(")"))
-    + Combine(ZeroOrMore(nuclide) + ZeroOrMore(Word(charinreaction + alphanums)))
-    + Literal(")").suppress()
+# or end of multiline ratio or R-Value code
+# SUBENT        14537002   20190625   20191023   20191022       1455
+# REACTION   (((94-PU-239(N,F)ELEM/MASS,CUM,FY,,FST)/
+#            (94-PU-239(N,F)42-MO-99,CUM,FY,,FST))//
+#            ((92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW)/
+#            (92-U-235(N,F)42-MO-99,CUM,FY,,MXW)))
+reaction_ratio_end = (
+    reaction_ratio
+    | Combine(single_reaction + Literal(")"))
+    | Combine(reaction_ratio + Literal(")"))
 )
 
+reaction_ratio_text = reaction_ratio.suppress() + restOfLine + lineEnd().suppress()
 
-nested_reactioncode = (
-    Literal("((") + reaction_code + OneOrMore(Literal("/")) + Literal("))")
-)
 
 pointer_field = Group(pointer + restofline)
 next_pt_field = (
@@ -406,7 +410,9 @@ relrefafter_text = relref.suppress() + restOfLine
 
 """ DATA - parse could cause error when DATA section has line break wiyh
 no data"""
-head_str = Word(capitals + "q" + nums + "-+/\* ", exact=11) | Word(capitals + "q" + nums + "-+/\* ")
+head_str = Word(capitals + "q" + nums + "-+/\* ", exact=11) | Word(
+    capitals + "q" + nums + "-+/\* "
+)
 data_header = OneOrMore(head_str)
 
 data_str = (
@@ -415,7 +421,6 @@ data_str = (
     | Word(" " + nums + "+-.eEdD")
 )
 data_body = data_str.leaveWhitespace() + ZeroOrMore(data_str.leaveWhitespace())
-
 
 
 def decomp_section(identifier, s):

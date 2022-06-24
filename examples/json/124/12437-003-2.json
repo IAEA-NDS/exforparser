@@ -1,0 +1,63 @@
+{
+  "id": "124370032",
+  "reaction": {
+    "x4code": "(92-U-236(N,F),,SIG)",
+    "target": "92-U-236",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "2": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA      2",
+      "DATA-ERR  2"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.5,
+        14.1
+      ],
+      [
+        0.2,
+        0.3
+      ],
+      [
+        0.87,
+        1.7
+      ],
+      [
+        0.06,
+        0.09
+      ]
+    ]
+  }
+}

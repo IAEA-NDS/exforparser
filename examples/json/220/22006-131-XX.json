@@ -1,0 +1,81 @@
+{
+  "id": "22006131XX",
+  "reaction": {
+    "x4code": "(74-W-186(N,G)74-W-187,,MLT,,,DERIV)",
+    "target": "74-W-186",
+    "process": "N,G",
+    "sf4": "74-W-187",
+    "residual": null,
+    "sf5": null,
+    "sf6": "MLT",
+    "sf7": null,
+    "sf8": null,
+    "sf9": "DERIV",
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Deduced from 0.5 MeV capture spectrum."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-DIG)",
+          "freetext": [
+            "    Digitizing error of DATA and DATA-ERR."
+          ]
+        },
+        "1": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            "   Digitized error bar. Indicate only",
+            " influence of the different extrapolations for the",
+            " gamma-ray strength function."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-DIG"
+    ],
+    "units": [
+      "PRT/REAC"
+    ],
+    "data": [
+      [
+        0.004
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "PRT/REAC",
+      "PRT/REAC"
+    ],
+    "data": [
+      [
+        0.5
+      ],
+      [
+        3.877
+      ],
+      [
+        0.141
+      ]
+    ]
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "id": "11429018XX",
+  "reaction": {
+    "x4code": "(49-IN-115(N,G)49-IN-116-M1+M2,,SIG)",
+    "target": "49-IN-115",
+    "process": "N,G",
+    "sf4": "49-IN-116-M1+M2",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(49-IN-116-M1,54.MIN)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "(MONIT3)": {
+          "x4code": [
+            "(49-IN-115(N,G)49-IN-116-M1+M2,,SIG)"
+          ],
+          "freetext": [
+            "",
+            "   At thermal"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "MONIT1",
+      "MONIT1-ERR",
+      "EN-NRM2",
+      "MONIT2",
+      "MONIT2-ERR",
+      "EN-NRM3"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "MB",
+      "MB",
+      "EV",
+      "B",
+      "B",
+      "EV"
+    ],
+    "data": [
+      [
+        24.0
+      ],
+      [
+        5.0
+      ],
+      [
+        820.0
+      ],
+      [
+        60.0
+      ],
+      [
+        0.0253
+      ],
+      [
+        5.5
+      ],
+      [
+        0.5
+      ],
+      [
+        0.0253
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR",
+      "EN-NRM3",
+      "MONIT3",
+      "MONIT3-ERR"
+    ],
+    "units": [
+      "B",
+      "B",
+      "EV",
+      "B",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.98
+      ],
+      [
+        0.22
+      ],
+      [
+        0.0253
+      ],
+      [
+        145.0
+      ],
+      [
+        10.0
+      ]
+    ]
+  }
+}

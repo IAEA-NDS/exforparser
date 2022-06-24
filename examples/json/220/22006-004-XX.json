@@ -1,0 +1,73 @@
+{
+  "id": "22006004XX",
+  "reaction": {
+    "x4code": "(29-CU-65(N,G)29-CU-66,,SIG)",
+    "target": "29-CU-65",
+    "process": "N,G",
+    "sf4": "29-CU-66",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "65 g weight, 20 mm diameter, 25 mm height.",
+            "Cu-63 - 0.8 %, Cu-65 - 99.2 % ."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        6.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        0.5,
+        1.0,
+        2.0,
+        3.0
+      ],
+      [
+        7.0,
+        8.3,
+        5.6,
+        4.2
+      ],
+      [
+        0.8,
+        0.8,
+        0.5,
+        0.7
+      ]
+    ]
+  }
+}

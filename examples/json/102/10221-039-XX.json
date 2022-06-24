@@ -1,0 +1,152 @@
+{
+  "id": "10221039XX",
+  "reaction": {
+    "x4code": "(48-CD-114(N,G)48-CD-115,,SIG)",
+    "target": "48-CD-114",
+    "process": "N,G",
+    "sf4": "48-CD-115",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(NAICR)",
+          "freetext": [
+            " NaI gamma-ray detector",
+            " Ge(Li) detector used in calibration measurement."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG)"
+          ],
+          "freetext": [
+            " Normalized to ENDF/B-IV data.",
+            " Detector calibrated using 528-keV transition",
+            " absolute intensity = 0.275 gamma/disintegration."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA",
+      "DATA-ERR",
+      "MISC"
+    ],
+    "units": [
+      "MEV",
+      "PER-CENT",
+      "MB",
+      "PER-CENT",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        0.121,
+        0.154,
+        0.198,
+        0.264,
+        0.398,
+        0.6,
+        0.681,
+        0.72,
+        0.866,
+        0.98,
+        1.07,
+        1.44,
+        1.9,
+        2.14,
+        2.37,
+        2.82
+      ],
+      [
+        36.0,
+        41.0,
+        43.0,
+        44.0,
+        41.0,
+        10.0,
+        31.0,
+        14.0,
+        24.0,
+        18.0,
+        18.0,
+        18.0,
+        15.0,
+        13.0,
+        11.0,
+        6.0
+      ],
+      [
+        40.0,
+        37.0,
+        44.0,
+        42.0,
+        40.0,
+        33.0,
+        24.0,
+        30.0,
+        18.0,
+        28.0,
+        28.0,
+        17.0,
+        16.0,
+        17.0,
+        18.0,
+        16.0
+      ],
+      [
+        10.9,
+        8.7,
+        7.3,
+        6.6,
+        7.0,
+        6.3,
+        7.9,
+        6.2,
+        11.0,
+        5.6,
+        7.6,
+        18.0,
+        18.0,
+        14.0,
+        9.0,
+        5.1
+      ],
+      [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        3.0,
+        1.0,
+        3.0,
+        1.0,
+        1.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0
+      ]
+    ]
+  }
+}

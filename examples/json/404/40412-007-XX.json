@@ -1,0 +1,92 @@
+{
+  "id": "40412007XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,G)94-PU-240,,SIG,,AV)",
+    "target": "94-PU-239",
+    "process": "N,G",
+    "sf4": "94-PU-240",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "AV",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "  Capture CS was determined from ALF and fission CS."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            "   Errors  shown on the data are total error",
+            "which includes errors of alpha and fission cross-",
+            "section data . See also uncertainties in Subents 5,6."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        10.0,
+        20.0,
+        30.0,
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      [
+        20.0,
+        30.0,
+        40.0,
+        50.0,
+        60.0,
+        70.0,
+        80.0
+      ],
+      [
+        0.703,
+        0.539,
+        0.435,
+        0.36,
+        0.305,
+        0.268,
+        0.226
+      ],
+      [
+        0.159,
+        0.071,
+        0.054,
+        0.045,
+        0.039,
+        0.035,
+        0.031
+      ]
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "22578006XX",
+  "reaction": {
+    "x4code": "(29-CU-65(N,G)29-CU-66,,SIG,,SPA)",
+    "target": "29-CU-65",
+    "process": "N,G",
+    "sf4": "29-CU-66",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-MEAN",
+      "DATA-APRX"
+    ],
+    "units": [
+      "MEV",
+      "B"
+    ],
+    "data": [
+      [
+        0.22
+      ],
+      [
+        0.018
+      ]
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "30159008XX",
+  "reaction": {
+    "x4code": "(53-I-127(N,G)53-I-128,,SIG)",
+    "target": "53-I-127",
+    "process": "N,G",
+    "sf4": "53-I-128",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "MB"
+    ],
+    "data": [
+      [
+        0.4
+      ],
+      [
+        150.0
+      ]
+    ]
+  }
+}

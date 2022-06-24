@@ -1,0 +1,143 @@
+{
+  "id": "20143002XX",
+  "reaction": {
+    "x4code": "(92-U-235(N,F),,SIG)",
+    "target": "92-U-235",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total standard error 0.45% including:"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Statistical error"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " uncertainty in ratio of N(10B)/N(235U)"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " uncertainty in ratio of efficiencies for alpha-",
+            "particles of B and fission fragments",
+            " * uncertainty in neutron velocity calibration",
+            " and MONIT-ERR (see Subent 001)."
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(FF)",
+          "freetext": [
+            "       Fission fragments."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Deposited on gold coated quartz",
+            " disks, U-235 was evaporated as U-F(4).",
+            " Isotopic composition in per-cent,",
+            "  U-234   1.0812 +- 0.0020,   U-235   93.336 +- 0.010,",
+            "  U-236   0.2027 +- 0.0006,   U-238    5.380 +- 0.005,",
+            " in U235-F(4) samples (U4,U5 NBS-930).",
+            " The amounts of U-235 on the foils were determined",
+            " from precise low-geometry alpha-counting.",
+            " The neutron induced fission rates were checked as a",
+            " relative control.",
+            " Weights of U-samples (weights in micro-g U-235) are",
+            " 1597.8 +- 2.8 (sample U4), 3228.0 +- 5.7 (sample U5).",
+            " The determination of the specific activity of U-sample",
+            " (nbs-930) is heavily dependent on the alpha-half-life",
+            " of U-234."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        3835.0
+      ],
+      [
+        5.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-S",
+      "ERR-1",
+      "ERR-2",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "B"
+    ],
+    "data": [
+      [
+        2.53e-08
+      ],
+      [
+        587.6
+      ],
+      [
+        0.15
+      ],
+      [
+        0.38
+      ],
+      [
+        0.14
+      ],
+      [
+        2.6
+      ]
+    ]
+  }
+}

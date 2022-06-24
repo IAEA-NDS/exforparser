@@ -1,0 +1,167 @@
+{
+  "id": "40729042XX",
+  "reaction": {
+    "x4code": "(67-HO-165(N,EL)67-HO-165,,SIG)",
+    "target": "67-HO-165",
+    "process": "N,EL",
+    "sf4": "67-HO-165",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ASSUMED": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(6-C-12(N,SCT)6-C-12,,SIG)"
+          ],
+          "freetext": [
+            ") Defined in this experiment,",
+            " used in analysis particularly to define background."
+          ]
+        }
+      }
+    },
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " For multiple scattering < 0.5% .",
+            " for counting loses,",
+            " for background."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Total error includes:",
+            "        statistical uncertainty, including uncertainty",
+            " due to apparatus  and reactor fluctuations;",
+            " monitor uncertainty, uncertainty of density of nuclei",
+            " in samples, uncertainty due to background, multiple",
+            " scattering, neutron registration efficiency."
+          ]
+        }
+      }
+    },
+    "MONIT-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": null,
+            "ent": "40729003",
+            "author": "V.P.Vertebnyy+",
+            "ref": "J,YK,,(1/36),32,1980"
+          },
+          "freetext": [
+            " ="
+          ]
+        },
+        "1": {
+          "x4code": {
+            "type": null,
+            "ent": "40729003",
+            "author": "V.P.Vertebnyy+",
+            "ref": "R,INDC(CCP)-155,32,1980"
+          },
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "(MONIT)": {
+          "x4code": [
+            "(82-PB-0(N,TOT),,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Ho2O3 oxide powder, 99.9 % of Ho-165.",
+            " 13.12E-04 nucl/b, 31.58E-04 nucl/b. Diameter 30.00 mm,",
+            " thickness 4.0, 10.0 mm ."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ASSUM2",
+      "ASSUM2-ERR",
+      "ASSUM3",
+      "ASSUM3-ERR",
+      "MONIT"
+    ],
+    "units": [
+      "NO-DIM",
+      "NO-DIM",
+      "NO-DIM",
+      "NO-DIM",
+      "B"
+    ],
+    "data": [
+      [
+        2.412
+      ],
+      [
+        0.016
+      ],
+      [
+        2.482
+      ],
+      [
+        0.005
+      ],
+      [
+        11.41
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL-HW",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.0
+      ],
+      [
+        0.3
+      ],
+      [
+        19.9
+      ],
+      [
+        0.4
+      ]
+    ]
+  }
+}

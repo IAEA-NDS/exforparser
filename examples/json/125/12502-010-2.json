@@ -1,0 +1,96 @@
+{
+  "id": "125020102",
+  "reaction": {
+    "x4code": "(94-PU-239(N,TOT),,SIG,,RES)",
+    "target": "94-PU-239",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "RES",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "x4code": "(AREA,SHAPE)",
+          "freetext": [
+            " Area and shape analysis of total c/s."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " No information on source of uncertainties"
+          ]
+        }
+      }
+    },
+    "FLAG": {
+      "XX": {
+        "(1.)": {
+          "x4code": "(1.)",
+          "freetext": [
+            " Shape analysis only"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "FLAG",
+      "DATA      2",
+      "DATA-ERR  2"
+    ],
+    "units": [
+      "NO-DIM",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        1.0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        5300.0,
+        2610.0,
+        1800.0,
+        2740.0,
+        2030.0,
+        1750.0,
+        3800.0,
+        5500.0,
+        6600.0
+      ],
+      [
+        100.0,
+        160.0,
+        65.0,
+        190.0,
+        200.0,
+        100.0,
+        534.0,
+        1172.0,
+        900.0
+      ]
+    ]
+  }
+}

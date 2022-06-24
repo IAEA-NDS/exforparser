@@ -124,49 +124,37 @@
     "008": {
       "XX": {
         "x4code": "((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "009": {
       "XX": {
         "x4code": "((92-U-234(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "010": {
       "XX": {
         "x4code": "((92-U-236(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "011": {
       "XX": {
         "x4code": "((93-NP-237(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "012": {
       "XX": {
         "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "013": {
       "XX": {
         "x4code": "((94-PU-241(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     }
   },

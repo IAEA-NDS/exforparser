@@ -1,0 +1,93 @@
+{
+  "id": "40729002XX",
+  "reaction": {
+    "x4code": "(6-C-12(N,TOT),,SIG)",
+    "target": "6-C-12",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Cross-section value was defined as average of several",
+            " measurements for different sample thicknesses and for",
+            " three variants of geometry (table 2 of reference)."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Total error includes statistical error,error",
+            " due to counting fluctuations, error due to definition",
+            " of nuclei density in sample."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Reactor graphite, diameter 40.mm .",
+            " Thickness (cm): 0.489, 1.18, 1.78, 2.498, 4.96, 7.00,",
+            " 9.498 ."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ASSUM1"
+    ],
+    "units": [
+      "B"
+    ],
+    "data": [
+      [
+        3.736
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL-HW",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.0
+      ],
+      [
+        0.3
+      ],
+      [
+        4.73
+      ],
+      [
+        0.02
+      ]
+    ]
+  }
+}

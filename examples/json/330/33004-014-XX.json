@@ -1,0 +1,76 @@
+{
+  "id": "33004014XX",
+  "reaction": {
+    "x4code": "(73-TA-181(N,G)73-TA-182,,SIG,,SPA)",
+    "target": "73-TA-181",
+    "process": "N,G",
+    "sf4": "73-TA-182",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(73-TA-182,,DG,67.75)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "73-TA-181 1.65 cm * 1.6 cm  Foil OF 0.431 mm",
+            "thickness used"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX"
+    ],
+    "units": [
+      "MEV",
+      "MEV"
+    ],
+    "data": [
+      [
+        0.1
+      ],
+      [
+        100.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        1.03
+      ],
+      [
+        0.05
+      ]
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "11028004XX",
+  "reaction": {
+    "x4code": "(5-B-0(N,ABS),,SIG)",
+    "target": "5-B-0",
+    "process": "N,ABS",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "USED G = 1.000"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "ANL-BNL STANDARD BORON."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.53e-08
+      ],
+      [
+        758.0
+      ],
+      [
+        4.0
+      ]
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "11329044XX",
+  "reaction": {
+    "x4code": "(65-TB-159(N,G)65-TB-160,,SIG)",
+    "target": "65-TB-159",
+    "process": "N,G",
+    "sf4": "65-TB-160",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            "  An estimated typical standard deviation"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(49-IN-0(N,G),,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "B",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.03,
+        0.065,
+        0.167
+      ],
+      [
+        0.007,
+        0.02,
+        0.003
+      ],
+      [
+        1.85,
+        1.07,
+        0.6
+      ],
+      [
+        9.0,
+        9.0,
+        10.0
+      ]
+    ]
+  }
+}

@@ -75,11 +75,9 @@
         "sf9": null,
         "freetext": []
       },
-      "XX": {
+      "2": {
         "x4code": "(((79-AU-197(N,EL),,WID,,G)*(79-AU-197(N,G),,WID))/(79-AU-197(N,TOT),,WID))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "005": {

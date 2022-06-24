@@ -1,0 +1,124 @@
+{
+  "id": "400870092",
+  "reaction": {
+    "x4code": "(94-PU-239(N,ABS),,ETA)",
+    "target": "94-PU-239",
+    "process": "N,ABS",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "ETA",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " Obtained in additional measurement."
+    ]
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Not specified."
+          ]
+        }
+      }
+    },
+    "MONIT-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": null,
+            "ent": null,
+            "author": "G.C.Hanna+",
+            "ref": "J,REA,7,(4),3,1969"
+          },
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "(MONIT1)": {
+          "x4code": [
+            "(94-PU-239(N,F),,NU)"
+          ],
+          "freetext": [
+            ""
+          ]
+        },
+        "(MONIT2)": {
+          "x4code": [
+            "(94-PU-239(N,ABS),,ALF)"
+          ],
+          "freetext": [
+            ""
+          ]
+        },
+        "(MONIT3)": {
+          "x4code": [
+            "(94-PU-239(N,ABS),,ETA)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM",
+      "MONIT1",
+      "MONIT2",
+      "MONIT3"
+    ],
+    "units": [
+      "EV",
+      "PRT/FIS",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        0.025
+      ],
+      [
+        2.88
+      ],
+      [
+        0.36
+      ],
+      [
+        2.11
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA      2",
+      "DATA-ERR  2"
+    ],
+    "units": [
+      "EV",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        0.3
+      ],
+      [
+        1.728
+      ],
+      [
+        0.026
+      ]
+    ]
+  }
+}

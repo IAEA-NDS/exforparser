@@ -1,0 +1,66 @@
+{
+  "id": "20638072XX",
+  "reaction": {
+    "x4code": "(94-PU-240(N,ABS),,SIG)",
+    "target": "94-PU-240",
+    "process": "N,ABS",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " 2200 M/Sec Cross Section"
+    ]
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(5-B-0(N,ABS),,SIG)"
+          ],
+          "freetext": [
+            " 2200 M/Sec Value 767 +- 4b."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        370.0
+      ],
+      [
+        40.0
+      ],
+      [
+        767.0
+      ],
+      [
+        4.0
+      ]
+    ]
+  }
+}

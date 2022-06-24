@@ -1,0 +1,54 @@
+{
+  "id": "124340062",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,SIG,,,DERIV)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": "DERIV",
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "2": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA      2",
+      "MONIT     2"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.53e-08
+      ],
+      [
+        710.0
+      ],
+      [
+        577.0
+      ]
+    ]
+  }
+}

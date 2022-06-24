@@ -1,0 +1,100 @@
+{
+  "id": "21004007XX",
+  "reaction": {
+    "x4code": "(39-Y-89(N,G)39-Y-90-M,,SIG)",
+    "target": "39-Y-89",
+    "process": "N,G",
+    "sf4": "39-Y-90-M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(39-Y-90-M,3.19HR,DG,202.5,0.970,DG,479.5,0.906)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "DECAY-MON": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(11-NA-24-G,15.02HR,DG,1368.5,1.00)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(13-AL-27(N,A)11-NA-24-G,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".YTTRIUM OXIDE, ENCASED IN A CYLINDER OF ALUMINUM",
+            " FOILS, PURITY 99.95 PERCENT, ABUNDANCE 100 PERCENT."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        112.0
+      ],
+      [
+        5.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        0.39
+      ],
+      [
+        0.04
+      ]
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "id": "40729031XX",
+  "reaction": {
+    "x4code": "(63-EU-153(N,EL)63-EU-153,,RAD)",
+    "target": "63-EU-153",
+    "process": "N,EL",
+    "sf4": "63-EU-153",
+    "residual": null,
+    "sf5": null,
+    "sf6": "RAD",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Monte-Carlo method."
+          ]
+        }
+      }
+    },
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " For contribution of p-wave -0.05,",
+            " for interference between levels 0.06 ."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total error."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Uncertainty of exp.data fitting."
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " Uncertainty due to resonance parameters",
+            "        fluctuations."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Eu2-O3, 99.1% Eu-153."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ASSUM1"
+    ],
+    "units": [
+      "B"
+    ],
+    "data": [
+      [
+        3.736
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL-HW",
+      "DATA",
+      "ERR-T",
+      "ERR-1",
+      "ERR-3"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "FERMI",
+      "FERMI",
+      "FERMI",
+      "FERMI"
+    ],
+    "data": [
+      [
+        2.0
+      ],
+      [
+        0.3
+      ],
+      [
+        8.16
+      ],
+      [
+        0.1
+      ],
+      [
+        0.09
+      ],
+      [
+        0.07
+      ]
+    ]
+  }
+}

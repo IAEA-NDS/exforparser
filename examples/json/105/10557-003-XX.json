@@ -1,0 +1,104 @@
+{
+  "id": "10557003XX",
+  "reaction": {
+    "x4code": "(90-TH-232(N,G)90-TH-233,,SIG,,FIS)",
+    "target": "90-TH-232",
+    "process": "N,G",
+    "sf4": "90-TH-233",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(90-TH-233,22.3MIN,B-)"
+          ],
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(91-PA-233,27.2D,DG,312.)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Statistical uncertainty."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Data errors include statistical errors,",
+            " uncertainties in source calibration,and uncertainties",
+            " in the NBS standard flux"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Detector calibrated using NBS standard flux and",
+            " thermal cross section of thorium"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "2 thorium foils, thickness 5.0 mil."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-MEAN",
+      "DATA",
+      "ERR-S",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        2.1
+      ],
+      [
+        87.8
+      ],
+      [
+        2.2
+      ],
+      [
+        4.0
+      ]
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "40839017XX",
+  "reaction": {
+    "x4code": "(73-TA-181(N,EL),,STF)",
+    "target": "73-TA-181",
+    "process": "N,EL",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "STF",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        11.41
+      ],
+      [
+        0.07
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-RES",
+      "DATA",
+      "ERR-S",
+      "MOMENTUM L"
+    ],
+    "units": [
+      "KEV",
+      "NO-DIM",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        24.5
+      ],
+      [
+        0.00018
+      ],
+      [
+        2e-05
+      ],
+      [
+        0.0
+      ]
+    ]
+  }
+}

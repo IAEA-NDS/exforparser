@@ -1,0 +1,41 @@
+{
+  "id": "40063021XX",
+  "reaction": {
+    "x4code": "(93-NP-237(N,TOT),,RI,,LIM)",
+    "target": "93-NP-237",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "RI",
+    "sf7": null,
+    "sf8": "LIM",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA"
+    ],
+    "units": [
+      "EV",
+      "EV",
+      "B"
+    ],
+    "data": [
+      [
+        2.7
+      ],
+      [
+        12000.0
+      ],
+      [
+        360.0
+      ]
+    ]
+  }
+}

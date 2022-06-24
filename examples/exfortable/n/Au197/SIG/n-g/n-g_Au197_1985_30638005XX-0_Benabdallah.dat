@@ -1,0 +1,12 @@
+# entry       : 30638 
+# subentry    : 005 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG,,FIS) 
+# year        : 1985 
+# author      : H.Benabdallah 
+# institute   : 3MORMOH 
+# reference   : (J,FIZ,17,(2),191,198506) 
+# facility    : None 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      1.00000E+00      0.00000E+00      7.80000E+01      3.00000E+00

@@ -1,0 +1,46 @@
+{
+  "id": "12437002XX",
+  "reaction": {
+    "x4code": "(92-U-235(N,F),,SIG)",
+    "target": "92-U-235",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        14.1
+      ],
+      [
+        0.3
+      ],
+      [
+        2.21
+      ],
+      [
+        0.13
+      ]
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "id": "21469009XX",
+  "reaction": {
+    "x4code": "(57-LA-139(N,G)57-LA-140,,SIG,,MXW)",
+    "target": "57-LA-139",
+    "process": "N,G",
+    "sf4": "57-LA-140",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW",
+    "sf9": null,
+    "freetext": [
+      " Cross section."
+    ]
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(5-B-0(N,ABS),,SIG)"
+          ],
+          "freetext": [
+            " Value taken as 783 b."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Two solution of lanthanum oxide (La2O3) plus HNO3",
+            " in heavy water (D2O). the cross sections of HNO3",
+            " and D2O were measured previously."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": [
+      [
+        0.0253
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "MONIT",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        783.0
+      ],
+      [
+        9.1
+      ],
+      [
+        0.2
+      ]
+    ]
+  }
+}

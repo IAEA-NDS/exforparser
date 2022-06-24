@@ -1,0 +1,66 @@
+{
+  "id": "11450040XX",
+  "reaction": {
+    "x4code": "(83-BI-209(N,G)83-BI-210,,SIG,,FIS)",
+    "target": "83-BI-209",
+    "process": "N,G",
+    "sf4": "83-BI-210",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(83-BI-210-G,5.D)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(83-BI-209(N,G)83-BI-210,,SIG,,MXW)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-DUMMY",
+      "DATA",
+      "MONIT"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "B"
+    ],
+    "data": [
+      [
+        1.0
+      ],
+      [
+        3.0
+      ],
+      [
+        0.015
+      ]
+    ]
+  }
+}

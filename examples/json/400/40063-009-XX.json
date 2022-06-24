@@ -1,0 +1,46 @@
+{
+  "id": "40063009XX",
+  "reaction": {
+    "x4code": "(95-AM-241(N,0),,EN)",
+    "target": "95-AM-241",
+    "process": "N,0",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "EN",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Two samples of Am-241( .7 % of Pu-239) as oxide AmO2,",
+            " thickness are .521gramm/cm**2 and .0665 gram/cm**2."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "DATA"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": [
+      [
+        0.3,
+        0.53,
+        0.58,
+        1.26,
+        1.9
+      ]
+    ]
+  }
+}

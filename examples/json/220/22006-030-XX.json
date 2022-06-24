@@ -1,0 +1,73 @@
+{
+  "id": "22006030XX",
+  "reaction": {
+    "x4code": "(78-PT-194(N,G)78-PT-195,,SIG)",
+    "target": "78-PT-194",
+    "process": "N,G",
+    "sf4": "78-PT-195",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Cylindrical sample, weight 40.117 gram, diameter",
+            " 12.7, height 17.8 mm."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        6.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        0.5,
+        1.0,
+        2.0,
+        3.0
+      ],
+      [
+        122.0,
+        74.0,
+        84.0,
+        36.0
+      ],
+      [
+        9.0,
+        5.7,
+        6.0,
+        4.6
+      ]
+    ]
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "id": "100490122",
+  "reaction": {
+    "x4code": "(64-GD-157(N,G),,WID)",
+    "target": "64-GD-157",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "WID",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "x4code": "(SHAPE,AREA)",
+          "freetext": [
+            " Shape and area analysis."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(EN-RES-ERR)",
+          "freetext": [
+            " Uncertainties in resonance energy",
+            "         determination taken to be one half of the",
+            "         energy width of the time channel"
+          ]
+        },
+        "1": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " the standard deviation of the mean",
+            "           calculated from the variance of the sample."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TRN)",
+          "freetext": [
+            " Capture gammas, transmission and self indication",
+            "measurements."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "x4code": "(64-GD-157,ENR=0.8863)",
+          "freetext": [
+            " Enriched samples in oxide form.",
+            "Enrichment - Gd-157, 88.63%.",
+            " Natural gadolinium sample also used."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-RES",
+      "EN-RES-ERR",
+      "DATA      2",
+      "DATA-ERR  2"
+    ],
+    "units": [
+      "EV",
+      "EV",
+      "MILLI-EV",
+      "MILLI-EV"
+    ],
+    "data": [
+      [
+        16.25,
+        16.85,
+        20.56,
+        21.66,
+        23.33,
+        25.4,
+        40.15,
+        44.2,
+        48.72,
+        58.31,
+        66.57,
+        81.39,
+        82.24,
+        87.2,
+        96.59,
+        100.2,
+        104.9,
+        107.4,
+        110.5,
+        115.4,
+        120.9,
+        138.2,
+        139.3,
+        143.7,
+        148.4,
+        156.6,
+        164.9,
+        168.3,
+        169.5,
+        171.4,
+        178.7,
+        184.0
+      ],
+      [
+        0.2,
+        0.11,
+        0.04,
+        0.03,
+        0.02,
+        2.3,
+        0.09,
+        0.1,
+        0.11,
+        0.08,
+        0.1,
+        0.12,
+        0.13,
+        0.14,
+        0.15,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.2,
+        0.09,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.3,
+        0.3
+      ],
+      [
+        null,
+        77.0,
+        88.0,
+        147.0,
+        121.0,
+        79.0,
+        null,
+        91.0,
+        87.0,
+        104.0,
+        67.0,
+        null,
+        null,
+        113.0,
+        null,
+        103.0,
+        66.0,
+        null,
+        87.0,
+        113.0,
+        91.0,
+        null,
+        null,
+        88.0,
+        null,
+        87.0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        5.0,
+        5.0,
+        65.0,
+        31.0,
+        23.0,
+        null,
+        8.0,
+        4.0,
+        5.0,
+        12.0,
+        null,
+        null,
+        33.0,
+        null,
+        31.0,
+        9.0,
+        null,
+        10.0,
+        56.0,
+        6.0,
+        null,
+        null,
+        10.0,
+        null,
+        10.0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ]
+  }
+}

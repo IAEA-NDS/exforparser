@@ -1,0 +1,64 @@
+{
+  "id": "125020173",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,WID,,AV)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "WID",
+    "sf7": null,
+    "sf8": "AV",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " No information on source of uncertainties"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "MOMENTUM L"
+    ],
+    "units": [
+      "EV",
+      "EV",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        0.0
+      ],
+      [
+        52.6
+      ],
+      [
+        0.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA      3"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": [
+      [
+        0.099
+      ]
+    ]
+  }
+}

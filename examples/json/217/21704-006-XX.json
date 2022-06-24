@@ -1,0 +1,144 @@
+{
+  "id": "21704006XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,INT)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "INT",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " Measurement IV"
+    ]
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Direct integration of cross sections"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Statistical and systematic errors excluding",
+            " error due to deviation from 1/v behavior of 6Li(n,a)"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(94-PU-239(N,F),,INT)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM-MIN",
+      "EN-NRM-MAX",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "B*EV",
+      "B*EV"
+    ],
+    "data": [
+      [
+        0.1
+      ],
+      [
+        5.0
+      ],
+      [
+        22.75
+      ],
+      [
+        0.32
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "EV",
+      "EV",
+      "B*EV",
+      "B*EV"
+    ],
+    "data": [
+      [
+        100.0,
+        200.0,
+        300.0,
+        1000.0,
+        2000.0,
+        3000.0,
+        4000.0,
+        5000.0,
+        6000.0,
+        10000.0
+      ],
+      [
+        200.0,
+        300.0,
+        1000.0,
+        2000.0,
+        3000.0,
+        4000.0,
+        5000.0,
+        6000.0,
+        10000.0,
+        20000.0
+      ],
+      [
+        1851.0,
+        1792.0,
+        5718.0,
+        4554.0,
+        3305.0,
+        3025.0,
+        2509.0,
+        2442.0,
+        8110.0,
+        18638.0
+      ],
+      [
+        60.0,
+        60.0,
+        170.0,
+        130.0,
+        100.0,
+        90.0,
+        80.0,
+        100.0,
+        240.0,
+        500.0
+      ]
+    ]
+  }
+}

@@ -2,21 +2,20 @@
 #
 # This file is part of exfor-parser.
 # Copyright (C) 2022 International Atomic Energy Agency (IAEA)
-# 
-# Disclaimer: The code is still under developments and not ready 
-#             to use. It has beeb made public to share the progress
-#             between collaborators. 
+#
+# Disclaimer: The code is still under developments and not ready
+#             to use. It has been made public to share the progress
+#             among collaborators.
 # Contact:    nds.contact-point@iaea.org
 #
 ####################################################################
 
 import re
-
 from .exfor_bib import *
 from .exfor_reaction import *
 from .exfor_data import *
 from .utilities import process_time
-
+import itertools
 
 # @process_time
 def chop_subentry(subent_body, sec_name):
@@ -47,6 +46,8 @@ def chop_subentry(subent_body, sec_name):
 """
  Subentry class takes care of sections under the subentnum001-0XX 
 """
+
+
 class Subentry:
     def __init__(self, subentnum, subent_body):
         self.subentnum = subentnum
@@ -60,7 +61,6 @@ class Subentry:
         and get detailed field data
         """
 
-
     def bib_block(self) -> list:
         return chop_subentry(self.subent_body, "BIB")
 
@@ -70,13 +70,11 @@ class Subentry:
     def data_block(self) -> list:
         return chop_subentry(self.subent_body, "DATA")
 
-
     def parse_bib_extra_dict(self) -> dict:
         if self.bib_block() is None:
             return "no bib"
         else:
             return bib_extra_dict(self.bib_block())
-
 
     def parse_data_heads(self) -> dict:
         if self.subentnum == "001":
@@ -84,9 +82,7 @@ class Subentry:
         elif self.data_block()[0] == "NODATA":
             return None
         else:
-            # newdata = [ [ float(d.get_unit_factor(data_block["units"][l])) * float(dp) for dp in data_block["data"][str(l)] ] for l in locs ]
             return get_heads(self.data_block())
-
 
     def parse_data(self) -> dict:
         if self.subentnum == "001":
@@ -94,15 +90,12 @@ class Subentry:
         elif self.data_block()[0] == "NODATA":
             return None
         else:
-            # newdata = [ [ float(d.get_unit_factor(data_block["units"][l])) * float(dp) for dp in data_block["data"][str(l)] ] for l in locs ]
             return recon_data(self.data_block())
-
 
     def parse_common_heads(self) -> dict:
         if self.common_block()[0] == "NOCOMMON":
             return None
         else:
-            # newdata = [ [ float(d.get_unit_factor(data_block["units"][l])) * float(dp) for dp in data_block["data"][str(l)] ] for l in locs ]
             return get_heads(self.common_block())
 
     def parse_common(self) -> dict:
@@ -111,14 +104,10 @@ class Subentry:
         else:
             return recon_data(self.common_block())
 
-
     def parse_reaction(self) -> dict:
         reaction_field = parse_reaction_field(self.subent_body)
 
         return get_reaction(reaction_field)
-
-
-
 
 
 class MainSubentry(Subentry):
@@ -133,4 +122,3 @@ class MainSubentry(Subentry):
             pass
         else:
             return main_bib_dict(self.bib_block())
-

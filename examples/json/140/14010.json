@@ -1,0 +1,309 @@
+{
+  "title": "Measurements Of Energy Integrated Cross Sections For  Reactions Producing Relatively Short-Lived  Radionuclides Using Neutron Beams With An Energy Range  Of 0.1-750 Mev",
+  "references": [
+    {
+      "x4code": "(J,NIM/B,234,419,2005)",
+      "publication year": "2005"
+    }
+  ],
+  "authors": [
+    {
+      "name": "J.M.Sisterson"
+    },
+    {
+      "name": "J.Ullmann"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USALAS"
+    },
+    {
+      "x4code": "1USAMGH"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "LINAC",
+      "x4code": "1USALAS"
+    }
+  ],
+  "entry_number": "14010",
+  "reactions": {
+    "002": {
+      "XX": {
+        "x4code": "(6-C-0(N,X)4-BE-7,,SIG,,SPA)",
+        "target": "6-C-0",
+        "process": "N,X",
+        "sf4": "4-BE-7",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "XX": {
+        "x4code": "(14-SI-OXI(N,X)ELEM/MASS,,SIG,,SPA)",
+        "target": "14-SI-OXI",
+        "process": "N,X",
+        "sf4": "ELEM/MASS",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "XX": {
+        "x4code": "(14-SI-0(N,X)ELEM/MASS,,SIG,,SPA)",
+        "target": "14-SI-0",
+        "process": "N,X",
+        "sf4": "ELEM/MASS",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "XX": {
+        "x4code": "(12-MG-0(N,X)ELEM/MASS,,SIG,,SPA)",
+        "target": "12-MG-0",
+        "process": "N,X",
+        "sf4": "ELEM/MASS",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "XX": {
+        "x4code": "(13-AL-27(N,X)ELEM/MASS,,SIG,,SPA)",
+        "target": "13-AL-27",
+        "process": "N,X",
+        "sf4": "ELEM/MASS",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "XX": {
+        "x4code": "(79-AU-197(N,4N)79-AU-194,,SIG,,SPA)",
+        "target": "79-AU-197",
+        "process": "N,4N",
+        "sf4": "79-AU-194",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "XX": {
+        "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,SPA)",
+        "target": "79-AU-197",
+        "process": "N,G",
+        "sf4": "79-AU-198",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "XX": {
+        "x4code": "(22-TI-0(N,X)ELEM/MASS,,SIG,,SPA)",
+        "target": "22-TI-0",
+        "process": "N,X",
+        "sf4": "ELEM/MASS",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "010": {
+      "XX": {
+        "x4code": "(26-FE-0(N,X)ELEM/MASS,,SIG,,SPA)",
+        "target": "26-FE-0",
+        "process": "N,X",
+        "sf4": "ELEM/MASS",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "011": {
+      "XX": {
+        "x4code": "(28-NI-0(N,X)ELEM/MASS,,SIG,,SPA)",
+        "target": "28-NI-0",
+        "process": "N,X",
+        "sf4": "ELEM/MASS",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "012": {
+      "XX": {
+        "x4code": "(29-CU-0(N,X)ELEM/MASS,,SIG,,SPA)",
+        "target": "29-CU-0",
+        "process": "N,X",
+        "sf4": "ELEM/MASS",
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "013": {
+      "XX": {
+        "x4code": "(28-NI-0(N,X)ELEM/MASS,CUM,SIG,,SPA)",
+        "target": "28-NI-0",
+        "process": "N,X",
+        "sf4": "ELEM/MASS",
+        "residual": null,
+        "sf5": "CUM",
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "014": {
+      "XX": {
+        "x4code": "(29-CU-0(N,X)ELEM/MASS,CUM,SIG,,SPA)",
+        "target": "29-CU-0",
+        "process": "N,X",
+        "sf4": "ELEM/MASS",
+        "residual": null,
+        "sf5": "CUM",
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(GE-IN)",
+          "freetext": [
+            " High purity Ge detectors plus pulse height",
+            " analyzers with computer data acquisition systems were",
+            " used to collect the gamma-ray spectra for gamma rays",
+            " with energies in the range 0-3 MeV."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "LINAC,1USALAS"
+          ],
+          "freetext": [
+            " WNR Facility at the LANSCE accelerator"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "800 MeV protons at W target at LANSCE"
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "White neutron beam, practical energy range",
+            "0.1 - 750 MeV"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            "",
+            "Non-destructive gamma-ray spectroscopy"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Target Thickness (cm)  Purity (%) Weight (g)",
+            " C          0.1          99.95       0.32",
+            " SiO2       0.3          99.9       16.6",
+            " Mg         0.3          99.9       13.0",
+            " Al         0.1          99.999      0.46",
+            "            0.1          99.999      6.8",
+            " Si         0.1          99.999      4.6",
+            " Ti         0.1          99.6        0.74",
+            " Fe         0.05         99.5        0.7",
+            "            0.1          99.99+     20.44",
+            " Ni         0.1          99.98       1.52",
+            "            0.1          99.98      22.43",
+            " Cu         0.1          99.99+      1.59",
+            " Au         0.025        99.95       0.91"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "20638005XX",
+  "reaction": {
+    "x4code": "(13-AL-27(N,G)13-AL-28,,RI,,RNV)",
+    "target": "13-AL-27",
+    "process": "N,G",
+    "sf4": "13-AL-28",
+    "residual": null,
+    "sf5": null,
+    "sf6": "RI",
+    "sf7": null,
+    "sf8": "RNV",
+    "sf9": null,
+    "freetext": [
+      " Resonance Integral",
+      " excluding the 1/v-contribution."
+    ]
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-197(N,G)79-AU-198-G+M,,RI,,RNV)"
+          ],
+          "freetext": [
+            "     Value Taken",
+            " as 1513 +- 60 b."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "DATA-MAX",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.67
+      ],
+      [
+        0.08
+      ],
+      [
+        1513.0
+      ],
+      [
+        60.0
+      ]
+    ]
+  }
+}

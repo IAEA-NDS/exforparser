@@ -1,0 +1,57 @@
+{
+  "id": "10049018XX",
+  "reaction": {
+    "x4code": "(64-GD-157(N,G),,WID,,AV)",
+    "target": "64-GD-157",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "WID",
+    "sf7": null,
+    "sf8": "AV",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " the standard deviation"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-RES-MIN",
+      "EN-RES-MAX",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "EV",
+      "EV",
+      "MILLI-EV",
+      "MILLI-EV"
+    ],
+    "data": [
+      [
+        3.0
+      ],
+      [
+        200.0
+      ],
+      [
+        102.6
+      ],
+      [
+        2.0
+      ]
+    ]
+  }
+}

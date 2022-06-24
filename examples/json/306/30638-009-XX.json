@@ -1,0 +1,71 @@
+{
+  "id": "30638009XX",
+  "reaction": {
+    "x4code": "(30-ZN-68(N,G)30-ZN-69-M,,SIG,,FIS)",
+    "target": "30-ZN-68",
+    "process": "N,G",
+    "sf4": "30-ZN-69-M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(30-ZN-69-M,13.76HR,DG,438.7,0.948)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY",
+      "ERR-1",
+      "ERR-2"
+    ],
+    "units": [
+      "MEV",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        1.0
+      ],
+      [
+        1.5
+      ],
+      [
+        1.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        1.85
+      ],
+      [
+        0.12
+      ]
+    ]
+  }
+}

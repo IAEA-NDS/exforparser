@@ -79,9 +79,7 @@
     "005": {
       "XX": {
         "x4code": "((34-SE-77(N,INL)34-SE-77-M,,SIG,,A/SPA)+(34-SE-76(N,G)34-SE-77-M,,SIG,,A/SPA))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "006": {
@@ -132,9 +130,7 @@
     "009": {
       "XX": {
         "x4code": "((38-SR-87(N,INL)38-SR-87-M,,SIG,,A/SPA)+(38-SR-86(N,G)38-SR-87-M,,SIG,,A/SPA))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "010": {
@@ -155,9 +151,7 @@
     "011": {
       "XX": {
         "x4code": "((48-CD-111(N,INL)48-CD-111-M,,SIG,,A/SPA)+(48-CD-110(N,G)48-CD-111-M,,SIG,,A/SPA))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "012": {
@@ -208,25 +202,19 @@
     "015": {
       "XX": {
         "x4code": "((56-BA-135(N,INL)56-BA-135-M,,SIG,,A/SPA)+(56-BA-134(N,G)56-BA-135-M,,SIG,,A/SPA))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "016": {
       "XX": {
         "x4code": "((56-BA-137(N,INL)56-BA-137-M,,SIG,,A/SPA)+(56-BA-136(N,G)56-BA-137-M,,SIG,,A/SPA))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "017": {
       "XX": {
         "x4code": "((80-HG-199(N,INL)80-HG-199-M,,SIG,,SPA)+(80-HG-198(N,G)80-HG-199-M,,SIG,,SPA))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "018": {

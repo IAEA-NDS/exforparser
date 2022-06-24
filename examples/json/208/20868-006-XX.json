@@ -1,0 +1,109 @@
+{
+  "id": "20868006XX",
+  "reaction": {
+    "x4code": "(49-IN-115(N,G)49-IN-116-M1+M2,,SIG,,SPA)",
+    "target": "49-IN-115",
+    "process": "N,G",
+    "sf4": "49-IN-116-M1+M2",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(49-IN-116-M1,54.13MIN,DG,1293.,0.837)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "FLAG": {
+      "XX": {
+        "(1.)": {
+          "x4code": "(1.)",
+          "freetext": [
+            " detector without surrounding by B-10 sphere"
+          ]
+        },
+        "(2.)": {
+          "x4code": "(2.)",
+          "freetext": [
+            " detector with surrounding by 2.2 g/cm2 B-10 sphere"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".One Am-241+Li in Li-container neutron source.",
+            "Am-241+Li neutron source in stainless steel container;",
+            "31.0 x 22.4 mm (h x diam.); amount of radioactive",
+            "material - 1.5Ci; neutron emission rate",
+            "6.7 x 10**4 n/sec; anisotropy factor 1.023.",
+            "   AmLi neutron source consists of an intimate",
+            "mixture of Li and 241AmO(2)."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Natural indium sphere 1 cm in diameter."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "KEV"
+    ],
+    "data": [
+      [
+        100.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR",
+      "FLAG"
+    ],
+    "units": [
+      "MB",
+      "MB",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        167.0,
+        264.0
+      ],
+      [
+        13.0,
+        16.0
+      ],
+      [
+        2.0,
+        1.0
+      ]
+    ]
+  }
+}

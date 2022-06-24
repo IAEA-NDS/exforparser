@@ -1,0 +1,65 @@
+{
+  "id": "41257015XX",
+  "reaction": {
+    "x4code": "(35-BR-79(N,G)35-BR-80-G,,SIG,,SPA)",
+    "target": "35-BR-79",
+    "process": "N,G",
+    "sf4": "35-BR-80-G",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(35-BR-80-G,18.MIN,B-)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Br-79  concentration is 0.51"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "KEV"
+    ],
+    "data": [
+      [
+        200.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA"
+    ],
+    "units": [
+      "B"
+    ],
+    "data": [
+      [
+        0.03
+      ]
+    ]
+  }
+}

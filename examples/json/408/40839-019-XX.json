@@ -1,0 +1,89 @@
+{
+  "id": "40839019XX",
+  "reaction": {
+    "x4code": "(92-U-238(N,EL),,STF)",
+    "target": "92-U-238",
+    "process": "N,EL",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "STF",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            "  Fluctuation Error"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        11.41
+      ],
+      [
+        0.07
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-RES",
+      "DATA",
+      "ERR-S",
+      "ERR-1",
+      "MOMENTUM L"
+    ],
+    "units": [
+      "KEV",
+      "NO-DIM",
+      "NO-DIM",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        2.0,
+        24.5,
+        24.5
+      ],
+      [
+        0.00014,
+        7.7e-05,
+        0.00021
+      ],
+      [
+        6e-06,
+        null,
+        6e-05
+      ],
+      [
+        3.7e-05,
+        1.3e-05,
+        null
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  }
+}

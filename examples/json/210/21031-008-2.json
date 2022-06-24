@@ -1,0 +1,36 @@
+{
+  "id": "210310082",
+  "reaction": {
+    "x4code": "(94-PU-241(N,F),,WID)",
+    "target": "94-PU-241",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "WID",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "DATA      2",
+      "DATA-ERR  2"
+    ],
+    "units": [
+      "EV",
+      "EV"
+    ],
+    "data": [
+      [
+        0.103
+      ],
+      [
+        0.02
+      ]
+    ]
+  }
+}

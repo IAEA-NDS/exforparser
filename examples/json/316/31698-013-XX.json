@@ -1,0 +1,167 @@
+{
+  "id": "31698013XX",
+  "reaction": {
+    "x4code": "(20-CA-48(N,G)20-CA-49,,RI)",
+    "target": "20-CA-48",
+    "process": "N,G",
+    "sf4": "20-CA-49",
+    "residual": null,
+    "sf5": null,
+    "sf6": "RI",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(20-CA-49,8.72MIN,DG,3084.50,0.921)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "DECAY-MON": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(25-MN-56,2.58HR,DG,1810.70,0.272)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "REAC,3GHALGN"
+          ],
+          "freetext": [
+            " Miniature neutron source reactor.",
+            "Ghana Research Reactor-1 is a 30 kW tank-in-pool",
+            "reactor, which uses 90.2% enriched uranium-Al alloy",
+            "as fuel. The samples were irradiated at thermal",
+            "power level of 3 kW and 15 kW."
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "The spectral parameter and thermal to epithermal flux",
+            "ratio were determined by Cadmium ratio method using",
+            "Au and Zr as monitors.",
+            "Measured epithermal neutron shaping factor (alpha) at",
+            "the outer  and inner irradiation channels:",
+            "  Channel      Cadmium Ratio (Rcd)         (alpha)",
+            "                94Zr        197Au",
+            "Inner",
+            "irr.ch.2    3.47+/-0.04  2.36+/-0.01   -0.961+/-0.034",
+            "Outer",
+            "irr.ch.7   11.28+/-0.40  3.78+/-0.01    0.037+/-0.001"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "(MONIT2)": {
+          "x4code": [
+            "(25-MN-55(N,G)25-MN-56,,RI)"
+          ],
+          "freetext": [
+            "",
+            "Epithermal Cross Section = 13.90 b"
+          ]
+        },
+        "(MONIT3)": {
+          "x4code": [
+            "(20-CA-48(N,G)20-CA-49,,SIG)"
+          ],
+          "freetext": [
+            "",
+            "Thermal Cross Section = 1.12 b"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "x4code": "(20-CA-48,NAT=0.0019)",
+          "freetext": [
+            "",
+            "Calcium standard solution which contained 10% nitric",
+            "acid."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM",
+      "MONIT1"
+    ],
+    "units": [
+      "EV",
+      "B"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        13.2
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "DATA",
+      "DATA-ERR",
+      "MONIT2",
+      "EN-NRM3",
+      "MONIT3"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B",
+      "B",
+      "EV",
+      "B"
+    ],
+    "data": [
+      [
+        0.55
+      ],
+      [
+        0.89
+      ],
+      [
+        0.01
+      ],
+      [
+        13.9
+      ],
+      [
+        0.0253
+      ],
+      [
+        1.12
+      ]
+    ]
+  }
+}

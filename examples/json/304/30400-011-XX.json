@@ -1,0 +1,66 @@
+{
+  "id": "30400011XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,2N)79-AU-196,,SIG,,FIS)",
+    "target": "79-AU-197",
+    "process": "N,2N",
+    "sf4": "79-AU-196",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": [
+      " Sum of Au-197(n,2n)Au-196m and Au-197(n,2n)Au-196g."
+    ]
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-196-G,6.183D,DG,933.0,0.244,",
+            "DG,355.7,0.936,",
+            "DG,426.0,0.070)"
+          ],
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(79-AU-196-M,9.7HR)"
+          ],
+          "freetext": [
+            " Isomeric transition"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-DUMMY",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        1.41
+      ],
+      [
+        5.8
+      ],
+      [
+        0.29
+      ]
+    ]
+  }
+}

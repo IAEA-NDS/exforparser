@@ -1,0 +1,43 @@
+{
+  "id": "13023012XX",
+  "reaction": {
+    "x4code": "(21-SC-45(N,G)21-SC-46,,SIG,,FIS)",
+    "target": "21-SC-45",
+    "process": "N,G",
+    "sf4": "21-SC-46",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        1.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA"
+    ],
+    "units": [
+      "MB"
+    ],
+    "data": [
+      [
+        7.73
+      ]
+    ]
+  }
+}

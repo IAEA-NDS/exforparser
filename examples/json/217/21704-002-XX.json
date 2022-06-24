@@ -1,0 +1,116 @@
+{
+  "id": "21704002XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,F),,INT)",
+    "target": "94-PU-239",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "INT",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " Measurement I"
+    ]
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Direct integration of cross sections"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Statistical and systematic errors excluding",
+            " error due to deviation from 1/v behavior of 6Li(n,a)"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(94-PU-239(N,F),,INT)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM-MIN",
+      "EN-NRM-MAX",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "EV",
+      "EV",
+      "B*EV",
+      "B*EV"
+    ],
+    "data": [
+      [
+        0.023
+      ],
+      [
+        0.06
+      ],
+      [
+        22.77
+      ],
+      [
+        0.12
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "EV",
+      "EV",
+      "B*EV",
+      "B*EV"
+    ],
+    "data": [
+      [
+        0.03,
+        0.1,
+        0.5
+      ],
+      [
+        0.1,
+        0.5,
+        1.0
+      ],
+      [
+        36.9,
+        473.3,
+        38.4
+      ],
+      [
+        0.5,
+        6.0,
+        0.5
+      ]
+    ]
+  }
+}

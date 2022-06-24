@@ -1,0 +1,82 @@
+{
+  "id": "40729004XX",
+  "reaction": {
+    "x4code": "(63-EU-151(N,TOT),,SIG)",
+    "target": "63-EU-151",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Type of uncertainty is not explained in the",
+            "article."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Eu2-O3 powder, enrichment 97.5% of Eu-151, Eu-153 -2.5%",
+            "Thickness (cm): 0.3, 0.5, 5., 10., 15., 20. - in direct",
+            " geometry; 0.2, 0.5, 5.0, 1.0, 15., 20. -scattering",
+            " geometry I. Diameter 10mm."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ASSUM1"
+    ],
+    "units": [
+      "B"
+    ],
+    "data": [
+      [
+        3.736
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL-HW",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.0
+      ],
+      [
+        0.3
+      ],
+      [
+        44.95
+      ],
+      [
+        1.0
+      ]
+    ]
+  }
+}

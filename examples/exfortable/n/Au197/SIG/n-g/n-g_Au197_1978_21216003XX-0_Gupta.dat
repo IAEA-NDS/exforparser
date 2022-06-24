@@ -1,0 +1,14 @@
+# entry       : 21216 
+# subentry    : 003 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198-G,,SIG) 
+# year        : 1978 
+# author      : S.K.Gupta 
+# institute   : 2FR BRC 
+# reference   : (J,NIM,148,(1),77,7801) 
+# facility    : {'x4code': 'VDG  '} 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      1.68000E+00      3.00000E-02      5.90000E+01      4.00000E+00
+      1.93000E+00      3.00000E-02      5.50000E+01      4.00000E+00
+      2.44000E+00      3.00000E-02      4.50000E+01      4.00000E+00

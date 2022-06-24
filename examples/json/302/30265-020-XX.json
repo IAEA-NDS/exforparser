@@ -1,0 +1,73 @@
+{
+  "id": "30265020XX",
+  "reaction": {
+    "x4code": "(82-PB-204(N,INL)82-PB-204-M,,SIG,,SPA)",
+    "target": "82-PB-204",
+    "process": "N,INL",
+    "sf4": "82-PB-204-M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(NAICR)",
+          "freetext": [
+            " NaI(Tl) spectrometer"
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Pu-alpha-Be neutrons"
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(DG)",
+          "freetext": [
+            " Decay gammas"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        4.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA-MAX"
+    ],
+    "units": [
+      "MB"
+    ],
+    "data": [
+      [
+        31.0
+      ]
+    ]
+  }
+}

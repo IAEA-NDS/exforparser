@@ -1,0 +1,12 @@
+# entry       : 21004 
+# subentry    : 005 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198-G,,SIG) 
+# year        : 1980 
+# author      : G.Magnusson 
+# institute   : 2SWDLND 
+# reference   : (J,PS,21,(1),21,8001) 
+# facility    : {'x4code': 'VDG  '} 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      1.47000E+01      3.00000E-01      1.09000E+00      2.30000E-01

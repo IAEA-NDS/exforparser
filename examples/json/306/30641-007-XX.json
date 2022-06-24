@@ -1,0 +1,75 @@
+{
+  "id": "30641007XX",
+  "reaction": {
+    "x4code": "(26-FE-54(N,P)25-MN-54,,SIG,,FIS)",
+    "target": "26-FE-54",
+    "process": "N,P",
+    "sf4": "25-MN-54",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(25-MN-54,312.5D,DG,834.83,0.99976)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Metalic foil 0.2 mm in thickness from natural iron"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "KT-DUMMY",
+      "MONIT"
+    ],
+    "units": [
+      "MEV",
+      "MB"
+    ],
+    "data": [
+      [
+        1.42
+      ],
+      [
+        200.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "ERR-S"
+    ],
+    "units": [
+      "MB",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        87.8
+      ],
+      [
+        1.0
+      ]
+    ]
+  }
+}

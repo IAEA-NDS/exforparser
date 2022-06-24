@@ -1,0 +1,12 @@
+# entry       : 20105 
+# subentry    : 006 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG) 
+# year        : 1964 
+# author      : J.Als-Nielsen 
+# institute   : 2DENRIS 
+# reference   : (J,PR,133,B925,196402) 
+# facility    : {'x4code': 'SPECC'} 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      2.53000E-08      0.00000E+00      9.86000E+04      0.00000E+00

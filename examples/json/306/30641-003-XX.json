@@ -1,0 +1,77 @@
+{
+  "id": "30641003XX",
+  "reaction": {
+    "x4code": "(14-SI-28(N,P)13-AL-28,,SIG,,FIS)",
+    "target": "14-SI-28",
+    "process": "N,P",
+    "sf4": "13-AL-28",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(13-AL-28,2.2405MIN,DG,1778.7,1.00)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Powder encapsulated in 30. microns thick polyethlene",
+            "foil having the same size as the metal sample natural",
+            "mixture of isotopes"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "KT-DUMMY",
+      "MONIT"
+    ],
+    "units": [
+      "MEV",
+      "MB"
+    ],
+    "data": [
+      [
+        1.42
+      ],
+      [
+        200.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "ERR-S"
+    ],
+    "units": [
+      "MB",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        7.12
+      ],
+      [
+        3.3
+      ]
+    ]
+  }
+}

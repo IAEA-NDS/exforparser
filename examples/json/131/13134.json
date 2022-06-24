@@ -1,0 +1,314 @@
+{
+  "title": "The Fission Cross Sections Of 230Th, 232Th, 233U, 234U,  236U, 238U, 237Np, 239Pu And 242Pu Relative To 235U  At 14.74 Mev Neutron Energy",
+  "references": [
+    {
+      "x4code": "(J,ANE,15,421,1988)",
+      "publication year": "1988"
+    },
+    {
+      "x4code": "(R,ANL-NDM-97,1986)",
+      "publication year": "1986"
+    },
+    {
+      "x4code": "(R,ANL-NDM-98,1987)",
+      "publication year": "1987"
+    }
+  ],
+  "authors": [
+    {
+      "name": "J.W.Meadows"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USAANL"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "NGEN"
+    }
+  ],
+  "entry_number": "13134",
+  "reactions": {
+    "002": {
+      "1": {
+        "x4code": "((90-TH-230(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(90-TH-230(N,F),,SIG)",
+        "target": "90-TH-230",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "1": {
+        "x4code": "((90-TH-232(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(90-TH-232(N,F),,SIG)",
+        "target": "90-TH-232",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "1": {
+        "x4code": "((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(92-U-233(N,F),,SIG)",
+        "target": "92-U-233",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "1": {
+        "x4code": "((92-U-234(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(92-U-234(N,F),,SIG)",
+        "target": "92-U-234",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "1": {
+        "x4code": "((92-U-236(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(92-U-236(N,F),,SIG)",
+        "target": "92-U-236",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "1": {
+        "x4code": "((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(92-U-238(N,F),,SIG)",
+        "target": "92-U-238",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "1": {
+        "x4code": "((93-NP-237(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(93-NP-237(N,F),,SIG)",
+        "target": "93-NP-237",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "1": {
+        "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "010": {
+      "1": {
+        "x4code": "((94-PU-242(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(94-PU-242(N,F),,SIG)",
+        "target": "94-PU-242",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "COVARIANCE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Correlation matrix between fission cross section ratios",
+            "                1   2   3   4   5   6   7   8   9",
+            " 230Th/235U 1  100",
+            " 232Th/235U 2   57 100",
+            " 233U/235U  3   58  48 100",
+            " 234U/235U  4   69  60  62 100",
+            " 236U/235U  5   71  59  64  78 100",
+            " 238U/235U  6   68  58  58  73  73 100",
+            " 237Np/235U 7   53  51  41  53  53  56 100",
+            " 239Pu/235U 8   52  43  50  59  62  59  36 100",
+            " 242Pu/235U 9   42  40  37  44  43  39  37  35 100"
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            " Low mass double ionization chamber"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Sources of uncertainties given include:",
+            " - counting statistics",
+            " - neutron energy",
+            " - thickness correction",
+            " - extrapolation correction",
+            " - alpha count",
+            " - isotopic analysis",
+            " - alpha half-lives",
+            " - thermal fission cross section ratios",
+            " - scattering correction.",
+            "The common uncertainties fully correlated with the",
+            " same combination tabulated in Table II of ANL/NDM-98",
+            " are provided as coded information in the COMMON",
+            " section data subentries."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "NGEN"
+          ],
+          "freetext": [
+            " Texas Nuclear Generator Model 9400"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(D-T)",
+          "freetext": [
+            " 150+/-10 keVdeuterons on Ti-T target"
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "x4code": "(EN-RSL-FW)",
+          "freetext": [
+            " Full-width-at-half-maximum"
+          ]
+        }
+      }
+    },
+    "MONIT-REF": {
+      "2": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "2": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  }
+}

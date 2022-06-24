@@ -83,25 +83,19 @@
     "005": {
       "XX": {
         "x4code": "((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "006": {
       "XX": {
         "x4code": "((94-PU-239(N,F),,SIG)/(92-U-233(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "007": {
       "XX": {
         "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     }
   },

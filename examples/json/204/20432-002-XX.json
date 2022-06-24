@@ -1,0 +1,108 @@
+{
+  "id": "20432002XX",
+  "reaction": {
+    "x4code": "(41-NB-93(N,G)41-NB-94,,SIG)",
+    "target": "41-NB-93",
+    "process": "N,G",
+    "sf4": "41-NB-94",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Multiple scattering correction factor 7.0%"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " The total errors calculated from",
+            "        the statistical and the systematic errors"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Nb metal, 5.26 x 10**(-3) atom/b thick"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-ERR",
+      "ERR-1",
+      "ERR-2",
+      "ERR-3",
+      "ERR-4"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        24.0
+      ],
+      [
+        0.4
+      ],
+      [
+        2.0
+      ],
+      [
+        2.0
+      ],
+      [
+        2.0
+      ],
+      [
+        2.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "ERR-T",
+      "ERR-S"
+    ],
+    "units": [
+      "MB",
+      "MB",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        340.0
+      ],
+      [
+        17.0
+      ],
+      [
+        3.0
+      ]
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "id": "30641004XX",
+  "reaction": {
+    "x4code": "(16-S-32(N,P)15-P-32,,SIG,,FIS)",
+    "target": "16-S-32",
+    "process": "N,P",
+    "sf4": "15-P-32",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(15-P-32,14.29D,B)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(GEMUC)",
+          "freetext": [
+            " The beta-activity of the sample was measured",
+            "by an end window Geiger-Mueller counter"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Powder encapsulated in 30. microns thick polyethylene",
+            "foil having the same size as the metal samples.Natural",
+            "mixture of isotopes"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "KT-DUMMY",
+      "MONIT"
+    ],
+    "units": [
+      "MEV",
+      "MB"
+    ],
+    "data": [
+      [
+        1.42
+      ],
+      [
+        200.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "ERR-S"
+    ],
+    "units": [
+      "MB",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        68.4
+      ],
+      [
+        0.5
+      ]
+    ]
+  }
+}

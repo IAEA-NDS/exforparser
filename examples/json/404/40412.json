@@ -187,7 +187,8 @@
       "XX": {
         "x4code": "((94-PU-239(N,F),,SIG,,AV)/(92-U-235(N,F),,SIG,,AV))",
         "freetext": [
-          ""
+          " Ratio of fission cross-sections of Pu-239",
+          " and U-235 in the energy range from 10 to 80 keV"
         ]
       }
     }

@@ -1,0 +1,12 @@
+# entry       : 12434 
+# subentry    : 006 
+# pointer     : 2 
+# reaction    : (94-PU-239(N,F),,SIG,,,DERIV) 
+# year        : 1957 
+# author      : B.R.Leonard Jr 
+# institute   : 1USAHAN 
+# reference   : (P,HW-48893,98,195703) 
+# facility    : {'type': 'SPECC', 'x4code': '1USAHAN'} 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      2.53000E-08      0.00000E+00      7.10000E+05      0.00000E+00

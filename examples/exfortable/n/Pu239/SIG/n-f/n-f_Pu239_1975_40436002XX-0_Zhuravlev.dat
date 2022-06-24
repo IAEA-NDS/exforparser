@@ -1,0 +1,12 @@
+# entry       : 40436 
+# subentry    : 002 
+# pointer     : XX 
+# reaction    : (94-PU-239(N,F),,SIG,,MXW) 
+# year        : 1975 
+# author      : K.D.Zhuravlev 
+# institute   : 4RUSNIR 
+# reference   : (J,AE,39,285,1975) 
+# facility    : {'type': 'REAC', 'x4code': '4RUSNIR'} 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      2.53000E-08      0.00000E+00      7.16000E+05      0.00000E+00

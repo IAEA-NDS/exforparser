@@ -1,0 +1,74 @@
+{
+  "id": "305250032",
+  "reaction": {
+    "x4code": "(94-PU-239(N,EL),,WID/RED,,2G)",
+    "target": "94-PU-239",
+    "process": "N,EL",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "WID/RED",
+    "sf7": null,
+    "sf8": "2G",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "x4code": "(SLA)",
+          "freetext": [
+            "",
+            " Single Breit-Wigner analys with the aid of the",
+            " computer code ''FUMILI''."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "No error given."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "E-NRM",
+      "MONIT"
+    ],
+    "units": [
+      "EV",
+      "B"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        741.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA      2"
+    ],
+    "units": [
+      "MILLI-EV"
+    ],
+    "data": [
+      [
+        1.008,
+        0.206,
+        0.47,
+        0.83,
+        0.32
+      ]
+    ]
+  }
+}

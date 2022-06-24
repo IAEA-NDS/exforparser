@@ -1,0 +1,187 @@
+{
+  "id": "121630142",
+  "reaction": {
+    "x4code": "(75-RE-185(N,G),,WID)",
+    "target": "75-RE-185",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "WID",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ASSUMED": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(75-RE-185(N,G),,WID)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "FLAG": {
+      "XX": {
+        "(1.)": {
+          "x4code": "(1.)",
+          "freetext": [
+            " LEVEL POSTULATED TO EXPLAIN OBSERVED SHAPE."
+          ]
+        },
+        "(2.)": {
+          "x4code": "(2.)",
+          "freetext": [
+            " UNRESOLVED LEVEL."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "ASSUM",
+      "FLAG",
+      "DATA      2",
+      "DATA-ERR  2"
+    ],
+    "units": [
+      "MILLI-EV",
+      "NO-DIM",
+      "MILLI-EV",
+      "MILLI-EV"
+    ],
+    "data": [
+      [
+        null,
+        null,
+        null,
+        52.8,
+        null,
+        null,
+        null,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        null,
+        52.8,
+        52.8,
+        null,
+        null,
+        null,
+        52.8,
+        52.8,
+        null,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        52.8
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1.0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1.0,
+        null,
+        2.0,
+        null,
+        null,
+        1.0,
+        null
+      ],
+      [
+        54.0,
+        60.0,
+        52.0,
+        null,
+        68.0,
+        56.0,
+        51.0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        73.0,
+        null,
+        null,
+        51.0,
+        51.0,
+        54.0,
+        null,
+        null,
+        70.6,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        5.0,
+        14.0,
+        3.0,
+        null,
+        8.0,
+        13.0,
+        4.0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        13.0,
+        null,
+        null,
+        3.0,
+        4.0,
+        9.0,
+        null,
+        null,
+        10.0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ]
+  }
+}

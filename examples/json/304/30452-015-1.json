@@ -1,0 +1,145 @@
+{
+  "id": "304520151",
+  "reaction": {
+    "x4code": "(94-PU-241(N,F),,SIG,,SPA)",
+    "target": "94-PU-241",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Impurity corrections calculated and others."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            " Saclay-type fission chamber, calibrated in",
+            "standard neutron spectra."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " The quoted error includes,"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " statistical errors about 0.5%,",
+            ".calibration errors,",
+            ".run-to-run monitor level errors",
+            ".error related to correction application."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Measurement of average fission cross-section by the",
+            "fission chamber. 1mm cadmium screen was used to stop",
+            "thermal neutrons."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "1": {
+        "0": {
+          "x4code": [
+            "(92-U-238(N,F),,SIG,,SPA)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      },
+      "XX": {
+        "0": {
+          "freetext": [
+            " Monitors were two fission chambers,4mm diameter,",
+            " containing depleted uranium deposit."
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(FF)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "x4code": "(94-PU-241,ENR=0.9855)",
+          "freetext": [
+            " 98.55% (Pu-241).",
+            "                       104.30 micro-g/cm2."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        0.76
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA      1",
+      "ERR-T     1",
+      "ERR-S     1"
+    ],
+    "units": [
+      "MB",
+      "MB",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        2026.0
+      ],
+      [
+        81.0
+      ],
+      [
+        0.5
+      ]
+    ]
+  }
+}

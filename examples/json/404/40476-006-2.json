@@ -1,0 +1,107 @@
+{
+  "id": "404760062",
+  "reaction": {
+    "x4code": "(92-U-233(N,F),,SIG)",
+    "target": "92-U-233",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Absolute of U-233 fission c-s was determined",
+            "by measured ratio U-233/U-235 and U-235 fission c-s",
+            "recommended c-s at 0.0253 eV ."
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Thermal neutrons were obtained by two-crystals neutron",
+            "monochromator.",
+            " Energy    Neutron beam          Background",
+            " keV       n/cm**2/s             %",
+            "2.53E-5    2.E+4                 0.5"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Cd(1mm ) filter was used for background measurement."
+          ]
+        }
+      }
+    },
+    "MONIT-REF": {
+      "XX": {
+        "0": {
+          "x4code": null,
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "2": {
+        "(MONIT)": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA      2",
+      "DATA-ERR  2",
+      "MONIT     2",
+      "MONIT-ERR 2"
+    ],
+    "units": [
+      "KEV",
+      "B",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.53e-05
+      ],
+      [
+        528.6
+      ],
+      [
+        8.0
+      ],
+      [
+        582.2
+      ],
+      [
+        1.3
+      ]
+    ]
+  }
+}

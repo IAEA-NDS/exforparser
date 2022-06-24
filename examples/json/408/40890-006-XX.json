@@ -1,0 +1,121 @@
+{
+  "id": "40890006XX",
+  "reaction": {
+    "x4code": "(92-U-236(N,TOT),,STF)",
+    "target": "92-U-236",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "STF",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ASSUMED": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-236(N,TOT),,STF)"
+          ],
+          "freetext": [
+            " For momentum L=0"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Not Specified"
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "R",
+            "ent": null,
+            "author": "G.Carraro+",
+            "ref": "J,NP/A,257,333,1976"
+          },
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": {
+            "type": "R",
+            "ent": null,
+            "author": "L.Mawissen+",
+            "ref": "C,75WASH,2,729,1975"
+          },
+          "freetext": [
+            "",
+            " References for ASSUMED data."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-RES-MIN",
+      "EN-RES-MAX",
+      "ASSUM",
+      "ASSUM-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        10.0
+      ],
+      [
+        700.0
+      ],
+      [
+        0.1
+      ],
+      [
+        1e-05
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "MOMENTUM L",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "NO-DIM",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        1.0,
+        2.0
+      ],
+      [
+        0.00024,
+        0.00028
+      ],
+      [
+        2e-05,
+        7e-05
+      ]
+    ]
+  }
+}

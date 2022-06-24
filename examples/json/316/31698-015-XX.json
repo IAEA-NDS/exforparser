@@ -1,0 +1,112 @@
+{
+  "id": "31698015XX",
+  "reaction": {
+    "x4code": "(23-V-51(N,G)23-V-52,,SIG)",
+    "target": "23-V-51",
+    "process": "N,G",
+    "sf4": "23-V-52",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(23-V-52,3.75MIN,DG,1434.10,1.)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(A-BE)",
+          "freetext": [
+            " The Americium-Beryllium Neutron Source at",
+            "Ghana Atomic Energy Commission is a 20 Ci Am-Be",
+            "neutron source which is moderated with water. The",
+            "neutron emission is quoted as 2.2x10*6 n/cm/Ci.",
+            "Flux of 4.2x10*4 n/s/cm2."
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Measured epithermal neutron shaping factor (alpha) of",
+            "channels 1 and 2 of the Am-Be neutron source:",
+            " Channels          Flux ratios            (alpha)",
+            "            (thermal neutron flux/",
+            "            epithermal neutron flux)",
+            "Irr. ch. 1             20.2             0.134+/-0.001",
+            "Irr. ch. 2             29.7            -0.239+/-0.003"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "x4code": "(23-V-51,NAT=0.9975)",
+          "freetext": [
+            "",
+            "Vanadium standard solution which contained 10% nitric",
+            "acid."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM",
+      "MONIT1"
+    ],
+    "units": [
+      "EV",
+      "B"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        13.2
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        5.66
+      ],
+      [
+        0.36
+      ]
+    ]
+  }
+}

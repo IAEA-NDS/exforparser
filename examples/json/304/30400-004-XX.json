@@ -1,0 +1,54 @@
+{
+  "id": "30400004XX",
+  "reaction": {
+    "x4code": "(13-AL-27(N,P)12-MG-27,,SIG,,FIS)",
+    "target": "13-AL-27",
+    "process": "N,P",
+    "sf4": "12-MG-27",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(12-MG-27,9.48MIN,DG,843.76,0.720,DG,1014.4,0.280)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-DUMMY",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        1.41
+      ],
+      [
+        5.11
+      ],
+      [
+        0.43
+      ]
+    ]
+  }
+}

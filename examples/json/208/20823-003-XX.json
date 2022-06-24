@@ -1,0 +1,106 @@
+{
+  "id": "20823003XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,TOT),,SIG,,,DERIV)",
+    "target": "79-AU-197",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": "DERIV",
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "   Interpolation through 1/v fitting"
+          ]
+        }
+      }
+    },
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " * For incoherent and inelastic scattering and",
+            " * for the slight deviation from 1/v of the absorption",
+            "   of gold due to the 4.9 eV resonance level."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " The quoted errors are calculated from the",
+            "quadratic sum of:"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " the statistical uncertainty 0.17%"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " the estimated errors of sample thickness 0.1%"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " wavelength measurement 0.2%"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T",
+      "ERR-S",
+      "ERR-1",
+      "ERR-2"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        98.68
+      ],
+      [
+        0.12
+      ],
+      [
+        0.17
+      ],
+      [
+        0.1
+      ],
+      [
+        0.2
+      ]
+    ]
+  }
+}

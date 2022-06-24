@@ -1,0 +1,12 @@
+# entry       : 21200 
+# subentry    : 002 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG,,AV) 
+# year        : 1971 
+# author      : T.B.Ryves 
+# institute   : 2UK NPL 
+# reference   : (J,JNE,25,557,197111) 
+# facility    : None 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      2.28000E-02      0.00000E+00      6.84000E+02      0.00000E+00

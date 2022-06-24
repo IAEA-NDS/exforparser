@@ -1,0 +1,53 @@
+{
+  "id": "11528040XX",
+  "reaction": {
+    "x4code": "(72-HF-0(N,G),,SIG,,SPA)",
+    "target": "72-HF-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "MONIT"
+    ],
+    "units": [
+      "B"
+    ],
+    "data": [
+      [
+        710.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-DUMMY",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        2.53e-08
+      ],
+      [
+        171.0
+      ],
+      [
+        5.0
+      ]
+    ]
+  }
+}

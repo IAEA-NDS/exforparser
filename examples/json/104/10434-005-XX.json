@@ -1,0 +1,84 @@
+{
+  "id": "10434005XX",
+  "reaction": {
+    "x4code": "(53-I-127(N,G)53-I-128,,SIG)",
+    "target": "53-I-127",
+    "process": "N,G",
+    "sf4": "53-I-128",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Value given is average of 2 measurements relative to",
+            " indium and gold."
+          ]
+        }
+      }
+    },
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(53-I-128,,DG,441.)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-197(N,G)79-AU-198,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(49-IN-115(N,G)49-IN-116-M1+M2,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-S"
+    ],
+    "units": [
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        24.3
+      ],
+      [
+        0.767
+      ],
+      [
+        0.05
+      ]
+    ]
+  }
+}

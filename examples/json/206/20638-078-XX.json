@@ -1,0 +1,66 @@
+{
+  "id": "20638078XX",
+  "reaction": {
+    "x4code": "(64-GD-0(N,G),,SIG)",
+    "target": "64-GD-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " 2200 M/Sec Value"
+    ]
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(5-B-0(N,ABS),,SIG)"
+          ],
+          "freetext": [
+            " 2200 M/Sec Value 767 +- 4b."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        45700.0
+      ],
+      [
+        500.0
+      ],
+      [
+        767.0
+      ],
+      [
+        4.0
+      ]
+    ]
+  }
+}

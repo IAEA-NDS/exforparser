@@ -1,0 +1,81 @@
+{
+  "id": "30568020XX",
+  "reaction": {
+    "x4code": "(92-U-233(N,F),,SIG,,SPA)",
+    "target": "92-U-233",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG,,SPA)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY",
+      "ERR-1",
+      "ERR-S"
+    ],
+    "units": [
+      "MEV",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.76
+      ],
+      [
+        0.9
+      ],
+      [
+        0.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "ERR-T",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        2325.0
+      ],
+      [
+        93.0
+      ],
+      [
+        1512.0
+      ],
+      [
+        53.0
+      ]
+    ]
+  }
+}

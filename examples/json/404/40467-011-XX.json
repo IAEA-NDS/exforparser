@@ -1,0 +1,93 @@
+{
+  "id": "40467011XX",
+  "reaction": {
+    "x4code": "(95-AM-241(N,G)95-AM-242-M,,SIG)",
+    "target": "95-AM-241",
+    "process": "N,G",
+    "sf4": "95-AM-242-M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Am-242m content was defined in additional experiment,",
+            " using track solid detectors, irradiation in CM-2",
+            " reactor. Fission reaction rates difference for",
+            "not-activated and activated sampless was used to define",
+            "Am-242 content. Thermal c-s Am-242m and res. integral",
+            "data were used in calculations."
+          ]
+        }
+      }
+    },
+    "ASSUMED": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(95-AM-242-M(N,G)95-AM-243,,SIG)"
+          ],
+          "freetext": [
+            " Thermal c-s."
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(95-AM-242-M(N,G)95-AM-243,,RI)"
+          ],
+          "freetext": [
+            " Res. integral"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ASSUM1",
+      "ASSUM2"
+    ],
+    "units": [
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        7200.0
+      ],
+      [
+        1570.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        73.0
+      ],
+      [
+        14.0
+      ]
+    ]
+  }
+}

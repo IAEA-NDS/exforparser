@@ -1,0 +1,69 @@
+{
+  "id": "20105005XX",
+  "reaction": {
+    "x4code": "(5-B-0(N,TOT),,SIG)",
+    "target": "5-B-0",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " TOTAL CROSS SECTION."
+    ]
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".SOLUTION OF B2O3 IN D2O IN QUARTZ CONTAINER",
+            " OF THICKNESS 2 CM."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-T"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        4.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "EV",
+      "B"
+    ],
+    "data": [
+      [
+        0.005313,
+        0.010058,
+        0.019782,
+        0.05118,
+        0.10047
+      ],
+      [
+        1661.0,
+        1213.0,
+        856.8,
+        539.9,
+        381.9
+      ]
+    ]
+  }
+}

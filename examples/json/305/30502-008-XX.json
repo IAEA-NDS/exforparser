@@ -1,0 +1,63 @@
+{
+  "id": "30502008XX",
+  "reaction": {
+    "x4code": "(67-HO-165(N,G)67-HO-166-G,,SIG)",
+    "target": "67-HO-165",
+    "process": "N,G",
+    "sf4": "67-HO-166-G",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        23.0
+      ],
+      [
+        5.0
+      ],
+      [
+        836.0
+      ],
+      [
+        26.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        1064.0
+      ],
+      [
+        120.0
+      ]
+    ]
+  }
+}

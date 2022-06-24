@@ -1,0 +1,117 @@
+{
+  "id": "30452004XX",
+  "reaction": {
+    "x4code": "(49-IN-115(N,INL)49-IN-115-M,,SIG,,SPA)",
+    "target": "49-IN-115",
+    "process": "N,INL",
+    "sf4": "49-IN-115-M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(GELI)",
+          "freetext": [
+            " 100 cm3 Ge(Li) spectrometer coupled with a",
+            "4096-multichannel analyzer.",
+            "Calibration was made with 2 reference source sets."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " The quoted error includes",
+            ".statistical errors,",
+            ".errors attributed to the reference sources,",
+            ".errors due to interpolation by the square least fit,",
+            ".errors due to gamma self-absorption and size of source",
+            ".errors related to edge-correction."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-238(N,F),,SIG)"
+          ],
+          "freetext": [
+            " as fission chamber."
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(79-AU-197(N,G)79-AU-198,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(DG)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "99.9959% purity foil, thickness of 0.127 mm,",
+            "diameter 19.00 mm.",
+            "The foils were held with thin(50 micron) wire."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        0.76
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        54.8
+      ],
+      [
+        1.9
+      ]
+    ]
+  }
+}

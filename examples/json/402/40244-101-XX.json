@@ -1,0 +1,99 @@
+{
+  "id": "40244101XX",
+  "reaction": {
+    "x4code": "(74-W-186(N,G)74-W-187,,SIG)",
+    "target": "74-W-186",
+    "process": "N,G",
+    "sf4": "74-W-187",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(D-D)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            " Activation method"
+          ]
+        }
+      }
+    },
+    "MONIT-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": null,
+            "ent": "40244063",
+            "author": "A.I.Leipunskiy+",
+            "ref": "C,58GENEVA,15,50,1958"
+          },
+          "freetext": [
+            "",
+            " Measured at this experiment, see Subent 063."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "(MONIT)": {
+          "x4code": [
+            "(53-I-127(N,G)53-I-128,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA-MAX",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.7,
+        4.0
+      ],
+      [
+        0.036,
+        0.019
+      ],
+      [
+        0.047,
+        0.023
+      ],
+      [
+        0.002,
+        0.001
+      ]
+    ]
+  }
+}

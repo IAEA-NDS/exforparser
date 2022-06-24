@@ -1,0 +1,78 @@
+{
+  "id": "40729029XX",
+  "reaction": {
+    "x4code": "(63-EU-151(N,G)63-EU-152,,SIG)",
+    "target": "63-EU-151",
+    "process": "N,G",
+    "sf4": "63-EU-152",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Total error"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Eu2-O3, 97.5% Eu-151"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ASSUM1"
+    ],
+    "units": [
+      "B"
+    ],
+    "data": [
+      [
+        3.736
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL-HW",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.0
+      ],
+      [
+        0.3
+      ],
+      [
+        26.5
+      ],
+      [
+        1.1
+      ]
+    ]
+  }
+}

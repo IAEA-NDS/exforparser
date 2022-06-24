@@ -1,0 +1,127 @@
+{
+  "id": "20868016XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,2N)79-AU-196,,SIG,,FIS)",
+    "target": "79-AU-197",
+    "process": "N,2N",
+    "sf4": "79-AU-196",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-196-G,8900.MIN,DG,333.,0.248,DG,356.,0.679,",
+            "DG,426.,0.071)"
+          ],
+          "freetext": [
+            "",
+            ".No data given for the 79-Au-196-m nucleus."
+          ]
+        }
+      }
+    },
+    "FLAG": {
+      "XX": {
+        "(1.)": {
+          "x4code": "(1.)",
+          "freetext": [
+            " detector without surrounding by B-10 sphere"
+          ]
+        },
+        "(2.)": {
+          "x4code": "(2.)",
+          "freetext": [
+            " detector with surrounding by 2.2 g/cm2 B-10 sphere"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(CF252)",
+          "freetext": [
+            " Spont. fission neutron source in monel",
+            "container; 15.0 x 15.0 mm (h x diam.); amount of",
+            "radioactive  material - 8.x 10**(-4)Ci; neutron",
+            "emission rate  3.5 x 10**6 n/sec; anisotropy",
+            "factor 1.019."
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "R",
+            "ent": null,
+            "author": "J.F.W.Jansen+",
+            "ref": "J,NP/A,94,235,1967"
+          },
+          "freetext": [
+            " - Decay data",
+            " taken from text of INDC-430,1970 and reference",
+            "                               Nucl.Phys.A94(1967)235"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Natural gold sphere 1 cm in diameter."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "KT-DUMMY"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        1.42
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR",
+      "FLAG"
+    ],
+    "units": [
+      "MB",
+      "MB",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        4.56,
+        4.93
+      ],
+      [
+        0.14,
+        0.14
+      ],
+      [
+        2.0,
+        1.0
+      ]
+    ]
+  }
+}

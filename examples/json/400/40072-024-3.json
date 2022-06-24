@@ -1,0 +1,93 @@
+{
+  "id": "400720243",
+  "reaction": {
+    "x4code": "(41-NB-93(N,G)41-NB-94,,SIG)",
+    "target": "41-NB-93",
+    "process": "N,G",
+    "sf4": "41-NB-94",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "METHOD": {
+      "1": {
+        "0": {
+          "freetext": [
+            " Measurement by long counter, sample A;"
+          ]
+        }
+      },
+      "2": {
+        "0": {
+          "freetext": [
+            "                              sample B;"
+          ]
+        }
+      },
+      "3": {
+        "0": {
+          "freetext": [
+            " Measurement by water tank, sample A."
+          ]
+        }
+      },
+      "4": {
+        "0": {
+          "freetext": [
+            "                            sample B;"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Deluted absorbent:",
+            "A. Internal and external radii of sample- 3.0, 11.0cm.",
+            "Average number of collisions with absorbent nuclei 2.4.",
+            "B. Internal and external radii of sample- 3.0, 13.0cm.",
+            "Average number of collisions with absorbent nuclei 3.3.",
+            "        Transport absorption CS - 7.2+-0.4 b."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN"
+    ],
+    "units": [
+      "KEV"
+    ],
+    "data": [
+      [
+        24.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA      3",
+      "DATA-ERR  3"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        316.0
+      ],
+      [
+        10.0
+      ]
+    ]
+  }
+}

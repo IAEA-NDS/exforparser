@@ -53,13 +53,18 @@
         ]
       }
     },
-    "003": {},
+    "003": {
+      "XX": {
+        "x4code": "((94-PU-239(N,F),,SIG,,AV)/(92-U-235(N,F),,SIG,,AV))",
+        "freetext": [
+          "                          given in  DATA section"
+        ]
+      }
+    },
     "004": {
       "XX": {
         "x4code": "((94-PU-239(N,F),,SIG)/(92-U-233(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "005": {

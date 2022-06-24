@@ -1,0 +1,41 @@
+{
+  "id": "304000371",
+  "reaction": {
+    "x4code": "(42-MO-95(N,P)41-NB-95-M,,SIG,,FIS)",
+    "target": "42-MO-95",
+    "process": "N,P",
+    "sf4": "41-NB-95-M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-DUMMY",
+      "DATA      1",
+      "DATA-ERR  1"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        1.41
+      ],
+      [
+        0.144
+      ],
+      [
+        0.013
+      ]
+    ]
+  }
+}

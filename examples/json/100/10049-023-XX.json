@@ -1,0 +1,177 @@
+{
+  "id": "10049023XX",
+  "reaction": {
+    "x4code": "(64-GD-155(N,G)64-GD-156,,SIG)",
+    "target": "64-GD-155",
+    "process": "N,G",
+    "sf4": "64-GD-156",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Corrected for detection efficiency, resonance self-",
+            " shielding, multiple scattering.",
+            "Correction for finite sample effects less than 15%",
+            " above 5 keV."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " The overall uncertainty in the shape of the",
+            "cross sections is obtained from the following",
+            "energy-dependent components:",
+            " * statistical and systematic uncertainties in the",
+            "   gamma-ray counts and neutron flux data (including",
+            "   contributions from backgrounds);",
+            " * an estimated 20% uncertainty in the correction",
+            "   applied at high energies for the effect of the",
+            "   variation of the gamma-ray pulse-height distribution",
+            "   with neutron energy;",
+            " * and estimated uncertainties in the corrections",
+            "   applied for multiple scattering and resonance",
+            "   self-shielding."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " The major uncertainties in the normalization",
+            "of the capture cross sections are:",
+            " * the uncertainty (typically < 5%) in the absolute",
+            "   capture probability determined from the areas of",
+            "   resolved resonances;",
+            " * a 5% uncertainty from systematic errors in the flux",
+            "   measurements;",
+            " * and an uncertainty (~ 5%) in the gamma-ray yield",
+            "   at the matching region 2-8 keV due to a 20%",
+            "   uncertainty in the determination of background",
+            "   caused by neutrons scattered from the sample."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            " Time-of-flight. 230 m flight path."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(5-B-10(N,A)3-LI-7,,SIG)"
+          ],
+          "freetext": [
+            " Below 80 keV."
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(1-H-1(N,EL)1-H-1,,SIG)"
+          ],
+          "freetext": [
+            " Above 80 keV."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "x4code": "(64-GD-155,ENR=0.9177)",
+          "freetext": [
+            " Enriched samples in oxide form."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        10.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "KEV",
+      "B",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        13.0,
+        15.0,
+        18.0,
+        22.5
+      ],
+      [
+        17.8,
+        15.7,
+        13.0,
+        9.65,
+        9.01,
+        6.74,
+        5.43,
+        4.98,
+        4.38,
+        3.91,
+        3.63,
+        3.37
+      ],
+      [
+        10.0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        10.0
+      ]
+    ]
+  }
+}

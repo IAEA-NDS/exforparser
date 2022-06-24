@@ -1,0 +1,72 @@
+{
+  "id": "22006041XX",
+  "reaction": {
+    "x4code": "(71-LU-0(N,G),,SIG)",
+    "target": "71-LU-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Metallic plate 19.527 gram weight, 41 * 10 * 4.36 mm ."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        6.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        0.5,
+        1.0,
+        2.0,
+        3.0
+      ],
+      [
+        280.0,
+        163.0,
+        101.0,
+        40.5
+      ],
+      [
+        20.0,
+        17.0,
+        11.0,
+        10.0
+      ]
+    ]
+  }
+}

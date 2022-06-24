@@ -1,0 +1,128 @@
+{
+  "id": "21879004XX",
+  "reaction": {
+    "x4code": "(28-NI-58(N,P)27-CO-58,,SIG)",
+    "target": "28-NI-58",
+    "process": "N,P",
+    "sf4": "27-CO-58",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(27-CO-58,,DG,810.)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".UNCERTAINTY IN",
+            " - ANGULAR DISTRIBUTION                   0.077 PER CEN",
+            " - PROTON COUNTING STATISTICS           0.5-0.9 PER CEN",
+            " - DETECTION EFFICIENCY FOR GAMMAS           3. PER CEN",
+            " - GAMMA COUNTING STATISTICS             0.6-3. PER CEN",
+            " - SELF ABSORPTION                          0.7 PER CEN"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "DATA-ERR"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        4.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "B"
+    ],
+    "data": [
+      [
+        2.351,
+        2.442,
+        2.552,
+        2.757,
+        2.871,
+        3.115,
+        3.237,
+        3.356,
+        3.472,
+        3.586,
+        3.816,
+        3.933,
+        4.049,
+        4.259,
+        4.344,
+        4.413,
+        4.463
+      ],
+      [
+        0.08,
+        0.09,
+        0.14,
+        0.24,
+        0.27,
+        0.36,
+        0.4,
+        0.46,
+        0.52,
+        0.56,
+        0.64,
+        0.68,
+        0.7,
+        0.74,
+        0.76,
+        0.76,
+        0.76
+      ],
+      [
+        0.086,
+        0.1027,
+        0.122,
+        0.1403,
+        0.1541,
+        0.1885,
+        0.2137,
+        0.2376,
+        0.246,
+        0.279,
+        0.305,
+        0.365,
+        0.342,
+        0.382,
+        0.4014,
+        0.405,
+        0.421
+      ]
+    ]
+  }
+}

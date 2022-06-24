@@ -1,0 +1,125 @@
+{
+  "id": "131340022",
+  "reaction": {
+    "x4code": "(90-TH-230(N,F),,SIG)",
+    "target": "90-TH-230",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(90-TH-230,7.538E+4YR,A)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total uncertainty"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Neutron energy"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " Extrapolation correction"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-4)",
+          "freetext": [
+            " Isotopic analysis of reaction sample"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-5)",
+          "freetext": [
+            " Alpha-decay half-life of reaction sample"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1",
+      "ERR-3",
+      "ERR-4",
+      "ERR-5"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        1.0
+      ],
+      [
+        0.3
+      ],
+      [
+        0.0
+      ],
+      [
+        0.39
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-ERR",
+      "EN-RSL-FW",
+      "ERR-T",
+      "DATA      2"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "MEV",
+      "PER-CENT",
+      "B"
+    ],
+    "data": [
+      [
+        14.74
+      ],
+      [
+        0.05
+      ],
+      [
+        0.32
+      ],
+      [
+        1.85
+      ],
+      [
+        0.61
+      ]
+    ]
+  }
+}

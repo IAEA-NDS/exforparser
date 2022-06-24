@@ -1,0 +1,70 @@
+{
+  "id": "12115005XX",
+  "reaction": {
+    "x4code": "(74-W-186(N,G)74-W-187,,SIG)",
+    "target": "74-W-186",
+    "process": "N,G",
+    "sf4": "74-W-187",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "B"
+    ],
+    "data": [
+      [
+        0.032,
+        0.042,
+        0.059,
+        0.084,
+        0.118,
+        0.176,
+        0.247
+      ],
+      [
+        0.009,
+        0.011,
+        0.013,
+        0.016,
+        0.018,
+        0.021,
+        0.024
+      ],
+      [
+        0.281,
+        0.249,
+        0.258,
+        0.194,
+        0.15,
+        0.098,
+        0.085
+      ]
+    ]
+  }
+}

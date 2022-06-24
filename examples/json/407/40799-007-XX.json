@@ -1,0 +1,41 @@
+{
+  "id": "40799007XX",
+  "reaction": {
+    "x4code": "(59-PR-141(N,G)59-PR-142,,RI,,RNV)",
+    "target": "59-PR-141",
+    "process": "N,G",
+    "sf4": "59-PR-142",
+    "residual": null,
+    "sf5": null,
+    "sf6": "RI",
+    "sf7": null,
+    "sf8": "RNV",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        300.0
+      ],
+      [
+        2.9
+      ],
+      [
+        0.3
+      ]
+    ]
+  }
+}

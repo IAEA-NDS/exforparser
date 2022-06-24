@@ -1,0 +1,66 @@
+{
+  "id": "12163010XX",
+  "reaction": {
+    "x4code": "(75-RE-187(N,G)75-RE-188,,SIG)",
+    "target": "75-RE-187",
+    "process": "N,G",
+    "sf4": "75-RE-188",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "B"
+    ],
+    "data": [
+      [
+        1e-08,
+        1.5e-08,
+        2e-08,
+        3e-08,
+        4e-08,
+        5e-08,
+        6e-08,
+        8e-08,
+        1e-07,
+        1.5e-07,
+        2e-07,
+        3e-07,
+        4e-07,
+        6e-07,
+        8e-07,
+        1e-06
+      ],
+      [
+        132.0,
+        97.8,
+        79.8,
+        68.2,
+        57.8,
+        50.3,
+        45.5,
+        39.7,
+        32.7,
+        25.4,
+        20.8,
+        14.9,
+        12.3,
+        10.1,
+        7.0,
+        6.7
+      ]
+    ]
+  }
+}

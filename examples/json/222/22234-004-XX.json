@@ -1,0 +1,56 @@
+{
+  "id": "22234004XX",
+  "reaction": {
+    "x4code": "(29-CU-63(N,G)29-CU-64,,SIG)",
+    "target": "29-CU-63",
+    "process": "N,G",
+    "sf4": "29-CU-64",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(29-CU-64,12.8HR,DG,511.,0.38)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": [
+      [
+        0.0253
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA"
+    ],
+    "units": [
+      "B"
+    ],
+    "data": [
+      [
+        11.24
+      ]
+    ]
+  }
+}

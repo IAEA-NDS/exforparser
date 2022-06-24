@@ -1,0 +1,99 @@
+{
+  "id": "20787004XX",
+  "reaction": {
+    "x4code": "(77-IR-0(N,G),,SIG)",
+    "target": "77-IR-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "ERR-1",
+      "ERR-2",
+      "ERR-3",
+      "ERR-4",
+      "ERR-6",
+      "ERR-10"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.2
+      ],
+      [
+        0.2
+      ],
+      [
+        0.1
+      ],
+      [
+        2.0
+      ],
+      [
+        1.5
+      ],
+      [
+        6.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL-HW",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        0.52,
+        0.72,
+        0.94,
+        2.0,
+        3.0
+      ],
+      [
+        0.08,
+        0.08,
+        0.07,
+        0.06,
+        0.05
+      ],
+      [
+        218.0,
+        153.0,
+        134.0,
+        72.0,
+        30.0
+      ],
+      [
+        15.0,
+        12.0,
+        12.0,
+        8.0,
+        5.0
+      ]
+    ]
+  }
+}

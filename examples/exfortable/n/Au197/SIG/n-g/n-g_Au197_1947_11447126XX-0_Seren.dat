@@ -1,0 +1,12 @@
+# entry       : 11447 
+# subentry    : 126 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG,,MXW) 
+# year        : 1947 
+# author      : L.Seren 
+# institute   : 1USAANL 
+# reference   : (J,PR,72,888,194711) 
+# facility    : {'type': 'REAC', 'x4code': '1USAANL'} 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      2.53000E-08      0.00000E+00      9.64000E+04      9.64000E+03

@@ -1,0 +1,48 @@
+{
+  "id": "40421016XX",
+  "reaction": {
+    "x4code": "(42-MO-100(N,G)42-MO-101,,SIG)",
+    "target": "42-MO-100",
+    "process": "N,G",
+    "sf4": "42-MO-101",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "EN"
+    ],
+    "units": [
+      "KEV"
+    ],
+    "data": [
+      [
+        24.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.11
+      ],
+      [
+        0.003
+      ]
+    ]
+  }
+}

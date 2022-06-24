@@ -1,0 +1,69 @@
+{
+  "id": "10341002XX",
+  "reaction": {
+    "x4code": "(100-FM-257(N,F),,SIG,,MXW)",
+    "target": "100-FM-257",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "253Cf fission applied to 257Fm because of growth of",
+            " 253Cf as a daughter nuclide."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "MONIT",
+      "MONIT-ERR",
+      "EN-DUMMY"
+    ],
+    "units": [
+      "B",
+      "B",
+      "EV"
+    ],
+    "data": [
+      [
+        98.8
+      ],
+      [
+        1.0
+      ],
+      [
+        0.0253
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2950.0
+      ],
+      [
+        160.0
+      ]
+    ]
+  }
+}

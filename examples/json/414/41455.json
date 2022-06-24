@@ -110,57 +110,43 @@
     "002": {
       "XX": {
         "x4code": "((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "003": {
       "XX": {
         "x4code": "((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "004": {
       "XX": {
         "x4code": "((93-NP-237(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "005": {
       "XX": {
         "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "006": {
       "XX": {
         "x4code": "((90-TH-232(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "007": {
       "XX": {
         "x4code": "((82-PB-0(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "008": {
       "XX": {
         "x4code": "((83-BI-209(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "009": {

@@ -1,0 +1,68 @@
+{
+  "id": "30568024XX",
+  "reaction": {
+    "x4code": "(28-NI-58(N,P)27-CO-58,,SIG,,SPA)",
+    "target": "28-NI-58",
+    "process": "N,P",
+    "sf4": "27-CO-58",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "No information"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY",
+      "ERR-1",
+      "ERR-S"
+    ],
+    "units": [
+      "MEV",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.76
+      ],
+      [
+        0.9
+      ],
+      [
+        0.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        25.32
+      ],
+      [
+        0.9
+      ]
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": "11384002XX",
+  "reaction": {
+    "x4code": "(9-F-19(N,G)9-F-20,,SIG)",
+    "target": "9-F-19",
+    "process": "N,G",
+    "sf4": "9-F-20",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            " ACTIVATION."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(9-F-19(N,G)9-F-20,,SIG)"
+          ],
+          "freetext": [
+            "",
+            " BASED ON THERMAL (N,GAMMA) = 0.01 B."
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(5-B-10(N,A)3-LI-7,,SIG)"
+          ],
+          "freetext": [
+            "",
+            " BORON NORMALIZATION OUT-OF-DATE, SEE",
+            " PHYS.REV. 116,928 (1959)."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "MB"
+    ],
+    "data": [
+      [
+        0.24,
+        0.242,
+        0.252,
+        0.257,
+        0.258,
+        0.259,
+        0.27,
+        0.275,
+        0.278,
+        0.285,
+        0.32,
+        0.365,
+        0.535,
+        0.58,
+        0.58,
+        0.595,
+        0.6,
+        0.615,
+        0.62,
+        0.62,
+        0.66
+      ],
+      [
+        0.3,
+        0.395,
+        0.425,
+        0.6,
+        0.89,
+        1.15,
+        1.22,
+        1.15,
+        0.82,
+        0.59,
+        0.3,
+        0.298,
+        0.102,
+        0.132,
+        0.415,
+        1.1,
+        1.3,
+        0.71,
+        0.465,
+        0.3,
+        0.25
+      ]
+    ]
+  }
+}

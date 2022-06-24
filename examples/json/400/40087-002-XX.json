@@ -1,0 +1,64 @@
+{
+  "id": "40087002XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,ABS),,ALF,,RES)",
+    "target": "94-PU-239",
+    "process": "N,ABS",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "ALF",
+    "sf7": null,
+    "sf8": "RES",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            "         No information available"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-RES",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "EV",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        7.85,
+        17.7,
+        22.3,
+        26.3,
+        44.5
+      ],
+      [
+        0.86,
+        1.14,
+        0.6,
+        0.99,
+        9.6
+      ],
+      [
+        0.03,
+        0.05,
+        0.04,
+        0.06,
+        0.6
+      ]
+    ]
+  }
+}

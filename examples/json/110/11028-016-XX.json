@@ -1,0 +1,47 @@
+{
+  "id": "11028016XX",
+  "reaction": {
+    "x4code": "(48-CD-0(N,G),,SIG)",
+    "target": "48-CD-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "RE-EVALUATION USING G=1.3346+-.0051.",
+            " MEASURED THERMAL C/S = 3394.0 B."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "B"
+    ],
+    "data": [
+      [
+        2.53e-08
+      ],
+      [
+        2484.0
+      ]
+    ]
+  }
+}

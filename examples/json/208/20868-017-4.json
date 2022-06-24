@@ -1,5 +1,5 @@
 {
-  "id": "20868-017-4",
+  "id": "208680174",
   "reaction": {
     "x4code": "(94-PU-239(N,F),,SIG,,SPA)",
     "target": "94-PU-239",
@@ -34,11 +34,11 @@
     "units": [
       "MEV"
     ],
-    "data": {
-      "0": [
+    "data": [
+      [
         4.5
       ]
-    }
+    ]
   },
   "data_table": {
     "heads": [

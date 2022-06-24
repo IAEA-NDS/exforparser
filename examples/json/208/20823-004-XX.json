@@ -1,0 +1,125 @@
+{
+  "id": "20823004XX",
+  "reaction": {
+    "x4code": "(27-CO-59(N,TOT),,SIG)",
+    "target": "27-CO-59",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "The main correction, about 4%, is for spin-incoherent",
+            " scattering. Additionally:",
+            " For background and deadtime, deceleration due to",
+            " gravity in the vertical flight path experiment",
+            " (0.8%) and neutron refraction, uncertainty of",
+            " flight path (0.1%)."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " The error includes both statistics and",
+            " the uncertainty of the incoherence."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Sample was (15ppm chemical purity)  1.02mm  thick.",
+            " (9.164+-0.005)x10**(-3) atoms/barn.",
+            " 28mm actual and 20mm active diam.",
+            " For the low energy measurements the sample was",
+            " a 0.02 inch sheet, specially pure, with",
+            " (4.645+-0.003)x10**(-3) atoms/barn.",
+            " Alternately another one of 0.25mm thickness with",
+            " (1.5137+-0.0015)x10**(-3) atoms/barn was used."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MILLI-EV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.0399,
+        0.0471,
+        0.0564,
+        0.0688,
+        0.0856,
+        0.1094,
+        0.1445,
+        0.2,
+        0.294,
+        0.473,
+        1.454,
+        1.669,
+        1.936,
+        2.272,
+        2.608
+      ],
+      [
+        945.6,
+        864.9,
+        788.2,
+        713.3,
+        647.0,
+        571.4,
+        496.5,
+        423.7,
+        352.5,
+        280.4,
+        160.8,
+        151.3,
+        141.4,
+        129.5,
+        120.7
+      ],
+      [
+        7.7,
+        5.8,
+        5.0,
+        3.8,
+        3.1,
+        2.8,
+        2.1,
+        2.0,
+        1.8,
+        2.0,
+        1.2,
+        0.7,
+        0.7,
+        0.5,
+        0.6
+      ]
+    ]
+  }
+}

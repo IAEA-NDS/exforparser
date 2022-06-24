@@ -1,0 +1,12 @@
+# entry       : 31311 
+# subentry    : 007 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG,,MXW) 
+# year        : 1963 
+# author      : G.Huttel 
+# institute   : 3DDRROS 
+# reference   : (J,KE,6,336,1963) 
+# facility    : {'type': 'REAC', 'x4code': '3DDRROS'} 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      2.53000E-08      0.00000E+00      9.85000E+04      6.00000E+02

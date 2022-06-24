@@ -5,7 +5,7 @@ public to share the progress between collaborators. No documents are available y
 #### exforparser
 EXFOR Parser and Parsed data in JSON. 
 
-Brotherhood product can be found: https://github.com/IAEA-NDS/exfor-parserpy
+A related parser currently under development to support WPEC  SG50 can be found at : https://github.com/IAEA-NDS/exfor-parserpy
 
 
 #### current example to use via MongoDb

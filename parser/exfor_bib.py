@@ -2,17 +2,21 @@
 #
 # This file is part of exfor-parser.
 # Copyright (C) 2022 International Atomic Energy Agency (IAEA)
-# 
-# Disclaimer: The code is still under developments and not ready 
-#             to use. It has beeb made public to share the progress
-#             between collaborators. 
+#
+# Disclaimer: The code is still under developments and not ready
+#             to use. It has been made public to share the progress
+#             among collaborators.
 # Contact:    nds.contact-point@iaea.org
 #
 ####################################################################
+
 from pyparsing import *
+from collections import defaultdict
+
+
 from .exfor_field import *
 from .utilities import flatten_list
-from collections import defaultdict
+
 
 def correct_pub_year(ref):
 
@@ -22,7 +26,7 @@ def correct_pub_year(ref):
         return "19" + year
 
     elif len(year) == 4:
-        if (year.startswith("20") or year.startswith("19")):
+        if year.startswith("20") or year.startswith("19"):
             ## 1960 or 2020
             return year
 
@@ -463,7 +467,6 @@ def bib_measurement_condition_dict(identifier, field_body) -> dict:
                 try:
                     parsed = facility_fields.searchString(field_body[0])
                     x4code = list(flatten_list(parsed))
-                    # x4code = {"type": list(flatten_list(parsed))[0], "institute": list(flatten_list(parsed))[1]}
                     i += 1
                 except:
                     x4code = None
@@ -525,7 +528,3 @@ def bib_measurement_condition_dict(identifier, field_body) -> dict:
     # return json.loads(json_util.dumps(x4code_str))
 
     return dict(x4code_str)
-
-
-# https://www.analyticsvidhya.com/blog/2020/08/query-a-mongodb-database-using-pymongo/TypeError: Object of type ObjectId is not JSON serializable
-# https://www.mongodb.com/docs/manual/tutorial/model-referenced-one-to-many-relationships-between-documents/

@@ -1,0 +1,152 @@
+{
+  "id": "10221047XX",
+  "reaction": {
+    "x4code": "(75-RE-185(N,G)75-RE-186,,SIG)",
+    "target": "75-RE-185",
+    "process": "N,G",
+    "sf4": "75-RE-186",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(NAICR)",
+          "freetext": [
+            " NaI gamma-ray detector and beta proportional",
+            "        counter.",
+            "Detector calibrated using 4pi beta proportional",
+            " counter."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG)"
+          ],
+          "freetext": [
+            " Normalized to ENDF/B-IV data."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA",
+      "DATA-ERR",
+      "MISC"
+    ],
+    "units": [
+      "MEV",
+      "PER-CENT",
+      "MB",
+      "PER-CENT",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        0.121,
+        0.154,
+        0.198,
+        0.264,
+        0.398,
+        0.6,
+        0.681,
+        0.72,
+        0.866,
+        0.935,
+        1.07,
+        1.44,
+        1.9,
+        2.14,
+        2.37,
+        2.73
+      ],
+      [
+        36.0,
+        41.0,
+        43.0,
+        44.0,
+        41.0,
+        10.0,
+        31.0,
+        14.0,
+        24.0,
+        21.0,
+        18.0,
+        18.0,
+        15.0,
+        13.0,
+        11.0,
+        7.0
+      ],
+      [
+        483.0,
+        428.0,
+        372.0,
+        318.0,
+        256.0,
+        226.0,
+        221.0,
+        217.0,
+        196.0,
+        179.0,
+        148.0,
+        107.0,
+        70.0,
+        68.0,
+        49.0,
+        38.0
+      ],
+      [
+        3.2,
+        7.6,
+        5.3,
+        4.2,
+        7.7,
+        5.0,
+        3.7,
+        6.9,
+        4.3,
+        1.6,
+        8.6,
+        8.4,
+        3.7,
+        3.6,
+        13.0,
+        5.9
+      ],
+      [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        3.0,
+        1.0,
+        3.0,
+        1.0,
+        1.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0
+      ]
+    ]
+  }
+}

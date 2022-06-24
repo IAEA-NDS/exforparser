@@ -1,0 +1,177 @@
+{
+  "id": "11198008XX",
+  "reaction": {
+    "x4code": "(5-B-0(N,TOT),,TRN)",
+    "target": "5-B-0",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "TRN",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "SiO2 scattering correction."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Standard deviations due to counting statistics."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "SPECC,1USACOL"
+          ],
+          "freetext": [
+            " Columbia University cyclotron neutron",
+            "velocity spectrometer."
+          ]
+        },
+        "1": {
+          "x4code": [
+            "SPECC,1USACOL"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(D-BE)",
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Boron glass plates: 13.35% B2O3, 80.15% SiO2, 2.0%",
+            "Al2O3, 4.5 Na2O. Thickness 0.2196 g/cm2."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "THICKNESS"
+    ],
+    "units": [
+      "G/CM-SQ"
+    ],
+    "data": [
+      [
+        0.2196
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "WVE-LN",
+      "DATA",
+      "ERR-S"
+    ],
+    "units": [
+      "ANGSTROM",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        0.834,
+        0.917,
+        0.996,
+        1.079,
+        1.162,
+        1.249,
+        1.332,
+        1.419,
+        1.502,
+        1.589,
+        1.672,
+        1.759,
+        1.842,
+        1.929,
+        2.012,
+        2.095,
+        2.182,
+        2.269,
+        2.352,
+        2.435,
+        2.522,
+        2.605
+      ],
+      [
+        0.818,
+        0.81,
+        0.793,
+        0.78,
+        0.765,
+        0.747,
+        0.744,
+        0.723,
+        0.704,
+        0.693,
+        0.687,
+        0.672,
+        0.653,
+        0.645,
+        0.633,
+        0.619,
+        0.614,
+        0.592,
+        0.597,
+        0.571,
+        0.566,
+        0.555
+      ],
+      [
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.008,
+        0.005,
+        0.005,
+        0.006,
+        0.006,
+        0.006,
+        0.011,
+        0.012,
+        0.008,
+        0.008,
+        0.009,
+        0.009,
+        0.01,
+        0.01,
+        0.011,
+        0.012
+      ]
+    ]
+  }
+}

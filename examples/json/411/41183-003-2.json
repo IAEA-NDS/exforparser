@@ -1,0 +1,122 @@
+{
+  "id": "411830032",
+  "reaction": {
+    "x4code": "(90-TH-232(N,G)90-TH-233,,SIG)",
+    "target": "90-TH-232",
+    "process": "N,G",
+    "sf4": "90-TH-233",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-233,,DG,311.9)"
+          ],
+          "freetext": [
+            " After double beta- decay of Th-232"
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(79-AU-198,,DG,411.8)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "1": {
+        "0": {
+          "x4code": [
+            "(79-AU-197(N,G)79-AU-198,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      },
+      "2": {
+        "1": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      },
+      "XX": {
+        "1": {
+          "freetext": [
+            " Evaluated data from standards library."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Thorium oxide in the cylindrical stainless-steel",
+            " containers, diameter 2 cm, weight near 1 gram"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL-HW",
+      "ERR-T",
+      "DATA      2"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "PER-CENT",
+      "MB"
+    ],
+    "data": [
+      [
+        370.0,
+        439.0,
+        592.0,
+        800.0,
+        1000.0
+      ],
+      [
+        32.0,
+        38.0,
+        31.0,
+        32.0,
+        31.0
+      ],
+      [
+        5.0,
+        3.5,
+        4.5,
+        4.5,
+        3.0
+      ],
+      [
+        135.0,
+        130.0,
+        136.0,
+        137.0,
+        112.0
+      ]
+    ]
+  }
+}

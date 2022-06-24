@@ -1,0 +1,71 @@
+{
+  "id": "22580015XX",
+  "reaction": {
+    "x4code": "(78-PT-198(N,G)78-PT-199,,SIG)",
+    "target": "78-PT-198",
+    "process": "N,G",
+    "sf4": "78-PT-199",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "(MONIT)": {
+          "x4code": [
+            "(25-MN-55(N,G)25-MN-56,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-RSL"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        0.013
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR",
+      "MONIT"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.9
+      ],
+      [
+        0.48
+      ],
+      [
+        0.23
+      ],
+      [
+        0.0072
+      ]
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+# entry       : 22099 
+# subentry    : 002 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG,,SPA) 
+# year        : 1988 
+# author      : W.Ratynski 
+# institute   : 2GERKFK 
+# reference   : (J,PR/C,37,595,1988) 
+# facility    : {'type': 'VDG', 'x4code': '2GERKFK'} 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      2.50000E-02      5.00000E-04      5.86000E+02      0.00000E+00

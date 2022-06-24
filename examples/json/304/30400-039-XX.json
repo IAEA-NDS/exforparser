@@ -1,0 +1,55 @@
+{
+  "id": "30400039XX",
+  "reaction": {
+    "x4code": "(42-MO-100(N,G)42-MO-101,,SIG,,FIS)",
+    "target": "42-MO-100",
+    "process": "N,G",
+    "sf4": "42-MO-101",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(42-MO-101,14.6MIN,DG,192.0,0.25,",
+            "DG,1012.4,0.25)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-DUMMY",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        1.41
+      ],
+      [
+        14.85
+      ],
+      [
+        1.11
+      ]
+    ]
+  }
+}

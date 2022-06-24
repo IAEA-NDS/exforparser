@@ -1,0 +1,54 @@
+{
+  "id": "205720021",
+  "reaction": {
+    "x4code": "(11-NA-23(N,0),,EN)",
+    "target": "11-NA-23",
+    "process": "N,0",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "EN",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".METALLIC SEALED WITH AL-CONTAINERS."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "DATA      1",
+      "DATA-ERR  1"
+    ],
+    "units": [
+      "KEV",
+      "KEV"
+    ],
+    "data": [
+      [
+        35.38,
+        53.39,
+        118.1,
+        132.8,
+        144.07
+      ],
+      [
+        0.19,
+        0.35,
+        1.2,
+        1.4,
+        1.6
+      ]
+    ]
+  }
+}

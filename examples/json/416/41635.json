@@ -134,15 +134,11 @@
     "009": {
       "1": {
         "x4code": "((92-U-235(N,F),,SIG,,SPA)/(92-U-238(N,F),,SIG,,SPA))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       },
-      "XX": {
+      "2": {
         "x4code": "((92-U-235(N,F),,SIG,,SPA)/(92-U-238(N,F),,SIG,,SPA))((92-U-235(N,F),,SIG,,SPA)/(79-AU-197(N,G)79-AU-198,,SIG,,SPA))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "010": {

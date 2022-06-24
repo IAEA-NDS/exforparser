@@ -1,0 +1,86 @@
+{
+  "id": "125020121",
+  "reaction": {
+    "x4code": "(94-PU-239(N,0),,EN)",
+    "target": "94-PU-239",
+    "process": "N,0",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "EN",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "x4code": "(AREA,SHAPE)",
+          "freetext": [
+            " Area and shape analysis of total c/s."
+          ]
+        }
+      }
+    },
+    "ASSUMED": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(94-PU-239(N,G),,WID)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " No information on source of uncertainties"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ASSUM"
+    ],
+    "units": [
+      "MILLI-EV"
+    ],
+    "data": [
+      [
+        40.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA      1"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": [
+      [
+        -0.26,
+        14.28,
+        14.68,
+        15.5,
+        23.9,
+        26.2,
+        27.3,
+        32.3,
+        35.3,
+        47.6,
+        50.0
+      ]
+    ]
+  }
+}

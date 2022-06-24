@@ -1,0 +1,290 @@
+{
+  "title": "-The Fission Cross Sections Of U-233, U-234, U-236,  U-238, Np-237, Pu-239 And Pu-241 Relative To That Of  U-235 For Neutrons In The Energy Range 1-14 Mev-",
+  "references": [
+    {
+      "x4code": "(J,JNE,21,671,196708)",
+      "publication year": "1967"
+    },
+    {
+      "x4code": "(P,EANDC(UK)-77S,,196612)",
+      "publication year": "1966"
+    }
+  ],
+  "authors": [
+    {
+      "name": "P.H.White"
+    },
+    {
+      "name": "G.P.Warner"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "2UK ALD"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "x4code": "VDG"
+    }
+  ],
+  "entry_number": "21195",
+  "reactions": {
+    "002": {
+      "1": {
+        "x4code": "((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(92-U-233(N,F),,SIG)",
+        "target": "92-U-233",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "1": {
+        "x4code": "((92-U-234(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(92-U-234(N,F),,SIG)",
+        "target": "92-U-234",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "004": {
+      "1": {
+        "x4code": "((92-U-236(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(92-U-236(N,F),,SIG)",
+        "target": "92-U-236",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "005": {
+      "1": {
+        "x4code": "((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(92-U-238(N,F),,SIG)",
+        "target": "92-U-238",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "006": {
+      "1": {
+        "x4code": "((93-NP-237(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(93-NP-237(N,F),,SIG)",
+        "target": "93-NP-237",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "007": {
+      "1": {
+        "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "008": {
+      "1": {
+        "x4code": "((94-PU-240(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(94-PU-240(N,F),,SIG)",
+        "target": "94-PU-240",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "009": {
+      "1": {
+        "x4code": "((94-PU-241(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(94-PU-241(N,F),,SIG)",
+        "target": "94-PU-241",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Corrections of up to 4 percent applied to observed",
+            " fission rates to determine total fission rate."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(FISCH)",
+          "freetext": [
+            " Fission chamber."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Error in relative values due to corrections, counting",
+            " statistics and uncertainties in the mass of fissile",
+            " material gives standard deviation of 2 percent.",
+            ".Monitor uncertainty of about 3 percent leads to final",
+            " error of 3.5 percent."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "VDG"
+          ],
+          "freetext": [
+            " Van de Graff."
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-T)",
+          "freetext": [
+            " Neutron energies of 1.0 and 2.25 MeV."
+          ]
+        },
+        "1": {
+          "x4code": "(D-D)",
+          "freetext": [
+            " 5.4 MeV neutron energy.",
+            "        15 micro-amp of 2-3 MeV particles incident on",
+            "        a gas cell through 0.003 mm thick molybdenum",
+            "        window for these sources."
+          ]
+        },
+        "2": {
+          "x4code": "(D-T)",
+          "freetext": [
+            " 14.1 MeV neutron energy."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Detection of fission products."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(92-U-235(N,F),,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(FF)",
+          "freetext": [
+            " Fission fragments."
+          ]
+        }
+      }
+    }
+  }
+}

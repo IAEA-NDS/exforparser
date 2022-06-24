@@ -1,0 +1,52 @@
+{
+  "id": "21017016XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,TOT),,SIG,,,DERIV)",
+    "target": "79-AU-197",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": "DERIV",
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Extrapolated  from straight line fit to",
+            " measurements at 80 K and 300 K"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MICRO-EV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.5227
+      ],
+      [
+        21650.0
+      ],
+      [
+        100.0
+      ]
+    ]
+  }
+}

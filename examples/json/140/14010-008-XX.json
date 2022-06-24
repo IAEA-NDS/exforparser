@@ -1,0 +1,65 @@
+{
+  "id": "14010008XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,G)79-AU-198,,SIG,,SPA)",
+    "target": "79-AU-197",
+    "process": "N,G",
+    "sf4": "79-AU-198",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " No information"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        0.7,
+        1.25,
+        2.5
+      ],
+      [
+        750.0,
+        750.0,
+        750.0
+      ],
+      [
+        8.3,
+        15.1,
+        12.7
+      ],
+      [
+        1.1,
+        1.8,
+        1.5
+      ]
+    ]
+  }
+}

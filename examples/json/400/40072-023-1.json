@@ -1,0 +1,76 @@
+{
+  "id": "400720231",
+  "reaction": {
+    "x4code": "(40-ZR-0(N,G),,SIG)",
+    "target": "40-ZR-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "METHOD": {
+      "1": {
+        "0": {
+          "freetext": [
+            " Measurement by long counter ."
+          ]
+        }
+      },
+      "2": {
+        "0": {
+          "freetext": [
+            " Measurement by water tank."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Internal and external radii of sample - 2.05, 5.05cm.",
+            "Transport absorption CS - 9.5+-1.0 b.",
+            "Average number of collisions with absorbent nuclei 2.3."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN"
+    ],
+    "units": [
+      "KEV"
+    ],
+    "data": [
+      [
+        24.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA      1",
+      "DATA-ERR  1"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        22.0
+      ],
+      [
+        8.0
+      ]
+    ]
+  }
+}

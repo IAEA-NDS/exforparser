@@ -1,0 +1,78 @@
+{
+  "id": "21469003XX",
+  "reaction": {
+    "x4code": "(47-AG-0(N,G),,SIG,,MXW)",
+    "target": "47-AG-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW",
+    "sf9": null,
+    "freetext": [
+      " Maxwellian avg cross section."
+    ]
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(5-B-0(N,ABS),,SIG)"
+          ],
+          "freetext": [
+            " 2200 m/sec value taken",
+            " as 783 b."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Silver metal foil."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": [
+      [
+        0.0253
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "MONIT",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        783.0
+      ],
+      [
+        63.1
+      ],
+      [
+        0.9
+      ]
+    ]
+  }
+}

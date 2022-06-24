@@ -1,0 +1,78 @@
+{
+  "id": "30265013XX",
+  "reaction": {
+    "x4code": "(49-IN-115(N,G)49-IN-116-M,,SIG,,SPA)",
+    "target": "49-IN-115",
+    "process": "N,G",
+    "sf4": "49-IN-116-M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(GEMUC)",
+          "freetext": [
+            " GM counter"
+          ]
+        }
+      }
+    },
+    "INC-SPECT": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Pu-alpha-Be neutrons"
+          ]
+        }
+      }
+    },
+    "PART-DET": {
+      "XX": {
+        "0": {
+          "x4code": "(B-)",
+          "freetext": [
+            " Decay beta-"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        4.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        136.0
+      ],
+      [
+        27.0
+      ]
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "11450019XX",
+  "reaction": {
+    "x4code": "(33-AS-75(N,G)33-AS-76,,SIG,,FIS)",
+    "target": "33-AS-75",
+    "process": "N,G",
+    "sf4": "33-AS-76",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(33-AS-76,26.8HR)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(33-AS-75(N,G)33-AS-76,,SIG,,MXW)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-DUMMY",
+      "DATA",
+      "MONIT"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "B"
+    ],
+    "data": [
+      [
+        1.0
+      ],
+      [
+        23.0
+      ],
+      [
+        4.2
+      ]
+    ]
+  }
+}

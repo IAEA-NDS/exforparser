@@ -1,0 +1,75 @@
+{
+  "id": "21520002XX",
+  "reaction": {
+    "x4code": "(92-U-235(N,F),,SIG)",
+    "target": "92-U-235",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(5-B-0(N,A),,SIG)"
+          ],
+          "freetext": [
+            " A0+A1 particles from  B-10"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-NRM",
+      "EN",
+      "EN-RSL",
+      "DATA",
+      "ERR-T",
+      "MONIT"
+    ],
+    "units": [
+      "MILLI-EV",
+      "MILLI-EV",
+      "MILLI-EV",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        32.2,
+        62.6
+      ],
+      [
+        32.16,
+        62.6
+      ],
+      [
+        0.04,
+        0.1
+      ],
+      [
+        512.0,
+        343.0
+      ],
+      [
+        11.0,
+        9.0
+      ],
+      [
+        674.0,
+        483.0
+      ]
+    ]
+  }
+}

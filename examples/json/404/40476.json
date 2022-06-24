@@ -94,39 +94,55 @@
     "004": {
       "1": {
         "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       },
-      "XX": {
+      "2": {
         "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))((94-PU-239(N,F),,SIG,,,DERIV)/(92-U-235(N,F),,SIG,,,DERIV))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "005": {
       "1": {
         "x4code": "((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(92-U-233(N,F),,SIG)",
+        "target": "92-U-233",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
       }
     },
     "006": {
       "1": {
         "x4code": "((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(92-U-233(N,F),,SIG)",
+        "target": "92-U-233",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
       }
     },
     "009": {
       "XX": {
         "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "010": {

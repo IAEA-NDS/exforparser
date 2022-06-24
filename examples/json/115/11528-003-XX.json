@@ -1,0 +1,48 @@
+{
+  "id": "11528003XX",
+  "reaction": {
+    "x4code": "(13-AL-27(N,G)13-AL-28,,SIG,,SPA)",
+    "target": "13-AL-27",
+    "process": "N,G",
+    "sf4": "13-AL-28",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "MONIT"
+    ],
+    "units": [
+      "B"
+    ],
+    "data": [
+      [
+        710.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-DUMMY",
+      "DATA"
+    ],
+    "units": [
+      "EV",
+      "MB"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        220.0
+      ]
+    ]
+  }
+}

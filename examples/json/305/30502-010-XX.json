@@ -1,0 +1,63 @@
+{
+  "id": "30502010XX",
+  "reaction": {
+    "x4code": "(73-TA-181(N,G)73-TA-182,,SIG)",
+    "target": "73-TA-181",
+    "process": "N,G",
+    "sf4": "73-TA-182",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        23.0
+      ],
+      [
+        5.0
+      ],
+      [
+        836.0
+      ],
+      [
+        26.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        1393.0
+      ],
+      [
+        153.0
+      ]
+    ]
+  }
+}

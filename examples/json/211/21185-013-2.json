@@ -1,0 +1,58 @@
+{
+  "id": "211850132",
+  "reaction": {
+    "x4code": "(92-U-235(N,F),DL,NU,,SPA)",
+    "target": "92-U-235",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": "DL",
+    "sf6": "NU",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".5.75 gram U-235"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-MEAN"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        1.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA      2",
+      "DATA-ERR  2"
+    ],
+    "units": [
+      "PC/FIS",
+      "PC/FIS"
+    ],
+    "data": [
+      [
+        1.74
+      ],
+      [
+        0.14
+      ]
+    ]
+  }
+}

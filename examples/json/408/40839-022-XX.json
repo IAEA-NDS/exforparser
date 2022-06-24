@@ -1,0 +1,71 @@
+{
+  "id": "40839022XX",
+  "reaction": {
+    "x4code": "(92-U-238(N,G)92-U-239,,SIG,,SPA)",
+    "target": "92-U-238",
+    "process": "N,G",
+    "sf4": "92-U-239",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": [
+      "  Averaged Over",
+      "                 Energy Width"
+    ]
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".NG-SIG is Equal SIG-TOT Minus SIG-EL"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        11.41
+      ],
+      [
+        0.07
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-MEAN",
+      "DATA",
+      "ERR-S"
+    ],
+    "units": [
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        24.5
+      ],
+      [
+        0.63
+      ],
+      [
+        0.06
+      ]
+    ]
+  }
+}

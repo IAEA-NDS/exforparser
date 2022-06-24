@@ -1,1 +1,336 @@
-{}
+{
+  "diction_num": "207",
+  "diction_def": "Books",
+  "parameters": {
+    "ABAGJAN": {
+      "x4code": "ABAGJAN",
+      "description": "Abagjan group constants",
+      "active": true
+    },
+    "ACT.EL": {
+      "x4code": "ACT.EL",
+      "description": "Actinide elements",
+      "active": true
+    },
+    "ANCIPOV": {
+      "x4code": "ANCIPOV",
+      "description": "Ancipov et al,nuclear data for pu isotopes,minsk 1982",
+      "active": true
+    },
+    "ANDERSEN": {
+      "x4code": "ANDERSEN",
+      "description": "H.h.andersen,h stopping powers and ranges,pergamon 77",
+      "active": true
+    },
+    "BAARD": {
+      "x4code": "BAARD",
+      "description": "Baard et al.,nuclear data guide,kluwer academy publ.1989",
+      "active": true
+    },
+    "BELANOVA": {
+      "x4code": "BELANOVA",
+      "description": "Belanova et al.,neutron capt.cross section ,moscow 1986",
+      "active": true
+    },
+    "BLATT": {
+      "x4code": "BLATT",
+      "description": "J.m.blatt et al., theoretical nuclear physics,ny 1952",
+      "active": true
+    },
+    "BROND": {
+      "x4code": "BROND",
+      "description": "V.n.manokhin: brond documentation, obninsk 1986",
+      "active": true
+    },
+    "BROWNE": {
+      "x4code": "BROWNE",
+      "description": "Browne et al., table of radioactive isotopes, ny 1986",
+      "active": true
+    },
+    "BRUNE": {
+      "x4code": "BRUNE",
+      "description": "Activation analysis handbook, d.brune",
+      "active": true
+    },
+    "BYCHKOV": {
+      "x4code": "BYCHKOV",
+      "description": "Bychkov et al,cross section f.thresh.react.,moscow 1982",
+      "active": true
+    },
+    "CDFE/FIS": {
+      "x4code": "CDFE/FIS",
+      "description": "Fotojad.dannye - fission of heavy nuclei,moscow 1983",
+      "active": true
+    },
+    "CDFE/FIS2": {
+      "x4code": "CDFE/FIS2",
+      "description": "Fotojad.dannye-photofission of u-235,238, moscow 1987",
+      "active": true
+    },
+    "CDFE/LI": {
+      "x4code": "CDFE/LI",
+      "description": "Fotojad.dannye - photodisintegr.of li, moscow 1984",
+      "active": true
+    },
+    "CDFE/LI2": {
+      "x4code": "CDFE/LI2",
+      "description": "Fotojad.dannye - photodisinternational of li,supplemental ,moscow 1986",
+      "active": true
+    },
+    "CDFE/XG": {
+      "x4code": "CDFE/XG",
+      "description": "Fotojad.dannye - gamma,x gamma'reactions, moscow 1985",
+      "active": true
+    },
+    "DEMIDOV": {
+      "x4code": "DEMIDOV",
+      "description": "Demidov, excited states of nuclei, alma ata 1986",
+      "active": true
+    },
+    "DMITRIEV": {
+      "x4code": "DMITRIEV",
+      "description": "Dmitriev, yields of radionuclides, moscow 1986",
+      "active": true
+    },
+    "EXP.NUC.P.": {
+      "x4code": "EXP.NUC.P.",
+      "description": "Experimental nuclear physics",
+      "active": true
+    },
+    "FAST N.PH.": {
+      "x4code": "FAST N.PH.",
+      "description": "Fast neutron physics",
+      "active": true
+    },
+    "FIRESTONE": {
+      "x4code": "FIRESTONE",
+      "description": "Table of isotopes, 8th edition 1996",
+      "active": true
+    },
+    "FRC": {
+      "x4code": "FRC",
+      "description": "Fast reactor cross-sections, pergamon 1960",
+      "active": true
+    },
+    "GAMMAATLAS": {
+      "x4code": "GAMMAATLAS",
+      "description": "Atlas of gamma-ray spectra, moscow 1978",
+      "active": true
+    },
+    "GRUEBLER": {
+      "x4code": "GRUEBLER",
+      "description": "Gruebler,reactions induced by deuterons, zurich 1973",
+      "active": true
+    },
+    "GUSEV": {
+      "x4code": "GUSEV",
+      "description": "Gusev,quant.emiss.of radionuclides,moscow 1977",
+      "active": true
+    },
+    "HB.SPEC": {
+      "x4code": "HB.SPEC",
+      "description": "Handbook of spectroscopy, crc press, florida, 1981",
+      "active": true
+    },
+    "KEEPIN": {
+      "x4code": "KEEPIN",
+      "description": "Keepin, physics of nuclear kinetics, 1965",
+      "active": true
+    },
+    "KONSHIN": {
+      "x4code": "KONSHIN",
+      "description": "Konshin,eval.of nuclear data for pu-242,minsk 1979",
+      "active": true
+    },
+    "KOSYAK": {
+      "x4code": "KOSYAK",
+      "description": "Kosyak, study of nuclear excited states, alma ata, 1986",
+      "active": true
+    },
+    "LANDOLT": {
+      "x4code": "LANDOLT",
+      "description": "Landolt-boernstein, new series, springer",
+      "active": true
+    },
+    "LAPENAS": {
+      "x4code": "LAPENAS",
+      "description": "Lapenas,neutron spect.meas.by activ.,riga 1975",
+      "active": true
+    },
+    "LEDERER-6": {
+      "x4code": "LEDERER-6",
+      "description": "C.m.lederer,table of isotopes, 6th ed., 1967",
+      "active": true
+    },
+    "LEDERER-7": {
+      "x4code": "LEDERER-7",
+      "description": "C.m.lederer,table of isotopes,7th ed.,1978",
+      "active": true
+    },
+    "LEVKOVSKIJ": {
+      "x4code": "LEVKOVSKIJ",
+      "description": "Levkovskij,act.cs.by protons and alphas,moscow 1991",
+      "active": true
+    },
+    "MOLNAR": {
+      "x4code": "MOLNAR",
+      "description": "Molnar, handbook of prompt gamma activation analysis",
+      "active": true
+    },
+    "N.REAC.DES": {
+      "x4code": "N.REAC.DES",
+      "description": "Theory and method of nuclear reactor design,moscow 1962",
+      "active": true
+    },
+    "NAKAMURA": {
+      "x4code": "NAKAMURA",
+      "description": "Handbook on secondary part. prod. and transport, 2006",
+      "active": true
+    },
+    "NB.GS.COMP": {
+      "x4code": "NB.GS.COMP",
+      "description": "Noble gas compounds, chicago press 1963",
+      "active": true
+    },
+    "NEA-DISCR": {
+      "x4code": "NEA-DISCR",
+      "description": "Nea discrepancy file 1983",
+      "active": true
+    },
+    "NEJTRONFIZ": {
+      "x4code": "NEJTRONFIZ",
+      "description": "Neitronnaya fizika, moskva 1961",
+      "active": true
+    },
+    "NEUT.CS 1A": {
+      "x4code": "NEUT.CS 1A",
+      "description": "Neutron cross sections,vol.1,part a, research par., 1981",
+      "active": true
+    },
+    "NEUT.CS 1B": {
+      "x4code": "NEUT.CS 1B",
+      "description": "Neutron cross sections,vol.1,part b, research par., 1984",
+      "active": true
+    },
+    "NEUT.CS 2": {
+      "x4code": "NEUT.CS 2",
+      "description": "Neutron cross sections,vol.2, curves, 1984",
+      "active": true
+    },
+    "NEUT.D.BKL": {
+      "x4code": "NEUT.D.BKL",
+      "description": "Neutron data booklet, 2nd edition, 2003",
+      "active": true
+    },
+    "NEUT.RES": {
+      "x4code": "NEUT.RES",
+      "description": "Atlas of neutron resonances, s.f.mughabghab, 2006",
+      "active": true
+    },
+    "NEUTRDIFFR": {
+      "x4code": "NEUTRDIFFR",
+      "description": "G.e.bacon= neutron diffraction. 2nd ed, oxford 1962",
+      "active": false
+    },
+    "NIKOL84": {
+      "x4code": "NIKOL84",
+      "description": "Nikolaev,multigr.approx.in neutr.transp.,moskva 1984",
+      "active": true
+    },
+    "NIKOLAEV": {
+      "x4code": "NIKOLAEV",
+      "description": "Nikolaev,anisotr.of elast.scatt.neutr.,moscow 1972",
+      "active": true
+    },
+    "NRLME": {
+      "x4code": "NRLME",
+      "description": "Nuclear reactions at low and middle energies,moscow 1962",
+      "active": true
+    },
+    "NRLMEN": {
+      "x4code": "NRLMEN",
+      "description": "Nuclear reactions at low and middle energies,moscow 1958",
+      "active": false
+    },
+    "OKAMOTO": {
+      "x4code": "OKAMOTO",
+      "description": "Handbook on nuclear activation data, iaea 1987",
+      "active": true
+    },
+    "PERFILOV": {
+      "x4code": "PERFILOV",
+      "description": "Perfilov,nuclear react.ind.by high energy part.,ussr 1962",
+      "active": true
+    },
+    "PFN": {
+      "x4code": "PFN",
+      "description": "Fast neutron physics conf., houston 1963",
+      "active": false
+    },
+    "PH-DAT": {
+      "x4code": "PH-DAT",
+      "description": "Physik daten/physics data,series,karlsruhe",
+      "active": true
+    },
+    "PNS": {
+      "x4code": "PNS",
+      "description": "Proc. nuclear and solid state physics symp., india",
+      "active": false
+    },
+    "PR.NUC.EN.": {
+      "x4code": "PR.NUC.EN.",
+      "description": "Progress in nuclear energy ser.1 physics & mathematics",
+      "active": true
+    },
+    "PROKOFJEV": {
+      "x4code": "PROKOFJEV",
+      "description": "Prokofjev,therm.neutr.capt.for a=143-193,riga 1973",
+      "active": true
+    },
+    "RCS": {
+      "x4code": "RCS",
+      "description": "Radiochemical studies, fission products, usa, 1951",
+      "active": true
+    },
+    "REAC.CALC.": {
+      "x4code": "REAC.CALC.",
+      "description": "Maruk,theory and meth.of nuclear reactor calc.,1964",
+      "active": true
+    },
+    "RISR": {
+      "x4code": "RISR",
+      "description": "Radioisotopes in scient.research , unesco, paris 1957",
+      "active": false
+    },
+    "SEGRAVE": {
+      "x4code": "SEGRAVE",
+      "description": "Segrave,the three-body problem,amsterdam 1970",
+      "active": false
+    },
+    "SIEGBAHN": {
+      "x4code": "SIEGBAHN",
+      "description": "Siegbahn, beta and gamma-ray spectroscopy, 1955",
+      "active": true
+    },
+    "SINGH2011": {
+      "x4code": "SINGH2011",
+      "description": "Radioisotopes-applications in bio-medical science 2011",
+      "active": true
+    },
+    "SPN": {
+      "x4code": "SPN",
+      "description": "Soviet progress in neutron physics, new york 1963",
+      "active": true
+    },
+    "TRANSU.EL.": {
+      "x4code": "TRANSU.EL.",
+      "description": "Transuranium elements",
+      "active": true
+    },
+    "WAGEMANS": {
+      "x4code": "WAGEMANS",
+      "description": "Wagemans, the nuclear fission process, crc press 1991",
+      "active": true
+    }
+  }
+}

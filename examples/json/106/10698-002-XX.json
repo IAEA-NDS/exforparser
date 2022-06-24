@@ -1,0 +1,62 @@
+{
+  "id": "10698002XX",
+  "reaction": {
+    "x4code": "(92-U-235(N,F),,SIG,,FIS)",
+    "target": "92-U-235",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "U3O2 deposits, enriched to 99.4% 235U, on 20-mil",
+            " platinum foil. Mass deposit uncertain to 0.5%"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-DUMMY",
+      "DATA",
+      "ERR-T",
+      "ERR-S",
+      "ERR-SYS"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        1.1
+      ],
+      [
+        1.215
+      ],
+      [
+        0.022
+      ],
+      [
+        0.95
+      ],
+      [
+        1.51
+      ]
+    ]
+  }
+}

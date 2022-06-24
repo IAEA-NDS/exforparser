@@ -1,0 +1,97 @@
+{
+  "id": "11791002XX",
+  "reaction": {
+    "x4code": "(29-CU-0(N,TOT),,SIG)",
+    "target": "29-CU-0",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(29-CU-0(N,TOT),,SIG)"
+          ],
+          "freetext": [
+            "",
+            " NORMALIZED TO VALUE AT 0.10EV."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": [
+      [
+        0.1
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        2.53e-09,
+        2.69e-09,
+        2.86e-09,
+        3.05e-09,
+        3.26e-09,
+        3.49e-09,
+        3.75e-09,
+        4.04e-09,
+        4.36e-09,
+        4.73e-09,
+        1e-07
+      ],
+      [
+        12.71,
+        12.26,
+        12.83,
+        11.57,
+        11.21,
+        10.88,
+        10.47,
+        10.11,
+        10.22,
+        11.38,
+        9.74
+      ],
+      [
+        0.73,
+        0.74,
+        0.65,
+        0.58,
+        0.5,
+        0.46,
+        0.43,
+        0.34,
+        0.31,
+        0.27,
+        0.6
+      ]
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "22578012XX",
+  "reaction": {
+    "x4code": "(47-AG-107(N,G)47-AG-108,,SIG,,SPA)",
+    "target": "47-AG-107",
+    "process": "N,G",
+    "sf4": "47-AG-108",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-MEAN",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "B"
+    ],
+    "data": [
+      [
+        0.22
+      ],
+      [
+        0.6
+      ]
+    ]
+  }
+}

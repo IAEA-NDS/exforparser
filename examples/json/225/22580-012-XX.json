@@ -1,0 +1,71 @@
+{
+  "id": "22580012XX",
+  "reaction": {
+    "x4code": "(56-BA-130(N,G)56-BA-131,,SIG)",
+    "target": "56-BA-130",
+    "process": "N,G",
+    "sf4": "56-BA-131",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "(MONIT)": {
+          "x4code": [
+            "(25-MN-55(N,G)25-MN-56,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-RSL"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        0.013
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR",
+      "MONIT"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.9
+      ],
+      [
+        0.0043
+      ],
+      [
+        0.002
+      ],
+      [
+        0.0072
+      ]
+    ]
+  }
+}

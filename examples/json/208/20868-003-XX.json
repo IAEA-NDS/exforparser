@@ -1,0 +1,110 @@
+{
+  "id": "20868003XX",
+  "reaction": {
+    "x4code": "(49-IN-115(N,G)49-IN-116-M1+M2,,SIG,,FIS)",
+    "target": "49-IN-115",
+    "process": "N,G",
+    "sf4": "49-IN-116-M1+M2",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(49-IN-116-M1,54.13MIN,DG,1293.,0.837)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "FLAG": {
+      "XX": {
+        "(1.)": {
+          "x4code": "(1.)",
+          "freetext": [
+            " detector without surrounding by B-10 sphere"
+          ]
+        },
+        "(2.)": {
+          "x4code": "(2.)",
+          "freetext": [
+            " detector with surrounding by 2.2 g/cm2 B-10 sphere"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Mock-Fission (Po-210+Be+B+F) neutron sources.",
+            "Mock-Fission source in stainless steel container;",
+            "17.0 x 15.0 mm (h x diam.); amount of radioactive",
+            "material - 1Ci.",
+            "Mock-Fission neutron source is a mixture of Po, Be, B,",
+            "F (and Li) in the correct proportions constitutes a",
+            "neutron source, the spectrum of which resembles an",
+            "uranium fission spectrum."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Natural indium sphere 1 cm in diameter."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        1.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR",
+      "FLAG"
+    ],
+    "units": [
+      "MB",
+      "MB",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        93.0,
+        96.4
+      ],
+      [
+        6.3,
+        8.4
+      ],
+      [
+        2.0,
+        1.0
+      ]
+    ]
+  }
+}

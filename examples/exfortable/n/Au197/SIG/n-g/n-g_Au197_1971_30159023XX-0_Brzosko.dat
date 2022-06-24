@@ -1,0 +1,12 @@
+# entry       : 30159 
+# subentry    : 023 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG) 
+# year        : 1971 
+# author      : J.S.Brzosko 
+# institute   : 3POLWWA 
+# reference   : (J,APP/B,2,489,1971) 
+# facility    : {'x4code': 'VDG'} 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      4.00000E-01      0.00000E+00      1.90000E+02      0.00000E+00

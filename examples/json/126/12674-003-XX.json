@@ -1,0 +1,60 @@
+{
+  "id": "12674003XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,TOT),,SIG)",
+    "target": "79-AU-197",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "ANGSTROM",
+      "B"
+    ],
+    "data": [
+      [
+        5.0,
+        5.5,
+        6.0,
+        6.5,
+        7.0,
+        8.0,
+        8.5,
+        9.0,
+        9.5,
+        10.0,
+        10.5,
+        11.0,
+        11.5
+      ],
+      [
+        273.0,
+        300.0,
+        327.0,
+        356.0,
+        382.0,
+        436.0,
+        464.0,
+        490.0,
+        518.0,
+        546.0,
+        572.0,
+        600.0,
+        628.0
+      ]
+    ]
+  }
+}

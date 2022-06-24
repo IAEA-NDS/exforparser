@@ -1,0 +1,75 @@
+{
+  "id": "30641013XX",
+  "reaction": {
+    "x4code": "(49-IN-113(N,INL)49-IN-113-M1,,SIG,,FIS)",
+    "target": "49-IN-113",
+    "process": "N,INL",
+    "sf4": "49-IN-113-M1",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(49-IN-113-M1,99.48MIN,DG,391.7,0.649)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Metalic foil 0.2 mm in thickness from natural indium"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "KT-DUMMY",
+      "MONIT"
+    ],
+    "units": [
+      "MEV",
+      "MB"
+    ],
+    "data": [
+      [
+        1.42
+      ],
+      [
+        200.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "ERR-S"
+    ],
+    "units": [
+      "MB",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        164.3
+      ],
+      [
+        1.1
+      ]
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "113291012",
+  "reaction": {
+    "x4code": "(71-LU-0(N,0),,D)",
+    "target": "71-LU-0",
+    "process": "N,0",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "D",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA      2"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "EV"
+    ],
+    "data": [
+      [
+        10.0
+      ],
+      [
+        200.0
+      ],
+      [
+        1.5
+      ]
+    ]
+  }
+}

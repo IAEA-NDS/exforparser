@@ -1,0 +1,72 @@
+{
+  "id": "10434003XX",
+  "reaction": {
+    "x4code": "(92-U-238(N,G)92-U-239,,SIG)",
+    "target": "92-U-238",
+    "process": "N,G",
+    "sf4": "92-U-239",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Value given is average of 2 measurements relative to",
+            " 10B and gold."
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(5-B-10(N,A)3-LI-7,,SIG)"
+          ],
+          "freetext": [
+            " From ENDF/B-III tables"
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(79-AU-197(N,G)79-AU-198,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-S"
+    ],
+    "units": [
+      "KEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        24.3
+      ],
+      [
+        0.5
+      ],
+      [
+        0.038
+      ]
+    ]
+  }
+}

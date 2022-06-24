@@ -1,0 +1,115 @@
+{
+  "id": "212090022",
+  "reaction": {
+    "x4code": "(92-U-238(N,F),,SIG)",
+    "target": "92-U-238",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " Normalized to U-238 cross-section",
+      "        at 14 MeV."
+    ]
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "<ERR-S>     Declared by authors for pointer 1",
+            "<DATA-ERR>  Not specified for pointer 2"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".53 mg of natural uranium in the fission chamber."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        14.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA      2",
+      "DATA-ERR  2"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        12.7,
+        13.0,
+        13.5,
+        14.0,
+        14.5,
+        15.0,
+        15.4,
+        16.0,
+        16.4,
+        17.0,
+        17.5,
+        18.4,
+        18.9,
+        19.4
+      ],
+      [
+        1.01,
+        1.03,
+        1.05,
+        1.13,
+        1.18,
+        1.25,
+        1.25,
+        1.28,
+        1.34,
+        1.3,
+        1.33,
+        1.36,
+        1.47,
+        1.48
+      ],
+      [
+        0.04,
+        0.04,
+        0.03,
+        0.02,
+        0.03,
+        0.03,
+        0.03,
+        0.04,
+        0.04,
+        0.04,
+        0.04,
+        0.04,
+        0.05,
+        0.06
+      ]
+    ]
+  }
+}

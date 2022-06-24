@@ -1,0 +1,115 @@
+{
+  "id": "40063002XX",
+  "reaction": {
+    "x4code": "(93-NP-237(N,0),,EN)",
+    "target": "93-NP-237",
+    "process": "N,0",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "EN",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " Not Specified"
+          ]
+        }
+      }
+    },
+    "FLAG": {
+      "XX": {
+        "(1.)": {
+          "x4code": "(1.)",
+          "freetext": [
+            " Probably due to admixture of Pu-239 ."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Two samples of NpO2 (11.6 % of Pu-239),",
+            " thickness are 5.31 gram/cm**2 and .702 gram/cm**2.",
+            " Total weight about 500 mg."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR",
+      "FLAG"
+    ],
+    "units": [
+      "EV",
+      "EV",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        3.86,
+        4.22,
+        4.9,
+        5.81,
+        6.43,
+        7.74,
+        8.43,
+        9.33,
+        11.06,
+        12.5,
+        14.63,
+        16.03,
+        17.1,
+        17.9,
+        18.9
+      ],
+      [
+        0.02,
+        0.002,
+        0.02,
+        0.03,
+        0.04,
+        0.05,
+        0.06,
+        0.06,
+        0.08,
+        0.1,
+        0.12,
+        0.14,
+        0.2,
+        0.2,
+        0.2
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        1.0,
+        null,
+        null,
+        1.0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ]
+  }
+}

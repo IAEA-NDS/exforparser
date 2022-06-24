@@ -1,0 +1,220 @@
+{
+  "id": "30114009XX",
+  "reaction": {
+    "x4code": "(47-AG-0(N,G),,SIG)",
+    "target": "47-AG-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Corrected for detector efficiency (ratio In/Ag eff.",
+            "assumed 0.955), Self-shielding and multiscattering"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            " Lithium target thicknesses 2 - 10 keV. Neutron",
+            "energy determined from proton energy"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(49-IN-0(N,G),,SIG)"
+          ],
+          "freetext": [
+            "",
+            "Basically normalized to value of Gibbons et",
+            "al,Phys.Rev.122,182(1961) at 30 keV,which was based on",
+            "averaged weighted standard (Ag,Sb,In,Au,I) from the",
+            "absolute meas. by Schmitt and Cook,Nucl.Phys.20,202",
+            " (1960) at 24 keV.  Indium capture assumed to follow",
+            "the function  1820 - 39.1*E  for E between 7 and 18 keV",
+            "and  44000/(sqrt(E)*(1+4*E**0.25)) for E between 18 and",
+            "120 keV (units mb and keV). Monitoring by proton charge",
+            "deposited on target and by long counter"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Metal, 8.26 and 14.8 atoms/mb in geometry I and II"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "KEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        30.0
+      ],
+      [
+        760.0
+      ],
+      [
+        50.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        9.9,
+        11.0,
+        11.0,
+        11.0,
+        16.0,
+        17.0,
+        19.0,
+        22.0,
+        28.0,
+        30.0,
+        31.0,
+        35.0,
+        42.0,
+        53.0,
+        57.0,
+        57.0,
+        58.0,
+        61.0,
+        65.0,
+        67.0,
+        70.0,
+        73.0,
+        80.0,
+        80.0,
+        90.0,
+        94.0
+      ],
+      [
+        3.0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        8.0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        6.0
+      ],
+      [
+        1260.0,
+        1550.0,
+        1710.0,
+        1822.0,
+        1677.0,
+        1330.0,
+        1308.0,
+        985.0,
+        1088.0,
+        977.0,
+        961.0,
+        811.0,
+        760.0,
+        661.0,
+        601.0,
+        655.0,
+        577.0,
+        520.0,
+        497.0,
+        441.0,
+        519.0,
+        475.0,
+        412.0,
+        501.0,
+        423.0,
+        368.0
+      ],
+      [
+        136.0,
+        165.0,
+        180.0,
+        272.0,
+        284.0,
+        217.0,
+        191.0,
+        154.0,
+        114.0,
+        94.0,
+        93.0,
+        99.0,
+        88.0,
+        82.0,
+        65.0,
+        70.0,
+        83.0,
+        54.0,
+        61.0,
+        40.0,
+        95.0,
+        64.0,
+        44.0,
+        74.0,
+        87.0,
+        37.0
+      ]
+    ]
+  }
+}

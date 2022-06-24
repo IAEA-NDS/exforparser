@@ -1,0 +1,148 @@
+{
+  "title": "The Fission Cross Sections Of Plutonium-239 And  Plutonium-242 Relative To Uranium-235 From 0.1 To  10 Mev",
+  "references": [
+    {
+      "x4code": "(J,NSE,68,360,1978)",
+      "publication year": "1978"
+    },
+    {
+      "x4code": "(R,ANL-NDM-83,1983)",
+      "publication year": "1983"
+    }
+  ],
+  "authors": [
+    {
+      "name": "J.W.Meadows"
+    }
+  ],
+  "institutes": [
+    {
+      "x4code": "1USAANL"
+    }
+  ],
+  "#doi": [],
+  "facilities": [
+    {
+      "type": "DYNAM",
+      "x4code": "1USAANL"
+    }
+  ],
+  "entry_number": "10734",
+  "reactions": {
+    "002": {
+      "1": {
+        "x4code": "((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(94-PU-239(N,F),,SIG)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "003": {
+      "1": {
+        "x4code": "((94-PU-242(N,F),,SIG)/(92-U-235(N,F),,SIG))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(94-PU-242(N,F),,SIG)",
+        "target": "94-PU-242",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": null,
+        "sf6": "SIG",
+        "sf7": null,
+        "sf8": null,
+        "sf9": null,
+        "freetext": []
+      }
+    }
+  },
+  "experimental_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Corrected for:",
+            " - second 7Li(p,n) group,",
+            " - 7Li and d break-up neutrons,",
+            " - scattering in detector and neutron source assembly,",
+            " - pulse-height distribution below bias level.",
+            "Sample geometry differences eliminated by measurements",
+            " in both detector orientations.",
+            "Momentum effects reduced by same procedure.",
+            "Corrections made for remaining momentum effects,",
+            " deposit thickness and fragment angular distributions.",
+            "Background from (d,n) reactions with gas target",
+            " assembly measured with empty gas cell."
+          ]
+        }
+      }
+    },
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(IOCH)",
+          "freetext": [
+            " Samples back-to-back in low mass double",
+            " ionization chamber using methane as counter gas",
+            " placed 5 cm from neutron source."
+          ]
+        }
+      }
+    },
+    "FACILITY": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "DYNAM,1USAANL"
+          ],
+          "freetext": [
+            " Argonne 8 MeV Tandem Dynamitron"
+          ]
+        }
+      }
+    },
+    "INC-SOURCE": {
+      "XX": {
+        "0": {
+          "x4code": "(P-LI7)",
+          "freetext": [
+            " for below En~5 MeV",
+            "Targets produced by evaporation of Li on Ta backing.",
+            "Target thicknesses about 200 keV above 2 MeV neutron",
+            " energy but thinner at lower energies."
+          ]
+        },
+        "1": {
+          "x4code": "(D-D)",
+          "freetext": [
+            " for above En~5 MeV",
+            "Deuterium gas in a 2-cm-long cell filled to 2 atm."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            " Pulsed beam and fast timing used to reduce and",
+            " measure time independent background"
+          ]
+        }
+      }
+    }
+  }
+}

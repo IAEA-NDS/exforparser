@@ -1,0 +1,94 @@
+{
+  "id": "208680024",
+  "reaction": {
+    "x4code": "(49-IN-115(N,G)49-IN-116-M1+M2,,SIG,,SPA)",
+    "target": "49-IN-115",
+    "process": "N,G",
+    "sf4": "49-IN-116-M1+M2",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(49-IN-116-M1,54.13MIN,DG,1293.,0.837)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "FLAG": {
+      "XX": {
+        "(1.)": {
+          "x4code": "(1.)",
+          "freetext": [
+            " detector without surrounding by B-10 sphere"
+          ]
+        },
+        "(2.)": {
+          "x4code": "(2.)",
+          "freetext": [
+            " detector with surrounding by 2.2 g/cm2 B-10 sphere"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".Natural indium sphere 1 cm in diameter."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY"
+    ],
+    "units": [
+      "MEV"
+    ],
+    "data": [
+      [
+        4.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "FLAG",
+      "DATA      4",
+      "DATA-ERR  4"
+    ],
+    "units": [
+      "NO-DIM",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        1.0,
+        2.0
+      ],
+      [
+        74.7,
+        67.9
+      ],
+      [
+        2.7,
+        2.5
+      ]
+    ]
+  }
+}

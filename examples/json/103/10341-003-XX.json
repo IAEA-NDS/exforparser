@@ -1,0 +1,58 @@
+{
+  "id": "10341003XX",
+  "reaction": {
+    "x4code": "(98-CF-253(N,F),,SIG,,MXW)",
+    "target": "98-CF-253",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "MXW",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "MONIT",
+      "MONIT-ERR",
+      "EN-DUMMY"
+    ],
+    "units": [
+      "B",
+      "B",
+      "EV"
+    ],
+    "data": [
+      [
+        98.8
+      ],
+      [
+        1.0
+      ],
+      [
+        0.0253
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        1300.0
+      ],
+      [
+        240.0
+      ]
+    ]
+  }
+}

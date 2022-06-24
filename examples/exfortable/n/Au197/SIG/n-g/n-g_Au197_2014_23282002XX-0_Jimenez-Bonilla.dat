@@ -1,0 +1,12 @@
+# entry       : 23282 
+# subentry    : 002 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG,,MXW) 
+# year        : 2014 
+# author      : P.Jimenez-Bonilla 
+# institute   : 2SPNSEU 
+# reference   : (C,2014DEBREC,,(102),2014) 
+# facility    : {'type': 'ACCEL', 'x4code': '2SPNSEU'} 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      2.50000E-02      0.00000E+00      6.45000E+02      0.00000E+00

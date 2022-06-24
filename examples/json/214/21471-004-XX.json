@@ -1,0 +1,102 @@
+{
+  "id": "21471004XX",
+  "reaction": {
+    "x4code": "(92-U-233(N,F),,SIG,,RTE)",
+    "target": "92-U-233",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "RTE",
+    "sf9": null,
+    "freetext": [
+      " Cross section times",
+      " square root of energy."
+    ]
+  },
+  "measurement_conditions": {
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            " Time of flight."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Enriched U-233, 99.51%, painted as oxide",
+            " onto aluminium foils."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM",
+      "MONIT",
+      "MONIT-ERR",
+      "ERR-1",
+      "ERR-2"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        98.7
+      ],
+      [
+        0.5
+      ],
+      [
+        2.0
+      ],
+      [
+        1.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "EV",
+      "B*RT-EV"
+    ],
+    "data": [
+      [
+        0.0172,
+        0.019,
+        0.021,
+        0.0233,
+        0.026,
+        0.0292
+      ],
+      [
+        82.0,
+        80.5,
+        84.0,
+        81.7,
+        83.5,
+        80.5
+      ]
+    ]
+  }
+}

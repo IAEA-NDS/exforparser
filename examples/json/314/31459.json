@@ -159,17 +159,13 @@
     "010": {
       "XX": {
         "x4code": "(((22-TI-49(N,N+P)21-SC-48,,SIG,,A)+(22-TI-48(N,P)21-SC-48,,SIG,,A))=(22-TI-0(N,X)21-SC-48,,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "011": {
       "XX": {
         "x4code": "(((26-FE-57(N,N+P)25-MN-56,,SIG,,A)+(26-FE-56(N,P)25-MN-56,,SIG,,A))=(26-FE-0(N,X)25-MN-56,,SIG))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "012": {

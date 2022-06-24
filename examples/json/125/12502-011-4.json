@@ -1,0 +1,86 @@
+{
+  "id": "125020114",
+  "reaction": {
+    "x4code": "(94-PU-239(N,G),,WID)",
+    "target": "94-PU-239",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "WID",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "x4code": "(AREA)",
+          "freetext": [
+            " Area analysis of fission c/s"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            " No information on source of uncertainties"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-RES",
+      "DATA      4",
+      "DATA-ERR  4"
+    ],
+    "units": [
+      "EV",
+      "MILLI-EV",
+      "MILLI-EV"
+    ],
+    "data": [
+      [
+        0.296,
+        7.83,
+        10.93,
+        11.9,
+        17.6,
+        22.2,
+        41.4,
+        44.5,
+        52.6
+      ],
+      [
+        39.0,
+        40.6,
+        31.5,
+        40.9,
+        39.1,
+        34.6,
+        46.8,
+        40.4,
+        34.1
+      ],
+      [
+        2.0,
+        3.0,
+        9.0,
+        5.0,
+        5.0,
+        4.0,
+        9.0,
+        10.0,
+        5.0
+      ]
+    ]
+  }
+}

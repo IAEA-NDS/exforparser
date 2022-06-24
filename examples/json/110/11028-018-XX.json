@@ -1,0 +1,56 @@
+{
+  "id": "11028018XX",
+  "reaction": {
+    "x4code": "(60-ND-0(N,G),,SIG)",
+    "target": "60-ND-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "USED G = 1.000"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "+DATA-ERR",
+      "-DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.53e-08
+      ],
+      [
+        49.9
+      ],
+      [
+        0.3
+      ],
+      [
+        2.2
+      ]
+    ]
+  }
+}

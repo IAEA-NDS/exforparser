@@ -1,0 +1,154 @@
+{
+  "id": "121630141",
+  "reaction": {
+    "x4code": "(75-RE-185(N,0),,EN)",
+    "target": "75-RE-185",
+    "process": "N,0",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "EN",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ASSUMED": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(75-RE-185(N,G),,WID)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "FLAG": {
+      "XX": {
+        "(1.)": {
+          "x4code": "(1.)",
+          "freetext": [
+            " LEVEL POSTULATED TO EXPLAIN OBSERVED SHAPE."
+          ]
+        },
+        "(2.)": {
+          "x4code": "(2.)",
+          "freetext": [
+            " UNRESOLVED LEVEL."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "ASSUM",
+      "FLAG",
+      "DATA      1"
+    ],
+    "units": [
+      "MILLI-EV",
+      "NO-DIM",
+      "EV"
+    ],
+    "data": [
+      [
+        null,
+        null,
+        null,
+        52.8,
+        null,
+        null,
+        null,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        null,
+        52.8,
+        52.8,
+        null,
+        null,
+        null,
+        52.8,
+        52.8,
+        null,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        52.8
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1.0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1.0,
+        null,
+        2.0,
+        null,
+        null,
+        1.0,
+        null
+      ],
+      [
+        2.16,
+        5.92,
+        7.24,
+        11.88,
+        12.88,
+        14.64,
+        21.3,
+        21.9,
+        26.5,
+        27.1,
+        29.5,
+        32.6,
+        36.6,
+        41.5,
+        45.4,
+        47.8,
+        50.3,
+        51.5,
+        55.0,
+        58.4,
+        63.0,
+        66.7,
+        74.7,
+        81.0,
+        87.2,
+        89.1,
+        93.4,
+        95.6,
+        98.8
+      ]
+    ]
+  }
+}

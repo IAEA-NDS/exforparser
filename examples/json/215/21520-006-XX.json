@@ -1,0 +1,68 @@
+{
+  "id": "21520006XX",
+  "reaction": {
+    "x4code": "(92-U-235(N,F),,SIG)",
+    "target": "92-U-235",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " 2200 m/sec value obtained",
+      " from a fit to the sigma(F)/sigma(B(N,a)) data",
+      " of the world recommended shape."
+    ]
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(5-B-0(N,A),,SIG)"
+          ],
+          "freetext": [
+            " A0+a1 particles from B-10"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        582.0
+      ],
+      [
+        10.0
+      ],
+      [
+        761.0
+      ],
+      [
+        2.0
+      ]
+    ]
+  }
+}

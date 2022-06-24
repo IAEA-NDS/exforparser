@@ -110,88 +110,168 @@
     "007": {
       "XX": {
         "x4code": "((90-TH-232(N,F),DL/GRP,NU,,SPA)/(90-TH-232(N,F),DL,NU,,SPA))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "008": {
       "XX": {
         "x4code": "((92-U-235(N,F),DL/GRP,NU,,SPA)/(92-U-235(N,F),DL,NU,,SPA))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "009": {
       "XX": {
         "x4code": "((92-U-233(N,F),DL/GRP,NU,,SPA)/(92-U-233(N,F),DL,NU,,SPA))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "010": {
       "XX": {
         "x4code": "((92-U-238(N,F),DL/GRP,NU,,SPA)/(92-U-238(N,F),DL,NU,,SPA))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "011": {
       "XX": {
         "x4code": "((94-PU-239(N,F),DL/GRP,NU,,SPA)/(94-PU-239(N,F),DL,NU,,SPA))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "012": {
-      "XX": {
+      "1": {
         "x4code": "(((90-TH-232(N,F),DL,NU,,SPA)/(90-TH-232(N,F),,NU,,SPA))/((92-U-235(N,F),DL,NU,,SPA)/(92-U-235(N,F),,NU,,SPA)))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(90-TH-232(N,F),DL,NU,,SPA)",
+        "target": "90-TH-232",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": "DL",
+        "sf6": "NU",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
       }
     },
     "013": {
-      "XX": {
+      "1": {
         "x4code": "((92-U-235(N,F),DL,NU,,SPA)/((92-U-235(N,F),DL,NU,,SPA)*(92-U-235(N,F),,NU,,SPA)))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(92-U-235(N,F),DL,NU,,SPA)",
+        "target": "92-U-235",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": "DL",
+        "sf6": "NU",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
       }
     },
     "014": {
-      "XX": {
+      "1": {
         "x4code": "(((92-U-233(N,F),DL,NU,,SPA)/(92-U-233(N,F),,NU,,SPA))/((92-U-235(N,F),DL,NU,,SPA)/(92-U-235(N,F),,NU,,SPA)))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(92-U-233(N,F),DL,NU,,SPA)",
+        "target": "92-U-233",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": "DL",
+        "sf6": "NU",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
       }
     },
     "015": {
-      "XX": {
+      "1": {
         "x4code": "(((92-U-238(N,F),DL,NU,,SPA)/(92-U-238(N,F),DL,NU,,SPA))/((92-U-235(N,F),DL,NU,,SPA)/(92-U-235(N,F),,NU,,SPA)))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(92-U-238(N,F),DL,NU,,SPA)",
+        "target": "92-U-238",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": "DL",
+        "sf6": "NU",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
       }
     },
     "016": {
-      "XX": {
+      "1": {
         "x4code": "(((94-PU-239(N,F),DL,NU,,SPA)/(94-PU-239(N,F),,NU,,SPA))/((92-U-235(N,F),DL,NU,,SPA)/(92-U-235(N,F),,NU,,SPA)))",
+        "freetext": []
+      },
+      "2": {
+        "x4code": "(94-PU-239(N,F),DL,NU,,SPA)",
+        "target": "94-PU-239",
+        "process": "N,F",
+        "sf4": null,
+        "residual": null,
+        "sf5": "DL",
+        "sf6": "NU",
+        "sf7": null,
+        "sf8": "SPA",
+        "sf9": null,
+        "freetext": []
+      }
+    },
+    "017": {
+      "XX": {
+        "x4code": "((90-TH-232(N,F),DL,NU,,SPA)/(90-TH-232(N,F),,NU,,SPA))",
         "freetext": [
-          ""
+          "                        by the authors, times 0.01"
         ]
       }
     },
-    "017": {},
-    "018": {},
-    "019": {},
-    "020": {},
-    "021": {}
+    "018": {
+      "XX": {
+        "x4code": "((92-U-235(N,F),DL,NU,,SPA)/(92-U-235(N,F),,NU,,SPA))",
+        "freetext": [
+          "                        by the authors, times 0.01"
+        ]
+      }
+    },
+    "019": {
+      "XX": {
+        "x4code": "((92-U-233(N,F),DL,NU,,SPA)/(92-U-233(N,F),,NU,,SPA))",
+        "freetext": [
+          "                        by the authors, times 0.01"
+        ]
+      }
+    },
+    "020": {
+      "XX": {
+        "x4code": "((92-U-238(N,F),DL,NU,,SPA)/(92-U-238(N,F),DL,NU,,SPA))",
+        "freetext": [
+          "                         by the authors, times 0.01"
+        ]
+      }
+    },
+    "021": {
+      "XX": {
+        "x4code": "((94-PU-239(N,F),DL,NU,,SPA)/(94-PU-239(N,F),,NU,,SPA))",
+        "freetext": [
+          "                         by the authors, times 0.01"
+        ]
+      }
+    }
   },
   "experimental_conditions": {
     "CORRECTION": {

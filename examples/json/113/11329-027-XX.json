@@ -1,0 +1,136 @@
+{
+  "id": "11329027XX",
+  "reaction": {
+    "x4code": "(46-PD-0(N,G),,SIG)",
+    "target": "46-PD-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR,,15.)",
+          "freetext": [
+            " A qualitative estimate of the error as",
+            "a function of energy, including the 10% normalization",
+            "to indium, is less than 15% and shown in Fig. 15",
+            "                                   in PR,122,182,1961"
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(49-IN-0(N,G),,SIG)"
+          ],
+          "freetext": [
+            "",
+            "  * All of the measurements of capture cross sections",
+            "    as a function of energy were made relative to the",
+            "    shape of the capture cross section of indium in",
+            "    addition to normalization to 30 and 65 keV."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA"
+    ],
+    "units": [
+      "MEV",
+      "B"
+    ],
+    "data": [
+      [
+        0.0101,
+        0.0116,
+        0.0136,
+        0.0157,
+        0.0165,
+        0.0181,
+        0.0197,
+        0.0209,
+        0.0232,
+        0.0233,
+        0.0256,
+        0.0285,
+        0.0312,
+        0.0321,
+        0.0352,
+        0.0369,
+        0.0398,
+        0.0411,
+        0.044,
+        0.0465,
+        0.0478,
+        0.0515,
+        0.053,
+        0.0565,
+        0.061,
+        0.065,
+        0.068,
+        0.0705,
+        0.08,
+        0.089,
+        0.0985,
+        0.11,
+        0.124,
+        0.135,
+        0.154,
+        0.174
+      ],
+      [
+        0.95,
+        0.802,
+        0.77,
+        0.8,
+        0.782,
+        0.73,
+        0.68,
+        0.618,
+        0.565,
+        0.575,
+        0.53,
+        0.48,
+        0.429,
+        0.463,
+        0.405,
+        0.375,
+        0.365,
+        0.337,
+        0.34,
+        0.323,
+        0.338,
+        0.315,
+        0.308,
+        0.31,
+        0.287,
+        0.275,
+        0.255,
+        0.247,
+        0.224,
+        0.217,
+        0.205,
+        0.183,
+        0.175,
+        0.164,
+        0.16,
+        0.152
+      ]
+    ]
+  }
+}

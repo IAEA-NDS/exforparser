@@ -1,0 +1,160 @@
+{
+  "id": "40890004XX",
+  "reaction": {
+    "x4code": "(92-U-236(N,TOT),,TRN)",
+    "target": "92-U-236",
+    "process": "N,TOT",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "TRN",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      "       Transmission"
+    ]
+  },
+  "measurement_conditions": {
+    "DETECTOR": {
+      "XX": {
+        "0": {
+          "x4code": "(GLASD)",
+          "freetext": [
+            " Li-6 glass detector"
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            "  Total error"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(TOF)",
+          "freetext": [
+            " Flight base is 0.51m  and  2.2 m .",
+            "      Resolution 8.- 2.3 ns/m."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "THICKNESS"
+    ],
+    "units": [
+      "ATOMS/B"
+    ],
+    "data": [
+      [
+        0.00407
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "NO-DIM",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        18.0,
+        22.0,
+        26.0,
+        30.0,
+        40.0,
+        50.0,
+        60.0,
+        70.0,
+        80.0,
+        90.0,
+        100.0,
+        120.0,
+        140.0,
+        160.0,
+        180.0,
+        580.0,
+        620.0,
+        660.0
+      ],
+      [
+        22.0,
+        26.0,
+        30.0,
+        40.0,
+        50.0,
+        60.0,
+        70.0,
+        80.0,
+        90.0,
+        100.0,
+        120.0,
+        140.0,
+        160.0,
+        180.0,
+        200.0,
+        620.0,
+        660.0,
+        700.0
+      ],
+      [
+        0.915,
+        0.913,
+        0.91,
+        0.904,
+        0.907,
+        0.907,
+        0.91,
+        0.911,
+        0.911,
+        0.905,
+        0.915,
+        0.915,
+        0.915,
+        0.916,
+        0.919,
+        0.931,
+        0.934,
+        0.935
+      ],
+      [
+        1.3,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.6
+      ]
+    ]
+  }
+}

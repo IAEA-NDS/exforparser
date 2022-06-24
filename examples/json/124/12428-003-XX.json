@@ -1,0 +1,98 @@
+{
+  "id": "12428003XX",
+  "reaction": {
+    "x4code": "(92-U-235(N,G)92-U-236,,RI)",
+    "target": "92-U-235",
+    "process": "N,G",
+    "sf4": "92-U-236",
+    "residual": null,
+    "sf5": null,
+    "sf6": "RI",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(DATA-ERR)",
+          "freetext": [
+            "  Incomplete description."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " The experimental uncertainty is almost",
+            "entirely associated with the epithermal flux."
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "x4code": "(ACTIV)",
+          "freetext": [
+            " The enriched sample was enclosed in a cadmium",
+            "box 0.8 mm thick, 1.3 cm diameter and 1. 3 cm high,",
+            "located about 6 cm below the bare sample. The capsule",
+            "was irradiated close enough to the central plane of",
+            "the reactor for the effects of the vertical flux",
+            "gradient to be negligible."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Cadmium-covered samples considered: The samples,",
+            "located at opposite ends of an aluminum capsule, each",
+            "consisted of about 25 mg U3O8 spread out over an area",
+            "of about 1.1 cm in a small aluminum can."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        4.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.5
+      ],
+      [
+        143.0
+      ],
+      [
+        7.0
+      ]
+    ]
+  }
+}

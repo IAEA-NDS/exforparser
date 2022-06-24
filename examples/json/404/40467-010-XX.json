@@ -1,0 +1,97 @@
+{
+  "id": "40467010XX",
+  "reaction": {
+    "x4code": "(95-AM-241(N,G)95-AM-242-G,,SIG)",
+    "target": "95-AM-241",
+    "process": "N,G",
+    "sf4": "95-AM-242-G",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(95-AM-242-G,16.1HR,B,0.836)"
+          ],
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(96-CM-242,163.D,A,6114.,0.738)"
+          ],
+          "freetext": [
+            "",
+            " Content of Cm-242-g after irradiation was defined by",
+            " ratio of alpha-lines intensities Cm242 (after Am242g",
+            " beta-decay) and Am241."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "MONIT1",
+      "MONIT2",
+      "MONIT3",
+      "MONIT4",
+      "EN-NRM"
+    ],
+    "units": [
+      "B",
+      "B",
+      "B",
+      "B",
+      "EV"
+    ],
+    "data": [
+      [
+        98.8
+      ],
+      [
+        1558.0
+      ],
+      [
+        37.5
+      ],
+      [
+        70.0
+      ],
+      [
+        0.0253
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        780.0
+      ],
+      [
+        50.0
+      ]
+    ]
+  }
+}

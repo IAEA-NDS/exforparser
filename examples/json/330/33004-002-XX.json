@@ -1,0 +1,76 @@
+{
+  "id": "33004002XX",
+  "reaction": {
+    "x4code": "(79-AU-197(N,2N)79-AU-196,,SIG,,SPA)",
+    "target": "79-AU-197",
+    "process": "N,2N",
+    "sf4": "79-AU-196",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(79-AU-196,,DG,355.69)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " 79-Au-197 1.05 cm * 1.05 cm Foil Of 0.55 mm thickness",
+            "used"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX"
+    ],
+    "units": [
+      "MEV",
+      "MEV"
+    ],
+    "data": [
+      [
+        0.1
+      ],
+      [
+        100.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        167.9
+      ],
+      [
+        6.9
+      ]
+    ]
+  }
+}

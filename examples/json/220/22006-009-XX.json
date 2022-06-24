@@ -1,0 +1,74 @@
+{
+  "id": "22006009XX",
+  "reaction": {
+    "x4code": "(64-GD-0(N,G),,SIG)",
+    "target": "64-GD-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Gd2-O3 oxide pressed powder in 0.5-mm-thick",
+            " polyethylene cylindrical containers.",
+            " 25 g weight, 50mm diameter, 1.7mm height.",
+            " Gd-152 -  0.20%,  Gd-154 - 2.15%, Gd-155 - 14.78%,",
+            " Gd-156 - 20.59%, Gd-157 - 15.71%, Gd-158 - 24.78%,",
+            " Gd-160 - 21.79%."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1"
+    ],
+    "units": [
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        6.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        0.5,
+        1.0,
+        2.5
+      ],
+      [
+        161.0,
+        120.0,
+        44.0
+      ],
+      [
+        15.0,
+        12.0,
+        6.0
+      ]
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "id": "40467018XX",
+  "reaction": {
+    "x4code": "(97-BK-249(N,G)97-BK-250,,RI)",
+    "target": "97-BK-249",
+    "process": "N,G",
+    "sf4": "97-BK-250",
+    "residual": null,
+    "sf5": null,
+    "sf6": "RI",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(97-BK-250,,B)"
+          ],
+          "freetext": [
+            ""
+          ]
+        },
+        "1": {
+          "x4code": [
+            "(98-CF-250,13.08YR,A,6031.,0.830)"
+          ],
+          "freetext": [
+            ""
+          ]
+        },
+        "2": {
+          "x4code": [
+            "(98-CF-249,352.YR,A,5812.,0.837)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "MONIT1",
+      "MONIT2",
+      "MONIT3",
+      "MONIT4",
+      "EN-NRM"
+    ],
+    "units": [
+      "B",
+      "B",
+      "B",
+      "B",
+      "EV"
+    ],
+    "data": [
+      [
+        98.8
+      ],
+      [
+        1558.0
+      ],
+      [
+        37.5
+      ],
+      [
+        70.0
+      ],
+      [
+        0.0253
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.5
+      ],
+      [
+        1100.0
+      ],
+      [
+        100.0
+      ]
+    ]
+  }
+}

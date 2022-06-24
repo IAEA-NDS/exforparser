@@ -1,0 +1,119 @@
+{
+  "id": "12826005XX",
+  "reaction": {
+    "x4code": "(92-U-235(N,F),,DA,FF,COS/RSD)",
+    "target": "92-U-235",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "DA",
+    "sf7": "FF",
+    "sf8": "COS/RSD",
+    "sf9": null,
+    "freetext": [
+      " w(theta)=1+a*cos**2(theta)"
+    ]
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total uncertainty including"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Finize detector size                    (~1%)"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Variation in incident neutron angle   (~2.8%)"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " Thermal fission contamination         (~0.8%)"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-4,,1.)",
+          "freetext": [
+            " Finite angular spread              (~<1%)"
+          ]
+        }
+      }
+    },
+    "METHOD": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Detection of fragments at 0, 15, 30, 60, 75 and 90 deg"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1",
+      "ERR-2",
+      "ERR-3"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        1.0
+      ],
+      [
+        2.8
+      ],
+      [
+        0.8
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-ERR",
+      "NUMBER",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "NO-DIM",
+      "NO-DIM",
+      "NO-DIM"
+    ],
+    "data": [
+      [
+        14.63
+      ],
+      [
+        0.02
+      ],
+      [
+        2.0
+      ],
+      [
+        0.426
+      ],
+      [
+        0.024
+      ]
+    ]
+  }
+}

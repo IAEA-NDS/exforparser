@@ -1,0 +1,187 @@
+{
+  "id": "121630143",
+  "reaction": {
+    "x4code": "(75-RE-185(N,EL),,WID,,2G)",
+    "target": "75-RE-185",
+    "process": "N,EL",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "WID",
+    "sf7": null,
+    "sf8": "2G",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ASSUMED": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(75-RE-185(N,G),,WID)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "FLAG": {
+      "XX": {
+        "(1.)": {
+          "x4code": "(1.)",
+          "freetext": [
+            " LEVEL POSTULATED TO EXPLAIN OBSERVED SHAPE."
+          ]
+        },
+        "(2.)": {
+          "x4code": "(2.)",
+          "freetext": [
+            " UNRESOLVED LEVEL."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "ASSUM",
+      "FLAG",
+      "DATA      3",
+      "DATA-ERR  3"
+    ],
+    "units": [
+      "MILLI-EV",
+      "NO-DIM",
+      "MILLI-EV",
+      "MILLI-EV"
+    ],
+    "data": [
+      [
+        null,
+        null,
+        null,
+        52.8,
+        null,
+        null,
+        null,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        null,
+        52.8,
+        52.8,
+        null,
+        null,
+        null,
+        52.8,
+        52.8,
+        null,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        52.8,
+        52.8
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1.0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1.0,
+        null,
+        2.0,
+        null,
+        null,
+        1.0,
+        null
+      ],
+      [
+        3.3,
+        0.222,
+        1.43,
+        0.79,
+        0.88,
+        0.8,
+        4.84,
+        0.42,
+        0.7,
+        0.557,
+        0.6,
+        36.0,
+        0.94,
+        11.5,
+        0.65,
+        0.81,
+        15.7,
+        34.0,
+        7.8,
+        20.0,
+        4.6,
+        1.1,
+        10.0,
+        5.9,
+        7.0,
+        1.2,
+        1.5,
+        5.0,
+        13.0
+      ],
+      [
+        0.3,
+        0.006,
+        0.03,
+        0.05,
+        0.02,
+        0.03,
+        0.15,
+        0.02,
+        0.03,
+        0.016,
+        0.05,
+        8.0,
+        0.04,
+        1.4,
+        0.03,
+        0.08,
+        0.7,
+        6.0,
+        0.5,
+        2.0,
+        1.0,
+        0.06,
+        3.0,
+        2.8,
+        2.0,
+        0.2,
+        0.5,
+        1.0,
+        7.0
+      ]
+    ]
+  }
+}

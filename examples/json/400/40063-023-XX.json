@@ -1,0 +1,57 @@
+{
+  "id": "40063023XX",
+  "reaction": {
+    "x4code": "(93-NP-237(N,0),,D)",
+    "target": "93-NP-237",
+    "process": "N,0",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "D",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Average spacing between levels was defined from this",
+            " work and data of REL-REF."
+          ]
+        }
+      }
+    },
+    "REL-REF": {
+      "XX": {
+        "0": {
+          "x4code": {
+            "type": "R",
+            "ent": null,
+            "author": "M.Smith+",
+            "ref": "J,PR,99,611,1955"
+          },
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "DATA"
+    ],
+    "units": [
+      "EV"
+    ],
+    "data": [
+      [
+        0.7
+      ]
+    ]
+  }
+}

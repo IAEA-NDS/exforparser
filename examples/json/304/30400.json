@@ -593,9 +593,7 @@
     "038": {
       "XX": {
         "x4code": "((42-MO-98(N,G)42-MO-99,,SIG,,A/FIS)+(42-MO-100(N,2N)42-MO-99,,SIG,,A/FIS))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "039": {
@@ -706,17 +704,13 @@
     "045": {
       "XX": {
         "x4code": "((48-CD-110(N,G)48-CD-111-M,,SIG,,A/FIS)+(48-CD-111(N,INL)48-CD-111-M,,SIG,,A/FIS))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "046": {
       "XX": {
         "x4code": "((29-CU-63(N,G)29-CU-64,,SIG,,A/FIS)+(29-CU-65(N,2N)29-CU-64,,SIG,,A/FIS))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "047": {
@@ -737,9 +731,7 @@
     "048": {
       "XX": {
         "x4code": "((38-SR-86(N,G)38-SR-87-M,,SIG,,A/FIS)+(38-SR-87(N,INL)38-SR-87-M,,SIG,,A/FIS))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "049": {
@@ -760,25 +752,19 @@
     "050": {
       "XX": {
         "x4code": "((56-BA-134(N,G)56-BA-135-M,,SIG,,A/FIS)+(56-BA-135(N,INL)56-BA-135-M,,SIG,,A/FIS))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "051": {
       "XX": {
         "x4code": "((56-BA-136(N,G)56-BA-137-M,,SIG,,A/FIS)+(56-BA-137(N,INL)56-BA-137-M,,SIG,,A/FIS))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "052": {
       "XX": {
         "x4code": "((80-HG-198(N,G)80-HG-199-M,,SIG,,A/FIS)+(80-HG-199(N,INL)80-HG-199-M,,SIG,,A/FIS))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "053": {

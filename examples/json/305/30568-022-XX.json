@@ -1,0 +1,68 @@
+{
+  "id": "30568022XX",
+  "reaction": {
+    "x4code": "(49-IN-115(N,INL)49-IN-115-M,,SIG,,SPA)",
+    "target": "49-IN-115",
+    "process": "N,INL",
+    "sf4": "49-IN-115-M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "SPA",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "No information"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-DUMMY",
+      "ERR-1",
+      "ERR-S"
+    ],
+    "units": [
+      "MEV",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.76
+      ],
+      [
+        0.9
+      ],
+      [
+        0.5
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        54.8
+      ],
+      [
+        1.9
+      ]
+    ]
+  }
+}

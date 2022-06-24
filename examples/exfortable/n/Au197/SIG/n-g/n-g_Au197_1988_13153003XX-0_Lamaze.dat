@@ -1,0 +1,12 @@
+# entry       : 13153 
+# subentry    : 003 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG,,FST) 
+# year        : 1988 
+# author      : G.P.Lamaze 
+# institute   : 1USANBS 
+# reference   : (C,88MITO,,1033,1988) 
+# facility    : {'type': 'REAC', 'x4code': '1USANBS'} 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      5.80000E-01      0.00000E+00      4.11000E+02      0.00000E+00

@@ -1,0 +1,125 @@
+{
+  "id": "131340102",
+  "reaction": {
+    "x4code": "(94-PU-242(N,F),,SIG)",
+    "target": "94-PU-242",
+    "process": "N,F",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(94-PU-242,3.735E+5YR,A)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total uncertainty"
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Neutron energy"
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Thickness correction"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " Extrapolation correction"
+          ]
+        },
+        "4": {
+          "x4code": "(ERR-6)",
+          "freetext": [
+            " Prompt neutron scattering"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ERR-1",
+      "ERR-2",
+      "ERR-3",
+      "ERR-6"
+    ],
+    "units": [
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.1
+      ],
+      [
+        0.3
+      ],
+      [
+        0.3
+      ],
+      [
+        0.2
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-ERR",
+      "EN-RSL-FW",
+      "ERR-T",
+      "DATA      2"
+    ],
+    "units": [
+      "MEV",
+      "MEV",
+      "MEV",
+      "PER-CENT",
+      "B"
+    ],
+    "data": [
+      [
+        14.74
+      ],
+      [
+        0.05
+      ],
+      [
+        0.32
+      ],
+      [
+        1.04
+      ],
+      [
+        2.032
+      ]
+    ]
+  }
+}

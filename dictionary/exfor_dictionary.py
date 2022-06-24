@@ -1,3 +1,16 @@
+####################################################################
+#
+# This file is part of exfor-parser.
+# Copyright (C) 2022 International Atomic Energy Agency (IAEA)
+#
+# Disclaimer: The code is still under developments and not ready
+#             to use. It has been made public to share the progress
+#             among collaborators.
+# Contact:    nds.contact-point@iaea.org
+#
+####################################################################
+
+
 import requests
 from bs4 import BeautifulSoup
 import glob
@@ -8,16 +21,9 @@ import json
 import pandas as pd
 
 sys.path.append("../")
-from path import DICTIONARY_PATH, DICTIONARY_URL
-from mongodb import POST_DB, post_one_mongodb
+from path import DICTIONARY_PATH, DICTIONARY_URL, POST_DB, TO_JSON
+from mongodb import post_one_mongodb
 from .abbreviations import abbreviations
-
-# pd.reset_option("display.max_columns")
-# pd.set_option("display.max_colwidth", None)
-# pd.set_option("display.max_columns", None)
-# pd.set_option("display.max_rows", None)
-# pd.set_option("max_colwidth", None)
-# pd.set_option("display.width", 1200)
 
 
 def call_diction(diction_num):
@@ -89,7 +95,7 @@ def dict_filename(latest):
 
 
 def diction_json_file(diction_num):
-    return os.path.join("dictionary/json/", "diction" + diction_num + ".json")
+    return os.path.join(DICTIONARY_PATH, "json", "diction" + str(diction_num) + ".json")
 
 
 def write_diction_json(diction_num, diction_dict):
@@ -159,10 +165,9 @@ def parse_dictionary(latest):
                 diction = []
                 new = True
                 diction_num = re.split("\s{2,}", line)[1]
-                fname = "".join(
-                    [DICTIONARY_PATH, "original/", "diction", diction_num, ".dat"]
+                fname = os.path.join(
+                    DICTIONARY_PATH, "original", "diction" + str(diction_num) + ".dat"
                 )
-
                 o = open(fname, "w")
                 # o.write("# " + line[:66] + "\n")
                 o.write(line)
@@ -195,19 +200,20 @@ def parse_dictionary(latest):
 def conv_dictionary_tojson(diction_def, diction_num, diction) -> dict:
     diction_dict = {}
 
-    institute_df = pd.read_pickle("pickle/institute.pickle")
+    institute_df = pd.read_pickle("../pickles/institute.pickle")
     institute_df["code"] = institute_df["code"].str.rstrip()
     institute_df = institute_df.set_index("code")
     institute_dict = institute_df.to_dict(orient="index")
 
-    country_df = pd.read_pickle("geo/country.pickle")
+    country_df = pd.read_pickle("../geo/country.pickle")
     country_df = country_df.set_index("country_code")
     country_dict = country_df.to_dict(orient="index")
 
     parames = {}
+    print(diction_num)
     if int(diction_num) in [
         209,
-        23,
+        207,
         33,
         23,
         22,
@@ -290,7 +296,7 @@ def conv_dictionary_tojson(diction_def, diction_num, diction) -> dict:
                     "parameters": parames,
                 }
 
-    elif int(diction_num) in [34, 32, 31, 30, 6, 1]:
+    elif int(diction_num) in [144, 34, 32, 31, 30, 6, 1]:
         for d in diction:
             skip_unused_lines(d)
             if not d.startswith(" "):
@@ -385,6 +391,66 @@ def conv_dictionary_tojson(diction_def, diction_num, diction) -> dict:
                     "description": desc,
                     "param2": param2,
                     "unit conversion factor": factor,
+                    "active": False if flag == "O" else True,
+                }
+
+            diction_dict = {
+                "diction_num": diction_num,
+                "diction_def": diction_def[str(diction_num)]["description"],
+                "parameters": parames,
+            }
+            desc = []
+
+    elif int(diction_num) == 144:
+        ### DICTION 25: Data units
+        from .abbreviations import head_unit_abbr
+
+        desc = []
+        for d in diction[1:]:
+            if d[0].isalpha() or d[0].isdigit():
+                flag = d[79:80]  # obsolute or not
+                param = d[:15].rstrip()
+                desc = d[15:66].rstrip()
+
+            elif d.startswith(" " * 11):
+                continue
+
+            if param:
+                desc = abbreviations(head_unit_abbr, "".join(desc))
+                parames[param] = {
+                    "x4code": param,
+                    "description": desc,
+                    "active": False if flag == "O" else True,
+                }
+
+            diction_dict = {
+                "diction_num": diction_num,
+                "diction_def": diction_def[str(diction_num)]["description"],
+                "parameters": parames,
+            }
+            desc = []
+
+    elif int(diction_num) == 213:
+        ### DICTION 25: Data units
+        from .abbreviations import head_unit_abbr
+
+        desc = []
+        for d in diction[1:]:
+            if d[0].isalpha() or d[0].isdigit():
+                flag = d[79:80]  # obsolute or not
+                param = d[:11].rstrip()
+                param2 = d[11:22].rstrip()
+                desc = d[22:66].rstrip()
+
+            elif d.startswith(" " * 11):
+                continue
+
+            if param:
+                desc = abbreviations(head_unit_abbr, "".join(desc))
+                parames[param] = {
+                    "x4code": param,
+                    "description": desc,
+                    "param2": param2,
                     "active": False if flag == "O" else True,
                 }
 
@@ -494,7 +560,10 @@ class Diction:
         return [
             h
             for h in diction.keys()
-            if diction[h]["param2"] == "A" and diction[h]["active"] and "-DN" not in h and "-NM" not in h
+            if diction[h]["param2"] == "A"
+            and diction[h]["active"]
+            and "-DN" not in h
+            and "-NM" not in h
         ]
 
     def get_incident_en_err_heads(self):
@@ -503,7 +572,10 @@ class Diction:
         return [
             h
             for h in diction.keys()
-            if diction[h]["param2"] == "B" and diction[h]["active"] and "-DN" not in h and "-NM" not in h
+            if diction[h]["param2"] == "B"
+            and diction[h]["active"]
+            and "-DN" not in h
+            and "-NM" not in h
         ]
 
     def get_data_heads(self):
@@ -512,7 +584,10 @@ class Diction:
         return [
             h
             for h in diction.keys()
-            if diction[h]["param2"] == "DATA" and diction[h]["active"] and "-DN" not in h and "-NM" not in h
+            if diction[h]["param2"] == "DATA"
+            and diction[h]["active"]
+            and "-DN" not in h
+            and "-NM" not in h
         ]
 
     def get_data_err_heads(self):
@@ -521,7 +596,10 @@ class Diction:
         return [
             h
             for h in diction.keys()
-            if diction[h]["param2"] == "DATA_E" and diction[h]["active"] and "-DN" not in h and "-NM" not in h
+            if diction[h]["param2"] == "DATA_E"
+            and diction[h]["active"]
+            and "-DN" not in h
+            and "-NM" not in h
         ]
 
     def get_outgoing_e_heads(self):
@@ -576,14 +654,10 @@ class Diction:
         factor = diction[datahead][
             "unit conversion factor"
         ]  # if diction[datahead]["active"]
-        if factor == '':
+        if factor == "":
             return 1.0
         else:
             return factor
-
-
-
-
 
 
 if __name__ == "__main__":

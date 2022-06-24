@@ -1,0 +1,76 @@
+{
+  "id": "30641012XX",
+  "reaction": {
+    "x4code": "(41-NB-93(N,A)39-Y-90-M,,SIG,,FIS)",
+    "target": "41-NB-93",
+    "process": "N,A",
+    "sf4": "39-Y-90-M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FIS",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(39-Y-90-M,3.19HR,DG,202.53,0.91,",
+            "DG,479.51,0.975)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Metalic foil 0.2 mm in thickness"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "KT-DUMMY",
+      "MONIT"
+    ],
+    "units": [
+      "MEV",
+      "MB"
+    ],
+    "data": [
+      [
+        1.42
+      ],
+      [
+        200.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "ERR-S"
+    ],
+    "units": [
+      "MB",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.028
+      ],
+      [
+        6.0
+      ]
+    ]
+  }
+}

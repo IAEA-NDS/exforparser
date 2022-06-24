@@ -1,0 +1,95 @@
+{
+  "id": "20024007XX",
+  "reaction": {
+    "x4code": "(92-U-0(N,G),,SIG)",
+    "target": "92-U-0",
+    "process": "N,G",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Ring shaped sample, 10.cm inner diam., 14.cm outer",
+            "diam. and 1.cm thick"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-NRM",
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.024
+      ],
+      [
+        1.185
+      ],
+      [
+        0.08
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.018,
+        0.033,
+        0.063,
+        0.093,
+        0.125,
+        0.16,
+        0.2,
+        0.3
+      ],
+      [
+        0.46,
+        0.32,
+        0.24,
+        0.175,
+        0.15,
+        0.13,
+        0.12,
+        0.13
+      ],
+      [
+        0.1,
+        0.06,
+        null,
+        0.015,
+        null,
+        null,
+        0.03,
+        0.03
+      ]
+    ]
+  }
+}

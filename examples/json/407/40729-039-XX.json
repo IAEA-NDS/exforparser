@@ -1,0 +1,132 @@
+{
+  "id": "40729039XX",
+  "reaction": {
+    "x4code": "(68-ER-170(N,EL)68-ER-170,,RAD)",
+    "target": "68-ER-170",
+    "process": "N,EL",
+    "sf4": "68-ER-170",
+    "residual": null,
+    "sf5": null,
+    "sf6": "RAD",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "x4code": "(AREA)",
+          "freetext": [
+            " Areas method ."
+          ]
+        }
+      }
+    },
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " For contribution of p-wave -0.07,",
+            " for interference between levels 0.06 ."
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-T)",
+          "freetext": [
+            " Total error."
+          ]
+        },
+        "1": {
+          "x4code": "(ERR-1)",
+          "freetext": [
+            " Uncertainty of exp.data fitting."
+          ]
+        },
+        "2": {
+          "x4code": "(ERR-2)",
+          "freetext": [
+            " Uncertainty due to background correction,"
+          ]
+        },
+        "3": {
+          "x4code": "(ERR-3)",
+          "freetext": [
+            " Uncertainty due to resonance parameters",
+            "        fluctuations."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " Er2-O3, 97.7 % Er-170 ."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "ASSUM1"
+    ],
+    "units": [
+      "B"
+    ],
+    "data": [
+      [
+        3.736
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN",
+      "EN-RSL-HW",
+      "DATA",
+      "ERR-T",
+      "ERR-1",
+      "ERR-2",
+      "ERR-3"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "FERMI",
+      "FERMI",
+      "FERMI",
+      "FERMI",
+      "FERMI"
+    ],
+    "data": [
+      [
+        2.0
+      ],
+      [
+        0.3
+      ],
+      [
+        8.3
+      ],
+      [
+        0.45
+      ],
+      [
+        0.08
+      ],
+      [
+        0.03
+      ],
+      [
+        0.44
+      ]
+    ]
+  }
+}

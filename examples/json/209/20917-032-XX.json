@@ -1,0 +1,68 @@
+{
+  "id": "20917032XX",
+  "reaction": {
+    "x4code": "(94-PU-239(N,ABS),,ETA,,RES)",
+    "target": "94-PU-239",
+    "process": "N,ABS",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "ETA",
+    "sf7": null,
+    "sf8": "RES",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "x4code": "(ERR-S)",
+          "freetext": [
+            " Statistical error"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Metal discs of several thicknesses:",
+            " Pu-239 - 0.024, 0.0044 atoms/b"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN-RES",
+      "DATA",
+      "ERR-S"
+    ],
+    "units": [
+      "EV",
+      "PRT/REAC",
+      "PRT/REAC"
+    ],
+    "data": [
+      [
+        0.296,
+        7.83,
+        10.93
+      ],
+      [
+        1.756,
+        1.496,
+        2.045
+      ],
+      [
+        0.015,
+        0.05,
+        0.05
+      ]
+    ]
+  }
+}

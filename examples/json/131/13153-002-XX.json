@@ -1,0 +1,135 @@
+{
+  "id": "13153002XX",
+  "reaction": {
+    "x4code": "(49-IN-115(N,INL)49-IN-115-M,,SIG,,FST)",
+    "target": "49-IN-115",
+    "process": "N,INL",
+    "sf4": "49-IN-115-M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": "FST",
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "CORRECTION": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Background subtraction 0.75%",
+            "Self-absorption correction 1.2%"
+          ]
+        }
+      }
+    },
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(49-IN-115-M,4.486HR,DG,336.,0.458)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "ERR-ANALYS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Contribution to total uncertainty from fluence",
+            " gradient correction 1.0%"
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "Natural in foil, 0.25mm thick, 12.7mm diameter"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN-MEAN",
+      "ERR-1",
+      "ERR-2",
+      "ERR-3",
+      "ERR-4",
+      "ERR-5",
+      "ERR-6",
+      "ERR-7",
+      "ERR-8",
+      "ERR-S"
+    ],
+    "units": [
+      "MEV",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT",
+      "PER-CENT"
+    ],
+    "data": [
+      [
+        0.58
+      ],
+      [
+        1.1
+      ],
+      [
+        0.6
+      ],
+      [
+        1.6
+      ],
+      [
+        0.6
+      ],
+      [
+        0.9
+      ],
+      [
+        1.0
+      ],
+      [
+        0.3
+      ],
+      [
+        1.0
+      ],
+      [
+        0.6
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        97.0
+      ],
+      [
+        2.5
+      ]
+    ]
+  }
+}

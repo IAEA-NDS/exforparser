@@ -1,0 +1,91 @@
+{
+  "id": "40464007XX",
+  "reaction": {
+    "x4code": "(72-HF-178(N,G)72-HF-179,,SIG)",
+    "target": "72-HF-178",
+    "process": "N,G",
+    "sf4": "72-HF-179",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            " HAFNIUM OXIDE, SAMPLE WEIGHT IS .584 GRAM,",
+            " HF-178 CONTENT IS 95.3 PERCENT"
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.0214,
+        0.0232,
+        0.0252,
+        0.0274,
+        0.0299,
+        0.0329,
+        0.0362,
+        0.0401,
+        0.0447,
+        0.0501,
+        0.0566,
+        0.0644,
+        0.074,
+        0.0857
+      ],
+      [
+        90.0,
+        97.6,
+        82.0,
+        77.0,
+        76.1,
+        72.6,
+        72.8,
+        61.1,
+        60.6,
+        59.5,
+        58.2,
+        54.6,
+        48.7,
+        46.6
+      ],
+      [
+        4.0,
+        3.0,
+        2.5,
+        2.0,
+        1.7,
+        1.6,
+        1.5,
+        1.3,
+        1.2,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "40839014XX",
+  "reaction": {
+    "x4code": "(92-U-238(N,EL)92-U-238,POT,RAD)",
+    "target": "92-U-238",
+    "process": "N,EL",
+    "sf4": "92-U-238",
+    "residual": null,
+    "sf5": "POT",
+    "sf6": "RAD",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "MONIT",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        11.41
+      ],
+      [
+        0.07
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "EN-MIN",
+      "EN-MAX",
+      "DATA",
+      "ERR-S"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "FERMI",
+      "FERMI"
+    ],
+    "data": [
+      [
+        2.0
+      ],
+      [
+        24.5
+      ],
+      [
+        9.77
+      ],
+      [
+        0.2
+      ]
+    ]
+  }
+}

@@ -2,10 +2,10 @@
 #
 # This file is part of exfor-parser.
 # Copyright (C) 2022 International Atomic Energy Agency (IAEA)
-# 
-# Disclaimer: The code is still under developments and not ready 
-#             to use. It has beeb made public to share the progress
-#             between collaborators. 
+#
+# Disclaimer: The code is still under developments and not ready
+#             to use. It has been made public to share the progress
+#             among collaborators.
 # Contact:    nds.contact-point@iaea.org
 #
 ####################################################################
@@ -221,19 +221,21 @@ def numtoisomer(num):
     elif num == "3":
         return "M3"
 
+
 def conv_unit(value, factor):
     return value * factor
 
 
-
 def process_time(func):
-    '''
+    """
     for debugging purpose, delete @decorator
-    '''
+    """
+
     def inner(*args):
         start_time = time.time()
         func(*args)
         print(str(func), "--- %s seconds ---" % (time.time() - start_time))
+
     return inner
 
 
@@ -248,7 +250,6 @@ def del_outputs(name):
     os.mkdir(path)
 
 
-
 def rescue(processed):
     lines = []
     if os.path.exists("processed.dat"):
@@ -258,15 +259,14 @@ def rescue(processed):
             return True
 
         else:
-            with open(r"processed.dat", "a") as fp:
+            with open(r"processed_id.dat", "a") as fp:
                 fp.write(processed + "\n")
             return False
 
     else:
-        with open(r"processed.dat", "a") as fp:
+        with open(r"processed_id.dat", "a") as fp:
             fp.write(processed + "\n")
             return False
-
 
 
 def reaction_to_mtmf(process, sf5, sf6):

@@ -1,0 +1,12 @@
+# entry       : 41433 
+# subentry    : 006 
+# pointer     : XX 
+# reaction    : (79-AU-197(N,G)79-AU-198,,SIG,,SPA) 
+# year        : 2003 
+# author      : S.Stoulos 
+# institute   : 4ZZZDUB 
+# reference   : (J,ARI,58,169,200302) 
+# facility    : {'type': 'ACCEL', 'x4code': '4ZZZDUB'} 
+# frame       : Lab
+#     E(MeV)          dE(MeV)           xs(mb)           dxs(mb)
+      1.00000E-04      0.00000E+00      9.80000E+04      1.80000E+04

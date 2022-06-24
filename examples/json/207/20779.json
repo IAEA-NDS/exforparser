@@ -79,9 +79,7 @@
     "004": {
       "XX": {
         "x4code": "((92-U-238(N,F),,SIG,,,DERIV)/(92-U-235(N,F),,SIG,,,DERIV))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     },
     "005": {
@@ -102,9 +100,7 @@
     "006": {
       "XX": {
         "x4code": "((94-PU-239(N,F),,SIG,,,DERIV)/(92-U-235(N,F),,SIG,,,DERIV))",
-        "freetext": [
-          ""
-        ]
+        "freetext": []
       }
     }
   },

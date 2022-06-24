@@ -1,0 +1,100 @@
+{
+  "id": "11407007XX",
+  "reaction": {
+    "x4code": "(31-GA-71(N,G)31-GA-72,,SIG)",
+    "target": "31-GA-71",
+    "process": "N,G",
+    "sf4": "31-GA-72",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(31-GA-72,,DG,2500.,0.30)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "DECAY-MON": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(49-IN-116-M,54.MIN,DG,1028.,0.848)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    },
+    "MONITOR": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(49-IN-115(N,G)49-IN-116-M,,SIG)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "MONIT-ERR"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "MB"
+    ],
+    "data": [
+      [
+        195.0
+      ],
+      [
+        50.0
+      ],
+      [
+        10.0
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR",
+      "MONIT"
+    ],
+    "units": [
+      "B",
+      "B",
+      "MB"
+    ],
+    "data": [
+      [
+        0.053
+      ],
+      [
+        0.003
+      ],
+      [
+        195.0
+      ]
+    ]
+  }
+}

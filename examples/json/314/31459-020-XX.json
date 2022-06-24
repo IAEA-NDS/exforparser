@@ -1,0 +1,53 @@
+{
+  "id": "31459020XX",
+  "reaction": {
+    "x4code": "(49-IN-115(N,INL)49-IN-115-M,,SIG)",
+    "target": "49-IN-115",
+    "process": "N,INL",
+    "sf4": "49-IN-115-M",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {},
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-RSL"
+    ],
+    "units": [
+      "MEV",
+      "MEV"
+    ],
+    "data": [
+      [
+        14.758
+      ],
+      [
+        0.3
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MB",
+      "MB"
+    ],
+    "data": [
+      [
+        83.9
+      ],
+      [
+        3.8
+      ]
+    ]
+  }
+}

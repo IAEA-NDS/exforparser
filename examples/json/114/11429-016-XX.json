@@ -1,0 +1,91 @@
+{
+  "id": "11429016XX",
+  "reaction": {
+    "x4code": "(46-PD-110(N,G)46-PD-111,,SIG)",
+    "target": "46-PD-110",
+    "process": "N,G",
+    "sf4": "46-PD-111",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "DECAY-DATA": {
+      "XX": {
+        "0": {
+          "x4code": [
+            "(46-PD-111-G,22.MIN)"
+          ],
+          "freetext": [
+            ""
+          ]
+        }
+      }
+    }
+  },
+  "common_data": {
+    "heads": [
+      "EN",
+      "EN-RSL",
+      "MONIT1",
+      "MONIT1-ERR",
+      "EN-NRM2",
+      "MONIT2",
+      "MONIT2-ERR",
+      "EN-NRM3"
+    ],
+    "units": [
+      "KEV",
+      "KEV",
+      "MB",
+      "MB",
+      "EV",
+      "B",
+      "B",
+      "EV"
+    ],
+    "data": [
+      [
+        24.0
+      ],
+      [
+        5.0
+      ],
+      [
+        820.0
+      ],
+      [
+        60.0
+      ],
+      [
+        0.0253
+      ],
+      [
+        5.5
+      ],
+      [
+        0.5
+      ],
+      [
+        0.0253
+      ]
+    ]
+  },
+  "data_table": {
+    "heads": [
+      "DATA-MIN"
+    ],
+    "units": [
+      "B"
+    ],
+    "data": [
+      [
+        0.3
+      ]
+    ]
+  }
+}

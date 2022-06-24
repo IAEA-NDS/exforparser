@@ -1,0 +1,51 @@
+{
+  "id": "11028017XX",
+  "reaction": {
+    "x4code": "(53-I-127(N,G)53-I-128,,SIG)",
+    "target": "53-I-127",
+    "process": "N,G",
+    "sf4": "53-I-128",
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": []
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            "USED G=1.000."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "DATA-ERR"
+    ],
+    "units": [
+      "MEV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        2.53e-08
+      ],
+      [
+        6.22
+      ],
+      [
+        0.15
+      ]
+    ]
+  }
+}

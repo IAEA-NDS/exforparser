@@ -1,0 +1,67 @@
+{
+  "id": "20105004XX",
+  "reaction": {
+    "x4code": "(5-B-0(N,A),,SIG)",
+    "target": "5-B-0",
+    "process": "N,A",
+    "sf4": null,
+    "residual": null,
+    "sf5": null,
+    "sf6": "SIG",
+    "sf7": null,
+    "sf8": null,
+    "sf9": null,
+    "freetext": [
+      " ABSORPTION CROSS SECTION."
+    ]
+  },
+  "measurement_conditions": {
+    "ANALYSIS": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".THE TOTAL CROSS-SECTION MEASURED FROM",
+            " 0.005 TO 0.1 EV.  ABSORPTION CROSS-SECTION DEDUCED BY",
+            " SUBTRACTION OF CONSTANT SCATTERING CROSS-SECTION",
+            " OF 21 B. 1/V FITTING TO THE ABSORPTION CROSS-SECTION",
+            " YIELDED THE THERMAL ABSORPTION CROSS-SECTION."
+          ]
+        }
+      }
+    },
+    "SAMPLE": {
+      "XX": {
+        "0": {
+          "freetext": [
+            ".SOLUTION OF B2O3 IN D2O IN QUARTZ CONTAINER",
+            " OF THICKNESS 2 CM."
+          ]
+        }
+      }
+    }
+  },
+  "common_data": null,
+  "data_table": {
+    "heads": [
+      "EN",
+      "DATA",
+      "ERR-T"
+    ],
+    "units": [
+      "EV",
+      "B",
+      "B"
+    ],
+    "data": [
+      [
+        0.0253
+      ],
+      [
+        759.1
+      ],
+      [
+        2.0
+      ]
+    ]
+  }
+}
