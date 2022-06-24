@@ -363,10 +363,10 @@ def convert_single(entnum=None, s=None, pointer=None):
 if __name__ == "__main__":
     """update dictionary"""
     ## get latest dictionary from NDS website
-    # latest = download_latest_dict()
+    latest = download_latest_dict()
 
     ## save diction in separate json files
-    # parse_dictionary(latest)
+    parse_dictionary(latest)
 
     """ flush converted files if neccessary """
     # del_outputs("json")
@@ -374,7 +374,6 @@ if __name__ == "__main__":
     """ read entry number index from pickel """
     # ent = list_entries()
     # entries = random.sample(ent, len(ent))
-    # entries = good_example_entries
 
     ## convert bib data only
     # convert_bib(entries)
@@ -389,11 +388,9 @@ if __name__ == "__main__":
     """ convert selected entries from reaction_index """
     df_reaction = pd.read_pickle(REACTION_INDEX_PICKLE)
 
-    # entry = "12515"
-    # target = "41-Nb-93"
+    '''
     target = "79-AU-197"
     process = "N,G"
-    # process = "N,F"
     sf4 = "MASS"
     quantity = "SIG"
     sf8 = ["RES", "RTE", "SDT/AV", "SDT"]
@@ -418,4 +415,5 @@ if __name__ == "__main__":
     # del_outputs("json")
     entries = df_select.entry.unique()
     convert_entries(entries)
+    '''
 

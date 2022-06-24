@@ -327,9 +327,6 @@ def main():
     specify the reaction system
     """
     # entry = "12515"
-    # target = "41-Nb-93"
-    # target = "79-AU-197"
-    # process = "N,G"
     target = "94-PU-239"
     process = "N,F"
     sf4 = "MASS"
@@ -338,7 +335,7 @@ def main():
 
     with pd.option_context("display.float_format", "{:11.3e}".format):
         df_select = df_reaction[
-            #     # (df_reaction.entry == entry )
+            # (df_reaction.entry == entry )
             (df_reaction.target == target.upper())
             & (df_reaction.process == process.upper())
             & (df_reaction.sf5.isnull())
@@ -346,7 +343,7 @@ def main():
             & (~df_reaction.sf8.isin(sf8))
             & (df_reaction.points > 0)
             & (df_reaction.sf9.isnull())
-            #     # # & (df_reaction.sf4 == sf4.upper())
+            # & (df_reaction.sf4 == sf4.upper())
         ]
         df_select = df_select.replace({np.nan:None})
 
