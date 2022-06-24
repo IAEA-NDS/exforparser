@@ -200,12 +200,12 @@ def parse_dictionary(latest):
 def conv_dictionary_tojson(diction_def, diction_num, diction) -> dict:
     diction_dict = {}
 
-    institute_df = pd.read_pickle("../pickles/institute.pickle")
+    institute_df = pd.read_pickle("pickles/institute.pickle")
     institute_df["code"] = institute_df["code"].str.rstrip()
     institute_df = institute_df.set_index("code")
     institute_dict = institute_df.to_dict(orient="index")
 
-    country_df = pd.read_pickle("../geo/country.pickle")
+    country_df = pd.read_pickle("geo/country.pickle")
     country_df = country_df.set_index("country_code")
     country_dict = country_df.to_dict(orient="index")
 
@@ -439,8 +439,9 @@ def conv_dictionary_tojson(diction_def, diction_num, diction) -> dict:
             if d[0].isalpha() or d[0].isdigit():
                 flag = d[79:80]  # obsolute or not
                 param = d[:11].rstrip()
-                param2 = d[11:22].rstrip()
-                desc = d[22:66].rstrip()
+                param2 = d[11:16].rstrip()
+                param3 = d[16:20].rstrip()
+                desc = d[20:66].rstrip()
 
             elif d.startswith(" " * 11):
                 continue
@@ -451,6 +452,7 @@ def conv_dictionary_tojson(diction_def, diction_num, diction) -> dict:
                     "x4code": param,
                     "description": desc,
                     "param2": param2,
+                    "param3": param3,
                     "active": False if flag == "O" else True,
                 }
 
