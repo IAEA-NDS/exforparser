@@ -1,7 +1,7 @@
 requests
+'pymongo[srv]'
 matplotlib
 numpy
 pandas
 plotly
 pymongo==4.1.1
-
