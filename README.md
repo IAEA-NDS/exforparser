@@ -2,7 +2,6 @@
 The repository is still under developments and not ready to use. It made
 public to share the progress between collaborators. No documents are available yet.
 
-A related parser currently under development to support WPEC SG50 can be found at : https://github.com/IAEA-NDS/exfor-parserpy
 
 ## Using exforparser
 
@@ -46,47 +45,31 @@ M06350212   M0635      021       2  2003 V.V.Varlamov   1.980e+01   2.760e+01   
 ```
 
 ### Conversion of EXFOR to JSON
-There are three ways to run the conversion.
+There are three ways to run the conversion. All converted JSON files are in [IAEA-NDS/exfor_json](https://github.com/IAEA-NDS/exfor_json) repository.
 
-1. First you need to download and extract EXFOR master file.
+1. First, you need to download EXFOR master files from [IAEA-NDS/exfor_master](https://github.com/IAEA-NDS/exfor_master) repository.
 
-2. Change the EXFOR master file path (``EXFOR_ALL_PATH``) and output path (``OUT_PATH``) in ``path.py``.
+2. Change the EXFOR master file path (``EXFOR_ALL_PATH``) and output path (``OUT_PATH``) in ``config.py``.
 
-3. Now we can make convertion from EXFOR to JSON, for instance, to convert entry number 12898 and 40467:
+3. Convert from EXFOR to JSON, for instance, for EXFOR entry number 12898 and 40467:
 
 ```
-from exparser import convert_entries
+import json
+from exparser import convert_exfor_to_json
 entries = ["12898", "40467"]
-convert_entries(entries)
-```
-
-or if you already know the entry number, subentry number, and pointer (pointer is "XX" if there is no pointer specified.) then,
-
-```
-from exparser import convert_single
-convert_single("40944", "002", "XX")
-```
-
-if you need an output as x-dx-y-dy format with minimal bib data like [EXFORTABLES](https://nds.iaea.org/talys/),
+for entry in entries:
+    entry_json = convert_exfor_to_json(entry)
+    print(json.dumps(entry_json, indent = 1))
 
 ```
-from tabulated import exfortableformat
-exfortableformat("40944", "002", "XX")
-```
 
-## Use converted data
-Some of converted data are stored in MongoDb cluster service. Please read details in [.ipynb file](https://github.com/shinokumura/exforparser/blob/main/examples/example_bib_reaction_parse.ipynb) and follow the procedure in it.
+### Future works
+More functions will come soon.
 
-1. Download the Jupyter notebook file from [here](https://raw.githubusercontent.com/shinokumura/exforparser/main/examples/example_bib_reaction_parse.ipynb) by pressing ctrl+s to save it as .ipynb (Note that you’ll have to manually type ‘.ipynb’.)
+### Related works
+[IAEA-NDS/exfor_master](https://github.com/IAEA-NDS/exfor_master)
 
-2. Run the Jupyter Notebook with the downloaded file as follows:
-```
-jupyter notebook example_bib_reaction_parse.ipynb
-```
+[IAEA-NDS/exfor_json](https://github.com/IAEA-NDS/exfor_json)
 
-If you don't have Jupyter notebook environment, you can run it from Binder from followin button.
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/shinokumura/exforparser/main?labpath=examples%2Fexample_bib_reaction_parse.ipynb)
-
-
+[IAEA-NDS/exfor_dictionary](https://github.com/IAEA-NDS/exfor_dictionary)
 

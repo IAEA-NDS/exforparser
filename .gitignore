@@ -156,6 +156,11 @@ dmypy.json
 geo/
 docker/
 plotting/
+test/
+exfor_dictionary/
+examples/
+evaluations/
+.vscode/
 pickles/*.py
 processed*.dat
 error.dat
@@ -171,5 +176,7 @@ JSONexamples/
 pypartest.py
 _trash.py
 _*
-# *.dat
-mongo_db_manager.ipynb
+invenio.py
+mongodb.py
+run.sh*.log
+tabulated.py

@@ -10,37 +10,11 @@
 #
 ####################################################################
 
-import re
-from .exfor_bib import *
-from .exfor_reaction import *
-from .exfor_data import *
-from .utilities import process_time
-import itertools
 
-# @process_time
-def chop_subentry(subent_body, sec_name):
-    """chop subent into section: BIB, COMMON, DATA"""
-    body = []
-    flag = False
-    for line in subent_body:
-        if line[0:11].strip() == "NO" + sec_name:  # if NOCOMMON etc
-            body = ["NO" + sec_name]
-
-        if line[0:11].strip() == sec_name and flag == False:
-            if re.match(r"DATA\s{10,15}", line) or sec_name == "COMMON":
-                flag = True
-            else:
-                body = [line]
-                flag = True
-
-        elif line[0:11].strip() == "END" + sec_name:
-            body += [line]
-            flag = False
-            break
-
-        if flag == True:
-            body += [line]
-    return body
+from .exfor_bib import parse_main_bib, parse_extra_bib, parse_history_bib
+from .exfor_reaction import parse_primitive_reaction, parse_reaction
+from .exfor_data import get_heads, recon_data
+from .exfor_block import get_block, parse_block_by_pointer_identifier
 
 
 """
@@ -61,64 +35,93 @@ class Subentry:
         and get detailed field data
         """
 
-    def bib_block(self) -> list:
-        return chop_subentry(self.subent_body, "BIB")
+    def get_bib_block(self) -> list:
+        return get_block(self.subent_body, "BIB")
 
-    def common_block(self) -> list:
-        return chop_subentry(self.subent_body, "COMMON")
+    def get_common_block(self) -> list:
+        return get_block(self.subent_body, "COMMON")
 
-    def data_block(self) -> list:
-        return chop_subentry(self.subent_body, "DATA")
+    def get_data_block(self) -> list:
+        return get_block(self.subent_body, "DATA")
 
-    def parse_bib_extra_dict(self) -> dict:
-        if self.bib_block() is None:
-            return "no bib"
+    def parse_bib_identifiers_dict(self) -> dict:
+        """
+        Return format
+        {
+            "DECAY-MON": {
+            "0": [
+                "(41-NB-92-M,10.15D,DG,934.4,0.9915)\n",
+                "10.15+-0.02 d, (99.15+-0.04)%\n"
+                ]
+            },
+            "STATUS": {
+            "0": [
+                "(TABLE) Table on page 32 in R,INDC(CCP)-0460,2016\n",
+                "                 This Subent supersedes 41240.004 data.\n"
+                ]
+            }
+        }
+        """
+        return parse_block_by_pointer_identifier(self.get_bib_block()[1:])
+
+    def parse_main_bib_dict(self) -> dict:
+        if self.get_bib_block() is None and self.subentnum != "001":
+            return None
         else:
-            return bib_extra_dict(self.bib_block())
+            return parse_main_bib(self.parse_bib_identifiers_dict())
+
+    def parse_main_history_dict(self) -> dict:
+        if self.get_bib_block() is None and self.subentnum != "001":
+            return None
+        else:
+            return parse_history_bib(self.parse_bib_identifiers_dict())
+
+    def parse_extra_bib_dict(self) -> dict:
+        if self.get_bib_block() is None:
+            return None
+        else:
+            return parse_extra_bib(self.parse_bib_identifiers_dict())
+
+    def parse_primitive_reaction_flat(self):
+        reaction_field = self.parse_bib_identifiers_dict().get("REACTION")
+        if reaction_field:
+            return parse_primitive_reaction()
+
+    def parse_reaction_dict(self) -> dict:
+        """
+        Return format  {pointer: {children{x4_code:"", 0: {"code":code, "target": target}}
+        """
+        reaction_field = self.parse_bib_identifiers_dict().get("REACTION")
+
+        if reaction_field:
+            return parse_reaction(reaction_field)
+
+        else:
+            return None
 
     def parse_data_heads(self) -> dict:
         if self.subentnum == "001":
             return None
-        elif self.data_block()[0] == "NODATA":
+        elif self.get_data_block()[0] == "NODATA":
             return None
         else:
-            return get_heads(self.data_block())
+            return get_heads(self.get_data_block())
 
     def parse_data(self) -> dict:
-        if self.subentnum == "001":
+        if self.get_data_block()[0] == "NODATA":
             return None
-        elif self.data_block()[0] == "NODATA":
-            return None
+
         else:
-            return recon_data(self.data_block())
+            return recon_data(self.get_data_block())
 
     def parse_common_heads(self) -> dict:
-        if self.common_block()[0] == "NOCOMMON":
+        if self.get_common_block()[0] == "NOCOMMON":
             return None
         else:
-            return get_heads(self.common_block())
+            return get_heads(self.get_common_block())
 
     def parse_common(self) -> dict:
-        if self.common_block()[0] == "NOCOMMON":
+        if self.get_common_block()[0] == "NOCOMMON":
             return None
         else:
-            return recon_data(self.common_block())
-
-    def parse_reaction(self) -> dict:
-        reaction_field = parse_reaction_field(self.subent_body)
-
-        return get_reaction(reaction_field)
-
-
-class MainSubentry(Subentry):
-    def __init__(self, subentnum, subent_body):
-        super().__init__("001", subent_body)
-        self.subentnum = "001"
-        self.main_bib_dict = self.parse_main_bib_dict()
-        # self.main_mesurement_condition_dict = self.parse_bib_extra_dict()
-
-    def parse_main_bib_dict(self) -> dict:
-        if self.bib_block is None and self.subentnum != "001":
-            pass
-        else:
-            return main_bib_dict(self.bib_block())
+            return recon_data(self.get_common_block())

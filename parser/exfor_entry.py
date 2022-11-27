@@ -14,8 +14,9 @@ import os
 import sys
 
 sys.path.append("../")
-from path import EXFOR_ALL_PATH
-from .exfor_subentry import Subentry, MainSubentry
+from config import EXFOR_ALL_PATH
+from .exfor_subentry import Subentry
+from .exfor_block import get_block
 
 
 def open_read_file(filename=""):
@@ -26,27 +27,9 @@ def open_read_file(filename=""):
     from parser.exceptions import x4FileOpenError
 
     try:
-        with open(filename, "r") as f:
+        with open(filename, "rU") as f:
             # entry_body = f.readlines()
-            return f.readlines()  # as entry_body
-    except:
-        raise x4FileOpenError()
-
-
-def open_read_file_line(filename=""):
-    """
-    separate and convert all subentries into dictionary
-    """
-    # filename = self.generate_x4filename()
-    from parser.exceptions import x4FileOpenError
-
-    try:
-        with open(filename, "r") as f:
-            lines = []
-            # entry_body = f.readlines()
-            for line in f:
-                lines += [line]
-            return lines
+            return f.read().splitlines()  # as entry_body
     except:
         raise x4FileOpenError()
 
@@ -92,8 +75,6 @@ class Entry:
 
     def get_entry_exfor(self) -> dict:
         """return as EXFOR format"""
-        from parser.exceptions import x4NoBody
-
         return open_read_file(
             self.x4filename
         )  # contenain entry body as list of each line
@@ -127,6 +108,8 @@ class Entry:
                 entry_body[subent_num] = subentry
                 subentry = ""
 
+            # entry_body["date"] = {"created_date":created_date, "last_update":last_update}
+
         return dict(entry_body)
 
     def get_subent_nums(self) -> list:
@@ -137,18 +120,55 @@ class Entry:
         """
         return list(self.entry_body.keys())
 
+    def get_dates(self):
+        return list(self.entry_body.keys())
+
     def get_entry_bib_dict(self) -> dict:
-        main = MainSubentry("001", self.entry_body["001"])
-        dict = main.main_bib_dict
+        """
+        SUBENT:  015
+        REACTION   (56-BA-137(N,G)56-BA-138,,SIG,,AV)
+        ERR-ANALYS (DATA-ERR) No information on the source of uncertainty
+        STATUS     (TABLE) Table VI of 1978HARWELL,449,1978.
+                    Values have been multiplied by 0.9833.
+        HISTORY    (19760428R) Prelim. data from Musgrove (up to 60 keV)
+                (19790606A) KO. Alteration and addition of data.
+                (19810213U) KO. Reference added.
+                (19821210A) DG. The values have been corrected,
+                    insertion of corrigendum in reference, conversion
+                    from ISO-QUANT to REACTION formalism.
+        ENDBIB              10
+        ---> convert into following dictionary format
+        {
+        "REACTION": {
+        "0": [
+        "(56-BA-137(N,G)56-BA-138,,SIG,,AV)"
+        ]
+        },
+        "ERR-ANALYS": {
+        "0": [
+        "(DATA-ERR) No information on the source of uncertainty"
+        ]
+        },
+        "STATUS": {
+        "0": [
+        "(TABLE) Table VI of 1978HARWELL,449,1978.",
+        " Values have been multiplied by 0.9833."
+        ]
+        },
+        "HISTORY": {
+        "0": [
+        "(19760428R) Prelim. data from Musgrove (up to 60 keV)",
+        "(19790606A) KO. Alteration and addition of data.",
+        "(19810213U) KO. Reference added.",
+        "(19821210A) DG. The values have been corrected,",
+        " insertion of corrigendum in reference, conversion",
+        " from ISO-QUANT to REACTION formalism."
+        ]
+        }
+        }
+        """
 
-        ## add number and reactions into dict
-        dict["entry_number"] = self.entnum
-        dict["reactions"] = self.get_reactions()
-        return dict
-
-    def get_entry_common_dict(self) -> dict:
-        main = MainSubentry("001", self.entry_body["001"])
-        return main.main_common_dict
+        return get_block(self.entry_body["001"][1:-1], "BIB")
 
     def get_reactions(self) -> dict:
         reactions = {}

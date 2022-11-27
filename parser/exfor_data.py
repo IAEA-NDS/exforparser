@@ -9,11 +9,16 @@
 # Contact:    nds.contact-point@iaea.org
 #
 ####################################################################
-
+import sys
 from pyparsing import *
-from .exfor_field import *
-from .utilities import corr, flatten_list, ztoelem, numtoisomer, process_time
-from dictionary.exfor_dictionary import Diction
+
+from .exfor_field import data_header
+from utilities.utilities import corr, flatten_list
+from utilities.elem import ztoelem, numtoisomer
+
+# from dictionary.exfor_dictionary import Diction
+# sys.path.append("../exfor_dictionary/")
+from exfor_dictionary.exfor_dictionary import Diction
 
 
 def data_column_read(line):
@@ -28,20 +33,20 @@ def get_heads(data_block) -> dict:
     header = {}
     data_block_num = ""
 
-    """ read column and data lengthes from DATA section"""
-    data_block_num = "".join(data_block[0]).split()
+    ## read column and data lengthes from DATA section
+    data_block_num = data_block[0].split()
     head_len = int(data_block_num[1])
 
-    """ swich: whether the line break exists or not """
+    ## swich: whether the line break exists or not
     if head_len <= 6:
-        """header"""
-        parsed = data_header.searchString(data_block[1])
+        ## head
+        parsed = data_header.search_string(data_block[1])
         parsed = [[i.strip() for i in parsed[0]]]
         header["heads"] = list(flatten_list(parsed))
         parsed = []
 
-        """ unit """
-        parsed = data_header.searchString(data_block[2])
+        ## unit
+        parsed = data_header.search_string(data_block[2])
         parsed = [[i.strip() for i in parsed[0]]]
         header["units"] = list(flatten_list(parsed))
 
@@ -50,19 +55,18 @@ def get_heads(data_block) -> dict:
         heads = []
         units = []
 
-        # print(head_rows, head_len, data_len)
-        """ header """
+        ## header
         for d in data_block[1 : head_rows + 1]:
-            parsed = data_header.searchString(d)
+            parsed = data_header.search_string(d)
             parsed = [[i.strip() for i in parsed[0]]]
             header["heads"] = list(flatten_list(parsed))
             heads += list(flatten_list(parsed))
 
         header["heads"] = heads
 
-        """ unit """
+        ## unit
         for d in data_block[head_rows + 1 : head_rows * 2 + 1]:
-            parsed = data_header.searchString(d)
+            parsed = data_header.search_string(d)
             parsed = [[i.strip() for i in parsed[0]]]
             units += list(flatten_list(parsed))
 
@@ -71,40 +75,39 @@ def get_heads(data_block) -> dict:
     return header
 
 
-# @process_time
 def recon_data(data_block):
     header = {}
     datatable = []
     data_block_num = ""
 
-    """ read column and data lengthes from DATA section"""
+    ##  read column and data lengthes from DATA section
     data_block_num = "".join(data_block[0]).split()
     head_len = int(data_block_num[1])
     data_len = int(data_block_num[2])
 
-    """ swich the process whether the line break exists or not """
+    ## swich the process whether the line break exists or not
     if head_len <= 6:
-        """header"""
-        parsed = data_header.searchString(data_block[1])
+        ## header
+        parsed = data_header.search_string(data_block[1])
         parsed = [[i.strip() for i in parsed[0]]]
         header["heads"] = list(flatten_list(parsed))
         parsed = []
 
-        """ unit """
-        parsed = data_header.searchString(data_block[2])
+        ## unit
+        parsed = data_header.search_string(data_block[2])
         parsed = [[i.strip() for i in parsed[0]]]
         header["units"] = list(flatten_list(parsed))
 
-        """ data read"""
+        ## data read
         for d in data_block[3:]:
             if d.startswith("END"):
-                """lazy to check final row"""
+                ## lazy to check final row
                 continue
             else:
                 d = d.strip("\n")
                 parsed = [data_column_read(d)]
 
-            """ remove unnesessary space in the data column"""
+            ## remove unnesessary space in the data column
             striped = [i.replace(" ", "") for i in parsed[0]]
             correct = [corr(i) for i in striped]
             datatable += [correct[0:head_len]]
@@ -115,25 +118,24 @@ def recon_data(data_block):
         units = []
         datatable = []
 
-        # print(head_rows, head_len, data_len)
-        """ header """
+        ## header
         for d in data_block[1 : head_rows + 1]:
-            parsed = data_header.searchString(d)
+            parsed = data_header.search_string(d)
             parsed = [[i.strip() for i in parsed[0]]]
             header["heads"] = list(flatten_list(parsed))
             heads += list(flatten_list(parsed))
 
         header["heads"] = heads
 
-        """ unit """
+        ## unit
         for d in data_block[head_rows + 1 : head_rows * 2 + 1]:
-            parsed = data_header.searchString(d)
+            parsed = data_header.search_string(d)
             parsed = [[i.strip() for i in parsed[0]]]
             units += list(flatten_list(parsed))
 
         header["units"] = units
 
-        """ data read """
+        ## data read
         first_drow = head_rows * 2 + 1
         end_drow = data_len * head_rows + first_drow
 
@@ -167,11 +169,6 @@ def recon_data(data_block):
                 dataline = []
                 continue
 
-    # transpose = {
-    #     "data": {
-    #         str(i): [float(corr(row[i])) if row[i] != "" else None for row in datatable]
-    #         for i in range(head_len)
-    #     }
     transpose = {
         "data": [
             [float(corr(row[i])) if row[i] != "" else None for row in datatable]
@@ -234,6 +231,7 @@ def get_product_column(main, sub, head):
 
     if head == "CHARGE":
         y = "ELEMENT"
+
     else:
         y = head
 
@@ -251,34 +249,32 @@ def get_product_column(main, sub, head):
             except:
                 index = None
 
-    if not index is None:
+    if index is not None:
         if head == "ELEMENT":
             data_list = [
-                ztoelem(int(float(m)))
-                for m in datasec["data"][str(index)]
-                if not m is None
+                ztoelem(int(float(m))) for m in datasec["data"][index] if not m is None
             ]
 
         elif head == "CHARGE":
             data_list = [
-                str(int(float(m))) for m in datasec["data"][str(index)] if not m is None
+                str(int(float(m))) for m in datasec["data"][index] if not m is None
             ]
 
         elif head == "ISOMER":
             data_list = [
                 numtoisomer(int(float(m)))
-                for m in datasec["data"][str(index)]
+                for m in datasec["data"][index]
                 if not m is None
             ]
 
         elif head == "MASS":
             data_list = [
-                str(int(float(m))) for m in datasec["data"][str(index)] if not m is None
+                str(int(float(m))) for m in datasec["data"][index] if not m is None
             ]
 
         else:
             data_list = [
-                str(int(float(m))) for m in datasec["data"][str(index)] if not m is None
+                str(int(float(m))) for m in datasec["data"][index] if not m is None
             ]
 
     return data_list
@@ -286,6 +282,7 @@ def get_product_column(main, sub, head):
 
 def product_expansion(main, sub, reac_dic=None):
     reac_set = []
+    # print(reac_dic)
     """
     product exceptions
     """
@@ -368,6 +365,7 @@ d = Diction()
 ## get possible heading list
 x_heads = d.get_incident_en_heads()
 
+
 # @process_time
 def get_inc_energy(main=None, sub=None):
     ## no need to take pointer or flag into account
@@ -386,15 +384,11 @@ def get_inc_energy(main=None, sub=None):
     if data_dict and locs:
         ## this is missleading if there are EN-MIN     EN-MAX     EN-MEAN such like in 22356002
         en = {
-            "min": min(
-                float(x) for x in data_dict["data"][str(locs[0])] if x is not None
-            )
+            "min": min(float(x) for x in data_dict["data"][locs[0]] if x is not None)
             * factor,
-            "max": max(
-                float(x) for x in data_dict["data"][str(locs[0])] if x is not None
-            )
+            "max": max(float(x) for x in data_dict["data"][locs[0]] if x is not None)
             * factor,
-            "points": int(len(data_dict["data"][str(locs[0])])),
+            "points": int(len(data_dict["data"][locs[0]])),
         }
         assert en["min"] <= en["max"]
     else:

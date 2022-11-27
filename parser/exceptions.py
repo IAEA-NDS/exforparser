@@ -10,8 +10,6 @@
 #
 ####################################################################
 
-from path import EXFOR_ALL_PATH
-
 
 class Incorrectx4Number:
     def __init__(self, value=""):
@@ -45,7 +43,5 @@ class Nox4FilesExistenceError:
 
 class x4FileOpenError:
     def __init__(self, value=""):
-        self.value = (
-            "Entry file " + repr(value) + " cannot be opened from" + EXFOR_ALL_PATH
-        )
+        self.value = "Entry file " + repr(value) + " cannot be opened"
         raise IOError(self.value)
