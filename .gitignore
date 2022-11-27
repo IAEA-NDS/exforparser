@@ -160,6 +160,7 @@ test/
 exfor_dictionary/
 examples/
 evaluations/
+utilities/levels/
 .vscode/
 pickles/*.py
 processed*.dat
