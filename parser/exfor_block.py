@@ -70,7 +70,7 @@ def parse_block_by_pointer_identifier(block_body) -> dict:
             else:
                 ## For the identifiers of second and the subsequents
                 ## finalize the last identifier and initialize for the next
-                identifier_dict[pointer] = body
+                identifier_dict[str(pointer)] = body
                 block_dict[identifier] = identifier_dict
 
                 ## clear previous identifier
@@ -95,7 +95,7 @@ def parse_block_by_pointer_identifier(block_body) -> dict:
                 if line[10:11] != pointer:
 
                     ## finalize the last identifier with pointer, and initialize next
-                    identifier_dict[pointer] = body
+                    identifier_dict[str(pointer)] = body
                     body = []
 
                     ## assign new pointer

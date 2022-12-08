@@ -73,23 +73,24 @@ def parse_reaction(reaction_field) -> dict:
             try:
                 reaction_info = {
                     "x4_code": x4_code,
-                    0: {"code": b[0][0][0], "type": b[0][0][1]},
-                    1: {"code": b[0][0][2], "type": b[0][0][1]},
-                    2: {"code": b[0][2][0], "type": b[0][2][1]},
-                    3: {"code": b[0][2][2], "type": b[0][2][1]},
+                    "children" :
+                    [{"code": b[0][0][0], "type": b[0][0][1]},
+                     {"code": b[0][0][2], "type": b[0][0][1]},
+                     {"code": b[0][2][0], "type": b[0][2][1]},
+                     {"code": b[0][2][2], "type": b[0][2][1]}],
                     "type": b[0][1],
                     "free_text": free_text,
                 }
 
-                reaction_info[0].update(get_details(b[0][0][0]))
-                reaction_info[1].update(get_details(b[0][0][2]))
-                reaction_info[2].update(get_details(b[0][2][0]))
-                reaction_info[3].update(get_details(b[0][2][2]))
+                reaction_info["children"][0].update(get_details(b[0][0][0]))
+                reaction_info["children"][1].update(get_details(b[0][0][2]))
+                reaction_info["children"][2].update(get_details(b[0][2][0]))
+                reaction_info["children"][3].update(get_details(b[0][2][2]))
 
             except:
                 reaction_info = {
                     "x4_code": x4_code,
-                    0: {"code": b[0], "type": None},
+                    # "children" : {"code": b[0], "type": None},
                     "type": "?",
                     "free_text": free_text,
                 }
@@ -98,18 +99,19 @@ def parse_reaction(reaction_field) -> dict:
             try:
                 reaction_info = {
                     "x4_code": x4_code,
-                    0: {"code": b[0][0], "type": None},
-                    1: {"code": b[0][2], "type": None},
+                    "children" :
+                        [{"code": b[0][0], "type": None},
+                        {"code": b[0][2], "type": None}],
                     "type": b[0][1],
                     "free_text": free_text,
                 }
-                reaction_info[0].update(get_details(b[0][0]))
-                reaction_info[1].update(get_details(b[0][2]))
+                reaction_info["children"][0].update(get_details(b[0][0]))
+                reaction_info["children"][1].update(get_details(b[0][2]))
 
             except:
                 reaction_info = {
                     "x4_code": x4_code,
-                    0: {"code": b[0], "type": None},
+                    # "children" : [{"code": b[0], "type": None}],
                     "type": "/",
                     "free_text": free_text,
                 }
@@ -117,11 +119,12 @@ def parse_reaction(reaction_field) -> dict:
         else:
             reaction_info = {
                 "x4_code": x4_code,
-                0: {"code": b[0], "type": None},
+                "children" :
+                    [{"code": b[0], "type": None}],
                 "type": None,
                 "free_text": free_text,
             }
-            reaction_info[0].update(get_details(b[0]))
+            reaction_info["children"][0].update(get_details(b[0]))
 
         dict[pointer] = reaction_info
 

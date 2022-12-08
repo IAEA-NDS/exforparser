@@ -8,6 +8,13 @@ sys.path.append("../")
 from config import OUT_PATH, EXFOR_MASTER_REPO_PATH
 
 
+def slices(s, *args):
+    position = 0
+    for length in args:
+        yield s[position : position + length]
+        position += length
+
+
 def del_outputs(name):
 
     path = os.path.join(OUT_PATH, name)

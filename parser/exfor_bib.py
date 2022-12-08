@@ -58,7 +58,7 @@ def correct_pub_year(ref):
 
 
 def parse_history_bib(bib_block) -> dict:
-    return get_identifier_details(bib_block["HISTORY"][0])
+    return get_identifier_details(bib_block["HISTORY"]["0"])
 
 
 def parse_main_bib(bib_block) -> dict:
@@ -90,7 +90,7 @@ def parse_main_bib(bib_block) -> dict:
             if identifier == "TITLE":
                 title = " ".join(indentifier_body).replace("  ", " ")
                 bib_dict["title"] = title
-
+# 
             elif identifier == "AUTHOR":
                 authors = "".join(indentifier_body)[1:-1].split(",")
 
