@@ -161,6 +161,7 @@ exfor_dictionary/
 examples/
 evaluations/
 utilities/levels/
+utilities/levels_json/
 .vscode/
 pickles/*.py
 processed*.dat
@@ -179,5 +180,11 @@ _trash.py
 _*
 invenio.py
 mongodb.py
-run.sh*.log
-tabulated.py
+run.sh*
+*.log
+old*
+indexing.py
+sqldb.py
+*.xlsxexfor_dictionary
+utilities/ripl3_descretelevel.py
+utilities/ripl3_mass.py
