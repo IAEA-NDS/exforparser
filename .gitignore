@@ -185,6 +185,4 @@ run.sh*
 old*
 indexing.py
 sqldb.py
-*.xlsxexfor_dictionary
-utilities/ripl3_descretelevel.py
-utilities/ripl3_mass.py
+*.xls

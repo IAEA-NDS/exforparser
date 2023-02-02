@@ -19,6 +19,7 @@ import logging
 
 logging.basicConfig(filename="parsing.log", level=logging.DEBUG, filemode="w")
 
+
 from config import TO_JSON, POST_DB, OUT_PATH, REACTION_INDEX_PICKLE
 from utilities.operation_util import del_outputs, print_time, get_entry_update_date
 from parser.list_x4files import good_example_entries, list_entries_from_df
@@ -28,6 +29,7 @@ from mongodb import post_one_mongodb, post_many_mongodb
 from indexing import reaction_indexing
 
 
+## get update data from git commit and store info to Python dictionary
 update_date = get_entry_update_date()
 
 
@@ -60,17 +62,16 @@ def convert_exfor_to_json(entnum=None):
     entry_json["entry"] = entnum
     entry_json["last_updated"] = update_date[entnum]["last_update"]
     entry_json["number_of_revisions"] = update_date[entnum]["revisions"]
-    entry_json["histories"] = sub.parse_main_history_dict()
-    # try:
-    #     entry_json["histories"] = sub.parse_main_history_dict()
-    # except:
-    #     entry_json["histories"] = []
+    # entry_json["histories"] = sub.parse_main_history_dict()
+    try:
+        entry_json["histories"] = sub.parse_main_history_dict()
+    except:
+        entry_json["histories"] = []
 
     entry_json["bib_record"] = sub.parse_main_bib_dict()
-
+    entry_json["reactions"] = {}
     entry_json["data_tables"] = {}
     entry_json["experimental_conditions"] = {}
-
 
     for subent in entry.subents_nums:
         sub = Subentry(subent, entry.entry_body[subent])
@@ -87,13 +88,12 @@ def convert_exfor_to_json(entnum=None):
         ## Check BIB
         # print( json.dumps(sub.parse_bib_identifiers(), indent=1))
 
-
         # Extra information from BIB
         entry_json["experimental_conditions"][subent] = sub.parse_extra_bib_dict()
 
         ## REACTION
         if subent != "001":
-            entry_json["data_tables"][subent]["reaction"] = sub.parse_reaction_dict()
+            entry_json["reactions"][subent] = sub.parse_reaction_dict()
 
         ## COMMON
         entry_json["data_tables"][subent]["common"] = sub.parse_common()
@@ -102,20 +102,21 @@ def convert_exfor_to_json(entnum=None):
         if subent != "001":
             entry_json["data_tables"][subent]["data"] = sub.parse_data()
 
+    # write_dict_to_json(entnum, entry_json)
+
     return entry_json
 
 
+## convert back from JSON to EXFOR
 def convert_json_to_exfor(entry_json):
-    
+
     pass
-
-
 
 
 def main():
     ent = list_entries_from_df()
     entries = random.sample(ent, len(ent))
-    # entries = good_example_entries
+    entries = good_example_entries
     # entries = [
     #     "14545" ,"14745" , "14537", "10963", "40396", "C0380", "M0450", "O0529","C2152", "D4030", "14606", "30501", "14606","20010","30328"]
 
@@ -133,7 +134,7 @@ def main():
         try:
             entry_json = convert_exfor_to_json(entnum)
             write_dict_to_json(entnum, entry_json)
-            post_one_mongodb("exfor_json", entry_json)
+            # post_one_mongodb("exfor_json", entry_json)
         #     # reaction_indexing(e)
 
         except:

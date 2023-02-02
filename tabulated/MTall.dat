@@ -1,0 +1,138 @@
+#MT        Reaction             SF3            SF5-8            comment
+1           (n,total)           TOT
+2           (n,elas.)           EL 
+3           (n,nonelas.)        NON
+4           (n,inelas.)         INL
+4           (z,one N)           N
+5           (n,X)               X
+10          (n,contin.)         X              CON,SIG
+11          (n,2nd)             2N+D
+#12          Unassigned.
+#13          Unassigned. 
+#14          Unassigned. 
+#15          Unassigned. 
+16          (n,2n)              2N   
+17          (n,3n)              3N   
+18          (n,f)               F    
+19          (n,0f)              FIS                             first chance
+20          (n,nf)              N+F                             2nd chance
+21          (n,2nf)             2N+F                            3rd chance
+38          (n,3nf)             3N+F                            4th chance 
+22          (n,na)              N+A 
+23          (n,n3a)             N+3A
+24          (n,2na)             2N+A
+25          (n,3na)             3N+A
+27          (n,abs)             ABS
+28          (n,np)              N+P
+29          (n,n2a)             N+2A
+30          (n,2n2a)            2N+2A
+32          (n,nd)              N+D
+33          (n,nt)              N+T
+34          (n,nh)              N+H
+35          (n,nd2a)            N+D+2A
+36          (n,nt2a)            N+T+2A
+37          (n,4n)              4N
+41          (n,2np)             2N+P
+42          (n,3np)             3N+P
+#43          (Unassigned)        -
+44          (n,n2p)             N+2P
+45          (n,npa)             N+P+A
+50          (n,n0)              INL            PAR,SIG
+51          (n,n1)              INL            PAR,SIG
+52          (n,n2)              INL            PAR,SIG
+53          (n,n3)              INL            PAR,SIG
+54          (n,n4)              INL            PAR,SIG
+55          (n,n5)              INL            PAR,SIG
+56          (n,n6)              INL            PAR,SIG
+57          (n,n7)              INL            PAR,SIG
+58          (n,n8)              INL            PAR,SIG
+59          (n,n9)              INL            PAR,SIG
+60          (n,n10)             INL            PAR,SIG
+61          (n,n11)             INL            PAR,SIG
+62          (n,n12)             INL            PAR,SIG
+63          (n,n13)             INL            PAR,SIG
+64          (n,n14)             INL            PAR,SIG
+65          (n,n15)             INL            PAR,SIG
+66          (n,n16)             INL            PAR,SIG
+67          (n,n17)             INL            PAR,SIG
+68          (n,n18)             INL            PAR,SIG
+69          (n,n19)             INL            PAR,SIG
+70          (n,n20)             INL            PAR,SIG
+#91          (n,nc)              -
+#92-100      (Unassigned)        -
+#101         (n,disap)           -
+102         (n,g)               G
+103         (n,p)               P
+104         (n,d)               D
+105         (n,t)               T
+106         (n,h)               HE3
+107         (n,a)               A
+108         (n,2a)              2A
+109         (n,3a)              3A
+#110         (Unassigned)        -
+111         (n,2p)              2P
+112         (n,pa)              P+A
+113         (n,t2a)             T+2A
+114         (n,d2a)             D+2A
+115         (n,pd)              P+D
+116         (n,pt)              P+T
+117         (n,da)              D+A
+#118-119     (Unassigned)        -
+#121-150     (Unassigned)        -
+151         (n,RES)             -
+152         (n,5n)              5N
+153         (n,6n)              6N
+154         (n,2nt)             2N+T
+155         (n,ta)              T+A
+156         (n,4np)             4N+P
+157         (n,3nd)             3N+D
+158         (n,n'da)            N+D+A
+159         (n,2npa)            2N+P+A
+160         (n,7n)              7N
+161         (n,8n)              8N
+162         (n,5np)             5N+P
+163         (n,6np)             6N+P
+164         (n,7np)             7N+P
+165         (n,4na)             4N+A
+166         (n,5na)             5N+A
+167         (n,6na)             6N+A
+168         (n,7na)             7N+A
+169         (n,4nd)             4N+D
+170         (n,5nd)             5N+D
+171         (n,6nd)             6N+D
+172         (n,3nt)             3N+T
+173         (n,4nt)             4N+T
+174         (n,5nt)             5N+T
+175         (n,6nt)             6N+T
+176         (n,2nh)             2N+HE3
+177         (n,3nh)             3N+HE3
+178         (n,4nh)             4N+HE3
+179         (n,3n2p)            3N+2P
+180         (n,3n2a)            3N+2
+181         (n,3npa)            3N+P+A
+182         (n,dt)              D+T
+183         (n,n'pd)            N+P+D
+184         (n,n'pt)            N+P+T
+185         (n,n'dt)            N+D+T
+186         (n,n'ph)            N+P+HE3
+187         (n,n'dh)            N+D+HE3
+188         (n,n'th)            N+T+HE3
+189         (n,n'ta)            N+T+A
+190         (n,2n2p)            2N+2P
+191         (n,ph)              P+HE3
+192         (n,dh)              D+HE
+193         (n,ha)              HE+A
+194         (n,4n2p)            4N+2P
+195         (n,4n2a)            4N+2a 
+196         (n,4npa)            4N+P+A
+197         (n,3p)              3P
+198         (n,n'3p)            N+3P
+199         (n,3n2pa)           3N+2P+A
+200         (n,5n2p)            5N+2P
+201         (n,Xn)              XN
+202         (n,Xg)              XG
+203         (n,Xp)              XP
+204         (n,Xd)              XD
+205         (n,Xt)              XD
+206         (n,Xh)              XHE3
+207         (n,Xa)              XA

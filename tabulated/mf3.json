@@ -1,0 +1,512 @@
+{
+ "TOT": {
+  "mt": "1",
+  "reaction": "(n,total)",
+  "sf5-8": null
+ },
+ "EL": {
+  "mt": "2",
+  "reaction": "(n,elas.)",
+  "sf5-8": null
+ },
+ "NON": {
+  "mt": "3",
+  "reaction": "(n,nonelas.)",
+  "sf5-8": null
+ },
+ "INL": {
+  "mt": "70",
+  "reaction": "(n,n20)",
+  "sf5-8": "PAR,SIG"
+ },
+ "X": {
+  "mt": "10",
+  "reaction": "(n,contin.)",
+  "sf5-8": "CON,SIG"
+ },
+ "2N+D": {
+  "mt": "11",
+  "reaction": "(n,2nd)",
+  "sf5-8": null
+ },
+ "2N": {
+  "mt": "16",
+  "reaction": "(n,2n)",
+  "sf5-8": null
+ },
+ "3N": {
+  "mt": "17",
+  "reaction": "(n,3n)",
+  "sf5-8": null
+ },
+ "F": {
+  "mt": "18",
+  "reaction": "(n,f)",
+  "sf5-8": null
+ },
+ "FIS": {
+  "mt": "19",
+  "reaction": "(n,0f)",
+  "sf5-8": "first"
+ },
+ "N+F": {
+  "mt": "20",
+  "reaction": "(n,nf)",
+  "sf5-8": "2nd"
+ },
+ "2N+F": {
+  "mt": "21",
+  "reaction": "(n,2nf)",
+  "sf5-8": "3rd"
+ },
+ "3N+F": {
+  "mt": "38",
+  "reaction": "(n,3nf)",
+  "sf5-8": "4th"
+ },
+ "N+A": {
+  "mt": "22",
+  "reaction": "(n,na)",
+  "sf5-8": null
+ },
+ "N+3A": {
+  "mt": "23",
+  "reaction": "(n,n3a)",
+  "sf5-8": null
+ },
+ "2N+A": {
+  "mt": "24",
+  "reaction": "(n,2na)",
+  "sf5-8": null
+ },
+ "3N+A": {
+  "mt": "25",
+  "reaction": "(n,3na)",
+  "sf5-8": null
+ },
+ "ABS": {
+  "mt": "27",
+  "reaction": "(n,abs)",
+  "sf5-8": null
+ },
+ "N+P": {
+  "mt": "28",
+  "reaction": "(n,np)",
+  "sf5-8": null
+ },
+ "N+2A": {
+  "mt": "29",
+  "reaction": "(n,n2a)",
+  "sf5-8": null
+ },
+ "2N+2A": {
+  "mt": "30",
+  "reaction": "(n,2n2a)",
+  "sf5-8": null
+ },
+ "N+D": {
+  "mt": "32",
+  "reaction": "(n,nd)",
+  "sf5-8": null
+ },
+ "N+T": {
+  "mt": "33",
+  "reaction": "(n,nt)",
+  "sf5-8": null
+ },
+ "N+H": {
+  "mt": "34",
+  "reaction": "(n,nh)",
+  "sf5-8": null
+ },
+ "N+D+2A": {
+  "mt": "35",
+  "reaction": "(n,nd2a)",
+  "sf5-8": null
+ },
+ "N+T+2A": {
+  "mt": "36",
+  "reaction": "(n,nt2a)",
+  "sf5-8": null
+ },
+ "4N": {
+  "mt": "37",
+  "reaction": "(n,4n)",
+  "sf5-8": null
+ },
+ "2N+P": {
+  "mt": "41",
+  "reaction": "(n,2np)",
+  "sf5-8": null
+ },
+ "3N+P": {
+  "mt": "42",
+  "reaction": "(n,3np)",
+  "sf5-8": null
+ },
+ "N+2P": {
+  "mt": "44",
+  "reaction": "(n,n2p)",
+  "sf5-8": null
+ },
+ "N+P+A": {
+  "mt": "45",
+  "reaction": "(n,npa)",
+  "sf5-8": null
+ },
+ "G": {
+  "mt": "102",
+  "reaction": "(n,g)",
+  "sf5-8": null
+ },
+ "P": {
+  "mt": "103",
+  "reaction": "(n,p)",
+  "sf5-8": null
+ },
+ "D": {
+  "mt": "104",
+  "reaction": "(n,d)",
+  "sf5-8": null
+ },
+ "T": {
+  "mt": "105",
+  "reaction": "(n,t)",
+  "sf5-8": null
+ },
+ "HE3": {
+  "mt": "106",
+  "reaction": "(n,h)",
+  "sf5-8": null
+ },
+ "A": {
+  "mt": "107",
+  "reaction": "(n,a)",
+  "sf5-8": null
+ },
+ "2A": {
+  "mt": "108",
+  "reaction": "(n,2a)",
+  "sf5-8": null
+ },
+ "3A": {
+  "mt": "109",
+  "reaction": "(n,3a)",
+  "sf5-8": null
+ },
+ "2P": {
+  "mt": "111",
+  "reaction": "(n,2p)",
+  "sf5-8": null
+ },
+ "P+A": {
+  "mt": "112",
+  "reaction": "(n,pa)",
+  "sf5-8": null
+ },
+ "T+2A": {
+  "mt": "113",
+  "reaction": "(n,t2a)",
+  "sf5-8": null
+ },
+ "D+2A": {
+  "mt": "114",
+  "reaction": "(n,d2a)",
+  "sf5-8": null
+ },
+ "P+D": {
+  "mt": "115",
+  "reaction": "(n,pd)",
+  "sf5-8": null
+ },
+ "P+T": {
+  "mt": "116",
+  "reaction": "(n,pt)",
+  "sf5-8": null
+ },
+ "D+A": {
+  "mt": "117",
+  "reaction": "(n,da)",
+  "sf5-8": null
+ },
+ "-": {
+  "mt": "151",
+  "reaction": "(n,RES)",
+  "sf5-8": null
+ },
+ "5N": {
+  "mt": "152",
+  "reaction": "(n,5n)",
+  "sf5-8": null
+ },
+ "6N": {
+  "mt": "153",
+  "reaction": "(n,6n)",
+  "sf5-8": null
+ },
+ "2N+T": {
+  "mt": "154",
+  "reaction": "(n,2nt)",
+  "sf5-8": null
+ },
+ "T+A": {
+  "mt": "155",
+  "reaction": "(n,ta)",
+  "sf5-8": null
+ },
+ "4N+P": {
+  "mt": "156",
+  "reaction": "(n,4np)",
+  "sf5-8": null
+ },
+ "3N+D": {
+  "mt": "157",
+  "reaction": "(n,3nd)",
+  "sf5-8": null
+ },
+ "N+D+A": {
+  "mt": "158",
+  "reaction": "(n,n'da)",
+  "sf5-8": null
+ },
+ "2N+P+A": {
+  "mt": "159",
+  "reaction": "(n,2npa)",
+  "sf5-8": null
+ },
+ "7N": {
+  "mt": "160",
+  "reaction": "(n,7n)",
+  "sf5-8": null
+ },
+ "8N": {
+  "mt": "161",
+  "reaction": "(n,8n)",
+  "sf5-8": null
+ },
+ "5N+P": {
+  "mt": "162",
+  "reaction": "(n,5np)",
+  "sf5-8": null
+ },
+ "6N+P": {
+  "mt": "163",
+  "reaction": "(n,6np)",
+  "sf5-8": null
+ },
+ "7N+P": {
+  "mt": "164",
+  "reaction": "(n,7np)",
+  "sf5-8": null
+ },
+ "4N+A": {
+  "mt": "165",
+  "reaction": "(n,4na)",
+  "sf5-8": null
+ },
+ "5N+A": {
+  "mt": "166",
+  "reaction": "(n,5na)",
+  "sf5-8": null
+ },
+ "6N+A": {
+  "mt": "167",
+  "reaction": "(n,6na)",
+  "sf5-8": null
+ },
+ "7N+A": {
+  "mt": "168",
+  "reaction": "(n,7na)",
+  "sf5-8": null
+ },
+ "4N+D": {
+  "mt": "169",
+  "reaction": "(n,4nd)",
+  "sf5-8": null
+ },
+ "5N+D": {
+  "mt": "170",
+  "reaction": "(n,5nd)",
+  "sf5-8": null
+ },
+ "6N+D": {
+  "mt": "171",
+  "reaction": "(n,6nd)",
+  "sf5-8": null
+ },
+ "3N+T": {
+  "mt": "172",
+  "reaction": "(n,3nt)",
+  "sf5-8": null
+ },
+ "4N+T": {
+  "mt": "173",
+  "reaction": "(n,4nt)",
+  "sf5-8": null
+ },
+ "5N+T": {
+  "mt": "174",
+  "reaction": "(n,5nt)",
+  "sf5-8": null
+ },
+ "6N+T": {
+  "mt": "175",
+  "reaction": "(n,6nt)",
+  "sf5-8": null
+ },
+ "2N+HE3": {
+  "mt": "176",
+  "reaction": "(n,2nh)",
+  "sf5-8": null
+ },
+ "3N+HE3": {
+  "mt": "177",
+  "reaction": "(n,3nh)",
+  "sf5-8": null
+ },
+ "4N+HE3": {
+  "mt": "178",
+  "reaction": "(n,4nh)",
+  "sf5-8": null
+ },
+ "3N+2P": {
+  "mt": "179",
+  "reaction": "(n,3n2p)",
+  "sf5-8": null
+ },
+ "3N+2": {
+  "mt": "180",
+  "reaction": "(n,3n2a)",
+  "sf5-8": null
+ },
+ "3N+P+A": {
+  "mt": "181",
+  "reaction": "(n,3npa)",
+  "sf5-8": null
+ },
+ "D+T": {
+  "mt": "182",
+  "reaction": "(n,dt)",
+  "sf5-8": null
+ },
+ "N+P+D": {
+  "mt": "183",
+  "reaction": "(n,n'pd)",
+  "sf5-8": null
+ },
+ "N+P+T": {
+  "mt": "184",
+  "reaction": "(n,n'pt)",
+  "sf5-8": null
+ },
+ "N+D+T": {
+  "mt": "185",
+  "reaction": "(n,n'dt)",
+  "sf5-8": null
+ },
+ "N+P+HE3": {
+  "mt": "186",
+  "reaction": "(n,n'ph)",
+  "sf5-8": null
+ },
+ "N+D+HE3": {
+  "mt": "187",
+  "reaction": "(n,n'dh)",
+  "sf5-8": null
+ },
+ "N+T+HE3": {
+  "mt": "188",
+  "reaction": "(n,n'th)",
+  "sf5-8": null
+ },
+ "N+T+A": {
+  "mt": "189",
+  "reaction": "(n,n'ta)",
+  "sf5-8": null
+ },
+ "2N+2P": {
+  "mt": "190",
+  "reaction": "(n,2n2p)",
+  "sf5-8": null
+ },
+ "P+HE3": {
+  "mt": "191",
+  "reaction": "(n,ph)",
+  "sf5-8": null
+ },
+ "D+HE": {
+  "mt": "192",
+  "reaction": "(n,dh)",
+  "sf5-8": null
+ },
+ "HE+A": {
+  "mt": "193",
+  "reaction": "(n,ha)",
+  "sf5-8": null
+ },
+ "4N+2P": {
+  "mt": "194",
+  "reaction": "(n,4n2p)",
+  "sf5-8": null
+ },
+ "4N+2a": {
+  "mt": "195",
+  "reaction": "(n,4n2a)",
+  "sf5-8": null
+ },
+ "4N+P+A": {
+  "mt": "196",
+  "reaction": "(n,4npa)",
+  "sf5-8": null
+ },
+ "3P": {
+  "mt": "197",
+  "reaction": "(n,3p)",
+  "sf5-8": null
+ },
+ "N+3P": {
+  "mt": "198",
+  "reaction": "(n,n'3p)",
+  "sf5-8": null
+ },
+ "3N+2P+A": {
+  "mt": "199",
+  "reaction": "(n,3n2pa)",
+  "sf5-8": null
+ },
+ "5N+2P": {
+  "mt": "200",
+  "reaction": "(n,5n2p)",
+  "sf5-8": null
+ },
+ "X+N": {
+  "mt": "201",
+  "reaction": "(n,Xn)",
+  "sf5-8": null
+ },
+ "X+G": {
+  "mt": "202",
+  "reaction": "(n,Xg)",
+  "sf5-8": null
+ },
+ "X+P": {
+  "mt": "203",
+  "reaction": "(n,Xp)",
+  "sf5-8": null
+ },
+ "X+D": {
+  "mt": "205",
+  "reaction": "(n,Xt)",
+  "sf5-8": null
+ },
+ "X+HE3": {
+  "mt": "206",
+  "reaction": "(n,Xh)",
+  "sf5-8": null
+ },
+ "X+A": {
+  "mt": "207",
+  "reaction": "(n,Xa)",
+  "sf5-8": null
+ }
+}

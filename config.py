@@ -10,16 +10,15 @@
 #
 ####################################################################
 
-DICTIONARY_URL = "https://nds.iaea.org/nrdc/ndsx4/trans/dicts/"
-
-DICTIONARY_PATH = "exfor_dictionary/"
+DICTIONARY_URL = "https://nds.iaea.org/nrdc/ndsx4/trans/dictionaries/"
+DICTIONARY_PATH = "./exfor_dictionary/"
+LATEST_TRANS = "9927"
 
 """ EXFOR master file path """
 EXFOR_ALL_URL = "https://nds.iaea.org/exfor-master/backup/"
 
-EXFOR_ALL_PATH = "/Users/okumuras/Documents/nucleardata/EXFOR/exfor_master/exforall/"
-
 EXFOR_MASTER_REPO_PATH = "/Users/okumuras/Documents/nucleardata/EXFOR/exfor_master/"
+EXFOR_ALL_PATH = EXFOR_MASTER_REPO_PATH + "exforall/"
 
 
 """ Pickle path of list of EXFOR master files made by parser.list_x4files.py"""
@@ -32,8 +31,7 @@ TO_JSON = True
 
 POST_DB = False
 
-OUT_PATH = "/Users/sin/Desktop/"
+OUT_PATH = "/Users/okumuras/Desktop/"
+# OUT_PATH = "/Users/okumuras/Dropbox/Development/exforparser/"
 
 MONGOBASE_URI = "https://data.mongodb-api.com/app/data-qfzzc/endpoint/data/beta/"
-
-

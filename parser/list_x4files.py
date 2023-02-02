@@ -127,6 +127,24 @@ def compare_hash(df):
 
 
 good_example_entries = [
+    "30767",  # elem/mass and mass are in the same subent
+    "D0545",  # ELEM1      MASS1      ELEM2      MASS2
+    "20010",
+    "10377",
+    "20802",
+    "D0635",
+    "C2540",
+    "14463",
+    "M0450",
+    "21332", ## EN-RSL, CN,SIG
+    "31714", ## EN-RSL
+]
+a = [
+    "G0509",
+    "32662",  # N,F with MASS
+    "32718",  # fpy
+    "22060",  # fpy
+    "E0306",  # E-LVL, (12-MG-26(D,P)12-MG-27,PAR,DA)
     "14545",
     "40396",
     "C0380",
@@ -157,7 +175,6 @@ good_example_entries = [
     "C0396",  # P,X SIG with ELEM/MASS
     "22374",  # heavy
     "14197",
-    "32662",  # N,F with MASS
     "14529",
     "12591",
     "31431",
@@ -168,7 +185,6 @@ good_example_entries = [
     "10377",
     "20010",  # REFERENCE  ((R,KFK-1000,1968)=(R,EUR-3963E,1968)= + \n (R,EANDC(E)-111,1968))
     "21902",
-    "E0306",
     "30328",
     "22331",
     "20802",  # facility and institute have pointer
@@ -224,11 +240,81 @@ good_example_entries = [
     "O1728",  # large DATA table with ELEM/MASS, Many DECAY-DATA
 ]
 
+fpy_examples = [
+    "14463",  # Energy is given in EN-MIN     EN-MAX
+    # "40112", # cannot be processed until the entry is fixed (EN is givin twice in COMMON and DATA)
+    "14555",
+    "31802",
+    "13445",
+    "13444",
+    "21595",  # 21595002-1: no incident energy is given, FST in reaction code
+    "13302",
+    "13353",  # SF
+    "13455",
+    "13081",
+    "14259",
+    "32662",  # N,F with MASS
+    "32718",  # fpy
+    "30791",  # MASS       ELEMENT    ISOMER     DATA       DATA-MIN   DATA-MAX    ERR-T      DECAY-FLAG FLAG
+    "22470",
+    "20384",  # no EN but resonance energy  REACTION   (94-PU-239(N,F)2-HE-4,TER,FY,,RES/REL)  EN-RES     DATA       ERR-S      FLAG
+    "41179",  # no EN but resonance energy 41179003  (94-PU-239(N,F)ELEM/MASS,IND,FY,,RES/AV)
+    "13443",  # no EN but EN-NM (nominator) 2(92-U-235(N,F)ELEM/MASS,CUM,FY)  EN-NM      EN-RSL     MASS       ELEMENT    ISOMER     DATA      1    ERR-S     1DATA      2MONIT1     MONIT2
+    "14087",  # only EN-MIN from the middle of DATA REACTION   (92-U-233(N,F)ELEM/MASS,CUM,FY,,REL)  EN         EN-MIN     MASS       DATA       DATA-ERR
+    "22060",
+    "23583",
+    "23342",
+    "33030",
+    "41198",
+    "22985",
+    "30787",
+    "21706",
+    "20848",
+    "21218",
+    "21549",
+    "13333",
+    "23558",
+    "10517",
+    "23780",
+    "10798",
+    "22062",
+    "10964",
+    "22111",
+    "13053",
+    "10828",
+    "14625",
+    "13981",  #  REACTION   (104-RF-262(0,F)MASS,PRE,FY)
+    "14479",  #  REACTION   (98-CF-252(0,F)MASS,PR/PAR,FY,G)
+    "41723",  #  REACTION   (92-U-235(N,F)ELEM/MASS,PR/PAR,FY,G)
+    "22273",  #  REACTION  1(94-PU-239(N,F)MASS,SEC,FY,,,DERIV)
+    "22757",  #  REACTION   (98-CF-252(0,F)MASS,PAR/PRE,FY,G)
+    "O1012",  #  REACTION   (82-PB-208(92-U-238,F)ELEM,CHG,FY)
+    "E1813",  #  REACTION   (94-PU-239(D,P+F)MASS,PAR/CHN,FY)
+    "13584",  #  MASS       ELEMENT    ISOMER     DATA       DATA-ERR   DATA-MAX
+    "13261",  #  REACTION   (98-CF-252(0,F)MASS,CHN,FY) MASS       DATA       ERR-S      DATA-ERR
+    "40966",  #  REACTION   (92-U-235(N,F)ELEM/MASS,PAR/IND,FY,G)
+    "14201",  #  REACTION   (92-U-235(N,F)0-G-0,PR/PAR,FY,,MXW)
+    "13283",  #  Two FLAGs REACTION   (98-CF-252(0,F)ELEM/MASS,CUM,FY)  ELEMENT    MASS       DATA       DATA-ERR   FLAG       FLAG
+    "14361",  #  REACTION  1(92-U-235(N,F)0-G-0,NUM,FY,,AV/RAW)
+    "10979",  #  REACTION   (96-CM-248(0,F)MASS,CHN,FY)
+    "13063",  #
+    "23268",  #  REACTION   (98-CF-252(0,F)MASS,PRE,FY,,MSC)   Fission fragment yield as a function of pre-neutron  mass and TKE ( counts) .
+    "41724",  #  REACTION   (96-CM-244(0,F),TER,FY,LCP)
+    "C2469",
+    "13444",
+    "14555",
+    "20381",
+]
+
+
 if __name__ == "__main__":
     list_exfor_files()
     # read_exfile()
 
-
+# 12683 DATA-MIN
+# DATA      1DATA      2DATA-MIN  2DATA      3DATA      4DATA      5
+# KEV        NO-DIM     NO-DIM     NO-DIM     KEV        EV
+#  120.                  1.                    0.5
 # 11404 includes "  -9" in the data
 # A0466 reaction flag
 # 32804 wrapped DATA block
@@ -297,7 +383,8 @@ if __name__ == "__main__":
 # D6054  (6-C-12(10-NE-20,X)ELEM,,DA/DE)
 # 21429   REFERENCE  (B,PR.NUC.EN.,2,183,58)
 # 30722   REACTION   ((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG)) Sigma ratio
-# D6054002         No DATA given in 002-010, No incident energy for REACTION   (6-C-12(10-NE-20,X)ELEM,,DA/DE)
+# D6054002         No DATA are given in 002-010 but COMMON are still exist,
+#                   No incident energy for REACTION   (6-C-12(10-NE-20,X)ELEM,,DA/DE)
 # 32609  REFERENCE  ((J,CNDP,8,7,1992)=(P,INDC(CPR)-029,7,1992))
 #    (C,97TRIEST,1,514,1997)
 #     Yu.M.Gledenov+, same cross section given
@@ -311,3 +398,22 @@ if __name__ == "__main__":
 #     Yu.M.Gledenov+, same cross section given
 #    (J,CNP,15,(3),239,199308)
 #     Tang Guoyou+, same cross section given
+# 22356 002
+# {'heads': ['EN-MIN', 'EN-MAX', 'EN-MEAN', 'E-LVL', 'DATA', 'DATA-ERR'], 'units': ['KEV', 'KEV', 'KEV', 'MEV', 'MICRO-B', 'MICRO-B']
+# C0380002   REACTION   (6-C-12(A,X)ELEM/MASS,,SIG)
+# C0396002
+# ELEMENT    MASS       ISOMER     MASS-MIN   MASS-MAX   DATA   DATA-MIN   FLAG
+# NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     MB     MB         NO-DIM
+#  82.        203.                                        26.
+#  81.        202.                                         3.
+#  81.        201.                                        20.
+#  81.        200.                                        12.
+#  81.        199.                                        27.
+#  81.        198.                                        15.
+#  66.                              149.       153.       0.62       1.
+#  66.                              149.       153.       1.77       1.
+# 40234003 Unit is "SEE TEXT"
+# MASS       DATA       DATA-ERR   MISC1      MISC1-ERR
+# NO-DIM     MEV        MEV        SEE TEXT   SEE TEXT
+#  1.1800E+02 1.6000E+02 1.5000E+00 1.1800E+02 1.5000E+01
+#  33135008 (90-TH-232(N,F)0-G-0,PR,FY) product is gamma...? why it is not multiplicity?

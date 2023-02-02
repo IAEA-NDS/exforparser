@@ -152,6 +152,7 @@ def recon_data(data_block):
             if parsed:
                 striped = [i.replace(" ", "") for i in parsed[0]]
                 correct = [corr(i) for i in striped]
+
             else:
                 break
 
@@ -179,7 +180,7 @@ def recon_data(data_block):
     return dict(**header, **transpose)
 
 
-def get_colmun_indexes(main, sub, x_heads=None):
+def get_colmun_indexes(data_dict, x_heads=None):
     """
     return the indexes (positions) of columns that contains particular
     heads (e.g. DATA, DATA-CM, DATA-MAX..etc)
@@ -201,86 +202,109 @@ def get_colmun_indexes(main, sub, x_heads=None):
 
     locs = []
 
-    data_dict = sub.parse_data()
-
     if data_dict:
         locs = _get_head_index(data_dict, x_heads)
 
     if locs:
         pass
 
-    else:
-        data_dict = sub.parse_common()
-
-        if data_dict:
-            locs = _get_head_index(data_dict, x_heads)
-
-        if locs:
-            pass
-
-        else:
-            data_dict = main.parse_common()
-            locs = _get_head_index(data_dict, x_heads)
-
-    return locs, data_dict
+    return locs
 
 
-def get_product_column(main, sub, head):
-    ## very normal cases only, not consider the ratio cases whoes HEADs are coded with MASS1 ELEM1
-    data_list = []
+def product_expansion(reac_dict, data_dict):
+    reac_set = []
+    if not reac_dict:
+        return
 
-    if head == "CHARGE":
-        y = "ELEMENT"
+    if reac_dict["sf4"] == "ELEM/MASS":
+        list_dict = {}
+        loc_elem = get_colmun_indexes(data_dict, d.get_elem_heads())
+        loc_mass = get_colmun_indexes(data_dict, d.get_mass_heads())
+        loc_iso = get_colmun_indexes(data_dict, ["ISOMER"])
+        print(loc_elem, loc_mass, loc_iso)
 
-    else:
-        y = head
+        if len(loc_mass) > 1:
+            """
+            'heads': ['EN', 'MONIT', 'ELEMENT', 'MASS', 'ISOMER', 'MASS-MIN', 'MASS-MAX', 'DATA', 'DATA-MIN', 'FLAG'],
+            loc_mass can be [3, 4, 5, 6]
+            """
+            for l in loc_mass:
+                if data_dict["heads"][l] == "MASS":
+                    main_mass_l = l
+                    loc_mass.remove(main_mass_l)
 
-    datasec = sub.parse_data()
-    try:
-        index = datasec["heads"].index(y)
-    except:
-        datasec = sub.parse_common()
-        try:
-            index = datasec["heads"].index(y)
-        except:
-            datasec = main.parse_common()
-            try:
-                index = datasec["heads"].index(y)
-            except:
-                index = None
+                for m in range(len(data_dict["data"][main_mass_l])):
+                    if data_dict["data"][main_mass_l][m] is None:
+                        data_dict["data"][loc_mass[ol]][m]
 
-    if index is not None:
-        if head == "ELEMENT":
-            data_list = [
-                ztoelem(int(float(m))) for m in datasec["data"][index] if not m is None
-            ]
-
-        elif head == "CHARGE":
-            data_list = [
-                str(int(float(m))) for m in datasec["data"][index] if not m is None
-            ]
-
-        elif head == "ISOMER":
-            data_list = [
-                numtoisomer(int(float(m)))
-                for m in datasec["data"][index]
-                if not m is None
-            ]
-
-        elif head == "MASS":
-            data_list = [
-                str(int(float(m))) for m in datasec["data"][index] if not m is None
+        if loc_iso:
+            prod_list = [
+                str(int(elem))
+                + "-"
+                + ztoelem(int(elem))
+                + "-"
+                + str(int(mass))
+                + "-"
+                + str(int(iso))
+                if iso is not None
+                else str(int(elem)) + "-" + ztoelem(int(elem)) + "-" + str(int(mass))
+                for elem, mass, iso in zip(
+                    data_dict["data"][loc_elem[0]],
+                    data_dict["data"][loc_mass[0]],
+                    data_dict["data"][loc_iso[0]],
+                )
             ]
 
         else:
-            data_list = [
-                str(int(float(m))) for m in datasec["data"][index] if not m is None
+            prod_list = [
+                str(int(elem)) + "-" + ztoelem(int(elem)) + "-" + str(int(mass))
+                for elem, mass in zip(
+                    data_dict["data"][loc_elem[0]],
+                    data_dict["data"][loc_mass[0]],
+                )
             ]
 
-    return data_list
+        i = 0
+        for prod in prod_list:
+            add = reac_dict.copy()
+            add["sf4"] = prod
+            add["np"] = int(i)
+            reac_set.append(add)
+            i += 1
+
+    elif reac_dict["sf4"] == "MASS":
+        loc_mass = get_colmun_indexes(data_dict, d.get_mass_heads())
+        data_list = data_dict["data"][loc_mass[0]]
+
+        i = 0
+        for mass in data_list or []:
+            add = reac_dict.copy()
+            add["sf4"] = "A=" + str(int(mass))
+            add["np"] = int(i)
+            reac_set.append(add)
+            i += 1
+
+    elif reac_dict["sf4"] == "ELEM":
+        loc_elem = get_colmun_indexes(data_dict, d.get_elem_heads())
+        data_list = data_dict["data"][loc_elem[0]]
+
+        i = 0
+        for elem in data_list or []:
+            add = reac_dict.copy()
+            add["sf4"] = elem
+            add["np"] = int(i)
+            reac_set.append(add)
+            i += 1
+
+    else:
+        reac_dict["sf4"] = reac_dict["sf4"]
+        reac_set.append(reac_dict)
+
+    print(reac_set)
+    return reac_set
 
 
-def product_expansion(main, sub, reac_dic=None):
+def product_expansion_old(main, sub, reac_dic=None):
     reac_set = []
     # print(reac_dic)
     """
@@ -391,7 +415,113 @@ def get_inc_energy(main=None, sub=None):
             "points": int(len(data_dict["data"][locs[0]])),
         }
         assert en["min"] <= en["max"]
+
     else:
         en = {"min": None, "max": None, "points": 0}
 
     return en
+
+
+#########-----------------------------#########-----------------------------
+#########-----------------------------#########-----------------------------
+
+
+def get_product_column_old(main, sub, head):
+    ## very normal cases only, not consider the ratio cases whoes HEADs are coded with MASS1 ELEM1
+    data_list = []
+
+    if head == "CHARGE":
+        y = "ELEMENT"
+
+    else:
+        y = head
+
+    datasec = sub.parse_data()
+    try:
+        index = datasec["heads"].index(y)
+    except:
+        datasec = sub.parse_common()
+        try:
+            index = datasec["heads"].index(y)
+        except:
+            datasec = main.parse_common()
+            try:
+                index = datasec["heads"].index(y)
+            except:
+                index = None
+
+    if index is not None:
+        if head == "ELEMENT":
+            data_list = [
+                ztoelem(int(float(m))) for m in datasec["data"][index] if not m is None
+            ]
+
+        elif head == "CHARGE":
+            data_list = [
+                str(int(float(m))) for m in datasec["data"][index] if not m is None
+            ]
+
+        elif head == "ISOMER":
+            data_list = [
+                numtoisomer(int(float(m)))
+                for m in datasec["data"][index]
+                if not m is None
+            ]
+
+        elif head == "MASS":
+            data_list = [
+                str(int(float(m))) for m in datasec["data"][index] if not m is None
+            ]
+
+        else:
+            data_list = [
+                str(int(float(m))) for m in datasec["data"][index] if not m is None
+            ]
+
+    return data_list
+
+
+def get_colmun_indexes_old(main, sub, x_heads=None):
+    """
+    return the indexes (positions) of columns that contains particular
+    heads (e.g. DATA, DATA-CM, DATA-MAX..etc)
+    """
+
+    def _get_head_index(data_dict=None, x_heads=None):
+        """
+        By giving posible headers from dictionary, then is returns location indexes
+        in the DATA or COMMON block
+        """
+        if x_heads and data_dict:
+            return [
+                loc
+                for loc in range(len(data_dict["heads"]))
+                if data_dict["heads"][loc] in x_heads
+            ]
+        else:
+            return None
+
+    locs = []
+
+    data_dict = sub.parse_data()
+
+    if data_dict:
+        locs = _get_head_index(data_dict, x_heads)
+
+    if locs:
+        pass
+
+    else:
+        data_dict = sub.parse_common()
+
+        if data_dict:
+            locs = _get_head_index(data_dict, x_heads)
+
+        if locs:
+            pass
+
+        else:
+            data_dict = main.parse_common()
+            locs = _get_head_index(data_dict, x_heads)
+
+    return locs, data_dict

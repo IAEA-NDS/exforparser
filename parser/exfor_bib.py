@@ -90,7 +90,8 @@ def parse_main_bib(bib_block) -> dict:
             if identifier == "TITLE":
                 title = " ".join(indentifier_body).replace("  ", " ")
                 bib_dict["title"] = title
-# 
+            #
+
             elif identifier == "AUTHOR":
                 authors = "".join(indentifier_body)[1:-1].split(",")
 
@@ -130,8 +131,11 @@ def parse_main_bib(bib_block) -> dict:
                         identifier_set[i]["x4_code"]
                     )
 
+                    identifier_set[i]["pointer"] = pointer
                     if identifier_set[i]["free_txt"]:
-                        for l in range(len(identifier_set[i]["free_txt"]) - 1):
+
+                        for l in range(len(identifier_set[i]["free_txt"])):
+
                             if identifier_set[i]["free_txt"][l].startswith("#doi"):
 
                                 ## extract doi and add to dictionary
@@ -140,15 +144,16 @@ def parse_main_bib(bib_block) -> dict:
                                 ][l].replace("#doi:", "")
 
                                 ## remove doi from free text list
-                                identifier_set[i]["free_txt"].pop(l)
+                                # identifier_set[i]["free_txt"].pop(l)
 
-                bib_dict["references"] = {pointer: identifier_set}
+                bib_dict["references"] = identifier_set
 
             elif identifier == "FACILITY":
                 identifier_set = get_identifier_details(indentifier_body)
 
                 for i in range(len(identifier_set)):
 
+                    identifier_set[i]["pointer"] = pointer
                     if identifier_set[i]["x4_code"]:
                         facilities = "".join(identifier_set[i]["x4_code"])[1:-1].split(
                             ","
@@ -160,7 +165,7 @@ def parse_main_bib(bib_block) -> dict:
                             )
                             identifier_set[i]["institute"] = "(" + facilities[1] + ")"
 
-                bib_dict["facilities"] = {pointer: identifier_set}
+                bib_dict["facilities"] = identifier_set
 
             # elif identifier == "HISTORY":
             #     identifier_set = get_identifier_details(indentifier_body)
@@ -172,6 +177,7 @@ def parse_main_bib(bib_block) -> dict:
 def parse_extra_bib(bib_block) -> dict:
     bib_dict = {}
 
+    ## looping over identifier
     for identifier in identifiers:
 
         if not bib_block.get(identifier):
@@ -179,6 +185,12 @@ def parse_extra_bib(bib_block) -> dict:
 
         for pointer, indentifier_body in bib_block.get(identifier).items():
             identifier_set = get_identifier_details(indentifier_body)
-            bib_dict[identifier.lower()] = {pointer: identifier_set}
+            # bib_dict[identifier.lower()] = {pointer: identifier_set}
+
+            if bib_dict.get(str(pointer)):
+                bib_dict[str(pointer)].update({identifier.lower(): identifier_set})
+
+            else:
+                bib_dict[str(pointer)] = {identifier.lower(): identifier_set}
 
     return bib_dict

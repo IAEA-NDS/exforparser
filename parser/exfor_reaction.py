@@ -12,7 +12,6 @@
 
 
 from pyparsing import *
-
 from .exfor_field import parse_parenthesis, parentheses
 
 
@@ -73,11 +72,12 @@ def parse_reaction(reaction_field) -> dict:
             try:
                 reaction_info = {
                     "x4_code": x4_code,
-                    "children" :
-                    [{"code": b[0][0][0], "type": b[0][0][1]},
-                     {"code": b[0][0][2], "type": b[0][0][1]},
-                     {"code": b[0][2][0], "type": b[0][2][1]},
-                     {"code": b[0][2][2], "type": b[0][2][1]}],
+                    "children": [
+                        {"code": b[0][0][0], "type": b[0][0][1]},
+                        {"code": b[0][0][2], "type": b[0][0][1]},
+                        {"code": b[0][2][0], "type": b[0][2][1]},
+                        {"code": b[0][2][2], "type": b[0][2][1]},
+                    ],
                     "type": b[0][1],
                     "free_text": free_text,
                 }
@@ -90,7 +90,7 @@ def parse_reaction(reaction_field) -> dict:
             except:
                 reaction_info = {
                     "x4_code": x4_code,
-                    # "children" : {"code": b[0], "type": None},
+                    "children": {"code": b[0], "type": None},
                     "type": "?",
                     "free_text": free_text,
                 }
@@ -99,9 +99,10 @@ def parse_reaction(reaction_field) -> dict:
             try:
                 reaction_info = {
                     "x4_code": x4_code,
-                    "children" :
-                        [{"code": b[0][0], "type": None},
-                        {"code": b[0][2], "type": None}],
+                    "children": [
+                        {"code": b[0][0], "type": None},
+                        {"code": b[0][2], "type": None},
+                    ],
                     "type": b[0][1],
                     "free_text": free_text,
                 }
@@ -111,7 +112,7 @@ def parse_reaction(reaction_field) -> dict:
             except:
                 reaction_info = {
                     "x4_code": x4_code,
-                    # "children" : [{"code": b[0], "type": None}],
+                    "children": [{"code": b[0], "type": None}],
                     "type": "/",
                     "free_text": free_text,
                 }
@@ -119,8 +120,7 @@ def parse_reaction(reaction_field) -> dict:
         else:
             reaction_info = {
                 "x4_code": x4_code,
-                "children" :
-                    [{"code": b[0], "type": None}],
+                "children": [{"code": b[0], "type": None}],
                 "type": None,
                 "free_text": free_text,
             }
