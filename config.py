@@ -30,6 +30,5 @@ TO_JSON = True
 POST_DB = False
 
 
-# OUT_PATH = "/Users/okumuras/Dropbox/Development/exforparser/"
-
+OUT_PATH = "../"
 MONGOBASE_URI = "https://data.mongodb-api.com/app/data-qfzzc/endpoint/data/beta/"

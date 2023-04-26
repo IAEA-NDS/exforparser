@@ -108,7 +108,8 @@ def convert_exfor_to_json(entnum=None):
 def main():
     ent = list_entries_from_df()
     entries = random.sample(ent, len(ent))
-    entries = ent
+    # entries = ent
+    entries=["11111"]
 
     del_outputs(OUT_PATH + "json/")
 

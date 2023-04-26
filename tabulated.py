@@ -710,8 +710,8 @@ def main():
     ent = list_entries_from_df()
     entries = random.sample(ent, len(ent))
 
-    drop_tables()
-    del_outputs(OUT_PATH + "exfortables/")
+    # drop_tables()
+    # del_outputs(OUT_PATH + "exfortables/")
 
     start_time = print_time()
     logging.info(f"Start processing {start_time}")
