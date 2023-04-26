@@ -153,17 +153,20 @@ dmypy.json
 .vscode/
 
 # under development
+evaluations/
 geo/
 docker/
 plotting/
 test/
-exfor_dictionary/
 examples/
 evaluations/
+sql/
 utilities/levels/
 utilities/levels_json/
 .vscode/
 pickles/*.py
+pickles/reactions.pickles
+pickles/index.pickle
 processed*.dat
 error.dat
 use.py
@@ -178,6 +181,7 @@ JSONexamples/
 pypartest.py
 _trash.py
 _*
+indexing.py
 invenio.py
 mongodb.py
 run.sh*
@@ -185,4 +189,9 @@ run.sh*
 old*
 indexing.py
 sqldb.py
-*.xls
+*.xlsx
+*.sqlite
+check*
+
+# other packages
+exfor_dictionary/

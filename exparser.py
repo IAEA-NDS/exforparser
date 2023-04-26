@@ -20,18 +20,16 @@ import logging
 logging.basicConfig(filename="parsing.log", level=logging.DEBUG, filemode="w")
 
 
-from config import TO_JSON, POST_DB, OUT_PATH, REACTION_INDEX_PICKLE
-from utilities.operation_util import del_outputs, print_time, get_entry_update_date
-from parser.list_x4files import good_example_entries, list_entries_from_df
+from config import OUT_PATH
+from utilities.utilities import del_outputs, print_time, get_entry_update_date
+from parser.list_x4files import list_entries_from_df
 from parser.exfor_entry import Entry
 from parser.exfor_subentry import Subentry
-from mongodb import post_one_mongodb, post_many_mongodb
-from indexing import reaction_indexing
+#from mongodb import post_one_mongodb, post_many_mongodb
 
 
 ## get update data from git commit and store info to Python dictionary
 update_date = get_entry_update_date()
-
 
 def write_dict_to_json(entnum, dic):
     """
@@ -41,7 +39,6 @@ def write_dict_to_json(entnum, dic):
 
     if len(entnum) == 5:
         if os.path.exists(dir):
-            # del_outputs(dir)
             pass
 
         else:
@@ -62,7 +59,7 @@ def convert_exfor_to_json(entnum=None):
     entry_json["entry"] = entnum
     entry_json["last_updated"] = update_date[entnum]["last_update"]
     entry_json["number_of_revisions"] = update_date[entnum]["revisions"]
-    # entry_json["histories"] = sub.parse_main_history_dict()
+
     try:
         entry_json["histories"] = sub.parse_main_history_dict()
     except:
@@ -102,23 +99,16 @@ def convert_exfor_to_json(entnum=None):
         if subent != "001":
             entry_json["data_tables"][subent]["data"] = sub.parse_data()
 
-    # write_dict_to_json(entnum, entry_json)
 
     return entry_json
 
 
-## convert back from JSON to EXFOR
-def convert_json_to_exfor(entry_json):
-
-    pass
 
 
 def main():
     ent = list_entries_from_df()
     entries = random.sample(ent, len(ent))
-    entries = good_example_entries
-    # entries = [
-    #     "14545" ,"14745" , "14537", "10963", "40396", "C0380", "M0450", "O0529","C2152", "D4030", "14606", "30501", "14606","20010","30328"]
+    entries = ent
 
     del_outputs(OUT_PATH + "json/")
 
@@ -128,14 +118,11 @@ def main():
     i = 0
     for entnum in entries:
         print(entnum)
-        # entry_json = convert_exfor_to_json(entnum)
-        # write_dict_to_json(entnum, entry_json)
-        # post_one_mongodb("exfor_json", entry_json)
+
         try:
             entry_json = convert_exfor_to_json(entnum)
             write_dict_to_json(entnum, entry_json)
             # post_one_mongodb("exfor_json", entry_json)
-        #     # reaction_indexing(e)
 
         except:
             logging.error(f"ERROR: at ENTRY: {entnum}")
@@ -151,12 +138,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-# INFO:root:Start processing 1667831350.597693
-# ERROR:root:ERROR: at ENTRY: 30050
-# ERROR:root:ERROR: at ENTRY: 40768
-# ERROR:root:ERROR: at ENTRY: 30088
-# ERROR:root:ERROR: at ENTRY: 40756
-# ERROR:root:ERROR: at ENTRY: 40709
-# ERROR:root:ERROR: at ENTRY: 40716
-# ERROR:root:ERROR: at ENTRY: 30055
-# INFO:root:End processing --- 2412.118987083435 seconds ---

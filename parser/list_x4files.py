@@ -59,6 +59,7 @@ def exfor_x4allfiles(df):
 
 
 def list_entries_from_df():
+    list_exfor_files()
     df = index_pickel_road()
 
     ent = []
@@ -75,7 +76,7 @@ def list_exfor_files():
     entries = []
 
     if os.path.exists(EXFOR_ALL_PATH):
-        dirs = os.listdir(EXFOR_ALL_PATH)
+        dirs = [f for f in os.listdir(EXFOR_ALL_PATH) if not f.startswith(".")]
         for d in dirs:
             files += os.listdir(os.path.join(EXFOR_ALL_PATH, d))
 
@@ -90,7 +91,7 @@ def list_exfor_files():
         entries.append([entry, last_modifieddate, hash])
 
     df = pd.DataFrame(entries, columns=["entry", "last modifid", "hash"])
-    df.to_pickle("../" + ENTRY_INDEX_PICKLE)
+    df.to_pickle(ENTRY_INDEX_PICKLE)
 
     print(df)
     return entries
@@ -127,19 +128,33 @@ def compare_hash(df):
 
 
 good_example_entries = [
+    "23134",  ## REACTION   (26-FE-56(N,INL)26-FE-56,PAR,SIG,G), E is specified as gamma energy
+    "41119",  ## REACTION   (40-ZR-90(N,INL)40-ZR-90,PAR,SIG) why error?
     "30767",  # elem/mass and mass are in the same subent
-    "D0545",  # ELEM1      MASS1      ELEM2      MASS2
+    #    "D0545",  # ELEM1      MASS1      ELEM2      MASS2
     "20010",
     "10377",
+    "A0927",  ## REACTION   (82-PB-208(P,X)83-BI-205,IND,SIG)
     "20802",
+    "41500",  ## REACTION   (93-NP-237(N,F),DL,NU), delayed neutron yields
+    "13668",  ## REACTION   (92-U-235(N,F),DL/GRP,NU)
+    "41291",
+    "12856",
+    "40064",
+    "C2522",
+    "30772",
+    "14534",
+    "40674",
+    "33084",  # nu
     "D0635",
     "C2540",
     "14463",
     "M0450",
-    "21332", ## EN-RSL, CN,SIG
-    "31714", ## EN-RSL
-]
-a = [
+    "21332",  ## EN-RSL, CN,SIG
+    "31714",  ## EN-RSL
+    "A0493",  # REACTION   ((1-H-1(2-HE-6,EL)1-H-1,,DT)=(2-HE-6(P,EL)2-HE-6,,DT))
+    "D6024",  ## E-LVL      E-EXC
+    "40762",  # REACTION   (13-AL-27(N,EL)13-AL-27,,DA) X axis is given in COS
     "G0509",
     "32662",  # N,F with MASS
     "32718",  # fpy

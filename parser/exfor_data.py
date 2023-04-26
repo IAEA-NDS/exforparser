@@ -235,7 +235,7 @@ def product_expansion(reac_dict, data_dict):
 
                 for m in range(len(data_dict["data"][main_mass_l])):
                     if data_dict["data"][main_mass_l][m] is None:
-                        data_dict["data"][loc_mass[ol]][m]
+                        data_dict["data"][loc_mass[l]][m]
 
         if loc_iso:
             prod_list = [
@@ -304,87 +304,6 @@ def product_expansion(reac_dict, data_dict):
     return reac_set
 
 
-def product_expansion_old(main, sub, reac_dic=None):
-    reac_set = []
-    # print(reac_dic)
-    """
-    product exceptions
-    """
-    if not reac_dic:
-        return
-
-    if reac_dic["sf4"] == "ELEM/MASS":
-        list_dict = {}
-        for x in ["CHARGE", "ELEMENT", "MASS", "ISOMER"]:
-            cil = get_product_column(main, sub, x)
-            if cil:
-                list_dict[x] = cil
-
-        if len(list_dict["MASS"]) > len(list_dict["ELEMENT"]):
-            list_dict["ELEMENT"] = list_dict["ELEMENT"] * len(list_dict["MASS"])
-            list_dict["CHARGE"] = list_dict["CHARGE"] * len(list_dict["MASS"])
-
-        if len(list_dict["MASS"]) < len(list_dict["ELEMENT"]):
-            list_dict["MASS"] = list_dict["MASS"] * len(list_dict["ELEMENT"])
-
-        if list_dict.get("ISOMER"):
-            prod_list = [
-                charge + "-" + elem + "-" + mass + "-" + iso
-                if iso is not None
-                else charge + "-" + elem + "-" + mass
-                for charge, elem, mass, iso in zip(
-                    list_dict["CHARGE"],
-                    list_dict["ELEMENT"],
-                    list_dict["MASS"],
-                    list_dict["ISOMER"],
-                )
-            ]
-
-        else:
-            prod_list = [
-                charge + "-" + elem + "-" + mass
-                for charge, elem, mass in zip(
-                    list_dict["CHARGE"],
-                    list_dict["ELEMENT"],
-                    list_dict["MASS"],
-                )
-            ]
-
-        i = 0
-        for prod in prod_list:
-            add = reac_dic.copy()
-            add["residual"] = prod
-            add["np"] = int(i)
-            reac_set.append(add)
-            i += 1
-
-    elif reac_dic["sf4"] == "MASS":
-        data_list = get_product_column(main, sub, "MASS")
-        i = 0
-        for mass in data_list or []:
-            add = reac_dic.copy()
-            add["residual"] = "A=" + mass
-            add["np"] = int(i)
-            reac_set.append(add)
-            i += 1
-
-    elif reac_dic["sf4"] == "ELEM":
-        data_list = get_product_column(main, sub, "ELEMENT")
-        i = 0
-        for elem in data_list or []:
-            add = reac_dic.copy()
-            add["residual"] = elem
-            add["np"] = int(i)
-            reac_set.append(add)
-            i += 1
-
-    else:
-        reac_dic["residual"] = reac_dic["sf4"]
-        reac_set.append(reac_dic)
-
-    return reac_set
-
-
 d = Diction()
 ## get possible heading list
 x_heads = d.get_incident_en_heads()
@@ -426,102 +345,183 @@ def get_inc_energy(main=None, sub=None):
 #########-----------------------------#########-----------------------------
 
 
-def get_product_column_old(main, sub, head):
-    ## very normal cases only, not consider the ratio cases whoes HEADs are coded with MASS1 ELEM1
-    data_list = []
+# def get_product_column_old(main, sub, head):
+#     ## very normal cases only, not consider the ratio cases whoes HEADs are coded with MASS1 ELEM1
+#     data_list = []
 
-    if head == "CHARGE":
-        y = "ELEMENT"
+#     if head == "CHARGE":
+#         y = "ELEMENT"
 
-    else:
-        y = head
+#     else:
+#         y = head
 
-    datasec = sub.parse_data()
-    try:
-        index = datasec["heads"].index(y)
-    except:
-        datasec = sub.parse_common()
-        try:
-            index = datasec["heads"].index(y)
-        except:
-            datasec = main.parse_common()
-            try:
-                index = datasec["heads"].index(y)
-            except:
-                index = None
+#     datasec = sub.parse_data()
+#     try:
+#         index = datasec["heads"].index(y)
+#     except:
+#         datasec = sub.parse_common()
+#         try:
+#             index = datasec["heads"].index(y)
+#         except:
+#             datasec = main.parse_common()
+#             try:
+#                 index = datasec["heads"].index(y)
+#             except:
+#                 index = None
 
-    if index is not None:
-        if head == "ELEMENT":
-            data_list = [
-                ztoelem(int(float(m))) for m in datasec["data"][index] if not m is None
-            ]
+#     if index is not None:
+#         if head == "ELEMENT":
+#             data_list = [
+#                 ztoelem(int(float(m))) for m in datasec["data"][index] if not m is None
+#             ]
 
-        elif head == "CHARGE":
-            data_list = [
-                str(int(float(m))) for m in datasec["data"][index] if not m is None
-            ]
+#         elif head == "CHARGE":
+#             data_list = [
+#                 str(int(float(m))) for m in datasec["data"][index] if not m is None
+#             ]
 
-        elif head == "ISOMER":
-            data_list = [
-                numtoisomer(int(float(m)))
-                for m in datasec["data"][index]
-                if not m is None
-            ]
+#         elif head == "ISOMER":
+#             data_list = [
+#                 numtoisomer(int(float(m)))
+#                 for m in datasec["data"][index]
+#                 if not m is None
+#             ]
 
-        elif head == "MASS":
-            data_list = [
-                str(int(float(m))) for m in datasec["data"][index] if not m is None
-            ]
+#         elif head == "MASS":
+#             data_list = [
+#                 str(int(float(m))) for m in datasec["data"][index] if not m is None
+#             ]
 
-        else:
-            data_list = [
-                str(int(float(m))) for m in datasec["data"][index] if not m is None
-            ]
+#         else:
+#             data_list = [
+#                 str(int(float(m))) for m in datasec["data"][index] if not m is None
+#             ]
 
-    return data_list
+#     return data_list
 
 
-def get_colmun_indexes_old(main, sub, x_heads=None):
-    """
-    return the indexes (positions) of columns that contains particular
-    heads (e.g. DATA, DATA-CM, DATA-MAX..etc)
-    """
+# def get_colmun_indexes_old(main, sub, x_heads=None):
+#     """
+#     return the indexes (positions) of columns that contains particular
+#     heads (e.g. DATA, DATA-CM, DATA-MAX..etc)
+#     """
 
-    def _get_head_index(data_dict=None, x_heads=None):
-        """
-        By giving posible headers from dictionary, then is returns location indexes
-        in the DATA or COMMON block
-        """
-        if x_heads and data_dict:
-            return [
-                loc
-                for loc in range(len(data_dict["heads"]))
-                if data_dict["heads"][loc] in x_heads
-            ]
-        else:
-            return None
+#     def _get_head_index(data_dict=None, x_heads=None):
+#         """
+#         By giving posible headers from dictionary, then is returns location indexes
+#         in the DATA or COMMON block
+#         """
+#         if x_heads and data_dict:
+#             return [
+#                 loc
+#                 for loc in range(len(data_dict["heads"]))
+#                 if data_dict["heads"][loc] in x_heads
+#             ]
+#         else:
+#             return None
 
-    locs = []
+#     locs = []
 
-    data_dict = sub.parse_data()
+#     data_dict = sub.parse_data()
 
-    if data_dict:
-        locs = _get_head_index(data_dict, x_heads)
+#     if data_dict:
+#         locs = _get_head_index(data_dict, x_heads)
 
-    if locs:
-        pass
+#     if locs:
+#         pass
 
-    else:
-        data_dict = sub.parse_common()
+#     else:
+#         data_dict = sub.parse_common()
 
-        if data_dict:
-            locs = _get_head_index(data_dict, x_heads)
+#         if data_dict:
+#             locs = _get_head_index(data_dict, x_heads)
 
-        if locs:
-            pass
+#         if locs:
+#             pass
 
-        else:
-            data_dict = main.parse_common()
-            locs = _get_head_index(data_dict, x_heads)
+#         else:
+#             data_dict = main.parse_common()
+#             locs = _get_head_index(data_dict, x_heads)
 
-    return locs, data_dict
+#     return locs, data_dict
+
+
+# def product_expansion_old(main, sub, reac_dic=None):
+#     reac_set = []
+#     # print(reac_dic)
+#     """
+#     product exceptions
+#     """
+#     if not reac_dic:
+#         return
+
+#     if reac_dic["sf4"] == "ELEM/MASS":
+#         list_dict = {}
+#         for x in ["CHARGE", "ELEMENT", "MASS", "ISOMER"]:
+#             cil = get_product_column(main, sub, x)
+#             if cil:
+#                 list_dict[x] = cil
+
+#         if len(list_dict["MASS"]) > len(list_dict["ELEMENT"]):
+#             list_dict["ELEMENT"] = list_dict["ELEMENT"] * len(list_dict["MASS"])
+#             list_dict["CHARGE"] = list_dict["CHARGE"] * len(list_dict["MASS"])
+
+#         if len(list_dict["MASS"]) < len(list_dict["ELEMENT"]):
+#             list_dict["MASS"] = list_dict["MASS"] * len(list_dict["ELEMENT"])
+
+#         if list_dict.get("ISOMER"):
+#             prod_list = [
+#                 charge + "-" + elem + "-" + mass + "-" + iso
+#                 if iso is not None
+#                 else charge + "-" + elem + "-" + mass
+#                 for charge, elem, mass, iso in zip(
+#                     list_dict["CHARGE"],
+#                     list_dict["ELEMENT"],
+#                     list_dict["MASS"],
+#                     list_dict["ISOMER"],
+#                 )
+#             ]
+
+#         else:
+#             prod_list = [
+#                 charge + "-" + elem + "-" + mass
+#                 for charge, elem, mass in zip(
+#                     list_dict["CHARGE"],
+#                     list_dict["ELEMENT"],
+#                     list_dict["MASS"],
+#                 )
+#             ]
+
+#         i = 0
+#         for prod in prod_list:
+#             add = reac_dic.copy()
+#             add["residual"] = prod
+#             add["np"] = int(i)
+#             reac_set.append(add)
+#             i += 1
+
+#     elif reac_dic["sf4"] == "MASS":
+#         data_list = get_product_column(main, sub, "MASS")
+#         i = 0
+#         for mass in data_list or []:
+#             add = reac_dic.copy()
+#             add["residual"] = "A=" + mass
+#             add["np"] = int(i)
+#             reac_set.append(add)
+#             i += 1
+
+#     elif reac_dic["sf4"] == "ELEM":
+#         data_list = get_product_column(main, sub, "ELEMENT")
+#         i = 0
+#         for elem in data_list or []:
+#             add = reac_dic.copy()
+#             add["residual"] = elem
+#             add["np"] = int(i)
+#             reac_set.append(add)
+#             i += 1
+
+#     else:
+#         reac_dic["residual"] = reac_dic["sf4"]
+#         reac_set.append(reac_dic)
+
+#     return reac_set

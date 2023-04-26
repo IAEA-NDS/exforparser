@@ -42,13 +42,22 @@ def parse_primitive_reaction(reaction_field) -> dict:
 
 
 def get_details(bb):
+    if len(bb) == 3:
+        sf49 = bb[2]
+    else:
+        sf49 = ",".join(
+            [
+                b.replace(",", "") if type(b) is not list else "(" + b[0] + ")"
+                for b in bb[2:]
+            ]
+        )
+
     dict = {
         "target": bb[0],
         "process": bb[1][0],
-        "sf49": bb[2],
+        "sf49": sf49,
     }
-    dict.update(split_sf(bb[2].split(",")))
-
+    dict.update(split_sf(sf49.split(",")))
     return dict
 
 

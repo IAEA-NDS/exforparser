@@ -1,58 +1,101 @@
+####################################################################
+#
+# This file is part of exfor-parser.
+# Copyright (C) 2022 International Atomic Energy Agency (IAEA)
+#
+# Disclaimer: The code is still under developments and not ready
+#             to use. It has been made public to share the progress
+#             among collaborators.
+# Contact:    nds.contact-point@iaea.org
+#
+####################################################################
 import os
 from config import OUT_PATH
-from tabulated.exfor_reaction_mt import mt_fy, rp_sig, mt_to_reaction
 
-mt_dict, sf3_dict = mt_to_reaction()
 
-def get_dir_name(react_dict, mt):
+sf6_to_dir = {
+    "SIG": "cs",
+    "DA": "angle",
+    "DE": "energy",
+    "NU": "fission",
+    "NU/DE": "fission/energy",
+    "FY": "fission_yield",
+    "KE": "kinetic_energy",
+    "AKE": "average_kinetic_energy",
+    "FY/DE": "fission/energy",
+}
+
+
+def target_reformat(react_dict):
+
+    if len(react_dict["target"].split("-")) == 3:
+        target = (
+            react_dict["target"].split("-")[1].capitalize()
+            + "-"
+            + react_dict["target"].split("-")[2]
+        )
+
+    else:
+        target = (
+            react_dict["target"].split("-")[1].capitalize()
+            + "-"
+            + react_dict["target"].split("-")[2]
+            + "-"
+            + react_dict["target"].split("-")[3].lower()
+        )
+
+    return target
+
+
+def process_reformat(react_dict):
+    if len(react_dict["process"].split(",")[0]) == 1:
+        return react_dict["process"].split(",")[0].lower()
+
+    elif "-" in react_dict["process"].split(",")[0]:
+        return (
+            "i/"
+            + react_dict["process"].split(",")[0].split("-")[1].capitalize()
+            + react_dict["process"].split(",")[0].split("-")[2]
+        )
+
+    else:
+        return "i/" + react_dict["process"].split(",")[0]
+
+
+def get_dir_name(react_dict, level_num=None, subdir=None):
     ### generate output dir and filename
+
     return os.path.join(
         OUT_PATH,
         "exfortables",
-        react_dict["process"].split(",")[0] if "-" not in react_dict["process"].split(",")[0] else "I/" + react_dict["process"].split(",")[0],
-        react_dict["target"],
-        # react_dict["target"].split("-")[1].capitalize()
-        # + react_dict["target"].split("-")[2],
-        react_dict["sf6"],
-        # react_dict["process"].replace(",", "-"),
-        mt,
+        process_reformat(react_dict),
+        target_reformat(react_dict),
+        react_dict["process"].replace(",", "-").lower()
+        if not level_num
+        else react_dict["process"].replace(",", "-").lower()
+        + "-"
+        + "L"
+        + str(level_num),
+        sf6_to_dir[react_dict["sf6"]],
+        subdir if subdir else "",
     )
 
 
-# def get_dir_name_par_sig(react_dict, mt):
-#     ### generate output dir and filename
-#     return os.path.join(
-#         OUT_PATH,
-#         "exfortables",
-#         react_dict["process"].split(",")[0] if "-" not in react_dict["process"].split(",")[0] else ["I", react_dict["process"].split(",")[0]],
-#         react_dict["target"],
-#         # react_dict["target"].split("-")[1].capitalize()
-#         # + react_dict["target"].split("-")[2],
-#         react_dict["sf6"],
-#         # react_dict["process"].replace(",", "-"),
-#         mt,
-#     )
-
-
-def exfortables_filename_sig(dir, id, mt, prod, react_dict, bib):
+def exfortables_filename(dir, id, process, react_dict, bib, en=None, prod=None):
 
     return os.path.join(
         dir,
         (
-            react_dict["process"].replace(",", "-").lower()
+            target_reformat(react_dict)
             + "_"
-            + react_dict["target"].split("-")[1].capitalize()
-            + react_dict["target"].split("-")[2]
+            + process
             + "_"
-            + "MT"
-            + str(mt)
-            + "_"
-            + str(prod)
-            + "_"
+            + (str(prod) + "_" if prod else "")
+            + ("E" + "{:.3e}".format(en) + "_" if en else "")
             + bib["authors"][0]["name"].split(".")[-1].replace(" ", "")
             + "-"
             + str(id)
-            + "_"
+            + "-"
             + (
                 bib["references"][0]["publication_year"]
                 if bib.get("references")
@@ -63,29 +106,21 @@ def exfortables_filename_sig(dir, id, mt, prod, react_dict, bib):
     )
 
 
-
-def exfortables_filename_da(dir, id, mt, en, prod, react_dict, bib):
+def exfortables_filename_product(dir, id, process, prod, react_dict, bib):
 
     return os.path.join(
         dir,
         (
-            react_dict["process"].replace(",", "-").lower()
+            target_reformat(react_dict)
             + "_"
-            + react_dict["target"].split("-")[1].capitalize()
-            + react_dict["target"].split("-")[2]
-            + "_"
-            + "MT"
-            + str(mt)
-            + "_"
-            + "E"
-            + ("{:.3e}".format(en) if en < 1.0 else "{:08.3f}".format(en))
+            + process
             + "_"
             + str(prod)
             + "_"
             + bib["authors"][0]["name"].split(".")[-1].replace(" ", "")
             + "-"
             + str(id)
-            + "_"
+            + "-"
             + (
                 bib["references"][0]["publication_year"]
                 if bib.get("references")
@@ -96,28 +131,50 @@ def exfortables_filename_da(dir, id, mt, en, prod, react_dict, bib):
     )
 
 
-
-
-def exfortables_filename_fy(dir, id, mt, en, react_dict, bib):
+def exfortables_filename_Einc_prodocut(dir, id, process, en, prod, react_dict, bib):
 
     return os.path.join(
         dir,
         (
-            react_dict["process"].replace(",", "-").lower()
+            target_reformat(react_dict)
             + "_"
-            + react_dict["target"].split("-")[1].capitalize()
-            + react_dict["target"].split("-")[2]
+            + process
             + "_"
-            + "MT"
-            + mt
+            + str(prod)
             + "_"
             + "E"
-            + ("{:.3e}".format(en) if en < 1.0 else "{:08.3f}".format(en))
+            + "{:.3e}".format(en)
             + "_"
             + bib["authors"][0]["name"].split(".")[-1].replace(" ", "")
             + "-"
             + str(id)
+            + "-"
+            + (
+                bib["references"][0]["publication_year"]
+                if bib.get("references")
+                else "1900"
+            )
+            + ".txt"
+        ),
+    )
+
+
+def exfortables_filename_Einc(dir, id, process, en, react_dict, bib):
+
+    return os.path.join(
+        dir,
+        (
+            target_reformat(react_dict)
             + "_"
+            + process
+            + "_"
+            + "E"
+            + "{:.3e}".format(en)
+            + "_"
+            + bib["authors"][0]["name"].split(".")[-1].replace(" ", "")
+            + "-"
+            + str(id)
+            + "-"
             + (
                 bib["references"][0]["publication_year"]
                 if bib.get("references")

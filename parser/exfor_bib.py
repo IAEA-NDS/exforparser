@@ -165,6 +165,12 @@ def parse_main_bib(bib_block) -> dict:
                             )
                             identifier_set[i]["institute"] = "(" + facilities[1] + ")"
 
+                        else:
+                            identifier_set[i]["facility_type"] = identifier_set[i][
+                                "x4_code"
+                            ]
+                            identifier_set[i]["institute"] = None
+
                 bib_dict["facilities"] = identifier_set
 
             # elif identifier == "HISTORY":

@@ -4,8 +4,8 @@
 3           (n,nonelas.)        NON
 4           (n,inelas.)         INL
 4           (z,one N)           N
-5           (n,X)               X
-10          (n,contin.)         X              CON,SIG
+5           (n,anything)        -
+10          (n,contin.)         -               CON,SIG
 11          (n,2nd)             2N+D
 #12          Unassigned.
 #13          Unassigned. 
@@ -14,7 +14,7 @@
 16          (n,2n)              2N   
 17          (n,3n)              3N   
 18          (n,f)               F    
-19          (n,0f)              FIS                             first chance
+19          (n,0f)              -                              first chance
 20          (n,nf)              N+F                             2nd chance
 21          (n,2nf)             2N+F                            3rd chance
 38          (n,3nf)             3N+F                            4th chance 
@@ -34,7 +34,7 @@
 37          (n,4n)              4N
 41          (n,2np)             2N+P
 42          (n,3np)             3N+P
-#43          (Unassigned)        -
+#43          (Unassigned)       -
 44          (n,n2p)             N+2P
 45          (n,npa)             N+P+A
 50          (n,n0)              INL            PAR,SIG
@@ -123,7 +123,7 @@
 192         (n,dh)              D+HE
 193         (n,ha)              HE+A
 194         (n,4n2p)            4N+2P
-195         (n,4n2a)            4N+2a 
+195         (n,4n2a)            4N+2A
 196         (n,4npa)            4N+P+A
 197         (n,3p)              3P
 198         (n,n'3p)            N+3P
@@ -136,3 +136,5 @@
 205         (n,Xt)              XD
 206         (n,Xh)              XHE3
 207         (n,Xa)              XA
+residual    (n,X)               X
+others      (n,pf)              P+F
