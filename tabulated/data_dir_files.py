@@ -11,19 +11,7 @@
 ####################################################################
 import os
 from config import OUT_PATH
-
-
-sf6_to_dir = {
-    "SIG": "cs",
-    "DA": "angle",
-    "DE": "energy",
-    "NU": "fission",
-    "NU/DE": "fission/energy",
-    "FY": "fission_yield",
-    "KE": "kinetic_energy",
-    "AKE": "average_kinetic_energy",
-    "FY/DE": "fission/energy",
-}
+from tabulated.exfor_reaction_mt import sf6_to_dir
 
 
 def target_reformat(react_dict):
@@ -71,11 +59,11 @@ def get_dir_name(react_dict, level_num=None, subdir=None):
         process_reformat(react_dict),
         target_reformat(react_dict),
         react_dict["process"].replace(",", "-").lower()
-        if not level_num
-        else react_dict["process"].replace(",", "-").lower()
-        + "-"
-        + "L"
-        + str(level_num),
+            if not level_num
+            else react_dict["process"].replace(",", "-").lower()
+            + "-"
+            + "L"
+            + str(level_num),
         sf6_to_dir[react_dict["sf6"]],
         subdir if subdir else "",
     )

@@ -14,10 +14,10 @@ import pandas as pd
 import numpy as np
 import re
 
-
 from sql.creation import insert_reaction, insert_reaction_index, insert_df_to_sqlalchemy
 from utilities.elem import ztoelem
-from tabulated.exfor_reaction_mt import e_lvl_to_mt50
+from .data_locations import *
+from tabulated.exfor_reaction_mt import get_mf, get_mt, e_lvl_to_mt50
 from ripl3_json.ripl3_descretelevel import RIPL_Level
 
 def limit_data_dict_by_locs(locs, data_dict):
@@ -147,11 +147,14 @@ def get_average(sf4, data_dict_conv):
             for min, max in zip(x_min, x_max)
         ]
 
+
     elif x_min and not x_max:
         x_average = x_min
 
+
     elif not x_min and x_max:
         x_average = x_max
+
 
     new_x = evaluated_data_points(
         x=x,
@@ -162,6 +165,7 @@ def get_average(sf4, data_dict_conv):
         x_max=x_max,
     )
     # print(new_x)
+
 
     if not new_x:
         x_temp = {}
@@ -177,7 +181,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
 
     entnum, subent, pointer = entry_id.split("-")
     react_dict = entry_json["reactions"][subent][pointer]["children"][0]
-
+    
     locs = {
         "locs_en": [],
         "locs_den": [],
@@ -239,6 +243,9 @@ def process_general(entry_id, entry_json, data_dict_conv):
                 dy if dy is not None else None
                 for dy in data_dict_conv["data"][locs["locs_dy"][0]]
             ]
+
+    # Once the data length is fixed, get MF number based on reaction
+    mf = [get_mf(react_dict)] * len(data)
 
     ## -----------------------   residual info    --------------------- ##
     ## get element, mass, isomer column position
@@ -350,7 +357,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
         )
 
     if not locs["locs_en"] and not locs["locs_den"] and react_dict["process"] == "0,F":
-        # case for the spontanious fission
+        # it is possible for the case of spontanious fission
         en_inc = [0.0] * len(data)
         den_inc = [0.0] * len(data)
 
@@ -402,14 +409,18 @@ def process_general(entry_id, entry_json, data_dict_conv):
             pointer, data_dict_conv
         )
 
+
     if not locs["locs_e"] and not locs["locs_de"]:
         e_out = [None] * len(data)
         de_out = [None] * len(data)
+        mt = [get_mt(react_dict)] * len(data)
+
 
     if locs["locs_e"] and data_dict_conv["heads"][locs["locs_e"][0]] == "LVL-NUMB":
         level_num = [int(l) for l in data_dict_conv["data"][locs["locs_e"][0]]]
         mt = [e_lvl_to_mt50(l) for l in level_num]
         e_out = [None] * len(data)
+
 
     elif len(locs["locs_e"]) == 1 and data_dict_conv["heads"][
         locs["locs_e"][0]
@@ -419,6 +430,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
             for e in data_dict_conv["data"][locs["locs_e"][0]]
         ]
 
+
     elif len(locs["locs_e"]) > 1:
         e_out = [
             e / 1e6 if e is not None else None
@@ -427,6 +439,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
             )
         ]
 
+
     if (
         not react_dict["target"].endswith("-0")
         and react_dict["sf5"] == "PAR"
@@ -434,12 +447,12 @@ def process_general(entry_id, entry_json, data_dict_conv):
         and not level_num
     ):
         for e_lvl in e_out:
-            L = RIPL_Level(
-                react_dict["sf4"].split("-")[0],
-                react_dict["sf4"].split("-")[2],
-                e_lvl,
-            )
             try:
+                L = RIPL_Level(
+                    react_dict["sf4"].split("-")[0],
+                    react_dict["sf4"].split("-")[2],
+                    e_lvl,
+                )
                 level_num += [L.ripl_find_level_num()]
                 mt += [e_lvl_to_mt50(L.ripl_find_level_num())]
             except:
@@ -447,6 +460,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
                 mt = [None] * len(data)
 
         assert len(level_num) == len(e_out)
+
 
     if len(locs["locs_de"]) == 1:
         de_out = [
@@ -463,11 +477,13 @@ def process_general(entry_id, entry_json, data_dict_conv):
         angle = [None] * len(data)
         dangle = [None] * len(data)
 
+
     elif len(locs["locs_ang"]) == 1:
         angle = [
             a if a is not None else None
             for a in data_dict_conv["data"][locs["locs_ang"][0]]
         ]
+
 
     elif len(locs["locs_ang"]) > 1:
         angle = [
@@ -477,29 +493,37 @@ def process_general(entry_id, entry_json, data_dict_conv):
             )
         ]
 
+
     if len(locs["locs_dang"]) == 1:
         dangle = [
             da if da is not None else None
             for da in data_dict_conv["data"][locs["locs_dang"][0]]
         ]
 
+
+    ## --------------------------------------------------------------------------------------- ##
+    ##              Data Process
+    ## --------------------------------------------------------------------------------------- ##
+
+
     df = pd.DataFrame(
         {
             "entry_id": entry_id,
-            "en_inc": en_inc if en_inc else np.nan,
-            "den_inc": den_inc if den_inc else np.nan,
-            "charge": charge if charge else np.nan,
-            "mass": mass if mass else np.nan,
-            "isomer": state if state else np.nan,
-            "residual": residual if residual else np.nan,
-            "level_num": level_num if level_num else np.nan,
-            "data": data if data else np.nan,
-            "ddata": ddata if ddata else np.nan,
-            "e_out": e_out if e_out else np.nan,
-            "de_out": de_out if de_out else np.nan,
-            "angle": angle if angle else np.nan,
-            "dangle": dangle if dangle else np.nan,
-            "mt": mt if mt else np.nan,
+            "en_inc": en_inc if en_inc else None,
+            "den_inc": den_inc if den_inc else None,
+            "charge": charge if charge else None,
+            "mass": mass if mass else None,
+            "isomer": state if state else None,
+            "residual": residual if residual else None,
+            "level_num": level_num if level_num else None,
+            "data": data if data else None,
+            "ddata": ddata if ddata else None,
+            "e_out": e_out if e_out else None,
+            "de_out": de_out if de_out else None,
+            "angle": angle if angle else None,
+            "dangle": dangle if dangle else None,
+            "mf": mf if mf else None,
+            "mt": mt if mt else None,
         }
     )
 
@@ -507,9 +531,13 @@ def process_general(entry_id, entry_json, data_dict_conv):
     df = df[~df["en_inc"].isna()]
     # print(df)
 
+
+    ## Insert data table into exfor_data
     if not df.empty:
         insert_df_to_sqlalchemy(df)
 
+
+    ## Insert data table into exfor_reactions
     if react_dict:
         reac_data = [
             {
@@ -532,6 +560,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
         ]
         insert_reaction(reac_data)
 
+        ## Insert data table into exfor_index, this is similart to exfor_reactions, but extended to residual and level number
         for r in df["residual"].unique():
             for l in df["level_num"].unique():
                 try:
@@ -540,6 +569,14 @@ def process_general(entry_id, entry_json, data_dict_conv):
                     ].unique()[0]
                 except:
                     mt = None
+
+                try:
+                    mf = df[(df["residual"] == r) & (df["level_num"] == l)][
+                        "mf"
+                    ].unique()[0]
+                except:
+                    mf = None
+
                 reac_index = [
                     {
                         "entry_id": entry_id,
@@ -549,7 +586,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
                         "process": react_dict["process"],
                         "sf4": react_dict["sf4"],
                         "residual": r,
-                        "level_num": None if np.isnan(l) else int(l),
+                        "level_num": l,
                         "e_inc_min": df["en_inc"].min(),
                         "e_inc_max": df["en_inc"].max(),
                         "points": len(df.index),
@@ -559,6 +596,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
                         "sf8": react_dict["sf8"],
                         "sf9": react_dict["sf9"],
                         "x4_code": entry_json["reactions"][subent][pointer]["x4_code"],
+                        "mf": mf,
                         "mt": mt,
                     }
                 ]

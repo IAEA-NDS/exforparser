@@ -12,7 +12,7 @@
 import random
 import pandas as pd
 import logging
-
+import math
 
 FORMATTER = logging.Formatter("%(asctime)s — %(name)s — %(levelname)s — %(message)s")
 logging.basicConfig(filename="tabulated.log", level=logging.DEBUG, filemode="w")
@@ -24,8 +24,8 @@ from parser.list_x4files import list_entries_from_df
 from parser.exfor_unit import unify_units
 from tabulated.exfor_reaction_mt import (
     sf3_dict,
-    mt_fy,
-    rp_sig,
+    mt_fy_sf5,
+    sig_sf5,
     mt_nu_sf5,
     get_mf,
     get_mt,
@@ -106,14 +106,16 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                 continue
 
             if react_dict["sf5"] is None or any(
-                sf5 == react_dict["sf5"] for sf5 in rp_sig.keys()
+                sf5 == react_dict["sf5"] for sf5 in sig_sf5.keys()
             ):
 
                 df = process_general(entry_id, entry_json, data_dict_conv)
+
                 if df["en_inc"].isnull().values.all():
                     continue
-                mf = get_mf(react_dict)
-                mt = get_mt(react_dict)
+                mf = df["mf"].unique()[0]
+                mt = df["mt"].unique()[0]
+
                 dir = get_dir_name(react_dict, level_num=None, subdir=None)
 
                 if any(
@@ -172,17 +174,22 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
             ):
                 ## none of (N,NON) PAR,SIG are useful
                 df = process_general(entry_id, entry_json, data_dict_conv)
+                mf = df["mf"].unique()[0]
+
                 if df["en_inc"].isnull().values.all():
                     continue
-                mf = get_mf(react_dict)
+
+                if react_dict["sf4"].endswith("-0") or react_dict["process"].split(",")[1] == "X":
+                    continue
 
                 for level_num in df["level_num"].unique():
-                    df2 = df[df["level_num"] == level_num]
-                    mt = df2["mt"].unique()
 
                     if not level_num:
-                        level_num = 0
-                        mt = "99"
+                        continue
+
+                    df2 = df[df["level_num"] == level_num]
+                    
+                    mt = df2["mt"].unique()
 
                     dir = get_dir_name(react_dict, level_num=level_num, subdir=None)
                     filename = exfortables_filename(
@@ -228,14 +235,14 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                 continue
 
             if react_dict["sf5"] is None or any(
-                sf5 == react_dict["sf5"] for sf5 in rp_sig.keys()
+                sf5 == react_dict["sf5"] for sf5 in sig_sf5.keys()
             ):
 
                 df = process_general(entry_id, entry_json, data_dict_conv)
                 if df["en_inc"].isnull().values.all():
                     continue
-                mf = get_mf(react_dict)
-                mt = get_mt(react_dict)
+                mf = df["mf"].unique()[0]
+                mt = df["mt"].unique()[0]
                 dir = get_dir_name(react_dict, level_num=None, subdir=None)
 
                 for en in df["en_inc"].unique():
@@ -296,17 +303,20 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
             ):
                 ## case for PAR,DA
                 df = process_general(entry_id, entry_json, data_dict_conv)
+                mf = df["mf"].unique()[0]
+
                 if df["en_inc"].isnull().values.all():
                     continue
-                mf = get_mf(react_dict)
+                
+                if react_dict["sf4"].endswith("-0") or react_dict["process"].split(",")[1] == "X":
+                    continue
 
                 for level_num in df["level_num"].unique():
+                    if not level_num:
+                        continue
+
                     df2 = df[df["level_num"] == level_num]
                     mt = df2["mt"].unique()
-
-                    if not level_num:
-                        level_num = 0
-                        mt = "99"
 
                     dir = get_dir_name(react_dict, level_num=level_num, subdir=None)
                     filename = exfortables_filename(
@@ -355,8 +365,8 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
             df = process_general(entry_id, entry_json, data_dict_conv)
             if df["en_inc"].isnull().values.all():
                 continue
-            mf = get_mf(react_dict)
-            mt = get_mt(react_dict)
+            mf = df["mf"].unique()[0]
+            mt = df["mt"].unique()[0]
             dir = get_dir_name(react_dict, level_num=None, subdir=None)
 
             for en in df["en_inc"].unique():
@@ -424,11 +434,14 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                 continue
 
             df = process_general(entry_id, entry_json, data_dict_conv)
+            
             if df["en_inc"].isnull().values.all():
                 continue
-            mf = get_mf(react_dict)
-            mt = mt_nu_sf5[react_dict["sf5"]] if react_dict["sf5"] else "452"
-            dir = get_dir_name(react_dict, level_num=None, subdir=mt)
+
+            mf = df["mf"].unique()[0]
+            mt = df["mt"].unique()[0]
+            subdir = mt_nu_sf5[react_dict["sf5"]]["name"] if react_dict["sf5"] else ""
+            dir = get_dir_name(react_dict, level_num=None, subdir=subdir)
 
             if react_dict["sf4"] is None:
                 ## no reaction product would be given in these cases
@@ -491,8 +504,8 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
             df = process_general(entry_id, entry_json, data_dict_conv)
             if df["en_inc"].isnull().values.all():
                 continue
-            mf = get_mf(react_dict)
-            mt = get_mt(react_dict)
+            mf = df["mf"].unique()[0]
+            mt = df["mt"].unique()[0]
             dir = get_dir_name(react_dict, level_num=None, subdir=None)
 
             if react_dict["sf4"] is None and "NU" in react_dict["sf6"]:
@@ -557,8 +570,8 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
             df = process_general(entry_id, entry_json, data_dict_conv)
             if df["en_inc"].isnull().values.all():
                 continue
-            mf = get_mf(react_dict)
-            mt = mt_nu_sf5[react_dict["sf5"]] if react_dict["sf5"] else "452"
+            mf = df["mf"].unique()[0]
+            mt = df["mt"].unique()[0]
             dir = get_dir_name(react_dict, level_num=None, subdir=None)
 
             for en in df["en_inc"].unique():
@@ -609,8 +622,8 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
             df = process_general(entry_id, entry_json, data_dict_conv)
             if df["en_inc"].isnull().values.all():
                 continue
-            mf = get_mf(react_dict)
-            mt = sf3_dict[react_dict["process"].split(",")[1]]["mt"]
+            mf = df["mf"].unique()[0]
+            mt = df["mt"].unique()[0]
             dir = get_dir_name(react_dict, level_num=None, subdir=None)
             prod = react_dict["sf7"]
 
@@ -639,7 +652,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
         ## ------------------------  Case for the fission product yields ------------------------  ##
         elif react_dict["sf6"] == "FY":
             if (
-                not any(par == react_dict["sf5"] for par in mt_fy.keys())
+                not any(par == react_dict["sf5"] for par in mt_fy_sf5.keys())
                 or any(
                     excep in react_dict["sf8"]
                     for excep in ("MSC", "REL", "FRC", "RES", "RAW")
@@ -652,9 +665,10 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
             df = process_general(entry_id, entry_json, data_dict_conv)
             if df["en_inc"].isnull().values.all():
                 continue
-            mf = get_mf(react_dict)
-            mt = mt_fy[react_dict["sf5"]]
-            dir = get_dir_name(react_dict, level_num=None, subdir=mt)
+            mf = df["mf"].unique()[0]
+            mt = df["mt"].unique()[0]
+            subdir = mt_fy_sf5[react_dict["sf5"]]["name"]
+            dir = get_dir_name(react_dict, level_num=None, subdir=subdir)
 
             for en in df["en_inc"].unique():
                 df2 = df[df["en_inc"] == en]
@@ -707,11 +721,13 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
 
 
 def main():
+    # failed = ["13317", "14369", "40106", "D5081", "13277", "D0487", "14625", "32791", "12709", "13482", "F1099", "41075", "33120", "30751", "33028", "C1581", "F0114", "13480", "40206", "13385", "23444", "13332", "A0095", "13458", "23271", "D0847", "D8036", "G0066", "L0105", "F0332", "10722", "33119", "13396", "D8036", "33160", "40545", "21495", "13072", "32632", "23213", "C0969" ] 
     ent = list_entries_from_df()
     entries = random.sample(ent, len(ent))
+    # entries = failed
 
     # drop_tables()
-    # del_outputs(OUT_PATH + "exfortables/")
+    del_outputs(OUT_PATH + "exfortables/")
 
     start_time = print_time()
     logging.info(f"Start processing {start_time}")
@@ -719,6 +735,7 @@ def main():
     for entnum in entries:
         if entnum.startswith("V"):
             continue
+
         print(entnum)
 
         entry_json = convert_exfor_to_json(entnum)
@@ -735,7 +752,7 @@ def main():
                         "first_author": entry_json["bib_record"]["authors"][0]["name"]
                         if entry_json["bib_record"].get("authors")
                         else None,
-                        "authors": "".join(
+                        "authors": ", ".join(
                             [
                                 entry_json["bib_record"]["authors"][i]["name"]
                                 if entry_json["bib_record"].get("authors")
@@ -804,12 +821,11 @@ def main():
                     ]
                 )
 
-                ## Unify units
-                data_dict_conv = unify_units(data_dict)
-
                 ## Unify data length
                 data_dict_conv = data_length_unify(data_dict)
-                # print(data_dict_conv["heads"])
+
+                ## Unify units, convert e.g. MeV to eV
+                data_dict_conv = unify_units(data_dict_conv)
 
             else:
                 ## means there is NODATA defined in the Subent
@@ -817,6 +833,7 @@ def main():
 
             entry_id = entnum + subent
 
+            # tabulated_to_exfortables_format(entry_id, entry_json, data_dict_conv)
             try:
                 tabulated_to_exfortables_format(entry_id, entry_json, data_dict_conv)
 

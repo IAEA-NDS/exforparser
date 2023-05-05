@@ -20,7 +20,7 @@ D = Diction()
 def bib_table(id, main_bib_dict, react_dict, mfmt, df):
     print(
         "# entry-subent-pointer  :",
-        id[0:5] + "-" + id[5:8] + "-" + id[8:],
+        id,
         "\n" "# EXFOR reaction        :",
         react_dict["code"],
         "\n" "# incident energy       :",
@@ -40,9 +40,9 @@ def bib_table(id, main_bib_dict, react_dict, mfmt, df):
             else df["residual"].unique()[0]
             if len(df["residual"].unique()) == 1
             and not pd.isnull(df["residual"].unique())
-            else str(df.mass.min()) + " <= mass <= " + str(df.mass.max())
+            else str(df.mass.min()) + " <= A <= " + str(df.mass.max())
             if "A=" in df["residual"].unique()[0]
-            else str(df.elem.min()) + " <= elem <= " + str(df.elem.max())
+            else str(df.charge.min()) + " <= Z <= " + str(df.charge.max())
             if "Z=" in df["residual"].unique()[0]
             else "-"
         ),
@@ -121,7 +121,7 @@ def write_to_exfortables_format_sig(id, dir, file, main_bib_dict, react_dict, mt
                             row["en_inc"],
                             0.0 if pd.isnull(row["den_inc"]) else row["den_inc"],
                             row["data"],
-                            row["ddata"],
+                            0.0 if pd.isnull(row["ddata"]) else row["ddata"],
                         )
                     )
         f.close()
@@ -150,7 +150,7 @@ def write_to_exfortables_format_da(id, dir, file, main_bib_dict, react_dict, mt,
                             row["angle"],
                             0.0 if pd.isnull(row["dangle"]) else row["dangle"],
                             row["data"],
-                            row["ddata"],
+                            0.0 if pd.isnull(row["ddata"]) else row["ddata"],
                         )
                     )
         f.close()
@@ -179,7 +179,7 @@ def write_to_exfortables_format_de(id, dir, file, main_bib_dict, react_dict, mt,
                             row["e_out"],
                             0.0 if pd.isnull(row["de_out"]) else row["de_out"],
                             row["data"],
-                            row["ddata"],
+                            0.0 if pd.isnull(row["ddata"]) else row["ddata"],
                         )
                     )
         f.close()
@@ -205,11 +205,11 @@ def write_to_exfortables_format_fy(id, dir, file, main_bib_dict, react_dict, mt,
                 for i, row in df.iterrows():
                     print(
                         "{:>17}{:>17}{:17}{:17.5E}{:17.5E}".format(
-                            row["charge"],
-                            row["mass"],
-                            row["isomer"],
+                            "" if pd.isnull(row["charge"]) else row["charge"],
+                            "" if pd.isnull(row["mass"]) else row["mass"],
+                            "" if pd.isnull(row["isomer"]) else row["isomer"],
                             row["data"],
-                            row["ddata"],
+                            0.0 if pd.isnull(row["ddata"]) else row["ddata"],
                         )
                     )
         f.close()
@@ -237,7 +237,7 @@ def write_to_exfortables_format_nu(id, dir, file, main_bib_dict, react_dict, mt,
                             row["en_inc"],
                             0.0 if pd.isnull(row["den_inc"]) else row["den_inc"],
                             row["data"],
-                            row["ddata"],
+                            0.0 if pd.isnull(row["ddata"]) else row["ddata"],
                         )
                     )
         f.close()
@@ -268,7 +268,7 @@ def write_to_exfortables_format_kinetic_e(
                             row["en_inc"],
                             0.0 if pd.isnull(row["den_inc"]) else row["den_inc"],
                             row["data"],
-                            row["ddata"],
+                            0.0 if pd.isnull(row["ddata"]) else row["ddata"],
                         )
                     )
         f.close()

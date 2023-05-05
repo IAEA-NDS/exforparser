@@ -16,65 +16,107 @@ sys.path.append("../")
 from utilities.utilities import slices
 
 
-mt_fy = {
-    "CUM": "459",
-    "CHN": "459",
-    "IND": "454",
-    "SEC": "454",
-    "MAS": "454",
-    "SEC/CHN": "454",
-    "CHG": "454",
-    "PRE": "460",
-    "PRV": "460",
-    "TER": "460",
-    "QTR": "460",
-    "PR": "460",
+def get_mf(react_dict):
+
+    if sf_to_mf.get(react_dict["sf6"]):
+        if react_dict["sf6"] == "NU":
+            return sf_to_mf[react_dict["sf6"]]
+
+        elif react_dict["sf4"] == "0-G-0":
+            return "12"  # Multiplicity of photon production
+
+        else:
+            return sf_to_mf[react_dict["sf6"]]
+    else:
+        return "?"
+
+
+def get_mt(react_dict):
+
+    if react_dict["sf6"] == "FY":
+        return mt_fy_sf5[react_dict["sf5"]]["mt"] if react_dict["sf5"] else ""
+    
+    elif react_dict["sf6"] == "NU":
+        return mt_nu_sf5[react_dict["sf5"]]["mt"] if react_dict["sf5"] else ""
+    
+    else:
+        if (
+            react_dict["process"].split(",")[0] == "N"
+            and react_dict["process"].split(",")[1] == "INL"
+        ):
+            return "4"
+
+        elif (
+            react_dict["process"].split(",")[0] != "N"
+            and react_dict["process"].split(",")[1] == "N"
+        ):
+            return "4"
+
+        else:
+            return sf3_dict[react_dict["process"].split(",")[1]]["mt"]
+
+
+
+
+sf6_to_dir = {
+    "SIG": "xs",
+    "DA": "angle",
+    "DE": "energy",
+    "NU": "neutrons",
+    "DL": "neutrons",
+    "NU/DE": "neutrons/energy",
+    "FY": "fission/yield",
+    "FY/DE": "fission/energy",
+    "KE": "kinetic_energy",
+    "AKE": "kinetic_energy/average",
 }
 
-rp_sig = {"IND": "RP", "CUM": "RP", "(CUM)": "RP", "M+": "RP", "M-": "RP", "(M)": "RP"}
 
-mt_sig = {
-    "CUM": "459",
-    "CHN": "459",
-    "IND": "454",
-    "SEC": "454",
-    "MAS": "454",
-    "SEC/CHN": "454",
-    "CHG": "454",
-    "PRE": "460",
-    "PRV": "460",
-    "TER": "460",
-    "QTR": "460",
-    "PR": "460",
+## The allowed SF5 for SIG data
+sig_sf5 = {"IND": "RP",
+            "CUM": "RP", 
+            "(CUM)": "RP", 
+            "M+": "RP", 
+            "M-": "RP", 
+            "(M)": "RP"}
+
+
+## The MT number allocation and directory name for FY data
+mt_fy_sf5 = {
+    "CUM": {"mt": "459", "name": "cumulative"}, 
+    "CHN": {"mt": "459", "name": "cumulative"},
+    "IND": {"mt": "454", "name": "independent"},
+    "SEC": {"mt": "454", "name": "independent"},
+    "MAS": {"mt": "454", "name": "independent"},
+    "SEC/CHN": {"mt": "454", "name": "independent"},
+    "CHG": {"mt": "454", "name": "independent"},
+    "PRE": {"mt": "460", "name": "primary"},
+    "PRV": {"mt": "460", "name": "primary"},
+    "TER": {"mt": "460", "name": "primary"},
+    "QTR": {"mt": "460", "name": "primary"},
+    "PR": {"mt": "460", "name": "primary"},
 }
 
+## The MT number allocation and directory name for NU (neutron observables) data
 mt_nu_sf5 = {
-    "": "452",
-    "PR": "456",
-    "SEC/PR": "Miscellaneous",
-    "DL": "455",
-    "TER": "456",
-    "DL/CUM": "455",
-    "DL/GRP": "DNgroup",
-    "PR/TER": "Miscellaneous",
-    "PRE/PR/FRG": "Miscellaneous",
-    "PR/FRG": "Miscellaneous",
-    "PR/PAR": "Miscellaneous",
-    "PR/NUM": "Miscellaneous",
-    "NUM": "Miscellaneous",
+    "": {"mt": "452", "name": ""},
+    "PR": {"mt": "456", "name": "prompt"},
+    "SEC": "",
+    "SEC/PR": {"mt": None, "name": "miscellaneous"},
+    "DL": {"mt": "455", "name": "delayed"},
+    "TER": {"mt": "456", "name": "prompt"},
+    "DL/CUM": {"mt": "455", "name": "delayed"},
+    "DL/GRP": {"mt": "455", "name": "delayed"},
+    "PR/TER": {"mt": None, "name": "miscellaneous"},
+    "PRE/PR": {"mt": None, "name": "miscellaneous"},
+    "SEC/PR": {"mt": None, "name": "miscellaneous"},
+    "PRE/PR/FRG": {"mt": None, "name": "miscellaneous"},
+    "PR/FRG": {"mt": None, "name": "miscellaneous"},
+    "PR/PAR": {"mt": None, "name": "miscellaneous"},
+    "PR/NUM": {"mt": None, "name": "miscellaneous"},
+    "NUM": {"mt": None, "name": "miscellaneous"},
 }
 
-mt_spec = {
-    "": "452",
-    "PR": "456",
-    "DL": "455",
-    "DL/CUM": "455",
-    "DL/GRP": "DNgroup",
-    "PR/TER": "Miscellaneous",
-    "PR/FRG": "Miscellaneous",
-    "PR/NUM": "Miscellaneous",
-    "NUM": "Miscellaneous",
-}
 
 
 def mt_to_reaction():
@@ -108,7 +150,7 @@ sf3_dict = mt_to_reaction()
 def e_lvl_to_mt50(level_num):
     mt = list(range(50, 91))
     if level_num is None:
-        return "99"
+        return None
     elif int(level_num) < 40:
         return str(mt[int(level_num)])
     else:
@@ -129,35 +171,3 @@ sf_to_mf = {
     "DA/DE": "6",
 }
 
-
-def get_mf(react_dict):
-
-    if sf_to_mf.get(react_dict["sf6"]):
-        if react_dict["sf6"] == "NU":
-            return sf_to_mf[react_dict["sf6"]]
-
-        elif react_dict["sf4"] == "0-G-0":
-            return "12"  # Multiplicity of photon production
-
-        else:
-            return sf_to_mf[react_dict["sf6"]]
-    else:
-        return "?"
-
-
-def get_mt(react_dict):
-
-    if (
-        react_dict["process"].split(",")[0] == "N"
-        and react_dict["process"].split(",")[1] == "INL"
-    ):
-        return "4"
-
-    elif (
-        react_dict["process"].split(",")[0] != "N"
-        and react_dict["process"].split(",")[1] == "N"
-    ):
-        return "4"
-
-    else:
-        return sf3_dict[react_dict["process"].split(",")[1]]["mt"]

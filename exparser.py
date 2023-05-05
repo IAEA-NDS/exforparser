@@ -109,9 +109,9 @@ def main():
     ent = list_entries_from_df()
     entries = random.sample(ent, len(ent))
     # entries = ent
-    entries=["11111"]
+    # entries=["11111"]
 
-    del_outputs(OUT_PATH + "json/")
+    # del_outputs(OUT_PATH + "json/")
 
     start_time = print_time()
     logging.info(f"Start processing {start_time}")

@@ -30,7 +30,14 @@ for f in /Users/okumuras/Documents/nucleardata/EXFOR/X4all/*/*.x4; do dos2unix "
 """
 
 
-def check_x4alldir():
+def rundos2unix():
+    '''May not needed anymore because exfor_master repository has done this'''
+    glob = os.path.join(EXFOR_ALL_PATH, "*", "*.x4")
+    os.system('for f in glob; do dos2unix "$f"; done')
+
+
+
+def _check_x4alldir():
     from parser.exceptions import Nox4AllDirExistenceError
 
     if os.path.isdir(EXFOR_ALL_PATH):
@@ -39,14 +46,35 @@ def check_x4alldir():
         raise Nox4AllDirExistenceError(EXFOR_ALL_PATH)
 
 
-def index_pickel_road():
-
+def _index_pickle_road():
+    ''' reado exfor entry index pickle '''
     try:
         df = pd.read_pickle(ENTRY_INDEX_PICKLE)
         return df
 
     except FileNotFoundError:
         raise NoPickelExistenceError("../" + ENTRY_INDEX_PICKLE)
+
+
+def _check_modification(f):
+    return time.ctime(os.path.getmtime(f))
+
+
+def _generate_hash(current_file):
+    ## from parser.exceptions import x4FileOpenError
+    h = hashlib.sha1()
+    try:
+        with open(current_file, "rb") as file:
+            chunk = 0
+            while chunk != b"":
+                # read only 1024 bytes at a time
+                chunk = file.read(1024)
+                h.update(chunk)
+    except:
+        x4FileOpenError(current_file)
+
+    return h.hexdigest()
+
 
 
 def exfor_x4allfiles(df):
@@ -59,8 +87,8 @@ def exfor_x4allfiles(df):
 
 
 def list_entries_from_df():
-    list_exfor_files()
-    df = index_pickel_road()
+    entries = list_exfor_files()
+    df = _index_pickle_road()
 
     ent = []
 
@@ -86,41 +114,18 @@ def list_exfor_files():
     for file in files:
         current_file = os.path.join(EXFOR_ALL_PATH, file[:3], file)
         entry = file.split(".", 1)[0]
-        last_modifieddate = check_modification(current_file)
-        hash = generate_hash(current_file)
+        last_modifieddate = _check_modification(current_file)
+        hash = _generate_hash(current_file)
         entries.append([entry, last_modifieddate, hash])
 
     df = pd.DataFrame(entries, columns=["entry", "last modifid", "hash"])
     df.to_pickle(ENTRY_INDEX_PICKLE)
 
-    print(df)
     return entries
 
 
-def check_modification(f):
-    return time.ctime(os.path.getmtime(f))
 
 
-def rundos2unix():
-    glob = os.path.join(EXFOR_ALL_PATH, "*", "*.x4")
-    os.system('for f in glob; do dos2unix "$f"; done')
-
-
-def generate_hash(current_file):
-    ## from parser.exceptions import x4FileOpenError
-
-    h = hashlib.sha1()
-    try:
-        with open(current_file, "rb") as file:
-            chunk = 0
-            while chunk != b"":
-                # read only 1024 bytes at a time
-                chunk = file.read(1024)
-                h.update(chunk)
-    except:
-        x4FileOpenError(current_file)
-
-    return h.hexdigest()
 
 
 def compare_hash(df):
