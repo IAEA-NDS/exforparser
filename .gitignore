@@ -160,13 +160,7 @@ plotting/
 test/
 examples/
 evaluations/
-sql/
-utilities/levels/
-utilities/levels_json/
 .vscode/
-pickles/*.py
-pickles/reactions.pickles
-pickles/index.pickle
 processed*.dat
 error.dat
 use.py
