@@ -13,6 +13,8 @@ import random
 import pandas as pd
 import logging
 import math
+import sys
+from collections import defaultdict
 
 FORMATTER = logging.Formatter("%(asctime)s — %(name)s — %(levelname)s — %(message)s")
 logging.basicConfig(filename="tabulated.log", level=logging.DEBUG, filemode="w")
@@ -37,7 +39,7 @@ from tabulated.data_process import *
 from sql.creation import *
 
 # initialize exfor_dictionary
-from exfor_dictionary.exfor_dictionary import Diction
+from exfor_dictionary import Diction
 D = Diction()
 
 # get heading list
@@ -47,7 +49,57 @@ x_data_heads = D.get_data_heads()
 x_data_err_heads = D.get_data_err_heads()
 
 
-def reaction_ditc(entry_id, entry_json, level_num, df):
+def bib_dict(entry_json):
+    bib_data = [
+        {
+            "entry": entry_json["entry"],
+            "title": entry_json["bib_record"]["title"]
+            if entry_json["bib_record"].get("title")
+            else None,
+            "first_author": entry_json["bib_record"]["authors"][0]["name"]
+            if entry_json["bib_record"].get("authors")
+            else None,
+            "authors": ", ".join(
+                [
+                    entry_json["bib_record"]["authors"][i]["name"]
+                    if entry_json["bib_record"].get("authors")
+                    else None
+                    for i in range(len(entry_json["bib_record"]["authors"]))
+                ]
+            ),
+            "first_author_institute": entry_json["bib_record"][
+                "institutes"
+            ][0]["x4_code"]
+            if entry_json["bib_record"].get("institutes")
+            else None,
+            "main_facility_institute": entry_json["bib_record"][
+                "facilities"
+            ][0]["institute"]
+            if entry_json["bib_record"].get("facilities")
+            else None,
+            "main_facility_type": entry_json["bib_record"]["facilities"][0][
+                "facility_type"
+            ]
+            if entry_json["bib_record"].get("facilities")
+            else None,
+            "main_reference": entry_json["bib_record"]["references"][0][
+                "x4_code"
+            ]
+            if entry_json["bib_record"].get("references")
+            else None,
+            "year": entry_json["bib_record"]["references"][0][
+                "publication_year"
+            ]
+            if entry_json["bib_record"].get("references")
+            else None,
+        }
+    ]
+    insert_bib(bib_data)
+
+    return
+
+
+def reaction_dict(entry_id, entry_json, level_num, df):
     entnum, subent, pointer = entry_id.split("-")
     react_dict = entry_json["reactions"][subent][pointer]["children"][0]
     reac_data = [
@@ -72,6 +124,8 @@ def reaction_ditc(entry_id, entry_json, level_num, df):
         }
     ]
     insert_reaction(reac_data)
+
+    return
 
 
 def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
@@ -169,8 +223,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                         )
 
             elif (
-                react_dict["sf5"]
-                == "PAR"
+                react_dict["sf5"] == "PAR"
             ):
                 ## none of (N,NON) PAR,SIG are useful
                 df = process_general(entry_id, entry_json, data_dict_conv)
@@ -179,7 +232,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                 if df["en_inc"].isnull().values.all():
                     continue
 
-                if react_dict["sf4"].endswith("-0") or react_dict["process"].split(",")[1] == "X":
+                if not react_dict.get("sf4") or react_dict["sf4"].endswith("-0") or react_dict["process"].split(",")[1] == "X":
                     continue
 
                 for level_num in df["level_num"].unique():
@@ -189,7 +242,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
 
                     df2 = df[df["level_num"] == level_num]
                     
-                    mt = df2["mt"].unique()
+                    mt = df2["mt"].unique()[0]
 
                     dir = get_dir_name(react_dict, level_num=level_num, subdir=None)
                     filename = exfortables_filename(
@@ -316,7 +369,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                         continue
 
                     df2 = df[df["level_num"] == level_num]
-                    mt = df2["mt"].unique()
+                    mt = df2["mt"].unique()[0]
 
                     dir = get_dir_name(react_dict, level_num=level_num, subdir=None)
                     filename = exfortables_filename(
@@ -720,14 +773,78 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
     return
 
 
-def main():
+def main(entnum):
+    # entry_json = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(dict))))
+    entry_json = convert_exfor_to_json(entnum)
+    write_dict_to_json(entnum, entry_json)
+
+    if entry_json:
+        try:
+            bib_dict(entry_json)
+        except:
+            logging.error(f"bib store error at ENTRY: '{entnum}',")
+
+    if entry_json.get("reactions"):
+        pass
+
+    common_main_dict = {}
+    data_tables_dict = entry_json["data_tables"]
+    data_dict = {}
+
+    ## get SUBENT 001 COMMON block
+    if data_tables_dict["001"].get("common"):
+        common_main_dict = data_tables_dict["001"]["common"]
+
+    ## looping over SUBENTRYs from 002
+    for subent in list(data_tables_dict.keys())[1:]:
+        # print(entnum, subent)
+        common_sub_dict = {}
+
+        ## get SUBENT 002 COMMON block
+        if data_tables_dict[subent].get("common"):
+            common_sub_dict = entry_json["data_tables"][subent]["common"]
+
+        ## get SUBENT 002 DATA block
+        if data_tables_dict[subent].get("data"):
+            data_dict = dict_merge(
+                [
+                    common_main_dict,
+                    common_sub_dict,
+                    entry_json["data_tables"][subent]["data"],
+                ]
+            )
+
+            ## Unify data length
+            data_dict_conv = data_length_unify(data_dict)
+
+            ## Unify units, convert e.g. MeV to eV
+            data_dict_conv = unify_units(data_dict_conv)
+
+        else:
+            ## means there is NODATA defined in the Subent
+            continue
+
+        entry_id = entnum + subent
+
+        # tabulated_to_exfortables_format(entry_id, entry_json, data_dict_conv)
+        try:
+            tabulated_to_exfortables_format(entry_id, entry_json, data_dict_conv)
+
+        except:
+            logging.error(f"Tabulated error: at ENTRY: '{entry_id}',")
+
+    
+
+
+if __name__ == "__main__":
     # failed = ["13317", "14369", "40106", "D5081", "13277", "D0487", "14625", "32791", "12709", "13482", "F1099", "41075", "33120", "30751", "33028", "C1581", "F0114", "13480", "40206", "13385", "23444", "13332", "A0095", "13458", "23271", "D0847", "D8036", "G0066", "L0105", "F0332", "10722", "33119", "13396", "D8036", "33160", "40545", "21495", "13072", "32632", "23213", "C0969" ] 
     ent = list_entries_from_df()
     entries = random.sample(ent, len(ent))
     # entries = failed
+    # entries=["40016" ] #, "22100", "T0243", "12240", "41185", "41102", "30010", "11210"]
 
     # drop_tables()
-    del_outputs(OUT_PATH + "exfortables/")
+    # del_outputs(OUT_PATH + "exfortables/")
 
     start_time = print_time()
     logging.info(f"Start processing {start_time}")
@@ -737,111 +854,6 @@ def main():
             continue
 
         print(entnum)
-
-        entry_json = convert_exfor_to_json(entnum)
-        write_dict_to_json(entnum, entry_json)
-
-        try:
-            if entry_json:
-                bib_data = [
-                    {
-                        "entry": entry_json["entry"],
-                        "title": entry_json["bib_record"]["title"]
-                        if entry_json["bib_record"].get("title")
-                        else None,
-                        "first_author": entry_json["bib_record"]["authors"][0]["name"]
-                        if entry_json["bib_record"].get("authors")
-                        else None,
-                        "authors": ", ".join(
-                            [
-                                entry_json["bib_record"]["authors"][i]["name"]
-                                if entry_json["bib_record"].get("authors")
-                                else None
-                                for i in range(len(entry_json["bib_record"]["authors"]))
-                            ]
-                        ),
-                        "first_author_institute": entry_json["bib_record"][
-                            "institutes"
-                        ][0]["x4_code"]
-                        if entry_json["bib_record"].get("institutes")
-                        else None,
-                        "main_facility_institute": entry_json["bib_record"][
-                            "facilities"
-                        ][0]["institute"]
-                        if entry_json["bib_record"].get("facilities")
-                        else None,
-                        "main_facility_type": entry_json["bib_record"]["facilities"][0][
-                            "facility_type"
-                        ]
-                        if entry_json["bib_record"].get("facilities")
-                        else None,
-                        "main_reference": entry_json["bib_record"]["references"][0][
-                            "x4_code"
-                        ]
-                        if entry_json["bib_record"].get("references")
-                        else None,
-                        "year": entry_json["bib_record"]["references"][0][
-                            "publication_year"
-                        ]
-                        if entry_json["bib_record"].get("references")
-                        else None,
-                    }
-                ]
-                insert_bib(bib_data)
-        except:
-            pass
-
-        if not entry_json.get("reactions"):
-            continue
-
-        common_main_dict = {}
-        data_tables_dict = entry_json["data_tables"]
-        data_dict = {}
-
-        ## get SUBENT 001 COMMON block
-        if data_tables_dict["001"].get("common"):
-            common_main_dict = data_tables_dict["001"]["common"]
-
-        ## looping over SUBENTRYs from 002
-        for subent in list(data_tables_dict.keys())[1:]:
-            # print(entnum, subent)
-            common_sub_dict = {}
-
-            ## get SUBENT 002 COMMON block
-            if data_tables_dict[subent].get("common"):
-                common_sub_dict = entry_json["data_tables"][subent]["common"]
-
-            ## get SUBENT 002 DATA block
-            if data_tables_dict[subent].get("data"):
-                data_dict = dict_merge(
-                    [
-                        common_main_dict,
-                        common_sub_dict,
-                        entry_json["data_tables"][subent]["data"],
-                    ]
-                )
-
-                ## Unify data length
-                data_dict_conv = data_length_unify(data_dict)
-
-                ## Unify units, convert e.g. MeV to eV
-                data_dict_conv = unify_units(data_dict_conv)
-
-            else:
-                ## means there is NODATA defined in the Subent
-                continue
-
-            entry_id = entnum + subent
-
-            # tabulated_to_exfortables_format(entry_id, entry_json, data_dict_conv)
-            try:
-                tabulated_to_exfortables_format(entry_id, entry_json, data_dict_conv)
-
-            except:
-                logging.error(f"ERROR: at ENTRY: '{entry_id}',")
+        main(entnum)
 
     logging.info(f"End processing {print_time(start_time)}")
-
-
-if __name__ == "__main__":
-    main()

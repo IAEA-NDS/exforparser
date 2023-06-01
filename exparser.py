@@ -76,15 +76,6 @@ def convert_exfor_to_json(entnum=None):
         entry_json["experimental_conditions"][subent] = {}
         entry_json["data_tables"][subent] = {}
 
-        ## Check subentry body parse
-        # print(entry.entry_body[subent])
-
-        ## Check block parse
-        # print(sub.get_bib_block())
-
-        ## Check BIB
-        # print( json.dumps(sub.parse_bib_identifiers(), indent=1))
-
         # Extra information from BIB
         entry_json["experimental_conditions"][subent] = sub.parse_extra_bib_dict()
 
@@ -105,37 +96,29 @@ def convert_exfor_to_json(entnum=None):
 
 
 
-def main():
-    ent = list_entries_from_df()
-    entries = random.sample(ent, len(ent))
-    # entries = ent
-    # entries=["11111"]
-
+def main(entnum):
     # del_outputs(OUT_PATH + "json/")
 
     start_time = print_time()
     logging.info(f"Start processing {start_time}")
 
-    i = 0
-    for entnum in entries:
-        print(entnum)
+    try:
+        entry_json = convert_exfor_to_json(entnum)
+        write_dict_to_json(entnum, entry_json)
+        # post_one_mongodb("exfor_json", entry_json)
 
-        try:
-            entry_json = convert_exfor_to_json(entnum)
-            write_dict_to_json(entnum, entry_json)
-            # post_one_mongodb("exfor_json", entry_json)
-
-        except:
-            logging.error(f"ERROR: at ENTRY: {entnum}")
-
-        i += 1
-
-        if i > 1000000:
-            break
+    except:
+        logging.error(f"ERROR: at ENTRY: {entnum}")
 
     logging.info(f"End processing {print_time(start_time)}")
 
 
 if __name__ == "__main__":
-    main()
+    # ent = list_entries_from_df()
+    # entries = random.sample(ent, len(ent))
+    # entries = ent
+    entries=["32617", "40016", "30936", "C1823", "E2286"] #, "12240", "41185", "41102", "30010", "11210"]
+    for entnum in entries:
+        print(entnum)
+        main(entnum)
 

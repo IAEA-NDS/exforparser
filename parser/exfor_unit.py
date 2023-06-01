@@ -1,8 +1,7 @@
-import sys
+
 import math
 
-sys.path.append("../")
-from exfor_dictionary.exfor_dictionary import Diction
+from exfor_dictionary import Diction
 
 d = Diction()
 # en_heads = d.get_incident_en_heads()

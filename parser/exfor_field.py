@@ -141,7 +141,7 @@ ParserElement.set_default_whitespace_chars("\t")
 
 
 """ parse nested expression """
-allowed_symbols = "=-+/,*. "
+allowed_symbols = "=-+/,*. '"
 thecontent = Word(alphanums + allowed_symbols)
 parentheses = nestedExpr("(", ")", content=thecontent)
 free_text = parentheses.suppress() + rest_of_line()

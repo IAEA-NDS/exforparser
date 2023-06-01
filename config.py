@@ -9,38 +9,55 @@
 # Contact:    nds.contact-point@iaea.org
 #
 ####################################################################
+import sys
+import os
 
-DICTIONARY_URL = "https://nds.iaea.org/nrdc/ndsx4/trans/dictionaries/"
-DICTIONARY_PATH = "./exfor_dictionary/"
-LATEST_TRANS = "9127"
+DEVENV = True
+
+if DEVENV:
+    DATA_DIR = "/Users/okumuras/Documents/nucleardata/EXFOR/"
+    MODULES_DIR = "/Users/okumuras/Dropbox/Development/"
 
 
-TOP_DIR = "/Users/sin/"
+else:
+    DATA_DIR = "/srv/data/dataexplorer2/"
+    MODULES_DIR = "/srv/data/dataexplorer2/"
 
-""" EXFOR master file path """
-EXFOR_MASTER_REPO_PATH = TOP_DIR + "Documents/nucleardata/EXFOR/exfor_master/"
-EXFOR_ALL_PATH = EXFOR_MASTER_REPO_PATH + "exforall/"
 
+
+EXFOR_DB = DATA_DIR + "exfor_tmp.sqlite"
+ENDFTAB_DB = DATA_DIR + "endftables.sqlite"
+
+## Package locations
+EXFOR_PARSER = "exforparser/"
+EXFOR_DICTIONARY = "exfor_dictionary/"
+RIPL3 = "ripl3_json/"
+
+sys.path.append(os.path.join(MODULES_DIR, EXFOR_DICTIONARY))
+sys.path.append(os.path.join(MODULES_DIR, RIPL3))
+
+""" pickel file path """
+PICKLE_PATH = os.path.join(MODULES_DIR, EXFOR_DICTIONARY, "pickles/")
 
 """ Pickle path of list of EXFOR master files made by parser.list_x4files.py"""
 ENTRY_INDEX_PICKLE = "pickles/entry.pickle"
 
+""" EXFOR master file path """
+EXFOR_MASTER_REPO_PATH = os.path.join(DATA_DIR, "exfor_master/")
+EXFOR_ALL_PATH = os.path.join(EXFOR_MASTER_REPO_PATH,  "exforall/")
 
-""" Pickle path of list of all reactions made by indexing.py """
-REACTION_INDEX_PICKLE = "pickles/reactions.pickle"
 
 TO_JSON = True
 POST_DB = False
 
 
-OUT_PATH = TOP_DIR +  "Desktop/"
-MONGOBASE_URI = "https://data.mongodb-api.com/app/data-qfzzc/endpoint/data/beta/"
+OUT_PATH = DATA_DIR +  "../../../Desktop/"
+
 
 import sqlalchemy as db
 from sqlalchemy.orm import sessionmaker
 
 
 """ SQL database """
-EXFOR_DB = TOP_DIR + "Dropbox/Development/exforparser/exfor.sqlite"
 engine = db.create_engine("sqlite:///" + EXFOR_DB)
 session = sessionmaker(autocommit=False, autoflush=True, bind=engine)

@@ -18,7 +18,7 @@ from utilities.elem import ztoelem, numtoisomer
 
 # from dictionary.exfor_dictionary import Diction
 # sys.path.append("../exfor_dictionary/")
-from exfor_dictionary.exfor_dictionary import Diction
+from exfor_dictionary import Diction
 
 
 def data_column_read(line):

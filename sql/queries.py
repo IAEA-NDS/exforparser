@@ -3,7 +3,7 @@ from collections import OrderedDict
 from operator import getitem
 
 
-from libraries2023.datahandle.list import elemtoz_nz
+from libraries.datahandle.list import elemtoz_nz
 from sql.models import Exfor_Bib, Exfor_Reactions, Exfor_Data, Exfor_Indexes
 from endftables_sql.models import Endf_Reactions, Endf_XS_Data, Endf_Residual_Data, Endf_FY_Data
 from config import session, session_lib, engines
@@ -35,7 +35,7 @@ def join_reac_bib():
         sql=all.statement,
         con=connection,
     )
-    # print(df.head())
+
     return df
 
 
@@ -78,7 +78,6 @@ def reaction_query_simple(type, elem, mass, reaction, branch):
 ########  -------------------------------------- ##########
 def reaction_query(type, elem, mass, reaction, branch=None, rp_elem=None, rp_mass=None):
     # https://zenn.dev/shimakaze_soft/articles/6e5e47851459f5
-
     reac = None
     target = elemtoz_nz(elem) + "-" + elem.upper() + "-" + mass
 
@@ -90,6 +89,11 @@ def reaction_query(type, elem, mass, reaction, branch=None, rp_elem=None, rp_mas
 
         elif isinstance(branch, int):
             queries.append(Exfor_Indexes.level_num == branch)
+
+
+        elif type == "FY":
+            queries.append(Exfor_Indexes.sf5 == branch.upper())
+
 
         else:
             queries.append(Exfor_Indexes.sf5 == None)
@@ -110,6 +114,8 @@ def reaction_query(type, elem, mass, reaction, branch=None, rp_elem=None, rp_mas
 
     elif type != "Residual":
         queries.append(Exfor_Indexes.process == reaction.upper())
+        queries.append(~Exfor_Indexes.sf4.endswith("-G"))
+        queries.append(~Exfor_Indexes.sf4.endswith("-M"))
 
 
     queries.append(Exfor_Indexes.sf6 == type.upper())
@@ -118,6 +124,7 @@ def reaction_query(type, elem, mass, reaction, branch=None, rp_elem=None, rp_mas
 
     entids = {}
     entries = []
+
     if reac:
         for ent in reac:
             entids[ent.entry_id] = {
@@ -135,6 +142,7 @@ def reaction_query(type, elem, mass, reaction, branch=None, rp_elem=None, rp_mas
 
 
 def get_entry_bib(entries):
+
     bib = session().query(Exfor_Bib).filter(Exfor_Bib.entry.in_(tuple(entries))).all()
 
     legend = {}
@@ -152,6 +160,7 @@ def get_entry_bib(entries):
 
 
 def data_query(entids, branch=None):
+
     connection = engines["exfor"].connect()
 
     data = session().query(Exfor_Data).filter(
@@ -192,8 +201,8 @@ def lib_query(type, elem, mass, reaction, mt, rp_elem, rp_mass):
 
         queries.append(Endf_Reactions.residual == residual)
     
-    # elif type=="FY":
-    #     queries.append(Endf_Reactions.mt == mt)
+    elif type=="FY":
+        queries.append(Endf_Reactions.mt == mt)
 
 
     queries.append(Endf_Reactions.type == type.lower())
@@ -237,12 +246,12 @@ def lib_residual_data_query(ids):
 
 
 def lib_data_query_fy(ids, en_lower, en_upper):
-    print(en_lower, en_upper)
+
     connection = engines["endftables"].connect()
     data = session().query(Endf_FY_Data).filter(
         Endf_FY_Data.reaction_id.in_(tuple(ids)),
-        Endf_FY_Data.en_inc >= en_lower,
-        Endf_FY_Data.en_inc <= en_upper,
+        # Endf_FY_Data.en_inc >= en_lower,
+        # Endf_FY_Data.en_inc <= en_upper,
         )
 
     df = pd.read_sql(

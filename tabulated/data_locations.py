@@ -10,7 +10,7 @@
 #
 ####################################################################
 from parser.exfor_data import get_colmun_indexes
-from exfor_dictionary.exfor_dictionary import Diction
+from exfor_dictionary import Diction
 
 d = Diction()
 ## get possible heading list

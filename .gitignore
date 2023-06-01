@@ -157,7 +157,7 @@ evaluations/
 geo/
 docker/
 plotting/
-test/
+testing/
 examples/
 evaluations/
 .vscode/
@@ -186,6 +186,7 @@ sqldb.py
 *.xlsx
 *.sqlite
 check*
+json.schema
 
 # other packages
 exfor_dictionary/

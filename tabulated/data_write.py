@@ -14,7 +14,7 @@ import pandas as pd
 from contextlib import redirect_stdout
 
 from .data_dir_files import target_reformat
-from exfor_dictionary.exfor_dictionary import Diction
+from exfor_dictionary import Diction
 D = Diction()
 
 def bib_table(id, main_bib_dict, react_dict, mfmt, df):

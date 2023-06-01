@@ -135,6 +135,7 @@ def parse_reaction(reaction_field) -> dict:
             }
             reaction_info["children"][0].update(get_details(b[0]))
 
+        reaction_info["pointer"] = pointer
         dict[pointer] = reaction_info
 
     return dict

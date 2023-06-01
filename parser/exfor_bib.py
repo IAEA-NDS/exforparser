@@ -49,7 +49,7 @@ def correct_pub_year(ref):
             ###  680901, most of the case it could be 19s
             return "19" + year[0:2]
 
-    elif len(year) == 8:
+    elif len(year) == 8: 
         ### 20001120
         return year[0:4]
 
@@ -63,23 +63,35 @@ def parse_history_bib(bib_block) -> dict:
 
 def parse_main_bib(bib_block) -> dict:
     """
-    return the bibliographic information (TITLE, AUTHORS, INSTITUTE, REFERENCE) only
+    return the bibliographic information (TITLE, AUTHORS, INSTITUTE, REFERENCE only) 
     Input:
         bib_block: { pointer: [list of rows] }
                    e.g. {0: ['(VDG,3CPRBJG) 4.5 MV Van de Graaff']}
     Output:
     bib_dict = {
                 "title": "",
-                "authors": [{"name": ""}],
-                "institutes": [{"x4_code": (xxxxx)}],
+                "authors": [{"name": "A.B. Smith"}],
+                "institutes": [{"x4_code": "(xxxxx)"}],
                 "references": {pointer: [ {"x4_code": (xxxxx)}, {"x4_code": (xxxxx)} ]},
                 "facilities": {pointer: [ {"x4_code": (xxxxx), "facility_type": () } ]},
                 }
     """
 
-    bib_dict = {}
+    bib_dict = {
+        "title": "",
+        "authors": [],
+        "institutes": [],
+        "references":  [],
+        "facilities": [],
+    }
 
     for identifier in main_identifiers:
+        """
+        identifier: TITLE, AUTHOR, INSTITUTE, FACILITY, REFERENCE
+        indentifier_body: list of lines
+            e.g. in C1823
+            ['(Jenny Lee,M.B.Tsang,D.Bazin,D.Coupland,V.Henzl,', 'D.Henzlova,M.Kilburn,W.G.Lynch,A.M.Rogers,', 'A.Sanetullaev,Z.Y.Sun,M.Youngs,R.J.Charity,', "L.G.Sobotka,M.Famiano,S.Hudan,D.Shapira,P.O'Malley,", 'W.A.Peters,K.Y.Chae,K.Schmitt)'] ['Jenny Lee', 'M.B.Tsang', 'D.Bazin', 'D.Coupland', 'V.Henzl', 'D.Henzlova', 'M.Kilburn', 'W.G.Lynch', 'A.M.Rogers', 'A.Sanetullaev', 'Z.Y.Sun', 'M.Youngs', 'R.J.Charity', 'L.G.Sobotka', 'M.Famiano', 'S.Hudan', 'D.Shapira', "P.O'Malley", 'W.A.Peters', 'K.Y.Chae', 'K.Schmitt']
+        """
 
         if not bib_block.get(identifier):
             ## skip if no one of the main_identifiers in the SUBENTRY-001
@@ -92,12 +104,18 @@ def parse_main_bib(bib_block) -> dict:
                 bib_dict["title"] = title
             #
 
+
             elif identifier == "AUTHOR":
-                authors = "".join(indentifier_body)[1:-1].split(",")
+                """
+                A few entries has freetext afterwards a list of authors such as D0177, 40016, 30936
+                """
+                identifier_set = get_identifier_details(indentifier_body)
+                authors = "".join(identifier_set[0]["x4_code"][1:-1]).split(",")
 
                 bib_dict["authors"] = [
                     {"name": authors[i].title().strip()} for i in range(len(authors))
                 ]
+
 
             elif identifier == "INSTITUTE":
                 identifier_set = get_identifier_details(indentifier_body)
@@ -122,6 +140,7 @@ def parse_main_bib(bib_block) -> dict:
                             ]
 
                 bib_dict["institutes"] = identifier_set
+
 
             elif identifier == "REFERENCE":
                 identifier_set = get_identifier_details(indentifier_body)
@@ -148,6 +167,7 @@ def parse_main_bib(bib_block) -> dict:
 
                 bib_dict["references"] = identifier_set
 
+
             elif identifier == "FACILITY":
                 identifier_set = get_identifier_details(indentifier_body)
 
@@ -170,6 +190,9 @@ def parse_main_bib(bib_block) -> dict:
                                 "x4_code"
                             ]
                             identifier_set[i]["institute"] = None
+                    else:
+                        identifier_set[i]["facility_type"] = None
+                        identifier_set[i]["institute"] = None
 
                 bib_dict["facilities"] = identifier_set
 

@@ -563,19 +563,23 @@ def process_general(entry_id, entry_json, data_dict_conv):
         ## Insert data table into exfor_index, this is similart to exfor_reactions, but extended to residual and level number
         for r in df["residual"].unique():
             for l in df["level_num"].unique():
+                if r and l:
+                    df2 = df[(df["residual"] == r) & (df["level_num"] == l)]
+                else:
+                    df2 = df.copy()
+                    
                 try:
-                    mt = df[(df["residual"] == r) & (df["level_num"] == l)][
-                        "mt"
-                    ].unique()[0]
+                    mt = df2["mt"].unique()[0]
+
                 except:
                     mt = None
 
                 try:
-                    mf = df[(df["residual"] == r) & (df["level_num"] == l)][
-                        "mf"
-                    ].unique()[0]
+                    mf = df2["mt"].unique()[0]
                 except:
                     mf = None
+
+                points = len(df2.index)
 
                 reac_index = [
                     {
@@ -586,10 +590,10 @@ def process_general(entry_id, entry_json, data_dict_conv):
                         "process": react_dict["process"],
                         "sf4": react_dict["sf4"],
                         "residual": r,
-                        "level_num": l,
-                        "e_inc_min": df["en_inc"].min(),
-                        "e_inc_max": df["en_inc"].max(),
-                        "points": len(df.index),
+                        "level_num": int(l) if l else None,
+                        "e_inc_min": df2["en_inc"].min(),
+                        "e_inc_max": df2["en_inc"].max(),
+                        "points": points,
                         "sf5": react_dict["sf5"],
                         "sf6": react_dict["sf6"],
                         "sf7": react_dict["sf7"],
