@@ -133,6 +133,17 @@ def compare_hash(df):
 
 
 good_example_entries = [
+    "M0450",
+    "D6274",
+    "D0193",
+    "20905", 
+    "40016", 
+    "22100", 
+    "T0243", 
+    "12240", 
+    "41185", 
+    "41102", 
+    "30010", 
     "23134",  ## REACTION   (26-FE-56(N,INL)26-FE-56,PAR,SIG,G), E is specified as gamma energy
     "41119",  ## REACTION   (40-ZR-90(N,INL)40-ZR-90,PAR,SIG) why error?
     "30767",  # elem/mass and mass are in the same subent
@@ -154,7 +165,6 @@ good_example_entries = [
     "D0635",
     "C2540",
     "14463",
-    "M0450",
     "21332",  ## EN-RSL, CN,SIG
     "31714",  ## EN-RSL
     "A0493",  # REACTION   ((1-H-1(2-HE-6,EL)1-H-1,,DT)=(2-HE-6(P,EL)2-HE-6,,DT))
@@ -168,7 +178,6 @@ good_example_entries = [
     "14545",
     "40396",
     "C0380",
-    "M0450",
     "O0529",
     "10963",  # asymmetirc reaction (((30-ZN-64(N,EL),,WID,,G)*((30-ZN-64(N,G),,WID)+(30-ZN-64(N,EL),,WID,,FCT)))/(30-ZN-64(N,TOT),,WID))
     "14605",  # Istitute two rows with free text

@@ -14,7 +14,7 @@ import pandas as pd
 import numpy as np
 import re
 
-from sql.creation import insert_reaction, insert_reaction_index, insert_df_to_sqlalchemy
+from sql.creation import insert_reaction, insert_reaction_index, insert_df_to_data
 from utilities.elem import ztoelem
 from .data_locations import *
 from tabulated.exfor_reaction_mt import get_mf, get_mt, e_lvl_to_mt50
@@ -212,7 +212,12 @@ def process_general(entry_id, entry_json, data_dict_conv):
     angle = []
     dangle = []
 
-    ## -----------------------   DATA (Y axis)    --------------------- ##
+    ## if the data is arbitrary unit ("ARB-UNITS") then True
+    data_unit_flag = False
+    ddata_unit_flag = False
+
+
+    ## ----------------------------------   DATA (Y axis)    --------------------------------- ##
     ## get data column position
     ## --------------------------------------------------------------------------------------- ##
     locs["locs_y"], locs["locs_dy"] = get_y_locs(data_dict_conv)
@@ -228,12 +233,20 @@ def process_general(entry_id, entry_json, data_dict_conv):
             "DATA", limit_data_dict_by_locs(locs["locs_y"], data_dict_conv)
         )
 
+    if locs["locs_y"]:
+        if data_dict_conv["units"][locs["locs_y"][0]] == "ARB-UNITS":
+            data_unit_flag = True
+            
+
     if locs["locs_dy"]:
         if data_dict_conv["units"][locs["locs_dy"][0]] == "PER-CENT":
             ddata = [
                 y * dy / 100 if dy is not None and y is not None else None
                 for y, dy in zip(data, data_dict_conv["data"][locs["locs_dy"][0]])
             ]
+
+        elif data_dict_conv["units"][locs["locs_dy"][0]] == "ARB-UNITS":
+            ddata_unit_flag = True
 
         elif (
             data_dict_conv["units"][locs["locs_y"][0]]
@@ -443,23 +456,25 @@ def process_general(entry_id, entry_json, data_dict_conv):
     if (
         not react_dict["target"].endswith("-0")
         and react_dict["sf5"] == "PAR"
+        and react_dict["sf4"]
         and all(eo is not None for eo in e_out)
         and not level_num
     ):
         for e_lvl in e_out:
-            try:
-                L = RIPL_Level(
-                    react_dict["sf4"].split("-")[0],
-                    react_dict["sf4"].split("-")[2],
-                    e_lvl,
-                )
-                level_num += [L.ripl_find_level_num()]
-                mt += [e_lvl_to_mt50(L.ripl_find_level_num())]
-            except:
-                level_num = [None] * len(data)
-                mt = [None] * len(data)
 
+            L = RIPL_Level(
+                react_dict["sf4"].split("-")[0],
+                react_dict["sf4"].split("-")[2],
+                e_lvl,
+            )
+
+            level_num += [L.ripl_find_level_num()]
+            mt += [e_lvl_to_mt50(L.ripl_find_level_num())]
         assert len(level_num) == len(e_out)
+
+    else:
+        level_num = [None] * len(data)
+        mt = [None] * len(data)
 
 
     if len(locs["locs_de"]) == 1:
@@ -518,6 +533,8 @@ def process_general(entry_id, entry_json, data_dict_conv):
             "level_num": level_num if level_num else None,
             "data": data if data else None,
             "ddata": ddata if ddata else None,
+            "arbitrary_data": data_unit_flag,
+            "arbitrary_ddata": ddata_unit_flag,
             "e_out": e_out if e_out else None,
             "de_out": de_out if de_out else None,
             "angle": angle if angle else None,
@@ -527,83 +544,17 @@ def process_general(entry_id, entry_json, data_dict_conv):
         }
     )
 
-    df = df[~df["data"].isna()]
-    df = df[~df["en_inc"].isna()]
+    # df = df[~df["data"].isna()]
+    # df = df[~df["en_inc"].isna()]
+
     # print(df)
 
 
     ## Insert data table into exfor_data
     if not df.empty:
-        insert_df_to_sqlalchemy(df)
+        insert_df_to_data(df)
 
-
-    ## Insert data table into exfor_reactions
-    if react_dict:
-        reac_data = [
-            {
-                "entry_id": entry_id,
-                "entry": entnum,
-                "target": react_dict["target"],
-                "projectile": react_dict["process"].split(",")[0],
-                "process": react_dict["process"],
-                "sf4": react_dict["sf4"],
-                "e_inc_min": df["en_inc"].min(),
-                "e_inc_max": df["en_inc"].max(),
-                "points": len(df.index),
-                "sf5": react_dict["sf5"],
-                "sf6": react_dict["sf6"],
-                "sf7": react_dict["sf7"],
-                "sf8": react_dict["sf8"],
-                "sf9": react_dict["sf9"],
-                "x4_code": entry_json["reactions"][subent][pointer]["x4_code"],
-            }
-        ]
-        insert_reaction(reac_data)
-
-        ## Insert data table into exfor_index, this is similart to exfor_reactions, but extended to residual and level number
-        for r in df["residual"].unique():
-            for l in df["level_num"].unique():
-                if r and l:
-                    df2 = df[(df["residual"] == r) & (df["level_num"] == l)]
-                else:
-                    df2 = df.copy()
-                    
-                try:
-                    mt = df2["mt"].unique()[0]
-
-                except:
-                    mt = None
-
-                try:
-                    mf = df2["mt"].unique()[0]
-                except:
-                    mf = None
-
-                points = len(df2.index)
-
-                reac_index = [
-                    {
-                        "entry_id": entry_id,
-                        "entry": entnum,
-                        "target": react_dict["target"],
-                        "projectile": react_dict["process"].split(",")[0],
-                        "process": react_dict["process"],
-                        "sf4": react_dict["sf4"],
-                        "residual": r,
-                        "level_num": int(l) if l else None,
-                        "e_inc_min": df2["en_inc"].min(),
-                        "e_inc_max": df2["en_inc"].max(),
-                        "points": points,
-                        "sf5": react_dict["sf5"],
-                        "sf6": react_dict["sf6"],
-                        "sf7": react_dict["sf7"],
-                        "sf8": react_dict["sf8"],
-                        "sf9": react_dict["sf9"],
-                        "x4_code": entry_json["reactions"][subent][pointer]["x4_code"],
-                        "mf": mf,
-                        "mt": mt,
-                    }
-                ]
-                insert_reaction_index(reac_index)
 
     return df
+
+

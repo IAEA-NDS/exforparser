@@ -22,7 +22,7 @@ class Exfor_Bib(Base):
     main_facility_institute = db.Column(db.String)
     main_facility_type = db.Column(db.String)
     main_reference = db.Column(db.String)
-    year = db.Column(db.String)
+    year = db.Column(db.Integer)
 
 
 class Exfor_Reactions(Base):
@@ -33,9 +33,6 @@ class Exfor_Reactions(Base):
     projectile = db.Column(db.String)
     process = db.Column(db.String)
     sf4 = db.Column(db.String)
-    e_inc_min = db.Column(db.Float)
-    e_inc_max = db.Column(db.Float)
-    points = db.Column(db.Integer)
     sf5 = db.Column(db.String)
     sf6 = db.Column(db.String)
     sf7 = db.Column(db.String)
@@ -52,12 +49,14 @@ class Exfor_Indexes(Base):
     target = db.Column(db.String)
     projectile = db.Column(db.String)
     process = db.Column(db.String)
-    sf4 = db.Column(db.String)  # Could be MASS, ELEM/MASS
-    residual = db.Column(db.String)  # Real residual extended from product
+    sf4 = db.Column(db.String)         # Could be null, 6-C-12, MASS, ELEM/MASS
+    residual = db.Column(db.String)    # Real residual extended from product
     level_num = db.Column(db.Integer)  # Level number of residual product
+    e_out = db.Column(db.Float)        # Outgoing energy or excitation energy (E-EXC, E-LVL etc)
     e_inc_min = db.Column(db.Float)
     e_inc_max = db.Column(db.Float)
     points = db.Column(db.Integer)
+    # arbitrary_data = db.Column(db.Boolean)
     sf5 = db.Column(db.String)
     sf6 = db.Column(db.String)
     sf7 = db.Column(db.String)
@@ -73,13 +72,15 @@ class Exfor_Data(Base):
     entry_id = db.Column(db.String)
     en_inc = db.Column(db.String)
     den_inc = db.Column(db.String)
-    charge = db.Column(db.String)
-    mass = db.Column(db.String)
+    charge = db.Column(db.Float)
+    mass = db.Column(db.Float)
     isomer = db.Column(db.String)
     residual = db.Column(db.String)
     level_num = db.Column(db.Integer)
     data = db.Column(db.Float)
     ddata = db.Column(db.Float)
+    # arbitrary_data = db.Column(db.Boolean)
+    # arbitrary_ddata = db.Column(db.Boolean)
     e_out = db.Column(db.Float)
     de_out = db.Column(db.Float)
     angle = db.Column(db.Float)

@@ -28,19 +28,27 @@ else:
 EXFOR_DB = DATA_DIR + "exfor_tmp.sqlite"
 ENDFTAB_DB = DATA_DIR + "endftables.sqlite"
 
+
 ## Package locations
 EXFOR_PARSER = "exforparser/"
 EXFOR_DICTIONARY = "exfor_dictionary/"
 RIPL3 = "ripl3_json/"
 
+
 sys.path.append(os.path.join(MODULES_DIR, EXFOR_DICTIONARY))
 sys.path.append(os.path.join(MODULES_DIR, RIPL3))
+
+
 
 """ pickel file path """
 PICKLE_PATH = os.path.join(MODULES_DIR, EXFOR_DICTIONARY, "pickles/")
 
+
+
 """ Pickle path of list of EXFOR master files made by parser.list_x4files.py"""
 ENTRY_INDEX_PICKLE = "pickles/entry.pickle"
+
+
 
 """ EXFOR master file path """
 EXFOR_MASTER_REPO_PATH = os.path.join(DATA_DIR, "exfor_master/")

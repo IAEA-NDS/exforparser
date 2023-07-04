@@ -136,5 +136,5 @@
 205         (n,Xt)              XD
 206         (n,Xh)              XHE3
 207         (n,Xa)              XA
-residual    (n,X)               X
-others      (n,pf)              P+F
+9998        (n,X)               X
+9997       (n,pf)              P+F

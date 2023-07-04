@@ -187,6 +187,7 @@ sqldb.py
 *.sqlite
 check*
 json.schema
+*.sh
 
 # other packages
 exfor_dictionary/

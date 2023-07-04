@@ -13,6 +13,7 @@ import random
 import pandas as pd
 import logging
 import math
+import json
 import sys
 from collections import defaultdict
 
@@ -22,9 +23,10 @@ logging.basicConfig(filename="tabulated.log", level=logging.DEBUG, filemode="w")
 from config import OUT_PATH
 from utilities.utilities import dict_merge, del_outputs, print_time
 from exparser import convert_exfor_to_json, write_dict_to_json
-from parser.list_x4files import list_entries_from_df
+from parser.list_x4files import list_entries_from_df, good_example_entries
 from parser.exfor_unit import unify_units
 from tabulated.exfor_reaction_mt import (
+    sf_to_mf,
     sf3_dict,
     mt_fy_sf5,
     sig_sf5,
@@ -99,33 +101,164 @@ def bib_dict(entry_json):
     return
 
 
-def reaction_dict(entry_id, entry_json, level_num, df):
+
+
+def reaction_dict_regist(entry_id, entry_json):
+    ## Insert data table into exfor_reactions
     entnum, subent, pointer = entry_id.split("-")
     react_dict = entry_json["reactions"][subent][pointer]["children"][0]
+
     reac_data = [
         {
             "entry_id": entry_id,
             "entry": entnum,
-            "target": react_dict["target"],
-            "projectile": react_dict["process"].split(",")[0],
-            "process": react_dict["process"],
-            "sf4": react_dict["sf4"],
-            "residual": df["residual"],
-            "level_num": level_num,
-            "e_inc_min": df["en_inc"].min(),
-            "e_inc_max": df["en_inc"].max(),
-            "points": len(df.index),
-            "sf5": react_dict["sf5"],
-            "sf6": react_dict["sf6"],
-            "sf7": react_dict["sf7"],
-            "sf8": react_dict["sf8"],
-            "sf9": react_dict["sf9"],
+            "target": react_dict["target"] if react_dict.get("target") else None,
+            "projectile": react_dict["process"].split(",")[0] if react_dict.get("process") else None,
+            "process": react_dict["process"] if react_dict.get("process") else None,
+            "sf4": react_dict["sf4"] if react_dict.get("sf4") else None,
+            "sf5": react_dict["sf5"] if react_dict.get("sf5") else None,
+            "sf6": react_dict["sf6"] if react_dict.get("sf6") else None,
+            "sf7": react_dict["sf7"] if react_dict.get("sf7") else None,
+            "sf8": react_dict["sf8"] if react_dict.get("sf8") else None,
+            "sf9": react_dict["sf9"] if react_dict.get("sf9") else None,
             "x4_code": entry_json["reactions"][subent][pointer]["x4_code"],
         }
     ]
     insert_reaction(reac_data)
 
     return
+
+
+
+
+def get_unique_mf_mt(df2):
+
+    if len(df2["mt"].unique()) == 0:
+        mt = None
+    else:
+        mt = df2["mt"].unique()[0]
+
+
+    if len(df2["mf"].unique()) == 0:
+        mf = None
+    else:
+        mf = df2["mf"].unique()[0]
+
+    return mf, mt
+
+
+
+
+def reaction_index_regist(entry_id, entry_json, react_dict, df):
+    entnum, subent, pointer = entry_id.split("-")
+
+    if df.empty:
+        ## if the DataFrame is null, then the data cannnot be tabulated
+        reac_index = [
+            {
+                "entry_id": entry_id,
+                "entry": entnum,
+                "target": react_dict["target"],
+                "projectile": react_dict["process"].split(",")[0],
+                "process": react_dict["process"],
+                "sf4": react_dict["sf4"],
+                "residual": react_dict["sf4"],
+                "level_num": None,
+                "e_out": None,
+                "e_inc_min": None,
+                "e_inc_max": None,
+                "points": None,
+                "sf5": react_dict["sf5"],
+                "sf6": react_dict["sf6"],
+                "sf7": react_dict["sf7"],
+                "sf8": react_dict["sf8"],
+                "sf9": react_dict["sf9"],
+                "x4_code": entry_json["reactions"][subent][pointer]["x4_code"],
+                "mf": None,
+                "mt": None,
+            }
+        ]
+        insert_reaction_index(reac_index)
+        return None
+
+    else:
+        for r in df["residual"].unique():
+            for l in df["level_num"].unique():
+
+                if pd.isna(l):
+                    ## if the level number is not known but the e_out (E-LVL or E-EXC) is known.
+                    l = None
+                    df2 = df[(df["residual"] == r) & (df["level_num"].isnull())]
+
+                    for eo in df2["e_out"].unique():
+                        mf, mt = get_unique_mf_mt(df2)
+
+                        reac_index = [
+                            {
+                                "entry_id": entry_id,
+                                "entry": entnum,
+                                "target": react_dict["target"],
+                                "projectile": react_dict["process"].split(",")[0],
+                                "process": react_dict["process"],
+                                "sf4": react_dict["sf4"],
+                                "residual": r,
+                                "level_num": l,
+                                "e_out": eo,
+                                "e_inc_min": df2["en_inc"].min(),
+                                "e_inc_max": df2["en_inc"].max(),
+                                "points": len(df2.index),
+                                "sf5": react_dict["sf5"],
+                                "sf6": react_dict["sf6"],
+                                "sf7": react_dict["sf7"],
+                                "sf8": react_dict["sf8"],
+                                "sf9": react_dict["sf9"],
+                                "x4_code": entry_json["reactions"][subent][pointer]["x4_code"],
+                                "mf": int(mf) if mf else None,
+                                "mt": int(mt) if mt else None,
+                            }
+                        ]
+                        insert_reaction_index(reac_index)
+
+                    continue
+
+
+                elif r and l:
+                    df2 = df[(df["residual"] == r) & (df["level_num"] == l)]
+                    
+                else:
+                    df2 = df.copy()
+                    
+                mf, mt = get_unique_mf_mt(df2)
+
+                reac_index = [
+                    {
+                        "entry_id": entry_id,
+                        "entry": entnum,
+                        "target": react_dict["target"],
+                        "projectile": react_dict["process"].split(",")[0],
+                        "process": react_dict["process"],
+                        "sf4": react_dict["sf4"],
+                        "residual": r,
+                        "level_num": int(l) if l else None,
+                        "e_out": df2["e_out"].unique()[0],
+                        "e_inc_min": df2["en_inc"].min(),
+                        "e_inc_max": df2["en_inc"].max(),
+                        "points": len(df2.index),
+                        "sf5": react_dict["sf5"],
+                        "sf6": react_dict["sf6"],
+                        "sf7": react_dict["sf7"],
+                        "sf8": react_dict["sf8"],
+                        "sf9": react_dict["sf9"],
+                        "x4_code": entry_json["reactions"][subent][pointer]["x4_code"],
+                        "mf": int(mf) if mf else None,
+                        "mt": int(mt) if mt else None,
+                    }
+                ]
+                insert_reaction_index(reac_index)
+
+        return df2
+
+
 
 
 def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
@@ -137,13 +270,32 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
         entry_id = entnum + "-" + subent + "-" + pointer
         print(entry_id)
 
+
+        ## Insert data table into exfor_reactions
+        reaction_dict_regist(entry_id, entry_json)
+
+
         if entry_json["reactions"][subent][pointer]["type"] is not None:
             ## if ratio or any other complex reactions, it will be skipped so far
             continue
 
         react_dict = entry_json["reactions"][subent][pointer]["children"][0]
 
-        ## ------------------------  Case for the cross section measuements ------------------------  ##
+        ## data processing to generate tabulated data
+        if not any(reac == react_dict["sf6"] for reac in sf_to_mf):
+            continue
+
+
+        df = process_general(entry_id, entry_json, data_dict_conv)
+        reaction_index_regist(entry_id, entry_json, react_dict, df)
+
+        if df.empty:
+            continue
+
+        ## --------------------------------------------------------------------------------------- ##
+        ## ------------------------  Case for the cross section  ------------------------  ##
+        ## --------------------------------------------------------------------------------------- ##
+
         if react_dict["sf6"] == "SIG":
             if (
                 not any(
@@ -163,14 +315,11 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                 sf5 == react_dict["sf5"] for sf5 in sig_sf5.keys()
             ):
 
-                df = process_general(entry_id, entry_json, data_dict_conv)
-
                 if df["en_inc"].isnull().values.all():
                     continue
-                mf = df["mf"].unique()[0]
-                mt = df["mt"].unique()[0]
 
                 dir = get_dir_name(react_dict, level_num=None, subdir=None)
+                mf, mt = get_unique_mf_mt(df)
 
                 if any(
                     r == react_dict["process"].split(",")[1]
@@ -196,12 +345,13 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                         filename,
                         entry_json["bib_record"],
                         react_dict,
-                        mf + " - " + str(mt),
+                        str(mf) + " - " + str(mt),
                         df,
                     )
 
                 else:
                     for prod in df["residual"].unique():
+
                         df2 = df[df["residual"] == prod]
                         filename = exfortables_filename(
                             dir,
@@ -218,7 +368,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                             filename,
                             entry_json["bib_record"],
                             react_dict,
-                            mf + " - " + str(mt),
+                            str(mf) + " - " + str(mt),
                             df2,
                         )
 
@@ -226,23 +376,22 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                 react_dict["sf5"] == "PAR"
             ):
                 ## none of (N,NON) PAR,SIG are useful
-                df = process_general(entry_id, entry_json, data_dict_conv)
-                mf = df["mf"].unique()[0]
+                # df = process_general(entry_id, entry_json, data_dict_conv)
 
                 if df["en_inc"].isnull().values.all():
+                    # reaction_index_regist(entry_id, entry_json, react_dict, pd.DataFrame())
                     continue
 
                 if not react_dict.get("sf4") or react_dict["sf4"].endswith("-0") or react_dict["process"].split(",")[1] == "X":
+                    # reaction_index_regist(entry_id, entry_json, react_dict, pd.DataFrame())
+                    continue
+
+                if len(df["level_num"].unique()) == 0:
                     continue
 
                 for level_num in df["level_num"].unique():
-
-                    if not level_num:
-                        continue
-
                     df2 = df[df["level_num"] == level_num]
-                    
-                    mt = df2["mt"].unique()[0]
+                    mf, mt = get_unique_mf_mt(df2)
 
                     dir = get_dir_name(react_dict, level_num=level_num, subdir=None)
                     filename = exfortables_filename(
@@ -269,12 +418,15 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                         filename,
                         entry_json["bib_record"],
                         react_dict,
-                        mf + " - " + str(mt),
+                        str(mf) + " - " + str(mt),
                         df2,
                     )
 
         ## ------------------------  Case for the angular distributions ------------------------  ##
         elif react_dict["sf6"] == "DA":
+            # df = process_general(entry_id, entry_json, data_dict_conv)
+            # reaction_index_regist(entry_id, entry_json, react_dict, df)
+
             if (
                 not any(
                     par == react_dict["process"].split(",")[1]
@@ -290,12 +442,10 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
             if react_dict["sf5"] is None or any(
                 sf5 == react_dict["sf5"] for sf5 in sig_sf5.keys()
             ):
-
-                df = process_general(entry_id, entry_json, data_dict_conv)
                 if df["en_inc"].isnull().values.all():
                     continue
-                mf = df["mf"].unique()[0]
-                mt = df["mt"].unique()[0]
+
+                mf, mt = get_unique_mf_mt(df)
                 dir = get_dir_name(react_dict, level_num=None, subdir=None)
 
                 for en in df["en_inc"].unique():
@@ -322,7 +472,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                             filename,
                             entry_json["bib_record"],
                             react_dict,
-                            mf + " - " + str(mt),
+                            str(mf) + " - " + str(mt),
                             df2,
                         )
 
@@ -346,7 +496,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                                 filename,
                                 entry_json["bib_record"],
                                 react_dict,
-                                mf + " - " + str(mt),
+                                str(mf) + " - " + str(mt),
                                 df3,
                             )
 
@@ -355,21 +505,18 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                 and react_dict["process"].split(",")[1] == "INL"
             ):
                 ## case for PAR,DA
-                df = process_general(entry_id, entry_json, data_dict_conv)
-                mf = df["mf"].unique()[0]
-
                 if df["en_inc"].isnull().values.all():
                     continue
                 
                 if react_dict["sf4"].endswith("-0") or react_dict["process"].split(",")[1] == "X":
                     continue
 
-                for level_num in df["level_num"].unique():
-                    if not level_num:
-                        continue
+                if len(df["level_num"].unique()) == 0:
+                    continue
 
+                for level_num in df["level_num"].dropna().unique():
                     df2 = df[df["level_num"] == level_num]
-                    mt = df2["mt"].unique()[0]
+                    mf, mt = get_unique_mf_mt(df2)
 
                     dir = get_dir_name(react_dict, level_num=level_num, subdir=None)
                     filename = exfortables_filename(
@@ -397,9 +544,10 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                         filename,
                         entry_json["bib_record"],
                         react_dict,
-                        mf + " - " + str(mt),
+                        str(mf) + " - " + str(mt),
                         df2,
                     )
+
 
         ## ------------------------  Case for the angular distributions ------------------------  ##
         elif react_dict["sf6"] == "DE":
@@ -415,11 +563,10 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
             ):
                 continue
 
-            df = process_general(entry_id, entry_json, data_dict_conv)
             if df["en_inc"].isnull().values.all():
                 continue
-            mf = df["mf"].unique()[0]
-            mt = df["mt"].unique()[0]
+
+            mf, mt = get_unique_mf_mt(df)
             dir = get_dir_name(react_dict, level_num=None, subdir=None)
 
             for en in df["en_inc"].unique():
@@ -446,7 +593,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                         filename,
                         entry_json["bib_record"],
                         react_dict,
-                        mf + " - " + str(mt),
+                        str(mf) + " - " + str(mt),
                         df2,
                     )
 
@@ -470,7 +617,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                             filename,
                             entry_json["bib_record"],
                             react_dict,
-                            mf + " - " + str(mt),
+                            str(mf) + " - " + str(mt),
                             df3,
                         )
 
@@ -491,8 +638,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
             if df["en_inc"].isnull().values.all():
                 continue
 
-            mf = df["mf"].unique()[0]
-            mt = df["mt"].unique()[0]
+            mf, mt = get_unique_mf_mt(df)
             subdir = mt_nu_sf5[react_dict["sf5"]]["name"] if react_dict["sf5"] else ""
             dir = get_dir_name(react_dict, level_num=None, subdir=subdir)
 
@@ -514,7 +660,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                     filename,
                     entry_json["bib_record"],
                     react_dict,
-                    mf + " - " + str(mt),
+                    str(mf) + " - " + str(mt),
                     df,
                 )
 
@@ -536,7 +682,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                     filename,
                     entry_json["bib_record"],
                     react_dict,
-                    mf + " - " + str(mt),
+                    str(mf) + " - " + str(mt),
                     df,
                 )
 
@@ -554,11 +700,10 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
             ):
                 continue
 
-            df = process_general(entry_id, entry_json, data_dict_conv)
             if df["en_inc"].isnull().values.all():
                 continue
-            mf = df["mf"].unique()[0]
-            mt = df["mt"].unique()[0]
+
+            mf, mt = get_unique_mf_mt(df)
             dir = get_dir_name(react_dict, level_num=None, subdir=None)
 
             if react_dict["sf4"] is None and "NU" in react_dict["sf6"]:
@@ -581,7 +726,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                         filename,
                         entry_json["bib_record"],
                         react_dict,
-                        mf + " - " + str(mt),
+                        str(mf) + " - " + str(mt),
                         df,
                     )
 
@@ -604,7 +749,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                         filename,
                         entry_json["bib_record"],
                         react_dict,
-                        mf + " - " + str(mt),
+                        str(mf) + " - " + str(mt),
                         df2,
                     )
 
@@ -620,11 +765,10 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
             ):
                 continue
 
-            df = process_general(entry_id, entry_json, data_dict_conv)
             if df["en_inc"].isnull().values.all():
                 continue
-            mf = df["mf"].unique()[0]
-            mt = df["mt"].unique()[0]
+
+            mf, mt = get_unique_mf_mt(df)
             dir = get_dir_name(react_dict, level_num=None, subdir=None)
 
             for en in df["en_inc"].unique():
@@ -645,7 +789,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                         filename,
                         entry_json["bib_record"],
                         react_dict,
-                        mf + " - " + str(mt),
+                        str(mf) + " - " + str(mt),
                         df,
                     )
 
@@ -667,16 +811,15 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                             filename,
                             entry_json["bib_record"],
                             react_dict,
-                            mf + " - " + str(mt),
+                            str(mf) + " - " + str(mt),
                             df3,
                         )
 
         elif react_dict["sf6"] == "AKE":
-            df = process_general(entry_id, entry_json, data_dict_conv)
             if df["en_inc"].isnull().values.all():
                 continue
-            mf = df["mf"].unique()[0]
-            mt = df["mt"].unique()[0]
+
+            mf, mt = get_unique_mf_mt(df)
             dir = get_dir_name(react_dict, level_num=None, subdir=None)
             prod = react_dict["sf7"]
 
@@ -697,7 +840,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                     filename,
                     entry_json["bib_record"],
                     react_dict,
-                    mf + " - " + str(mt),
+                    str(mf) + " - " + str(mt),
                     df2,
                 )
 
@@ -715,11 +858,10 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
             ):
                 continue
 
-            df = process_general(entry_id, entry_json, data_dict_conv)
             if df["en_inc"].isnull().values.all():
                 continue
-            mf = df["mf"].unique()[0]
-            mt = df["mt"].unique()[0]
+
+            mf, mt = get_unique_mf_mt(df)
             subdir = mt_fy_sf5[react_dict["sf5"]]["name"]
             dir = get_dir_name(react_dict, level_num=None, subdir=subdir)
 
@@ -740,35 +882,15 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                     filename,
                     entry_json["bib_record"],
                     react_dict,
-                    mf + " - " + str(mt),
+                    str(mf) + " - " + str(mt),
                     df2,
                 )
 
         ## ------------------------  Any other reactions which so far cannot be tabulated ------------------------  ##
-        else:
-            ### Generate reaction record for the cases if it is not possible to generate the tabulated data
-            if react_dict:
-                reac_data = [
-                    {
-                        "entry_id": entry_id,
-                        "entry": entnum,
-                        "target": react_dict["target"],
-                        "projectile": react_dict["process"].split(",")[0],
-                        "process": react_dict["process"],
-                        "sf4": react_dict["sf4"],
-                        "product_levels": None,
-                        "e_inc_min": None,
-                        "e_inc_max": None,
-                        "points": None,
-                        "sf5": react_dict["sf5"],
-                        "sf6": react_dict["sf6"],
-                        "sf7": react_dict["sf7"],
-                        "sf8": react_dict["sf8"],
-                        "sf9": react_dict["sf9"],
-                        "x4_code": entry_json["reactions"][subent][pointer]["x4_code"],
-                    }
-                ]
-                insert_reaction(reac_data)
+        # else:
+        #     ### Generate reaction record for the cases if it is not possible to generate the tabulated data
+        #     if react_dict:
+        #         reaction_index_regist(entry_id, entry_json, react_dict, pd.DataFrame())
 
     return
 
@@ -833,6 +955,7 @@ def main(entnum):
         except:
             logging.error(f"Tabulated error: at ENTRY: '{entry_id}',")
 
+    return
     
 
 
@@ -841,7 +964,8 @@ if __name__ == "__main__":
     ent = list_entries_from_df()
     entries = random.sample(ent, len(ent))
     # entries = failed
-    # entries=["40016" ] #, "22100", "T0243", "12240", "41185", "41102", "30010", "11210"]
+    # entries=["D6274","D0193","20905", "40016", "22100", "T0243", "12240", "41185", "41102", "30010", "11210"]
+    # entries = good_example_entries
 
     # drop_tables()
     # del_outputs(OUT_PATH + "exfortables/")

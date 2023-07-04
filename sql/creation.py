@@ -30,7 +30,7 @@ exfor_bib = db.Table(
     db.Column("main_facility_institute", db.String(255)),
     db.Column("main_facility_type", db.String(255)),
     db.Column("main_reference", db.String(255), index=True),
-    db.Column("year", db.String(255)),
+    db.Column("year", db.Integer(), index=True),
 )
 
 
@@ -43,9 +43,6 @@ exfor_reactions = db.Table(
     db.Column("projectile", db.String(255)),
     db.Column("process", db.String(255), index=True),
     db.Column("sf4", db.String(255), index=True),
-    db.Column("e_inc_min", db.Float(), index=True),
-    db.Column("e_inc_max", db.Float(), index=True),
-    db.Column("points", db.Integer()),
     db.Column("sf5", db.String(255)),
     db.Column("sf6", db.String(255), index=True),
     db.Column("sf7", db.String(255)),
@@ -67,9 +64,11 @@ exfor_index = db.Table(
     db.Column("sf4", db.String(255), index=True),
     db.Column("residual", db.String(255), index=True),
     db.Column("level_num", db.Integer(), index=True),
+    db.Column("e_out", db.Float(), index=True),
     db.Column("e_inc_min", db.Float(), index=True),
     db.Column("e_inc_max", db.Float(), index=True),
     db.Column("points", db.Integer()),
+    db.Column("arbitrary_data", db.Boolean(), index=True),
     db.Column("sf5", db.String(255)),
     db.Column("sf6", db.String(255), index=True),
     db.Column("sf7", db.String(255)),
@@ -86,15 +85,17 @@ exfor_data = db.Table(
     metadata,
     db.Column("id", db.Integer(), primary_key=True),
     db.Column("entry_id", db.String(255), index=True),
-    db.Column("en_inc", db.String(255)),
-    db.Column("den_inc", db.String(255)),
-    db.Column("charge", db.String(255)),
-    db.Column("mass", db.String(255)),
+    db.Column("en_inc", db.Float()),
+    db.Column("den_inc", db.Float()),
+    db.Column("charge", db.Float()),
+    db.Column("mass", db.Float()),
     db.Column("isomer", db.String(255)),
     db.Column("residual", db.String(255), index=True),
     db.Column("level_num", db.Integer(), index=True),
     db.Column("data", db.Float()),
     db.Column("ddata", db.Float()),
+    db.Column("arbitrary_data", db.Boolean(), index=True),
+    db.Column("arbitrary_ddata", db.Boolean()),
     db.Column("e_out", db.Float()),
     db.Column("de_out", db.Float()),
     db.Column("angle", db.Float()),
@@ -107,7 +108,7 @@ exfor_data = db.Table(
 metadata.create_all(engine)  # Creates the table
 
 
-def insert_df_to_sqlalchemy(df):
+def insert_df_to_data(df):
     df2 = df.astype(object).where(pd.notnull(df), None)
     # print(df2.to_dict(orient='records'))
     # list = []
