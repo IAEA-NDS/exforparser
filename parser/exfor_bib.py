@@ -16,7 +16,7 @@ from collections import defaultdict
 
 
 from .exfor_field import *
-from utilities.utilities import flatten_list
+from submodules.utilities.util import flatten_list
 from .exfor_block import get_identifier_details
 
 

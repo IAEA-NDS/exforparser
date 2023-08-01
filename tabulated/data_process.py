@@ -11,14 +11,14 @@
 #
 ####################################################################
 import pandas as pd
-import numpy as np
 import re
 
 from sql.creation import insert_reaction, insert_reaction_index, insert_df_to_data
-from utilities.elem import ztoelem
-from .data_locations import *
+from submodules.utilities.elem import ztoelem
+from tabulated.data_locations import *
 from tabulated.exfor_reaction_mt import get_mf, get_mt, e_lvl_to_mt50
 from ripl3_json.ripl3_descretelevel import RIPL_Level
+
 
 def limit_data_dict_by_locs(locs, data_dict):
     new = {}
@@ -34,7 +34,6 @@ def limit_data_dict_by_locs(locs, data_dict):
 
 def data_length_unify(data_dict):
     data_len = []
-    new_list = []
     data_list = data_dict["data"]
 
     for i in data_list:
@@ -68,8 +67,6 @@ def evaluated_data_points(**kwargs):
         if not kwargs[col]:
             del kwargs[col]
 
-    # print(kwargs)
-
     for col in kwargs:
 
         for dl in range(len(kwargs[col])):
@@ -92,13 +89,11 @@ def evaluated_data_points(**kwargs):
                     # else:
                     #     new_x.append(None)
                     #     break
-                    # print(a)
 
             else:
                 a = kwargs[col][dl]
                 new_x.append(a)
 
-            # print(dl, a, new_x)
 
         assert len(kwargs[col]) == len(new_x)
 
@@ -164,8 +159,6 @@ def get_average(sf4, data_dict_conv):
         x_min=x_min,
         x_max=x_max,
     )
-    # print(new_x)
-
 
     if not new_x:
         x_temp = {}
@@ -175,6 +168,8 @@ def get_average(sf4, data_dict_conv):
         new_x = evaluated_data_points(**x_temp)
 
     return new_x
+
+
 
 
 def process_general(entry_id, entry_json, data_dict_conv):
@@ -221,7 +216,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
     ## get data column position
     ## --------------------------------------------------------------------------------------- ##
     locs["locs_y"], locs["locs_dy"] = get_y_locs(data_dict_conv)
-    # print(locs)
+
     if not locs["locs_y"]:
         locs["locs_y"], locs["locs_dy"] = get_y_locs_by_pointer(pointer, data_dict_conv)
 
@@ -234,7 +229,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
         )
 
     if locs["locs_y"]:
-        if data_dict_conv["units"][locs["locs_y"][0]] == "ARB-UNITS":
+        if any(data_dict_conv["units"][locs["locs_y"][0]] == arb for arb in ("ARB-UNITS", "NO-DIM")):
             data_unit_flag = True
             
 
@@ -245,8 +240,9 @@ def process_general(entry_id, entry_json, data_dict_conv):
                 for y, dy in zip(data, data_dict_conv["data"][locs["locs_dy"][0]])
             ]
 
-        elif data_dict_conv["units"][locs["locs_dy"][0]] == "ARB-UNITS":
+        elif any(data_dict_conv["units"][locs["locs_dy"][0]] == arb for arb in ("ARB-UNITS", "NO-DIM")):
             ddata_unit_flag = True
+
 
         elif (
             data_dict_conv["units"][locs["locs_y"][0]]
@@ -280,6 +276,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
             prod = elem.capitalize() + "-" + str(mass)
 
         residual = [prod] * len(data_dict_conv["data"][locs["locs_y"][0]])
+
 
     elif any(i == react_dict["sf4"] for i in ("ELEM", "MASS", "ELEM/MASS")):
 
@@ -387,6 +384,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
                 "EN", limit_data_dict_by_locs(locs["locs_en"], data_dict_conv)
             )
         ]
+        
     else:
         ## e.g.
         ## S0102002 (14-SI-0(4-BE-9,NON),,SIG) 単位がMEV/A
@@ -424,18 +422,20 @@ def process_general(entry_id, entry_json, data_dict_conv):
 
 
     if not locs["locs_e"] and not locs["locs_de"]:
+        ### if there is no outgoing energy column, it means that the reaction is not partial
         e_out = [None] * len(data)
         de_out = [None] * len(data)
         mt = [get_mt(react_dict)] * len(data)
 
 
     if locs["locs_e"] and data_dict_conv["heads"][locs["locs_e"][0]] == "LVL-NUMB":
+        ## take the first column of LVL-NUMB if there are some
         level_num = [int(l) for l in data_dict_conv["data"][locs["locs_e"][0]]]
         mt = [e_lvl_to_mt50(l) for l in level_num]
         e_out = [None] * len(data)
 
 
-    elif len(locs["locs_e"]) == 1 and data_dict_conv["heads"][
+    if len(locs["locs_e"]) == 1 and data_dict_conv["heads"][
         locs["locs_e"][0]
     ].startswith("E"):
         e_out = [
@@ -445,20 +445,24 @@ def process_general(entry_id, entry_json, data_dict_conv):
 
 
     elif len(locs["locs_e"]) > 1:
-        e_out = [
-            e / 1e6 if e is not None else None
-            for e in get_average(
-                "E", limit_data_dict_by_locs(locs["locs_e"], data_dict_conv)
-            )
-        ]
-
+        ## get average
+        # e_out = [
+        #     e / 1e6 if e is not None else None
+        #     for e in get_average(
+        #         "E", limit_data_dict_by_locs(locs["locs_e"], data_dict_conv)
+        #     )
+        # ]
+        ## should take the lowest one, but temporary take the first one
+        e_out = [e / 1e6 if e is not None else None for e in data_dict_conv["data"][locs["locs_e"][0]]]
 
     if (
         not react_dict["target"].endswith("-0")
         and react_dict["sf5"] == "PAR"
         and react_dict["sf4"]
+        and not any(p == react_dict["sf4"] for p in ("0-NN-1", "0-G-0"))
         and all(eo is not None for eo in e_out)
         and not level_num
+        and all(t is None for t in mt)
     ):
         for e_lvl in e_out:
 
@@ -472,6 +476,9 @@ def process_general(entry_id, entry_json, data_dict_conv):
             mt += [e_lvl_to_mt50(L.ripl_find_level_num())]
         assert len(level_num) == len(e_out)
 
+    elif not all(t is None for t in mt):
+        pass
+    
     else:
         level_num = [None] * len(data)
         mt = [None] * len(data)
@@ -520,7 +527,6 @@ def process_general(entry_id, entry_json, data_dict_conv):
     ##              Data Process
     ## --------------------------------------------------------------------------------------- ##
 
-
     df = pd.DataFrame(
         {
             "entry_id": entry_id,
@@ -544,15 +550,13 @@ def process_general(entry_id, entry_json, data_dict_conv):
         }
     )
 
-    # df = df[~df["data"].isna()]
+    df = df[~df["data"].isna()]
     # df = df[~df["en_inc"].isna()]
-
-    # print(df)
-
 
     ## Insert data table into exfor_data
     if not df.empty:
         insert_df_to_data(df)
+        print(df)
 
 
     return df

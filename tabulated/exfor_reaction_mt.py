@@ -120,7 +120,6 @@ sf3_dict = mt_to_reaction()
 
 
 
-
 def get_mf(react_dict):
 
     if sf_to_mf.get(react_dict["sf6"]):
@@ -143,16 +142,13 @@ def get_mf(react_dict):
 def get_mt(react_dict):
 
     if react_dict["sf6"] == "FY":
-        return int( mt_fy_sf5[ react_dict["sf5"] ]["mt"] ) if react_dict["sf5"] and mt_fy_sf5[ react_dict["sf5"] ]["mt"] else None
+        return int( mt_fy_sf5[ react_dict["sf5"] ]["mt"] ) if react_dict["sf5"] and mt_fy_sf5.get( react_dict["sf5"] ) else None
 
     elif react_dict["sf6"] == "NU":
-        return int( mt_nu_sf5[ react_dict["sf5"] ]["mt"] ) if react_dict["sf5"] and mt_nu_sf5[ react_dict["sf5"] ]["mt"] else None
+        return int( mt_nu_sf5[ react_dict["sf5"] ]["mt"] ) if react_dict["sf5"] and mt_nu_sf5.get( react_dict["sf5"] ) and mt_nu_sf5[ react_dict["sf5"] ]["mt"] else None
 
     else:
-        if (
-            react_dict["process"].split(",")[0] == "N"
-            and react_dict["process"].split(",")[1] == "INL"
-        ):
+        if react_dict["process"] == "N,INL":
             return 4
 
         elif (

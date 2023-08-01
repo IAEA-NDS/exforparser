@@ -9,17 +9,24 @@
 # Contact:    nds.contact-point@iaea.org
 #
 ####################################################################
-import sys
 from pyparsing import *
 
 from .exfor_field import data_header
-from utilities.utilities import corr, flatten_list
-from utilities.elem import ztoelem, numtoisomer
+from submodules.utilities.util import flatten_list
+from submodules.utilities.elem import ztoelem
 
 # from dictionary.exfor_dictionary import Diction
 # sys.path.append("../exfor_dictionary/")
 from exfor_dictionary import Diction
 
+def corr(invalue):
+    if re.search(r"\d|\.[+]\d", invalue):
+        # invalue = invalue.replace("+", "E+")
+        invalue = re.sub(r"(\d|\.)([+])(\d)", r"\1E+\3", invalue)
+    if re.search(r"\d|\.[-]\d", invalue):
+        # invalue = invalue.replace("-", "E-")
+        invalue = re.sub(r"(\d|\.)([-])(\d)", r"\1E-\3", invalue)
+    return invalue
 
 def data_column_read(line):
     column = [0, 11, 22, 33, 44, 55]

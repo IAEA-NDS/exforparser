@@ -56,9 +56,7 @@ jobs:
           EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
         run: |
           cd ${GITHUB_WORKSPACE}
-          git clone https://github.com/IAEA-NDS/exfor_dictionary.git
           git clone https://github.com/IAEA-NDS/exfor_master.git
-          git clone https://github.com/IAEA-NDS/exfor_json.git
           python exparser.py
 
 

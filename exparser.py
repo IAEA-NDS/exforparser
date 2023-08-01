@@ -21,11 +21,10 @@ logging.basicConfig(filename="parsing.log", level=logging.DEBUG, filemode="w")
 
 
 from config import OUT_PATH
-from utilities.utilities import del_outputs, print_time, get_entry_update_date
+from submodules.utilities.util import del_outputs, print_time, get_entry_update_date
 from parser.list_x4files import list_entries_from_df
 from parser.exfor_entry import Entry
 from parser.exfor_subentry import Subentry
-#from mongodb import post_one_mongodb, post_many_mongodb
 
 
 ## get update data from git commit and store info to Python dictionary
@@ -97,7 +96,6 @@ def convert_exfor_to_json(entnum=None):
 
 
 def main(entnum):
-    # del_outputs(OUT_PATH + "json/")
 
     start_time = print_time()
     logging.info(f"Start processing {start_time}")
@@ -105,7 +103,6 @@ def main(entnum):
     try:
         entry_json = convert_exfor_to_json(entnum)
         write_dict_to_json(entnum, entry_json)
-        # post_one_mongodb("exfor_json", entry_json)
 
     except:
         logging.error(f"ERROR: at ENTRY: {entnum}")
@@ -114,10 +111,9 @@ def main(entnum):
 
 
 if __name__ == "__main__":
-    # ent = list_entries_from_df()
+    ent = list_entries_from_df()
     # entries = random.sample(ent, len(ent))
-    # entries = ent
-    entries=["32617", "40016", "30936", "C1823", "E2286"] #, "12240", "41185", "41102", "30010", "11210"]
+    entries = ent
     for entnum in entries:
         print(entnum)
         main(entnum)

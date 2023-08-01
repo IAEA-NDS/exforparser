@@ -50,7 +50,8 @@ def reaction_query_simple(type, elem, mass, reaction, branch):
 
     queries = [Exfor_Indexes.target == target, 
                Exfor_Indexes.process == reaction.upper(),
-               Exfor_Indexes.sf6 == type.upper()]
+               Exfor_Indexes.sf6 == type.upper(),
+               Exfor_Indexes.arbitrary_data == False]
 
 
 
@@ -81,7 +82,8 @@ def reaction_query(type, elem, mass, reaction, branch=None, rp_elem=None, rp_mas
     reac = None
     target = elemtoz_nz(elem) + "-" + elem.upper() + "-" + mass
 
-    queries = [Exfor_Indexes.target == target]
+    queries = [Exfor_Indexes.target == target,
+               Exfor_Indexes.arbitrary_data == False]
 
     if branch:
         if branch == "PAR":
@@ -294,6 +296,7 @@ def reaction_query_fy(type, elem, mass, reaction, branch, mesurement_opt_fy, ene
             Exfor_Indexes.sf6 == type.upper(),
             Exfor_Indexes.e_inc_min >= lower,
             Exfor_Indexes.e_inc_max <= upper,
+            Exfor_Indexes.arbitrary_data == False,
             (Exfor_Indexes.sf4 == "MASS" if mesurement_opt_fy=="A" else Exfor_Indexes.sf4 == "ELEM" if mesurement_opt_fy=="Z" else Exfor_Indexes.sf4.isnot(None) ),
         ).all()
 
@@ -326,7 +329,8 @@ def reaction_query_fission(type, elem, mass, reaction, branch, energy_range):
     target = elemtoz_nz(elem) + "-" + elem.upper() + "-" + mass
     
     queries = [Exfor_Indexes.target == target, 
-               Exfor_Indexes.process == reaction.upper(),]
+               Exfor_Indexes.process == reaction.upper(),
+               Exfor_Indexes.arbitrary_data == False]
 
     if branch == "nu_n":
         sf5 = ["PR"]

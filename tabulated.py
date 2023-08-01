@@ -125,6 +125,7 @@ def reaction_dict_regist(entry_id, entry_json):
         }
     ]
     insert_reaction(reac_data)
+    print(reac_data)
 
     return
 
@@ -168,6 +169,7 @@ def reaction_index_regist(entry_id, entry_json, react_dict, df):
                 "e_inc_min": None,
                 "e_inc_max": None,
                 "points": None,
+                "arbitrary_data": None,
                 "sf5": react_dict["sf5"],
                 "sf6": react_dict["sf6"],
                 "sf7": react_dict["sf7"],
@@ -207,6 +209,7 @@ def reaction_index_regist(entry_id, entry_json, react_dict, df):
                                 "e_inc_min": df2["en_inc"].min(),
                                 "e_inc_max": df2["en_inc"].max(),
                                 "points": len(df2.index),
+                                "arbitrary_data": df2["arbitrary_data"].unique()[0],
                                 "sf5": react_dict["sf5"],
                                 "sf6": react_dict["sf6"],
                                 "sf7": react_dict["sf7"],
@@ -244,6 +247,7 @@ def reaction_index_regist(entry_id, entry_json, react_dict, df):
                         "e_inc_min": df2["en_inc"].min(),
                         "e_inc_max": df2["en_inc"].max(),
                         "points": len(df2.index),
+                        "arbitrary_data": df2["arbitrary_data"].unique()[0],
                         "sf5": react_dict["sf5"],
                         "sf6": react_dict["sf6"],
                         "sf7": react_dict["sf7"],
@@ -288,6 +292,9 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
 
         df = process_general(entry_id, entry_json, data_dict_conv)
         reaction_index_regist(entry_id, entry_json, react_dict, df)
+
+        ## If the DATA is given by arbitrary unit (ARB-UNIT) or no dimension (NO-DIM)
+        df = df.loc[df["arbitrary_data"] == 0 ]
 
         if df.empty:
             continue
@@ -386,13 +393,16 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                     # reaction_index_regist(entry_id, entry_json, react_dict, pd.DataFrame())
                     continue
 
-                if len(df["level_num"].unique()) == 0:
+                if len(df["level_num"].unique()) == 0 or not df["level_num"].unique().all():
                     continue
 
                 for level_num in df["level_num"].unique():
                     df2 = df[df["level_num"] == level_num]
-                    mf, mt = get_unique_mf_mt(df2)
 
+                    if df2.empty:
+                        continue
+
+                    mf, mt = get_unique_mf_mt(df2)
                     dir = get_dir_name(react_dict, level_num=level_num, subdir=None)
                     filename = exfortables_filename(
                         dir,
@@ -412,6 +422,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                             + react_dict["target"].split("-")[3].lower()
                         ),
                     )
+                    
                     write_to_exfortables_format_sig(
                         entry_id,
                         dir,
@@ -453,7 +464,7 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
 
                     if (
                         react_dict["target"].split("-")[2] == "0"
-                        and react_dict["sf4"] is None
+                        or react_dict["sf4"] is None
                     ):
                         ## case for ,DA without product
                         filename = exfortables_filename(
@@ -665,26 +676,29 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
                 )
 
             else:
-                prod = react_dict["sf4"]  ## expect MASS, then format should be like FPY
-                filename = exfortables_filename(
-                    dir,
-                    entry_id,
-                    react_dict["process"].replace(",", "-").lower(),
-                    react_dict,
-                    entry_json["bib_record"],
-                    None,
-                    prod,
-                )
+                continue
+                ## expect MASS or ELEM/MASS, then format should be like FPY
+                ## not output
+                # prod = react_dict["sf4"]  
+                # filename = exfortables_filename(
+                #     dir,
+                #     entry_id,
+                #     react_dict["process"].replace(",", "-").lower(),
+                #     react_dict,
+                #     entry_json["bib_record"],
+                #     None,
+                #     prod,
+                # )
 
-                write_to_exfortables_format_fy(
-                    entry_id,
-                    dir,
-                    filename,
-                    entry_json["bib_record"],
-                    react_dict,
-                    str(mf) + " - " + str(mt),
-                    df,
-                )
+                # write_to_exfortables_format_fy(
+                #     entry_id,
+                #     dir,
+                #     filename,
+                #     entry_json["bib_record"],
+                #     react_dict,
+                #     str(mf) + " - " + str(mt),
+                #     df,
+                # )
 
         elif (
             react_dict["sf6"] == "NU/DE" or react_dict["sf6"] == "FY/DE"
@@ -896,7 +910,6 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
 
 
 def main(entnum):
-    # entry_json = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(dict))))
     entry_json = convert_exfor_to_json(entnum)
     write_dict_to_json(entnum, entry_json)
 
@@ -948,27 +961,20 @@ def main(entnum):
 
         entry_id = entnum + subent
 
-        # tabulated_to_exfortables_format(entry_id, entry_json, data_dict_conv)
-        try:
-            tabulated_to_exfortables_format(entry_id, entry_json, data_dict_conv)
+        tabulated_to_exfortables_format(entry_id, entry_json, data_dict_conv)
+        # try:
+        #     tabulated_to_exfortables_format(entry_id, entry_json, data_dict_conv)
 
-        except:
-            logging.error(f"Tabulated error: at ENTRY: '{entry_id}',")
+        # except:
+        #     logging.error(f"Tabulated error: at ENTRY: '{entry_id}',")
 
     return
     
 
 
 if __name__ == "__main__":
-    # failed = ["13317", "14369", "40106", "D5081", "13277", "D0487", "14625", "32791", "12709", "13482", "F1099", "41075", "33120", "30751", "33028", "C1581", "F0114", "13480", "40206", "13385", "23444", "13332", "A0095", "13458", "23271", "D0847", "D8036", "G0066", "L0105", "F0332", "10722", "33119", "13396", "D8036", "33160", "40545", "21495", "13072", "32632", "23213", "C0969" ] 
     ent = list_entries_from_df()
     entries = random.sample(ent, len(ent))
-    # entries = failed
-    # entries=["D6274","D0193","20905", "40016", "22100", "T0243", "12240", "41185", "41102", "30010", "11210"]
-    # entries = good_example_entries
-
-    # drop_tables()
-    # del_outputs(OUT_PATH + "exfortables/")
 
     start_time = print_time()
     logging.info(f"Start processing {start_time}")
