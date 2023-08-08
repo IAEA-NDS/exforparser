@@ -12,19 +12,23 @@
 import random
 import pandas as pd
 import logging
-import math
-import json
-import sys
-from collections import defaultdict
+
 
 FORMATTER = logging.Formatter("%(asctime)s — %(name)s — %(levelname)s — %(message)s")
 logging.basicConfig(filename="tabulated.log", level=logging.DEBUG, filemode="w")
 
 from config import OUT_PATH
-from utilities.utilities import dict_merge, del_outputs, print_time
+from submodules.utilities.util import dict_merge, del_outputs, print_time
 from exparser import convert_exfor_to_json, write_dict_to_json
 from parser.list_x4files import list_entries_from_df, good_example_entries
 from parser.exfor_unit import unify_units
+
+
+# initialize exfor_dictionary
+from exfor_dictionary.exfor_dictionary import Diction
+D = Diction()
+
+
 from tabulated.exfor_reaction_mt import (
     sf_to_mf,
     sf3_dict,
@@ -40,9 +44,6 @@ from tabulated.data_dir_files import *
 from tabulated.data_process import *
 from sql.creation import *
 
-# initialize exfor_dictionary
-from exfor_dictionary import Diction
-D = Diction()
 
 # get heading list
 x_en_heads = D.get_incident_en_heads()
@@ -973,8 +974,9 @@ def main(entnum):
 
 
 if __name__ == "__main__":
-    ent = list_entries_from_df()
-    entries = random.sample(ent, len(ent))
+    # ent = list_entries_from_df()
+    # entries = random.sample(ent, len(ent))
+    entries = good_example_entries
 
     start_time = print_time()
     logging.info(f"Start processing {start_time}")

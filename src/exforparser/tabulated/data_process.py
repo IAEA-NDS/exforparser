@@ -17,7 +17,7 @@ from sql.creation import insert_reaction, insert_reaction_index, insert_df_to_da
 from submodules.utilities.elem import ztoelem
 from tabulated.data_locations import *
 from tabulated.exfor_reaction_mt import get_mf, get_mt, e_lvl_to_mt50
-from ripl3_json.ripl3_descretelevel import RIPL_Level
+from ripl3_json.ripl3_discretelevel import RIPL_Level
 
 
 def limit_data_dict_by_locs(locs, data_dict):

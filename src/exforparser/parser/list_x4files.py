@@ -20,9 +20,9 @@ import sys
 
 from .exceptions import *
 
-sys.path.append("../")
-from config import EXFOR_ALL_PATH, ENTRY_INDEX_PICKLE
+from config import EXFOR_MASTER_REPO_PATH, ENTRY_INDEX_PICKLE
 
+EXFOR_ALL_PATH = os.path.join(EXFOR_MASTER_REPO_PATH, "exforall")
 
 """
 Run dos2unix for all .x4 files beforehand as follows:
@@ -35,15 +35,6 @@ def rundos2unix():
     glob = os.path.join(EXFOR_ALL_PATH, "*", "*.x4")
     os.system('for f in glob; do dos2unix "$f"; done')
 
-
-
-def _check_x4alldir():
-    from parser.exceptions import Nox4AllDirExistenceError
-
-    if os.path.isdir(EXFOR_ALL_PATH):
-        return True
-    else:
-        raise Nox4AllDirExistenceError(EXFOR_ALL_PATH)
 
 
 def _index_pickle_road():
@@ -102,6 +93,7 @@ def list_exfor_files():
     ## loop over all entries and compose the list of entries
     files = []
     entries = []
+
 
     if os.path.exists(EXFOR_ALL_PATH):
         dirs = [f for f in os.listdir(EXFOR_ALL_PATH) if not f.startswith(".")]

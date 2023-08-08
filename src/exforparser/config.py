@@ -9,6 +9,7 @@
 # Contact:    nds.contact-point@iaea.org
 #
 ####################################################################
+import os
 import sqlalchemy as db
 from sqlalchemy.orm import sessionmaker
 
@@ -16,24 +17,16 @@ DEVENV = True
 
 if DEVENV:
     DATA_DIR = "/Users/okumuras/Documents/nucleardata/EXFOR/"
-    MODULES_DIR = "/Users/okumuras/Dropbox/Development/"
-
 
 else:
     DATA_DIR = "/srv/data/dataexplorer2/"
-    MODULES_DIR = "/srv/data/dataexplorer2/"
 
 
-
-EXFOR_DB = DATA_DIR + "exfor.sqlite"
-
+EXFOR_DB = os.path.join(DATA_DIR, "exfor_tmp.sqlite")
+EXFOR_MASTER_REPO_PATH = os.path.join(DATA_DIR, "exfor_master")
 
 """ Pickle path of list of EXFOR master files made by parser.list_x4files.py"""
 ENTRY_INDEX_PICKLE = "pickles/entry.pickle"
-
-
-TO_JSON = True
-POST_DB = False
 
 
 OUT_PATH = DATA_DIR +  "../../../Desktop/"

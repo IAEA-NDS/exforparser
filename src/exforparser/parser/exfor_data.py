@@ -9,15 +9,14 @@
 # Contact:    nds.contact-point@iaea.org
 #
 ####################################################################
+import re
 from pyparsing import *
 
 from .exfor_field import data_header
 from submodules.utilities.util import flatten_list
 from submodules.utilities.elem import ztoelem
 
-# from dictionary.exfor_dictionary import Diction
-# sys.path.append("../exfor_dictionary/")
-from exfor_dictionary import Diction
+from exfor_dictionary.exfor_dictionary import Diction
 
 def corr(invalue):
     if re.search(r"\d|\.[+]\d", invalue):

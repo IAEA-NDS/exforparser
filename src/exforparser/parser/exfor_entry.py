@@ -14,9 +14,19 @@ import os
 import sys
 
 sys.path.append("../")
-from config import EXFOR_ALL_PATH
+from config import EXFOR_MASTER_REPO_PATH
 from .exfor_subentry import Subentry
 from .exfor_block import get_block
+
+
+def get_entry_update_date():
+    d = {}
+    file = os.path.join(EXFOR_MASTER_REPO_PATH, "entry_updatedate.dat")
+    with open(file) as f:
+        for line in f:
+            x = line.split(" ")
+            d.update({x[0]: {"last_update": x[1], "revisions": x[2].strip()}})
+    return d
 
 
 def open_read_file(filename=""):
@@ -71,7 +81,7 @@ class Entry:
 
     def x4filename(self):
         if self._check_entry_nlen(self.entnum):
-            return os.path.join(EXFOR_ALL_PATH, self.entnum[:3], self.entnum + ".x4")
+            return os.path.join(EXFOR_MASTER_REPO_PATH, "exforall", self.entnum[:3], self.entnum + ".x4")
 
     def get_entry_exfor(self) -> dict:
         """return as EXFOR format"""

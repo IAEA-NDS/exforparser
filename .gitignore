@@ -153,6 +153,8 @@ dmypy.json
 .vscode/
 
 # under development
+*/pickles*
+*.pickle
 evaluations/
 geo/
 docker/
@@ -188,6 +190,4 @@ sqldb.py
 check*
 json.schema
 *.sh
-
-# other packages
-exfor_dictionary/
+uninstall.txt

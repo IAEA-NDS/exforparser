@@ -10,10 +10,7 @@
 #
 ####################################################################
 
-from logging import raiseExceptions
-import pandas as pd
 import os
-import random
 import json
 import logging
 
@@ -21,10 +18,11 @@ logging.basicConfig(filename="parsing.log", level=logging.DEBUG, filemode="w")
 
 
 from config import OUT_PATH
-from submodules.utilities.util import del_outputs, print_time, get_entry_update_date
+from submodules.utilities.util import del_outputs, print_time
 from parser.list_x4files import list_entries_from_df
-from parser.exfor_entry import Entry
+from parser.exfor_entry import Entry, get_entry_update_date
 from parser.exfor_subentry import Subentry
+
 
 
 ## get update data from git commit and store info to Python dictionary
