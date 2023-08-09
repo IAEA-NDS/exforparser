@@ -1,3 +1,4 @@
-include src/tabulated/MTall.dat
-include src/tabulated/*.json
-include src/submodules/utilities/*.txt
+include src/exforparser/tabulated/MTall.dat
+include src/exforparsertabulated/*.json
+include src/exforparser/submodules/utilities/*.txt
+include src/exforparser/pickles/*.pickle

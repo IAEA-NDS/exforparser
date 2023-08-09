@@ -35,14 +35,12 @@ from tabulated.exfor_reaction_mt import (
     mt_fy_sf5,
     sig_sf5,
     mt_nu_sf5,
-    get_mf,
-    get_mt,
 )
 
 from tabulated.data_write import *
 from tabulated.data_dir_files import *
 from tabulated.data_process import *
-from sql.creation import *
+from sql.queries import insert_bib, insert_reaction, insert_reaction_index
 
 
 # get heading list
@@ -53,8 +51,7 @@ x_data_err_heads = D.get_data_err_heads()
 
 
 def bib_dict(entry_json):
-    bib_data = [
-        {
+    bib_data = {
             "entry": entry_json["entry"],
             "title": entry_json["bib_record"]["title"]
             if entry_json["bib_record"].get("title")
@@ -96,7 +93,7 @@ def bib_dict(entry_json):
             if entry_json["bib_record"].get("references")
             else None,
         }
-    ]
+
     insert_bib(bib_data)
 
     return
@@ -108,7 +105,6 @@ def reaction_dict_regist(entry_id, entry_json):
     ## Insert data table into exfor_reactions
     entnum, subent, pointer = entry_id.split("-")
     react_dict = entry_json["reactions"][subent][pointer]["children"][0]
-
     reac_data = [
         {
             "entry_id": entry_id,
@@ -126,9 +122,9 @@ def reaction_dict_regist(entry_id, entry_json):
         }
     ]
     insert_reaction(reac_data)
-    print(reac_data)
+    # print(reac_data)
 
-    return
+    return react_dict
 
 
 
@@ -184,6 +180,35 @@ def reaction_index_regist(entry_id, entry_json, react_dict, df):
         insert_reaction_index(reac_index)
         return None
 
+    elif not df.loc[df['residual'].isnull() & df['level_num'].isnull() ].empty:
+        mf, mt = get_unique_mf_mt(df)
+        reac_index = [
+            {
+                "entry_id": entry_id,
+                "entry": entnum,
+                "target": react_dict["target"],
+                "projectile": react_dict["process"].split(",")[0],
+                "process": react_dict["process"],
+                "sf4": react_dict["sf4"],
+                "residual": None,
+                "level_num": None,
+                "e_out": None,
+                "e_inc_min": df["en_inc"].min(),
+                "e_inc_max": df["en_inc"].max(),
+                "points": len(df.index),
+                "arbitrary_data": df["arbitrary_data"].unique()[0],
+                "sf5": react_dict["sf5"],
+                "sf6": react_dict["sf6"],
+                "sf7": react_dict["sf7"],
+                "sf8": react_dict["sf8"],
+                "sf9": react_dict["sf9"],
+                "x4_code": entry_json["reactions"][subent][pointer]["x4_code"],
+                "mf": int(mf) if mf else None,
+                "mt": int(mt) if mt else None,
+            }
+        ]
+        insert_reaction_index(reac_index)
+
     else:
         for r in df["residual"].unique():
             for l in df["level_num"].unique():
@@ -192,7 +217,6 @@ def reaction_index_regist(entry_id, entry_json, react_dict, df):
                     ## if the level number is not known but the e_out (E-LVL or E-EXC) is known.
                     l = None
                     df2 = df[(df["residual"] == r) & (df["level_num"].isnull())]
-
                     for eo in df2["e_out"].unique():
                         mf, mt = get_unique_mf_mt(df2)
 
@@ -910,11 +934,16 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
     return
 
 
+
+
+
+
 def main(entnum):
     entry_json = convert_exfor_to_json(entnum)
     write_dict_to_json(entnum, entry_json)
 
     if entry_json:
+        # bib_dict(entry_json)
         try:
             bib_dict(entry_json)
         except:
@@ -962,21 +991,22 @@ def main(entnum):
 
         entry_id = entnum + subent
 
-        tabulated_to_exfortables_format(entry_id, entry_json, data_dict_conv)
-        # try:
-        #     tabulated_to_exfortables_format(entry_id, entry_json, data_dict_conv)
+        # tabulated_to_exfortables_format(entry_id, entry_json, data_dict_conv)
+        try:
+            tabulated_to_exfortables_format(entry_id, entry_json, data_dict_conv)
 
-        # except:
-        #     logging.error(f"Tabulated error: at ENTRY: '{entry_id}',")
+        except:
+            logging.error(f"Tabulated error: at ENTRY: '{entry_id}',")
 
     return
     
 
 
 if __name__ == "__main__":
-    # ent = list_entries_from_df()
-    # entries = random.sample(ent, len(ent))
-    entries = good_example_entries
+    ent = list_entries_from_df()
+    entries = random.sample(ent, len(ent))
+    # entries = list(dict.fromkeys(good_example_entries))
+    # entries = [ "10963", "12544", "30441", "30125", ]
 
     start_time = print_time()
     logging.info(f"Start processing {start_time}")

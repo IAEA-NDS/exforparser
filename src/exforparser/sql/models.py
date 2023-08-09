@@ -8,9 +8,10 @@
 
 import sqlalchemy as db
 from sqlalchemy.ext.declarative import declarative_base
+from config import engine
+
 
 Base = declarative_base()
-
 
 class Exfor_Bib(Base):
     __tablename__ = "exfor_bib"
@@ -63,6 +64,7 @@ class Exfor_Indexes(Base):
     sf8 = db.Column(db.String)
     sf9 = db.Column(db.String)
     x4_code = db.Column(db.String)
+    mf = db.Column(db.Integer)
     mt = db.Column(db.Integer)
 
 
@@ -85,10 +87,13 @@ class Exfor_Data(Base):
     de_out = db.Column(db.Float)
     angle = db.Column(db.Float)
     dangle = db.Column(db.Float)
+    mf = db.Column(db.Integer)
     mt = db.Column(db.Integer)
+
+Base.metadata.create_all(bind=engine)
 
 
 if __name__ == "__main__":
-    from settings import engine
-
-    Base.metadata.create_all(bind=engine)
+    # from config import engine
+    # Base.metadata.create_all(bind=engine)
+    pass

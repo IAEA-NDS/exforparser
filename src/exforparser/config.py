@@ -10,28 +10,41 @@
 #
 ####################################################################
 import os
-import sqlalchemy as db
-from sqlalchemy.orm import sessionmaker
+import site
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import scoped_session, sessionmaker
 
 DEVENV = True
 
 if DEVENV:
     DATA_DIR = "/Users/okumuras/Documents/nucleardata/EXFOR/"
+    OUT_PATH = "/Users/okumuras/Desktop/"
+    EXFOR_PARSER = "./"
 
 else:
     DATA_DIR = "/srv/data/dataexplorer2/"
+    OUT_PATH = "/srv/data/dataexplorer2/out/"
+
+    from importlib.resources import files
+    EXFOR_PARSER = files("exforparser")
 
 
-EXFOR_DB = os.path.join(DATA_DIR, "exfor_tmp.sqlite")
 EXFOR_MASTER_REPO_PATH = os.path.join(DATA_DIR, "exfor_master")
+EXFOR_DB = os.path.join(DATA_DIR, "exfor_tmp.sqlite")
+# print(EXFOR_DB)
 
-""" Pickle path of list of EXFOR master files made by parser.list_x4files.py"""
-ENTRY_INDEX_PICKLE = "pickles/entry.pickle"
+
+""" Pickle path of list of EXFOR master files made by parser.list_x4files.py """
+ENTRY_INDEX_PICKLE = os.path.join( EXFOR_PARSER, "pickles/entry.pickle" )
 
 
-OUT_PATH = DATA_DIR +  "../../../Desktop/"
+""" Pickle path of list of EXFOR master files made by parser.list_x4files.py """
+SITE_DIR = site.getsitepackages()[0]
+INSTITUTE_PICKLE = os.path.join( SITE_DIR, "exfor_dictionary", "pickles/institute.pickle" )
 
 
 """ SQL database """
-engine = db.create_engine("sqlite:///" + EXFOR_DB)
-session = sessionmaker(autocommit=False, autoflush=True, bind=engine)
+engine = create_engine("sqlite:///" + EXFOR_DB)
+Session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
+session = Session()

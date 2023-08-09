@@ -23,6 +23,7 @@ def split_sf(sf49):
         sf7 = len(sf49) > 3 and sf49[3] or None
         sf8 = len(sf49) > 4 and sf49[4] or None
         sf9 = len(sf49) > 5 and sf49[5] or None
+
     return {
         "sf4": sf4,
         "sf5": sf5,
@@ -99,7 +100,7 @@ def parse_reaction(reaction_field) -> dict:
             except:
                 reaction_info = {
                     "x4_code": x4_code,
-                    "children": {"code": b[0], "type": None},
+                    "children": [ {"code": b[0], "type": None} ],
                     "type": "?",
                     "free_text": free_text,
                 }

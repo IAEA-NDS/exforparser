@@ -175,8 +175,6 @@ good_example_entries = [
     "14605",  # Istitute two rows with free text
     # "G0509",  # facility has pointer
     "O0191",
-    "12898",
-    "11945",
     "22436",
     "D0047",  # ((92-U-CMP(A,N),,PY,,TT)=(6-C-CMP(A,N),,PY,,TT))
     "12898",  # pointer ratio normal, from Amanda, ((23-V-51(N,P)22-TI-51,,SIG)/(92-U-238(N,F),,SIG))
@@ -203,7 +201,6 @@ good_example_entries = [
     "21107",
     "13500",
     "23313",
-    "10377",
     "20010",  # REFERENCE  ((R,KFK-1000,1968)=(R,EUR-3963E,1968)= + \n (R,EANDC(E)-111,1968))
     "21902",
     "30328",

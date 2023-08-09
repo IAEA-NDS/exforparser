@@ -13,7 +13,7 @@
 import pandas as pd
 import re
 
-from sql.creation import insert_reaction, insert_reaction_index, insert_df_to_data
+from sql.queries import insert_df_to_data
 from submodules.utilities.elem import ztoelem
 from tabulated.data_locations import *
 from tabulated.exfor_reaction_mt import get_mf, get_mt, e_lvl_to_mt50
@@ -556,7 +556,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
     ## Insert data table into exfor_data
     if not df.empty:
         insert_df_to_data(df)
-        print(df)
+        # print(df)
 
 
     return df

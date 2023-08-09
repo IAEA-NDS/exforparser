@@ -36,8 +36,8 @@ include-package-data = true
 
 [tool.setuptools.package-data]
 "exforparser.tabulated" = ["*.dat", "*.json"]
+"exforparser.pickles" = ["*.pickle"]
 "submodules.utilities" = ["*.txt"]
-
 
 
 
