@@ -13,35 +13,30 @@ import random
 import pandas as pd
 import logging
 
-
 FORMATTER = logging.Formatter("%(asctime)s — %(name)s — %(levelname)s — %(message)s")
 logging.basicConfig(filename="tabulated.log", level=logging.DEBUG, filemode="w")
 
-from config import OUT_PATH
-from submodules.utilities.util import dict_merge, del_outputs, print_time
-from exparser import convert_exfor_to_json, write_dict_to_json
-from parser.list_x4files import list_entries_from_df, good_example_entries
-from parser.exfor_unit import unify_units
+from .submodules.utilities.util import dict_merge, del_outputs, print_time
+from .exparser import convert_exfor_to_json, write_dict_to_json
+from .parser.list_x4files import list_entries_from_df, good_example_entries
+from .parser.exfor_unit import unify_units
 
-
-# initialize exfor_dictionary
-from exfor_dictionary.exfor_dictionary import Diction
-D = Diction()
-
-
-from tabulated.exfor_reaction_mt import (
+from .tabulated.exfor_reaction_mt import (
     sf_to_mf,
     sf3_dict,
     mt_fy_sf5,
     sig_sf5,
     mt_nu_sf5,
 )
+from .tabulated.data_write import *
+from .tabulated.data_dir_files import *
+from .tabulated.data_process import *
+from .sql.queries import insert_bib, insert_reaction, insert_reaction_index
 
-from tabulated.data_write import *
-from tabulated.data_dir_files import *
-from tabulated.data_process import *
-from sql.queries import insert_bib, insert_reaction, insert_reaction_index
 
+# initialize exfor_dictionary
+from exfor_dictionary.exfor_dictionary import Diction
+D = Diction()
 
 # get heading list
 x_en_heads = D.get_incident_en_heads()

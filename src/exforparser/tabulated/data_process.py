@@ -13,11 +13,13 @@
 import pandas as pd
 import re
 
-from sql.queries import insert_df_to_data
-from submodules.utilities.elem import ztoelem
-from tabulated.data_locations import *
-from tabulated.exfor_reaction_mt import get_mf, get_mt, e_lvl_to_mt50
 from ripl3_json.ripl3_discretelevel import RIPL_Level
+
+from ..sql.queries import insert_df_to_data
+from ..submodules.utilities.elem import ztoelem
+from .data_locations import *
+from .exfor_reaction_mt import get_mf, get_mt, e_lvl_to_mt50
+
 
 
 def limit_data_dict_by_locs(locs, data_dict):

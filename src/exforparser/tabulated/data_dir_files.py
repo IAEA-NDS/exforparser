@@ -10,8 +10,8 @@
 #
 ####################################################################
 import os
-from config import OUT_PATH
-from tabulated.exfor_reaction_mt import sf6_to_dir
+from ..config import OUT_PATH
+from .exfor_reaction_mt import sf6_to_dir
 
 
 def target_reformat(react_dict):

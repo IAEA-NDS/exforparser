@@ -20,7 +20,7 @@ DEVENV = True
 if DEVENV:
     DATA_DIR = "/Users/okumuras/Documents/nucleardata/EXFOR/"
     OUT_PATH = "/Users/okumuras/Desktop/"
-    EXFOR_PARSER = "./"
+    EXFOR_PARSER = "./exforparser/"
 
 else:
     DATA_DIR = "/srv/data/dataexplorer2/"
@@ -37,7 +37,7 @@ EXFOR_DB = os.path.join(DATA_DIR, "exfor_tmp.sqlite")
 
 """ Pickle path of list of EXFOR master files made by parser.list_x4files.py """
 ENTRY_INDEX_PICKLE = os.path.join( EXFOR_PARSER, "pickles/entry.pickle" )
-
+MT_DEF = os.path.join( EXFOR_PARSER, "tabulated/MTall.dat" )
 
 """ Pickle path of list of EXFOR master files made by parser.list_x4files.py """
 SITE_DIR = site.getsitepackages()[0]

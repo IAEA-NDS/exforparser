@@ -12,11 +12,13 @@
 import re
 from pyparsing import *
 
-from .exfor_field import data_header
-from submodules.utilities.util import flatten_list
-from submodules.utilities.elem import ztoelem
-
 from exfor_dictionary.exfor_dictionary import Diction
+
+
+from .exfor_field import data_header
+from ..submodules.utilities.util import flatten_list
+from ..submodules.utilities.elem import ztoelem
+
 
 def corr(invalue):
     if re.search(r"\d|\.[+]\d", invalue):

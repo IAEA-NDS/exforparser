@@ -10,6 +10,7 @@
 #
 ####################################################################
 
+from ..config import MT_DEF
 
 sf_to_mf = {
     "NU": "1",
@@ -89,7 +90,7 @@ mt_nu_sf5 = {
 
 
 def mt_to_reaction():
-    with open("tabulated/MTall.dat") as f:
+    with open( MT_DEF ) as f:
         lines = f.readlines()
 
     # mt_dict = {}

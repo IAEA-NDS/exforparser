@@ -17,11 +17,11 @@ import logging
 logging.basicConfig(filename="parsing.log", level=logging.DEBUG, filemode="w")
 
 
-from config import OUT_PATH
-from submodules.utilities.util import del_outputs, print_time
-from parser.list_x4files import list_entries_from_df
-from parser.exfor_entry import Entry, get_entry_update_date
-from parser.exfor_subentry import Subentry
+from .config import OUT_PATH
+from .submodules.utilities.util import del_outputs, print_time
+from .parser.list_x4files import list_entries_from_df
+from .parser.exfor_entry import Entry, get_entry_update_date
+from .parser.exfor_subentry import Subentry
 
 
 

@@ -5,8 +5,8 @@ import pandas as pd
 
 
 # from sql.creation import exfor_bib, exfor_reactions, exfor_index, exfor_data 
-from sql.models import Exfor_Bib, Exfor_Reactions, Exfor_Indexes, Exfor_Data
-from config import engine, session
+from .models import Exfor_Bib, Exfor_Reactions, Exfor_Indexes, Exfor_Data
+from ..config import engine, session
 
 connection = engine.connect()
 metadata = db.MetaData()

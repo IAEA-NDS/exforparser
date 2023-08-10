@@ -20,7 +20,7 @@ import sys
 
 from .exceptions import *
 
-from config import EXFOR_MASTER_REPO_PATH, ENTRY_INDEX_PICKLE
+from ..config import EXFOR_MASTER_REPO_PATH, ENTRY_INDEX_PICKLE
 
 EXFOR_ALL_PATH = os.path.join(EXFOR_MASTER_REPO_PATH, "exforall")
 

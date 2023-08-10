@@ -14,7 +14,7 @@ import os
 import sys
 
 sys.path.append("../")
-from config import EXFOR_MASTER_REPO_PATH
+from ..config import EXFOR_MASTER_REPO_PATH
 from .exfor_subentry import Subentry
 from .exfor_block import get_block
 
@@ -34,7 +34,7 @@ def open_read_file(filename=""):
     separate and convert all subentries into dictionary
     """
     # filename = self.generate_x4filename()
-    from parser.exceptions import x4FileOpenError
+    from .exceptions import x4FileOpenError
 
     try:
         with open(filename, "rU") as f:
@@ -72,7 +72,7 @@ class Entry:
 
     @staticmethod
     def _check_entry_nlen(entnum):
-        from parser.exceptions import Incorrectx4Number
+        from .exceptions import Incorrectx4Number
 
         if len(entnum) != 5:
             raise Incorrectx4Number(entnum)
@@ -90,7 +90,7 @@ class Entry:
         )  # contenain entry body as list of each line
 
     def get_entry_body(self) -> dict:
-        from parser.exceptions import x4NoBody
+        from .exceptions import x4NoBody
 
         entry_body = {}
         subentry = []

@@ -8,7 +8,7 @@
 
 import sqlalchemy as db
 from sqlalchemy.ext.declarative import declarative_base
-from config import engine
+from ..config import engine
 
 
 Base = declarative_base()
