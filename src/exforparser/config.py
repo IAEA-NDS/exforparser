@@ -20,15 +20,13 @@ DEVENV = True
 if DEVENV:
     DATA_DIR = "/Users/okumuras/Documents/nucleardata/EXFOR/"
     OUT_PATH = "/Users/okumuras/Desktop/"
-    EXFOR_PARSER = "./exforparser/"
 
 else:
     DATA_DIR = "/srv/data/dataexplorer2/"
     OUT_PATH = "/srv/data/dataexplorer2/out/"
 
-    from importlib.resources import files
-    EXFOR_PARSER = files("exforparser")
-
+from importlib.resources import files
+EXFOR_PARSER = files("exforparser")
 
 EXFOR_MASTER_REPO_PATH = os.path.join(DATA_DIR, "exfor_master")
 EXFOR_DB = os.path.join(DATA_DIR, "exfor_tmp.sqlite")
