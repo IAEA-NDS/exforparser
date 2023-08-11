@@ -29,12 +29,10 @@ else:
 
 if os.path.exists("src/exforparser/parser"):
     EXFOR_PARSER = "src/exforparser/"
-    print("aaaa", EXFOR_PARSER)
 
 else:
     from importlib.resources import files
-    EXFOR_PARSER = files("exforparser")
-    print("bbb", EXFOR_PARSER)
+    EXFOR_PARSER = files("exforparser").joinpath("")
 
 
 EXFOR_MASTER_REPO_PATH = os.path.join(DATA_DIR, "exfor_master")
@@ -44,7 +42,6 @@ EXFOR_DB = os.path.join(DATA_DIR, "exfor_tmp.sqlite")
 
 """ Pickle path of list of EXFOR master files made by parser.list_x4files.py """
 ENTRY_INDEX_PICKLE = os.path.join( EXFOR_PARSER, "pickles/entry.pickle" )
-print(ENTRY_INDEX_PICKLE)
 MT_DEF = os.path.join( EXFOR_PARSER, "tabulated/MTall.dat" )
 
 """ Pickle path of list of EXFOR master files made by parser.list_x4files.py """
