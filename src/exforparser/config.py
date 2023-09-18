@@ -19,7 +19,7 @@ DEVENV = True
 
 if DEVENV:
     DATA_DIR = "/Users/okumuras/Documents/nucleardata/EXFOR/"
-    OUT_PATH = "/Users/okumuras/Desktop/"
+    OUT_PATH = "/Users/okumuras/Documents/nucleardata/EXFOR/"
 
 else:
     DATA_DIR = "/srv/data/dataexplorer2/"

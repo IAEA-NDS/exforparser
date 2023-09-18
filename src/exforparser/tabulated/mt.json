@@ -159,111 +159,211 @@
   "sf3": "N+P+A",
   "sf5-8": null
  },
- "50": {
-  "reaction": "(n,n0)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "51": {
-  "reaction": "(n,n1)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "52": {
-  "reaction": "(n,n2)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "53": {
-  "reaction": "(n,n3)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "54": {
-  "reaction": "(n,n4)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "55": {
-  "reaction": "(n,n5)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "56": {
-  "reaction": "(n,n6)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "57": {
-  "reaction": "(n,n7)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "58": {
-  "reaction": "(n,n8)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "59": {
-  "reaction": "(n,n9)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "60": {
-  "reaction": "(n,n10)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "61": {
-  "reaction": "(n,n11)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "62": {
-  "reaction": "(n,n12)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "63": {
-  "reaction": "(n,n13)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "64": {
-  "reaction": "(n,n14)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "65": {
-  "reaction": "(n,n15)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "66": {
-  "reaction": "(n,n16)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "67": {
-  "reaction": "(n,n17)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "68": {
-  "reaction": "(n,n18)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "69": {
-  "reaction": "(n,n19)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
- "70": {
-  "reaction": "(n,n20)",
-  "sf3": "INL",
-  "sf5-8": "PAR,SIG"
- },
+    "50": {
+     "reaction": "(n,n0)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "51": {
+     "reaction": "(n,n1)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "52": {
+     "reaction": "(n,n2)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "53": {
+     "reaction": "(n,n3)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "54": {
+     "reaction": "(n,n4)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "55": {
+     "reaction": "(n,n5)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "56": {
+     "reaction": "(n,n6)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "57": {
+     "reaction": "(n,n7)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "58": {
+     "reaction": "(n,n8)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "59": {
+     "reaction": "(n,n9)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "60": {
+     "reaction": "(n,n10)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "61": {
+     "reaction": "(n,n11)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "62": {
+     "reaction": "(n,n12)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "63": {
+     "reaction": "(n,n13)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "64": {
+     "reaction": "(n,n14)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "65": {
+     "reaction": "(n,n15)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "66": {
+     "reaction": "(n,n16)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "67": {
+     "reaction": "(n,n17)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "68": {
+     "reaction": "(n,n18)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "69": {
+     "reaction": "(n,n19)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "70": {
+     "reaction": "(n,n20)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "71": {
+     "reaction": "(n,n21)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "72": {
+     "reaction": "(n,n22)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "73": {
+     "reaction": "(n,n23)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "74": {
+     "reaction": "(n,n24)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "75": {
+     "reaction": "(n,n25)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "76": {
+     "reaction": "(n,n26)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "77": {
+     "reaction": "(n,n27)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "78": {
+     "reaction": "(n,n28)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "79": {
+     "reaction": "(n,n29)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "80": {
+     "reaction": "(n,n30)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "81": {
+     "reaction": "(n,n31)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "82": {
+     "reaction": "(n,n32)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "83": {
+     "reaction": "(n,n33)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "84": {
+     "reaction": "(n,n34)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "85": {
+     "reaction": "(n,n35)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "86": {
+     "reaction": "(n,n36)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "87": {
+     "reaction": "(n,n37)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "88": {
+     "reaction": "(n,n38)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "89": {
+     "reaction": "(n,n39)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
+    "90": {
+     "reaction": "(n,n40)",
+     "sf3": "INL",
+     "sf5-8": "PAR,SIG"
+    },
  "102": {
   "reaction": "(n,g)",
   "sf3": "G",
