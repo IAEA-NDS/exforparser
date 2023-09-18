@@ -31,8 +31,10 @@ if os.path.exists("src/exforparser/parser"):
     EXFOR_PARSER = "src/exforparser/"
 
 else:
-    from importlib.resources import files
-    EXFOR_PARSER = files("exforparser").joinpath("")
+    # from importlib.resources import files
+    # EXFOR_PARSER = files("exforparser").joinpath("")
+    import site
+    EXFOR_PARSER = os.path.join(site.getsitepackages()[0], "exforparser")
 
 
 EXFOR_MASTER_REPO_PATH = os.path.join(DATA_DIR, "exfor_master")
