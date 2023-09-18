@@ -90,7 +90,7 @@ class Exfor_Data(Base):
     mf = db.Column(db.Integer)
     mt = db.Column(db.Integer, index=True)
 
-Base.metadata.create_all(bind=engine)
+#Base.metadata.create_all(bind=engine)
 
 
 if __name__ == "__main__":

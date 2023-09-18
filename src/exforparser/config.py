@@ -15,7 +15,7 @@ import site
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-DEVENV = True
+DEVENV = False
 
 if DEVENV:
     DATA_DIR = "/Users/okumuras/Documents/nucleardata/EXFOR/"
@@ -38,7 +38,7 @@ else:
 
 
 EXFOR_MASTER_REPO_PATH = os.path.join(DATA_DIR, "exfor_master")
-EXFOR_DB = os.path.join(DATA_DIR, "exfor_tmp.sqlite")
+EXFOR_DB = os.path.join(DATA_DIR, "exfor.sqlite")
 # print(EXFOR_DB)
 
 
