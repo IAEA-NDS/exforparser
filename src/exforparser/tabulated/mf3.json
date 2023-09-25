@@ -118,7 +118,7 @@
   "mt": "207",
   "reaction": "(n,Xa)",
   "sf5-8": null
- }
+ },
  "N+A": {
   "mt": "22",
   "reaction": "(n,na)",
@@ -269,11 +269,6 @@
   "reaction": "(n,da)",
   "sf5-8": null
  },
-//  "-": {
-//   "mt": "151",
-//   "reaction": "(n,RES)",
-//   "sf5-8": null
-//  },
  "4N": {
   "mt": "37",
   "reaction": "(n,4n)",
