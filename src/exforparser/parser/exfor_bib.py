@@ -10,14 +10,11 @@
 #
 ####################################################################
 
-import json
 from pyparsing import *
-from collections import defaultdict
-
 
 from .exfor_field import *
 from .exfor_block import get_identifier_details
-from ..submodules.utilities.util import flatten_list
+
 
 def correct_pub_year(ref):
 

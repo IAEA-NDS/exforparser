@@ -14,13 +14,11 @@ import os
 import pandas as pd
 import time
 import hashlib
-import sys
 
 # need version check based on the hash then the only new files should be processed
 
-from .exceptions import *
-
 from ..config import EXFOR_MASTER_REPO_PATH, ENTRY_INDEX_PICKLE
+from .exceptions import *
 
 EXFOR_ALL_PATH = os.path.join(EXFOR_MASTER_REPO_PATH, "exforall")
 

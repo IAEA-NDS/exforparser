@@ -16,8 +16,9 @@ import logging
 FORMATTER = logging.Formatter("%(asctime)s — %(name)s — %(levelname)s — %(message)s")
 logging.basicConfig(filename="tabulated.log", level=logging.DEBUG, filemode="w")
 
-from .submodules.utilities.util import dict_merge, del_outputs, print_time
+
 from .exparser import convert_exfor_to_json, write_dict_to_json
+from .submodules.utilities.util import dict_merge, del_outputs, print_time
 from .parser.list_x4files import list_entries_from_df, good_example_entries
 from .parser.exfor_unit import unify_units
 

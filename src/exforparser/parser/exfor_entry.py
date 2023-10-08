@@ -11,9 +11,7 @@
 ####################################################################
 
 import os
-import sys
 
-sys.path.append("../")
 from ..config import EXFOR_MASTER_REPO_PATH
 from .exfor_subentry import Subentry
 from .exfor_block import get_block

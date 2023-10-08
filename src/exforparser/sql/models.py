@@ -95,5 +95,5 @@ class Exfor_Data(Base):
 
 if __name__ == "__main__":
     # from config import engine
-    # Base.metadata.create_all(bind=engine)
+    Base.metadata.create_all(bind=engine)
     pass

@@ -15,11 +15,11 @@ import site
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-DEVENV = False
+DEVENV = True
 
 if DEVENV:
-    DATA_DIR = "/Users/okumuras/Documents/nucleardata/EXFOR/"
-    OUT_PATH = "/Users/okumuras/Documents/nucleardata/EXFOR/"
+    DATA_DIR = "/Users/sin/Documents/nucleardata/EXFOR/"
+    OUT_PATH = "/Users/sin/Documents/nucleardata/EXFOR/"
 
 else:
     DATA_DIR = "/srv/data/dataexplorer2/"
@@ -27,18 +27,17 @@ else:
 
 
 
-if os.path.exists("src/exforparser/parser"):
+if DEVENV:
     EXFOR_PARSER = "src/exforparser/"
 
 else:
-    # from importlib.resources import files
-    # EXFOR_PARSER = files("exforparser").joinpath("")
     import site
-    EXFOR_PARSER = os.path.join(site.getsitepackages()[0], "exforparser")
+    EXFOR_PARSER = os.path.join( site.getsitepackages()[0], "exforparser" )
 
 
-EXFOR_MASTER_REPO_PATH = os.path.join(DATA_DIR, "exfor_master")
-EXFOR_DB = os.path.join(DATA_DIR, "exfor.sqlite")
+EXFOR_MASTER_REPO_PATH = os.path.join( DATA_DIR, "exfor_master" )
+EXFOR_DB = os.path.join( DATA_DIR, "exfor.sqlite")
+MASS_RANGE_FILE = os.path.join( EXFOR_MASTER_REPO_PATH, "submodules/A_min_max.txt" )
 # print(EXFOR_DB)
 
 

@@ -1,4 +1,4 @@
-MASS_RANGE_FILE = "A_min_max.txt"
+from config import MASS_RANGE_FILE
 
 # ------------------------------------------------------------------------------
 # Mass

@@ -1,5 +1,5 @@
 {
- "TOTAL": {
+ "TOT": {
   "mt": "1",
   "reaction": "(n,total)",
   "sf5-8": null
@@ -16,7 +16,7 @@
  },
  "INL": {
   "mt": "4",
-  "reaction": "(n,inl)",
+  "reaction": "(n,inelas.)",
   "sf5-8": "SIG"
  },
  "F": {

@@ -4,17 +4,7 @@ import math
 from exfor_dictionary.exfor_dictionary import Diction
 
 d = Diction()
-# en_heads = d.get_incident_en_heads()
-# en_heads_err = d.get_incident_en_err_heads()
-# data_heads = d.get_data_heads()
-# data_heads_err = d.get_data_err_heads()
-# mass_heads = d.get_mass_heads()
-# elem_heads = d.get_elem_heads()
 
-
-def get_standard_unit():
-
-    pass
 
 
 def unify_units(data_dic):
@@ -48,5 +38,3 @@ def unify_units(data_dic):
 
     return data_dic
 
-
-# unify_units()
