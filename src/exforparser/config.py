@@ -28,7 +28,11 @@ else:
 
 
 if DEVENV:
-    EXFOR_PARSER = "src/exforparser/"
+    if os.path.exists( "src/exforparser/"):
+        EXFOR_PARSER = "src/exforparser/"
+    else:
+        import site
+        EXFOR_PARSER = os.path.join( site.getsitepackages()[0], "exforparser" )
 
 else:
     import site
