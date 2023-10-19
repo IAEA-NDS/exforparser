@@ -10,6 +10,7 @@
 #
 ####################################################################
 import random
+import math
 import pandas as pd
 import logging
 
@@ -83,6 +84,13 @@ def bib_dict(entry_json):
             ]
             if entry_json["bib_record"].get("references")
             else None,
+
+            "main_doi": entry_json["bib_record"]["references"][0][
+                "doi"
+            ]
+            if entry_json["bib_record"].get("references")
+            else None,
+
             "year": entry_json["bib_record"]["references"][0][
                 "publication_year"
             ]
@@ -199,8 +207,8 @@ def reaction_index_regist(entry_id, entry_json, react_dict, df):
                 "sf8": react_dict["sf8"],
                 "sf9": react_dict["sf9"],
                 "x4_code": entry_json["reactions"][subent][pointer]["x4_code"],
-                "mf": int(mf) if mf else None,
-                "mt": int(mt) if mt else None,
+                "mf": int(mf) if mf is not None else None,
+                "mt": int(mt) if mt is not None else None,
             }
         ]
         insert_reaction_index(reac_index)
@@ -215,7 +223,6 @@ def reaction_index_regist(entry_id, entry_json, react_dict, df):
                     df2 = df[(df["residual"] == r) & (df["level_num"].isnull())]
                     for eo in df2["e_out"].unique():
                         mf, mt = get_unique_mf_mt(df2)
-
                         reac_index = [
                             {
                                 "entry_id": entry_id,
@@ -237,8 +244,8 @@ def reaction_index_regist(entry_id, entry_json, react_dict, df):
                                 "sf8": react_dict["sf8"],
                                 "sf9": react_dict["sf9"],
                                 "x4_code": entry_json["reactions"][subent][pointer]["x4_code"],
-                                "mf": int(mf) if mf else None,
-                                "mt": int(mt) if mt else None,
+                                "mf": None if mf is None or math.isnan(mf) else int(mf),
+                                "mt": None if mt is None or math.isnan(mt) else int(mt),
                             }
                         ]
                         insert_reaction_index(reac_index)
@@ -275,8 +282,8 @@ def reaction_index_regist(entry_id, entry_json, react_dict, df):
                         "sf8": react_dict["sf8"],
                         "sf9": react_dict["sf9"],
                         "x4_code": entry_json["reactions"][subent][pointer]["x4_code"],
-                        "mf": int(mf) if mf else None,
-                        "mt": int(mt) if mt else None,
+                        "mf": int(mf) if mf is not None else None,
+                        "mt": int(mt) if mt is not None else None,
                     }
                 ]
                 insert_reaction_index(reac_index)
@@ -1002,7 +1009,7 @@ if __name__ == "__main__":
     ent = list_entries_from_df()
     entries = random.sample(ent, len(ent))
     # entries = list(dict.fromkeys(good_example_entries))
-    # entries = [ "10963", "12544", "30441", "30125", ]
+    # entries = ["C1112", "14451", "C0471", "C1221", "F0528", "C1439", "10963", "12544", "30441", "30125" ]
 
     start_time = print_time()
     logging.info(f"Start processing {start_time}")

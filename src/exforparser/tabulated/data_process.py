@@ -18,7 +18,7 @@ from ripl3_json.ripl3_discretelevel import RIPL_Level
 from ..sql.queries import insert_df_to_data
 from ..submodules.utilities.elem import ztoelem
 from .data_locations import *
-from .exfor_reaction_mt import get_mf, get_mt, e_lvl_to_mt50
+from .exfor_reaction_mt import get_mf, get_mt, e_lvl_to_mt
 
 
 
@@ -335,6 +335,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
                 else e.capitalize() + "-" + str(int(m))
                 for e, m, s in zip(elem, mass, state)
             ]
+            residual_type = ["product"] * len(residual)
 
         elif mass and elem and not state:
             residual = [
@@ -343,12 +344,15 @@ def process_general(entry_id, entry_json, data_dict_conv):
                 else None
                 for e, m in zip(elem, mass)
             ]
+            residual_type = ["product"] * len(residual)
 
         elif mass and not elem:
             residual = ["A=" + str(m) if m else None for m in mass]
+            residual_type = ["mass"] * len(residual)
 
         elif elem and not mass:
             residual = ["Z=" + e.capitalize() if e else None for e in elem]
+            residual_type = ["charge"] * len(residual)
 
         else:
             residual = [
@@ -357,7 +361,9 @@ def process_general(entry_id, entry_json, data_dict_conv):
                 else None
                 for e, m in zip(elem, mass)
             ]
+            residual_type = ["product"] * len(residual)
 
+        
     ## --------------------------------------------------------------------------------------- ##
     ## -----------------------   Incident energy    --------------------- ##
     ## --------------------------------------------------------------------------------------- ##
@@ -433,13 +439,15 @@ def process_general(entry_id, entry_json, data_dict_conv):
     if locs["locs_e"] and data_dict_conv["heads"][locs["locs_e"][0]] == "LVL-NUMB":
         ## take the first column of LVL-NUMB if there are some
         level_num = [int(l) for l in data_dict_conv["data"][locs["locs_e"][0]]]
-        mt = [e_lvl_to_mt50(l) for l in level_num]
+        ## Assign MT number based on the level_num
+        mt = [ e_lvl_to_mt(l, react_dict["process"] ) for l in level_num ]
+
         e_out = [None] * len(data)
 
 
     if len(locs["locs_e"]) == 1 and data_dict_conv["heads"][
         locs["locs_e"][0]
-    ].startswith("E"):
+    ].startswith("E-"):
         e_out = [
             e / 1e6 if e is not None else None
             for e in data_dict_conv["data"][locs["locs_e"][0]]
@@ -461,6 +469,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
         not react_dict["target"].endswith("-0")
         and react_dict["sf5"] == "PAR"
         and react_dict["sf4"]
+        and not react_dict["sf7"]
         and not any(p == react_dict["sf4"] for p in ("0-NN-1", "0-G-0"))
         and all(eo is not None for eo in e_out)
         and not level_num
@@ -475,7 +484,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
             )
 
             level_num += [L.ripl_find_level_num()]
-            mt += [e_lvl_to_mt50(L.ripl_find_level_num())]
+            mt += [ e_lvl_to_mt(L.ripl_find_level_num(), react_dict["process"]) ]
         assert len(level_num) == len(e_out)
 
     elif not all(t is None for t in mt):
@@ -538,6 +547,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
             "mass": mass if mass else None,
             "isomer": state if state else None,
             "residual": residual if residual else None,
+            # "residual_type": residual_type if residual_type else None,
             "level_num": level_num if level_num else None,
             "data": data if data else None,
             "ddata": ddata if ddata else None,
@@ -554,11 +564,13 @@ def process_general(entry_id, entry_json, data_dict_conv):
 
     df = df[~df["data"].isna()]
     # df = df[~df["en_inc"].isna()]
+    # df['mt'] = df['mt'].astype(int)
+    # df['mf'] = df['mf'].astype(int)
 
     ## Insert data table into exfor_data
     if not df.empty:
         insert_df_to_data(df)
-        # print(df)
+    # print(df)
 
 
     return df

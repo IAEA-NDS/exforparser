@@ -39,6 +39,8 @@ else:
     EXFOR_PARSER = os.path.join( site.getsitepackages()[0], "exforparser" )
 
 
+
+
 EXFOR_MASTER_REPO_PATH = os.path.join( DATA_DIR, "exfor_master" )
 EXFOR_DB = os.path.join( DATA_DIR, "exfor.sqlite")
 MASS_RANGE_FILE = os.path.join( EXFOR_MASTER_REPO_PATH, "submodules/A_min_max.txt" )

@@ -32,7 +32,7 @@ def write_dict_to_json(entnum, dic):
     """
     bib info write into json file
     """
-    dir = os.path.join(OUT_PATH, "json", entnum[:3])
+    dir = os.path.join(OUT_PATH, "exfor_json/json", entnum[:3])
 
     if len(entnum) == 5:
         if os.path.exists(dir):

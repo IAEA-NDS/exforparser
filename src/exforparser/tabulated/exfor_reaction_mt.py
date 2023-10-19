@@ -165,15 +165,32 @@ def get_mt(react_dict):
 
 
 
-def e_lvl_to_mt50(level_num):
-    mt = list(range(50, 91))
+def e_lvl_to_mt(level_num, process):
+    ## This is definition of outgoing particle
+    ## N,INL = 4
+    ## N,G = 102
+    ## N,P = 103  --> N,P or P,P to the excitation states are MT=600-649
+    inc_part, out_part = process.split(",")
+
+    if out_part == "INL":
+        out_part = inc_part
+
+    mt_range = {"N": list(range(50,92)), 
+                "P": list(range(600,649)), 
+                "D": list(range(650,699)), 
+                "T": list(range(700,749)), 
+                "H": list(range(750,799)), 
+                "A": list(range(800,849)), 
+                "G": list(range(102))
+                } # not sure about photon induced case
 
     if level_num is None:
-        return 9999
-    
-    elif int(level_num) < 40:
-        return int(mt[int(level_num)])
-    
+        return None ## 9999
+
+    elif int(level_num) < len( mt_range[out_part] ):
+
+        return int( mt_range[out_part][int(level_num)] )
+
     else:
-        return 91
+        return max(mt_range[out_part])
 

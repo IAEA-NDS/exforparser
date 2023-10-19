@@ -25,11 +25,11 @@ def bib_table(id, main_bib_dict, react_dict, mfmt, df):
         react_dict["code"],
         "\n" "# incident energy       :",
         (
-            "{:.2e} MeV".format(df.en_inc.min())
+            "{:.4e} MeV".format(df.en_inc.min())
             + " - "
-            + "{:.2e} MeV".format(df.en_inc.max())
+            + "{:.4e} MeV".format(df.en_inc.max())
             if len(df["en_inc"].unique()) > 1
-            else "{:.2e} MeV".format(df["en_inc"].unique()[0])
+            else "{:.4e} MeV".format(df["en_inc"].unique()[0])
         ),
         "\n" "# target                :",
         target_reformat(react_dict),
@@ -47,7 +47,7 @@ def bib_table(id, main_bib_dict, react_dict, mfmt, df):
             else "-"
         ),
         "\n" "# level energy          :",
-        "{:.2e} MeV".format(df.e_out.unique()[0])
+        "{:.4e} MeV".format(df.e_out.unique()[0])
         if not df["e_out"].isnull().all()
         else "-",
         "\n" "# MF-MT number          :",

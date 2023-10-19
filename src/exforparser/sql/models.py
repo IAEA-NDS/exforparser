@@ -23,7 +23,28 @@ class Exfor_Bib(Base):
     main_facility_institute = db.Column(db.String, index=True)
     main_facility_type = db.Column(db.String, index=True)
     main_reference = db.Column(db.String)
+    main_doi = db.Column(db.String)
     year = db.Column(db.Integer)
+
+
+
+class Exfor_ExperimentalCondition(Base):
+    __tablename__ = "exfor_experimental_condition"
+    entry_id = db.Column(db.String, primary_key=True, index=True)
+    entry = db.Column(db.String, index=True)
+    method = db.Column(db.String)
+    sample = db.Column(db.String)
+    analysis = db.Column(db.String)
+    assumed = db.Column(db.String)
+    decaydata = db.Column(db.String)
+    detector = db.Column(db.String)
+    erranalys = db.Column(db.String)
+    halflife = db.Column(db.String)
+    incsource = db.Column(db.String)
+    incspect = db.Column(db.String)
+    monitor = db.Column(db.String)
+    monitref = db.Column(db.String)
+    partded = db.Column(db.String)
 
 
 class Exfor_Reactions(Base):
@@ -52,6 +73,7 @@ class Exfor_Indexes(Base):
     process = db.Column(db.String, index=True)
     sf4 = db.Column(db.String)         # Could be null, 6-C-12, MASS, ELEM/MASS
     residual = db.Column(db.String, index=True)    # Real residual extended from product
+    # residual_type = db.Column(db.String, index=True)
     level_num = db.Column(db.Integer, index=True)  # Level number of residual product
     e_out = db.Column(db.Float)        # Outgoing energy or excitation energy (E-EXC, E-LVL etc)
     e_inc_min = db.Column(db.Float, index=True)
@@ -72,10 +94,10 @@ class Exfor_Data(Base):
     __tablename__ = "exfor_data"
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     entry_id = db.Column(db.String, index=True)
-    en_inc = db.Column(db.String)
-    den_inc = db.Column(db.String)
+    en_inc = db.Column(db.Float)
+    den_inc = db.Column(db.Float)
     charge = db.Column(db.Float)
-    mass = db.Column(db.String)
+    mass = db.Column(db.Float)
     isomer = db.Column(db.String)
     residual = db.Column(db.String, index=True)
     level_num = db.Column(db.Integer, index=True)

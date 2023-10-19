@@ -55,7 +55,7 @@ def get_dir_name(react_dict, level_num=None, subdir=None):
 
     return os.path.join(
         OUT_PATH,
-        "exfortables",
+        "exfortables_py",
         process_reformat(react_dict),
         target_reformat(react_dict),
         react_dict["process"].replace(",", "-").lower()
@@ -63,7 +63,7 @@ def get_dir_name(react_dict, level_num=None, subdir=None):
             else react_dict["process"].replace(",", "-").lower()
             + "-"
             + "L"
-            + str(level_num),
+            + str(int(level_num)),
         sf6_to_dir[react_dict["sf6"]],
         subdir if subdir else "",
     )
