@@ -9,8 +9,9 @@
 # Contact:    nds.contact-point@iaea.org
 #
 ####################################################################
-
-from ..config import MT_DEF
+import os
+import json
+from ..config import MT_DEF, MF3_JSON
 
 sf_to_mf = {
     "NU": "1",
@@ -115,8 +116,14 @@ def mt_to_reaction():
 
     return sf3_dict
 
+# sf3_dict = mt_to_reaction()
 
-sf3_dict = mt_to_reaction()
+def read_mt_json():
+    if os.path.exists(MF3_JSON):
+        with open(MF3_JSON) as map_file:
+            return json.load(map_file)
+
+sf3_dict = read_mt_json()
 
 
 

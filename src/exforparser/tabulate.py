@@ -326,6 +326,8 @@ def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
 
         if df.empty:
             continue
+        # 
+        sf3_dict_add = { "N" if react_dict["process"].split(",")[0].upper()!="N" and k=="INL" else k : i for k, i in sf3_dict.items()   }
 
         ## --------------------------------------------------------------------------------------- ##
         ## ------------------------  Case for the cross section  ------------------------  ##
@@ -1009,7 +1011,7 @@ if __name__ == "__main__":
     ent = list_entries_from_df()
     entries = random.sample(ent, len(ent))
     # entries = list(dict.fromkeys(good_example_entries))
-    # entries = ["C1112", "14451", "C0471", "C1221", "F0528", "C1439", "10963", "12544", "30441", "30125" ]
+    # entries = ["D0095"]#, "31524", "C1112", "14451", "C0471", "C1221", "F0528", "C1439", "10963", "12544", "30441", "30125" ]
 
     start_time = print_time()
     logging.info(f"Start processing {start_time}")

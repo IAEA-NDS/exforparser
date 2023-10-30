@@ -3,7 +3,7 @@
 2           (n,elas.)           EL 
 3           (n,nonelas.)        NON
 4           (n,inelas.)         INL
-4           (z,one N)           N
+4           (z,n)               N
 5           (n,anything)        -
 10          (n,contin.)         -               CON,SIG
 11          (n,2nd)             2N+D

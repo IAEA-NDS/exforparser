@@ -18,8 +18,8 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 DEVENV = True
 
 if DEVENV:
-    DATA_DIR = "/Users/sin/Documents/nucleardata/EXFOR/"
-    OUT_PATH = "/Users/sin/Documents/nucleardata/EXFOR/"
+    DATA_DIR = "/Users/okumuras/Documents/nucleardata/EXFOR/"
+    OUT_PATH = "/Users/okumuras/Documents/nucleardata/EXFOR/"
 
 else:
     DATA_DIR = "/srv/data/dataexplorer2/"
@@ -42,7 +42,7 @@ else:
 
 
 EXFOR_MASTER_REPO_PATH = os.path.join( DATA_DIR, "exfor_master" )
-EXFOR_DB = os.path.join( DATA_DIR, "exfor.sqlite")
+EXFOR_DB = os.path.join( DATA_DIR, "exfor_tmp.sqlite")
 MASS_RANGE_FILE = os.path.join( EXFOR_MASTER_REPO_PATH, "submodules/A_min_max.txt" )
 # print(EXFOR_DB)
 
@@ -50,6 +50,7 @@ MASS_RANGE_FILE = os.path.join( EXFOR_MASTER_REPO_PATH, "submodules/A_min_max.tx
 """ Pickle path of list of EXFOR master files made by parser.list_x4files.py """
 ENTRY_INDEX_PICKLE = os.path.join( EXFOR_PARSER, "pickles/entry.pickle" )
 MT_DEF = os.path.join( EXFOR_PARSER, "tabulated/MTall.dat" )
+MF3_JSON = os.path.join( EXFOR_PARSER, "tabulated/mf3.json" )
 
 """ Pickle path of list of EXFOR master files made by parser.list_x4files.py """
 SITE_DIR = site.getsitepackages()[0]

@@ -145,10 +145,11 @@ def parse_main_bib(bib_block) -> dict:
                     identifier_set[i]["publication_year"] = correct_pub_year(
                         identifier_set[i]["x4_code"]
                     )
-
+                    identifier_set[i]["doi"] = None
                     identifier_set[i]["pointer"] = pointer
-                    if identifier_set[i]["free_txt"]:
 
+                    if identifier_set[i]["free_txt"]:
+                        
                         for l in range(len(identifier_set[i]["free_txt"])):
 
                             if identifier_set[i]["free_txt"][l].startswith("#doi"):
@@ -157,6 +158,7 @@ def parse_main_bib(bib_block) -> dict:
                                 identifier_set[i]["doi"] = identifier_set[i][
                                     "free_txt"
                                 ][l].replace("#doi:", "")
+                        
 
                                 ## remove doi from free text list
                                 # identifier_set[i]["free_txt"].pop(l)
