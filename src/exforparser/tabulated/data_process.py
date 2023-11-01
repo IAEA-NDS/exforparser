@@ -444,6 +444,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
 
         e_out = [None] * len(data)
 
+        print(level_num)
 
     if len(locs["locs_e"]) == 1 and data_dict_conv["heads"][
         locs["locs_e"][0]
@@ -570,7 +571,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
     ## Insert data table into exfor_data
     if not df.empty:
         insert_df_to_data(df)
-    # print(df)
+    print(df)
 
 
     return df

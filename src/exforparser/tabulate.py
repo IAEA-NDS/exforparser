@@ -1011,7 +1011,7 @@ if __name__ == "__main__":
     ent = list_entries_from_df()
     entries = random.sample(ent, len(ent))
     # entries = list(dict.fromkeys(good_example_entries))
-    # entries = ["D0095"]#, "31524", "C1112", "14451", "C0471", "C1221", "F0528", "C1439", "10963", "12544", "30441", "30125" ]
+    # entries = ["14683", "D0095"]#, "31524", "C1112", "14451", "C0471", "C1221", "F0528", "C1439", "10963", "12544", "30441", "30125" ]
 
     start_time = print_time()
     logging.info(f"Start processing {start_time}")

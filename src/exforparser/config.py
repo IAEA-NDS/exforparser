@@ -15,7 +15,7 @@ import site
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-DEVENV = True
+DEVENV = False
 
 if DEVENV:
     DATA_DIR = "/Users/okumuras/Documents/nucleardata/EXFOR/"
