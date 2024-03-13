@@ -1,3 +1,7 @@
 [submodule "submodules"]
 	path = src/exforparser/submodules
 	url = https://github.com/shinokumura/exparser-submodule.git
+	branch = main
+[submodule "exparser-submodule"]
+	path = exparser-submodule
+	url = https://github.com/shinokumura/exparser-submodule.git
