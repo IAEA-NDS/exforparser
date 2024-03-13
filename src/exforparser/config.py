@@ -22,8 +22,8 @@ if DEVENV:
     OUT_PATH = "/Users/okumuras/Documents/nucleardata/EXFOR/"
 
 else:
-    DATA_DIR = "/srv/data/dataexplorer2/"
-    OUT_PATH = "/srv/data/dataexplorer2/out/"
+    DATA_DIR = "/nds/data/dataexplorer_v2/"
+    OUT_PATH = "/nds/data/dataexplorer_v2/out/"
 
 
 
