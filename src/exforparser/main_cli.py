@@ -1,8 +1,12 @@
 import argparse
+import sqlalchemy as db
+from sqlalchemy.exc import OperationalError
 
-from .exforparser import convert, convert_all, convert_updated_entry
-from .tabulate import process, process_all, process_updated_entry
-from .tabulator.data_observables import crosssection, thermal, resonance_spacing, resonance_integral, gamma_gamma, macs
+from exforparser.config import engines, session
+
+from exforparser.json_converter import convert, convert_all, convert_updated_entry
+from exforparser.tabulate import process, process_all, process_updated_entry
+from exforparser.tabulator.data_observables import crosssection, thermal, resonance_spacing, resonance_integral, gamma_gamma, macs
 import logging
 
 
@@ -67,14 +71,8 @@ def cli():
         process(args.tabulate)
 
     elif args.observables:
-
-        import sqlalchemy as db
-        from sqlalchemy.exc import OperationalError
-
         try:
-            from .config import engine, session
-
-            connection = engine.connect()
+            connection = engines["exfor"].connect()
             metadata = db.MetaData()
 
         except OperationalError:

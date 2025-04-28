@@ -18,7 +18,7 @@ import git
 
 # need version check based on the hash then the only new files should be processed
 
-from ..config import EXFOR_MASTER_REPO_PATH, ENTRY_INDEX_PICKLE, BUF_SIZE
+from exforparser.config import EXFOR_MASTER_REPO_PATH, ENTRY_INDEX_PICKLE, BUF_SIZE
 from .exceptions import *
 
 repo = git.Repo(EXFOR_MASTER_REPO_PATH)

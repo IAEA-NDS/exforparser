@@ -11,7 +11,6 @@
 ####################################################################
 
 import re
-import json
 from pyparsing import *
 from .exfor_field import parentheses, operators_dict
 

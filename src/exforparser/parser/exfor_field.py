@@ -9,7 +9,6 @@
 # Contact:    nds.contact-point@iaea.org
 #
 ####################################################################
-import re
 from pyparsing import *
 
 

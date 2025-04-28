@@ -13,11 +13,11 @@
 import os
 import json
 import logging
-from .config import OUT_PATH
-from .submodules.utilities.util import del_outputs, print_time
-from .parser.list_x4files import list_exfor_files, list_entries_from_pickle
-from .parser.exfor_entry import Entry, get_entry_update_date
-from .parser.exfor_subentry import Subentry
+from exforparser.config import OUT_PATH
+from exforparser.submodules.utilities.util import del_outputs, print_time
+from exforparser.parser.list_x4files import list_exfor_files, list_entries_from_pickle
+from exforparser.parser.exfor_entry import Entry, get_entry_update_date
+from exforparser.parser.exfor_subentry import Subentry
 
 
 ## get update data from git commit and store info to Python dictionary

@@ -14,23 +14,23 @@ import pandas as pd
 import logging
 import random
 
-from .exforparser import convert_exfor_to_json, write_dict_to_json
-from .submodules.utilities.util import dict_merge, del_outputs, print_time, print_process_time
-from .parser.list_x4files import (
+from exforparser.json_converter import convert_exfor_to_json, write_dict_to_json
+from exforparser.submodules.utilities.util import dict_merge, del_outputs, print_time, print_process_time
+from exforparser.parser.list_x4files import (
     list_exfor_files,
     list_entries_from_pickle,
     good_example_entries,
 )
-from .parser.exfor_unit import unify_units
-from .parser.exfor_field import ref_identifiers, experimental_condition_identifires
-from .parser.exfor_bib import correct_pub_year
+from exforparser.parser.exfor_unit import unify_units
+from exforparser.parser.exfor_field import ref_identifiers, experimental_condition_identifires
+from exforparser.parser.exfor_bib import correct_pub_year
 
 
-from .tabulator.data_write import *
-from .tabulator.data_dir_files import *
-from .tabulator.data_process import *
-from .tabulator.data_filter import *
-from .sql.stored import (
+from exforparser.tabulator.data_write import *
+from exforparser.tabulator.data_dir_files import *
+from exforparser.tabulator.data_process import *
+from exforparser.tabulator.data_filter import *
+from exforparser.sql.stored import (
     insert_history,
     insert_bib,
     insert_referece,

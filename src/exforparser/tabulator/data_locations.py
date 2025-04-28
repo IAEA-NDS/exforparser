@@ -9,7 +9,7 @@
 # Contact:    nds.contact-point@iaea.org
 #
 ####################################################################
-from ..parser.exfor_data import get_colmun_indexes
+from exforparser.parser.exfor_data import get_colmun_indexes
 from .init_dict import d, x_en_heads, x_en_err_heads, y_data_heads, y_data_err_heads
 
 

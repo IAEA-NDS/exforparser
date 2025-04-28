@@ -17,8 +17,8 @@ from exfor_dictionary.exfor_dict import Diction
 
 
 from .exfor_field import data_header
-from ..submodules.utilities.util import flatten_list
-from ..submodules.utilities.elem import ztoelem
+from exforparser.submodules.utilities.util import flatten_list
+from exforparser.submodules.utilities.elem import ztoelem
 
 
 def corr(invalue):

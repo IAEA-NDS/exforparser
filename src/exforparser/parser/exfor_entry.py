@@ -13,7 +13,7 @@
 import os
 import logging
 
-from ..config import EXFOR_MASTER_REPO_PATH
+from exforparser.config import EXFOR_MASTER_REPO_PATH
 from .exfor_subentry import Subentry
 from .exfor_block import get_block
 

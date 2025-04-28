@@ -38,13 +38,9 @@ if ENV == "dev":
     if os.path.exists("src/exforparser/"):
         EXFOR_PARSER = "src/exforparser/"
     else:
-        import site
-
         EXFOR_PARSER = os.path.join(site.getsitepackages()[0], "exforparser")
 
 else:
-    import site
-
     EXFOR_PARSER = os.path.join(site.getsitepackages()[0], "exforparser")
 
 
@@ -68,6 +64,18 @@ INSTITUTE_PICKLE = os.path.join(
 
 
 """ SQL database """
-engine = create_engine("sqlite:///" + EXFOR_DB)
-Session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
+# engine = create_engine("sqlite:///" + EXFOR_DB)
+# Session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
+# session = Session()
+
+engines = {
+    "exfor": create_engine("sqlite:///" + EXFOR_DB),
+    # "endftables": create_engine("sqlite:///" + ENDFTAB_DB),
+}
+Session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engines["exfor"]))
 session = Session()
+
+
+
+
+

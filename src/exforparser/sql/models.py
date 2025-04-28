@@ -8,9 +8,7 @@
 
 import sqlalchemy as db
 from sqlalchemy.orm import declarative_base
-from ..config import engine
-
-
+from exforparser.config import engines
 Base = declarative_base()
 
 
@@ -167,6 +165,6 @@ class Exfor_References(Base):
 
 
 if __name__ == "__main__":
-    # from config import engine
-    Base.metadata.create_all(bind=engine)
+
+    Base.metadata.create_all(bind=engines["exfor"])
     pass

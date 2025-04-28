@@ -14,9 +14,9 @@ from .models import (
     Exfor_Histories,
     Exfor_Data,
 )
-from ..config import engine, session
+from exforparser.config import engines, session
 
-connection = engine.connect()
+connection = engines["exfor"].connect()
 metadata = db.MetaData()
 
 pd.set_option("display.max_rows", None)
