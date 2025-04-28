@@ -1,7 +1,8 @@
 import re
 from pyparsing import *
 
-from .exfor_field import parse_parenthesis, parentheses
+from .exfor_field import parentheses
+from .exfor_reaction import parse_parenthesis
 
 
 def get_block(subent_body, sec_name):
@@ -154,8 +155,8 @@ def get_identifier_details(identifier_block) -> list:
     f = []
     ii = 0
 
-    for i in range(len(identifier_block)):
-        line = identifier_block[i]
+    for i, line in enumerate(identifier_block):
+        # line = identifier_block[i]
 
         if not skip_p_line:
             try:
@@ -166,17 +167,19 @@ def get_identifier_details(identifier_block) -> list:
                 l_opens = [match[0]]
                 ii, r_closes = get_text_location_index(identifier_block, i, match[-1])
                 x = "".join(identifier_block[i:])[match[0] : match[-1]]
-                # print("x4_code ends at line:", ii, "char:", r_closes)
+
 
                 skip_p_line = True
 
         if i < ii:
             ## skip lines if the x4_code continues
+            ## ii: the line number where the code ends
             continue
 
         if l_opens and not skip_p_line:
             if l_opens[0] == 0:
                 if cont:
+
                     ## finalize the previous code
                     small_dict = {"x4_code": x, "free_txt": f}
                     identifier_set += [small_dict]
@@ -196,7 +199,9 @@ def get_identifier_details(identifier_block) -> list:
                 f += [line]
                 cont = True
 
+
         elif skip_p_line:
+
             f = [line[r_closes[-1] + 1 :]] if line[r_closes[-1] + 1 :] != "" else []
             small_dict = {"x4_code": x, "free_txt": f}
             identifier_set += [small_dict]
@@ -209,9 +214,11 @@ def get_identifier_details(identifier_block) -> list:
             f += [line]
             cont = True
 
-        if i == len(identifier_block) - 1:
+        if i == len(identifier_block) -1:
             ## finalize the dictionary at the last line
             small_dict = {"x4_code": x, "free_txt": f}
             identifier_set += [small_dict]
+
+    identifier_set = [i for n, i in enumerate(identifier_set) if i not in identifier_set[n + 1:]]
 
     return identifier_set

@@ -8,10 +8,10 @@ name = "exforparser"
 authors = [
     {name = "Shin Okumura/IAEA-NDS", email = "s.okumura@iaea.org"},
 ]
-version = "1.0.0b"
+version = "1.1.0"
 description = "EXFOR Parser"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 keywords = ["EXFOR", "Nuclear Data"]
 license = {file = "LICENSE"}
 classifiers = [
@@ -26,26 +26,21 @@ dynamic = ["dependencies"]
 dependencies = {file = ["requirements.txt"]}
 
 
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
-
-[tool.setuptools]
-include-package-data = true
-
-
 [tool.setuptools.package-data]
-"exforparser.tabulated" = ["*.dat", "*.json"]
+"exforparser.tabulate" = ["*.dat", "*.json"]
 "exforparser.pickles" = ["*.pickle"]
 "submodules.utilities" = ["*.txt"]
 
-
-
 [project.urls]
 Homepage = "https://github.com/shinokumura/exforparser"
-
+Issues = "https://github.com/shinokumura/exforparser/issues"
 
 [project.scripts]
-exparser = "exforparser.exparser:main"
-tabulated = "exforparser.tabulated:main"
-test = "exforparser.pa:main"
+exforparser = "exforparser.main_cli:cli"

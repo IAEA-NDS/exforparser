@@ -11,50 +11,60 @@
 ####################################################################
 import os
 import site
+from pathlib import Path
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-DEVENV = False
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-if DEVENV:
+ENV = "dev"  # or "INT" or "PROD"
+
+
+if ENV == "dev":
     DATA_DIR = "/Users/okumuras/Documents/nucleardata/EXFOR/"
     OUT_PATH = "/Users/okumuras/Documents/nucleardata/EXFOR/"
 
-else:
+elif ENV == "int":
+    DATA_DIR = "/srv/data/dataexplorer_v2/"
+    OUT_PATH = "/srv/data/dataexplorer_v2/out/"
+
+elif ENV == "prod":
     DATA_DIR = "/nds/data/dataexplorer_v2/"
     OUT_PATH = "/nds/data/dataexplorer_v2/out/"
 
 
-
-if DEVENV:
-    if os.path.exists( "src/exforparser/"):
+if ENV == "dev":
+    if os.path.exists("src/exforparser/"):
         EXFOR_PARSER = "src/exforparser/"
     else:
         import site
-        EXFOR_PARSER = os.path.join( site.getsitepackages()[0], "exforparser" )
+
+        EXFOR_PARSER = os.path.join(site.getsitepackages()[0], "exforparser")
 
 else:
     import site
-    EXFOR_PARSER = os.path.join( site.getsitepackages()[0], "exforparser" )
+
+    EXFOR_PARSER = os.path.join(site.getsitepackages()[0], "exforparser")
 
 
+EXFOR_MASTER_REPO_PATH = os.path.join(DATA_DIR, "exfor_master")
+EXFOR_DB = os.path.join(DATA_DIR, "exfortables.sqlite")
+MASS_RANGE_FILE = os.path.join(EXFOR_MASTER_REPO_PATH, "submodules/A_min_max.txt")
 
 
-EXFOR_MASTER_REPO_PATH = os.path.join( DATA_DIR, "exfor_master" )
-EXFOR_DB = os.path.join( DATA_DIR, "exfor_tmp.sqlite")
-MASS_RANGE_FILE = os.path.join( EXFOR_MASTER_REPO_PATH, "submodules/A_min_max.txt" )
-# print(EXFOR_DB)
-
+BUF_SIZE = 65536
 
 """ Pickle path of list of EXFOR master files made by parser.list_x4files.py """
-ENTRY_INDEX_PICKLE = os.path.join( EXFOR_PARSER, "pickles/entry.pickle" )
-MT_DEF = os.path.join( EXFOR_PARSER, "tabulated/MTall.dat" )
-MF3_JSON = os.path.join( EXFOR_PARSER, "tabulated/mf3.json" )
+ENTRY_INDEX_PICKLE = os.path.join(EXFOR_PARSER, "pickles/entry.pickle")
+# MT_DEF = os.path.join( EXFOR_PARSER, "tabulated/MTall.dat" )
+# MF3_JSON = os.path.join( EXFOR_PARSER, "tabulated/mf3.json" )
 
 """ Pickle path of list of EXFOR master files made by parser.list_x4files.py """
 SITE_DIR = site.getsitepackages()[0]
-INSTITUTE_PICKLE = os.path.join( SITE_DIR, "exfor_dictionary", "pickles/institute.pickle" )
+INSTITUTE_PICKLE = os.path.join(
+    SITE_DIR, "exfor_dictionary", "pickles/institute.pickle"
+)
 
 
 """ SQL database """

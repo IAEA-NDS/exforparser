@@ -10,9 +10,10 @@
 #
 ####################################################################
 import re
+import logging
 from pyparsing import *
 
-from exfor_dictionary.exfor_dictionary import Diction
+from exfor_dictionary.exfor_dict import Diction
 
 
 from .exfor_field import data_header
@@ -28,6 +29,7 @@ def corr(invalue):
         # invalue = invalue.replace("-", "E-")
         invalue = re.sub(r"(\d|\.)([-])(\d)", r"\1E-\3", invalue)
     return invalue
+
 
 def data_column_read(line):
     column = [0, 11, 22, 33, 44, 55]
@@ -79,6 +81,13 @@ def get_heads(data_block) -> dict:
             units += list(flatten_list(parsed))
 
         header["units"] = units
+
+    try:
+        assert len(heads) == len(units)
+
+    except AssertionError:
+        ## This is the case for 14833-002
+        logging.error("Heads and Units have different length", exc_info=True)
 
     return header
 
@@ -178,6 +187,19 @@ def recon_data(data_block):
                 dataline = []
                 continue
 
+    try:
+        assert len(header["heads"]) == len(header["units"])
+
+    except AssertionError:
+        ## This is the case for 14833-002
+        logging.error("Heads and Units have different length", exc_info=True)
+
+        if len(header["heads"]) > len(header["units"]):
+            header["heads"] = header["heads"][: len(header["units"])]
+
+        elif len(header["units"]) > len(header["heads"]):
+            header["units"] = header["units"][: len(header["heads"])]
+
     transpose = {
         "data": [
             [float(corr(row[i])) if row[i] != "" else None for row in datatable]
@@ -247,15 +269,21 @@ def product_expansion(reac_dict, data_dict):
 
         if loc_iso:
             prod_list = [
-                str(int(elem))
-                + "-"
-                + ztoelem(int(elem))
-                + "-"
-                + str(int(mass))
-                + "-"
-                + str(int(iso))
-                if iso is not None
-                else str(int(elem)) + "-" + ztoelem(int(elem)) + "-" + str(int(mass))
+                (
+                    str(int(elem))
+                    + "-"
+                    + ztoelem(int(elem))
+                    + "-"
+                    + str(int(mass))
+                    + "-"
+                    + str(int(iso))
+                    if iso is not None
+                    else str(int(elem))
+                    + "-"
+                    + ztoelem(int(elem))
+                    + "-"
+                    + str(int(mass))
+                )
                 for elem, mass, iso in zip(
                     data_dict["data"][loc_elem[0]],
                     data_dict["data"][loc_mass[0]],

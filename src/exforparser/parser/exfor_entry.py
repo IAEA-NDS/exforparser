@@ -11,6 +11,7 @@
 ####################################################################
 
 import os
+import logging
 
 from ..config import EXFOR_MASTER_REPO_PATH
 from .exfor_subentry import Subentry
@@ -35,7 +36,7 @@ def open_read_file(filename=""):
     from .exceptions import x4FileOpenError
 
     try:
-        with open(filename, "rU") as f:
+        with open(filename, "r") as f:
             # entry_body = f.readlines()
             return f.read().splitlines()  # as entry_body
     except:
@@ -79,7 +80,9 @@ class Entry:
 
     def x4filename(self):
         if self._check_entry_nlen(self.entnum):
-            return os.path.join(EXFOR_MASTER_REPO_PATH, "exforall", self.entnum[:3], self.entnum + ".x4")
+            return os.path.join(
+                EXFOR_MASTER_REPO_PATH, "exforall", self.entnum[:3], self.entnum + ".x4"
+            )
 
     def get_entry_exfor(self) -> dict:
         """return as EXFOR format"""
@@ -187,7 +190,7 @@ class Entry:
                 sub = Subentry(s, self.entry_body[s])
                 reactions[s] = sub.parse_reaction()
         else:
-            print("no field contains REACTION")
+            logging.error("no field contains REACTION", exc_info=True)
 
         # return json.dumps(reactions, indent=1)
         return reactions

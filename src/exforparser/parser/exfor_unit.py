@@ -1,10 +1,8 @@
-
 import math
 
-from exfor_dictionary.exfor_dictionary import Diction
+from exfor_dictionary.exfor_dict import Diction
 
 d = Diction()
-
 
 
 def unify_units(data_dic):
@@ -37,4 +35,3 @@ def unify_units(data_dic):
             pass
 
     return data_dic
-

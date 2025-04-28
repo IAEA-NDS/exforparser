@@ -9,7 +9,7 @@
 # Contact:    nds.contact-point@iaea.org
 #
 ####################################################################
-
+import re
 from pyparsing import *
 
 
@@ -22,7 +22,39 @@ main_identifiers = [
     "INSTITUTE",
     "REFERENCE",
     "FACILITY",
-]  # , "HISTORY"]
+]
+
+ref_identifiers = [
+    "REFERENCE",
+    "MONIT-REF",
+    "REL-REF",
+]
+
+experimental_condition_identifires = [
+    "ANALYSIS",
+    "ADD-RES",
+    "ASSUMED",
+    "CORRECTION",
+    "COVARIANCE",
+    "DECAY-DATA",
+    "DECAY-MON",
+    "DETECTOR",
+    "EN-SEC",
+    "ERR-ANALYS",
+    "FACILITY",
+    "FLAG",
+    "HALF-LIFE",
+    "INC-SOURCE",
+    "INC-SPECT",
+    "LEVEL-PROP",
+    "METHOD",
+    "MONITOR",
+    "MOM-SEC",
+    "PART-DET",
+    "RAD-DET", 
+    "SAMPLE",
+]
+
 identifiers = [
     "ANALYSIS",
     "ADD-RES",
@@ -49,7 +81,7 @@ identifiers = [
     "MONITOR",
     "MOM-SEC",
     "PART-DET",
-    "RAD-DET",
+    "RAD-DET", 
     "REL-REF",
     "RESULT",
     "SAMPLE",
@@ -80,59 +112,14 @@ columndef = [
 ]
 # FLAG COMMENT HISTORY STATUS EXP-YEAR CRITIQUE MISC-COL ADD-RES MOM-SEC  RESULT SAMPLE
 
-
-def parse_parenthesis(expr, ofs):
-    pos_left = []
-    pos_right = []
-    count_left = 0
-    count_right = 0
-
-    while ofs < len(expr):
-
-        if expr[ofs] == "(":
-            count_left += 1
-            pos_left += [ofs]
-
-        if expr[ofs] == ")":
-            count_right += 1
-            pos_right += [ofs]
-
-        ofs += 1
-        if count_left == count_right:
-            break
-
-    assert len(pos_left) == len(pos_right)
-    return pos_left, pos_right
-
-
-def parse_double_parentheses(expr, end_pos):
-    positions = []
-    pos = 0
-
-    while pos < end_pos:
-        if any(x in expr[pos - 1] + expr[pos] for x in ("((", "))")):
-            positions += [pos]
-
-        pos += 1
-        if pos == end_pos:
-            break
-
-    return positions
-
-
-def parse_operator(expr, end_pos):
-    positions = []
-    pos = 0
-
-    while pos < end_pos:
-        if any(x in expr[pos - 1] + expr[pos] for x in (")*", ")/", ")+", ")-")):
-            positions += [pos]
-
-        pos += 1
-        if pos == end_pos:
-            break
-
-    return positions
+operators_dict = {
+    "/": "Divide",
+    "+": "Add",
+    "-": "Subtract",
+    "*": "Multiply",
+    "//": "Ratio",
+    "=": "Equal",
+}
 
 
 """ general expression """
@@ -143,7 +130,7 @@ ParserElement.set_default_whitespace_chars("\t")
 """ parse nested expression """
 allowed_symbols = "=-+/,*. '"
 thecontent = Word(alphanums + allowed_symbols)
-parentheses = nestedExpr("(", ")", content=thecontent)
+parentheses = nested_expr("(", ")")  # , content=thecontent)
 free_text = parentheses.suppress() + rest_of_line()
 
 
@@ -157,8 +144,7 @@ nuclide = Combine(
 )
 
 
-""" DATA - parse could cause error when DATA section has line break wiyh
-no data"""
+""" DATA - parse could cause error when DATA section has line break with no data"""
 head_str = Word(capitals + "q" + nums + "-+/\* ", exact=11) | Word(
     capitals + "q" + nums + "-+/\* "
 )

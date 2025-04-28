@@ -12,12 +12,12 @@
 
 from pyparsing import *
 
-from .exfor_field import *
+from .exfor_field import identifiers, main_identifiers
 from .exfor_block import get_identifier_details
 
 
 def correct_pub_year(ref):
-
+    
     year = ref.replace("(", "").replace(")", "").split(",")[-1]
 
     if len(year) == 2:
@@ -45,7 +45,7 @@ def correct_pub_year(ref):
             ###  680901, most of the case it could be 19s
             return "19" + year[0:2]
 
-    elif len(year) == 8: 
+    elif len(year) == 8:
         ### 20001120
         return year[0:4]
 
@@ -59,7 +59,7 @@ def parse_history_bib(bib_block) -> dict:
 
 def parse_main_bib(bib_block) -> dict:
     """
-    return the bibliographic information (TITLE, AUTHORS, INSTITUTE, REFERENCE only) 
+    return the bibliographic information (TITLE, AUTHORS, INSTITUTE, REFERENCE only)
     Input:
         bib_block: { pointer: [list of rows] }
                    e.g. {0: ['(VDG,3CPRBJG) 4.5 MV Van de Graaff']}
@@ -77,13 +77,13 @@ def parse_main_bib(bib_block) -> dict:
         "title": "",
         "authors": [],
         "institutes": [],
-        "references":  [],
+        "references": [],
         "facilities": [],
     }
 
     for identifier in main_identifiers:
         """
-        identifier: TITLE, AUTHOR, INSTITUTE, FACILITY, REFERENCE
+        identifier: TITLE, AUTHOR, INSTITUTE, FACILITY, REFERENCE, and REL-REF
         indentifier_body: list of lines
             e.g. in C1823
             ['(Jenny Lee,M.B.Tsang,D.Bazin,D.Coupland,V.Henzl,', 'D.Henzlova,M.Kilburn,W.G.Lynch,A.M.Rogers,', 'A.Sanetullaev,Z.Y.Sun,M.Youngs,R.J.Charity,', "L.G.Sobotka,M.Famiano,S.Hudan,D.Shapira,P.O'Malley,", 'W.A.Peters,K.Y.Chae,K.Schmitt)'] ['Jenny Lee', 'M.B.Tsang', 'D.Bazin', 'D.Coupland', 'V.Henzl', 'D.Henzlova', 'M.Kilburn', 'W.G.Lynch', 'A.M.Rogers', 'A.Sanetullaev', 'Z.Y.Sun', 'M.Youngs', 'R.J.Charity', 'L.G.Sobotka', 'M.Famiano', 'S.Hudan', 'D.Shapira', "P.O'Malley", 'W.A.Peters', 'K.Y.Chae', 'K.Schmitt']
@@ -100,7 +100,6 @@ def parse_main_bib(bib_block) -> dict:
                 bib_dict["title"] = title
             #
 
-
             elif identifier == "AUTHOR":
                 """
                 A few entries has freetext afterwards a list of authors such as D0177, 40016, 30936
@@ -112,9 +111,9 @@ def parse_main_bib(bib_block) -> dict:
                     {"name": authors[i].title().strip()} for i in range(len(authors))
                 ]
 
-
             elif identifier == "INSTITUTE":
                 identifier_set = get_identifier_details(indentifier_body)
+                # print(identifier_set)
 
                 for i in range(len(identifier_set)):
 
@@ -122,6 +121,7 @@ def parse_main_bib(bib_block) -> dict:
                         institutes = "".join(identifier_set[i]["x4_code"])[1:-1].split(
                             ","
                         )
+                        # print(institutes)
 
                         if len(institutes) > 1:
                             free_txt = "".join(identifier_set[i]["free_txt"])
@@ -137,7 +137,6 @@ def parse_main_bib(bib_block) -> dict:
 
                 bib_dict["institutes"] = identifier_set
 
-
             elif identifier == "REFERENCE":
                 identifier_set = get_identifier_details(indentifier_body)
 
@@ -149,7 +148,7 @@ def parse_main_bib(bib_block) -> dict:
                     identifier_set[i]["pointer"] = pointer
 
                     if identifier_set[i]["free_txt"]:
-                        
+
                         for l in range(len(identifier_set[i]["free_txt"])):
 
                             if identifier_set[i]["free_txt"][l].startswith("#doi"):
@@ -158,7 +157,6 @@ def parse_main_bib(bib_block) -> dict:
                                 identifier_set[i]["doi"] = identifier_set[i][
                                     "free_txt"
                                 ][l].replace("#doi:", "")
-                        
 
                                 ## remove doi from free text list
                                 # identifier_set[i]["free_txt"].pop(l)

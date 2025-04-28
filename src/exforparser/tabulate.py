@@ -9,112 +9,173 @@
 # Contact:    nds.contact-point@iaea.org
 #
 ####################################################################
-import random
 import math
 import pandas as pd
 import logging
+import random
 
-FORMATTER = logging.Formatter("%(asctime)s — %(name)s — %(levelname)s — %(message)s")
-logging.basicConfig(filename="tabulated.log", level=logging.DEBUG, filemode="w")
-
-
-from .exparser import convert_exfor_to_json, write_dict_to_json
-from .submodules.utilities.util import dict_merge, del_outputs, print_time
-from .parser.list_x4files import list_entries_from_df, good_example_entries
-from .parser.exfor_unit import unify_units
-
-from .tabulated.exfor_reaction_mt import (
-    sf_to_mf,
-    sf3_dict,
-    mt_fy_sf5,
-    sig_sf5,
-    mt_nu_sf5,
+from .exforparser import convert_exfor_to_json, write_dict_to_json
+from .submodules.utilities.util import dict_merge, del_outputs, print_time, print_process_time
+from .parser.list_x4files import (
+    list_exfor_files,
+    list_entries_from_pickle,
+    good_example_entries,
 )
-from .tabulated.data_write import *
-from .tabulated.data_dir_files import *
-from .tabulated.data_process import *
-from .sql.queries import insert_bib, insert_reaction, insert_reaction_index
+from .parser.exfor_unit import unify_units
+from .parser.exfor_field import ref_identifiers, experimental_condition_identifires
+from .parser.exfor_bib import correct_pub_year
+
+
+from .tabulator.data_write import *
+from .tabulator.data_dir_files import *
+from .tabulator.data_process import *
+from .tabulator.data_filter import *
+from .sql.stored import (
+    insert_history,
+    insert_bib,
+    insert_referece,
+    insert_reaction,
+    insert_reaction_index,
+    insert_experimental_info,
+)
 
 
 # initialize exfor_dictionary
-from exfor_dictionary.exfor_dictionary import Diction
-D = Diction()
-
-# get heading list
-x_en_heads = D.get_incident_en_heads()
-x_en_err_heads = D.get_incident_en_err_heads()
-x_data_heads = D.get_data_heads()
-x_data_err_heads = D.get_data_err_heads()
 
 
-def bib_dict(entry_json):
+def create_and_insert_bib_dict(entnum, bib_record):
     bib_data = {
-            "entry": entry_json["entry"],
-            "title": entry_json["bib_record"]["title"]
-            if entry_json["bib_record"].get("title")
-            else None,
-            "first_author": entry_json["bib_record"]["authors"][0]["name"]
-            if entry_json["bib_record"].get("authors")
-            else None,
-            "authors": ", ".join(
-                [
-                    entry_json["bib_record"]["authors"][i]["name"]
-                    if entry_json["bib_record"].get("authors")
+        "entry": entnum,
+        "title": (
+            bib_record["title"]
+            if bib_record.get("title")
+            else None
+        ),
+        "first_author": (
+            bib_record["authors"][0]["name"]
+            if bib_record.get("authors")
+            else None
+        ),
+        "authors": ", ".join(
+            [
+                (
+                    bib_record["authors"][i]["name"]
+                    if bib_record.get("authors")
                     else None
-                    for i in range(len(entry_json["bib_record"]["authors"]))
-                ]
-            ),
-            "first_author_institute": entry_json["bib_record"][
-                "institutes"
-            ][0]["x4_code"]
-            if entry_json["bib_record"].get("institutes")
-            else None,
-            "main_facility_institute": entry_json["bib_record"][
-                "facilities"
-            ][0]["institute"]
-            if entry_json["bib_record"].get("facilities")
-            else None,
-            "main_facility_type": entry_json["bib_record"]["facilities"][0][
-                "facility_type"
+                )
+                for i in range(len(bib_record["authors"]))
             ]
-            if entry_json["bib_record"].get("facilities")
-            else None,
-            "main_reference": entry_json["bib_record"]["references"][0][
-                "x4_code"
-            ]
-            if entry_json["bib_record"].get("references")
-            else None,
-
-            "main_doi": entry_json["bib_record"]["references"][0][
-                "doi"
-            ]
-            if entry_json["bib_record"].get("references")
-            else None,
-
-            "year": entry_json["bib_record"]["references"][0][
-                "publication_year"
-            ]
-            if entry_json["bib_record"].get("references")
-            else None,
-        }
+        ),
+        "first_author_institute": (
+            bib_record["institutes"][0]["x4_code"]
+            if bib_record.get("institutes")
+            else None
+        ),
+        "main_facility_institute": (
+            bib_record["facilities"][0]["institute"]
+            if bib_record.get("facilities")
+            else None
+        ),
+        "main_facility_type": (
+            bib_record["facilities"][0]["facility_type"]
+            if bib_record.get("facilities")
+            else None
+        ),
+        "main_reference": (
+            bib_record["references"][0]["x4_code"]
+            if bib_record.get("references")
+            else None
+        ),
+        "main_doi": (
+            bib_record["references"][0]["doi"]
+            if bib_record.get("references")
+            else None
+        ),
+        "doi_source": (
+            "EXFOR"
+            if bib_record.get("references") and bib_record["references"][0]["doi"]
+            else None
+        ),
+        "year": (
+            bib_record["references"][0]["publication_year"]
+            if bib_record.get("references")
+            else None
+        ),
+    }
 
     insert_bib(bib_data)
 
     return
 
 
+def create_and_insert_references_dict(entry_id, partial_json):
+    ref_data = []
+
+    if partial_json.get("references"):
+        for ref in partial_json["references"]:
+            ref_data += [
+                {
+                    "entry_id":  entry_id,
+                    "x4_code": ref["x4_code"], 
+                    "free_txt": ' '.join(ref["free_txt"]),
+                    "year": ref["publication_year"],
+                    "doi": ref["doi"],
+                    "type": "REFERENCE"
+                }
+            ]
+    for reftype in ref_identifiers:
+        if partial_json.get(reftype.lower()):
+            for ref in partial_json[reftype.lower()]:
+                ref_data += [
+                    {
+                        "entry_id":  entry_id,
+                        "x4_code": ref["x4_code"], 
+                        "free_txt": ' '.join(ref["free_txt"]),
+                        "year": correct_pub_year(ref["x4_code"]) if ref["x4_code"] else None,
+                        "doi": None,
+                        "type": reftype
+                    }
+                ]
+
+    insert_referece(ref_data)
+
+    return
 
 
-def reaction_dict_regist(entry_id, entry_json):
+def create_and_insert_experimental_condition_dict(entry_id, exp_cond):
+    exps_data = []
+
+    for ec in experimental_condition_identifires:
+        if exp_cond.get(ec.lower()):
+            for e in exp_cond[ec.lower()]:
+                exps_data += [
+                    {
+                        "entry_id":  entry_id,
+                        "x4_code": e["x4_code"], 
+                        "free_txt": ' '.join(e["free_txt"]),
+                        "type": ec
+                    }
+                ]
+
+    insert_experimental_info(exps_data)
+
+    return
+
+
+def create_and_insert_reaction_dict(entry_id, reactions_dict):
     ## Insert data table into exfor_reactions
-    entnum, subent, pointer = entry_id.split("-")
-    react_dict = entry_json["reactions"][subent][pointer]["children"][0]
+    entnum, _, _ = entry_id.split("-")
+    react_dict = reactions_dict["children"][0]
     reac_data = [
         {
             "entry_id": entry_id,
             "entry": entnum,
             "target": react_dict["target"] if react_dict.get("target") else None,
-            "projectile": react_dict["process"].split(",")[0] if react_dict.get("process") else None,
+            "projectile": (
+                react_dict["process"].split(",")[0]
+                if react_dict.get("process")
+                else None
+            ),
             "process": react_dict["process"] if react_dict.get("process") else None,
             "sf4": react_dict["sf4"] if react_dict.get("sf4") else None,
             "sf5": react_dict["sf5"] if react_dict.get("sf5") else None,
@@ -122,7 +183,8 @@ def reaction_dict_regist(entry_id, entry_json):
             "sf7": react_dict["sf7"] if react_dict.get("sf7") else None,
             "sf8": react_dict["sf8"] if react_dict.get("sf8") else None,
             "sf9": react_dict["sf9"] if react_dict.get("sf9") else None,
-            "x4_code": entry_json["reactions"][subent][pointer]["x4_code"],
+            "x4_code": reactions_dict["x4_code"],
+            "math_expression": str(reactions_dict["math_expression"]),
         }
     ]
     insert_reaction(reac_data)
@@ -132,26 +194,7 @@ def reaction_dict_regist(entry_id, entry_json):
 
 
 
-
-def get_unique_mf_mt(df2):
-
-    if len(df2["mt"].unique()) == 0:
-        mt = None
-    else:
-        mt = df2["mt"].unique()[0]
-
-
-    if len(df2["mf"].unique()) == 0:
-        mf = None
-    else:
-        mf = df2["mf"].unique()[0]
-
-    return mf, mt
-
-
-
-
-def reaction_index_regist(entry_id, entry_json, react_dict, df):
+def create_and_insert_reaction_index_dict(entry_id, entry_json, react_dict, df):
     entnum, subent, pointer = entry_id.split("-")
 
     if df.empty:
@@ -184,7 +227,7 @@ def reaction_index_regist(entry_id, entry_json, react_dict, df):
         insert_reaction_index(reac_index)
         return None
 
-    elif not df.loc[df['residual'].isnull() & df['level_num'].isnull() ].empty:
+    elif not df.loc[df["residual"].isnull() & df["level_num"].isnull()].empty:
         mf, mt = get_unique_mf_mt(df)
         reac_index = [
             {
@@ -216,7 +259,6 @@ def reaction_index_regist(entry_id, entry_json, react_dict, df):
     else:
         for r in df["residual"].unique():
             for l in df["level_num"].unique():
-
                 if pd.isna(l):
                     ## if the level number is not known but the e_out (E-LVL or E-EXC) is known.
                     l = None
@@ -243,7 +285,9 @@ def reaction_index_regist(entry_id, entry_json, react_dict, df):
                                 "sf7": react_dict["sf7"],
                                 "sf8": react_dict["sf8"],
                                 "sf9": react_dict["sf9"],
-                                "x4_code": entry_json["reactions"][subent][pointer]["x4_code"],
+                                "x4_code": entry_json["reactions"][subent][pointer][
+                                    "x4_code"
+                                ],
                                 "mf": None if mf is None or math.isnan(mf) else int(mf),
                                 "mt": None if mt is None or math.isnan(mt) else int(mt),
                             }
@@ -252,13 +296,11 @@ def reaction_index_regist(entry_id, entry_json, react_dict, df):
 
                     continue
 
-
-                elif r and l:
+                elif r and isinstance(l, np.integer):
                     df2 = df[(df["residual"] == r) & (df["level_num"] == l)]
-                    
                 else:
                     df2 = df.copy()
-                    
+
                 mf, mt = get_unique_mf_mt(df2)
 
                 reac_index = [
@@ -270,7 +312,7 @@ def reaction_index_regist(entry_id, entry_json, react_dict, df):
                         "process": react_dict["process"],
                         "sf4": react_dict["sf4"],
                         "residual": r,
-                        "level_num": int(l) if l else None,
+                        "level_num": int(l) if isinstance(l, np.integer) else None,
                         "e_out": df2["e_out"].unique()[0],
                         "e_inc_min": df2["en_inc"].min(),
                         "e_inc_max": df2["en_inc"].max(),
@@ -282,680 +324,172 @@ def reaction_index_regist(entry_id, entry_json, react_dict, df):
                         "sf8": react_dict["sf8"],
                         "sf9": react_dict["sf9"],
                         "x4_code": entry_json["reactions"][subent][pointer]["x4_code"],
-                        "mf": int(mf) if mf is not None else None,
-                        "mt": int(mt) if mt is not None else None,
+                        "mf": None if mf is None or math.isnan(mf) else int(mf),
+                        "mt": None if mt is None or math.isnan(mt) else int(mt),
                     }
                 ]
                 insert_reaction_index(reac_index)
 
         return df2
 
+def update_doi():
+    pass
 
 
-
-def tabulated_to_exfortables_format(id, entry_json, data_dict_conv):
-    entnum = id[0:5]
-    subent = id[5:8]
-
+def tabulated_to_exfortables_format(entry_num, entry_json, data_dict_conv):
+    entnum = entry_num[0:5]
+    subent = entry_num[5:8]
+    print(entnum, subent)
+    
     for pointer in entry_json["reactions"][subent]:
+        ## looping over all pointers exist in the REACTION in SUBENTRY
         df = pd.DataFrame()
         entry_id = entnum + "-" + subent + "-" + pointer
-        print(entry_id)
 
-
-        ## Insert data table into exfor_reactions
-        reaction_dict_regist(entry_id, entry_json)
-
-
-        if entry_json["reactions"][subent][pointer]["type"] is not None:
-            ## if ratio or any other complex reactions, it will be skipped so far
+        ## Insert REACTION code for each pointer into the exfor_reactions table
+        create_and_insert_reaction_dict(entry_id, entry_json["reactions"][subent][pointer])
+        
+        if entry_json["experimental_conditions"][subent].get(pointer):
+            create_and_insert_experimental_condition_dict(entry_id, entry_json["experimental_conditions"][subent][pointer])
+            create_and_insert_references_dict(entry_id, entry_json["experimental_conditions"][subent][pointer])
+            
+        if filter_complex_reactions(entry_json, subent, pointer):
             continue
 
         react_dict = entry_json["reactions"][subent][pointer]["children"][0]
 
-        ## data processing to generate tabulated data
-        if not any(reac == react_dict["sf6"] for reac in sf_to_mf):
-            continue
-
-
         df = process_general(entry_id, entry_json, data_dict_conv)
-        reaction_index_regist(entry_id, entry_json, react_dict, df)
 
-        ## If the DATA is given by arbitrary unit (ARB-UNIT) or no dimension (NO-DIM)
-        df = df.loc[df["arbitrary_data"] == 0 ]
-
-        if df.empty:
+        ## Insert EXFOR reaction index into the exfor_index table, 
+        ## which is the extention of the exfor_reactions table
+        create_and_insert_reaction_index_dict(entry_id, entry_json, react_dict, df)
+        
+        if filter_reaction(react_dict, df):
+            ## Filter some major cases that cannot be processed as a tablated format, 
+            ## such as the cases that DATA is given by arbitrary unit (ARB-UNIT) or no dimension (NO-DIM)
             continue
-        # 
-        sf3_dict_add = { "N" if react_dict["process"].split(",")[0].upper()!="N" and k=="INL" else k : i for k, i in sf3_dict.items()   }
+
+        sf3_dict_add = {
+            (
+                "N"
+                if react_dict["process"].split(",")[0].upper() != "N" and k == "INL"
+                else k
+            ): i
+            for k, i in sf3_dict.items()
+        }
 
         ## --------------------------------------------------------------------------------------- ##
-        ## ------------------------  Case for the cross section  ------------------------  ##
+        ## ------------------------            Cross sections            ------------------------  ##
         ## --------------------------------------------------------------------------------------- ##
 
-        if react_dict["sf6"] == "SIG":
-            if (
-                not any(
-                    par == react_dict["process"].split(",")[1]
-                    for par in sf3_dict.keys()
-                )
-                or any(
-                    excep in react_dict["sf8"]
-                    for excep in ["MSC", "REL", "FRC", "RES", "RAW"]
-                    if react_dict["sf8"]
-                )
-                or react_dict["sf7"]
-            ):
-                continue
+        # if react_dict["sf6"] == "SIG":
+        #     if filter_cross_section_case(react_dict, df):
+        #         continue
 
-            if react_dict["sf5"] is None or any(
-                sf5 == react_dict["sf5"] for sf5 in sig_sf5.keys()
-            ):
+        #     if react_dict["sf5"] != "PAR":
+        #         process_cross_section_case(df, entry_id, entry_json, react_dict)
+        #     else:
+        #         ## none of (N,NON) PAR,SIG are useful
+        #         if filter_partial_cross_section_case(react_dict, df):
+        #             continue
+        #         process_partial_cross_section_case(df, entry_id, entry_json, react_dict)
 
-                if df["en_inc"].isnull().values.all():
-                    continue
 
-                dir = get_dir_name(react_dict, level_num=None, subdir=None)
-                mf, mt = get_unique_mf_mt(df)
+        ## --------------------------------------------------------------------------------------- ##
+        ## ------------------------        Angular distributions         ------------------------  ##
+        ## --------------------------------------------------------------------------------------- ##
 
-                if any(
-                    r == react_dict["process"].split(",")[1]
-                    for r in ("F", "TOT", "NON", "ABS")
-                ) or (
-                    react_dict["target"].split("-")[2] == "0"
-                    and react_dict["sf4"] is None
-                ):
+        # elif react_dict["sf6"] == "DA":
+        #     if filter_angler_distribution_case(react_dict, df):
+        #         continue
 
-                    ## no reaction product would be given in these cases
-                    filename = exfortables_filename(
-                        dir,
-                        entry_id,
-                        react_dict["process"].replace(",", "-").lower(),
-                        react_dict,
-                        entry_json["bib_record"],
-                        None,
-                        None,
-                    )
-                    write_to_exfortables_format_sig(
-                        entry_id,
-                        dir,
-                        filename,
-                        entry_json["bib_record"],
-                        react_dict,
-                        str(mf) + " - " + str(mt),
-                        df,
-                    )
+        #     if react_dict["sf5"] != "PAR":
+        #         process_angler_distribution_section_case(df, entry_id, entry_json, react_dict)
 
-                else:
-                    for prod in df["residual"].unique():
-
-                        df2 = df[df["residual"] == prod]
-                        filename = exfortables_filename(
-                            dir,
-                            entry_id,
-                            react_dict["process"].replace(",", "-").lower(),
-                            react_dict,
-                            entry_json["bib_record"],
-                            None,
-                            prod,
-                        )
-                        write_to_exfortables_format_sig(
-                            entry_id,
-                            dir,
-                            filename,
-                            entry_json["bib_record"],
-                            react_dict,
-                            str(mf) + " - " + str(mt),
-                            df2,
-                        )
-
-            elif (
-                react_dict["sf5"] == "PAR"
-            ):
-                ## none of (N,NON) PAR,SIG are useful
-                # df = process_general(entry_id, entry_json, data_dict_conv)
-
-                if df["en_inc"].isnull().values.all():
-                    # reaction_index_regist(entry_id, entry_json, react_dict, pd.DataFrame())
-                    continue
-
-                if not react_dict.get("sf4") or react_dict["sf4"].endswith("-0") or react_dict["process"].split(",")[1] == "X":
-                    # reaction_index_regist(entry_id, entry_json, react_dict, pd.DataFrame())
-                    continue
-
-                if len(df["level_num"].unique()) == 0 or not df["level_num"].unique().all():
-                    continue
-
-                for level_num in df["level_num"].unique():
-                    df2 = df[df["level_num"] == level_num]
-
-                    if df2.empty:
-                        continue
-
-                    mf, mt = get_unique_mf_mt(df2)
-                    dir = get_dir_name(react_dict, level_num=level_num, subdir=None)
-                    filename = exfortables_filename(
-                        dir,
-                        entry_id,
-                        react_dict["process"].replace(",", "-").lower()
-                        + "-L"
-                        + str(level_num),
-                        react_dict,
-                        entry_json["bib_record"],
-                        None,
-                        (
-                            react_dict["target"].split("-")[1].capitalize()
-                            + react_dict["target"].split("-")[2]
-                            if len(react_dict["target"].split("-")) == 3
-                            else react_dict["target"].split("-")[1].capitalize()
-                            + react_dict["target"].split("-")[2]
-                            + react_dict["target"].split("-")[3].lower()
-                        ),
-                    )
-                    
-                    write_to_exfortables_format_sig(
-                        entry_id,
-                        dir,
-                        filename,
-                        entry_json["bib_record"],
-                        react_dict,
-                        str(mf) + " - " + str(mt),
-                        df2,
-                    )
-
-        ## ------------------------  Case for the angular distributions ------------------------  ##
-        elif react_dict["sf6"] == "DA":
-            # df = process_general(entry_id, entry_json, data_dict_conv)
-            # reaction_index_regist(entry_id, entry_json, react_dict, df)
-
-            if (
-                not any(
-                    par == react_dict["process"].split(",")[1]
-                    for par in sf3_dict.keys()
-                )
-                or any(
-                    react_dict["sf8"] != excep for excep in ("EXP") if react_dict["sf8"]
-                )
-                or react_dict["sf7"]
-            ):
-                continue
-
-            if react_dict["sf5"] is None or any(
-                sf5 == react_dict["sf5"] for sf5 in sig_sf5.keys()
-            ):
-                if df["en_inc"].isnull().values.all():
-                    continue
-
-                mf, mt = get_unique_mf_mt(df)
-                dir = get_dir_name(react_dict, level_num=None, subdir=None)
-
-                for en in df["en_inc"].unique():
-                    df2 = df[df["en_inc"] == en]
-
-                    if (
-                        react_dict["target"].split("-")[2] == "0"
-                        or react_dict["sf4"] is None
-                    ):
-                        ## case for ,DA without product
-                        filename = exfortables_filename(
-                            dir,
-                            entry_id,
-                            react_dict["process"].replace(",", "-").lower(),
-                            react_dict,
-                            entry_json["bib_record"],
-                            en,
-                            None,
-                        )
-
-                        write_to_exfortables_format_da(
-                            entry_id,
-                            dir,
-                            filename,
-                            entry_json["bib_record"],
-                            react_dict,
-                            str(mf) + " - " + str(mt),
-                            df2,
-                        )
-
-                    else:
-                        ## case for ,DA with product
-                        for prod in df2["residual"].unique():
-                            df3 = df2[df2["residual"] == prod]
-                            filename = exfortables_filename(
-                                dir,
-                                entry_id,
-                                react_dict["process"].replace(",", "-").lower(),
-                                react_dict,
-                                entry_json["bib_record"],
-                                en,
-                                prod,
-                            )
-
-                            write_to_exfortables_format_da(
-                                entry_id,
-                                dir,
-                                filename,
-                                entry_json["bib_record"],
-                                react_dict,
-                                str(mf) + " - " + str(mt),
-                                df3,
-                            )
-
-            elif (
-                react_dict["sf5"] == "PAR"
-                and react_dict["process"].split(",")[1] == "INL"
-            ):
-                ## case for PAR,DA
-                if df["en_inc"].isnull().values.all():
-                    continue
+        #     elif (
+        #         react_dict["sf5"] == "PAR"
+        #         and react_dict["process"].split(",")[1] == "INL"
+        #     ):
+        #         if filter_partial_angler_distribution_case(react_dict, df):
+        #             continue
+        #         process_partial_angler_distribution_case(df, entry_id, entry_json, react_dict)
                 
-                if react_dict["sf4"].endswith("-0") or react_dict["process"].split(",")[1] == "X":
-                    continue
+        ## --------------------------------------------------------------------------------------- ##
+        ## ------------------------         Energy distributions         ------------------------  ##
+        ## --------------------------------------------------------------------------------------- ##
 
-                if len(df["level_num"].unique()) == 0:
-                    continue
-
-                for level_num in df["level_num"].dropna().unique():
-                    df2 = df[df["level_num"] == level_num]
-                    mf, mt = get_unique_mf_mt(df2)
-
-                    dir = get_dir_name(react_dict, level_num=level_num, subdir=None)
-                    filename = exfortables_filename(
-                        dir,
-                        entry_id,
-                        react_dict["process"].replace(",", "-").lower()
-                        + "-L"
-                        + str(level_num),
-                        react_dict,
-                        entry_json["bib_record"],
-                        None,
-                        (
-                            react_dict["target"].split("-")[1].capitalize()
-                            + react_dict["target"].split("-")[2]
-                            if len(react_dict["target"].split("-")) == 3
-                            else react_dict["target"].split("-")[1].capitalize()
-                            + react_dict["target"].split("-")[2]
-                            + react_dict["target"].split("-")[3].lower()
-                        ),
-                    )
-
-                    write_to_exfortables_format_da(
-                        entry_id,
-                        dir,
-                        filename,
-                        entry_json["bib_record"],
-                        react_dict,
-                        str(mf) + " - " + str(mt),
-                        df2,
-                    )
+        # elif react_dict["sf6"] == "DE":
+        #     if filter_energy_distribution_case(react_dict, df):
+        #         continue
+        #     process_energy_distribution_case(df, entry_id, entry_json, react_dict)
 
 
-        ## ------------------------  Case for the angular distributions ------------------------  ##
-        elif react_dict["sf6"] == "DE":
-            if (
-                not any(
-                    par == react_dict["process"].split(",")[1]
-                    for par in sf3_dict.keys()
-                )
-                or any(
-                    react_dict["sf8"] != excep for excep in ("EXP") if react_dict["sf8"]
-                )
-                or react_dict["sf7"]
-            ):
-                continue
+        ## --------------------------------------------------------------------------------------- ##
+        ## ------------------------         Neutron observables          ------------------------  ##
+        ## --------------------------------------------------------------------------------------- ##
+        # elif react_dict["sf6"] == "NU":
+        #     if not (
+        #         react_dict["sf6"] == "NU/DE" or react_dict["sf6"] == "FY/DE"
+        #     ) and react_dict["sf5"] == "PR":
+                
+        #         if filter_misc_neutron_observables_case(react_dict, df):
+        #             continue
+        #         process_neutron_observables_case(df, entry_id, entry_json, react_dict)
 
-            if df["en_inc"].isnull().values.all():
-                continue
-
-            mf, mt = get_unique_mf_mt(df)
-            dir = get_dir_name(react_dict, level_num=None, subdir=None)
-
-            for en in df["en_inc"].unique():
-                df2 = df[df["en_inc"] == en]
-
-                if (
-                    react_dict["target"].split("-")[2] == "0"
-                    and react_dict["sf4"] is None
-                ):
-                    ## case for ,DE without product such as (40-ZR-0(N,G),,DE)
-                    filename = exfortables_filename(
-                        dir,
-                        entry_id,
-                        react_dict["process"].replace(",", "-").lower(),
-                        react_dict,
-                        entry_json["bib_record"],
-                        en,
-                        None,
-                    )
-
-                    write_to_exfortables_format_de(
-                        entry_id,
-                        dir,
-                        filename,
-                        entry_json["bib_record"],
-                        react_dict,
-                        str(mf) + " - " + str(mt),
-                        df2,
-                    )
-
-                else:
-                    ## case for ,DA with product
-                    for prod in df2["residual"].unique():
-                        df3 = df2[df2["residual"] == prod]
-                        filename = exfortables_filename(
-                            dir,
-                            entry_id,
-                            react_dict["process"].replace(",", "-").lower(),
-                            react_dict,
-                            entry_json["bib_record"],
-                            en,
-                            prod,
-                        )
-
-                        write_to_exfortables_format_de(
-                            entry_id,
-                            dir,
-                            filename,
-                            entry_json["bib_record"],
-                            react_dict,
-                            str(mf) + " - " + str(mt),
-                            df3,
-                        )
-
-        ## ------------------------  Case for the fission neutrons ------------------------  ##
-        elif react_dict["sf6"] == "NU":
-            if (
-                any(
-                    excep in react_dict["sf8"]
-                    for excep in ["MSC", "REL", "FRC", "RES", "RAW"]
-                    if react_dict["sf8"]
-                )
-                or react_dict["sf7"]
-            ):
-                continue
-
-            df = process_general(entry_id, entry_json, data_dict_conv)
-            
-            if df["en_inc"].isnull().values.all():
-                continue
-
-            mf, mt = get_unique_mf_mt(df)
-            subdir = mt_nu_sf5[react_dict["sf5"]]["name"] if react_dict["sf5"] else ""
-            dir = get_dir_name(react_dict, level_num=None, subdir=subdir)
-
-            if react_dict["sf4"] is None:
-                ## no reaction product would be given in these cases
-                filename = exfortables_filename(
-                    dir,
-                    entry_id,
-                    react_dict["process"].replace(",", "-").lower(),
-                    react_dict,
-                    entry_json["bib_record"],
-                    None,
-                    None,
-                )
-
-                write_to_exfortables_format_nu(
-                    entry_id,
-                    dir,
-                    filename,
-                    entry_json["bib_record"],
-                    react_dict,
-                    str(mf) + " - " + str(mt),
-                    df,
-                )
-
-            else:
-                continue
-                ## expect MASS or ELEM/MASS, then format should be like FPY
-                ## not output
-                # prod = react_dict["sf4"]  
-                # filename = exfortables_filename(
-                #     dir,
-                #     entry_id,
-                #     react_dict["process"].replace(",", "-").lower(),
-                #     react_dict,
-                #     entry_json["bib_record"],
-                #     None,
-                #     prod,
-                # )
-
-                # write_to_exfortables_format_fy(
-                #     entry_id,
-                #     dir,
-                #     filename,
-                #     entry_json["bib_record"],
-                #     react_dict,
-                #     str(mf) + " - " + str(mt),
-                #     df,
-                # )
-
-        elif (
-            react_dict["sf6"] == "NU/DE" or react_dict["sf6"] == "FY/DE"
-        ) and react_dict["sf5"] == "PR":
-            # Prompt neutron/gamma spectra
-            if (
-                any(
-                    excep in react_dict["sf8"]
-                    for excep in ["MSC", "REL", "FRC", "RES", "RAW", "NPD"]  # MXD is ok
-                    if react_dict["sf8"]
-                )
-                or react_dict["sf7"]
-            ):
-                continue
-
-            if df["en_inc"].isnull().values.all():
-                continue
-
-            mf, mt = get_unique_mf_mt(df)
-            dir = get_dir_name(react_dict, level_num=None, subdir=None)
-
-            if react_dict["sf4"] is None and "NU" in react_dict["sf6"]:
-                prod = "0-NN-1"
-                for en in df["en_inc"].unique():
-                    df2 = df[df["en_inc"] == en]
-                    ## no reaction product would be given in these cases
-                    filename = exfortables_filename(
-                        dir,
-                        entry_id,
-                        react_dict["process"].replace(",", "-").lower(),
-                        react_dict,
-                        entry_json["bib_record"],
-                        en,
-                        prod,
-                    )
-                    write_to_exfortables_format_de(
-                        entry_id,
-                        dir,
-                        filename,
-                        entry_json["bib_record"],
-                        react_dict,
-                        str(mf) + " - " + str(mt),
-                        df,
-                    )
-
-            else:
-                for prod in df["residual"].unique():
-                    df2 = df[df["residual"] == prod]
-                    filename = exfortables_filename(
-                        dir,
-                        entry_id,
-                        react_dict["process"].replace(",", "-").lower(),
-                        react_dict,
-                        entry_json["bib_record"],
-                        None,
-                        prod,
-                    )
-
-                    write_to_exfortables_format_de(
-                        entry_id,
-                        dir,
-                        filename,
-                        entry_json["bib_record"],
-                        react_dict,
-                        str(mf) + " - " + str(mt),
-                        df2,
-                    )
-
-        ## ------------------------  Case for Kinetic Energy (KE or AKE) ------------------------  ##
-        elif react_dict["sf6"] == "KE":
-            if (
-                any(
-                    excep in react_dict["sf8"]
-                    for excep in ["MSC", "REL", "FRC", "RES", "RAW"]
-                    if react_dict["sf8"]
-                )
-                or react_dict["sf7"]
-            ):
-                continue
-
-            if df["en_inc"].isnull().values.all():
-                continue
-
-            mf, mt = get_unique_mf_mt(df)
-            dir = get_dir_name(react_dict, level_num=None, subdir=None)
-
-            for en in df["en_inc"].unique():
-                df2 = df[df["en_inc"] == en]
-                if react_dict["sf4"] is None:
-                    filename = exfortables_filename(
-                        dir,
-                        entry_id,
-                        react_dict["process"].replace(",", "-").lower(),
-                        react_dict,
-                        entry_json["bib_record"],
-                        en,
-                        None,
-                    )
-                    write_to_exfortables_format_kinetic_e(
-                        entry_id,
-                        dir,
-                        filename,
-                        entry_json["bib_record"],
-                        react_dict,
-                        str(mf) + " - " + str(mt),
-                        df,
-                    )
-
-                else:
-                    for prod in df["residual"].unique():
-                        df3 = df2[df2["residual"] == prod]
-                        filename = exfortables_filename(
-                            dir,
-                            entry_id,
-                            react_dict["process"].replace(",", "-").lower(),
-                            react_dict,
-                            entry_json["bib_record"],
-                            en,
-                            prod,
-                        )
-                        write_to_exfortables_format_kinetic_e(
-                            entry_id,
-                            dir,
-                            filename,
-                            entry_json["bib_record"],
-                            react_dict,
-                            str(mf) + " - " + str(mt),
-                            df3,
-                        )
-
-        elif react_dict["sf6"] == "AKE":
-            if df["en_inc"].isnull().values.all():
-                continue
-
-            mf, mt = get_unique_mf_mt(df)
-            dir = get_dir_name(react_dict, level_num=None, subdir=None)
-            prod = react_dict["sf7"]
-
-            for en in df["en_inc"].unique():
-                df2 = df[df["en_inc"] == en]
-                filename = exfortables_filename(
-                    dir,
-                    entry_id,
-                    react_dict["process"].replace(",", "-").lower(),
-                    react_dict,
-                    entry_json["bib_record"],
-                    en,
-                    prod,
-                )
-                write_to_exfortables_format_kinetic_e(
-                    entry_id,
-                    dir,
-                    filename,
-                    entry_json["bib_record"],
-                    react_dict,
-                    str(mf) + " - " + str(mt),
-                    df2,
-                )
+        #     else:
+        #         if filter_misc_neutron_observables_case(react_dict, df):
+        #             continue
+                # process_misc_neutron_observables_case(df, entry_id, entry_json, react_dict)
 
 
-        ## ------------------------  Case for the fission product yields ------------------------  ##
-        elif react_dict["sf6"] == "FY":
-            if (
-                not any(par == react_dict["sf5"] for par in mt_fy_sf5.keys())
-                or any(
-                    excep in react_dict["sf8"]
-                    for excep in ("MSC", "REL", "FRC", "RES", "RAW")
-                    if react_dict["sf8"]
-                )
-                or react_dict["sf7"]
-            ):
-                continue
+        ## --------------------------------------------------------------------------------------- ##
+        ## ------------------------           Kinetic energies           ------------------------  ##
+        ## --------------------------------------------------------------------------------------- ##
 
-            if df["en_inc"].isnull().values.all():
-                continue
+        # elif react_dict["sf6"] == "KE":
+        #     if filter_kinetic_energy_case(react_dict, df):
+        #         continue
+        #     process_kinetic_energy_case(df, entry_id, entry_json, react_dict)
 
-            mf, mt = get_unique_mf_mt(df)
-            subdir = mt_fy_sf5[react_dict["sf5"]]["name"]
-            dir = get_dir_name(react_dict, level_num=None, subdir=subdir)
 
-            for en in df["en_inc"].unique():
-                df2 = df[df["en_inc"] == en]
-                filename = exfortables_filename(
-                    dir,
-                    entry_id,
-                    react_dict["process"].replace(",", "-").lower(),
-                    react_dict,
-                    entry_json["bib_record"],
-                    en,
-                    None,
-                )
-                write_to_exfortables_format_fy(
-                    entry_id,
-                    dir,
-                    filename,
-                    entry_json["bib_record"],
-                    react_dict,
-                    str(mf) + " - " + str(mt),
-                    df2,
-                )
+        # elif react_dict["sf6"] == "AKE":
+        #     if df["en_inc"].isnull().values.all():
+        #         continue
+        #     process_average_kinetic_energy_case(df, entry_id, entry_json, react_dict)
 
-        ## ------------------------  Any other reactions which so far cannot be tabulated ------------------------  ##
-        # else:
-        #     ### Generate reaction record for the cases if it is not possible to generate the tabulated data
-        #     if react_dict:
-        #         reaction_index_regist(entry_id, entry_json, react_dict, pd.DataFrame())
+        ## --------------------------------------------------------------------------------------- ##
+        ## ------------------------            Fission yields            ------------------------  ##
+        ## --------------------------------------------------------------------------------------- ##
+        # elif react_dict["sf6"] == "FY":
+        #     if filter_fission_yield_case(react_dict, df):
+        #         continue
+        #     process_fission_yield_case(df, entry_id, entry_json, react_dict)
+
+        ## --------------------------------------------------------------------------------------- ##
+        ## ------------------------            Target yields             ------------------------  ##
+        ## --------------------------------------------------------------------------------------- ##
+        # elif react_dict["sf6"] == "TTY":
+        #     if filter_fission_yield_case(react_dict, df):
+        #         continue
+        #     process_thick_target_yield_case(df, entry_id, entry_json, react_dict)
+
+        ## --------------------------------------------------------------------------------------- ##
+        ## ------------------------         Resonance parameters         ------------------------  ##
+        ## --------------------------------------------------------------------------------------- ##
+
 
     return
 
 
-
-
-
-
-def main(entnum):
+def process(entnum):
     entry_json = convert_exfor_to_json(entnum)
-    write_dict_to_json(entnum, entry_json)
 
     if entry_json:
-        # bib_dict(entry_json)
-        try:
-            bib_dict(entry_json)
-        except:
-            logging.error(f"bib store error at ENTRY: '{entnum}',")
-
-    if entry_json.get("reactions"):
-        pass
+        ## Dump JSON into a file
+        write_dict_to_json(entnum, entry_json)
+        ## create bib record in SQLite
+        create_and_insert_bib_dict(entnum, entry_json["bib_record"])
+        create_and_insert_references_dict(entnum + "-" + "001-0", entry_json["bib_record"])
 
     common_main_dict = {}
     data_tables_dict = entry_json["data_tables"]
@@ -964,10 +498,14 @@ def main(entnum):
     ## get SUBENT 001 COMMON block
     if data_tables_dict["001"].get("common"):
         common_main_dict = data_tables_dict["001"]["common"]
+        ## register the common experimental conditions
+    
+    if entry_json["experimental_conditions"].get("001"):
+        create_and_insert_experimental_condition_dict(entnum + "-" + "001-0", entry_json["experimental_conditions"]["001"]["0"])
+        create_and_insert_references_dict(entnum + "-" + "001-0", entry_json["experimental_conditions"]["001"]["0"])
 
     ## looping over SUBENTRYs from 002
     for subent in list(data_tables_dict.keys())[1:]:
-        # print(entnum, subent)
         common_sub_dict = {}
 
         ## get SUBENT 002 COMMON block
@@ -994,33 +532,110 @@ def main(entnum):
             ## means there is NODATA defined in the Subent
             continue
 
-        entry_id = entnum + subent
-
-        # tabulated_to_exfortables_format(entry_id, entry_json, data_dict_conv)
-        try:
-            tabulated_to_exfortables_format(entry_id, entry_json, data_dict_conv)
-
-        except:
-            logging.error(f"Tabulated error: at ENTRY: '{entry_id}',")
+        entry_num = entnum + subent
+        tabulated_to_exfortables_format(entry_num, entry_json, data_dict_conv)
 
     return
+
+
+def process_all():
+    ent = []
+    # df = list_exfor_files()
+    df = list_entries_from_pickle()
+    # insert_history(df)
+
+    for _, row in df.iterrows():
+        ent += [row["entry"]]
+    entries = random.sample(ent, len(ent))
+    # entries = ent
+
+    start_time = print_process_time()
+    logging.info(f"Start processing {print_time()}")
+
+    for entnum in entries:
+        print(entnum)
+        # process(entnum)
+        try:
+            process(entnum)
+        except KeyboardInterrupt:
+            print("CTR + C")
+            break
+        except:
+            logging.error(f"ERROR: at ENTRY: {entnum}", exc_info=True)
+            
+    logging.info(f"End processing {print_process_time(start_time)}")
+
+
+def process_updated_entry():
+    ent = []
+    old_df = list_entries_from_pickle()
+    new_df = list_exfor_files()
+
+    if old_df.equals(new_df):
+        return
+
+    # addtion, update
+    df_diff = old_df.compare(new_df)
+
+    for _, row in df_diff.iterrows():
+        ent += [row["entry"]]
+
+    entries = ent
     
+    start_time = print_process_time()
+    logging.info(f"Start processing {print_time()}")
+
+    for entnum in entries:
+        print(entnum)
+        # process(entnum)
+        try:
+            process(entnum)
+        except KeyboardInterrupt:
+            print("CTR + C")
+            break
+        except:
+            logging.error(f"ERROR: at ENTRY: {entnum}", exc_info=True)
+            
+    logging.info(f"End processing {print_process_time(start_time)}")
 
 
 if __name__ == "__main__":
-    ent = list_entries_from_df()
-    entries = random.sample(ent, len(ent))
-    # entries = list(dict.fromkeys(good_example_entries))
-    # entries = ["14683", "D0095"]#, "31524", "C1112", "14451", "C0471", "C1221", "F0528", "C1439", "10963", "12544", "30441", "30125" ]
+    process_all()
 
-    start_time = print_time()
-    logging.info(f"Start processing {start_time}")
 
-    for entnum in entries:
-        if entnum.startswith("V"):
-            continue
-
-        print(entnum)
-        main(entnum)
-
-    logging.info(f"End processing {print_time(start_time)}")
+        # "facility": ", ".join(
+        #     [ f["x4_code"] for f in exp_cond["facility"] if f["x4_code"] ]
+        # ) if exp_cond.get("facility") else None ,
+        # "inc_source": ", ".join(
+        #     [ f["x4_code"] for f in exp_cond["inc-source"] if f["x4_code"] ]
+        # )  if exp_cond.get("inc-source") else None,
+        # "part_det": ", ".join(
+        #     [ f["x4_code"] for f in exp_cond["part-det"] if f["x4_code"] ]
+        # ) if exp_cond.get("part-det") else None,
+        # "sample": ", ".join(
+        #     [ f["x4_code"] for f in exp_cond["sample"] if f["x4_code"] ]
+        # ) if exp_cond.get("sample") else None,
+        # "detector": ", ".join(
+        #     [ f["x4_code"] for f in exp_cond["detector"] if f["x4_code"] ]
+        # ) if exp_cond.get("detector") else None ,
+        # "method": ", ".join(
+        #     [ f["x4_code"] for f in exp_cond["method"] if f["x4_code"]  ]
+        # ) if exp_cond.get("method") else None,
+        # "analysis": ", ".join(
+        #     [ f["x4_code"] for f in exp_cond["analysis"] if f["x4_code"]  ]
+        # ) if exp_cond.get("analysis") else None,
+        # "monitor": ", ".join(
+        #     [ f["x4_code"] for f in exp_cond["monitor"] if f["x4_code"] ]
+        # ) if exp_cond.get("monitor") else None,
+        # "monit_ref": ", ".join(
+        #     [ f["x4_code"] for f in exp_cond["monit-ref"] if f["x4_code"] ]
+        # ) if exp_cond.get("monit-ref") else None,
+        # "assumed": ", ".join(
+        #     [ f["x4_code"] for f in exp_cond["assumed"] if f["x4_code"] ]
+        # ) if exp_cond.get("assumed") else None ,
+        # "err_analys": ", ".join(
+        #     [ f["x4_code"] for f in exp_cond["err-analys"] if f["x4_code"] ]
+        # )  if exp_cond.get("err-analys") else None ,
+        # "decay_data": ", ".join(
+        #     [ f["x4_code"] for f in exp_cond["decay-data"] if f["x4_code"]]
+        # ) if exp_cond.get("decay-data") else None,

@@ -13,20 +13,16 @@
 import os
 import json
 import logging
-
-logging.basicConfig(filename="parsing.log", level=logging.DEBUG, filemode="w")
-
-
 from .config import OUT_PATH
 from .submodules.utilities.util import del_outputs, print_time
-from .parser.list_x4files import list_entries_from_df
+from .parser.list_x4files import list_exfor_files, list_entries_from_pickle
 from .parser.exfor_entry import Entry, get_entry_update_date
 from .parser.exfor_subentry import Subentry
 
 
-
 ## get update data from git commit and store info to Python dictionary
 update_date = get_entry_update_date()
+
 
 def write_dict_to_json(entnum, dic):
     """
@@ -87,32 +83,73 @@ def convert_exfor_to_json(entnum=None):
         if subent != "001":
             entry_json["data_tables"][subent]["data"] = sub.parse_data()
 
-
     return entry_json
 
 
+def convert(entnum):
+    entry_json = convert_exfor_to_json(entnum)
+    write_dict_to_json(entnum, entry_json)
 
 
-def main(entnum):
 
-    start_time = print_time()
-    logging.info(f"Start processing {start_time}")
+def convert_all():
+    ent = []
+    df = list_exfor_files()
 
-    try:
-        entry_json = convert_exfor_to_json(entnum)
-        write_dict_to_json(entnum, entry_json)
+    for _, row in df.iterrows():
+        ent += [row["entry"]]
 
-    except:
-        logging.error(f"ERROR: at ENTRY: {entnum}")
-
-    logging.info(f"End processing {print_time(start_time)}")
-
-
-if __name__ == "__main__":
-    ent = list_entries_from_df()
     # entries = random.sample(ent, len(ent))
     entries = ent
+
+    start_time = print_process_time()
+    logging.info(f"Start processing {print_time()}")
+
     for entnum in entries:
         print(entnum)
-        main(entnum)
+        # process(entnum)
+        try:
+            convert(entnum)
+        except KeyboardInterrupt:
+            print("CTR + C")
+            break
+        except:
+            logging.error(f"ERROR: at ENTRY: {entnum}", exc_info=True)
+            
+    logging.info(f"End processing {print_process_time(start_time)}")
 
+
+def convert_updated_entry():
+    ent = []
+    old_df = list_entries_from_pickle()
+    print(old_df)
+    new_df = list_exfor_files()
+    print(new_df)
+
+    if old_df.equals(new_df):
+        return
+
+    # addtion, update
+    df_diff = old_df.compare(new_df)
+
+    for _, row in df_diff.iterrows():
+        ent += [row["entry"]]
+
+    start_time = print_process_time()
+    logging.info(f"Start processing {print_time()}")
+
+    for entnum in entries:
+        print(entnum)
+        # process(entnum)
+        try:
+            convert(entnum)
+        except KeyboardInterrupt:
+            print("CTR + C")
+            break
+        except:
+            logging.error(f"ERROR: at ENTRY: {entnum}", exc_info=True)
+            
+    logging.info(f"End processing {print_process_time(start_time)}")
+
+if __name__ == "__main__":
+    convert_all()

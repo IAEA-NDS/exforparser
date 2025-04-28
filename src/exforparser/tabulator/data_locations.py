@@ -10,14 +10,7 @@
 #
 ####################################################################
 from ..parser.exfor_data import get_colmun_indexes
-from exfor_dictionary.exfor_dictionary import Diction
-
-d = Diction()
-## get possible heading list
-x_en_heads = d.get_incident_en_heads()
-x_en_err_heads = d.get_incident_en_err_heads()
-x_data_heads = d.get_data_heads()
-x_data_err_heads = d.get_data_err_heads()
+from .init_dict import d, x_en_heads, x_en_err_heads, y_data_heads, y_data_err_heads
 
 
 def get_incident_energy_locs(data_dict_conv):
@@ -28,8 +21,8 @@ def get_incident_energy_locs(data_dict_conv):
 
 
 def get_y_locs(data_dict_conv):
-    locs_y = get_colmun_indexes(data_dict_conv, x_data_heads)
-    locs_dy = get_colmun_indexes(data_dict_conv, x_data_err_heads)
+    locs_y = get_colmun_indexes(data_dict_conv, y_data_heads)
+    locs_dy = get_colmun_indexes(data_dict_conv, y_data_err_heads)
 
     return locs_y, locs_dy
 
@@ -60,10 +53,18 @@ def get_en_locs_by_pointer(pointer, data_dict_conv):
     return locs_y, locs_dy
 
 
+
+
 def get_outgoing_e_locs(data_dict_conv):
     return get_colmun_indexes(
         data_dict_conv, d.get_outgoing_e_heads()
     ), get_colmun_indexes(data_dict_conv, d.get_outgoing_e_err_heads())
+
+
+
+def get_flag_locs(data_dict_conv):
+    """get ["FLAG", "DECAY-FLAG", "LVL-FLAG", "PARITY", "SPIN J", "MOMENTUM L"] colum positions"""
+    return get_colmun_indexes(data_dict_conv, d.get_flag_heads())
 
 
 def get_outgoing_e_locs_by_pointer(pointer, data_dict_conv):
