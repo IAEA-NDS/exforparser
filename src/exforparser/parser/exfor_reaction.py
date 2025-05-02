@@ -214,7 +214,7 @@ def parse_reaction(reaction_field) -> dict:
         operators = parse_operators(x4_code)
         
 
-        if operators:
+        if operators and x4_code.startswith("(("):
             # print("# All operators: ", operators)
             b = []
             mathJ = []

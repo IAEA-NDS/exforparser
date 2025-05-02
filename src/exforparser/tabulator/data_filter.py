@@ -10,7 +10,7 @@
 #
 ####################################################################
 import logging
-from .exfor_reaction_mt import sf_to_mf, sf3_dict, sig_sf5, mt_fy_sf5
+from exforparser.submodules.utilities.reaction import sf_to_mf, sf3_dict, sig_sf5, mt_fy_sf5
 from exfor_dictionary.exfor_dict import Diction
 
 d = Diction("209")

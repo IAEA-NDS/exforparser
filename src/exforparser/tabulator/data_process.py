@@ -18,9 +18,11 @@ from ripl3_json.ripl3_discretelevel import RIPL_Level
 from exforparser.sql.stored import insert_df_to_data
 from exforparser.submodules.utilities.elem import ztoelem
 from .data_locations import *
-from .exfor_reaction_mt import get_mf, get_mt, e_lvl_to_mt, get_unique_mf_mt, mt_nu_sf5, mt_fy_sf5
+from .exfor_reaction_mt import  get_unique_mf_mt
 from .data_write import *
 from .data_dir_files import *
+from exforparser.submodules.utilities.reaction import get_mf, get_mt, e_lvl_to_mt, mt_nu_sf5, mt_fy_sf5
+
 
 def limit_data_dict_by_locs(locs, data_dict):
     new = {}

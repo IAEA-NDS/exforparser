@@ -22,8 +22,8 @@ ENV = "dev"  # or "INT" or "PROD"
 
 
 if ENV == "dev":
-    DATA_DIR = "/Users/okumuras/Documents/nucleardata/EXFOR/"
-    OUT_PATH = "/Users/okumuras/Documents/nucleardata/EXFOR/"
+    DATA_DIR = "/Users/sin/Documents/nucleardata/EXFOR/"
+    OUT_PATH = "/Users/sin/Documents/nucleardata/EXFOR/"
 
 elif ENV == "int":
     DATA_DIR = "/srv/data/dataexplorer_v2/"
@@ -46,7 +46,7 @@ else:
 
 EXFOR_MASTER_REPO_PATH = os.path.join(DATA_DIR, "exfor_master")
 EXFOR_DB = os.path.join(DATA_DIR, "exfortables.sqlite")
-MASS_RANGE_FILE = os.path.join(EXFOR_MASTER_REPO_PATH, "submodules/A_min_max.txt")
+# MASS_RANGE_FILE = os.path.join(EXFOR_MASTER_REPO_PATH, "submodules/A_min_max.txt")
 
 
 BUF_SIZE = 65536

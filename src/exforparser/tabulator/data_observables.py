@@ -14,10 +14,10 @@ import numpy as np
 
 from exforparser.sql.stored import list_of_target, list_of_reactions_and_entries, observable_data_query, data_query_by_id
 from exforparser.submodules.utilities.util import del_outputs, closest, slices
+from exforparser.submodules.utilities.reaction import sf3_dict, sig_sf5
 
 from .data_dir_files import get_thermal_dir_name, get_thermal_filename
 from .data_write import write_to_thermal_table, write_to_resonance_spacing_table
-from .exfor_reaction_mt import sf3_dict, sig_sf5
 from .data_filter import filter_cross_section_case, filter_partial_cross_section_case
 from .data_process import process_cross_section_case, process_partial_cross_section_case
 import logging
