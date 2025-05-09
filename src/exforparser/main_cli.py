@@ -3,7 +3,7 @@ import sqlalchemy as db
 from sqlalchemy.exc import OperationalError
 
 from exforparser.config import engines, session
-
+from exforparser.sql.models import create_all
 from exforparser.json_converter import convert, convert_all, convert_updated_entry
 from exforparser.tabulate import process, process_all, process_updated_entry
 from exforparser.tabulator.data_observables import crosssection, thermal, resonance_spacing, resonance_integral, gamma_gamma, macs
@@ -17,6 +17,12 @@ def cli():
         "-c", 
         "--convert", 
         help="Convert EXFOR entry into JSON. 'all', 'updated', and an entry number is allowed."
+    )
+    parser.add_argument(
+        "-i",
+        "--init",
+        help="Create and initialize the SQLite Database",
+        action='store_true'
     )
     parser.add_argument(
         "-t",
@@ -45,7 +51,9 @@ def cli():
     )
 
     args = parser.parse_args()
-
+    if args.init:
+        create_all()
+        
     if args.convert:
         logging.basicConfig(filename="parsing.log", level=logging.DEBUG, filemode="w")
 

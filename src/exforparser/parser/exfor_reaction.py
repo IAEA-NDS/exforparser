@@ -370,14 +370,14 @@ def parse_reaction(reaction_field) -> dict:
         else:
             reaction_info = {
                 "x4_code": x4_code,
-                "math_expression": None,
+                "math_expression": [],
                 "children": [
                     parse_reaction_parts(x4_code)
                 ],
-                "operator": None,
+                "operator": [],
                 "free_text": free_text,
             }
-            reaction_info["children"][0].update({"operator": None, "x4_code": x4_code})
+            reaction_info["children"][0].update({"operator": [], "x4_code": x4_code})
 
         reaction_info["pointer"] = pointer
         dict[pointer] = reaction_info

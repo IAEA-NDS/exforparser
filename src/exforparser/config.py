@@ -16,14 +16,14 @@ from pathlib import Path
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 
 ENV = "dev"  # or "INT" or "PROD"
 
 
 if ENV == "dev":
-    DATA_DIR = "/Users/sin/Documents/nucleardata/EXFOR/"
-    OUT_PATH = "/Users/sin/Documents/nucleardata/EXFOR/"
+    DATA_DIR = "/Users/okumuras/Documents/nucleardata/EXFOR/"
+    OUT_PATH = "/Users/okumuras/Documents/nucleardata/EXFOR/"
 
 elif ENV == "int":
     DATA_DIR = "/srv/data/dataexplorer_v2/"
@@ -34,14 +34,14 @@ elif ENV == "prod":
     OUT_PATH = "/nds/data/dataexplorer_v2/out/"
 
 
-if ENV == "dev":
-    if os.path.exists("src/exforparser/"):
-        EXFOR_PARSER = "src/exforparser/"
-    else:
-        EXFOR_PARSER = os.path.join(site.getsitepackages()[0], "exforparser")
+# if ENV == "dev":
+#     if os.path.exists("src/exforparser/"):
+#         EXFOR_PARSER = "src/exforparser/"
+#     else:
+#         EXFOR_PARSER = os.path.join(site.getsitepackages()[0], "exforparser")
 
-else:
-    EXFOR_PARSER = os.path.join(site.getsitepackages()[0], "exforparser")
+# else:
+#     EXFOR_PARSER = os.path.join(site.getsitepackages()[0], "exforparser")
 
 
 EXFOR_MASTER_REPO_PATH = os.path.join(DATA_DIR, "exfor_master")
@@ -52,7 +52,7 @@ EXFOR_DB = os.path.join(DATA_DIR, "exfortables.sqlite")
 BUF_SIZE = 65536
 
 """ Pickle path of list of EXFOR master files made by parser.list_x4files.py """
-ENTRY_INDEX_PICKLE = os.path.join(EXFOR_PARSER, "pickles/entry.pickle")
+ENTRY_INDEX_PICKLE = os.path.join(BASE_DIR, "pickles/entry.pickle")
 # MT_DEF = os.path.join( EXFOR_PARSER, "tabulated/MTall.dat" )
 # MF3_JSON = os.path.join( EXFOR_PARSER, "tabulated/mf3.json" )
 

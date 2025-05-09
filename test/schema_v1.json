@@ -1,0 +1,158 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "EXFOR Entry Full Schema",
+    "type": "object",
+    "properties": {
+      "entry": { "type": "string", "pattern": "^[A-Z0-9]{5}$" },
+      "last_updated": { "type": "string", "format": "date" },
+      "number_of_revisions": { "type": "string" },
+      "histories": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "x4_code": { "type": "string" },
+            "free_txt": { "type": "array" }
+          },
+          "required": ["x4_code"]
+        }
+      },
+      "bib_record": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "authors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" }
+              },
+              "required": ["name"],
+              "additionalProperties": false
+            }
+          },
+      
+          "institutes": {
+            "type": "array",
+            "items": {
+              "type": ["object", "null"],
+              "properties": {
+                "x4_code": { "type": "string" },
+                "free_txt": { "type": ["array", "string"] }
+                }
+              },
+              "required": ["x4_code"],
+              "additionalProperties": false
+            }
+          },
+      
+          "references": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "x4_code": { "type": "string" },
+                "free_txt": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                },
+                "publication_year": {
+                  "type": "string",
+                  "pattern": "^[0-9]{4}$"
+                },
+                "doi": {
+                  "anyOf": [
+                    { "type": "string" },
+                    { "type": "null" }
+                  ]
+                },
+                "pointer": {
+                  "type": "string",
+                  "pattern": "^[0-9A-Za-z]?$"
+                }
+              },
+              "required": ["x4_code", "publication_year"],
+              "additionalProperties": false
+            }
+          },
+      
+          "facilities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "x4_code": { "type": "string" },
+                "free_txt": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                },
+                "pointer": {
+                  "type": "string",
+                  "pattern": "^[0-9A-Za-z]?$"
+                },
+                "facility_type": { "type": "string" },
+                "institute": { "type": ["object", "null"] }
+              },
+              "required": ["x4_code", "pointer", "facility_type", "institute"]
+            }
+          },
+          "required": ["title", "authors", "institutes", "references"]
+    },
+      "reactions": {
+        "type": "object",
+        "patternProperties": {
+          "^[0-9]{3}$": {
+            "type": ["object", "null"],
+            "patternProperties": {
+              "^[0-9A-Za-z]?$": {
+                "type": "object",
+                "properties": {
+                  "reaction_id": { "type": "string" },
+                  "quantity": { "type": "string" },
+                  "products": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  },
+                  "method": { "type": "string" },
+                  "formula": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "data_tables": {
+        "type": "object",
+        "patternProperties": {
+          "^[0-9]{3}$": {
+            "type": "object",
+            "patternProperties": {
+              "^[0-9A-Za-z]?$": {
+                "type": "object",
+                "properties": {
+                  "columns": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  },
+                  "units": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  },
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": { "type": "number" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "required": ["entry", "last_updated", "number_of_revisions"]
+  }
+  

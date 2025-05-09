@@ -88,7 +88,9 @@ def crosssection():
                     break
                 except:
                     logging.error(f"ERROR: at {target_dict}", exc_info=True)
-            
+
+
+
 
 def thermal(type):
     thermal_data_reaction = ["N,TOT", "N,G", "N,P", "N,A", "N,EL", "N,F"]
@@ -165,7 +167,7 @@ def resonance_spacing():
             df0 = ripl_d0[(ripl_d0["Z"] == int(z)) & (ripl_d0["El"] == el)  & (ripl_d0["A"] == int(a))]
             df1 = ripl_d1[(ripl_d1["Z"] == int(z)) & (ripl_d1["El"] == el)  & (ripl_d1["A"] == int(a))]
 
-            dir = get_thermal_dir_name("average_parameters/resonance_spacing", react_dict)
+            dir = get_thermal_dir_name("resonance_data/resonance_spacing", react_dict)
             outfile = get_thermal_filename(dir, react_dict)
 
             write_to_resonance_spacing_table(type, dir, outfile, react_dict, df, df0, df1)
@@ -192,7 +194,7 @@ def resonance_integral():
             if df.empty:
                 continue
 
-            dir = get_thermal_dir_name("average_parameters/resonance_integral", react_dict)
+            dir = get_thermal_dir_name("resonance_data/resonance_integral", react_dict)
             outfile = get_thermal_filename(dir, react_dict)
 
             write_to_thermal_table(type, dir, outfile, react_dict, df)
@@ -226,7 +228,7 @@ def macs():
                     one_en = closest( row["en_inc"].unique(), 0.03 )
                     df = df.drop(df[ (df["entry_id"] == i[0] ) & ( df["en_inc"] != one_en ) ].index)
 
-            dir = get_thermal_dir_name("average_parameters/macs", react_dict)
+            dir = get_thermal_dir_name("resonance_data/macs", react_dict)
             outfile = get_thermal_filename(dir, react_dict)
 
             write_to_thermal_table(type, dir, outfile, react_dict, df)
@@ -255,7 +257,7 @@ def resonance_parameter():
             if df.empty:  
                 continue
 
-        dir = get_thermal_dir_name("average_parameters/resonance_parameter", react_dict)
+        dir = get_thermal_dir_name("resonance_data/resonance_parameter", react_dict)
         outfile = get_thermal_filename(dir, react_dict)
         write_to_resonance_table
 
@@ -292,7 +294,7 @@ def gamma_gamma():
             df0 = df0.drop(df0[df0["Gg"].isnull()].index)
             df1 = df1.drop(df1[df1["Gg"].isnull()].index)
 
-            dir = get_thermal_dir_name("average_parameters/gamma_gamma", react_dict)
+            dir = get_thermal_dir_name("resonance_data/gamma_gamma", react_dict)
             outfile = get_thermal_filename(dir, react_dict)
             write_to_resonance_spacing_table(type, dir, outfile, react_dict, df, df0, df1)
 

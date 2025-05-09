@@ -159,12 +159,12 @@ class Exfor_References(Base):
 
 
 
+def create_all():
+    Base.metadata.create_all(bind=engines["exfor"])
 
 
-# Base.metadata.create_all(bind=engine)
 
 
 if __name__ == "__main__":
 
-    Base.metadata.create_all(bind=engines["exfor"])
     pass

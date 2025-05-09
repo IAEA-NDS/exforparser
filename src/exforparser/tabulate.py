@@ -39,10 +39,6 @@ from exforparser.sql.stored import (
     insert_experimental_info,
 )
 
-
-# initialize exfor_dictionary
-
-
 def create_and_insert_bib_dict(entnum, bib_record):
     bib_data = {
         "entry": entnum,
@@ -378,50 +374,50 @@ def tabulated_to_exfortables_format(entry_num, entry_json, data_dict_conv):
             for k, i in sf3_dict.items()
         }
 
-        ## --------------------------------------------------------------------------------------- ##
-        ## ------------------------            Cross sections            ------------------------  ##
-        ## --------------------------------------------------------------------------------------- ##
+        # --------------------------------------------------------------------------------------- ##
+        # ------------------------            Cross sections            ------------------------  ##
+        # --------------------------------------------------------------------------------------- ##
 
-        # if react_dict["sf6"] == "SIG":
-        #     if filter_cross_section_case(react_dict, df):
-        #         continue
+        if react_dict["sf6"] == "SIG":
+            if filter_cross_section_case(react_dict, df):
+                continue
 
-        #     if react_dict["sf5"] != "PAR":
-        #         process_cross_section_case(df, entry_id, entry_json, react_dict)
-        #     else:
-        #         ## none of (N,NON) PAR,SIG are useful
-        #         if filter_partial_cross_section_case(react_dict, df):
-        #             continue
-        #         process_partial_cross_section_case(df, entry_id, entry_json, react_dict)
+            if react_dict["sf5"] != "PAR":
+                process_cross_section_case(df, entry_id, entry_json, react_dict)
+            else:
+                ## none of (N,NON) PAR,SIG are useful
+                if filter_partial_cross_section_case(react_dict, df):
+                    continue
+                process_partial_cross_section_case(df, entry_id, entry_json, react_dict)
 
 
-        ## --------------------------------------------------------------------------------------- ##
-        ## ------------------------        Angular distributions         ------------------------  ##
-        ## --------------------------------------------------------------------------------------- ##
+        # --------------------------------------------------------------------------------------- ##
+        # ------------------------        Angular distributions         ------------------------  ##
+        # --------------------------------------------------------------------------------------- ##
 
-        # elif react_dict["sf6"] == "DA":
-        #     if filter_angler_distribution_case(react_dict, df):
-        #         continue
+        elif react_dict["sf6"] == "DA":
+            if filter_angler_distribution_case(react_dict, df):
+                continue
 
-        #     if react_dict["sf5"] != "PAR":
-        #         process_angler_distribution_section_case(df, entry_id, entry_json, react_dict)
+            if react_dict["sf5"] != "PAR":
+                process_angler_distribution_section_case(df, entry_id, entry_json, react_dict)
 
-        #     elif (
-        #         react_dict["sf5"] == "PAR"
-        #         and react_dict["process"].split(",")[1] == "INL"
-        #     ):
-        #         if filter_partial_angler_distribution_case(react_dict, df):
-        #             continue
-        #         process_partial_angler_distribution_case(df, entry_id, entry_json, react_dict)
+            elif (
+                react_dict["sf5"] == "PAR"
+                and react_dict["process"].split(",")[1] == "INL"
+            ):
+                if filter_partial_angler_distribution_case(react_dict, df):
+                    continue
+                process_partial_angler_distribution_case(df, entry_id, entry_json, react_dict)
                 
-        ## --------------------------------------------------------------------------------------- ##
-        ## ------------------------         Energy distributions         ------------------------  ##
-        ## --------------------------------------------------------------------------------------- ##
+        # --------------------------------------------------------------------------------------- ##
+        # ------------------------         Energy distributions         ------------------------  ##
+        # --------------------------------------------------------------------------------------- ##
 
-        # elif react_dict["sf6"] == "DE":
-        #     if filter_energy_distribution_case(react_dict, df):
-        #         continue
-        #     process_energy_distribution_case(df, entry_id, entry_json, react_dict)
+        elif react_dict["sf6"] == "DE":
+            if filter_energy_distribution_case(react_dict, df):
+                continue
+            process_energy_distribution_case(df, entry_id, entry_json, react_dict)
 
 
         ## --------------------------------------------------------------------------------------- ##
@@ -457,21 +453,21 @@ def tabulated_to_exfortables_format(entry_num, entry_json, data_dict_conv):
         #         continue
         #     process_average_kinetic_energy_case(df, entry_id, entry_json, react_dict)
 
-        ## --------------------------------------------------------------------------------------- ##
-        ## ------------------------            Fission yields            ------------------------  ##
-        ## --------------------------------------------------------------------------------------- ##
-        # elif react_dict["sf6"] == "FY":
-        #     if filter_fission_yield_case(react_dict, df):
-        #         continue
-        #     process_fission_yield_case(df, entry_id, entry_json, react_dict)
+        # --------------------------------------------------------------------------------------- ##
+        # ------------------------            Fission yields            ------------------------  ##
+        # --------------------------------------------------------------------------------------- ##
+        elif react_dict["sf6"] == "FY":
+            if filter_fission_yield_case(react_dict, df):
+                continue
+            process_fission_yield_case(df, entry_id, entry_json, react_dict)
 
-        ## --------------------------------------------------------------------------------------- ##
-        ## ------------------------            Target yields             ------------------------  ##
-        ## --------------------------------------------------------------------------------------- ##
-        # elif react_dict["sf6"] == "TTY":
-        #     if filter_fission_yield_case(react_dict, df):
-        #         continue
-        #     process_thick_target_yield_case(df, entry_id, entry_json, react_dict)
+        # --------------------------------------------------------------------------------------- ##
+        # ------------------------            Target yields             ------------------------  ##
+        # --------------------------------------------------------------------------------------- ##
+        elif react_dict["sf6"] == "TTY":
+            if filter_fission_yield_case(react_dict, df):
+                continue
+            process_thick_target_yield_case(df, entry_id, entry_json, react_dict)
 
         ## --------------------------------------------------------------------------------------- ##
         ## ------------------------         Resonance parameters         ------------------------  ##

@@ -32,7 +32,7 @@ def target_reformat(react_dict):
             + react_dict["target"].split("-")[3].lower()
         )
 
-    return target
+    return str( target )
 
 
 def process_reformat(react_dict):
@@ -69,7 +69,7 @@ def get_dir_name(type, react_dict, level_num=None, subdir=None):
 
 
 def exfortables_filename(dir, id, process, react_dict, bib, en=None, prod=None):
-    # print(bib)
+
     return os.path.join(
         dir,
         (
@@ -80,7 +80,7 @@ def exfortables_filename(dir, id, process, react_dict, bib, en=None, prod=None):
             + (str(prod) + "_" if prod else "")
             + ("E" + "{:.3e}".format(en) + "_" if en else "")
             # + bib["authors"][0]["name"].split(".")[-1].replace(" ", "")
-            + bib["first_author"]
+            + bib["authors"][0]["name"]
             + "-"
             + str(id)
             + "-"
@@ -107,7 +107,7 @@ def exfortables_filename_product(dir, id, process, prod, react_dict, bib):
             + str(prod)
             + "_"
             # + bib["authors"][0]["name"].split(".")[-1].replace(" ", "")
-            + bib["first_author"]
+            + bib["authors"][0]["name"]
             + "-"
             + str(id)
             + "-"
@@ -137,7 +137,7 @@ def exfortables_filename_Einc_prodocut(dir, id, process, en, prod, react_dict, b
             + "{:.3e}".format(en)
             + "_"
             # + bib["authors"][0]["name"].split(".")[-1].replace(" ", "")
-            + bib["first_author"]
+            + bib["authors"][0]["name"]
             + "-"
             + str(id)
             + "-"
@@ -165,7 +165,7 @@ def exfortables_filename_Einc(dir, id, process, en, react_dict, bib):
             + "{:.3e}".format(en)
             + "_"
             # + bib["authors"][0]["name"].split(".")[-1].replace(" ", "")
-            + bib["first_author"]
+            + bib["authors"][0]["name"]
             + "-"
             + str(id)
             + "-"
@@ -179,6 +179,9 @@ def exfortables_filename_Einc(dir, id, process, en, react_dict, bib):
         ),
     )
 
+
+
+# --------------------- For observables
 
 def get_thermal_dir_name(type, react_dict):
     ### generate output dir and filename
