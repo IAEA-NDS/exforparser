@@ -169,7 +169,7 @@ def bib_table(id, main_bib_dict, react_dict, mfmt, df):
         "\n" "# MF-MT number          :",
         mfmt,
         "\n" "# first author          :",
-        main_bib_dict["first_author"],
+        main_bib_dict["authors"][0]["name"],
         "\n" "# institute             :",
         (
             main_bib_dict["first_author_institute"]

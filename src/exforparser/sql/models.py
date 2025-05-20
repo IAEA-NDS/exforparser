@@ -8,14 +8,12 @@
 
 import sqlalchemy as db
 from sqlalchemy.orm import declarative_base
-from exforparser.config import engines
+
 Base = declarative_base()
-
-
 
 class Exfor_Bib(Base):
     __tablename__ = "exfor_bib"
-    entry = db.Column(db.String, primary_key=True, index=True)
+    entry = db.Column(db.String, primary_key=True, index=True, unique=True)
     title = db.Column(db.String, index=True)
     first_author = db.Column(db.String, index=True)
     authors = db.Column(db.String)
@@ -55,8 +53,8 @@ class Exfor_ExperimentalCondition(Base):
 
 class Exfor_Reactions(Base):
     __tablename__ = "exfor_reactions"
-    entry_id = db.Column(db.String, primary_key=True, index=True)
-    entry = db.Column(db.String)
+    entry_id = db.Column(db.String, primary_key=True, index=True, unique=True)
+    entry = db.Column(db.String, index=True)
     target = db.Column(db.String, index=True)
     projectile = db.Column(db.String, index=True)
     process = db.Column(db.String, index=True)
@@ -73,7 +71,7 @@ class Exfor_Reactions(Base):
 
 
 class Exfor_Indexes(Base):
-    __tablename__ = "exfor_index"
+    __tablename__ = "exfor_indexes"
     id = db.Column(db.Integer, autoincrement=True, primary_key=True, index=True)
     entry_id = db.Column(db.String, index=True)
     entry = db.Column(db.String)
@@ -134,20 +132,11 @@ class Exfor_Data(Base):
 
 
 
-class Exfor_Institutes(Base):
-    __tablename__ = "exfor_institute"
-    entry = db.Column(db.String, primary_key=True, index=True)
-    subentry = db.Column(db.String, index=True)
-    date_created = db.Column(db.DateTime, index=True)
-    last_updated = db.Column(db.DateTime, index=True)
-    sha1 = db.Column(db.String)
-    last_trans = db.Column(db.String, index=True)
-
 
 
 
 class Exfor_References(Base):
-    __tablename__ = "exfor_reference"
+    __tablename__ = "exfor_references"
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     entry_id = db.Column(db.String, index=True)
     x4_code = db.Column(db.String, index=True)
@@ -155,12 +144,49 @@ class Exfor_References(Base):
     free_txt = db.Column(db.String)
     year = db.Column(db.Integer)
     doi = db.Column(db.String)
+    doi_source = db.Column(db.String)
 
 
 
 
-def create_all():
-    Base.metadata.create_all(bind=engines["exfor"])
+
+class Exfor_Entry_DOIs(Base):
+    __tablename__ = "entry_dois"
+    entry = db.Column(db.String, primary_key=True, index=True)
+    exfor_main_reference = db.Column(db.String, index=True)
+    main_reference_doi = db.Column(db.String)
+    doi_source = db.Column(db.String)
+
+
+
+
+class Exfor_Reference_Metadata(Base):
+    __tablename__ = "reference_metadata"
+    reference_code = db.Column(db.String, primary_key=True, index=True)
+    doi = db.Column(db.String, index=True)
+    volume = db.Column(db.String)
+    page = db.Column(db.String)
+    authors = db.Column(db.JSON)
+    first_author = db.Column(db.String, index=True)
+    title = db.Column(db.String, index=True)
+    journal_title = db.Column(db.String)
+    language = db.Column(db.String)
+    issue = db.Column(db.String)
+    publisher = db.Column(db.String)
+    article_number = db.Column(db.String)
+
+
+
+class Exfor_Institute_Geo(Base):
+    __tablename__ = "institute_geo_info"
+    x4_code = db.Column(db.String, primary_key=True, index=True)
+    name = db.Column(db.String, index=True)
+    formatted_address = db.Column(db.String,)
+    address_country = db.Column(db.String, index=True)
+    lat = db.Column(db.String)
+    lng = db.Column(db.String)
+    flag = db.Column(db.String)
+
 
 
 

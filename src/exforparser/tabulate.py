@@ -31,7 +31,6 @@ from exforparser.tabulator.data_dir_files import *
 from exforparser.tabulator.data_process import *
 from exforparser.tabulator.data_filter import *
 from exforparser.sql.stored import (
-    insert_history,
     insert_bib,
     insert_referece,
     insert_reaction,
@@ -136,6 +135,10 @@ def create_and_insert_references_dict(entry_id, partial_json):
     insert_referece(ref_data)
 
     return
+
+
+
+    
 
 
 def create_and_insert_experimental_condition_dict(entry_id, exp_cond):
@@ -420,22 +423,22 @@ def tabulated_to_exfortables_format(entry_num, entry_json, data_dict_conv):
             process_energy_distribution_case(df, entry_id, entry_json, react_dict)
 
 
-        ## --------------------------------------------------------------------------------------- ##
-        ## ------------------------         Neutron observables          ------------------------  ##
-        ## --------------------------------------------------------------------------------------- ##
-        # elif react_dict["sf6"] == "NU":
-        #     if not (
-        #         react_dict["sf6"] == "NU/DE" or react_dict["sf6"] == "FY/DE"
-        #     ) and react_dict["sf5"] == "PR":
+        # --------------------------------------------------------------------------------------- ##
+        # ------------------------         Neutron observables          ------------------------  ##
+        # --------------------------------------------------------------------------------------- ##
+        elif react_dict["sf6"] == "NU":
+            if not (
+                react_dict["sf6"] == "NU/DE" or react_dict["sf6"] == "FY/DE"
+            ) and react_dict["sf5"] == "PR":
                 
-        #         if filter_misc_neutron_observables_case(react_dict, df):
-        #             continue
-        #         process_neutron_observables_case(df, entry_id, entry_json, react_dict)
+                if filter_misc_neutron_observables_case(react_dict, df):
+                    continue
+                process_neutron_observables_case(df, entry_id, entry_json, react_dict)
 
-        #     else:
-        #         if filter_misc_neutron_observables_case(react_dict, df):
-        #             continue
-                # process_misc_neutron_observables_case(df, entry_id, entry_json, react_dict)
+            else:
+                if filter_misc_neutron_observables_case(react_dict, df):
+                    continue
+                process_misc_neutron_observables_case(df, entry_id, entry_json, react_dict)
 
 
         ## --------------------------------------------------------------------------------------- ##
@@ -483,6 +486,7 @@ def process(entnum):
     if entry_json:
         ## Dump JSON into a file
         write_dict_to_json(entnum, entry_json)
+
         ## create bib record in SQLite
         create_and_insert_bib_dict(entnum, entry_json["bib_record"])
         create_and_insert_references_dict(entnum + "-" + "001-0", entry_json["bib_record"])
@@ -543,7 +547,6 @@ def process_all():
     for _, row in df.iterrows():
         ent += [row["entry"]]
     entries = random.sample(ent, len(ent))
-    # entries = ent
 
     start_time = print_process_time()
     logging.info(f"Start processing {print_time()}")

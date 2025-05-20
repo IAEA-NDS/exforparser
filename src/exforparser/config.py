@@ -14,6 +14,7 @@ import site
 from pathlib import Path
 
 from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -34,27 +35,19 @@ elif ENV == "prod":
     OUT_PATH = "/nds/data/dataexplorer_v2/out/"
 
 
-# if ENV == "dev":
-#     if os.path.exists("src/exforparser/"):
-#         EXFOR_PARSER = "src/exforparser/"
-#     else:
-#         EXFOR_PARSER = os.path.join(site.getsitepackages()[0], "exforparser")
-
-# else:
-#     EXFOR_PARSER = os.path.join(site.getsitepackages()[0], "exforparser")
-
-
-EXFOR_MASTER_REPO_PATH = os.path.join(DATA_DIR, "exfor_master")
-EXFOR_DB = os.path.join(DATA_DIR, "exfortables.sqlite")
-# MASS_RANGE_FILE = os.path.join(EXFOR_MASTER_REPO_PATH, "submodules/A_min_max.txt")
+EXFOR_MASTER_REPO_PATH = os.path.join(DATA_DIR, "exfor_master_test")
+EXFOR_DB = os.path.join(DATA_DIR, "exfortables_.sqlite")
 
 
 BUF_SIZE = 65536
 
+
 """ Pickle path of list of EXFOR master files made by parser.list_x4files.py """
 ENTRY_INDEX_PICKLE = os.path.join(BASE_DIR, "pickles/entry.pickle")
-# MT_DEF = os.path.join( EXFOR_PARSER, "tabulated/MTall.dat" )
-# MF3_JSON = os.path.join( EXFOR_PARSER, "tabulated/mf3.json" )
+INSTITUTE_PICKLE = os.path.join(BASE_DIR, "pickles/institute.pickle")
+ENTRY_DOI_PICKLE = os.path.join(BASE_DIR, "pickles/entry_dois.pickle")
+REF_DOI_PICKLE = os.path.join(BASE_DIR, "pickles/ref_metadata.pickle")
+
 
 """ Pickle path of list of EXFOR master files made by parser.list_x4files.py """
 SITE_DIR = site.getsitepackages()[0]
@@ -64,18 +57,17 @@ INSTITUTE_PICKLE = os.path.join(
 
 
 """ SQL database """
-# engine = create_engine("sqlite:///" + EXFOR_DB)
-# Session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
-# session = Session()
-
 engines = {
     "exfor": create_engine("sqlite:///" + EXFOR_DB),
     # "endftables": create_engine("sqlite:///" + ENDFTAB_DB),
 }
-Session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engines["exfor"]))
-session = Session()
+
+session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engines["exfor"]))
 
 
 
 
-
+""" Not used """
+# MASS_RANGE_FILE = os.path.join(EXFOR_MASTER_REPO_PATH, "submodules/A_min_max.txt")
+# MT_DEF = os.path.join( EXFOR_PARSER, "tabulated/MTall.dat" )
+# MF3_JSON = os.path.join( EXFOR_PARSER, "tabulated/mf3.json" )

@@ -216,7 +216,6 @@ def parse_reaction(reaction_field) -> dict:
 
         if operators and x4_code.startswith("(("):
             # print("# All operators: ", operators)
-            b = []
             mathJ = []
             reaction_elem = []
 
@@ -277,10 +276,7 @@ def parse_reaction(reaction_field) -> dict:
                 if exists
                 """
                 main_operator = [o for o in operators if o["main"]]
-                # print( "   # Main operator : ", main_operator)
 
-                # sub_operator = parse_div_multi_operators(x4_code)
-                # print( "   # Sub operator  : ", sub_operator)
 
                 if main_operator:
                     """
@@ -370,14 +366,14 @@ def parse_reaction(reaction_field) -> dict:
         else:
             reaction_info = {
                 "x4_code": x4_code,
-                "math_expression": [],
+                "math_expression": None,
                 "children": [
                     parse_reaction_parts(x4_code)
                 ],
-                "operator": [],
+                "operator": None,
                 "free_text": free_text,
             }
-            reaction_info["children"][0].update({"operator": [], "x4_code": x4_code})
+            reaction_info["children"][0].update({"operator": None, "x4_code": x4_code})
 
         reaction_info["pointer"] = pointer
         dict[pointer] = reaction_info

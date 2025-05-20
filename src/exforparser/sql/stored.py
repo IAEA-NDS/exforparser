@@ -1,10 +1,6 @@
 import sqlalchemy as db
-from sqlalchemy import insert
-from sqlalchemy.orm import load_only
+from sqlalchemy import insert, select, distinct, or_, and_
 import pandas as pd
-
-
-# from sql.creation import exfor_bib, exfor_reactions, exfor_index, exfor_data
 from .models import (
     Exfor_Bib,
     Exfor_Reactions,
@@ -13,71 +9,74 @@ from .models import (
     Exfor_ExperimentalCondition,
     Exfor_Histories,
     Exfor_Data,
+) # will be removed
+from .models_core import (
+    exfor_bib,
+    exfor_reactions,
+    exfor_references,
+    exfor_indexes,
+    exfor_experimental_condition,
+    exfor_histories,
+    exfor_data,
 )
-from exforparser.config import engines, session
+from exforparser.config import engines #, session
 
-connection = engines["exfor"].connect()
-metadata = db.MetaData()
 
-pd.set_option("display.max_rows", None)
-pd.set_option("display.max_columns", None)
+# pd.set_option("display.max_rows", None)
+# pd.set_option("display.max_columns", None)
 
 
 def insert_bib(dictlist):
-    # connection.execute(exfor_bib.insert(), dictlist)
-
-    data = Exfor_Bib(**dictlist)
-    session.add(data)
-    session.commit()
+    with engines["exfor"].begin() as connection: 
+        stmt = insert(exfor_bib) 
+        connection.execute(stmt, dictlist) 
 
 
 def insert_experimental_info(dictlist):
-    for dict in dictlist:
-        data = Exfor_ExperimentalCondition(**dict)
-        session.add(data)
-    session.commit()
+    with engines["exfor"].begin() as connection:
+        stmt = insert(exfor_experimental_condition)
+        connection.execute(stmt, dictlist)
 
 
 
 def insert_df_to_data(df):
     df2 = df.astype(object).where(pd.notnull(df), None)
-    # for record in df2.to_dict(orient="records"):
-    #     query = db.insert(exfor_data).values(record)
-    #     ResultProxy = connection.execute(query)
-
-    df2.to_sql(
-        "exfor_data",
-        connection,
-        index=False,
-        if_exists="append",
-    )
+    with engines["exfor"].connect() as connection:
+        df2.to_sql(
+            "exfor_data",
+            connection,
+            index=False,
+            if_exists="append",
+        )
+    return
 
 
-def insert_referece(dictlist):
-    for dict in dictlist:
-        data = Exfor_References(**dict)
-        session.add(data)
-    session.commit()
+def insert_reference(dictlist):
+    with engines["exfor"].connect() as connection:
+        stmt = insert(exfor_references)  
+        connection.execute(stmt, dictlist)
+        connection.commit()
 
 
 def insert_reaction(dictlist):
-    for dict in dictlist:
-        data = Exfor_Reactions(**dict)
-        session.add(data)
-    session.commit()
+    with engines["exfor"].connect() as connection:
+        stmt = insert(exfor_reactions)
+        connection.execute(stmt, dictlist)
+        connection.commit()
 
 
 def insert_reaction_index(dictlist):
-    for dict in dictlist:
-        data = Exfor_Indexes(**dict)
-        session.add(data)
-    session.commit()
+    with engines["exfor"].connect() as connection:
+        stmt = insert(exfor_indexes)
+        connection.execute(stmt, dictlist)
+        connection.commit()
 
 
-def insert_history(dictlist):
-    data = Exfor_Histories(**dictlist)
-    session.add(data)
-    session.commit()
+
+# def insert_history(dictlist):
+#     data = Exfor_Histories(**dictlist)
+#     session().add(data)
+#     session().commit()
 
 
 ################################################################################
@@ -88,284 +87,251 @@ def insert_history(dictlist):
 def list_of_target(type) -> list:
     targets = []
 
-    # if type == "thermal" or type == "macs":
-    if any(type == t for t in ["xs", "thermal", "macs"]):
-        index_queries = [Exfor_Indexes.sf6 == "SIG"]
+    # 条件を組み立てる
+    if type in ["xs", "thermal", "macs"]:
+        condition = exfor_indexes.c.sf6 == "SIG"
 
     elif type == "angular_distribution":
-        index_queries = [Exfor_Indexes.sf6 == "DA"]
+        condition = exfor_indexes.c.sf6 == "DA"
 
     elif type == "energy_distribution":
-        index_queries = [Exfor_Indexes.sf6 == "DE"]
+        condition = exfor_indexes.c.sf6 == "DE"
 
-    elif type == "ddx":
-        pass
-
-    elif type == "neturons":
-        index_queries = [Exfor_Indexes.sf6 == "NU"]
+    elif type == "neturons":  # <- typo? Should be "neutrons"
+        condition = exfor_indexes.c.sf6 == "NU"
 
     elif type == "tty":
-        index_queries = [Exfor_Indexes.sf6 == "TTY"]
+        condition = exfor_indexes.c.sf6 == "TTY"
 
     elif type == "resonance_integral":
-        index_queries = [Exfor_Indexes.sf6 == "RI"]
+        condition = exfor_indexes.c.sf6 == "RI"
 
     elif type == "resonance_parameter":
-        index_queries = [
-            Exfor_Indexes.sf6.in_(tuple([ "WID", "EN", "J", "L" ]))
-        ]
+        condition = exfor_indexes.c.sf6.in_(["WID", "EN", "J", "L"])
 
     elif type == "gamma_gamma":
-        index_queries = [
-            Exfor_Indexes.sf6.in_(tuple([ "WID" ]))
-        ]
+        condition = exfor_indexes.c.sf6.in_(["WID"])
 
     elif type == "resonance_spacing":
-        """
-        This is for unresolved resonance parameters, i.e. agerage widths (AV), 
-        average level spacing (D0, D1), and strength functions (STF)
-        """
-        index_queries = [
-            Exfor_Indexes.sf6 == "D"
-        ]
+        condition = exfor_indexes.c.sf6 == "D"
 
     elif type == "level_density":
-        index_queries = [
-            Exfor_Indexes.sf6.in_(tuple("LDP"))
-        ]
+        condition = exfor_indexes.c.sf6.in_(["LDP"])
 
-    elif type == "strength_funcition":
-        index_queries = [
-            Exfor_Indexes.sf6.in_(tuple("STF"))
-        ]
+    elif type == "strength_funcition":  # <- typo? Should be "strength_function"
+        condition = exfor_indexes.c.sf6.in_(["STF"])
+
+    else:
+        return []
 
 
-    records = (
-        session.query(Exfor_Indexes.target).filter(*index_queries).distinct().all()
-    )
+    stmt = select(distinct(exfor_indexes.c.target)).where(condition)
 
-    for target in [record[0] if len(record) == 1 else record for record in records]:
-        targets.append(target)
+    with engines["exfor"].connect() as conn:
+        results = conn.execute(stmt).fetchall()
 
+    targets = [row[0] for row in results]
     return sorted(targets)
 
 
-
-def list_of_reactions_and_entries(type) -> list:
-    reactions = []
+def list_of_reactions_and_entries(type: str) -> dict:
     target_dict = {}
 
-    # if type == "thermal" or type == "macs":
-    if any(type == t for t in ["xs", "thermal", "macs"]):
-        index_queries = [
-                        Exfor_Indexes.sf6 == "SIG",
-                        Exfor_Indexes.projectile.in_(tuple(["0", "N", "P", "D", "G", "T"]))
-                        ]
-        
+    if type in ["xs", "thermal", "macs"]:
+        conditions = and_(
+            exfor_indexes.c.sf6 == "SIG",
+            exfor_indexes.c.projectile.in_(["0", "N", "P", "D", "G", "T"])
+        )
 
     elif type == "angular_distribution":
-        index_queries = [Exfor_Indexes.sf6 == "DA"]
+        conditions = exfor_indexes.c.sf6 == "DA"
 
     elif type == "energy_distribution":
-        index_queries = [Exfor_Indexes.sf6 == "DE"]
-
-    elif type == "ddx":
-        pass
+        conditions = exfor_indexes.c.sf6 == "DE"
 
     elif type == "neturons":
-        index_queries = [Exfor_Indexes.sf6 == "NU"]
+        conditions = exfor_indexes.c.sf6 == "NU"
 
     elif type == "tty":
-        index_queries = [Exfor_Indexes.sf6 == "TTY"]
+        conditions = exfor_indexes.c.sf6 == "TTY"
 
-    records = (
-        session.query(Exfor_Indexes.target, 
-                      Exfor_Indexes.process, 
-                      Exfor_Indexes.entry_id)
-        .filter(*index_queries)
-        .order_by(Exfor_Indexes.target)
+    else:
+        return {}
+
+    stmt = (
+        select(
+            exfor_indexes.c.target,
+            exfor_indexes.c.process,
+            exfor_indexes.c.entry_id
+        )
+        .where(conditions)
         .distinct()
-        .all()
+        .order_by(exfor_indexes.c.target)
     )
 
-    for record in records:
-        if target_dict.get(record.target):
-            if target_dict[record.target].get(record.process):
-                target_dict[record.target][record.process].append(record.entry_id)
+    with engines["exfor"].connect() as conn:
+        results = conn.execute(stmt).fetchall()
 
-            else:
-                target_dict[record.target][record.process] = [record.entry_id]
+    for target, process, entry_id in results:
+        target_dict.setdefault(target, {}).setdefault(process, []).append(entry_id)
 
-        else:
-            target_dict[record.target] = {record.process : [record.entry_id]}
-
-    
     return target_dict
 
 
-def entry_query_by_id(entries):
-    queries = [Exfor_Bib.entry.in_(tuple(entries))]
-    # bib = session().query(Exfor_Indexes).filter().all()
+def entry_query_by_id(entries: list) -> pd.DataFrame:
+    stmt = select(exfor_bib).where(exfor_bib.c.entry.in_(entries))
 
-    indexes = session.query(Exfor_Bib).filter(*queries)
-    df = pd.read_sql(
-        sql=indexes.statement,
-        con=connection,
-    )
+    with engines["exfor"].connect() as conn:
+        df = pd.read_sql(stmt, conn)
 
     return df
 
 
 def observable_data_query(type, target, reaction):
-    index_queries = [
-        Exfor_Indexes.target == target,
-        Exfor_Indexes.arbitrary_data == False,
-        Exfor_Indexes.process == reaction,
+
+    conditions = [
+        exfor_indexes.c.target == target,
+        exfor_indexes.c.arbitrary_data == False,
+        exfor_indexes.c.process == reaction,
     ]
 
-    if type =="xs":
-        index_queries += [
-            Exfor_Indexes.projectile.in_(tuple(["0", "N", "P", "D", "G", "T"])),
-            Exfor_Indexes.sf6 == "SIG",
-            Exfor_Indexes.sf7 == None,
+    if type == "xs":
+        conditions += [
+            exfor_indexes.c.projectile.in_(["0", "N", "P", "D", "G", "T"]),
+            exfor_indexes.c.sf6 == "SIG",
+            exfor_indexes.c.sf7.is_(None),
         ]
 
-    elif any(type == t for t in [ "thermal", "macs"]):
-        index_queries += [
-            Exfor_Indexes.projectile == "N",
-            Exfor_Indexes.sf5 == None,
-            Exfor_Indexes.sf6 == "SIG",
-            Exfor_Indexes.sf7 == None,
+    elif type in ["thermal", "macs"]:
+        conditions += [
+            exfor_indexes.c.projectile == "N",
+            exfor_indexes.c.sf5.is_(None),
+            exfor_indexes.c.sf6 == "SIG",
+            exfor_indexes.c.sf7.is_(None),
         ]
+
     elif type == "resonance_integral":
-        # Resonance Integral: SF6 = RI
-        index_queries += [
-            Exfor_Indexes.sf5 == None,
-            Exfor_Indexes.sf6 == "RI",
-            Exfor_Indexes.sf7 == None,
+        conditions += [
+            exfor_indexes.c.sf5.is_(None),
+            exfor_indexes.c.sf6 == "RI",
+            exfor_indexes.c.sf7.is_(None),
         ]
 
     elif type == "resonance_parameter":
-        index_queries += [
-            Exfor_Indexes.sf5 == None,
-            Exfor_Indexes.sf6.in_(tuple(["WID", "WID/RED", "J", "L"])),
-            Exfor_Indexes.sf7 == None,
+        conditions += [
+            exfor_indexes.c.sf5.is_(None),
+            exfor_indexes.c.sf6.in_(["WID", "WID/RED", "J", "L"]),
+            exfor_indexes.c.sf7.is_(None),
         ]
 
     elif type == "gamma_gamma":
-        index_queries += [
-            Exfor_Indexes.sf5 == None,
-            Exfor_Indexes.sf6 == "WID",
-            Exfor_Indexes.sf7 == None,
-            Exfor_Indexes.sf8 == "AV",
+        conditions += [
+            exfor_indexes.c.sf5.is_(None),
+            exfor_indexes.c.sf6 == "WID",
+            exfor_indexes.c.sf7.is_(None),
+            exfor_indexes.c.sf8 == "AV",
         ]
 
     elif type == "resonance_spacing":
-        index_queries += [
-            Exfor_Indexes.sf5 == None,
-            Exfor_Indexes.sf6 == "D",
-            Exfor_Indexes.sf7 == None,
+        conditions += [
+            exfor_indexes.c.sf5.is_(None),
+            exfor_indexes.c.sf6 == "D",
+            exfor_indexes.c.sf7.is_(None),
         ]
 
+    stmt = select(exfor_indexes.c.entry_id).where(and_(*conditions))
 
-    reac = session.query(Exfor_Indexes.entry_id).filter(*index_queries).all()
+    with engines["exfor"].connect() as conn:
+        result = conn.execute(stmt).fetchall()
 
-    entries = [ ent.entry_id if reac else None for ent in reac ]
+    entries = [row.entry_id for row in result] if result else [None]
     return data_query_by_id(type, entries)
 
 
 
 
 def data_query_by_id(type, entries):
-    ## Query exfor_data table based on the entry_ids
-    queries = [Exfor_Data.entry_id.in_(tuple(entries))]
+
+    conditions = [exfor_data.c.entry_id.in_(entries)]
 
     if type == "xs":
-        queries.append(Exfor_Indexes.mt == Exfor_Data.mt)
+        # Exfor_Indexes.mt == Exfor_Data.mt)
+        # Moved to join statement
+        pass
 
-    if type == "thermal":
-        queries.append(Exfor_Data.en_inc >= 2.52e-8)
-        queries.append(Exfor_Data.en_inc <= 2.54e-8)
+    elif type == "thermal":
+        conditions += [
+            exfor_data.c.en_inc >= 2.52e-8,
+            exfor_data.c.en_inc <= 2.54e-8,
+        ]
 
-    if type == "macs":
-        queries.append(Exfor_Data.en_inc >= 0.024)
-        queries.append(Exfor_Data.en_inc <= 0.035)
+    elif type == "macs":
+        conditions += [
+            exfor_data.c.en_inc >= 0.024,
+            exfor_data.c.en_inc <= 0.035,
+        ]
 
-    all = (
-        session.query(
-            # Exfor_Reactions
-            Exfor_Bib.first_author,
-            Exfor_Bib.first_author_institute,
-            Exfor_Bib.main_facility_institute,
-            Exfor_Bib.main_facility_type,
-            Exfor_Bib.main_reference,
-            Exfor_Bib.year,
-            Exfor_Indexes.entry_id,
-            Exfor_Indexes.target,
-            Exfor_Indexes.process,
-            Exfor_Indexes.sf4,
-            Exfor_Indexes.sf5,
-            Exfor_Indexes.sf6,
-            Exfor_Indexes.sf7,
-            Exfor_Indexes.sf8,
-            Exfor_Indexes.sf9,
-            Exfor_Indexes.x4_code,
-            Exfor_Indexes.residual,
-            Exfor_Indexes.level_num,
-            Exfor_Data.en_inc,
-            Exfor_Data.den_inc,
-            Exfor_Data.en_inc_frame,
-            Exfor_Data.en_inc_min,
-            Exfor_Data.en_inc_max,
-            Exfor_Data.e_out,
-            Exfor_Data.de_out,
-            Exfor_Data.data,
-            Exfor_Data.ddata,
-            Exfor_Data.flags,
-            Exfor_Data.mf,
-            Exfor_Data.mt,
+    # SELECT句のカラム
+    stmt = (
+        select(
+            exfor_bib.c.first_author,
+            exfor_bib.c.first_author_institute,
+            exfor_bib.c.main_facility_institute,
+            exfor_bib.c.main_facility_type,
+            exfor_bib.c.main_reference,
+            exfor_bib.c.year,
+            exfor_indexes.c.entry_id,
+            exfor_indexes.c.target,
+            exfor_indexes.c.process,
+            exfor_indexes.c.sf4,
+            exfor_indexes.c.sf5,
+            exfor_indexes.c.sf6,
+            exfor_indexes.c.sf7,
+            exfor_indexes.c.sf8,
+            exfor_indexes.c.sf9,
+            exfor_indexes.c.x4_code,
+            exfor_indexes.c.residual,
+            exfor_indexes.c.level_num,
+            exfor_data.c.en_inc,
+            exfor_data.c.den_inc,
+            exfor_data.c.en_inc_frame,
+            exfor_data.c.en_inc_min,
+            exfor_data.c.en_inc_max,
+            exfor_data.c.e_out,
+            exfor_data.c.de_out,
+            exfor_data.c.data,
+            exfor_data.c.ddata,
+            exfor_data.c.flags,
+            exfor_data.c.mf,
+            exfor_data.c.mt,
         )
-        .select_from(Exfor_Data)
-        .filter(*queries)
-        .join(
-            Exfor_Bib,
-            Exfor_Indexes.entry == Exfor_Bib.entry,
-            # isouter=True
+        .select_from(
+            exfor_data.join(
+                exfor_indexes,
+                and_(
+                    exfor_indexes.c.entry_id == exfor_data.c.entry_id,
+                    # mt 条件（xsの場合）
+                    *( [exfor_indexes.c.mt == exfor_data.c.mt] if type == "xs" else [] )
+                ),
+                isouter=True
+            ).join(
+                exfor_bib,
+                exfor_indexes.c.entry == exfor_bib.c.entry,
+            )
         )
-        .join(
-            Exfor_Indexes,
-            Exfor_Indexes.entry_id == Exfor_Data.entry_id,
-            isouter=True
-        )
-        # .group_by(Exfor_Reactions.entry_id)
+        .where(and_(*conditions))
         .order_by(
-            Exfor_Indexes.sf9,
-            Exfor_Indexes.sf8,
-            Exfor_Indexes.sf7,
-            Exfor_Bib.year.asc(),
+            exfor_indexes.c.sf9,
+            exfor_indexes.c.sf8,
+            exfor_indexes.c.sf7,
+            exfor_bib.c.year.asc(),
         )
     )
-    df = pd.read_sql(
-        sql=all.statement,
-        con=connection,
-    )
-    # print(df)
+
+    # 実行 & DataFrame に変換
+    with engines["exfor"].connect() as conn:
+        df = pd.read_sql(stmt, conn)
+
     return df
 
 
-
-################################################################################
-####         For maintenance purpose
-################################################################################
-
-
-def show():
-    results = connection.execute(db.select([Exfor_Data])).fetchall()
-    df = pd.DataFrame(results)
-    df.columns = results[0].keys()
-    df.head(4)
-
-
-def drop_tables():
-    for tbl in reversed(metadata.sorted_tables):
-        engine.execute(tbl.delete())
