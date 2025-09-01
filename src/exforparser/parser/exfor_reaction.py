@@ -129,37 +129,45 @@ def parse_operators(expr) -> list:
         {
             "operator": m.group(0).replace(")", "").replace("(", ""),
             "span": [m.start() + 1, m.end() - 1],
-            "main": True if any(t in m.group(0) for t in ("//", "=")) else True if any(t in m.group(0) for t in ( "/", "*" )) else False,
+            "main": (
+                True
+                if any(t in m.group(0) for t in ("//", "="))
+                else True if any(t in m.group(0) for t in ("/", "*")) else False
+            ),
         }
         for m in re.finditer(r"\)(?:[*+-/=]{1,2})\(|\)\)(?:[*+-/=]{1,2})\(", expr)
     ]
+
 
 def parse_div_multi_operators(expr) -> list:
     return [
         {
             "operator": m.group(0).replace(")", "").replace("(", ""),
             "span": [m.start() + 1, m.end() - 1],
-            "main": True if any(t in m.group(0) for t in ( "/", "*" )) else False,
+            "main": True if any(t in m.group(0) for t in ("/", "*")) else False,
         }
         for m in re.finditer(r"\)(?:[*/]{1})\(|\)\)(?:[*/]{1})\(", expr)
     ]
 
 
-
 def math_same_operator(type, main_operator, operators, reaction_elements):
     if type == "before":
         mathJ = [
-            [operators_dict[operators[0]["operator"]]] + [
-            re.sub(r'[\(]{2,3}', '(', re.sub(r'[\)]{2,3}', ')', r["code"]) )
-            for r in reaction_elements
-            if r["span"][1] <= main_operator[0]["span"][0] ]
+            [operators_dict[operators[0]["operator"]]]
+            + [
+                re.sub(r"[\(]{2,3}", "(", re.sub(r"[\)]{2,3}", ")", r["code"]))
+                for r in reaction_elements
+                if r["span"][1] <= main_operator[0]["span"][0]
+            ]
         ]
     elif type == "after":
         mathJ = [
-            [operators_dict[operators[0]["operator"]]] + [
-            re.sub(r'[\(]{2,3}', '(', re.sub(r'[\)]{2,3}', ')', r["code"]) )
-            for r in reaction_elements
-            if main_operator[0]["span"][1] <= r["span"][0] ]
+            [operators_dict[operators[0]["operator"]]]
+            + [
+                re.sub(r"[\(]{2,3}", "(", re.sub(r"[\)]{2,3}", ")", r["code"]))
+                for r in reaction_elements
+                if main_operator[0]["span"][1] <= r["span"][0]
+            ]
         ]
     return mathJ
 
@@ -167,27 +175,24 @@ def math_same_operator(type, main_operator, operators, reaction_elements):
 def math_some_operations(type, main_operator, op, reaction_elements):
     # sub_operator = [o for o in op if o["operator"] in ["/", "*"]]
     if type == "before":
-        mathJ = [ 
-            [operators_dict[op["operator"]]] 
-            + 
-            [
-                re.sub(r'[\(]{2,3}', '(', re.sub(r'[\)]{2,3}', ')', r["code"]) )
+        mathJ = [
+            [operators_dict[op["operator"]]]
+            + [
+                re.sub(r"[\(]{2,3}", "(", re.sub(r"[\)]{2,3}", ")", r["code"]))
                 for r in reaction_elements
                 if r["span"][1] <= main_operator[0]["span"][0]
-            ] 
             ]
+        ]
     elif type == "after":
-        mathJ = [ 
-            [operators_dict[op["operator"]]] 
-            + 
-            [
-                re.sub(r'[\(]{2,3}', '(', re.sub(r'[\)]{2,3}', ')', r["code"]) )
+        mathJ = [
+            [operators_dict[op["operator"]]]
+            + [
+                re.sub(r"[\(]{2,3}", "(", re.sub(r"[\)]{2,3}", ")", r["code"]))
                 for r in reaction_elements
-                if main_operator[0]["span"][1] <= r["span"][0] 
-            ] 
+                if main_operator[0]["span"][1] <= r["span"][0]
             ]
+        ]
     return mathJ
-
 
 
 def parse_reaction(reaction_field) -> dict:
@@ -212,7 +217,6 @@ def parse_reaction(reaction_field) -> dict:
              {'operator': '/', 'span': [83, 85], 'main': False}]
         """
         operators = parse_operators(x4_code)
-        
 
         if operators and x4_code.startswith("(("):
             # print("# All operators: ", operators)
@@ -230,24 +234,44 @@ def parse_reaction(reaction_field) -> dict:
                 if i == 0:
                     span = [0, operator_pos[i][0]]
                     reaction_elem += [
-                        {"span": span, "code": re.sub(r'[\(]{2,3}', '(', re.sub(r'[\)]{2,3}', ')', x4_code[span[0] : span[1]] ) ) }
+                        {
+                            "span": span,
+                            "code": re.sub(
+                                r"[\(]{2,3}",
+                                "(",
+                                re.sub(r"[\)]{2,3}", ")", x4_code[span[0] : span[1]]),
+                            ),
+                        }
                     ]
 
                 elif i != len(operator_pos):
                     span = [operator_pos[i - 1][1], operator_pos[i][0]]
                     reaction_elem += [
-                        {"span": span, "code": re.sub(r'[\(]{2,3}', '(', re.sub(r'[\)]{2,3}', ')',  x4_code[span[0] : span[1]] ) ) }
+                        {
+                            "span": span,
+                            "code": re.sub(
+                                r"[\(]{2,3}",
+                                "(",
+                                re.sub(r"[\)]{2,3}", ")", x4_code[span[0] : span[1]]),
+                            ),
+                        }
                     ]
 
                 else:
                     span = [operator_pos[i - 1][1], len(x4_code)]
                     reaction_elem += [
-                        {"span": span, "code": re.sub(r'[\(]{2,3}', '(', re.sub(r'[\)]{2,3}', ')', x4_code[span[0] : span[1]] ) )}
+                        {
+                            "span": span,
+                            "code": re.sub(
+                                r"[\(]{2,3}",
+                                "(",
+                                re.sub(r"[\)]{2,3}", ")", x4_code[span[0] : span[1]]),
+                            ),
+                        }
                     ]
 
             ## Check if the number of elements parsed are +1 than operators
             assert len(operators) + 1 == len(reaction_elem)
-
 
             if all(operators[0]["operator"] == x["operator"] for x in operators):
                 """
@@ -271,12 +295,11 @@ def parse_reaction(reaction_field) -> dict:
             elif not all(operators[0]["operator"] == x["operator"] for x in operators):
                 """
                 Search main operator, i.e. "//" and "=" from the list of operators
-                It returns a list of the dictionary 
-                    e.g. [{'operator': '//', 'span': [76, 79], 'main': True}] 
+                It returns a list of the dictionary
+                    e.g. [{'operator': '//', 'span': [76, 79], 'main': True}]
                 if exists
                 """
                 main_operator = [o for o in operators if o["main"]]
-
 
                 if main_operator:
                     """
@@ -302,7 +325,7 @@ def parse_reaction(reaction_field) -> dict:
                     if not op_before:
                         ## Add first reaction element before main operator
                         mathJ += [
-                            re.sub(r'[\(]{2,3}', '(', r["code"])
+                            re.sub(r"[\(]{2,3}", "(", r["code"])
                             for r in reaction_elem
                             if r["span"][1] <= main_operator[0]["span"][0]
                         ]
@@ -312,31 +335,42 @@ def parse_reaction(reaction_field) -> dict:
                         The case if there is another operator before the main operator, such as:
                         C2768: (((2-HE-4(42-MO-100,N)44-RU-103,,SIG,,AV)+(2-HE-4(42-MO-100,2N)44-RU-102,,SIG,,AV))=((42-MO-100(A,N)44-RU-103,,SIG,,AV)+(42-MO-100(A,2N)44-RU-102,,SIG,,AV)))
                         """
-                        if all(op_before[0]["operator"] == ob["operator"] for ob in op_before):
+                        if all(
+                            op_before[0]["operator"] == ob["operator"]
+                            for ob in op_before
+                        ):
                             ## Check if the all operators in front of main operator are same (or only one operator)
-                            mathJ +=  math_same_operator("before", main_operator, op_before, reaction_elem)
+                            mathJ += math_same_operator(
+                                "before", main_operator, op_before, reaction_elem
+                            )
 
                         else:
                             for op in op_before:
-                                mathJ +=  math_some_operations("before", main_operator, op, reaction_elem) 
+                                mathJ += math_some_operations(
+                                    "before", main_operator, op, reaction_elem
+                                )
 
                     if op_after:
-                        if all(op_after[0]["operator"] == of["operator"] for of in op_after):
-                            mathJ +=  math_same_operator("after", main_operator, op_after, reaction_elem)
+                        if all(
+                            op_after[0]["operator"] == of["operator"] for of in op_after
+                        ):
+                            mathJ += math_same_operator(
+                                "after", main_operator, op_after, reaction_elem
+                            )
 
                         else:
                             for of in op_after:
-                                mathJ +=  math_some_operations("after", main_operator, of, reaction_elem) 
-
+                                mathJ += math_some_operations(
+                                    "after", main_operator, of, reaction_elem
+                                )
 
                     if not op_after:
                         ## Add last reaction element
                         mathJ += [
-                            re.sub(r'[\(]{2,3}', '(', r["code"])
+                            re.sub(r"[\(]{2,3}", "(", r["code"])
                             for r in reaction_elem
                             if main_operator[0]["span"][1] <= r["span"][0]
                         ]
-
 
                 else:
                     """
@@ -344,9 +378,9 @@ def parse_reaction(reaction_field) -> dict:
                     O0577: (((92-U-0(P,F)51-SB-127,,SIG)+(92-U-0(P,F)50-SN-127-M,CUM,SIG))/(92-U-0(P,F)51-SB-122,,SIG))
                     """
                     mathJ = [operators_dict[operators[0]["operator"]]] + [
-                    r["code"].replace("((", "(").replace("))", ")")
-                    for r in reaction_elem
-                ]
+                        r["code"].replace("((", "(").replace("))", ")")
+                        for r in reaction_elem
+                    ]
 
             else:
                 # mathJ = [operators_dict[ main_operator[0]["operator"] ]]
@@ -357,7 +391,10 @@ def parse_reaction(reaction_field) -> dict:
 
             reaction_info = {
                 "x4_code": x4_code,
-                "children": [{**{"x4_code": r["code"]}, **parse_reaction_parts(r["code"])} for r in reaction_elem],
+                "children": [
+                    {**{"x4_code": r["code"]}, **parse_reaction_parts(r["code"])}
+                    for r in reaction_elem
+                ],
                 "math_expression": mathJ,
                 "operator": mathJ[0],
                 "free_text": free_text,
@@ -367,9 +404,7 @@ def parse_reaction(reaction_field) -> dict:
             reaction_info = {
                 "x4_code": x4_code,
                 "math_expression": None,
-                "children": [
-                    parse_reaction_parts(x4_code)
-                ],
+                "children": [parse_reaction_parts(x4_code)],
                 "operator": None,
                 "free_text": free_text,
             }
@@ -379,4 +414,3 @@ def parse_reaction(reaction_field) -> dict:
         dict[pointer] = reaction_info
 
     return dict
-

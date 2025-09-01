@@ -7,38 +7,42 @@ from exforparser.config import engines
 from exforparser.sql.initialize import initialize_db, load_pickles
 from exforparser.json_converter import convert, convert_all, convert_updated_entry
 from exforparser.tabulate import process, process_all, process_updated_entry
-from exforparser.tabulator.data_observables import crosssection, thermal, resonance_spacing, resonance_integral, gamma_gamma, macs
+from exforparser.tabulator.data_observables import (
+    crosssection,
+    thermal,
+    resonance_spacing,
+    resonance_integral,
+    gamma_gamma,
+    macs,
+    resonance_parameter,
+)
 import logging
-
 
 
 def cli():
     parser = argparse.ArgumentParser(prog="EXFOR Parser", add_help=False)
 
     parser.add_argument(
-        "-c", 
-        "--convert", 
-        help="Convert EXFOR entry into JSON. 'all', 'updated', and an entry number is allowed."
+        "-c",
+        "--convert",
+        help="Convert EXFOR entry into JSON. 'all', 'updated', and an entry number is allowed.",
     )
 
     parser.add_argument(
         "-i",
         "--init",
         help="Create and initialize the SQLite Database",
-        action='store_true'
+        action="store_true",
     )
 
     parser.add_argument(
-        "-l",
-        "--load",
-        help="Load other data source from Pickles",
-        action='store_true'
+        "-l", "--load", help="Load other data source from Pickles", action="store_true"
     )
 
     parser.add_argument(
         "-t",
         "--tabulate",
-        help="Convert EXFOR into tabulated tables in ASCII text. 'all', 'updated', and an entry number is allowed."
+        help="Convert EXFOR into tabulated tables in ASCII text. 'all', 'updated', and an entry number is allowed.",
     )
 
     parser.add_argument(
@@ -52,12 +56,12 @@ def cli():
             "agnle",
             "fy",
             "resonance_integral",
-            "resonance_parameters",
+            "resonance_parameter",
             "gamma_gamma",
             "macs",
             "resonance_spacing",
             "level_density",
-            "strength_funcition"
+            "strength_funcition",
         ],
         help='output EXFORTABLES like format from SQLite Database \n options: "all", "thermal": thermal cross section, "rp": resonance parameters, "ri": resonance integral, "xs": all cross sections, "energy": energy distributions, "agnle": anguler distributions, "fy": fission yields',
     )
@@ -122,6 +126,8 @@ def cli():
         if args.observables == "resonance_spacing":
             resonance_spacing()
 
+        if args.observables == "resonance_parameter":
+            resonance_parameter()
 
 
 if __name__ == "__main__":

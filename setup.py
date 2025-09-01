@@ -22,7 +22,7 @@ if __name__ == "__main__":
 # setup(
 #     name="exforparser",
 #     description="EXFOR Parser",
-#     packages=find_packages(exclude=["test"]), 
+#     packages=find_packages(exclude=["test"]),
 #     py_modules=['exparser', 'tabulated'],
 #     version=version,
 #     author="Shin Okumura/IAEA-NDS",

@@ -26,19 +26,19 @@ d = Diction("35")
 sf9_list = d.get_diction()
 
 
-def bib_table_original(id, main_bib_dict, react_dict, mfmt, df):
+def bib_table_original(entry_id, main_bib_dict, react_dict, mfmt, df):
     print(
-        "# entry-subent-pointer  :",
-        id,
+        "# Entry-Subent-Pointer  :",
+        entry_id,
         "\n" "# EXFOR reaction        :",
         react_dict["x4_code"],
-        "\n" "# incident energy       :",
+        "\n" "# Incident energy       :",
         (
-            "{:.4e} MeV".format(df.en_inc.min())
+            "{:.4e} MeV".format(df.en_inc.min() / 1e6)
             + " - "
-            + "{:.4e} MeV".format(df.en_inc.max())
+            + "{:.4e} MeV".format(df.en_inc.max() / 1e6)
             if len(df["en_inc"].unique()) > 1
-            else "{:.4e} MeV".format(df["en_inc"].unique()[0])
+            else "{:.4e} MeV".format(df["en_inc"].unique()[0] / 1e6)
         ),
         "\n" "# target                :",
         target_reformat(react_dict),
@@ -63,7 +63,7 @@ def bib_table_original(id, main_bib_dict, react_dict, mfmt, df):
         ),
         "\n" "# level energy          :",
         (
-            "{:.4e} MeV".format(df.e_out.unique()[0])
+            "{:.4e} MeV".format(df.e_out.unique()[0] / 1e6)
             if not df["e_out"].isnull().all()
             else "-"
         ),
@@ -115,62 +115,54 @@ def bib_table_original(id, main_bib_dict, react_dict, mfmt, df):
         ),
         "\n" "# git                   :",
         "https://github.com/IAEA-NDS/exfor_master/blob/main/exforall/"
-        + id[:3]
+        + entry_id[:3]
         + "/"
-        + id[0:5]
+        + entry_id[0:5]
         + ".x4",
         "\n" "# nds                   :",
-        "https://nds.iaea.org/EXFOR/" + id[0:5],
+        "https://nds.iaea.org/EXFOR/" + entry_id[0:5],
     )
 
 
-
-def bib_table(id, main_bib_dict, react_dict, mfmt, df):
+def bib_table(entry_id, main_bib_dict, react_dict, mfmt, df):
+    today = datetime.today().strftime("%Y-%m-%d")
     print(
-        "# entry-subent-pointer  :",
-        id,
-        "\n" "# EXFOR reaction        :",
-        react_dict["x4_code"],
-        "\n" "# incident energy       :",
+        "# Header:",
+        "\n"
+        f"#   Title: {react_dict['target']}({react_dict['process']})  {d.get_sf6(react_dict['sf6'])}",
+        "\n" f"#   Source: EXFOR",
+        "\n" f"#   Date created: {str(today)}",
+        "\n" f"# Target:",
+        "\n" f"#   Z: {react_dict['target'].split('-')[0]}",
+        "\n" f"#   A: {react_dict['target'].split('-')[2]}",
+        "\n" f"#   Nuclide: {react_dict['target']}",
+        "\n" f"# Reaction:",
+        "\n" f"#   Process: {react_dict['process']}",
+        "\n" f"#   MF-MT number: {mfmt}",
+        "\n" f"#   Incident energy: ",
         (
-            "{:.4e} MeV".format(df.en_inc.min())
+            "{:.4e} MeV".format(df.en_inc.min() / 1e6)
             + " - "
-            + "{:.4e} MeV".format(df.en_inc.max())
+            + "{:.4e} MeV".format(df.en_inc.max() / 1e6)
             if len(df["en_inc"].unique()) > 1
-            else "{:.4e} MeV".format(df["en_inc"].unique()[0])
+            else "{:.4e} MeV".format(df["en_inc"].unique()[0] / 1e6)
         ),
-        "\n" "# target                :",
-        target_reformat(react_dict),
-        "\n" "# product               :",
+        "\n" f"# Residual:",
+        "\n"
+        f"#   Z: {react_dict['sf4'].split('-')[0] if react_dict['sf4'] and react_dict['sf4'][0].isdigit() else ''}",
+        "\n"
+        f"#   A: {react_dict['sf4'].split('-')[2] if react_dict['sf4'] and react_dict['sf4'][0].isdigit() else ''}",
+        "\n" f"#   Nuclide: {react_dict['sf4'] if react_dict['sf4'] else ''}",
+        "\n" "#   Level energy:",
         (
-            "-"
-            if df["residual"].isnull().all()
-            else (
-                df["residual"].unique()[0]
-                if len(df["residual"].unique()) == 1
-                and not pd.isnull(df["residual"].unique())
-                else (
-                    str(df.mass.min()) + " <= A <= " + str(df.mass.max())
-                    if "A=" in df["residual"].unique()[0]
-                    else (
-                        str(df.charge.min()) + " <= Z <= " + str(df.charge.max())
-                        if "Z=" in df["residual"].unique()[0]
-                        else "-"
-                    )
-                )
-            )
-        ),
-        "\n" "# level energy          :",
-        (
-            "{:.4e} MeV".format(df.e_out.unique()[0])
+            "{:.4e} MeV".format(df.e_out.unique()[0] / 1e6)
             if not df["e_out"].isnull().all()
             else "-"
         ),
-        "\n" "# MF-MT number          :",
-        mfmt,
-        "\n" "# first author          :",
-        main_bib_dict["authors"][0]["name"],
-        "\n" "# institute             :",
+        "\n" "# EXFOR BIB:" "\n" f"#   Entry id: {entry_id} (entry-subentry-pointer)",
+        "\n" f"#   Reaction code: {react_dict['x4_code']}",
+        "\n" f"#   First author: {main_bib_dict['first_author']}",
+        "\n" "#   Institute: ",
         (
             main_bib_dict["first_author_institute"]
             + ": "
@@ -178,19 +170,15 @@ def bib_table(id, main_bib_dict, react_dict, mfmt, df):
             if main_bib_dict.get("first_author_institute")
             else None
         ),
-        "\n" "# reference             :",
+        "\n" "#   Reference: ",
         (
             main_bib_dict["main_reference"]
             if main_bib_dict.get("main_reference")
             else "no reference"
         ),
-        "\n" "# year                  :",
-        (
-            main_bib_dict["year"]
-            if main_bib_dict.get("year")
-            else "no info"
-        ),
-        "\n" "# facility              :",
+        "\n" "#   Year: ",
+        (main_bib_dict["year"] if main_bib_dict.get("year") else "no info"),
+        "\n" "#   Facility: ",
         (
             main_bib_dict["main_facility_type"]
             + ": "
@@ -203,31 +191,112 @@ def bib_table(id, main_bib_dict, react_dict, mfmt, df):
                 + ": "
                 + d.get_facility(main_bib_dict["main_facility_institute"])
                 if main_bib_dict.get("main_facility_institute")
-                else  None
+                else None
             )
         ),
-        "\n" "# git                   :",
+        "\n" "#   Master file: ",
         "https://github.com/IAEA-NDS/exfor_master/blob/main/exforall/"
-        + id[:3]
+        + entry_id[:3]
         + "/"
-        + id[0:5]
+        + entry_id[0:5]
         + ".x4",
-        "\n" "# nds                   :",
-        "https://nds.iaea.org/EXFOR/" + id[0:5],
+        "\n" "#   nds: ",
+        "https://nds.iaea.org/EXFOR/" + entry_id[0:5],
     )
 
 
-def write_to_exfortables_format_sig(id, dir, file, main_bib_dict, react_dict, mt, df):
+def bib_table_resonance_parameter(entry_id, main_bib_dict, react_dict, mfmt, df):
+    today = datetime.today().strftime("%Y-%m-%d")
+    parts = react_dict['target'].split('-')
+    charge = parts[0]
+    elem = parts[1]
+    mass = parts[2]
+    isomer = parts[3] if len(parts) == 4 else ""   # 4 要素あるときだけ index 3 を使う
+
+    print(
+        f"# Header:",
+        "\n"
+        f"#   Title                 : {react_dict['target']} Resonance Parameter: {react_dict['sf6']}",
+        "\n" f"#   Source                : EXFOR",
+        "\n" f"#   Date Created          : {str(today)}",
+        "\n" f"# EXFOR Bibliographic Information:",
+        "\n" f"#   Entry-Subent-Pointer  : {react_dict['entry_id']}",
+        "\n"  "#   First Author          :",
+            main_bib_dict["authors"][0]["name"],
+        "\n" "#   Institute             :",
+        (
+            main_bib_dict["first_author_institute"]
+            + ": "
+            + d.get_institute(main_bib_dict["first_author_institute"])
+            if main_bib_dict.get("first_author_institute")
+            else None
+        ),
+        "\n" "#   Reference             :",
+        (
+            main_bib_dict["main_reference"]
+            if main_bib_dict.get("main_reference")
+            else "no reference"
+        ),
+        "\n" "#   Year                  :",
+        (main_bib_dict["year"] if main_bib_dict.get("year") else "no info"),
+        "\n" "#   Facility              :",
+        (
+            main_bib_dict["main_facility_type"]
+            + ": "
+            + d.get_facility(main_bib_dict["main_facility_type"])
+            if main_bib_dict.get("main_facility_type")
+            else (
+                None
+                + " in "
+                + main_bib_dict["main_facility_institute"]
+                + ": "
+                + d.get_facility(main_bib_dict["main_facility_institute"])
+                if main_bib_dict.get("main_facility_institute")
+                else None
+            )
+        ),
+        "\n" f"# Target:",
+        "\n" f"#   Z                     : {charge}",
+        "\n" f"#   A                     : {mass}",
+        "\n" f"#   Isomer                : {isomer}",
+        "\n" f"#   Nuclide               : {react_dict['target']}",
+        "\n" f"# Reaction:",
+        "\n" f"#   EXFOR Reaction        : {react_dict['x4_code']}",
+        "\n"  "#   Incident Energy       :",
+        (
+            "{:.4e} eV".format(df.en_inc.min())
+            + " - "
+            + "{:.4e} eV".format(df.en_inc.max())
+            if len(df["en_inc"].unique()) > 1
+            else "{:.4e} eV".format(df["en_inc"].unique()[0])
+        ),
+        "\n" f"#   Resonance Energy Type : {react_dict['en_res_type']}",
+        "\n" f"# Links:",
+        "\n"  "#   git                   :",
+        "https://github.com/IAEA-NDS/exfor_master/blob/main/exforall/"
+        + entry_id[:3]
+        + "/"
+        + entry_id[0:5]
+        + ".x4",
+        "\n" "#   nds                   :",
+        "https://nds.iaea.org/EXFOR/" + entry_id[0:5],
+    )
+
+
+def write_to_exfortables_format_sig(
+    entry_id, dir, file, main_bib_dict, react_dict, mt, df
+):
     ## create an output directory if it doesn't exist
     if os.path.exists(dir):
         pass
 
     else:
         os.makedirs(dir)
+
     with open(file, "w") as f:
         with pd.option_context("display.float_format", "{:11.5e}".format):
             with redirect_stdout(f):
-                bib_table(id, main_bib_dict, react_dict, mt, df)
+                bib_table(entry_id, main_bib_dict, react_dict, mt, df)
                 print("#")
                 print(
                     "#       E_in(MeV)         dE_in(MeV)        XS(B)             dXS(B)"
@@ -235,8 +304,8 @@ def write_to_exfortables_format_sig(id, dir, file, main_bib_dict, react_dict, mt
                 for i, row in df.iterrows():
                     print(
                         "{:18.4E}{:18.4E}{:18.4E}{:18.4E}".format(
-                            row["en_inc"],
-                            0.0 if pd.isnull(row["den_inc"]) else row["den_inc"],
+                            row["en_inc"] / 1e6,
+                            0.0 if pd.isnull(row["den_inc"]) else row["den_inc"] / 1e6,
                             row["data"],
                             0.0 if pd.isnull(row["ddata"]) else row["ddata"],
                         )
@@ -245,7 +314,9 @@ def write_to_exfortables_format_sig(id, dir, file, main_bib_dict, react_dict, mt
     return
 
 
-def write_to_exfortables_format_da(id, dir, file, main_bib_dict, react_dict, mt, df):
+def write_to_exfortables_format_da(
+    entry_id, dir, file, main_bib_dict, react_dict, mt, df
+):
     ## create an output directory if it doesn't exist
     if os.path.exists(dir):
         pass
@@ -256,7 +327,7 @@ def write_to_exfortables_format_da(id, dir, file, main_bib_dict, react_dict, mt,
     with open(file, "w") as f:
         with pd.option_context("display.float_format", "{:11.5e}".format):
             with redirect_stdout(f):
-                bib_table(id, main_bib_dict, react_dict, mt, df)
+                bib_table(entry_id, main_bib_dict, react_dict, mt, df)
                 print("#")
                 print(
                     "# Angle(dgrees)     dAngle(dgrees)  XS(b/steradian)  dXS(b/steradian)"
@@ -274,7 +345,9 @@ def write_to_exfortables_format_da(id, dir, file, main_bib_dict, react_dict, mt,
     return
 
 
-def write_to_exfortables_format_de(id, dir, file, main_bib_dict, react_dict, mt, df):
+def write_to_exfortables_format_de(
+    entry_id, dir, file, main_bib_dict, react_dict, mt, df
+):
     ## create an output directory if it doesn't exist
     if os.path.exists(dir):
         pass
@@ -285,7 +358,7 @@ def write_to_exfortables_format_de(id, dir, file, main_bib_dict, react_dict, mt,
     with open(file, "w") as f:
         with pd.option_context("display.float_format", "{:11.5e}".format):
             with redirect_stdout(f):
-                bib_table(id, main_bib_dict, react_dict, mt, df)
+                bib_table(entry_id, main_bib_dict, react_dict, mt, df)
                 print("#")
                 print(
                     "#          E(MeV)          dE(MeV)      data(MB/MeV)   ddata(MB/MeV)"
@@ -293,8 +366,8 @@ def write_to_exfortables_format_de(id, dir, file, main_bib_dict, react_dict, mt,
                 for i, row in df.iterrows():
                     print(
                         "{:18.4E}{:18.4E}{:18.4E}{:18.4E}".format(
-                            row["e_out"],
-                            0.0 if pd.isnull(row["de_out"]) else row["de_out"],
+                            row["e_out"] / 1e6,
+                            0.0 if pd.isnull(row["de_out"]) else row["de_out"] / 1e6,
                             row["data"],
                             0.0 if pd.isnull(row["ddata"]) else row["ddata"],
                         )
@@ -303,7 +376,9 @@ def write_to_exfortables_format_de(id, dir, file, main_bib_dict, react_dict, mt,
     return
 
 
-def write_to_exfortables_format_fy(id, dir, file, main_bib_dict, react_dict, mt, df):
+def write_to_exfortables_format_fy(
+    entry_id, dir, file, main_bib_dict, react_dict, mt, df
+):
     ## create an output directory if it doesn't exist
     if os.path.exists(dir):
         pass
@@ -314,7 +389,7 @@ def write_to_exfortables_format_fy(id, dir, file, main_bib_dict, react_dict, mt,
     with open(file, "w") as f:
         with pd.option_context("display.float_format", "{:11.5e}".format):
             with redirect_stdout(f):
-                bib_table(id, main_bib_dict, react_dict, mt, df)
+                bib_table(entry_id, main_bib_dict, react_dict, mt, df)
                 print("#")
                 print(
                     "# Charge(No Dim.)    Mass(No Dim.)  Isomer(No Dim.)    Yield(%/fiss)   dYield(%/fiss)"
@@ -333,7 +408,9 @@ def write_to_exfortables_format_fy(id, dir, file, main_bib_dict, react_dict, mt,
     return
 
 
-def write_to_exfortables_format_nu(id, dir, file, main_bib_dict, react_dict, mt, df):
+def write_to_exfortables_format_nu(
+    entry_id, dir, file, main_bib_dict, react_dict, mt, df
+):
     ## create an output directory if it doesn't exist
     if os.path.exists(dir):
         pass
@@ -343,7 +420,7 @@ def write_to_exfortables_format_nu(id, dir, file, main_bib_dict, react_dict, mt,
     with open(file, "w") as f:
         with pd.option_context("display.float_format", "{:11.5e}".format):
             with redirect_stdout(f):
-                bib_table(id, main_bib_dict, react_dict, mt, df)
+                bib_table(entry_id, main_bib_dict, react_dict, mt, df)
                 print("#")
                 print(
                     "#     E_in(MeV)        dE_in(MeV)       Multiplicity            dMultiplicity"
@@ -351,8 +428,8 @@ def write_to_exfortables_format_nu(id, dir, file, main_bib_dict, react_dict, mt,
                 for i, row in df.iterrows():
                     print(
                         "{:18.4E}{:18.4E}{:18.4E}{:18.4E}".format(
-                            row["en_inc"],
-                            0.0 if pd.isnull(row["den_inc"]) else row["den_inc"],
+                            row["en_inc"] / 1e6,
+                            0.0 if pd.isnull(row["den_inc"]) else row["den_inc"] / 1e6,
                             row["data"],
                             0.0 if pd.isnull(row["ddata"]) else row["ddata"],
                         )
@@ -362,7 +439,7 @@ def write_to_exfortables_format_nu(id, dir, file, main_bib_dict, react_dict, mt,
 
 
 def write_to_exfortables_format_kinetic_e(
-    id, dir, file, main_bib_dict, react_dict, mt, df
+    entry_id, dir, file, main_bib_dict, react_dict, mt, df
 ):
     ## create an output directory if it doesn't exist
     if os.path.exists(dir):
@@ -374,7 +451,7 @@ def write_to_exfortables_format_kinetic_e(
     with open(file, "w") as f:
         with pd.option_context("display.float_format", "{:11.5e}".format):
             with redirect_stdout(f):
-                bib_table(id, main_bib_dict, react_dict, mt, df)
+                bib_table(entry_id, main_bib_dict, react_dict, mt, df)
                 print("#")
                 print(
                     "#     E_in(MeV)        dE_in(MeV)      Energy(MeV)            dEnergy(MeV)"
@@ -382,45 +459,60 @@ def write_to_exfortables_format_kinetic_e(
                 for i, row in df.iterrows():
                     print(
                         "{:18.4E}{:18.4E}{:18.4E}{:18.4E}".format(
-                            row["en_inc"],
-                            0.0 if pd.isnull(row["den_inc"]) else row["den_inc"],
-                            row["data"],
-                            0.0 if pd.isnull(row["ddata"]) else row["ddata"],
+                            row["en_inc"] / 1e6,
+                            0.0 if pd.isnull(row["den_inc"]) else row["den_inc"] / 1e6,
+                            row["data"] / 1e6,
+                            0.0 if pd.isnull(row["ddata"]) else row["ddata"] / 1e6,
                         )
                     )
         f.close()
     return
 
 
-
-def write_to_exfortables_format_resonance_parameter(id, dir, file, main_bib_dict, react_dict, mt, df):
+def write_to_exfortables_format_resonance_parameter(
+    entry_id, dir, file, main_bib_dict, react_dict, df
+):
     ## create an output directory if it doesn't exist
     if os.path.exists(dir):
         pass
 
     else:
         os.makedirs(dir)
+
+    # projectile = react_dict["process"][next(iter(react_dict["process"]))].split(",")[0].upper()
+    projectile = react_dict["process"].split(",")[0].upper()
+    mfmt = "2 - x"
     with open(file, "w") as f:
         with pd.option_context("display.float_format", "{:11.5e}".format):
             with redirect_stdout(f):
-                bib_table(id, main_bib_dict, react_dict, mt, df)
+                bib_table_resonance_parameter(
+                    entry_id, main_bib_dict, react_dict, mfmt, df
+                )
                 print("#")
                 print(
-                    "#       E_in(MeV)         dE_in(MeV)        XS(B)             dXS(B)"
+                    f"#    E_in(eV)    dE_in(eV)          J          L      ({projectile},TOT)     d({projectile},TOT)        ({projectile},G)       d({projectile},G)        ({projectile},EL)     d({projectile},EL)        ({projectile},F)       d({projectile},F)        ({projectile},A)       d({projectile},A)"
                 )
                 for i, row in df.iterrows():
                     print(
-                        "{:18.4E}{:18.4E}{:18.4E}{:18.4E}".format(
+                        "{:13.4E}{:13.4E}{:11.1F}{:11.1F}{:13.4E}{:13.4E}{:13.4E}{:13.4E}{:13.4E}{:13.4E}{:13.4E}{:13.4E}{:13.4E}{:13.4E}".format(
                             row["en_inc"],
-                            0.0 if pd.isnull(row["den_inc"]) else row["den_inc"],
-                            row["data"],
-                            0.0 if pd.isnull(row["ddata"]) else row["ddata"],
+                            row["den_inc"],
+                            row["spin_j"],
+                            row["momentum_l"],
+                            row[f"data({projectile},TOT)"],
+                            row[f"ddata({projectile},TOT)"],
+                            row[f"data({projectile},G)"],
+                            row[f"ddata({projectile},G)"],
+                            row[f"data({projectile},EL)"],
+                            row[f"ddata({projectile},EL)"],
+                            row[f"data({projectile},F)"],
+                            row[f"ddata({projectile},F)"],
+                            row[f"data({projectile},A)"],
+                            row[f"ddata({projectile},A)"],
                         )
                     )
         f.close()
     return
-
-
 
 
 def write_to_thermal_table(type, dir, outfile, react_dict, df):
@@ -452,11 +544,11 @@ def write_to_thermal_table(type, dir, outfile, react_dict, df):
                 "\n" f"#   Type: {react_dict['process']}",
                 "\n" f"#   Incident energy       :",
                 (
-                    "{:.4e} MeV".format(df.en_inc.min())
+                    "{:.4e} MeV".format(df.en_inc.min() / 1e6)
                     + " - "
-                    + "{:.4e} MeV".format(df.en_inc.max())
+                    + "{:.4e} MeV".format(df.en_inc.max() / 1e6)
                     if len(df["en_inc"].unique()) > 1
-                    else "{:.4e} MeV".format(df["en_inc"].unique()[0])
+                    else "{:.4e} MeV".format(df["en_inc"].unique()[0] / 1e6)
                 ),
                 "\n" f"# Residual:",
                 "\n"
@@ -540,8 +632,6 @@ def write_to_thermal_table(type, dir, outfile, react_dict, df):
     return
 
 
-
-
 def write_to_resonance_spacing_table(type, dir, outfile, react_dict, df, df0, df1):
 
     if os.path.exists(dir):
@@ -590,14 +680,28 @@ def write_to_resonance_spacing_table(type, dir, outfile, react_dict, df, df0, df
                         row["entry_id"],
                         row["first_author"],
                         row["year"],
-                        np.nan if not row["en_inc_min"] else row["en_inc_min"],
-                        np.nan if not row["en_inc_max"] else row["en_inc_max"],
+                        np.nan if not row["en_inc_min"] else row["en_inc_min"] / 1e6,
+                        np.nan if not row["en_inc_max"] else row["en_inc_max"] / 1e6,
                         row["data"],
                         np.nan if pd.isnull(row["ddata"]) else row["ddata"],
-                        flags["MOMENTUM L"]["data"] if flags.get("MOMENTUM L") and isinstance(flags["MOMENTUM L"]["data"],numbers.Number) else np.nan,
-                        flags["SPIN J"]["data"]     if flags.get("SPIN J")     and isinstance(flags["SPIN J"]["data"],numbers.Number) else np.nan,
-                        flags["PARITY"]["data"]     if flags.get("PARITY")     and isinstance(flags["PARITY"]["data"],numbers.Number) else np.nan,
-
+                        (
+                            flags["MOMENTUM L"]["data"]
+                            if flags.get("MOMENTUM L")
+                            and isinstance(flags["MOMENTUM L"]["data"], numbers.Number)
+                            else np.nan
+                        ),
+                        (
+                            flags["SPIN J"]["data"]
+                            if flags.get("SPIN J")
+                            and isinstance(flags["SPIN J"]["data"], numbers.Number)
+                            else np.nan
+                        ),
+                        (
+                            flags["PARITY"]["data"]
+                            if flags.get("PARITY")
+                            and isinstance(flags["PARITY"]["data"], numbers.Number)
+                            else np.nan
+                        ),
                     )
                 )
             print("\n\n")
@@ -612,8 +716,16 @@ def write_to_resonance_spacing_table(type, dir, outfile, react_dict, df, df0, df
                     2009,
                     np.nan,
                     np.nan,
-                    df0['D0'].values[0]*1E+3 if  not df0.empty  and type == "resonance_spacing" else df0['Gg'].values[0]*1E+3 if not df0.empty else np.nan,
-                    df0['dD'].values[0]*1E+3 if  not df0.empty  and type == "resonance_spacing" else df0['dG'].values[0]*1E+3 if not df0.empty else np.nan,
+                    (
+                        df0["D0"].values[0] * 1e3
+                        if not df0.empty and type == "resonance_spacing"
+                        else df0["Gg"].values[0] * 1e3 if not df0.empty else np.nan
+                    ),
+                    (
+                        df0["dD"].values[0] * 1e3
+                        if not df0.empty and type == "resonance_spacing"
+                        else df0["dG"].values[0] * 1e3 if not df0.empty else np.nan
+                    ),
                     0,
                 )
             )
@@ -624,13 +736,19 @@ def write_to_resonance_spacing_table(type, dir, outfile, react_dict, df, df0, df
                     2009,
                     np.nan,
                     np.nan,
-                    df1['D1'].values[0]*1E+3 if not df1.empty and type == "resonance_spacing" else df1['Gg'].values[0]*1E+3 if not df1.empty else np.nan,
-                    df1['dD'].values[0]*1E+3 if not df1.empty and type == "resonance_spacing" else df1['dG'].values[0]*1E+3 if not df1.empty else np.nan,
+                    (
+                        df1["D1"].values[0] * 1e3
+                        if not df1.empty and type == "resonance_spacing"
+                        else df1["Gg"].values[0] * 1e3 if not df1.empty else np.nan
+                    ),
+                    (
+                        df1["dD"].values[0] * 1e3
+                        if not df1.empty and type == "resonance_spacing"
+                        else df1["dG"].values[0] * 1e3 if not df1.empty else np.nan
+                    ),
                     1.0,
                 )
             )
 
-
     f.close()
     return
-

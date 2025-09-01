@@ -91,7 +91,6 @@ def convert(entnum):
     write_dict_to_json(entnum, entry_json)
 
 
-
 def convert_all():
     ent = []
     df = list_exfor_files()
@@ -115,7 +114,7 @@ def convert_all():
             break
         except:
             logging.error(f"ERROR: at ENTRY: {entnum}", exc_info=True)
-            
+
     logging.info(f"End processing {print_process_time(start_time)}")
 
 
@@ -148,8 +147,9 @@ def convert_updated_entry():
             break
         except:
             logging.error(f"ERROR: at ENTRY: {entnum}", exc_info=True)
-            
+
     logging.info(f"End processing {print_process_time(start_time)}")
+
 
 if __name__ == "__main__":
     convert_all()

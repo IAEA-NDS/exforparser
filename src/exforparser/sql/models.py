@@ -11,6 +11,7 @@ from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
 
+
 class Exfor_Bib(Base):
     __tablename__ = "exfor_bib"
     entry = db.Column(db.String, primary_key=True, index=True, unique=True)
@@ -26,8 +27,6 @@ class Exfor_Bib(Base):
     year = db.Column(db.Integer)
 
 
-
-
 class Exfor_Histories(Base):
     __tablename__ = "exfor_history"
     entry = db.Column(db.String, primary_key=True, index=True)
@@ -38,8 +37,6 @@ class Exfor_Histories(Base):
     latest_trans = db.Column(db.String, index=True)
 
 
-
-
 class Exfor_ExperimentalCondition(Base):
     __tablename__ = "exfor_experimental_condition"
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
@@ -47,8 +44,6 @@ class Exfor_ExperimentalCondition(Base):
     x4_code = db.Column(db.String, index=True)
     type = db.Column(db.String)
     free_txt = db.Column(db.String)
-
-
 
 
 class Exfor_Reactions(Base):
@@ -68,8 +63,6 @@ class Exfor_Reactions(Base):
     math_expression = db.Column(db.String)
 
 
-
-
 class Exfor_Indexes(Base):
     __tablename__ = "exfor_indexes"
     id = db.Column(db.Integer, autoincrement=True, primary_key=True, index=True)
@@ -81,9 +74,15 @@ class Exfor_Indexes(Base):
     sf4 = db.Column(db.String)  # Could be null, 6-C-12, MASS, ELEM/MASS
     residual = db.Column(db.String, index=True)  # Real residual extended from product
     level_num = db.Column(db.Integer, index=True)  # Level number of residual product
-    e_out = db.Column(db.Float)  # Outgoing energy or excitation energy (E-EXC, E-LVL etc)
-    e_inc_min = db.Column(db.Float, index=True) # not EN-MIN, but the minimum value of en_inc array
-    e_inc_max = db.Column(db.Float, index=True) # not EN-MAX, but the maximum value of en_inc array
+    e_out = db.Column(
+        db.Float
+    )  # Outgoing energy or excitation energy (E-EXC, E-LVL etc)
+    e_inc_min = db.Column(
+        db.Float, index=True
+    )  # not EN-MIN, but the minimum value of en_inc array
+    e_inc_max = db.Column(
+        db.Float, index=True
+    )  # not EN-MAX, but the maximum value of en_inc array
     points = db.Column(db.Integer, index=True)
     arbitrary_data = db.Column(db.Boolean, index=True)
     sf5 = db.Column(db.String)
@@ -96,12 +95,9 @@ class Exfor_Indexes(Base):
     mt = db.Column(db.Integer, index=True)
 
 
-
-
 class Exfor_Data(Base):
     __tablename__ = "exfor_data"
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    index_id = db.Column(db.Integer, index=True)
     entry_id = db.Column(db.String, index=True)
     en_inc = db.Column(db.Float)
     den_inc = db.Column(db.Float)
@@ -124,15 +120,23 @@ class Exfor_Data(Base):
     flags = db.Column(db.String)
     mf = db.Column(db.Integer)
     mt = db.Column(db.Integer, index=True)
-    en_inc_min = db.Column(db.Float) # EN-MIN, EN-RES-MIN 
-    en_inc_max = db.Column(db.Float) # EN-MAX, EN-RES-MAX
+    en_inc_min = db.Column(db.Float)  # EN-MIN, EN-RES-MIN
+    en_inc_max = db.Column(db.Float)  # EN-MAX, EN-RES-MAX
     e_out_min = db.Column(db.Float)  # E-MIN
     e_out_max = db.Column(db.Float)  # E-MAX
-    
 
 
-
-
+class Exfor_Native_Data(Base):
+    __tablename__ = "exfor_native_data"
+    id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    entry = db.Column(db.Integer, index=True)
+    subent = db.Column(db.String, index=True)
+    column_index = db.Column(db.Integer)  # Column position
+    column_type = db.Column(db.String)  # COMMON or DATA
+    pointer = db.Column(db.String)
+    head = db.Column(db.String)
+    unit = db.Column(db.String)  # Original unit given in the EXFOR entry
+    data = db.Column(db.String)  # Original data in list
 
 
 class Exfor_References(Base):
@@ -147,17 +151,12 @@ class Exfor_References(Base):
     doi_source = db.Column(db.String)
 
 
-
-
-
 class Exfor_Entry_DOIs(Base):
     __tablename__ = "entry_dois"
     entry = db.Column(db.String, primary_key=True, index=True)
     exfor_main_reference = db.Column(db.String, index=True)
     main_reference_doi = db.Column(db.String)
     doi_source = db.Column(db.String)
-
-
 
 
 class Exfor_Reference_Metadata(Base):
@@ -176,19 +175,17 @@ class Exfor_Reference_Metadata(Base):
     article_number = db.Column(db.String)
 
 
-
 class Exfor_Institute_Geo(Base):
     __tablename__ = "institute_geo_info"
     x4_code = db.Column(db.String, primary_key=True, index=True)
     name = db.Column(db.String, index=True)
-    formatted_address = db.Column(db.String,)
+    formatted_address = db.Column(
+        db.String,
+    )
     address_country = db.Column(db.String, index=True)
     lat = db.Column(db.String)
     lng = db.Column(db.String)
     flag = db.Column(db.String)
-
-
-
 
 
 if __name__ == "__main__":

@@ -32,7 +32,7 @@ def target_reformat(react_dict):
             + react_dict["target"].split("-")[3].lower()
         )
 
-    return str( target )
+    return str(target)
 
 
 def process_reformat(react_dict):
@@ -68,7 +68,7 @@ def get_dir_name(type, react_dict, level_num=None, subdir=None):
     )
 
 
-def exfortables_filename(dir, id, process, react_dict, bib, en=None, prod=None):
+def exfortables_filename(dir, exfor_id, process, react_dict, bib, en=None, prod=None):
 
     return os.path.join(
         dir,
@@ -80,14 +80,15 @@ def exfortables_filename(dir, id, process, react_dict, bib, en=None, prod=None):
             + (str(prod) + "_" if prod else "")
             + ("E" + "{:.3e}".format(en) + "_" if en else "")
             # + bib["authors"][0]["name"].split(".")[-1].replace(" ", "")
-            + bib["authors"][0]["name"]
+            + bib["first_author"]
             + "-"
-            + str(id)
+            + str(exfor_id)
             + "-"
             + (
                 # bib["references"][0]["publication_year"]
                 # if bib.get("references")
-                str(bib["year"]) if bib.get("year")
+                str(bib["year"])
+                if bib.get("year")
                 else "1900"
             )
             + ".txt"
@@ -95,7 +96,7 @@ def exfortables_filename(dir, id, process, react_dict, bib, en=None, prod=None):
     )
 
 
-def exfortables_filename_product(dir, id, process, prod, react_dict, bib):
+def exfortables_filename_product(dir, exfor_id, process, prod, react_dict, bib):
 
     return os.path.join(
         dir,
@@ -107,14 +108,15 @@ def exfortables_filename_product(dir, id, process, prod, react_dict, bib):
             + str(prod)
             + "_"
             # + bib["authors"][0]["name"].split(".")[-1].replace(" ", "")
-            + bib["authors"][0]["name"]
+            + bib["first_author"]
             + "-"
-            + str(id)
+            + str(exfor_id)
             + "-"
             + (
                 # bib["references"][0]["publication_year"]
                 # if bib.get("references")
-                str(bib["year"]) if bib.get("year")
+                str(bib["year"])
+                if bib.get("year")
                 else "1900"
             )
             + ".txt"
@@ -122,7 +124,9 @@ def exfortables_filename_product(dir, id, process, prod, react_dict, bib):
     )
 
 
-def exfortables_filename_Einc_prodocut(dir, id, process, en, prod, react_dict, bib):
+def exfortables_filename_Einc_prodocut(
+    dir, exfor_id, process, en, prod, react_dict, bib
+):
 
     return os.path.join(
         dir,
@@ -137,14 +141,15 @@ def exfortables_filename_Einc_prodocut(dir, id, process, en, prod, react_dict, b
             + "{:.3e}".format(en)
             + "_"
             # + bib["authors"][0]["name"].split(".")[-1].replace(" ", "")
-            + bib["authors"][0]["name"]
+            + bib["first_author"]
             + "-"
-            + str(id)
+            + str(exfor_id)
             + "-"
             + (
                 # bib["references"][0]["publication_year"]
                 # if bib.get("references")
-                bib["year"] if bib.get("year")
+                bib["year"]
+                if bib.get("year")
                 else "1900"
             )
             + ".txt"
@@ -152,7 +157,7 @@ def exfortables_filename_Einc_prodocut(dir, id, process, en, prod, react_dict, b
     )
 
 
-def exfortables_filename_Einc(dir, id, process, en, react_dict, bib):
+def exfortables_filename_Einc(dir, exfor_id, process, en, react_dict, bib):
 
     return os.path.join(
         dir,
@@ -165,32 +170,64 @@ def exfortables_filename_Einc(dir, id, process, en, react_dict, bib):
             + "{:.3e}".format(en)
             + "_"
             # + bib["authors"][0]["name"].split(".")[-1].replace(" ", "")
-            + bib["authors"][0]["name"]
+            + bib["first_author"]
             + "-"
-            + str(id)
+            + str(exfor_id)
             + "-"
             + (
                 # bib["references"][0]["publication_year"]
                 # if bib.get("references")
-                bib["year"] if bib.get("year")
+                bib["year"]
+                if bib.get("year")
                 else "1900"
             )
             + ".txt"
         ),
     )
-
 
 
 # --------------------- For observables
 
-def get_thermal_dir_name(type, react_dict):
+
+def get_thermal_dir_name(obs_type, react_dict):
     ### generate output dir and filename
 
-    return os.path.join(OUT_PATH, type, react_dict["process"].replace(",", "-").lower())
+    return os.path.join(
+        OUT_PATH, obs_type, react_dict["process"].replace(",", "-").lower()
+    )
 
 
 def get_thermal_filename(dir, react_dict):
     return os.path.join(
         dir,
         (react_dict["target"] + ".txt"),
+    )
+
+
+# --------------------- Resonance Parameter
+def get_resonance_param_dir_name(obs_type, sf6, react_dict):
+    ### generate output dir and filename
+
+    return os.path.join(
+        OUT_PATH,
+        obs_type,
+        react_dict["projectile"],
+        target_reformat(react_dict),
+        sf6.replace("/", "-"),
+    )
+
+
+def get_resonance_param_file_name(dir, exfor_id, bib, react_dict):
+    ### generate output dir and filename
+
+    return os.path.join(
+        dir,
+        react_dict["target"]
+        + "_"
+        + bib["first_author"]
+        + "-"
+        + str(exfor_id)
+        + "_"
+        + (str(bib["year"]) if bib.get("year") else "1900")
+        + ".txt",
     )

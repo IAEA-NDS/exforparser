@@ -35,8 +35,8 @@ elif ENV == "prod":
     OUT_PATH = "/nds/data/dataexplorer_v2/out/"
 
 
-EXFOR_MASTER_REPO_PATH = os.path.join(DATA_DIR, "exfor_master_test")
-EXFOR_DB = os.path.join(DATA_DIR, "exfortables_.sqlite")
+EXFOR_MASTER_REPO_PATH = os.path.join(DATA_DIR, "exfor_master")
+EXFOR_DB = os.path.join(DATA_DIR, "exfortables_test.sqlite")
 
 
 BUF_SIZE = 65536
@@ -62,9 +62,9 @@ engines = {
     # "endftables": create_engine("sqlite:///" + ENDFTAB_DB),
 }
 
-session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engines["exfor"]))
-
-
+session = scoped_session(
+    sessionmaker(autocommit=False, autoflush=False, bind=engines["exfor"])
+)
 
 
 """ Not used """

@@ -12,7 +12,6 @@ def unify_units(data_dic):
         'units': ['KEV', 'KEV', 'MB', 'MB', 'MB', 'MB', 'MB', 'MB'],
         'data' ....}
     """
-    # for unit_head in data_dic["units"]:
     for i in range(len(data_dic["units"])):
         if any(u == data_dic["units"][i] for u in ("NO-DIM", "ARB-UNITS")):
             continue
@@ -33,5 +32,5 @@ def unify_units(data_dic):
                 ]
         except:
             pass
-
+    # print(data_dic)
     return data_dic

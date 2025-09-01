@@ -17,7 +17,7 @@ from .exfor_block import get_identifier_details
 
 
 def correct_pub_year(ref):
-    
+
     year = ref.replace("(", "").replace(")", "").split(",")[-1]
 
     if len(year) == 2:
@@ -162,7 +162,6 @@ def parse_main_bib(bib_block) -> dict:
                                 # identifier_set[i]["free_txt"].pop(l)
 
                 bib_dict["references"] = identifier_set
-
 
             elif identifier == "FACILITY":
                 identifier_set = get_identifier_details(indentifier_body)

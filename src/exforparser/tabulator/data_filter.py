@@ -10,7 +10,12 @@
 #
 ####################################################################
 import logging
-from exforparser.submodules.utilities.reaction import sf_to_mf, sf3_dict, sig_sf5, mt_fy_sf5
+from exforparser.submodules.utilities.reaction import (
+    sf6_to_mf,
+    sf3_dict,
+    sig_sf5,
+    mt_fy_sf5,
+)
 from exfor_dictionary.exfor_dict import Diction
 
 d = Diction("209")
@@ -22,15 +27,11 @@ def filter_complex_reactions(entry_json, subent, pointer):
     return entry_json["reactions"][subent][pointer]["operator"] is not None
 
 
-
 def filter_reaction(react_dict, df):
     # Skip if arbitrary data is present or reaction type is invalid
-    if not any(reac == react_dict["sf6"] for reac in sf_to_mf):
+    if not any(reac == react_dict["sf6"] for reac in sf6_to_mf):
         return True
-    return df.empty or any(
-        arb_unit == 1 for arb_unit in df["arbitrary_data"]
-    )
-
+    return df.empty or any(arb_unit == 1 for arb_unit in df["arbitrary_data"])
 
 
 def filter_cross_section_case(react_dict, df):
@@ -40,7 +41,16 @@ def filter_cross_section_case(react_dict, df):
         logging.info(f"{react_dict} skipped pattern 1")
         return True
 
-    if not react_dict["process"].split(",")[0] in ["0", "N", "P", "D", "G", "T"]:
+    if not react_dict["process"].split(",")[0] in [
+        "0",
+        "N",
+        "P",
+        "D",
+        "G",
+        "T",
+        "A",
+        "HE3",
+    ]:
         ## so far filtering charged particle reactions
         logging.info(f"{react_dict} skipped pattern 2")
         return True
@@ -48,12 +58,12 @@ def filter_cross_section_case(react_dict, df):
     if not react_dict["process"].split(",")[1] in sf3_dict.keys():
         logging.info(f"{react_dict} skipped pattern 3")
         return True
-    
+
     if react_dict["sf7"]:
         ## Skip the misc. data
         logging.info(f"{react_dict} skipped pattern 4")
         return True
-    
+
     if any(
         excep in react_dict["sf8"]
         for excep in ["MSC", "REL", "FRC", "RES", "RAW"]
@@ -66,10 +76,8 @@ def filter_cross_section_case(react_dict, df):
     if df["en_inc"].isnull().values.all():
         logging.info(f"{react_dict} skipped pattern 6")
         return True
-    
+
     return False
-
-
 
 
 def filter_partial_cross_section_case(react_dict, df):
@@ -84,23 +92,20 @@ def filter_partial_cross_section_case(react_dict, df):
         return True
 
     if (
-        len(df["level_num"].unique()) == 0
+        len(df["level_num"].unique())
+        == 0
         # or not df["level_num"].unique().all()
     ):
         return True
-    
+
     return False
-
-
 
 
 def filter_angler_distribution_case(react_dict, df):
     if not react_dict["process"].split(",")[1] in sf3_dict.keys():
         return True
-        
-    if any(
-            react_dict["sf8"] != excep for excep in ("EXP") if react_dict["sf8"]
-        ):
+
+    if any(react_dict["sf8"] != excep for excep in ("EXP") if react_dict["sf8"]):
         return True
 
     if react_dict["sf7"]:
@@ -111,9 +116,8 @@ def filter_angler_distribution_case(react_dict, df):
     ):
         if df["en_inc"].isnull().values.all():
             return True
-        
-    return False
 
+    return False
 
 
 def filter_partial_angler_distribution_case(react_dict, df):
@@ -121,39 +125,27 @@ def filter_partial_angler_distribution_case(react_dict, df):
     if df["en_inc"].isnull().values.all():
         return True
 
-    if (
-        react_dict["sf4"].endswith("-0")
-        or react_dict["process"].split(",")[1] == "X"
-    ):
+    if react_dict["sf4"].endswith("-0") or react_dict["process"].split(",")[1] == "X":
         return True
 
     if len(df["level_num"].unique()) == 0:
         return True
-    
+
     return False
-
-
 
 
 def filter_energy_distribution_case(react_dict, df):
     if (
-        not any(
-            par == react_dict["process"].split(",")[1]
-            for par in sf3_dict.keys()
-        )
-        or any(
-            react_dict["sf8"] != excep for excep in ("EXP") if react_dict["sf8"]
-        )
+        not any(par == react_dict["process"].split(",")[1] for par in sf3_dict.keys())
+        or any(react_dict["sf8"] != excep for excep in ("EXP") if react_dict["sf8"])
         or react_dict["sf7"]
     ):
         return True
 
     if df["en_inc"].isnull().values.all():
         return True
-        
+
     return False
-
-
 
 
 def filter_neutron_observables_case(react_dict, df):
@@ -169,10 +161,8 @@ def filter_neutron_observables_case(react_dict, df):
 
     if df["en_inc"].isnull().values.all():
         return True
-    
+
     return False
-
-
 
 
 def filter_misc_neutron_observables_case(react_dict, df):
@@ -188,10 +178,8 @@ def filter_misc_neutron_observables_case(react_dict, df):
 
     if df["en_inc"].isnull().values.all():
         return True
-    
+
     return False
-
-
 
 
 def filter_kinetic_energy_case(react_dict, df):
@@ -207,10 +195,8 @@ def filter_kinetic_energy_case(react_dict, df):
 
     if df["en_inc"].isnull().values.all():
         return True
-    
+
     return False
-
-
 
 
 def filter_fission_yield_case(react_dict, df):
@@ -227,9 +213,5 @@ def filter_fission_yield_case(react_dict, df):
 
     if df["en_inc"].isnull().values.all():
         return True
-    
+
     return False
-
-
-
-

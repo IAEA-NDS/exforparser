@@ -168,7 +168,6 @@ def get_identifier_details(identifier_block) -> list:
                 ii, r_closes = get_text_location_index(identifier_block, i, match[-1])
                 x = "".join(identifier_block[i:])[match[0] : match[-1]]
 
-
                 skip_p_line = True
 
         if i < ii:
@@ -199,7 +198,6 @@ def get_identifier_details(identifier_block) -> list:
                 f += [line]
                 cont = True
 
-
         elif skip_p_line:
 
             f = [line[r_closes[-1] + 1 :]] if line[r_closes[-1] + 1 :] != "" else []
@@ -214,11 +212,13 @@ def get_identifier_details(identifier_block) -> list:
             f += [line]
             cont = True
 
-        if i == len(identifier_block) -1:
+        if i == len(identifier_block) - 1:
             ## finalize the dictionary at the last line
             small_dict = {"x4_code": x, "free_txt": f}
             identifier_set += [small_dict]
 
-    identifier_set = [i for n, i in enumerate(identifier_set) if i not in identifier_set[n + 1:]]
+    identifier_set = [
+        i for n, i in enumerate(identifier_set) if i not in identifier_set[n + 1 :]
+    ]
 
     return identifier_set

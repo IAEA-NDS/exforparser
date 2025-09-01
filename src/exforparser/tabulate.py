@@ -15,14 +15,22 @@ import logging
 import random
 
 from exforparser.json_converter import convert_exfor_to_json, write_dict_to_json
-from exforparser.submodules.utilities.util import dict_merge, del_outputs, print_time, print_process_time
+from exforparser.submodules.utilities.util import (
+    dict_merge,
+    del_outputs,
+    print_time,
+    print_process_time,
+)
 from exforparser.parser.list_x4files import (
     list_exfor_files,
     list_entries_from_pickle,
     good_example_entries,
 )
 from exforparser.parser.exfor_unit import unify_units
-from exforparser.parser.exfor_field import ref_identifiers, experimental_condition_identifires
+from exforparser.parser.exfor_field import (
+    ref_identifiers,
+    experimental_condition_identifires,
+)
 from exforparser.parser.exfor_bib import correct_pub_year
 
 
@@ -32,24 +40,21 @@ from exforparser.tabulator.data_process import *
 from exforparser.tabulator.data_filter import *
 from exforparser.sql.stored import (
     insert_bib,
-    insert_referece,
     insert_reaction,
+    insert_reference,
     insert_reaction_index,
     insert_experimental_info,
+    insert_native_data,
 )
 
+
+######## Creations of database records ###########
 def create_and_insert_bib_dict(entnum, bib_record):
     bib_data = {
         "entry": entnum,
-        "title": (
-            bib_record["title"]
-            if bib_record.get("title")
-            else None
-        ),
+        "title": (bib_record["title"] if bib_record.get("title") else None),
         "first_author": (
-            bib_record["authors"][0]["name"]
-            if bib_record.get("authors")
-            else None
+            bib_record["authors"][0]["name"] if bib_record.get("authors") else None
         ),
         "authors": ", ".join(
             [
@@ -82,9 +87,7 @@ def create_and_insert_bib_dict(entnum, bib_record):
             else None
         ),
         "main_doi": (
-            bib_record["references"][0]["doi"]
-            if bib_record.get("references")
-            else None
+            bib_record["references"][0]["doi"] if bib_record.get("references") else None
         ),
         "doi_source": (
             "EXFOR"
@@ -100,7 +103,7 @@ def create_and_insert_bib_dict(entnum, bib_record):
 
     insert_bib(bib_data)
 
-    return
+    return bib_data
 
 
 def create_and_insert_references_dict(entry_id, partial_json):
@@ -110,12 +113,12 @@ def create_and_insert_references_dict(entry_id, partial_json):
         for ref in partial_json["references"]:
             ref_data += [
                 {
-                    "entry_id":  entry_id,
-                    "x4_code": ref["x4_code"], 
-                    "free_txt": ' '.join(ref["free_txt"]),
+                    "entry_id": entry_id,
+                    "x4_code": ref["x4_code"],
+                    "free_txt": " ".join(ref["free_txt"]),
                     "year": ref["publication_year"],
                     "doi": ref["doi"],
-                    "type": "REFERENCE"
+                    "type": "REFERENCE",
                 }
             ]
     for reftype in ref_identifiers:
@@ -123,22 +126,20 @@ def create_and_insert_references_dict(entry_id, partial_json):
             for ref in partial_json[reftype.lower()]:
                 ref_data += [
                     {
-                        "entry_id":  entry_id,
-                        "x4_code": ref["x4_code"], 
-                        "free_txt": ' '.join(ref["free_txt"]),
-                        "year": correct_pub_year(ref["x4_code"]) if ref["x4_code"] else None,
+                        "entry_id": entry_id,
+                        "x4_code": ref["x4_code"],
+                        "free_txt": " ".join(ref["free_txt"]),
+                        "year": (
+                            correct_pub_year(ref["x4_code"]) if ref["x4_code"] else None
+                        ),
                         "doi": None,
-                        "type": reftype
+                        "type": reftype,
                     }
                 ]
-
-    insert_referece(ref_data)
+    if ref_data:
+        insert_reference(ref_data)
 
     return
-
-
-
-    
 
 
 def create_and_insert_experimental_condition_dict(entry_id, exp_cond):
@@ -149,10 +150,10 @@ def create_and_insert_experimental_condition_dict(entry_id, exp_cond):
             for e in exp_cond[ec.lower()]:
                 exps_data += [
                     {
-                        "entry_id":  entry_id,
-                        "x4_code": e["x4_code"], 
-                        "free_txt": ' '.join(e["free_txt"]),
-                        "type": ec
+                        "entry_id": entry_id,
+                        "x4_code": e["x4_code"],
+                        "free_txt": " ".join(e["free_txt"]),
+                        "type": ec,
                     }
                 ]
 
@@ -191,6 +192,12 @@ def create_and_insert_reaction_dict(entry_id, reactions_dict):
 
     return react_dict
 
+
+def safe_int(x):
+    try:
+        return int(x)
+    except (TypeError, ValueError):
+        return None
 
 
 def create_and_insert_reaction_index_dict(entry_id, entry_json, react_dict, df):
@@ -249,8 +256,8 @@ def create_and_insert_reaction_index_dict(entry_id, entry_json, react_dict, df):
                 "sf8": react_dict["sf8"],
                 "sf9": react_dict["sf9"],
                 "x4_code": entry_json["reactions"][subent][pointer]["x4_code"],
-                "mf": int(mf) if mf is not None else None,
-                "mt": int(mt) if mt is not None else None,
+                "mf": int(mf) if mf is not None or np.nan else None,
+                "mt": safe_int(mt),
             }
         ]
         insert_reaction_index(reac_index)
@@ -287,8 +294,8 @@ def create_and_insert_reaction_index_dict(entry_id, entry_json, react_dict, df):
                                 "x4_code": entry_json["reactions"][subent][pointer][
                                     "x4_code"
                                 ],
-                                "mf": None if mf is None or math.isnan(mf) else int(mf),
-                                "mt": None if mt is None or math.isnan(mt) else int(mt),
+                                "mf": int(mf) if mf is not None or np.nan else None,
+                                "mt": safe_int(mt),
                             }
                         ]
                         insert_reaction_index(reac_index)
@@ -324,160 +331,38 @@ def create_and_insert_reaction_index_dict(entry_id, entry_json, react_dict, df):
                         "sf9": react_dict["sf9"],
                         "x4_code": entry_json["reactions"][subent][pointer]["x4_code"],
                         "mf": None if mf is None or math.isnan(mf) else int(mf),
-                        "mt": None if mt is None or math.isnan(mt) else int(mt),
+                        "mt": safe_int(mt),
                     }
                 ]
                 insert_reaction_index(reac_index)
 
         return df2
 
-def update_doi():
-    pass
 
+def create_and_insert_native_data_dict(entry_num, subent, column_type, data_dict):
+    for index, (head, unit, values) in enumerate(
+        zip(data_dict["heads"], data_dict["units"], data_dict["data"])
+    ):
+        pointer = None
+        if len(head) == 11:
+            pointer = head[10]
 
-def tabulated_to_exfortables_format(entry_num, entry_json, data_dict_conv):
-    entnum = entry_num[0:5]
-    subent = entry_num[5:8]
-    print(entnum, subent)
-    
-    for pointer in entry_json["reactions"][subent]:
-        ## looping over all pointers exist in the REACTION in SUBENTRY
-        df = pd.DataFrame()
-        entry_id = entnum + "-" + subent + "-" + pointer
-
-        ## Insert REACTION code for each pointer into the exfor_reactions table
-        create_and_insert_reaction_dict(entry_id, entry_json["reactions"][subent][pointer])
-        
-        if entry_json["experimental_conditions"][subent].get(pointer):
-            create_and_insert_experimental_condition_dict(entry_id, entry_json["experimental_conditions"][subent][pointer])
-            create_and_insert_references_dict(entry_id, entry_json["experimental_conditions"][subent][pointer])
-            
-        if filter_complex_reactions(entry_json, subent, pointer):
-            continue
-
-        react_dict = entry_json["reactions"][subent][pointer]["children"][0]
-
-        df = process_general(entry_id, entry_json, data_dict_conv)
-
-        ## Insert EXFOR reaction index into the exfor_index table, 
-        ## which is the extention of the exfor_reactions table
-        create_and_insert_reaction_index_dict(entry_id, entry_json, react_dict, df)
-        
-        if filter_reaction(react_dict, df):
-            ## Filter some major cases that cannot be processed as a tablated format, 
-            ## such as the cases that DATA is given by arbitrary unit (ARB-UNIT) or no dimension (NO-DIM)
-            continue
-
-        sf3_dict_add = {
-            (
-                "N"
-                if react_dict["process"].split(",")[0].upper() != "N" and k == "INL"
-                else k
-            ): i
-            for k, i in sf3_dict.items()
+        datadict = {
+            "entry": entry_num,
+            "subent": subent,
+            "column_index": index,
+            "column_type": column_type,
+            "pointer": pointer,
+            "head": head,
+            "unit": unit,
+            "data": json.dumps(values),
         }
-
-        # --------------------------------------------------------------------------------------- ##
-        # ------------------------            Cross sections            ------------------------  ##
-        # --------------------------------------------------------------------------------------- ##
-
-        if react_dict["sf6"] == "SIG":
-            if filter_cross_section_case(react_dict, df):
-                continue
-
-            if react_dict["sf5"] != "PAR":
-                process_cross_section_case(df, entry_id, entry_json, react_dict)
-            else:
-                ## none of (N,NON) PAR,SIG are useful
-                if filter_partial_cross_section_case(react_dict, df):
-                    continue
-                process_partial_cross_section_case(df, entry_id, entry_json, react_dict)
-
-
-        # --------------------------------------------------------------------------------------- ##
-        # ------------------------        Angular distributions         ------------------------  ##
-        # --------------------------------------------------------------------------------------- ##
-
-        elif react_dict["sf6"] == "DA":
-            if filter_angler_distribution_case(react_dict, df):
-                continue
-
-            if react_dict["sf5"] != "PAR":
-                process_angler_distribution_section_case(df, entry_id, entry_json, react_dict)
-
-            elif (
-                react_dict["sf5"] == "PAR"
-                and react_dict["process"].split(",")[1] == "INL"
-            ):
-                if filter_partial_angler_distribution_case(react_dict, df):
-                    continue
-                process_partial_angler_distribution_case(df, entry_id, entry_json, react_dict)
-                
-        # --------------------------------------------------------------------------------------- ##
-        # ------------------------         Energy distributions         ------------------------  ##
-        # --------------------------------------------------------------------------------------- ##
-
-        elif react_dict["sf6"] == "DE":
-            if filter_energy_distribution_case(react_dict, df):
-                continue
-            process_energy_distribution_case(df, entry_id, entry_json, react_dict)
-
-
-        # --------------------------------------------------------------------------------------- ##
-        # ------------------------         Neutron observables          ------------------------  ##
-        # --------------------------------------------------------------------------------------- ##
-        elif react_dict["sf6"] == "NU":
-            if not (
-                react_dict["sf6"] == "NU/DE" or react_dict["sf6"] == "FY/DE"
-            ) and react_dict["sf5"] == "PR":
-                
-                if filter_misc_neutron_observables_case(react_dict, df):
-                    continue
-                process_neutron_observables_case(df, entry_id, entry_json, react_dict)
-
-            else:
-                if filter_misc_neutron_observables_case(react_dict, df):
-                    continue
-                process_misc_neutron_observables_case(df, entry_id, entry_json, react_dict)
-
-
-        ## --------------------------------------------------------------------------------------- ##
-        ## ------------------------           Kinetic energies           ------------------------  ##
-        ## --------------------------------------------------------------------------------------- ##
-
-        # elif react_dict["sf6"] == "KE":
-        #     if filter_kinetic_energy_case(react_dict, df):
-        #         continue
-        #     process_kinetic_energy_case(df, entry_id, entry_json, react_dict)
-
-
-        # elif react_dict["sf6"] == "AKE":
-        #     if df["en_inc"].isnull().values.all():
-        #         continue
-        #     process_average_kinetic_energy_case(df, entry_id, entry_json, react_dict)
-
-        # --------------------------------------------------------------------------------------- ##
-        # ------------------------            Fission yields            ------------------------  ##
-        # --------------------------------------------------------------------------------------- ##
-        elif react_dict["sf6"] == "FY":
-            if filter_fission_yield_case(react_dict, df):
-                continue
-            process_fission_yield_case(df, entry_id, entry_json, react_dict)
-
-        # --------------------------------------------------------------------------------------- ##
-        # ------------------------            Target yields             ------------------------  ##
-        # --------------------------------------------------------------------------------------- ##
-        elif react_dict["sf6"] == "TTY":
-            if filter_fission_yield_case(react_dict, df):
-                continue
-            process_thick_target_yield_case(df, entry_id, entry_json, react_dict)
-
-        ## --------------------------------------------------------------------------------------- ##
-        ## ------------------------         Resonance parameters         ------------------------  ##
-        ## --------------------------------------------------------------------------------------- ##
-
+        insert_native_data(datadict)
 
     return
+
+
+######## Main Process ###########
 
 
 def process(entnum):
@@ -488,32 +373,55 @@ def process(entnum):
         write_dict_to_json(entnum, entry_json)
 
         ## create bib record in SQLite
-        create_and_insert_bib_dict(entnum, entry_json["bib_record"])
-        create_and_insert_references_dict(entnum + "-" + "001-0", entry_json["bib_record"])
+        main_bib_dict = create_and_insert_bib_dict(entnum, entry_json["bib_record"])
+        create_and_insert_references_dict(
+            entnum + "-" + "001-0", entry_json["bib_record"]
+        )
 
     common_main_dict = {}
-    data_tables_dict = entry_json["data_tables"]
     data_dict = {}
 
     ## get SUBENT 001 COMMON block
-    if data_tables_dict["001"].get("common"):
-        common_main_dict = data_tables_dict["001"]["common"]
+    if entry_json["data_tables"]["001"].get("common"):
+        common_main_dict = entry_json["data_tables"]["001"]["common"]
         ## register the common experimental conditions
-    
+        ## Store the original COMMON data in SQL
+        """
+        e.g. {
+            'heads': ['MONIT-ERR', 'ERR-1', 'ERR-2', 'ERR-3', 'ERR-4', 'ERR-HL'], 
+            'units': ['PER-CENT', 'PER-CENT', 'PER-CENT', 'PER-CENT', 'PER-CENT', 'HR'], 
+            'data': [[2.0], [4.0], [2.0], [5.2], [0.5], [0.0012]]
+        }
+        """
+        create_and_insert_native_data_dict(entnum, "001", "COMMON", common_main_dict)
+
     if entry_json["experimental_conditions"].get("001"):
-        create_and_insert_experimental_condition_dict(entnum + "-" + "001-0", entry_json["experimental_conditions"]["001"]["0"])
-        create_and_insert_references_dict(entnum + "-" + "001-0", entry_json["experimental_conditions"]["001"]["0"])
+        create_and_insert_experimental_condition_dict(
+            entnum + "-" + "001-0", entry_json["experimental_conditions"]["001"]["0"]
+        )
+        create_and_insert_references_dict(
+            entnum + "-" + "001-0", entry_json["experimental_conditions"]["001"]["0"]
+        )
 
-    ## looping over SUBENTRYs from 002
-    for subent in list(data_tables_dict.keys())[1:]:
+    ## looping over SUBENTRYs from 002 to 999
+    for subent in list(entry_json["data_tables"].keys())[1:]:
         common_sub_dict = {}
+        entry_num = entnum + subent
 
-        ## get SUBENT 002 COMMON block
-        if data_tables_dict[subent].get("common"):
+        ## get SUBENT 002-999 COMMON block
+        if entry_json["data_tables"][subent].get("common"):
             common_sub_dict = entry_json["data_tables"][subent]["common"]
+            create_and_insert_native_data_dict(
+                entnum, subent, "COMMON", common_sub_dict
+            )
 
-        ## get SUBENT 002 DATA block
-        if data_tables_dict[subent].get("data"):
+        ## get SUBENT 002-999 DATA block
+        if entry_json["data_tables"][subent].get("data"):
+            ## Store original HEAD and UNIT in SQL
+            create_and_insert_native_data_dict(
+                entnum, subent, "DATA", entry_json["data_tables"][subent]["data"]
+            )
+
             data_dict = dict_merge(
                 [
                     common_main_dict,
@@ -521,6 +429,11 @@ def process(entnum):
                     entry_json["data_tables"][subent]["data"],
                 ]
             )
+            """
+            {'heads': ['E-MIN', 'EN-MEAN', 'EN-RSL-FW', 'DATA', 'DATA-ERR'], 
+            'units': ['MEV', 'KEV', 'KEV', 'PRT/REAC', 'PRT/REAC'], 
+            'data': [[0.6], [48.0, 550.0], [None, 170.0], [2.26, 2.27], [0.09, 0.21]]}
+            """
 
             ## Unify data length
             data_dict_conv = data_length_unify(data_dict)
@@ -532,8 +445,8 @@ def process(entnum):
             ## means there is NODATA defined in the Subent
             continue
 
-        entry_num = entnum + subent
-        tabulated_to_exfortables_format(entry_num, entry_json, data_dict_conv)
+        ## Process all pointers
+        process_pointers(entry_num, main_bib_dict, entry_json, data_dict_conv)
 
     return
 
@@ -561,7 +474,7 @@ def process_all():
             break
         except:
             logging.error(f"ERROR: at ENTRY: {entnum}", exc_info=True)
-            
+
     logging.info(f"End processing {print_process_time(start_time)}")
 
 
@@ -580,7 +493,7 @@ def process_updated_entry():
         ent += [row["entry"]]
 
     entries = ent
-    
+
     start_time = print_process_time()
     logging.info(f"Start processing {print_time()}")
 
@@ -594,47 +507,199 @@ def process_updated_entry():
             break
         except:
             logging.error(f"ERROR: at ENTRY: {entnum}", exc_info=True)
-            
+
     logging.info(f"End processing {print_process_time(start_time)}")
+
+
+def process_pointers(entry_num, main_bib_dict, entry_json, data_dict_conv):
+    entnum = entry_num[0:5]
+    subent = entry_num[5:8]
+    print(entnum, subent)
+    logging.info(f"Process {entnum}-{subent}")
+
+    for pointer in entry_json["reactions"][subent]:
+        ## looping over all pointers exist in the REACTION in SUBENTRY
+        df = pd.DataFrame()
+        entry_id = entnum + "-" + subent + "-" + pointer
+
+        ## Insert REACTION code for each pointer into the exfor_reactions table
+        create_and_insert_reaction_dict(
+            entry_id, entry_json["reactions"][subent][pointer]
+        )
+
+        if entry_json["experimental_conditions"][subent].get(pointer):
+            create_and_insert_experimental_condition_dict(
+                entry_id, entry_json["experimental_conditions"][subent][pointer]
+            )
+            create_and_insert_references_dict(
+                entry_id, entry_json["experimental_conditions"][subent][pointer]
+            )
+
+        if filter_complex_reactions(entry_json, subent, pointer):
+            continue
+
+        react_dict = entry_json["reactions"][subent][pointer]["children"][0]
+
+        ## Store datatable into SQL
+        df = process_general(entry_id, entry_json, data_dict_conv)
+
+        ## Insert EXFOR reaction index into the exfor_index table, which is an extension of the exfor_reactions table
+        create_and_insert_reaction_index_dict(entry_id, entry_json, react_dict, df)
+
+        tabulate_into_exfortables_format(entry_id, main_bib_dict, react_dict, df)
+
+        # sf3_dict_add = {
+        #     (
+        #         "N"
+        #         if react_dict["process"].split(",")[0].upper() != "N" and k == "INL"
+        #         else k
+        #     ): i
+        #     for k, i in sf3_dict.items()
+        # }
+
+    return
+
+
+def tabulate_into_exfortables_format(entry_id, main_bib_dict, react_dict, df):
+
+    if filter_reaction(react_dict, df):
+        ## Filter some major cases that cannot be processed as a tablated format,
+        ## such as the cases that DATA is given by arbitrary unit (ARB-UNIT) or no dimension (NO-DIM)
+        return
+    if react_dict["sf6"] == "SIG":
+        if filter_cross_section_case(react_dict, df):
+            return
+
+        if react_dict["sf5"] != "PAR":
+            process_cross_section_case(df, entry_id, main_bib_dict, react_dict)
+        else:
+            ## none of (N,NON) PAR,SIG are useful
+            if filter_partial_cross_section_case(react_dict, df):
+                return
+            process_partial_cross_section_case(df, entry_id, main_bib_dict, react_dict)
+
+    # --------------------------------------------------------------------------------------- ##
+    # ------------------------        Angular distributions         ------------------------  ##
+    # --------------------------------------------------------------------------------------- ##
+
+    elif react_dict["sf6"] == "DA":
+        if filter_angler_distribution_case(react_dict, df):
+            return
+
+        if react_dict["sf5"] != "PAR":
+            process_angler_distribution_section_case(
+                df, entry_id, main_bib_dict, react_dict
+            )
+
+        elif (
+            react_dict["sf5"] == "PAR" and react_dict["process"].split(",")[1] == "INL"
+        ):
+            if filter_partial_angler_distribution_case(react_dict, df):
+                return
+            process_partial_angler_distribution_case(
+                df, entry_id, main_bib_dict, react_dict
+            )
+
+    # --------------------------------------------------------------------------------------- ##
+    # ------------------------         Energy distributions         ------------------------  ##
+    # --------------------------------------------------------------------------------------- ##
+
+    elif react_dict["sf6"] == "DE":
+        if filter_energy_distribution_case(react_dict, df):
+            return
+        process_energy_distribution_case(df, entry_id, main_bib_dict, react_dict)
+
+    # --------------------------------------------------------------------------------------- ##
+    # ------------------------         Neutron observables          ------------------------  ##
+    # --------------------------------------------------------------------------------------- ##
+    elif react_dict["sf6"] == "NU":
+        if (
+            not (react_dict["sf6"] == "NU/DE" or react_dict["sf6"] == "FY/DE")
+            and react_dict["sf5"] == "PR"
+        ):
+
+            if filter_misc_neutron_observables_case(react_dict, df):
+                return
+            process_neutron_observables_case(df, entry_id, main_bib_dict, react_dict)
+
+        else:
+            if filter_misc_neutron_observables_case(react_dict, df):
+                return
+            process_misc_neutron_observables_case(
+                df, entry_id, main_bib_dict, react_dict
+            )
+
+    ## --------------------------------------------------------------------------------------- ##
+    ## ------------------------           Kinetic energies           ------------------------  ##
+    ## --------------------------------------------------------------------------------------- ##
+
+    # elif react_dict["sf6"] == "KE":
+    #     if filter_kinetic_energy_case(react_dict, df):
+    #         continue
+    #     process_kinetic_energy_case(df, entry_id, entry_json, react_dict)
+
+    # elif react_dict["sf6"] == "AKE":
+    #     if df["en_inc"].isnull().values.all():
+    #         continue
+    #     process_average_kinetic_energy_case(df, entry_id, entry_json, react_dict)
+
+    # --------------------------------------------------------------------------------------- ##
+    # ------------------------            Fission yields            ------------------------  ##
+    # --------------------------------------------------------------------------------------- ##
+    elif react_dict["sf6"] == "FY":
+        if filter_fission_yield_case(react_dict, df):
+            return
+        process_fission_yield_case(df, entry_id, main_bib_dict, react_dict)
+
+    # --------------------------------------------------------------------------------------- ##
+    # ------------------------            Target yields             ------------------------  ##
+    # --------------------------------------------------------------------------------------- ##
+    elif react_dict["sf6"] == "TTY":
+        if filter_fission_yield_case(react_dict, df):
+            return
+        process_thick_target_yield_case(df, entry_id, main_bib_dict, react_dict)
+
+    ## --------------------------------------------------------------------------------------- ##
+    ## ------------------------         Resonance parameters         ------------------------  ##
+    ## --------------------------------------------------------------------------------------- ##
 
 
 if __name__ == "__main__":
     process_all()
 
-
-        # "facility": ", ".join(
-        #     [ f["x4_code"] for f in exp_cond["facility"] if f["x4_code"] ]
-        # ) if exp_cond.get("facility") else None ,
-        # "inc_source": ", ".join(
-        #     [ f["x4_code"] for f in exp_cond["inc-source"] if f["x4_code"] ]
-        # )  if exp_cond.get("inc-source") else None,
-        # "part_det": ", ".join(
-        #     [ f["x4_code"] for f in exp_cond["part-det"] if f["x4_code"] ]
-        # ) if exp_cond.get("part-det") else None,
-        # "sample": ", ".join(
-        #     [ f["x4_code"] for f in exp_cond["sample"] if f["x4_code"] ]
-        # ) if exp_cond.get("sample") else None,
-        # "detector": ", ".join(
-        #     [ f["x4_code"] for f in exp_cond["detector"] if f["x4_code"] ]
-        # ) if exp_cond.get("detector") else None ,
-        # "method": ", ".join(
-        #     [ f["x4_code"] for f in exp_cond["method"] if f["x4_code"]  ]
-        # ) if exp_cond.get("method") else None,
-        # "analysis": ", ".join(
-        #     [ f["x4_code"] for f in exp_cond["analysis"] if f["x4_code"]  ]
-        # ) if exp_cond.get("analysis") else None,
-        # "monitor": ", ".join(
-        #     [ f["x4_code"] for f in exp_cond["monitor"] if f["x4_code"] ]
-        # ) if exp_cond.get("monitor") else None,
-        # "monit_ref": ", ".join(
-        #     [ f["x4_code"] for f in exp_cond["monit-ref"] if f["x4_code"] ]
-        # ) if exp_cond.get("monit-ref") else None,
-        # "assumed": ", ".join(
-        #     [ f["x4_code"] for f in exp_cond["assumed"] if f["x4_code"] ]
-        # ) if exp_cond.get("assumed") else None ,
-        # "err_analys": ", ".join(
-        #     [ f["x4_code"] for f in exp_cond["err-analys"] if f["x4_code"] ]
-        # )  if exp_cond.get("err-analys") else None ,
-        # "decay_data": ", ".join(
-        #     [ f["x4_code"] for f in exp_cond["decay-data"] if f["x4_code"]]
-        # ) if exp_cond.get("decay-data") else None,
+    # "facility": ", ".join(
+    #     [ f["x4_code"] for f in exp_cond["facility"] if f["x4_code"] ]
+    # ) if exp_cond.get("facility") else None ,
+    # "inc_source": ", ".join(
+    #     [ f["x4_code"] for f in exp_cond["inc-source"] if f["x4_code"] ]
+    # )  if exp_cond.get("inc-source") else None,
+    # "part_det": ", ".join(
+    #     [ f["x4_code"] for f in exp_cond["part-det"] if f["x4_code"] ]
+    # ) if exp_cond.get("part-det") else None,
+    # "sample": ", ".join(
+    #     [ f["x4_code"] for f in exp_cond["sample"] if f["x4_code"] ]
+    # ) if exp_cond.get("sample") else None,
+    # "detector": ", ".join(
+    #     [ f["x4_code"] for f in exp_cond["detector"] if f["x4_code"] ]
+    # ) if exp_cond.get("detector") else None ,
+    # "method": ", ".join(
+    #     [ f["x4_code"] for f in exp_cond["method"] if f["x4_code"]  ]
+    # ) if exp_cond.get("method") else None,
+    # "analysis": ", ".join(
+    #     [ f["x4_code"] for f in exp_cond["analysis"] if f["x4_code"]  ]
+    # ) if exp_cond.get("analysis") else None,
+    # "monitor": ", ".join(
+    #     [ f["x4_code"] for f in exp_cond["monitor"] if f["x4_code"] ]
+    # ) if exp_cond.get("monitor") else None,
+    # "monit_ref": ", ".join(
+    #     [ f["x4_code"] for f in exp_cond["monit-ref"] if f["x4_code"] ]
+    # ) if exp_cond.get("monit-ref") else None,
+    # "assumed": ", ".join(
+    #     [ f["x4_code"] for f in exp_cond["assumed"] if f["x4_code"] ]
+    # ) if exp_cond.get("assumed") else None ,
+    # "err_analys": ", ".join(
+    #     [ f["x4_code"] for f in exp_cond["err-analys"] if f["x4_code"] ]
+    # )  if exp_cond.get("err-analys") else None ,
+    # "decay_data": ", ".join(
+    #     [ f["x4_code"] for f in exp_cond["decay-data"] if f["x4_code"]]
+    # ) if exp_cond.get("decay-data") else None,

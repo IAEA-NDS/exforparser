@@ -14,7 +14,6 @@
 # from ..config import MT_DEF, MF3_JSON
 
 
-
 def get_unique_mf_mt(df2):
 
     if len(df2["mt"].unique()) == 0:
@@ -28,8 +27,6 @@ def get_unique_mf_mt(df2):
         mf = df2["mf"].unique()[0]
 
     return mf, mt
-
-
 
 
 # def mt_to_reaction():

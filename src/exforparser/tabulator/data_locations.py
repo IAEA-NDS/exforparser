@@ -53,13 +53,10 @@ def get_en_locs_by_pointer(pointer, data_dict_conv):
     return locs_y, locs_dy
 
 
-
-
 def get_outgoing_e_locs(data_dict_conv):
     return get_colmun_indexes(
         data_dict_conv, d.get_outgoing_e_heads()
     ), get_colmun_indexes(data_dict_conv, d.get_outgoing_e_err_heads())
-
 
 
 def get_flag_locs(data_dict_conv):

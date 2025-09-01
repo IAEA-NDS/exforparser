@@ -50,7 +50,7 @@ experimental_condition_identifires = [
     "MONITOR",
     "MOM-SEC",
     "PART-DET",
-    "RAD-DET", 
+    "RAD-DET",
     "SAMPLE",
 ]
 
@@ -80,7 +80,7 @@ identifiers = [
     "MONITOR",
     "MOM-SEC",
     "PART-DET",
-    "RAD-DET", 
+    "RAD-DET",
     "REL-REF",
     "RESULT",
     "SAMPLE",

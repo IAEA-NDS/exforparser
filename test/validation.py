@@ -17,7 +17,7 @@ def check_all():
 
 
 def validate_json_file(file_path):
-    with open(file_path, 'r', encoding='utf-8') as f:
+    with open(file_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     try:
@@ -30,6 +30,7 @@ def validate_json_file(file_path):
         print(f"  Schema Path : {' -> '.join(map(str, e.schema_path))}")
         print(f"  Actual Value     : {repr(e.instance)}")
         print(f"  Validater   : {e.validator} (expectation: {e.validator_value})")
+
 
 check_all()
 # validate_json_file('/Users/okumuras/Documents/nucleardata/EXFOR/exfor_json/json/104/10479.json')
