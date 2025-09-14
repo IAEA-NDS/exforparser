@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 
 from exforparser.submodules.utilities.util import get_number_from_string
+from exforparser.submodules.utilities.reaction import resonance_parameter_sf6
 from .models_core import (
     exfor_bib,
     exfor_reactions,
@@ -89,7 +90,6 @@ def insert_reaction_index(dictlist):
 def list_of_target(obs_type) -> list:
     targets = []
 
-    # 条件を組み立てる
     if obs_type in ["xs", "thermal", "macs"]:
         condition = exfor_indexes.c.sf6 == "SIG"
 
@@ -109,11 +109,7 @@ def list_of_target(obs_type) -> list:
         condition = exfor_indexes.c.sf6 == "RI"
 
     elif obs_type == "resonance_parameter":
-        condition = exfor_indexes.c.sf6.in_(["WID", "WID/STR"])
-    #     condition = and_(
-    #     exfor_indexes.c.sf6.in_(["EN"]),
-    #     exfor_indexes.c.process.endswith("0")
-    # )
+        condition = exfor_indexes.c.sf6.in_(resonance_parameter_sf6)
 
     elif obs_type == "gamma_gamma":
         condition = exfor_indexes.c.sf6.in_(["WID"])
@@ -126,6 +122,9 @@ def list_of_target(obs_type) -> list:
 
     elif obs_type == "strength_funcition":  # <- typo? Should be "strength_function"
         condition = exfor_indexes.c.sf6.in_(["STF"])
+
+    elif obs_type == "transmission":
+        condition = exfor_indexes.c.sf6 == "TRN"
 
     else:
         return []
@@ -233,7 +232,7 @@ def parse_flags(x):
         return {}
 
 
-def resonance_parameter_query(obs_type, sf6, target, reaction):
+def resonance_parameter_data_query(obs_type, sf6, target, reaction):
     projectile = reaction.split(",")[0]
     resonance_data_reaction = [
         f"{projectile.upper()},{ejc}" for ejc in ["TOT", "G", "EL", "F", "A"]
@@ -245,7 +244,7 @@ def resonance_parameter_query(obs_type, sf6, target, reaction):
             exfor_indexes.c.sf5.is_(None),
             exfor_indexes.c.sf6 == sf6,
             exfor_indexes.c.sf7.is_(None),
-            exfor_indexes.c.sf8.is_(None),
+            # exfor_indexes.c.sf8.is_(None),
             exfor_indexes.c.process.in_(resonance_data_reaction),
         )
     )
@@ -373,7 +372,7 @@ def observable_data_query(obs_type, target, reaction):
         ]
 
     elif obs_type == "resonance_parameter":
-        return resonance_parameter_query(obs_type, target, reaction)
+        return resonance_parameter_data_query(obs_type, target, reaction)
 
     elif obs_type == "gamma_gamma":
         conditions += [
@@ -396,6 +395,7 @@ def observable_data_query(obs_type, target, reaction):
         result = conn.execute(stmt).fetchall()
 
     entries = [row.entry_id for row in result] if result else [None]
+
     return data_query_by_id(obs_type, entries)
 
 
@@ -410,8 +410,8 @@ def data_query_by_id(obs_type, entries):
 
     elif obs_type == "thermal":
         conditions += [
-            exfor_data.c.en_inc >= 2.52e-8,
-            exfor_data.c.en_inc <= 2.54e-8,
+            exfor_data.c.en_inc >= 0.024,
+            exfor_data.c.en_inc <= 0.026,
         ]
 
     elif obs_type == "macs":
@@ -420,7 +420,6 @@ def data_query_by_id(obs_type, entries):
             exfor_data.c.en_inc <= 0.035,
         ]
 
-    # SELECT句のカラム
     stmt = (
         select(
             exfor_bib.c.first_author,
@@ -459,7 +458,6 @@ def data_query_by_id(obs_type, entries):
                 exfor_indexes,
                 and_(
                     exfor_indexes.c.entry_id == exfor_data.c.entry_id,
-                    # mt 条件（xsの場合）
                     *(
                         [exfor_indexes.c.mt == exfor_data.c.mt]
                         if obs_type == "xs"
@@ -481,7 +479,6 @@ def data_query_by_id(obs_type, entries):
         )
     )
 
-    # 実行 & DataFrame に変換
     with engines["exfor"].connect() as conn:
         df = pd.read_sql(stmt, conn)
 

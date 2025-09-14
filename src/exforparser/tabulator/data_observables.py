@@ -18,11 +18,12 @@ from exforparser.sql.stored import (
     list_of_target,
     list_of_reactions_and_entries,
     observable_data_query,
-    resonance_parameter_query,
+    resonance_parameter_data_query,
     data_query_by_id,
 )
 from exforparser.submodules.utilities.util import del_outputs, closest, slices
-from exforparser.submodules.utilities.reaction import sf3_dict, sig_sf5
+from exforparser.submodules.utilities.reaction import sf3_dict, sig_sf5, resonance_parameter_sf6
+
 
 from .data_dir_files import (
     get_thermal_dir_name,
@@ -115,14 +116,11 @@ def crosssection():
 def thermal(type):
     thermal_data_reaction = ["N,TOT", "N,G", "N,P", "N,A", "N,EL", "N,F"]
     targets = list_of_target(type)
-
-    # del_outputs(os.path.join(OUT_PATH, "thermaldata"))
-
+    # targets = ["56-BA-130"]
     for target in targets:
         for reaction in thermal_data_reaction:
-            # df = thermal_xs(target, reaction)
+            print(target, reaction)
             df = observable_data_query(type, target, reaction)
-            # print(df.sort_values(by="sf4"))
             for prod in df["sf4"].unique():
                 react_dict = {"target": target, "process": reaction, "sf4": prod}
 
@@ -135,9 +133,13 @@ def thermal(type):
                 if df2.empty:
                     continue
 
+                if df2["data"].isna().all():
+                    ## This is for the case of #21992003
+                    continue
+
                 else:
                     if type == "thermal":
-                        dir = get_thermal_dir_name("thermaldata/thermal_xs", react_dict)
+                        dir = get_thermal_dir_name("thermaldata", react_dict)
                         outfile = get_thermal_filename(dir, react_dict)
 
                         write_to_thermal_table(type, dir, outfile, react_dict, df2)
@@ -283,7 +285,6 @@ def resonance_parameter():
 
     projectiles = ["P", "A", "G", "N"]
     obs_type = "resonance_parameter"
-    rp_sf6 = ["WID", "WID/STR", "WID/RED", "ARE", "RMT", "RMT/AMP"]
 
     targets = list_of_target(obs_type)
 
@@ -306,20 +307,20 @@ def resonance_parameter():
                 f"ddata({projectile},A)",
             ]
 
-            for sf6 in rp_sf6:
+            for sf6 in resonance_parameter_sf6:
                 print(f"Projectile: {projectile} Target: {target} SF6:{sf6}")
                 react_dict = {
                     "target": target,
                     "process": f"{projectile},0",
                     "sf4": None,
                 }
-                df = resonance_parameter_query(obs_type, sf6, target, f"{projectile},0")
-                # print(df[["entry_id", "process", "en_inc", "den_inc", "data", "ddata", "en_inc_frame"]])
+                df = resonance_parameter_data_query(obs_type, sf6, target, f"{projectile},0")
+                print(df[["entry_id", "process", "en_inc", "den_inc", "sf6", "sf8", "data"]])
                 if df.empty:
                     continue
 
-                for entry_subent, row in df.groupby(
-                    df["entry_id"].str[:9], group_keys=False
+                for (entry_subent, sf8), row in df.groupby(
+                    [df["entry_id"].str[:9], df["sf8"]], group_keys=False
                 ):
                     # print(entry_subent)
                     main_bib_dict = (
@@ -342,18 +343,9 @@ def resonance_parameter():
                     react_dict["entry_id"] = row["entry_id"].unique()[0]
                     react_dict["x4_code"] = row["x4_code"].unique()[0]
                     react_dict["sf6"] = sf6
+                    react_dict["sf8"] = sf8
                     react_dict["process"] = row["process"].unique()[0]
                     react_dict["en_res_type"] = row["en_res_type"].unique()[0]
-                    # react_dict = row[["entry_id",
-                    #                 "x4_code",
-                    #                 "process",
-                    #                 "residual",
-                    #                 "sf4",
-                    #                 "sf5",
-                    #                 "sf6",
-                    #                 "sf7",
-                    #                 "sf8",
-                    #                 "sf9"]].to_dict()
                     react_dict["target"] = target
                     react_dict["projectile"] = projectile
                     # print(row[["entry_id", "process", "en_inc", "den_inc", "data", "ddata", "width_str", "dwidth_str", "en_inc_frame"]])
@@ -403,7 +395,7 @@ def resonance_parameter():
                         continue
 
                     dir = get_resonance_param_dir_name(
-                        "resonance_data/resonance_parameter", sf6, react_dict
+                        "resonance_data/resonance_parameter", react_dict
                     )
                     outfile = get_resonance_param_file_name(
                         dir, entry_subent, main_bib_dict, react_dict
@@ -415,83 +407,12 @@ def resonance_parameter():
     return
 
 
-# def resonance_parameter():
-#     """
-#     Extract and combine resonance parameter data by SENTRY_ID (entry_id).
-#     Write one file per entry_id combining all relevant reactions.
-#     """
-#     resonance_data_reaction = ["N,TOT", "N,G", "N,EL", "N,F", "N,A"]
-#     type = "resonance_parameter"
-#     targets = list_of_target(type)
-
-#     for target in reversed(targets):
-#         print(f"Processing target: {target}")
-
-#         # 一時保存用 dict: entry_id → { 'en': df, 'channels': {channel: df} }
-#         entry_data_dict = defaultdict(lambda: {"en_df": None, "channels": {}})
-
-#         for reaction in resonance_data_reaction:
-#             react_dict = {"target": target, "process": reaction, "sf4": None}
-#             en_df, df = observable_data_query(type, target, reaction)
-
-#             if df.empty:
-#                 continue
-
-#             # entry_id 単位にグループ化して格納
-#             df["reaction"] = df["x4_code"].apply(lambda x: extract_reaction(x))
-#             entry_ids = df["entry_id"].unique()
-
-#             for entry_id in entry_ids:
-#                 sub_df = df[df["entry_id"] == entry_id].copy()
-#                 if sub_df.empty:
-#                     continue
-
-#                 # reaction typeごとの列を用意
-#                 for ch in sub_df["reaction"].dropna().unique():
-#                     ch_df = sub_df[sub_df["reaction"] == ch][["data", "ddata"]].reset_index(drop=True)
-#                     entry_data_dict[entry_id]["channels"][ch] = ch_df
-
-#                 # ENのデータも保存（1回だけ）
-#                 if entry_data_dict[entry_id]["en_df"] is None and not en_df.empty:
-#                     df_en_clean = en_df[["data", "ddata"]].copy()
-#                     df_en_clean.columns = ["en", "d_en"]
-#                     entry_data_dict[entry_id]["en_df"] = df_en_clean.reset_index(drop=True)
-
-#         # 出力フェーズ：entry_id単位でファイルを作成
-#         for entry_id, data in entry_data_dict.items():
-#             if data["en_df"] is None:
-#                 continue
-
-#             output_df = data["en_df"].copy()
-
-#             for ch, ch_df in data["channels"].items():
-#                 ch_df.columns = [ch, f"d_{ch}"]
-#                 output_df = pd.concat([output_df, ch_df], axis=1)
-
-#             # 保存パス生成
-#             react_dict["entry_id"] = entry_id
-#             dir = get_thermal_dir_name("resonance_data/resonance_parameter", react_dict)
-#             outfile = get_thermal_filename(dir, react_dict)
-
-#             # 保存（必要であればコメントアウト解除）
-#             # write_to_exfortables_format_resonance_parameter(type, dir, outfile, react_dict, output_df)
-
-#             print(f"\n[{entry_id}]")
-#             print(output_df)
-
-#     return
-
-
-# ユーティリティ関数（再掲）
 def extract_reaction(x4_code):
     match = re.search(r"\(.*?\((N,[^)]+)\)", x4_code)
     return match.group(1).split(",")[1] if match else None
 
 
 def gamma_gamma():
-    """
-    To extract the resonance spacing (N,0),,D reactions for Arjan Koning
-    """
     resonance_data_reaction = ["N,G"]
     type = "gamma_gamma"
     targets = list_of_target(type)

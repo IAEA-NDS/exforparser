@@ -19,7 +19,8 @@ from exforparser.sql.stored import insert_df_to_data
 from exforparser.submodules.utilities.elem import ztoelem
 from exforparser.submodules.utilities.reaction import (
     get_mf,
-    get_mt,
+    get_xs_mt,
+    get_fy_mt,
     e_lvl_to_mt,
     mt_nu_sf5,
     mt_fy_sf5,
@@ -465,7 +466,7 @@ def get_outgoing(pointer, locs, react_dict, data_dict_conv, data):
         e_out_min = [None] * len(data)
         e_out_max = [None] * len(data)
         e_out_frame = [None] * len(data)
-        mt = [get_mt(react_dict)] * len(data)
+        mt = [get_xs_mt(react_dict)] * len(data)
 
     if locs["locs_e"] and data_dict_conv["heads"][locs["locs_e"][0]] == "LVL-NUMB":
         ## take the first column of LVL-NUMB if there are some
@@ -528,11 +529,12 @@ def get_outgoing(pointer, locs, react_dict, data_dict_conv, data):
             L = RIPL_Level(
                 react_dict["sf4"].split("-")[0],
                 react_dict["sf4"].split("-")[2],
-                e_lvl,
+                e_lvl / 1e6,
             )
 
             level_num += [L.ripl_find_level_num()]
             mt += [e_lvl_to_mt(L.ripl_find_level_num(), react_dict["process"])]
+
         assert len(level_num) == len(e_out)
 
     elif not all(t is None for t in mt):

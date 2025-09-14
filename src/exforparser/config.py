@@ -36,7 +36,7 @@ elif ENV == "prod":
 
 
 EXFOR_MASTER_REPO_PATH = os.path.join(DATA_DIR, "exfor_master")
-EXFOR_DB = os.path.join(DATA_DIR, "exfortables_test.sqlite")
+EXFOR_DB = os.path.join(DATA_DIR, "exfortables_level.sqlite")
 
 
 BUF_SIZE = 65536

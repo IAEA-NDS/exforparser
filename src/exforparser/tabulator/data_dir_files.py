@@ -205,7 +205,7 @@ def get_thermal_filename(dir, react_dict):
 
 
 # --------------------- Resonance Parameter
-def get_resonance_param_dir_name(obs_type, sf6, react_dict):
+def get_resonance_param_dir_name(obs_type, react_dict):
     ### generate output dir and filename
 
     return os.path.join(
@@ -213,7 +213,8 @@ def get_resonance_param_dir_name(obs_type, sf6, react_dict):
         obs_type,
         react_dict["projectile"],
         target_reformat(react_dict),
-        sf6.replace("/", "-"),
+        react_dict["sf6"].replace("/", "-"),
+        react_dict["sf8"].replace("/", "-") if react_dict.get("sf8") else None,
     )
 
 

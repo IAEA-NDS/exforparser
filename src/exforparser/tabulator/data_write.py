@@ -215,8 +215,9 @@ def bib_table_resonance_parameter(entry_id, main_bib_dict, react_dict, mfmt, df)
 
     print(
         f"# Header:",
-        "\n"
-        f"#   Title                 : {react_dict['target']} Resonance Parameter: {react_dict['sf6']}",
+        "\n" f"#   Title                 : {react_dict['target']} "
+            f"Resonance Parameter: {react_dict['sf6']}"
+            f"{',,' + react_dict['sf8'] if react_dict.get('sf8') else ''}",
         "\n" f"#   Source                : EXFOR",
         "\n" f"#   Date Created          : {str(today)}",
         "\n" f"# EXFOR Bibliographic Information:",
@@ -515,7 +516,7 @@ def write_to_exfortables_format_resonance_parameter(
     return
 
 
-def write_to_thermal_table(type, dir, outfile, react_dict, df):
+def write_to_thermal_table(obs_type, dir, outfile, react_dict, df):
 
     if os.path.exists(dir):
         pass
@@ -523,7 +524,7 @@ def write_to_thermal_table(type, dir, outfile, react_dict, df):
     else:
         os.makedirs(dir)
 
-    stat_dict = thermal_mean(type, df)
+    stat_dict = thermal_mean(obs_type, df)
     # print(json.dumps(stat_dict, indent=1))
     today = datetime.today().strftime("%Y-%m-%d")
 
@@ -533,7 +534,7 @@ def write_to_thermal_table(type, dir, outfile, react_dict, df):
             print(
                 f"# Header:",
                 "\n"
-                f"#   title: {react_dict['target']}({react_dict['process']}) {type} cross section",
+                f"#   title: {react_dict['target']}({react_dict['process']}) {obs_type} cross section",
                 "\n" f"#   source: EXFOR",
                 "\n" f"#   date created: {str(today)}",
                 "\n" f"# Target:",
@@ -541,6 +542,7 @@ def write_to_thermal_table(type, dir, outfile, react_dict, df):
                 "\n" f"#   A: {react_dict['target'].split('-')[2]}",
                 "\n" f"#   Nuclide: {react_dict['target']}",
                 "\n" f"# Reaction:",
+                "\n" f"#   Type: {react_dict['process']}",
                 "\n" f"#   Type: {react_dict['process']}",
                 "\n" f"#   Incident energy       :",
                 (
@@ -610,7 +612,7 @@ def write_to_thermal_table(type, dir, outfile, react_dict, df):
                         print("#   Recom./Eval./Deriv./Calc. Data")
 
                     print(
-                        "# EXFOR ID          First Author            Year   En_inc       dEn_inc      Data         dData         sf8    sf9"
+                        "# EXFOR ID          First Author            Year   En_inc [MeV] dEn_inc      Data [B]     dData         sf8    sf9"
                     )
                     for i, row in df_sf9.iterrows():
                         print(
@@ -618,8 +620,8 @@ def write_to_thermal_table(type, dir, outfile, react_dict, df):
                                 row["entry_id"],
                                 row["first_author"],
                                 row["year"],
-                                row["en_inc"],
-                                0.0 if pd.isnull(row["den_inc"]) else row["den_inc"],
+                                row["en_inc"] /1e+6,
+                                0.0 if pd.isnull(row["den_inc"]) else row["den_inc"] /1e+6,
                                 row["data"],
                                 0.0 if pd.isnull(row["ddata"]) else row["ddata"],
                                 "" if pd.isnull(row["sf8"]) else row["sf8"],
@@ -707,7 +709,7 @@ def write_to_resonance_spacing_table(type, dir, outfile, react_dict, df, df0, df
             print("\n\n")
             print("## RIPL3 Data")
             print(
-                "# ID                First Author            Year   En_min[MeV]  En_max [MeV] Data [eV]    dData [eV]        Momentum L"
+                "# ID                First Author            Year   En_min[MeV]  En_max [MeV]  Data [eV]   dData [eV]        Momentum L"
             )
             print(
                 "{:20}{:20}{:8n}{:13.4E}{:13.4E}{:13.4E}{:13.4E}{:11.1F}".format(
@@ -718,13 +720,13 @@ def write_to_resonance_spacing_table(type, dir, outfile, react_dict, df, df0, df
                     np.nan,
                     (
                         df0["D0"].values[0] * 1e3
-                        if not df0.empty and type == "resonance_spacing"
-                        else df0["Gg"].values[0] * 1e3 if not df0.empty else np.nan
+                        if not df0.empty and type == "resonance_spacing"   # D0 or D1: average resonance spacing in keV
+                        else df0["Gg"].values[0] / 1e3 if not df0.empty else np.nan  # Gam     : average radiative width in meV.  Guessed that meV means mili-eV.
                     ),
                     (
                         df0["dD"].values[0] * 1e3
                         if not df0.empty and type == "resonance_spacing"
-                        else df0["dG"].values[0] * 1e3 if not df0.empty else np.nan
+                        else df0["dG"].values[0] / 1e3 if not df0.empty else np.nan
                     ),
                     0,
                 )
@@ -739,12 +741,12 @@ def write_to_resonance_spacing_table(type, dir, outfile, react_dict, df, df0, df
                     (
                         df1["D1"].values[0] * 1e3
                         if not df1.empty and type == "resonance_spacing"
-                        else df1["Gg"].values[0] * 1e3 if not df1.empty else np.nan
+                        else df1["Gg"].values[0] / 1e3 if not df1.empty else np.nan
                     ),
                     (
                         df1["dD"].values[0] * 1e3
                         if not df1.empty and type == "resonance_spacing"
-                        else df1["dG"].values[0] * 1e3 if not df1.empty else np.nan
+                        else df1["dG"].values[0] / 1e3 if not df1.empty else np.nan
                     ),
                     1.0,
                 )
