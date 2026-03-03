@@ -1,7 +1,9 @@
 GitPython==3.1.44
-pandas==2.2.3
+pandas==2.3.3
 pyparsing==3.2.1
-setuptools==65.5.0
-SQLAlchemy==2.0.37
+setuptools==80.9.0
+SQLAlchemy==2.0.40
 exfor_dictionary @ git+https://github.com/IAEA-NDS/exfor_dictionary@main
 ripl3_json @ git+https://github.com/shinokumura/ripl3_json@main
+jsonschema
+pytest
