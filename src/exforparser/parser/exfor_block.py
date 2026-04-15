@@ -163,12 +163,15 @@ def get_identifier_details(identifier_block) -> list:
                 l_opens, r_closes = parse_parenthesis(line, 0)
 
             except:
-                match = Located(parentheses).parse_string("".join(identifier_block[i:]))
-                l_opens = [match[0]]
-                ii, r_closes = get_text_location_index(identifier_block, i, match[-1])
-                x = "".join(identifier_block[i:])[match[0] : match[-1]]
-
-                skip_p_line = True
+                try:
+                    match = Located(parentheses).parse_string("".join(identifier_block[i:]))
+                    l_opens = [match[0]]
+                    ii, r_closes = get_text_location_index(identifier_block, i, match[-1])
+                    x = "".join(identifier_block[i:])[match[0] : match[-1]]
+                    skip_p_line = True
+                except Exception:
+                    l_opens = []
+                    r_closes = []
 
         if i < ii:
             ## skip lines if the x4_code continues

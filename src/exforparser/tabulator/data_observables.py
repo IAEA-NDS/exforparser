@@ -348,7 +348,7 @@ def resonance_parameter():
                     react_dict["en_res_type"] = row["en_res_type"].unique()[0]
                     react_dict["target"] = target
                     react_dict["projectile"] = projectile
-                    # print(row[["entry_id", "process", "en_inc", "den_inc", "data", "ddata", "width_str", "dwidth_str", "en_inc_frame"]])
+                    # print(row[["entry_id", "process", "en_inc", "den_inc", "data", "ddata", "width_str", "dwidth_str"]])
 
                     pivot_df = row.pivot_table(
                         index=["en_inc"],

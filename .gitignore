@@ -192,3 +192,4 @@ json.schema
 *.sh
 uninstall.txt
 memo.dat
+.claude/

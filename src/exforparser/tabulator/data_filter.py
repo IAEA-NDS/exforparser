@@ -101,11 +101,11 @@ def filter_partial_cross_section_case(react_dict, df):
     return False
 
 
-def filter_angler_distribution_case(react_dict, df):
+def filter_angular_distribution_case(react_dict, df):
     if not react_dict["process"].split(",")[1] in sf3_dict.keys():
         return True
 
-    if any(react_dict["sf8"] != excep for excep in ("EXP") if react_dict["sf8"]):
+    if any(react_dict["sf8"] != excep for excep in ("EXP",) if react_dict["sf8"]):
         return True
 
     if react_dict["sf7"]:
@@ -120,7 +120,7 @@ def filter_angler_distribution_case(react_dict, df):
     return False
 
 
-def filter_partial_angler_distribution_case(react_dict, df):
+def filter_partial_angular_distribution_case(react_dict, df):
     ## case for PAR,DA
     if df["en_inc"].isnull().values.all():
         return True
@@ -137,7 +137,7 @@ def filter_partial_angler_distribution_case(react_dict, df):
 def filter_energy_distribution_case(react_dict, df):
     if (
         not any(par == react_dict["process"].split(",")[1] for par in sf3_dict.keys())
-        or any(react_dict["sf8"] != excep for excep in ("EXP") if react_dict["sf8"])
+        or any(react_dict["sf8"] != excep for excep in ("EXP",) if react_dict["sf8"])
         or react_dict["sf7"]
     ):
         return True

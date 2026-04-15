@@ -30,10 +30,29 @@ from exforparser.submodules.utilities.util import (
     convert_angle_cm_lab,
 )
 
-from .data_locations import *
+from .data_locations import (
+    get_incident_energy_locs,
+    get_y_locs,
+    get_y_locs_by_pointer,
+    get_en_locs_by_pointer,
+    get_outgoing_e_locs,
+    get_outgoing_e_locs_by_pointer,
+    get_flag_locs,
+    get_angle_locs,
+)
+from .init_dict import d
+from exforparser.parser.exfor_unit import kt_to_ev
+from exforparser.parser.exfor_data import get_colmun_indexes
 from .exfor_reaction_mt import get_unique_mf_mt
-from .data_write import *
-from .data_dir_files import *
+from .data_write import (
+    write_to_exfortables_format_sig,
+    write_to_exfortables_format_da,
+    write_to_exfortables_format_de,
+    write_to_exfortables_format_fy,
+    write_to_exfortables_format_nu,
+    write_to_exfortables_format_kinetic_e,
+)
+from .data_dir_files import get_dir_name, exfortables_filename
 
 
 def limit_data_dict_by_locs(locs, data_dict):
@@ -57,12 +76,17 @@ def data_length_unify(data_dict):
 
     for l in range(len(data_len)):
         if data_len[l] < max(data_len):
-            data_list[l] = data_list[l] * max(data_len)
+            if data_len[l] == 1:
+                # Single value from COMMON section applies to all data rows
+                data_list[l] = data_list[l] * max(data_len)
+            else:
+                data_list[l] = data_list[l] + [None] * (max(data_len) - data_len[l])
 
     ## Check if list length are all same
     it = iter(data_list)
     the_next = len(next(it))
-    assert all(len(l) == the_next for l in it)
+    if not all(len(l) == the_next for l in it):
+        raise ValueError(f"Column length mismatch after padding: expected {the_next}")
 
     ## overwrite the "data" block by extended list
     data_dict["data"] = data_list
@@ -109,6 +133,8 @@ def evaluated_data_points(**kwargs):
 
         return new_x
 
+    return new_x
+
 
 def get_average(sf4, data_dict_conv):
     # print("get_average for ", sf4)
@@ -137,7 +163,7 @@ def get_average(sf4, data_dict_conv):
         elif "-APRX" in data_dict_conv["heads"][l]:
             x_approx = data_dict_conv["data"][l]
 
-        elif data_dict_conv["heads"][l] == data_dict_conv["heads"][l - 1]:
+        elif l > 0 and data_dict_conv["heads"][l] == data_dict_conv["heads"][l - 1]:
             ## for the case of 103250050
             x_average = [
                 (a + b) / 2 if a is not None and b is not None else a or b
@@ -183,9 +209,10 @@ def get_y(entnum, subent, pointer, locs, data_dict_conv):
     ## if the data is arbitrary unit ("ARB-UNITS") then True
     data_unit_flag = False
     ddata_unit_flag = False
+    y_head = None   # bare head name of the observable column
+    y_unit = None   # base unit after unify_units (e.g. "B", "B/SR")
+
     ## ----------------------------------   DATA (Y axis)    --------------------------------- ##
-    ## get data column position
-    ## --------------------------------------------------------------------------------------- ##
     locs["locs_y"], locs["locs_dy"] = get_y_locs(data_dict_conv)
 
     if not locs["locs_y"]:
@@ -200,10 +227,10 @@ def get_y(entnum, subent, pointer, locs, data_dict_conv):
         )
 
     if locs["locs_y"]:
-        if any(
-            data_dict_conv["units"][locs["locs_y"][0]] == arb
-            for arb in ("ARB-UNITS", "NO-DIM")
-        ):
+        loc0 = locs["locs_y"][0]
+        y_head = _bare_head(data_dict_conv["heads"][loc0])
+        y_unit = data_dict_conv["units"][loc0]
+        if data_dict_conv["units"][loc0] in ("ARB-UNITS", "NO-DIM"):
             data_unit_flag = True
 
     if locs["locs_dy"]:
@@ -227,7 +254,7 @@ def get_y(entnum, subent, pointer, locs, data_dict_conv):
                 dy if dy is not None else None
                 for dy in data_dict_conv["data"][locs["locs_dy"][0]]
             ]
-    return locs, data, ddata, data_unit_flag, ddata_unit_flag
+    return locs, data, ddata, data_unit_flag, ddata_unit_flag, y_head, y_unit
 
 
 def get_residual(locs, react_dict, data_dict_conv):
@@ -351,18 +378,23 @@ def get_residual(locs, react_dict, data_dict_conv):
     return locs, mass, charge, state, residual, residual_type
 
 
-def if_frame_in_cm(head):
-    if "-CM" in head:
-        return True
-    return False
+def _bare_head(head: str) -> str:
+    """Strip pointer suffix from a raw EXFOR column head.
+
+    EXFOR encodes pointer-specific columns as 'HEAD      P' (10-char padded + pointer).
+    Returns the bare head name, e.g. 'KT         1' -> 'KT'.
+    """
+    return head.strip().split()[0]
 
 
 def get_en_inc(pointer, locs, react_dict, data_dict_conv, data):
     en_inc = []
     en_inc_min = []
     en_inc_max = []
-    en_inc_frame = []
     den_inc = []
+    x_head = None   # bare head name of the incident-energy column
+    x_unit = None   # base unit after unify_units (e.g. "EV", "ADEG")
+
     locs["locs_en"], locs["locs_den"] = get_incident_energy_locs(data_dict_conv)
 
     if not locs["locs_en"]:
@@ -371,18 +403,19 @@ def get_en_inc(pointer, locs, react_dict, data_dict_conv, data):
         )
 
     if not locs["locs_en"] and not locs["locs_den"] and react_dict["process"] == "0,F":
-        # it is possible for the case of spontanious fission
+        # spontaneous fission: no incident energy column
         en_inc = [0.0] * len(data)
         den_inc = [0.0] * len(data)
 
     elif len(locs["locs_en"]) == 1:
+        loc0 = locs["locs_en"][0]
+        x_head = _bare_head(data_dict_conv["heads"][loc0])
+        x_unit = data_dict_conv["units"][loc0]
         en_inc = [
             en if en is not None else None
-            for en in data_dict_conv["data"][locs["locs_en"][0]]
+            for en in data_dict_conv["data"][loc0]
         ]
-        en_inc_frame = [
-            if_frame_in_cm(data_dict_conv["heads"][locs["locs_en"][0]])
-        ] * len(data)
+        en_inc, x_unit = kt_to_ev(x_head, x_unit, en_inc)
 
     elif len(locs["locs_en"]) > 1:
         for loc in locs["locs_en"]:
@@ -390,26 +423,21 @@ def get_en_inc(pointer, locs, react_dict, data_dict_conv, data):
                 en_inc_min = [
                     en if en is not None else None for en in data_dict_conv["data"][loc]
                 ]
-                en_inc_frame = [if_frame_in_cm(data_dict_conv["heads"][loc])] * len(
-                    data
-                )
             if "-MAX" in data_dict_conv["heads"][loc]:
                 en_inc_max = [
                     en if en is not None else None for en in data_dict_conv["data"][loc]
                 ]
-                en_inc_frame = [if_frame_in_cm(data_dict_conv["heads"][loc])] * len(
-                    data
-                )
 
+        loc0 = locs["locs_en"][0]
+        x_head = _bare_head(data_dict_conv["heads"][loc0])
+        x_unit = data_dict_conv["units"][loc0]
         en_inc = [
             en if en is not None else None
             for en in get_average(
                 "EN", limit_data_dict_by_locs(locs["locs_en"], data_dict_conv)
             )
         ]
-        en_inc_frame = [
-            if_frame_in_cm(data_dict_conv["heads"][locs["locs_en"][0]])
-        ] * len(data)
+        en_inc, x_unit = kt_to_ev(x_head, x_unit, en_inc)
 
     else:
         ## e.g.
@@ -418,7 +446,6 @@ def get_en_inc(pointer, locs, react_dict, data_dict_conv, data):
         en_inc = [None] * len(data)
         en_inc_min = [None] * len(data)
         en_inc_max = [None] * len(data)
-        en_inc_frame = [None] * len(data)
 
     if len(locs["locs_den"]) == 1:
         if data_dict_conv["units"][locs["locs_den"][0]] == "PER-CENT":
@@ -439,7 +466,7 @@ def get_en_inc(pointer, locs, react_dict, data_dict_conv, data):
                 for den in data_dict_conv["data"][locs["locs_den"][0]]
             ]
 
-    return locs, en_inc, den_inc, en_inc_min, en_inc_max, en_inc_frame
+    return locs, en_inc, den_inc, en_inc_min, en_inc_max, x_head, x_unit
 
 
 def get_outgoing(pointer, locs, react_dict, data_dict_conv, data):
@@ -488,7 +515,7 @@ def get_outgoing(pointer, locs, react_dict, data_dict_conv, data):
             for e in data_dict_conv["data"][locs["locs_e"][0]]
         ]
         e_out_frame = [
-            if_frame_in_cm(data_dict_conv["heads"][locs["locs_e"][0]])
+            ("-CM" in data_dict_conv["heads"][locs["locs_e"][0]])
         ] * len(data)
         e_out_min = [None] * len(data)
         e_out_max = [None] * len(data)
@@ -499,19 +526,19 @@ def get_outgoing(pointer, locs, react_dict, data_dict_conv, data):
                 e_out_min = [
                     en if en is not None else None for en in data_dict_conv["data"][loc]
                 ]
-                e_out_frame = [if_frame_in_cm(data_dict_conv["heads"][loc])] * len(data)
+                e_out_frame = [("-CM" in data_dict_conv["heads"][loc])] * len(data)
             if "-MAX" in data_dict_conv["heads"][loc]:
                 e_out_max = [
                     en if en is not None else None for en in data_dict_conv["data"][loc]
                 ]
-                e_out_frame = [if_frame_in_cm(data_dict_conv["heads"][loc])] * len(data)
+                e_out_frame = [("-CM" in data_dict_conv["heads"][loc])] * len(data)
 
         e_out = [
             e if e is not None else None
             for e in data_dict_conv["data"][locs["locs_e"][0]]
         ]
         e_out_frame = [
-            if_frame_in_cm(data_dict_conv["heads"][locs["locs_e"][0]])
+            ("-CM" in data_dict_conv["heads"][locs["locs_e"][0]])
         ] * len(data)
 
     if (
@@ -644,7 +671,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
     ## --------------------------------------------------------------------------------------- ##
     ## -----------------------   Y (DATA)    --------------------- ##
     ## --------------------------------------------------------------------------------------- ##
-    locs, data, ddata, data_unit_flag, ddata_unit_flag = get_y(
+    locs, data, ddata, data_unit_flag, ddata_unit_flag, y_head, y_unit = get_y(
         entnum, subent, pointer, locs, data_dict_conv
     )
     # Once the data length is fixed, get MF number based on reaction
@@ -660,7 +687,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
     ## --------------------------------------------------------------------------------------- ##
     ## -----------------------   Incident energy    --------------------- ##
     ## --------------------------------------------------------------------------------------- ##
-    locs, en_inc, den_inc, en_inc_min, en_inc_max, en_inc_frame = get_en_inc(
+    locs, en_inc, den_inc, en_inc_min, en_inc_max, x_head, x_unit = get_en_inc(
         pointer, locs, react_dict, data_dict_conv, data
     )
     # print(en_inc)
@@ -714,7 +741,6 @@ def process_general(entry_id, entry_json, data_dict_conv):
             "den_inc": den_inc if den_inc else None,
             "en_inc_min": en_inc_min if en_inc_min else None,
             "en_inc_max": en_inc_max if en_inc_max else None,
-            "en_inc_frame": en_inc_frame if en_inc_frame else None,
             "charge": charge if charge else None,
             "mass": mass if mass else None,
             "isomer": state if state else None,
@@ -727,9 +753,9 @@ def process_general(entry_id, entry_json, data_dict_conv):
             "arbitrary_ddata": ddata_unit_flag,
             "e_out": e_out if e_out else None,
             "de_out": de_out if de_out else None,
-            "e_out_min": e_out_min if en_inc_min else None,
-            "e_out_max": e_out_max if en_inc_max else None,
-            "e_out_frame": e_out_frame if en_inc_frame else None,
+            "e_out_min": e_out_min if e_out_min else None,
+            "e_out_max": e_out_max if e_out_max else None,
+            "e_out_frame": e_out_frame if e_out_frame else None,
             "angle": angle if angle else None,
             "dangle": dangle if dangle else None,
             "flags": flags if flags else None,
@@ -746,9 +772,9 @@ def process_general(entry_id, entry_json, data_dict_conv):
     ## Insert data table into exfor_data
     if not df.empty:
         insert_df_to_data(df)
-    # print(df)
 
-    return df
+    # Return df plus x/y axis metadata for use by the index builder in tabulate.py
+    return df, x_head, x_unit, y_head, y_unit
 
 
 def process_cross_section_case(df, entry_id, main_bib_dict, react_dict):
@@ -759,9 +785,6 @@ def process_cross_section_case(df, entry_id, main_bib_dict, react_dict):
     if any(
         r == react_dict["process"].split(",")[1] for r in ("F", "TOT", "NON", "ABS")
     ) or (react_dict["target"].split("-")[2] == "0" and react_dict["sf4"] is None):
-
-        ## no reaction product would be given in these cases
-        print(main_bib_dict)
         filename = exfortables_filename(
             dir,
             entry_id,
@@ -846,11 +869,14 @@ def process_partial_cross_section_case(df, entry_id, main_bib_dict, react_dict):
         )
 
 
-def process_angler_distribution_section_case(df, entry_id, main_bib_dict, react_dict):
+def process_angular_distribution_section_case(df, entry_id, main_bib_dict, react_dict):
     mf, mt = get_unique_mf_mt(df)
     dir = get_dir_name("exfortables_py", react_dict, level_num=None, subdir=None)
     for en in df["en_inc"].unique():
-        df2 = df[df["en_inc"] == en]
+        if pd.isna(en):
+            df2 = df[df["en_inc"].isna()]
+        else:
+            df2 = df[df["en_inc"] == en]
 
         if react_dict["target"].split("-")[2] == "0" or react_dict["sf4"] is None:
             ## case for ,DA without product
@@ -899,7 +925,7 @@ def process_angler_distribution_section_case(df, entry_id, main_bib_dict, react_
                 )
 
 
-def process_partial_angler_distribution_case(df, entry_id, main_bib_dict, react_dict):
+def process_partial_angular_distribution_case(df, entry_id, main_bib_dict, react_dict):
     for level_num in df["level_num"].dropna().unique():
         df2 = df[df["level_num"] == level_num]
         mf, mt = get_unique_mf_mt(df2)
@@ -941,7 +967,10 @@ def process_energy_distribution_case(df, entry_id, main_bib_dict, react_dict):
     dir = get_dir_name("exfortables_py", react_dict, level_num=None, subdir=None)
 
     for en in df["en_inc"].unique():
-        df2 = df[df["en_inc"] == en]
+        if pd.isna(en):
+            df2 = df[df["en_inc"].isna()]
+        else:
+            df2 = df[df["en_inc"] == en]
 
         if react_dict["target"].split("-")[2] == "0" and react_dict["sf4"] is None:
             ## case for ,DE without product such as (40-ZR-0(N,G),,DE)
@@ -1028,7 +1057,10 @@ def process_misc_neutron_observables_case(df, entry_id, main_bib_dict, react_dic
     if react_dict["sf4"] is None and "NU" in react_dict["sf6"]:
         prod = "0-NN-1"
         for en in df["en_inc"].unique():
-            df2 = df[df["en_inc"] == en]
+            if pd.isna(en):
+                df2 = df[df["en_inc"].isna()]
+            else:
+                df2 = df[df["en_inc"] == en]
             ## no reaction product would be given in these cases
             filename = exfortables_filename(
                 dir,
@@ -1078,7 +1110,10 @@ def process_kinetic_energy_case(df, entry_id, main_bib_dict, react_dict):
     dir = get_dir_name("exfortables_py", react_dict, level_num=None, subdir=None)
 
     for en in df["en_inc"].unique():
-        df2 = df[df["en_inc"] == en]
+        if pd.isna(en):
+            df2 = df[df["en_inc"].isna()]
+        else:
+            df2 = df[df["en_inc"] == en]
         if react_dict["sf4"] is None:
             filename = exfortables_filename(
                 dir,
@@ -1129,7 +1164,10 @@ def process_average_kinetic_energy_case(df, entry_id, main_bib_dict, react_dict)
     prod = react_dict["sf7"]
 
     for en in df["en_inc"].unique():
-        df2 = df[df["en_inc"] == en]
+        if pd.isna(en):
+            df2 = df[df["en_inc"].isna()]
+        else:
+            df2 = df[df["en_inc"] == en]
         filename = exfortables_filename(
             dir,
             entry_id,
@@ -1157,7 +1195,10 @@ def process_fission_yield_case(df, entry_id, main_bib_dict, react_dict):
     dir = get_dir_name("exfortables_py", react_dict, level_num=None, subdir=subdir)
 
     for en in df["en_inc"].unique():
-        df2 = df[df["en_inc"] == en]
+        if pd.isna(en):
+            df2 = df[df["en_inc"].isna()]
+        else:
+            df2 = df[df["en_inc"] == en]
         filename = exfortables_filename(
             dir,
             entry_id,

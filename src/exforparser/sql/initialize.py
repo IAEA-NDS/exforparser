@@ -9,11 +9,11 @@ from exforparser.config import (
     INSTITUTE_PICKLE,
     EXFOR_MASTER_REPO_PATH,
 )
-from .models import Base
+from .models_core import metadata
 
 
 def initialize_db():
-    Base.metadata.create_all(bind=engines["exfor"])
+    metadata.create_all(bind=engines["exfor"])
     # read_doi_pickles()
 
 

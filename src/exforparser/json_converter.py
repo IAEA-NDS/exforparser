@@ -18,10 +18,48 @@ from exforparser.submodules.utilities.util import del_outputs, print_time
 from exforparser.parser.list_x4files import list_exfor_files, list_entries_from_pickle
 from exforparser.parser.exfor_entry import Entry, get_entry_update_date
 from exforparser.parser.exfor_subentry import Subentry
+from exforparser.parser.exfor_bib import correct_pub_year
 
 
 ## get update data from git commit and store info to Python dictionary
 update_date = get_entry_update_date()
+
+
+def _fill_missing_references(entry_json: dict) -> None:
+    """
+    If SUBENT 001 has no REFERENCE field, collect references from the
+    individual subentries and backfill bib_record["references"].
+
+    Some EXFOR entries store REFERENCE only in non-001 subentries
+    (e.g. each subentry cites its own publication).  Without this step
+    the entry-level DB record would have main_reference=NULL and the
+    output file headers would contain no citation.
+
+    Deduplication is done by x4_code so the same journal paper is not
+    listed twice even when it appears in multiple subentries.
+    """
+    if entry_json["bib_record"].get("references"):
+        return  # 001 already has references — nothing to do
+
+    seen: set = set()
+    for subent, pointers in entry_json["experimental_conditions"].items():
+        if subent == "001":
+            continue
+        for pointer, cond in pointers.items():
+            for ref in cond.get("reference", []):
+                x4_code = ref.get("x4_code")
+                if not x4_code or x4_code in seen:
+                    continue
+                seen.add(x4_code)
+                entry_json["bib_record"]["references"].append(
+                    {
+                        "x4_code": x4_code,
+                        "free_txt": ref.get("free_txt", []),
+                        "publication_year": correct_pub_year(x4_code),
+                        "doi": None,
+                        "pointer": pointer,
+                    }
+                )
 
 
 def write_dict_to_json(entnum, dic):
@@ -50,12 +88,12 @@ def convert_exfor_to_json(entnum=None):
 
     sub = Subentry("001", entry.entry_body["001"])
     entry_json["entry"] = entnum
-    entry_json["last_updated"] = update_date[entnum]["last_update"]
-    entry_json["number_of_revisions"] = update_date[entnum]["revisions"]
+    entry_json["last_updated"] = update_date.get(entnum, {}).get("last_update")
+    entry_json["number_of_revisions"] = update_date.get(entnum, {}).get("revisions")
 
     try:
         entry_json["histories"] = sub.parse_main_history_dict()
-    except:
+    except Exception:
         entry_json["histories"] = []
 
     entry_json["bib_record"] = sub.parse_main_bib_dict()
@@ -83,6 +121,7 @@ def convert_exfor_to_json(entnum=None):
         if subent != "001":
             entry_json["data_tables"][subent]["data"] = sub.parse_data()
 
+    _fill_missing_references(entry_json)
     return entry_json
 
 
@@ -101,7 +140,7 @@ def convert_all():
     # entries = random.sample(ent, len(ent))
     entries = ent
 
-    start_time = print_process_time()
+    start_time = print_time()
     logging.info(f"Start processing {print_time()}")
 
     for entnum in entries:
@@ -112,10 +151,10 @@ def convert_all():
         except KeyboardInterrupt:
             print("CTR + C")
             break
-        except:
+        except Exception:
             logging.error(f"ERROR: at ENTRY: {entnum}", exc_info=True)
 
-    logging.info(f"End processing {print_process_time(start_time)}")
+    logging.info(f"End processing {print_time()}")
 
 
 def convert_updated_entry():
@@ -134,10 +173,10 @@ def convert_updated_entry():
     for _, row in df_diff.iterrows():
         ent += [row["entry"]]
 
-    start_time = print_process_time()
+
     logging.info(f"Start processing {print_time()}")
 
-    for entnum in entries:
+    for entnum in ent:
         print(entnum)
         # process(entnum)
         try:
@@ -145,10 +184,10 @@ def convert_updated_entry():
         except KeyboardInterrupt:
             print("CTR + C")
             break
-        except:
+        except Exception:
             logging.error(f"ERROR: at ENTRY: {entnum}", exc_info=True)
 
-    logging.info(f"End processing {print_process_time(start_time)}")
+    logging.info(f"End processing {print_time()}")
 
 
 if __name__ == "__main__":

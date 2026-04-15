@@ -1,4 +1,3 @@
-import sys
 import argparse
 import sqlalchemy as db
 from sqlalchemy.exc import OperationalError
@@ -53,7 +52,7 @@ def cli():
             "thermal",
             "xs",
             "energy",
-            "agnle",
+            "angle",
             "fy",
             "resonance_integral",
             "resonance_parameter",
@@ -61,9 +60,9 @@ def cli():
             "macs",
             "resonance_spacing",
             "level_density",
-            "strength_funcition",
+            "strength_function",
         ],
-        help='output EXFORTABLES like format from SQLite Database \n options: "all", "thermal": thermal cross section, "rp": resonance parameters, "ri": resonance integral, "xs": all cross sections, "energy": energy distributions, "agnle": anguler distributions, "fy": fission yields',
+        help='output EXFORTABLES like format from SQLite Database \n options: "all", "thermal": thermal cross section, "rp": resonance parameters, "ri": resonance integral, "xs": all cross sections, "energy": energy distributions, "angle": angular distributions, "fy": fission yields',
     )
 
     args = parser.parse_args()
@@ -74,10 +73,10 @@ def cli():
         load_pickles()
 
     if args.convert:
-        logging.basicConfig(filename="parsing.log", level=logging.DEBUG, filemode="w")
+        logging.basicConfig(filename="parsing.log", level=logging.DEBUG, filemode="w", force=True)
 
     if args.tabulate:
-        logging.basicConfig(filename="tabulated.log", level=logging.DEBUG, filemode="w")
+        logging.basicConfig(filename="tabulated.log", level=logging.DEBUG, filemode="w", force=True)
 
     if args.convert == "all":
         convert_all()

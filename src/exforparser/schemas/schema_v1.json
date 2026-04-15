@@ -1,0 +1,246 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EXFOR Entry Full Schema",
+  "type": "object",
+  "required": ["entry", "last_updated", "number_of_revisions", "bib_record", "reactions", "data_tables", "experimental_conditions"],
+  "additionalProperties": false,
+  "properties": {
+
+    "entry": {
+      "type": "string",
+      "pattern": "^[A-Z0-9]{5}$",
+      "description": "5-character EXFOR entry identifier"
+    },
+
+    "last_updated": {
+      "type": "string",
+      "description": "Date of last update from git history (YYYY-MM-DD or similar)"
+    },
+
+    "number_of_revisions": {
+      "type": ["string", "integer"],
+      "description": "Number of revisions from git history"
+    },
+
+    "histories": {
+      "type": "array",
+      "description": "Parsed HISTORY field entries; may be empty if parsing failed",
+      "items": {
+        "type": "object",
+        "required": ["x4_code"],
+        "properties": {
+          "x4_code": { "type": ["string", "null"] },
+          "free_txt": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+
+    "bib_record": {
+      "type": "object",
+      "description": "Parsed SUBENTRY 001 bibliographic record",
+      "properties": {
+
+        "title": { "type": "string" },
+
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name"],
+            "properties": {
+              "name": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        },
+
+        "institutes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["x4_code"],
+            "properties": {
+              "x4_code": { "type": ["string", "null"] },
+              "free_txt": { "type": ["array", "string", "null"] }
+            }
+          }
+        },
+
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["x4_code"],
+            "properties": {
+              "x4_code": { "type": "string" },
+              "free_txt": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "publication_year": { "type": "string" },
+              "doi": { "type": ["string", "null"] },
+              "pointer": { "type": ["string", "integer"] }
+            },
+            "additionalProperties": false
+          }
+        },
+
+        "facilities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["x4_code", "pointer", "facility_type", "institute"],
+            "properties": {
+              "x4_code": { "type": ["string", "null"] },
+              "free_txt": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "pointer": { "type": ["string", "integer"] },
+              "facility_type": { "type": ["string", "null"] },
+              "institute": { "type": ["string", "null"] }
+            }
+          }
+        }
+
+      }
+    },
+
+    "reactions": {
+      "type": "object",
+      "description": "Keyed by 3-digit subentry number (e.g. '002')",
+      "patternProperties": {
+        "^[0-9]{3}$": {
+          "type": ["object", "null"],
+          "description": "Keyed by pointer character (e.g. '0', '1', 'A')",
+          "patternProperties": {
+            "^[0-9A-Za-z]$": {
+              "type": "object",
+              "required": ["x4_code", "children", "math_expression", "operator", "pointer"],
+              "properties": {
+                "x4_code": {
+                  "type": "string",
+                  "description": "Full EXFOR reaction string including outer parentheses"
+                },
+                "children": {
+                  "type": "array",
+                  "description": "Individual reaction components; length > 1 for composite reactions",
+                  "items": {
+                    "type": "object",
+                    "required": ["x4_code"],
+                    "properties": {
+                      "target":   { "type": ["string", "null"] },
+                      "process":  { "type": ["string", "null"] },
+                      "sf49":     { "type": ["string", "null"] },
+                      "sf4":      { "type": ["string", "null"] },
+                      "sf5":      { "type": ["string", "null"] },
+                      "sf6":      { "type": ["string", "null"] },
+                      "sf7":      { "type": ["string", "null"] },
+                      "sf8":      { "type": ["string", "null"] },
+                      "sf9":      { "type": ["string", "null"] },
+                      "operator": { "type": ["string", "null"] },
+                      "x4_code":  { "type": "string" }
+                    }
+                  }
+                },
+                "math_expression": {
+                  "description": "MathJSON expression tree for composite reactions; null for simple ones"
+                },
+                "operator": {
+                  "type": ["string", "null"],
+                  "description": "Top-level operator symbol (e.g. 'Divide', 'Add'); null for simple reactions"
+                },
+                "free_text": { "type": "string" },
+                "pointer": { "type": ["string", "integer"] }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "data_tables": {
+      "type": "object",
+      "description": "Keyed by 3-digit subentry number; each entry has 'common' and/or 'data'",
+      "patternProperties": {
+        "^[0-9]{3}$": {
+          "type": "object",
+          "properties": {
+            "common": {
+              "type": ["object", "null"],
+              "description": "COMMON block for this subentry; null if absent",
+              "properties": {
+                "heads": { "type": "array", "items": { "type": "string" } },
+                "units": { "type": "array", "items": { "type": "string" } },
+                "data": {
+                  "type": "array",
+                  "description": "List of columns; each column is a list of values (number or null)",
+                  "items": {
+                    "type": "array",
+                    "items": { "type": ["number", "null"] }
+                  }
+                }
+              },
+              "required": ["heads", "units", "data"],
+              "additionalProperties": false
+            },
+            "data": {
+              "type": ["object", "null"],
+              "description": "DATA block for this subentry; null for SUBENTRY 001 or NODATA",
+              "properties": {
+                "heads": { "type": "array", "items": { "type": "string" } },
+                "units": { "type": "array", "items": { "type": "string" } },
+                "data": {
+                  "type": "array",
+                  "description": "List of columns; each column is a list of values (number or null)",
+                  "items": {
+                    "type": "array",
+                    "items": { "type": ["number", "null"] }
+                  }
+                }
+              },
+              "required": ["heads", "units", "data"],
+              "additionalProperties": false
+            }
+          }
+        }
+      }
+    },
+
+    "experimental_conditions": {
+      "type": "object",
+      "description": "Keyed by 3-digit subentry number; parsed extra BIB fields grouped by pointer",
+      "patternProperties": {
+        "^[0-9]{3}$": {
+          "type": "object",
+          "description": "Keyed by pointer; values are dicts of identifier -> list of detail objects",
+          "patternProperties": {
+            "^[0-9A-Za-z]$": {
+              "type": "object",
+              "description": "Keys are lowercased EXFOR identifiers (e.g. 'facility', 'detector', 'sample')",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["x4_code", "free_txt"],
+                  "properties": {
+                    "x4_code": { "type": ["string", "null"] },
+                    "free_txt": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

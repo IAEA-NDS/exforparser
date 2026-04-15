@@ -69,18 +69,24 @@ exfor_indexes = Table(
     Column("residual", db.String, index=True),
     Column("level_num", db.Integer, index=True),
     Column("e_out", db.Float),
-    Column("e_inc_min", db.Float, index=True),
-    Column("e_inc_max", db.Float, index=True),
+    Column("en_inc_min", db.Float, index=True),
+    Column("en_inc_max", db.Float, index=True),
     Column("points", db.Integer, index=True),
     Column("arbitrary_data", db.Boolean, index=True),
     Column("sf5", db.String),
-    Column("sf6", db.String),
+    Column("sf6", db.String, index=True),
     Column("sf7", db.String),
     Column("sf8", db.String),
     Column("sf9", db.String),
     Column("x4_code", db.String),
     Column("mf", db.Integer),
     Column("mt", db.Integer, index=True),
+    # x-axis (incident energy / kT) metadata
+    Column("x_head", db.String, index=True),  # e.g. "EN", "KT", "EN-RES", "COS"
+    Column("x_unit", db.String),              # base unit after conversion, e.g. "EV", "ADEG"
+    # y-axis (observable) metadata
+    Column("y_head", db.String),              # e.g. "DATA", "DATA-CM"
+    Column("y_unit", db.String),              # base unit after conversion, e.g. "B", "B/SR"
 )
 
 exfor_data = Table(
@@ -90,7 +96,7 @@ exfor_data = Table(
     Column("entry_id", db.String, index=True),
     Column("en_inc", db.Float),
     Column("den_inc", db.Float),
-    Column("en_inc_frame", db.Boolean),
+    # en_inc_frame (Boolean) removed — use exfor_indexes.x_head instead
     Column("charge", db.Float),
     Column("mass", db.Float),
     Column("isomer", db.String),
@@ -115,18 +121,21 @@ exfor_data = Table(
     Column("e_out_max", db.Float),
 )
 
-
+# Stores the original EXFOR DATA/COMMON columns verbatim (heads, units, raw values).
+# Acts as an audit log of the source data before unit conversion and tabulation.
 exfor_native_data = Table(
     "exfor_native_data",
     metadata,
-    Column("entry", db.String, primary_key=True, index=True, unique=True),
+    Column("id", db.Integer, autoincrement=True, primary_key=True),  # was: entry as unique PK (bug)
+    Column("entry_id", db.String, index=True),   # FK-equivalent to exfor_indexes.entry_id
+    Column("entry", db.String, index=True),
     Column("subent", db.String, index=True),
     Column("column_index", db.Integer),
-    Column("column_type", db.String),
+    Column("column_type", db.String),            # "COMMON" or "DATA"
     Column("pointer", db.String),
-    Column("head", db.String),
-    Column("unit", db.String),
-    Column("data", db.String),
+    Column("head", db.String, index=True),        # original EXFOR column head, e.g. "KT", "EN"
+    Column("unit", db.String),                    # original unit, e.g. "KEV", "MB"
+    Column("data", db.String),                    # JSON list of raw values
 )
 
 
@@ -135,6 +144,7 @@ exfor_references = Table(
     metadata,
     Column("id", db.Integer, autoincrement=True, primary_key=True),
     Column("entry_id", db.String, index=True),
+    Column("entry", db.String, index=True),
     Column("x4_code", db.String, index=True),
     Column("type", db.String),
     Column("free_txt", db.String),

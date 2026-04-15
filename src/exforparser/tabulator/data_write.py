@@ -99,9 +99,7 @@ def bib_table_original(entry_id, main_bib_dict, react_dict, mfmt, df):
             if main_bib_dict.get("facilities")
             and main_bib_dict["facilities"][0].get("facility_type")
             else (
-                None
-                + " in "
-                + main_bib_dict["facilities"][0]["institute"]
+                main_bib_dict["facilities"][0]["institute"]
                 + ": "
                 + d.get_facility(main_bib_dict["facilities"][0]["institute"])
                 if main_bib_dict.get("facilities")
@@ -144,8 +142,10 @@ def bib_table(entry_id, main_bib_dict, react_dict, mfmt, df):
             "{:.4e} MeV".format(df.en_inc.min() / 1e6)
             + " - "
             + "{:.4e} MeV".format(df.en_inc.max() / 1e6)
-            if len(df["en_inc"].unique()) > 1
-            else "{:.4e} MeV".format(df["en_inc"].unique()[0] / 1e6)
+            if len(df["en_inc"].dropna().unique()) > 1
+            else "{:.4e} MeV".format(df["en_inc"].dropna().unique()[0] / 1e6)
+            if len(df["en_inc"].dropna().unique()) == 1
+            else "N/A"
         ),
         "\n" f"# Residual:",
         "\n"
@@ -288,11 +288,7 @@ def write_to_exfortables_format_sig(
     entry_id, dir, file, main_bib_dict, react_dict, mt, df
 ):
     ## create an output directory if it doesn't exist
-    if os.path.exists(dir):
-        pass
-
-    else:
-        os.makedirs(dir)
+    os.makedirs(os.path.dirname(file), exist_ok=True)
 
     with open(file, "w") as f:
         with pd.option_context("display.float_format", "{:11.5e}".format):
@@ -319,11 +315,7 @@ def write_to_exfortables_format_da(
     entry_id, dir, file, main_bib_dict, react_dict, mt, df
 ):
     ## create an output directory if it doesn't exist
-    if os.path.exists(dir):
-        pass
-
-    else:
-        os.makedirs(dir)
+    os.makedirs(os.path.dirname(file), exist_ok=True)
 
     with open(file, "w") as f:
         with pd.option_context("display.float_format", "{:11.5e}".format):
@@ -350,11 +342,7 @@ def write_to_exfortables_format_de(
     entry_id, dir, file, main_bib_dict, react_dict, mt, df
 ):
     ## create an output directory if it doesn't exist
-    if os.path.exists(dir):
-        pass
-
-    else:
-        os.makedirs(dir)
+    os.makedirs(os.path.dirname(file), exist_ok=True)
 
     with open(file, "w") as f:
         with pd.option_context("display.float_format", "{:11.5e}".format):
@@ -362,12 +350,12 @@ def write_to_exfortables_format_de(
                 bib_table(entry_id, main_bib_dict, react_dict, mt, df)
                 print("#")
                 print(
-                    "#          E(MeV)          dE(MeV)      data(MB/MeV)   ddata(MB/MeV)"
+                    "#          E(MeV)          dE(MeV)        data(B/EV)     ddata(B/EV)"
                 )
                 for i, row in df.iterrows():
                     print(
                         "{:18.4E}{:18.4E}{:18.4E}{:18.4E}".format(
-                            row["e_out"] / 1e6,
+                            np.nan if pd.isnull(row["e_out"]) else row["e_out"] / 1e6,
                             0.0 if pd.isnull(row["de_out"]) else row["de_out"] / 1e6,
                             row["data"],
                             0.0 if pd.isnull(row["ddata"]) else row["ddata"],
@@ -381,11 +369,7 @@ def write_to_exfortables_format_fy(
     entry_id, dir, file, main_bib_dict, react_dict, mt, df
 ):
     ## create an output directory if it doesn't exist
-    if os.path.exists(dir):
-        pass
-
-    else:
-        os.makedirs(dir)
+    os.makedirs(os.path.dirname(file), exist_ok=True)
 
     with open(file, "w") as f:
         with pd.option_context("display.float_format", "{:11.5e}".format):
@@ -443,11 +427,7 @@ def write_to_exfortables_format_kinetic_e(
     entry_id, dir, file, main_bib_dict, react_dict, mt, df
 ):
     ## create an output directory if it doesn't exist
-    if os.path.exists(dir):
-        pass
-
-    else:
-        os.makedirs(dir)
+    os.makedirs(os.path.dirname(file), exist_ok=True)
 
     with open(file, "w") as f:
         with pd.option_context("display.float_format", "{:11.5e}".format):

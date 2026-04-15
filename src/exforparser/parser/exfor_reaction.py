@@ -60,8 +60,8 @@ def parse_parenthesis(expr, ofs):
 
 
 def parse_nuclide(expr) -> list:
-    m = re.match("\d{2}-[A-Z]{2}-[A-Z0-9]+(?:-[A-Z0-9]+)?", expr)
-    return expr[m.start() : m.end()]
+    m = re.match(r"\d{2}-[A-Z]{2}-[A-Z0-9]+(?:-[A-Z0-9]+)?", expr)
+    return expr[m.start() : m.end()] if m else None
 
 
 def parse_reaction_parts(x4_code) -> dict:
@@ -89,6 +89,9 @@ def parse_reaction_parts(x4_code) -> dict:
             opend.pop()
 
         CLOSE = False
+
+    if not pairs:
+        return {}
 
     reaction_dict = {
         "target": x4_code[1 : pairs[0][0]],
@@ -125,18 +128,45 @@ def parse_operators(expr) -> list:
     Return example: [{'operator': '/', 'span': [33, 34], 'main': False}, {'operator': '//', 'span': [64, 66], 'main': True}, {'operator': '/', 'span': [99, 100], 'main': False}] for the following example:
     (((92-U-233(N,F)ELEM/MASS,CUM,FY)/(92-U-233(N,F)42-MO-99,CUM,FY))//((92-U-235(N,F)ELEM/MASS,CUM,FY)/(92-U-235(N,F)42-MO-99,CUM,FY)))
     """
-    return [
-        {
-            "operator": m.group(0).replace(")", "").replace("(", ""),
+    # return [
+    #     {
+    #         "operator": m.group(0).replace(")", "").replace("(", ""),
+    #         "span": [m.start() + 1, m.end() - 1],
+    #         "main": (
+    #             True
+    #             if any(t in m.group(0) for t in ("//", "="))
+    #             else True if any(t in m.group(0) for t in ("/", "*")) else False
+    #         ),
+    #     }
+    #     for m in re.finditer(r"\)(?:[*+-/=]{1,2})\(|\)\)(?:[*+-/=]{1,2})\(", expr)
+    # ]
+    pattern = r"\)(?:(//)|(/)|(\*)|(\+)|(-)|(=))\("
+
+    operators = []
+    for m in re.finditer(pattern, expr):
+        if m.group(1):
+            op = "//"
+        elif m.group(2):
+            op = "/"
+        elif m.group(3):
+            op = "*"
+        elif m.group(4):
+            op = "+"
+        elif m.group(5):
+            op = "-"
+        elif m.group(6):
+            op = "="
+        else:
+            continue
+
+        operators.append({
+            "operator": op,
             "span": [m.start() + 1, m.end() - 1],
-            "main": (
-                True
-                if any(t in m.group(0) for t in ("//", "="))
-                else True if any(t in m.group(0) for t in ("/", "*")) else False
-            ),
-        }
-        for m in re.finditer(r"\)(?:[*+-/=]{1,2})\(|\)\)(?:[*+-/=]{1,2})\(", expr)
-    ]
+            "main": True if op in ("//", "=") else False
+        })
+
+    return operators
+
 
 
 def parse_div_multi_operators(expr) -> list:
@@ -150,244 +180,118 @@ def parse_div_multi_operators(expr) -> list:
     ]
 
 
-def math_same_operator(type, main_operator, operators, reaction_elements):
-    if type == "before":
-        mathJ = [
-            [operators_dict[operators[0]["operator"]]]
-            + [
-                re.sub(r"[\(]{2,3}", "(", re.sub(r"[\)]{2,3}", ")", r["code"]))
-                for r in reaction_elements
-                if r["span"][1] <= main_operator[0]["span"][0]
-            ]
-        ]
-    elif type == "after":
-        mathJ = [
-            [operators_dict[operators[0]["operator"]]]
-            + [
-                re.sub(r"[\(]{2,3}", "(", re.sub(r"[\)]{2,3}", ")", r["code"]))
-                for r in reaction_elements
-                if main_operator[0]["span"][1] <= r["span"][0]
-            ]
-        ]
-    return mathJ
+def build_math_operation(position, main_operator, operators, reaction_elements):
+    """
+    Build MathJSON substructure for operators before/after a main operator (//, =)
+    Handles both same and mixed operators.
+    """
+    if not operators:
+        return []
+
+    same_op = all(operators[0]["operator"] == o["operator"] for o in operators)
+    op = operators[0]
+
+    subelements = [
+        re.sub(r"[\(]{2,3}", "(", re.sub(r"[\)]{2,3}", ")", r["code"]))
+        for r in reaction_elements
+        if (r["span"][1] <= main_operator[0]["span"][0]
+            if position == "before"
+            else main_operator[0]["span"][1] <= r["span"][0])
+    ]
+
+    if same_op:
+        return [operators_dict[op["operator"]]] + subelements
+    else:
+        # Mixed operators: produce list-of-lists, one entry per operator
+        return [[operators_dict[o["operator"]]] + subelements for o in operators]
 
 
-def math_some_operations(type, main_operator, op, reaction_elements):
-    # sub_operator = [o for o in op if o["operator"] in ["/", "*"]]
-    if type == "before":
-        mathJ = [
-            [operators_dict[op["operator"]]]
-            + [
-                re.sub(r"[\(]{2,3}", "(", re.sub(r"[\)]{2,3}", ")", r["code"]))
-                for r in reaction_elements
-                if r["span"][1] <= main_operator[0]["span"][0]
-            ]
-        ]
-    elif type == "after":
-        mathJ = [
-            [operators_dict[op["operator"]]]
-            + [
-                re.sub(r"[\(]{2,3}", "(", re.sub(r"[\)]{2,3}", ")", r["code"]))
-                for r in reaction_elements
-                if main_operator[0]["span"][1] <= r["span"][0]
-            ]
-        ]
-    return mathJ
+
+def math_same_operator(position, main_operator, operators, reaction_elements):
+    """
+    Compatibility wrapper kept for existing call sites.
+    Delegates to build_math_operation.
+    """
+    return build_math_operation(position, main_operator, operators, reaction_elements)
+
+
+def math_some_operations(position, main_operator, op, reaction_elements):
+    """
+    Compatibility wrapper for single operator entry (originally expected 'op' to be a single dict).
+    Returns the structure for that single operator.
+    """
+    # wrap op into a single-element list and delegate
+    return build_math_operation(position, main_operator, [op], reaction_elements)
+
+
 
 
 def parse_reaction(reaction_field) -> dict:
     reaction_info = {}
     dict = {}
-    # print(reaction_field)
+
     for pointer, p_block in reaction_field.items():
-
         flat_reaction_str = "".join(p_block)
-
-        ## parse locations of parentheses to separate code and free text
         l, r = parse_parenthesis(flat_reaction_str, 0)
-
-        x4_code = flat_reaction_str[l[0] : r[-1] + 1]
-        free_text = flat_reaction_str[r[-1] + 1 :]
-        # print("EXFOR Reaction Code:", x4_code)
-
-        """
-        Parse operator (e.g. ')/(', ')//(', ')+('..etc ) and their positions in the EXFOR REACTION string
-        It returns the list of dictionaries, e.g., 
-            [{'operator': '+', 'span': [39, 40], 'main': False}, 
-             {'operator': '/', 'span': [83, 85], 'main': False}]
-        """
+        x4_code = flat_reaction_str[l[0]:r[-1] + 1]
+        free_text = flat_reaction_str[r[-1] + 1:]
         operators = parse_operators(x4_code)
 
         if operators and x4_code.startswith("(("):
-            # print("# All operators: ", operators)
-            mathJ = []
             reaction_elem = []
-
-            """
-            separate reaction code by operator's position
-            operator_pos is a list of lists of spans of operators, e.g. [[39, 40], [76, 79], [116, 117]]
-            """
             operator_pos = [o["span"] for o in operators]
 
             for i in range(len(operator_pos) + 1):
-                span = []
                 if i == 0:
                     span = [0, operator_pos[i][0]]
-                    reaction_elem += [
-                        {
-                            "span": span,
-                            "code": re.sub(
-                                r"[\(]{2,3}",
-                                "(",
-                                re.sub(r"[\)]{2,3}", ")", x4_code[span[0] : span[1]]),
-                            ),
-                        }
-                    ]
-
                 elif i != len(operator_pos):
                     span = [operator_pos[i - 1][1], operator_pos[i][0]]
-                    reaction_elem += [
-                        {
-                            "span": span,
-                            "code": re.sub(
-                                r"[\(]{2,3}",
-                                "(",
-                                re.sub(r"[\)]{2,3}", ")", x4_code[span[0] : span[1]]),
-                            ),
-                        }
-                    ]
-
                 else:
                     span = [operator_pos[i - 1][1], len(x4_code)]
-                    reaction_elem += [
-                        {
-                            "span": span,
-                            "code": re.sub(
-                                r"[\(]{2,3}",
-                                "(",
-                                re.sub(r"[\)]{2,3}", ")", x4_code[span[0] : span[1]]),
-                            ),
-                        }
-                    ]
 
-            ## Check if the number of elements parsed are +1 than operators
+                reaction_elem.append({
+                    "span": span,
+                    "code": re.sub(r"[\(]{2,3}", "(", re.sub(r"[\)]{2,3}", ")", x4_code[span[0]:span[1]])),
+                })
+
             assert len(operators) + 1 == len(reaction_elem)
 
-            if all(operators[0]["operator"] == x["operator"] for x in operators):
-                """
-                For the simple cases, where the all operators are the same or only one operator exits, such as:
-                G0022: ((78-PT-198(G,N)78-PT-197,,SIG,,BRA)/(79-AU-197(G,N)79-AU-196,,SIG,,BRA))
-                    --> ['Divide', '(78-PT-198(G,N)78-PT-197,,SIG,,BRA)', '(79-AU-197(G,N)79-AU-196,,SIG,,BRA)']
-                10214: ((46-PD-106(N,X)45-RH-105,,SIG)+(46-PD-105(N,P)45-RH-105,,SIG,,RAB)+(46-PD-108(N,A)44-RU-105,,SIG,,RAB))
-                    --> ['Add', '(46-PD-106(N,X)45-RH-105,,SIG)', '(46-PD-105(N,P)45-RH-105,,SIG,,RAB)', '(46-PD-108(N,A)44-RU-105,,SIG,,RAB)']
-                10375: ((83-BI-209(N,EL)83-BI-209,,DA)//(83-BI-209(N,EL)83-BI-209,,DA))
-                    --> ['Ratio', '(83-BI-209(N,EL)83-BI-209,,DA)', '(83-BI-209(N,EL)83-BI-209,,DA)']
-                30076: ((26-FE-0(N,INL)26-FE-0,PAR,SIG)=(26-FE-56(N,INL)26-FE-56,PAR,SIG,,A))
-                    --> ['Equal', '(26-FE-0(N,INL)26-FE-0,PAR,SIG)', '(26-FE-56(N,INL)26-FE-56,PAR,SIG,,A)']
-                C0884: ((13-AL-27(A,X)1-H-1,,SIG)+(13-AL-27(A,X)1-H-2,,SIG)+(13-AL-27(A,X)1-H-3,,SIG)+(13-AL-27(A,X)2-HE-3,,SIG)+(13-AL-27(A,X)2-HE-4,EM,SIG))
-                    --> ['Add', '(13-AL-27(A,X)1-H-1,,SIG)', '(13-AL-27(A,X)1-H-2,,SIG)', '(13-AL-27(A,X)1-H-3,,SIG)', '(13-AL-27(A,X)2-HE-3,,SIG)', '(13-AL-27(A,X)2-HE-4,EM,SIG)']
-                """
-                mathJ = [operators_dict[operators[0]["operator"]]] + [
-                    r["code"].replace("((", "(").replace("))", ")")
-                    for r in reaction_elem
+            # recursive helper for nested math expressions
+            def build_math_expr(code):
+                inner_ops = parse_operators(code)
+                if not inner_ops:
+                    return code
+
+                if all(inner_ops[0]["operator"] == o["operator"] for o in inner_ops):
+                    # same operator
+                    inner_elems = []
+                    op_pos = [o["span"] for o in inner_ops]
+                    for i in range(len(op_pos) + 1):
+                        if i == 0:
+                            s = [0, op_pos[i][0]]
+                        elif i != len(op_pos):
+                            s = [op_pos[i - 1][1], op_pos[i][0]]
+                        else:
+                            s = [op_pos[i - 1][1], len(code)]
+                        sub = code[s[0]:s[1]]
+                        inner_elems.append(build_math_expr(sub))
+                    return [operators_dict[inner_ops[0]["operator"]]] + inner_elems
+
+                # find main operator (// or = or /)
+                main_op = [o for o in inner_ops if o["main"]] or [o for o in inner_ops if o["operator"] in ("/", "*")]
+                if not main_op:
+                    return code
+                m = main_op[0]
+                before = code[:m["span"][0]]
+                after = code[m["span"][1]:]
+
+                return [
+                    operators_dict[m["operator"]],
+                    build_math_expr(before),
+                    build_math_expr(after)
                 ]
 
-            elif not all(operators[0]["operator"] == x["operator"] for x in operators):
-                """
-                Search main operator, i.e. "//" and "=" from the list of operators
-                It returns a list of the dictionary
-                    e.g. [{'operator': '//', 'span': [76, 79], 'main': True}]
-                if exists
-                """
-                main_operator = [o for o in operators if o["main"]]
-
-                if main_operator:
-                    """
-                    If there are reaction elements before and/or after the main operator, which are "=" or "//", then
-                    try to separate them and detect if there is another operator(s) among the elements separated by the main operator.
-                    This is for the cases like follow:
-                    30170: ((54-XE-0(N,G),,SPC,,MXW/REL)=(54-XE-129(N,G)54-XE-130,,SPC,,A/MXW/REL)+(54-XE-131(N,G)54-XE-132,,SPC,,A/MXW/REL))
-                    C2768: (((2-HE-4(42-MO-100,N)44-RU-103,,SIG,,AV)+(2-HE-4(42-MO-100,2N)44-RU-102,,SIG,,AV))=((42-MO-100(A,N)44-RU-103,,SIG,,AV)+(42-MO-100(A,2N)44-RU-102,,SIG,,AV)))
-                    O0577: (((92-U-0(P,F)51-SB-127,,SIG)+(92-U-0(P,F)50-SN-127-M,CUM,SIG))/(92-U-0(P,F)51-SB-122,,SIG))
-                    """
-                    mathJ += [operators_dict[main_operator[0]["operator"]]]
-                    op_before = []
-                    op_after = []
-
-                    ## Children operators
-                    for o in operators:
-                        if o["span"][0] < main_operator[0]["span"][0]:
-                            op_before += [o]
-
-                        elif o["span"][0] > main_operator[0]["span"][1]:
-                            op_after += [o]
-
-                    if not op_before:
-                        ## Add first reaction element before main operator
-                        mathJ += [
-                            re.sub(r"[\(]{2,3}", "(", r["code"])
-                            for r in reaction_elem
-                            if r["span"][1] <= main_operator[0]["span"][0]
-                        ]
-
-                    else:
-                        """
-                        The case if there is another operator before the main operator, such as:
-                        C2768: (((2-HE-4(42-MO-100,N)44-RU-103,,SIG,,AV)+(2-HE-4(42-MO-100,2N)44-RU-102,,SIG,,AV))=((42-MO-100(A,N)44-RU-103,,SIG,,AV)+(42-MO-100(A,2N)44-RU-102,,SIG,,AV)))
-                        """
-                        if all(
-                            op_before[0]["operator"] == ob["operator"]
-                            for ob in op_before
-                        ):
-                            ## Check if the all operators in front of main operator are same (or only one operator)
-                            mathJ += math_same_operator(
-                                "before", main_operator, op_before, reaction_elem
-                            )
-
-                        else:
-                            for op in op_before:
-                                mathJ += math_some_operations(
-                                    "before", main_operator, op, reaction_elem
-                                )
-
-                    if op_after:
-                        if all(
-                            op_after[0]["operator"] == of["operator"] for of in op_after
-                        ):
-                            mathJ += math_same_operator(
-                                "after", main_operator, op_after, reaction_elem
-                            )
-
-                        else:
-                            for of in op_after:
-                                mathJ += math_some_operations(
-                                    "after", main_operator, of, reaction_elem
-                                )
-
-                    if not op_after:
-                        ## Add last reaction element
-                        mathJ += [
-                            re.sub(r"[\(]{2,3}", "(", r["code"])
-                            for r in reaction_elem
-                            if main_operator[0]["span"][1] <= r["span"][0]
-                        ]
-
-                else:
-                    """
-                    This is for the cases like follows involving only with addition and substraction:
-                    O0577: (((92-U-0(P,F)51-SB-127,,SIG)+(92-U-0(P,F)50-SN-127-M,CUM,SIG))/(92-U-0(P,F)51-SB-122,,SIG))
-                    """
-                    mathJ = [operators_dict[operators[0]["operator"]]] + [
-                        r["code"].replace("((", "(").replace("))", ")")
-                        for r in reaction_elem
-                    ]
-
-            else:
-                # mathJ = [operators_dict[ main_operator[0]["operator"] ]]
-                mathJ += [r["code"] for r in reaction_elem]
-                # print(mathJ)
-
-            # print("  -> Math JSON:", mathJ)
+            mathJ = build_math_expr(x4_code)
 
             reaction_info = {
                 "x4_code": x4_code,
@@ -396,7 +300,7 @@ def parse_reaction(reaction_field) -> dict:
                     for r in reaction_elem
                 ],
                 "math_expression": mathJ,
-                "operator": mathJ[0],
+                "operator": mathJ[0] if isinstance(mathJ, list) else None,
                 "free_text": free_text,
             }
 
@@ -414,3 +318,4 @@ def parse_reaction(reaction_field) -> dict:
         dict[pointer] = reaction_info
 
     return dict
+
