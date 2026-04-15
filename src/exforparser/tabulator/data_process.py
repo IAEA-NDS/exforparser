@@ -15,7 +15,7 @@ import json
 
 from ripl3_json.ripl3_discretelevel import RIPL_Level
 
-from exforparser.sql.stored import insert_df_to_data
+from exforparser.sql.stored_insert import insert_df_to_data
 from exforparser.submodules.utilities.elem import ztoelem
 from exforparser.submodules.utilities.reaction import (
     get_mf,

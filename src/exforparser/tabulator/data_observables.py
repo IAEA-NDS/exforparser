@@ -14,7 +14,7 @@ import numpy as np
 import re
 from collections import defaultdict
 
-from exforparser.sql.stored import (
+from exforparser.sql.stored_query import (
     list_of_target,
     list_of_reactions_and_entries,
     observable_data_query,

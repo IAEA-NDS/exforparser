@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 from sqlalchemy import select, distinct, or_, and_
 
-from exforparser.submodules.utilities.util import get_number_from_string
 from exforparser.submodules.utilities.reaction import resonance_parameter_sf6
 from .models_core import (
     exfor_bib,
@@ -87,13 +86,6 @@ def list_of_reactions_and_entries(obs_type: str) -> dict:
         target_dict.setdefault(target, {}).setdefault(process, []).append(entry_id)
 
     return target_dict
-
-
-def entry_query_by_id(entries: list) -> pd.DataFrame:
-    stmt = select(exfor_bib).where(exfor_bib.c.entry.in_(entries))
-    with engines["exfor"].connect() as conn:
-        df = pd.read_sql(stmt, conn)
-    return df
 
 
 ######### Data query ###########

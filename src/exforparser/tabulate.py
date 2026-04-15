@@ -60,7 +60,7 @@ from exforparser.tabulator.data_filter import (
     filter_misc_neutron_observables_case,
     filter_fission_yield_case,
 )
-from exforparser.sql.stored import (
+from exforparser.sql.stored_insert import (
     insert_bib,
     insert_reaction,
     insert_reference,
