@@ -45,6 +45,14 @@ def cli():
     )
 
     parser.add_argument(
+        "-H",
+        "--history",
+        help="Backfill all historical git SHA1s for every EXFOR master file into the history DB. "
+             "This is a one-time (or periodic maintenance) operation and can be slow to run through.",
+        action="store_true",
+    )
+
+    parser.add_argument(
         "-o",
         "--observables",
         choices=[
@@ -71,6 +79,15 @@ def cli():
 
     if args.load:
         load_pickles()
+
+    if args.history:
+        from exforparser.parser.list_x4files import list_all_git_history
+        from exforparser.sql.stored_insert import backfill_history_from_git
+        print("Collecting full git history for all EXFOR master files (this may take several minutes)…")
+        records = list_all_git_history()
+        print(f"Found {len(records)} total commit records. Inserting into DB…")
+        inserted, skipped = backfill_history_from_git(records)
+        print(f"Done: {inserted} inserted, {skipped} already present.")
 
     if args.convert:
         logging.basicConfig(filename="parsing.log", level=logging.DEBUG, filemode="w", force=True)

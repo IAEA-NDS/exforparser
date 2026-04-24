@@ -43,7 +43,7 @@ def load_pickles():
             if_exists="replace",
         )
 
-        institute_df = institute_df.rename(columns={"code": "x4_code"})
+        institute_df = institute_df.rename(columns={"code": "x4_code", "addres_country": "address_country"})
         institute_df.to_sql(
             "institute_geo_info",
             connection,

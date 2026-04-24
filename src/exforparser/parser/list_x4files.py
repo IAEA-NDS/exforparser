@@ -11,10 +11,13 @@
 ####################################################################
 
 import os
+import subprocess
+import threading
 import pandas as pd
 import time
 import hashlib
 import git
+from datetime import datetime, timezone
 
 # need version check based on the hash then the only new files should be processed
 
@@ -22,6 +25,72 @@ from exforparser.config import EXFOR_MASTER_REPO_PATH, ENTRY_INDEX_PICKLE, BUF_S
 from .exceptions import *
 
 repo = git.Repo(EXFOR_MASTER_REPO_PATH)
+
+
+def _parse_entry_line(line: str) -> tuple[str, datetime | None]:
+    """Extract (trans_code, trans_date) from an EXFOR ENTRY line.
+    Example: 'ENTRY  L0156  20260309  20260422  20260422  L058'
+    trans_code = last token; trans_date = second-to-last token parsed as YYYYMMDD.
+    """
+    parts = line.split()
+    if len(parts) < 2:
+        return "", None
+    trans_code = parts[-1]
+    trans_date = None
+    if len(parts) >= 5:
+        try:
+            trans_date = datetime.strptime(parts[-2], "%Y%m%d")
+        except ValueError:
+            pass
+    return trans_code, trans_date
+
+
+def _batch_read_entry_lines(blob_shas: list[str]) -> dict[str, tuple[str, datetime | None]]:
+    """Read the first (ENTRY) line from each blob via a single git cat-file --batch process.
+    Streams input/output concurrently to keep memory bounded; skips content after the first line.
+    Returns {blob_sha: (trans_code, trans_date)}.
+    """
+    if not blob_shas:
+        return {}
+
+    proc = subprocess.Popen(
+        ["git", "cat-file", "--batch"],
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+        cwd=EXFOR_MASTER_REPO_PATH,
+    )
+
+    def _write():
+        proc.stdin.write(b"".join((s + "\n").encode() for s in blob_shas))
+        proc.stdin.close()
+
+    threading.Thread(target=_write, daemon=True).start()
+
+    results = {}
+    out = proc.stdout
+
+    for sha in blob_shas:
+        header = out.readline().decode("ascii", errors="replace").strip()
+        parts = header.split()
+        if len(parts) < 3 or parts[1] != "blob":
+            results[sha] = ("", None)
+            continue
+        size = int(parts[2])
+        first_line_bytes = out.readline()
+        bytes_consumed = len(first_line_bytes)
+        first_line = first_line_bytes.rstrip(b"\n\r").decode("utf-8", errors="replace")
+        # Discard remaining object content + trailing protocol newline
+        remaining = max(0, size - bytes_consumed + 1)
+        while remaining > 0:
+            chunk = out.read(min(65536, remaining))
+            if not chunk:
+                break
+            remaining -= len(chunk)
+        results[sha] = _parse_entry_line(first_line)
+
+    proc.wait()
+    return results
 
 
 """
@@ -78,6 +147,96 @@ def git_last_commit(file):
     """Return name of the last commit"""
     print(file, repo.git.log("-1", "--pretty=%s", file))
     return repo.git.log("-1", "--pretty=%s", file)
+
+
+def git_all_hashes_for_file(rel_path: str) -> list[tuple]:
+    """Return [(blob_sha1, committed_at), ...] for every commit that touched
+    *rel_path*, newest-first.  Uses %at (Unix timestamp) for reliable parsing.
+    """
+    log_out = repo.git.log(
+        "--follow",
+        "--pretty=format:%H|%at",
+        "--",
+        rel_path,
+    )
+    results = []
+    for line in log_out.strip().splitlines():
+        if not line:
+            continue
+        parts = line.split("|", 1)
+        if len(parts) < 2:
+            continue
+        commit_sha, unix_ts = parts
+        ls_out = repo.git.ls_tree(commit_sha.strip(), "--", rel_path)
+        if not ls_out:
+            continue
+        blob_sha = ls_out.split()[2]
+        committed_at = datetime.fromtimestamp(
+            int(unix_ts), tz=timezone.utc
+        ).replace(tzinfo=None)
+        results.append((blob_sha, committed_at))
+    return results
+
+
+def list_all_git_history() -> list[dict]:
+    """Walk every .x4 file in the EXFOR master repo and collect the full git history.
+
+    Returns a list of dicts with keys:
+        entry, sha1, latest_trans, recorded_at, committed_at, is_current
+
+    latest_trans and recorded_at are extracted from the ENTRY line of each blob.
+    is_current=True only for the most recent commit per entry.
+    Suitable for passing directly to backfill_history_from_git().
+    """
+    EXFOR_ALL_PATH = os.path.join(EXFOR_MASTER_REPO_PATH, "exforall")
+    files = []
+    if os.path.exists(EXFOR_ALL_PATH):
+        dirs = [f for f in os.listdir(EXFOR_ALL_PATH) if not f.startswith(".")]
+        for d in dirs:
+            files += [
+                f
+                for f in os.listdir(os.path.join(EXFOR_ALL_PATH, d))
+                if f.endswith(".x4")
+            ]
+    else:
+        Nox4FilesExistenceError(EXFOR_ALL_PATH)
+
+    # Phase 1: collect git metadata for every commit of every file
+    raw_records = []
+    for i, file in enumerate(files):
+        entnum = file.split(".", 1)[0]
+        rel_path = f"exforall/{entnum[0:3]}/{entnum}.x4"
+        hashes = git_all_hashes_for_file(rel_path)
+        for idx, (sha1, committed_at) in enumerate(hashes):
+            raw_records.append(
+                {
+                    "entry": entnum,
+                    "sha1": sha1,
+                    "committed_at": committed_at,
+                    "is_current": idx == 0,
+                }
+            )
+        if (i + 1) % 500 == 0:
+            print(f"  git history: scanned {i + 1}/{len(files)} files …")
+
+    # Phase 2: batch-read the ENTRY line from every unique blob
+    unique_shas = list({r["sha1"] for r in raw_records})
+    print(f"  Reading ENTRY lines from {len(unique_shas)} unique blobs …")
+    blob_entry_data = _batch_read_entry_lines(unique_shas)
+
+    # Phase 3: merge ENTRY-line data into records
+    all_records = []
+    for r in raw_records:
+        trans_code, trans_date = blob_entry_data.get(r["sha1"], ("", None))
+        all_records.append(
+            {
+                **r,
+                "latest_trans": trans_code,
+                "recorded_at": trans_date,
+            }
+        )
+
+    return all_records
 
 
 def list_entries_from_pickle():

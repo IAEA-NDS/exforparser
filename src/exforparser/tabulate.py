@@ -67,6 +67,8 @@ from exforparser.sql.stored_insert import (
     insert_reaction_index,
     insert_experimental_info,
     insert_native_data,
+    insert_history_bulk,
+    upsert_entry_history,
 )
 
 
@@ -432,9 +434,8 @@ def process(entnum):
 
 def process_all():
     ent = []
-    # df = list_exfor_files()
-    df = list_entries_from_pickle()
-    # insert_history(df)
+    df = list_exfor_files()
+    insert_history_bulk(df)
 
     for _, row in df.iterrows():
         ent += [row["entry"]]
@@ -458,20 +459,23 @@ def process_all():
 
 
 def process_updated_entry():
-    ent = []
     old_df = list_entries_from_pickle()
     new_df = list_exfor_files()
 
     if old_df.equals(new_df):
         return
 
-    # addtion, update
-    df_diff = old_df.compare(new_df)
+    # Rows where sha1 or latest_trans changed, plus entirely new entries
+    old_indexed = old_df.set_index("entry")
+    new_indexed = new_df.set_index("entry")
+    changed = new_indexed[
+        ~new_indexed.index.isin(old_indexed.index)
+        | (new_indexed["sha1"] != old_indexed.reindex(new_indexed.index)["sha1"])
+    ].reset_index()
 
-    for _, row in df_diff.iterrows():
-        ent += [row["entry"]]
+    insert_history_bulk(changed)
 
-    entries = ent
+    entries = changed["entry"].tolist()
 
     start_time = print_process_time()
     logging.info(f"Start processing {print_time()}")

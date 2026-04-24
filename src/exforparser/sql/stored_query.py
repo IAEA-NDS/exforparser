@@ -8,8 +8,61 @@ from .models_core import (
     exfor_bib,
     exfor_indexes,
     exfor_data,
+    exfor_histories,
 )
 from exforparser.config import engines
+
+
+################################################################################
+####        History / SHA versioning queries
+################################################################################
+
+
+def get_current_sha(entry: str) -> dict | None:
+    """Return the currently active history record for an entry, or None."""
+    stmt = (
+        select(exfor_histories)
+        .where(exfor_histories.c.entry == entry)
+        .where(exfor_histories.c.is_current == True)
+    )
+    with engines["exfor"].connect() as conn:
+        row = conn.execute(stmt).fetchone()
+    return row._asdict() if row else None
+
+
+def get_sha_history(entry: str) -> list[dict]:
+    """Return all recorded SHA versions for an entry, newest first."""
+    stmt = (
+        select(exfor_histories)
+        .where(exfor_histories.c.entry == entry)
+        .order_by(exfor_histories.c.recorded_at.desc())
+    )
+    with engines["exfor"].connect() as conn:
+        rows = conn.execute(stmt).fetchall()
+    return [r._asdict() for r in rows]
+
+
+def get_all_current_shas() -> dict:
+    """Return {entry: sha1} mapping for all currently active records."""
+    stmt = select(exfor_histories.c.entry, exfor_histories.c.sha1).where(
+        exfor_histories.c.is_current == True
+    )
+    with engines["exfor"].connect() as conn:
+        rows = conn.execute(stmt).fetchall()
+    return {r.entry: r.sha1 for r in rows}
+
+
+def get_entries_with_history() -> list[str]:
+    """Return entries that have more than one recorded sha1 (i.e., were updated)."""
+    from sqlalchemy import func
+    stmt = (
+        select(exfor_histories.c.entry)
+        .group_by(exfor_histories.c.entry)
+        .having(func.count(exfor_histories.c.id) > 1)
+    )
+    with engines["exfor"].connect() as conn:
+        rows = conn.execute(stmt).fetchall()
+    return [r.entry for r in rows]
 
 
 ################################################################################
@@ -239,8 +292,8 @@ def observable_data_query(obs_type, target, reaction):
             exfor_indexes.c.sf5.is_(None),
             exfor_indexes.c.sf6 == "SIG",
             exfor_indexes.c.sf7.is_(None),
-            exfor_data.c.en_inc_min >= 0.024,
-            exfor_data.c.en_inc_max <= 0.026,
+            exfor_indexes.c.en_inc_min >= 0.024,
+            exfor_indexes.c.en_inc_max <= 0.026,
         ]
     elif obs_type == "macs":
         conditions += [

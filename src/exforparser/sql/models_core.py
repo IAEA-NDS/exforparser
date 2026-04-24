@@ -23,9 +23,17 @@ exfor_bib = Table(
 exfor_histories = Table(
     "exfor_history",
     metadata,
-    Column("entry", db.String, primary_key=True, index=True),
-    Column("hash", db.String),
+    Column("id", db.Integer, autoincrement=True, primary_key=True),
+    Column("entry", db.String, index=True),
+    Column("sha1", db.String, index=True),
     Column("latest_trans", db.String, index=True),
+    # When this sha1 was first inserted into the DB
+    Column("recorded_at", db.DateTime, index=True),
+    # Actual git commit timestamp (populated by backfill; NULL for live-tracked records)
+    Column("committed_at", db.DateTime, index=True),
+    # True for the sha1 that is currently active in the master repo
+    Column("is_current", db.Boolean, index=True),
+    db.UniqueConstraint("entry", "sha1", name="uq_entry_sha1"),
 )
 
 exfor_experimental_condition = Table(
@@ -154,7 +162,7 @@ exfor_references = Table(
 )
 
 exfor_entry_dois = Table(
-    "entry_dois",
+    "entry_doi",
     metadata,
     Column("entry", db.String, primary_key=True, index=True),
     Column("exfor_main_reference", db.String, index=True),
