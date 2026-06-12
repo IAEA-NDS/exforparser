@@ -44,6 +44,7 @@ from exforparser.tabulator.data_process import (
     process_angular_distribution_section_case,
     process_partial_angular_distribution_case,
     process_energy_distribution_case,
+    process_double_differential_cross_section_case,
     process_neutron_observables_case,
     process_misc_neutron_observables_case,
     process_fission_yield_case,
@@ -57,6 +58,7 @@ from exforparser.tabulator.data_filter import (
     filter_angular_distribution_case,
     filter_partial_angular_distribution_case,
     filter_energy_distribution_case,
+    filter_double_differential_cross_section_case,
     filter_misc_neutron_observables_case,
     filter_fission_yield_case,
 )
@@ -346,7 +348,7 @@ def create_and_insert_native_data_dict(entry_id, entry_num, subent, column_type,
 ######## Main Process ###########
 
 
-def process(entnum):
+def process(entnum, write_files=True):
     entry_json = convert_exfor_to_json(entnum)
 
     if entry_json:
@@ -427,13 +429,14 @@ def process(entnum):
             continue
 
         ## Process all pointers
-        process_pointers(entry_num, main_bib_dict, entry_json, data_dict_conv)
+        process_pointers(entry_num, main_bib_dict, entry_json, data_dict_conv, write_files=write_files)
 
     return
 
 
-def process_all():
+def process_all(write_files=True):
     ent = []
+    # df = list_entries_from_pickle()
     df = list_exfor_files()
     insert_history_bulk(df)
 
@@ -446,9 +449,8 @@ def process_all():
 
     for entnum in entries:
         print(entnum)
-        # process(entnum)
         try:
-            process(entnum)
+            process(entnum, write_files=write_files)
         except KeyboardInterrupt:
             print("CTR + C")
             break
@@ -458,7 +460,7 @@ def process_all():
     logging.info(f"End processing {print_process_time(start_time)}")
 
 
-def process_updated_entry():
+def process_updated_entry(write_files=True):
     old_df = list_entries_from_pickle()
     new_df = list_exfor_files()
 
@@ -484,7 +486,7 @@ def process_updated_entry():
         print(entnum)
         # process(entnum)
         try:
-            process(entnum)
+            process(entnum, write_files=write_files)
         except KeyboardInterrupt:
             print("CTR + C")
             break
@@ -494,7 +496,7 @@ def process_updated_entry():
     logging.info(f"End processing {print_process_time(start_time)}")
 
 
-def process_pointers(entry_num, main_bib_dict, entry_json, data_dict_conv):
+def process_pointers(entry_num, main_bib_dict, entry_json, data_dict_conv, write_files=True):
     entnum = entry_num[0:5]
     subent = entry_num[5:8]
     print(entnum, subent)
@@ -532,7 +534,8 @@ def process_pointers(entry_num, main_bib_dict, entry_json, data_dict_conv):
             x_head=x_head, x_unit=x_unit, y_head=y_head, y_unit=y_unit,
         )
 
-        tabulate_into_exfortables_format(entry_id, main_bib_dict, react_dict, df)
+        if write_files:
+            tabulate_into_exfortables_format(entry_id, main_bib_dict, react_dict, df)
 
     return
 
@@ -585,6 +588,17 @@ def tabulate_into_exfortables_format(entry_id, main_bib_dict, react_dict, df):
         if filter_energy_distribution_case(react_dict, df):
             return
         process_energy_distribution_case(df, entry_id, main_bib_dict, react_dict)
+
+    # --------------------------------------------------------------------------------------- ##
+    # --------------------   Double differential cross sections      ------------------------  ##
+    # --------------------------------------------------------------------------------------- ##
+
+    elif react_dict["sf6"] == "DA/DE":
+        if filter_double_differential_cross_section_case(react_dict, df):
+            return
+        process_double_differential_cross_section_case(
+            df, entry_id, main_bib_dict, react_dict
+        )
 
     # --------------------------------------------------------------------------------------- ##
     # ------------------------         Neutron observables          ------------------------  ##

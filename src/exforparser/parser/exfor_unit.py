@@ -62,6 +62,21 @@ def unify_units(data_dic):
     """
     for i in range(len(data_dic["units"])):
         orig = data_dic["units"][i]
+        head = data_dic["heads"][i]
+
+        # COS-type heads (COS, COS-CM, COS-MIN, COS-MAX, …) hold dimensionless cosine
+        # values regardless of the unit code; convert to degrees unconditionally.
+        if "COS" in head:
+            try:
+                data_dic["data"][i] = [
+                    math.degrees(math.acos(max(-1.0, min(1.0, n))))
+                    if n is not None else None
+                    for n in data_dic["data"][i]
+                ]
+                data_dic["units"][i] = "ADEG"
+            except Exception:
+                pass
+            continue
 
         if orig in ("NO-DIM", "ARB-UNITS"):
             continue
@@ -75,15 +90,5 @@ def unify_units(data_dic):
             base = get_base_unit(orig)
             if base is not None:
                 data_dic["units"][i] = base
-
-        try:
-            # Convert cosine columns to degrees (e.g. COS heading)
-            if "COS" in data_dic["heads"][i]:
-                data_dic["data"][i] = [
-                    math.degrees(math.acos(n)) if n is not None and -1 < n < 1 else None
-                    for n in data_dic["data"][i]
-                ]
-        except Exception:
-            pass
 
     return data_dic

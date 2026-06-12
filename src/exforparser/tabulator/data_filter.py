@@ -145,6 +145,27 @@ def filter_energy_distribution_case(react_dict, df):
     if df["en_inc"].isnull().values.all():
         return True
 
+    if df["e_out"].isnull().values.all():
+        return True
+
+    if "arbitrary_data" in df.columns and df["arbitrary_data"].fillna(False).any():
+        return True
+
+    return False
+
+
+def filter_double_differential_cross_section_case(react_dict, df):
+    if filter_energy_distribution_case(react_dict, df):
+        return True
+
+    if df["angle"].isnull().values.all():
+        return True
+
+    if "y_unit" in df.columns:
+        units = set(df["y_unit"].dropna().unique())
+        if units and units != {"B/SR/EV"}:
+            return True
+
     return False
 
 

@@ -15,6 +15,16 @@ from .models_core import (
 from exforparser.config import engines
 
 
+def ensure_exfor_data_frame_columns(connection):
+    existing = {
+        row[1]
+        for row in connection.exec_driver_sql("PRAGMA table_info(exfor_data)").fetchall()
+    }
+    for column in ("en_inc_frame", "data_frame", "e_out_frame", "angle_frame"):
+        if column not in existing:
+            connection.exec_driver_sql(f"ALTER TABLE exfor_data ADD COLUMN {column} TEXT")
+
+
 def insert_bib(dictlist):
     with engines["exfor"].begin() as connection:
         stmt = insert(exfor_bib)
@@ -36,6 +46,7 @@ def insert_native_data(datadict):
 def insert_df_to_data(df):
     df2 = df.astype(object).where(pd.notnull(df), None)
     with engines["exfor"].begin() as connection:
+        ensure_exfor_data_frame_columns(connection)
         df2.to_sql(
             "exfor_data",
             connection,

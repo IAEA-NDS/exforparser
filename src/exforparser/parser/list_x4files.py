@@ -21,7 +21,7 @@ from datetime import datetime, timezone
 
 # need version check based on the hash then the only new files should be processed
 
-from exforparser.config import EXFOR_MASTER_REPO_PATH, ENTRY_INDEX_PICKLE, BUF_SIZE
+from exforparser.config import EXFOR_MASTER_REPO_PATH, ENTRY_INDEX_PICKLE, ENTRY_INDEX_HEAD, BUF_SIZE
 from .exceptions import *
 
 repo = git.Repo(EXFOR_MASTER_REPO_PATH)
@@ -249,37 +249,103 @@ def list_entries_from_pickle():
         raise NoPickelExistenceError("../" + ENTRY_INDEX_PICKLE)
 
 
-def list_exfor_files():
-    ## loop over all entries and compose the list of entries
-    files = []
+def _full_scan() -> pd.DataFrame:
+    """Build the entry index from scratch using a single ls-tree call + batch blob read."""
+    ls_tree_out = repo.git.ls_tree("-r", "HEAD", "--", "exforall/")
     entries = []
+    for line in ls_tree_out.splitlines():
+        # format: <mode> SP <type> SP <sha> TAB <path>
+        meta, _, path = line.partition("\t")
+        if not path.endswith(".x4"):
+            continue
+        blob_sha = meta.split()[2]
+        entnum = os.path.basename(path).split(".", 1)[0]
+        entries.append({"entry": entnum, "sha1": blob_sha})
+
+    blob_entry_data = _batch_read_entry_lines([e["sha1"] for e in entries])
+
+    rows = []
+    for e in entries:
+        trans_code, _ = blob_entry_data.get(e["sha1"], ("", None))
+        rows.append({"entry": e["entry"], "latest_trans": trans_code, "sha1": e["sha1"]})
+
+    return pd.DataFrame(rows, columns=["entry", "latest_trans", "sha1"])
+
+
+def list_exfor_files(force: bool = False) -> pd.DataFrame:
+    """Return a DataFrame of all EXFOR entries with their blob SHA and trans code.
+
+    On first call (or when force=True) performs a full scan.  On subsequent calls
+    compares the stored HEAD commit to the current one and only processes files that
+    were added, modified, or deleted since the last run.
+    """
+    current_head = repo.head.commit.hexsha
+
+    # --- incremental update ---
+    if (
+        not force
+        and os.path.exists(ENTRY_INDEX_PICKLE)
+        and os.path.exists(ENTRY_INDEX_HEAD)
+    ):
+        with open(ENTRY_INDEX_HEAD) as fh:
+            stored_head = fh.read().strip()
+
+        if stored_head == current_head:
+            return pd.read_pickle(ENTRY_INDEX_PICKLE)
+
+        try:
+            diff_out = repo.git.diff(
+                "--name-status", stored_head, current_head, "--", "exforall/"
+            )
+        except git.exc.GitCommandError:
+            # The cached HEAD may come from a different/recloned exfor_master.
+            # In that case the incremental diff cannot be computed safely.
+            force = True
+        else:
+            force = False
+
+        if force:
+            df = _full_scan()
+            df.to_pickle(ENTRY_INDEX_PICKLE)
+            with open(ENTRY_INDEX_HEAD, "w") as fh:
+                fh.write(current_head)
+            return df
+
+        df = pd.read_pickle(ENTRY_INDEX_PICKLE)
+
+        for line in diff_out.splitlines():
+            if not line:
+                continue
+            parts = line.split("\t")
+            status = parts[0][0]  # A / M / D / R
+            # renames: R<score> TAB old TAB new  — treat new path as modified
+            path = parts[-1]
+            if not path.endswith(".x4"):
+                continue
+            entnum = os.path.basename(path).split(".", 1)[0]
+            df = df[df["entry"] != entnum]
+            if status != "D":
+                blob_sha = repo.git.ls_tree("HEAD", "--", path).split()[2]
+                trans_code, _ = _batch_read_entry_lines([blob_sha]).get(blob_sha, ("", None))
+                new_row = pd.DataFrame(
+                    [{"entry": entnum, "latest_trans": trans_code, "sha1": blob_sha}]
+                )
+                df = pd.concat([df, new_row], ignore_index=True)
+
+        df.to_pickle(ENTRY_INDEX_PICKLE)
+        with open(ENTRY_INDEX_HEAD, "w") as fh:
+            fh.write(current_head)
+        return df
+
+    # --- full scan ---
     EXFOR_ALL_PATH = os.path.join(EXFOR_MASTER_REPO_PATH, "exforall")
-    # rundos2unix(EXFOR_ALL_PATH)
-
-    if os.path.exists(EXFOR_ALL_PATH):
-        dirs = [f for f in os.listdir(EXFOR_ALL_PATH) if not f.startswith(".")]
-        for d in dirs:
-            files += [
-                f
-                for f in os.listdir(os.path.join(EXFOR_ALL_PATH, d))
-                if f.endswith(".x4")
-            ]
-
-    else:
+    if not os.path.exists(EXFOR_ALL_PATH):
         Nox4FilesExistenceError(EXFOR_ALL_PATH)
 
-    for file in files:
-        entnum = file.split(".", 1)[0]
-        file = f"exforall/{entnum[0:3]}/{entnum}.x4"
-
-        sha1 = git_hash(file)
-        last_modifieddate = git_last_commit(file)
-
-        entries.append([entnum, last_modifieddate, sha1])
-
-    df = pd.DataFrame(entries, columns=["entry", "latest_trans", "sha1"])
+    df = _full_scan()
     df.to_pickle(ENTRY_INDEX_PICKLE)
-
+    with open(ENTRY_INDEX_HEAD, "w") as fh:
+        fh.write(current_head)
     return df
 
 

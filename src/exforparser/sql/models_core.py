@@ -104,7 +104,7 @@ exfor_data = Table(
     Column("entry_id", db.String, index=True),
     Column("en_inc", db.Float),
     Column("den_inc", db.Float),
-    # en_inc_frame (Boolean) removed — use exfor_indexes.x_head instead
+    Column("en_inc_frame", db.String),  # "LAB", "CM", or NULL/unknown
     Column("charge", db.Float),
     Column("mass", db.Float),
     Column("isomer", db.String),
@@ -113,13 +113,15 @@ exfor_data = Table(
     Column("level_num", db.Integer, index=True),
     Column("data", db.Float),
     Column("ddata", db.Float),
+    Column("data_frame", db.String),  # "LAB", "CM", or NULL/unknown
     Column("arbitrary_data", db.Boolean),
     Column("arbitrary_ddata", db.Boolean),
     Column("e_out", db.Float),
     Column("de_out", db.Float),
-    Column("e_out_frame", db.Boolean),
+    Column("e_out_frame", db.String),  # "LAB", "CM", or NULL/unknown
     Column("angle", db.Float, index=True),
     Column("dangle", db.Float),
+    Column("angle_frame", db.String),  # "LAB", "CM", or NULL/unknown
     Column("flags", db.String),
     Column("mf", db.Integer),
     Column("mt", db.Integer, index=True),

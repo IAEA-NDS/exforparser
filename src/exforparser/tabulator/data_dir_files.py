@@ -186,14 +186,38 @@ def exfortables_filename_Einc(dir, exfor_id, process, en, react_dict, bib):
     )
 
 
-# --------------------- For observables
+# --------------------- For observables (thermal, macs, resonance_integral, etc.)
 
 
-def get_thermal_dir_name(obs_type, react_dict):
-    ### generate output dir and filename
+def get_obs_dir_name(obs_type, react_dict):
+    """Directory for tabular observables under the exfortables_py tree.
 
+    Produces: <OUT_PATH>/exfortables_py/<projectile>/<target>/<process>/<obs_type>/
+    e.g.      .../exfortables_py/n/U-235/n-g/thermal/
+    """
     return os.path.join(
-        OUT_PATH, obs_type, react_dict["process"].replace(",", "-").lower()
+        OUT_PATH,
+        "exfortables_py",
+        process_reformat(react_dict),
+        target_reformat(react_dict),
+        react_dict["process"].replace(",", "-").lower(),
+        obs_type,
+    )
+
+
+def get_reference_obs_dir_name(obs_type, react_dict):
+    """Directory for legacy thermal/resonance observable tables.
+
+    These outputs may include reference/evaluated comparison data.  Keep them
+    outside exfortables_py, which is reserved for pure EXFOR exports.
+    """
+    root = "thermal" if obs_type == "thermal" else os.path.join("resonance_data", obs_type)
+    return os.path.join(
+        OUT_PATH,
+        root,
+        process_reformat(react_dict),
+        target_reformat(react_dict),
+        react_dict["process"].replace(",", "-").lower(),
     )
 
 
@@ -206,15 +230,33 @@ def get_thermal_filename(dir, react_dict):
 
 # --------------------- Resonance Parameter
 def get_resonance_param_dir_name(obs_type, react_dict):
-    ### generate output dir and filename
+    """Directory for resonance parameter files under the exfortables_py tree.
 
+    Produces: <OUT_PATH>/exfortables_py/<projectile>/<target>/<process>/resonance_parameter/<sf6>/<sf8>/
+    """
     return os.path.join(
         OUT_PATH,
-        obs_type,
-        react_dict["projectile"],
+        "exfortables_py",
+        react_dict["projectile"].lower(),
         target_reformat(react_dict),
+        react_dict.get("process", "n-0").replace(",", "-").lower(),
+        "resonance_parameter",
         react_dict["sf6"].replace("/", "-"),
-        react_dict["sf8"].replace("/", "-") if react_dict.get("sf8") else None,
+        react_dict["sf8"].replace("/", "-") if react_dict.get("sf8") else "",
+    )
+
+
+def get_reference_resonance_param_dir_name(react_dict):
+    """Directory for legacy resonance-parameter tables with comparison context."""
+    return os.path.join(
+        OUT_PATH,
+        "resonance_data",
+        "resonance_parameter",
+        react_dict["projectile"].lower(),
+        target_reformat(react_dict),
+        react_dict.get("process", "n-0").replace(",", "-").lower(),
+        react_dict["sf6"].replace("/", "-"),
+        react_dict["sf8"].replace("/", "-") if react_dict.get("sf8") else "",
     )
 
 
@@ -232,3 +274,38 @@ def get_resonance_param_file_name(dir, exfor_id, bib, react_dict):
         + (str(bib["year"]) if bib.get("year") else "1900")
         + ".txt",
     )
+
+
+def write_list_files(root=None):
+    """Scan the output tree and write a <dirname>.list index file in each
+    leaf directory that contains .txt data files.
+
+    Each line in the .list file has the format:
+        <filename>\t<row_count>
+    where <row_count> is the number of data rows (lines that are not
+    blank and do not start with '#').
+
+    Args:
+        root: directory to scan; defaults to OUT_PATH.
+    """
+    if root is None:
+        root = OUT_PATH
+
+    for dirpath, dirnames, filenames in os.walk(root):
+        txt_files = sorted(f for f in filenames if f.endswith(".txt"))
+        if not txt_files:
+            continue
+        list_name = os.path.basename(dirpath) + ".list"
+        list_path = os.path.join(dirpath, list_name)
+        with open(list_path, "w") as lf:
+            for fname in txt_files:
+                fpath = os.path.join(dirpath, fname)
+                try:
+                    with open(fpath) as df:
+                        count = sum(
+                            1 for line in df
+                            if line.strip() and not line.startswith("#")
+                        )
+                except OSError:
+                    count = 0
+                lf.write(f"{fname}\t{count}\n")

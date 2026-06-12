@@ -11,6 +11,7 @@ from .models_core import (
     exfor_histories,
 )
 from exforparser.config import engines
+from .stored_insert import ensure_exfor_data_frame_columns
 
 
 ################################################################################
@@ -77,6 +78,8 @@ def list_of_target(obs_type) -> list:
         condition = exfor_indexes.c.sf6 == "DA"
     elif obs_type == "energy_distribution":
         condition = exfor_indexes.c.sf6 == "DE"
+    elif obs_type == "double_differential_cross_section":
+        condition = exfor_indexes.c.sf6 == "DA/DE"
     elif obs_type == "neutrons":
         condition = exfor_indexes.c.sf6 == "NU"
     elif obs_type == "tty":
@@ -115,8 +118,16 @@ def list_of_reactions_and_entries(obs_type: str) -> dict:
         conditions = exfor_indexes.c.sf6 == "DA"
     elif obs_type == "energy_distribution":
         conditions = exfor_indexes.c.sf6 == "DE"
+    elif obs_type == "double_differential_cross_section":
+        conditions = exfor_indexes.c.sf6 == "DA/DE"
     elif obs_type == "neutrons":
         conditions = exfor_indexes.c.sf6 == "NU"
+    elif obs_type == "fission_yield":
+        conditions = exfor_indexes.c.sf6 == "FY"
+    elif obs_type == "level_density":
+        conditions = exfor_indexes.c.sf6 == "LDP"
+    elif obs_type == "strength_function":
+        conditions = exfor_indexes.c.sf6 == "STF"
     elif obs_type == "tty":
         conditions = exfor_indexes.c.sf6 == "TTY"
     else:
@@ -329,6 +340,14 @@ def observable_data_query(obs_type, target, reaction):
             exfor_indexes.c.sf6 == "D",
             exfor_indexes.c.sf7.is_(None),
         ]
+    elif obs_type == "level_density":
+        conditions += [
+            exfor_indexes.c.sf6 == "LDP",
+        ]
+    elif obs_type == "strength_function":
+        conditions += [
+            exfor_indexes.c.sf6 == "STF",
+        ]
 
     stmt = select(exfor_indexes.c.entry_id).where(and_(*conditions))
     with engines["exfor"].connect() as conn:
@@ -353,15 +372,10 @@ def data_query_by_id(obs_type, entries):
             # exfor_indexes.c.sf8.in_(["MXW", "SPA", "MXW/FCT"])
         ]
 
-    stmt = (
+    index_metadata = (
         select(
-            exfor_bib.c.first_author,
-            exfor_bib.c.first_author_institute,
-            exfor_bib.c.main_facility_institute,
-            exfor_bib.c.main_facility_type,
-            exfor_bib.c.main_reference,
-            exfor_bib.c.year,
             exfor_indexes.c.entry_id,
+            exfor_indexes.c.entry,
             exfor_indexes.c.target,
             exfor_indexes.c.process,
             exfor_indexes.c.sf4,
@@ -371,51 +385,83 @@ def data_query_by_id(obs_type, entries):
             exfor_indexes.c.sf8,
             exfor_indexes.c.sf9,
             exfor_indexes.c.x4_code,
-            exfor_indexes.c.residual,
-            exfor_indexes.c.level_num,
             exfor_indexes.c.x_head,
             exfor_indexes.c.x_unit,
             exfor_indexes.c.y_head,
             exfor_indexes.c.y_unit,
+        )
+        .where(exfor_indexes.c.entry_id.in_(entries))
+        .distinct()
+        .subquery()
+    )
+
+    stmt = (
+        select(
+            exfor_bib.c.first_author,
+            exfor_bib.c.first_author_institute,
+            exfor_bib.c.main_facility_institute,
+            exfor_bib.c.main_facility_type,
+            exfor_bib.c.main_reference,
+            exfor_bib.c.year,
+            index_metadata.c.entry_id,
+            index_metadata.c.target,
+            index_metadata.c.process,
+            index_metadata.c.sf4,
+            index_metadata.c.sf5,
+            index_metadata.c.sf6,
+            index_metadata.c.sf7,
+            index_metadata.c.sf8,
+            index_metadata.c.sf9,
+            index_metadata.c.x4_code,
+            exfor_data.c.residual,
+            exfor_data.c.level_num,
+            index_metadata.c.x_head,
+            index_metadata.c.x_unit,
+            index_metadata.c.y_head,
+            index_metadata.c.y_unit,
             exfor_data.c.en_inc,
             exfor_data.c.den_inc,
+            exfor_data.c.en_inc_frame,
             exfor_data.c.en_inc_min,
             exfor_data.c.en_inc_max,
             exfor_data.c.e_out,
             exfor_data.c.de_out,
+            exfor_data.c.e_out_frame,
+            exfor_data.c.angle,
+            exfor_data.c.dangle,
+            exfor_data.c.angle_frame,
+            exfor_data.c.charge,
+            exfor_data.c.mass,
+            exfor_data.c.isomer,
             exfor_data.c.data,
             exfor_data.c.ddata,
+            exfor_data.c.data_frame,
+            exfor_data.c.arbitrary_data,
             exfor_data.c.flags,
             exfor_data.c.mf,
             exfor_data.c.mt,
         )
         .select_from(
             exfor_data.join(
-                exfor_indexes,
-                and_(
-                    exfor_indexes.c.entry_id == exfor_data.c.entry_id,
-                    *(
-                        [exfor_indexes.c.mt == exfor_data.c.mt]
-                        if obs_type == "xs"
-                        else []
-                    ),
-                ),
+                index_metadata,
+                index_metadata.c.entry_id == exfor_data.c.entry_id,
                 isouter=True,
             ).join(
                 exfor_bib,
-                exfor_indexes.c.entry == exfor_bib.c.entry,
+                index_metadata.c.entry == exfor_bib.c.entry,
             )
         )
         .where(and_(*conditions))
         .order_by(
-            exfor_indexes.c.sf9,
-            exfor_indexes.c.sf8,
-            exfor_indexes.c.sf7,
+            index_metadata.c.sf9,
+            index_metadata.c.sf8,
+            index_metadata.c.sf7,
             exfor_bib.c.year.asc(),
         )
     )
 
-    with engines["exfor"].connect() as conn:
+    with engines["exfor"].begin() as conn:
+        ensure_exfor_data_frame_columns(conn)
         df = pd.read_sql(stmt, conn)
 
     return df

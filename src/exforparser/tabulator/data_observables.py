@@ -14,6 +14,7 @@ import numpy as np
 import re
 from collections import defaultdict
 
+from exforparser.config import engines
 from exforparser.sql.stored_query import (
     list_of_target,
     list_of_reactions_and_entries,
@@ -23,12 +24,15 @@ from exforparser.sql.stored_query import (
 )
 from exforparser.submodules.utilities.util import del_outputs, closest, slices
 from exforparser.submodules.utilities.reaction import sf3_dict, sig_sf5, resonance_parameter_sf6
+from exforparser.submodules.utilities.elem import elemtoz_nz
 
 
 from .data_dir_files import (
-    get_thermal_dir_name,
+    get_obs_dir_name,
+    get_reference_obs_dir_name,
     get_thermal_filename,
     get_resonance_param_dir_name,
+    get_reference_resonance_param_dir_name,
     get_resonance_param_file_name,
 )
 from .data_write import (
@@ -36,12 +40,54 @@ from .data_write import (
     write_to_resonance_spacing_table,
     write_to_exfortables_format_resonance_parameter,
 )
-from .data_filter import filter_cross_section_case, filter_partial_cross_section_case
-from .data_process import process_cross_section_case, process_partial_cross_section_case
+from .data_filter import (
+    filter_cross_section_case,
+    filter_partial_cross_section_case,
+    filter_angular_distribution_case,
+    filter_partial_angular_distribution_case,
+    filter_energy_distribution_case,
+    filter_double_differential_cross_section_case,
+    filter_fission_yield_case,
+    filter_misc_neutron_observables_case,
+)
+from .data_process import (
+    process_cross_section_case,
+    process_partial_cross_section_case,
+    process_angular_distribution_section_case,
+    process_partial_angular_distribution_case,
+    process_energy_distribution_case,
+    process_double_differential_cross_section_case,
+    process_fission_yield_case,
+    process_neutron_observables_case,
+    process_misc_neutron_observables_case,
+)
 import logging
 
 pd.set_option("display.max_rows", None, "display.max_columns", None)
 pd.set_option("display.width", 2000, "max_colwidth", None)
+
+
+def _iter_entry_data(obs_type, entries, chunk_size=25):
+    """Fetch one target/reaction entry batch, then yield per-entry dataframes."""
+    for start in range(0, len(entries), chunk_size):
+        chunk = entries[start:start + chunk_size]
+        print(
+            f"{obs_type}: loading entries {start + 1}-{start + len(chunk)}"
+            f"/{len(entries)}",
+            flush=True,
+        )
+        df_all = data_query_by_id(obs_type, chunk)
+        if df_all.empty:
+            continue
+
+        grouped = {
+            entry_id: df
+            for entry_id, df in df_all.groupby("entry_id", sort=False)
+        }
+        for ent in chunk:
+            df = grouped.get(ent)
+            if df is not None and not df.empty:
+                yield ent, df
 
 
 def crosssection():
@@ -67,50 +113,42 @@ def crosssection():
 
     for target in reversed(target_dict.keys()):
         for reaction, entries in target_dict[target].items():
-            # print(target, reaction, entries)
-            for ent in entries:
-                print(target, reaction, ent)
-                entry_json = {}
-                df = data_query_by_id(type, [ent])
-                # print(df)
-                if df.empty:
-                    continue
+            for ent, df in _iter_entry_data(type, entries):
+                print("crosssection():", target, reaction, ent)
 
                 react_dict = df.iloc[0].to_dict()
 
                 if filter_cross_section_case(react_dict, df):
                     continue
 
-                entry_json["bib_record"] = {
-                    "first_author": react_dict["first_author"].split(".")[-1],
+                main_bib_dict = {
+                    "first_author": react_dict["first_author"],
                     "year": react_dict["year"],
                     "first_author_institute": react_dict["first_author_institute"],
                     "main_facility_institute": react_dict["main_facility_institute"],
                     "main_facility_type": react_dict["main_facility_type"],
                     "main_reference": react_dict["main_reference"],
                 }
-                # print(df)
                 try:
                     if react_dict["sf5"] is None or any(
                         sf5 == react_dict["sf5"] for sf5 in sig_sf5.keys()
                     ):
                         process_cross_section_case(
-                            df, react_dict["entry_id"], entry_json, react_dict
+                            df, react_dict["entry_id"], main_bib_dict, react_dict
                         )
 
                     if react_dict["sf5"] == "PAR":
-                        ## none of (N,NON) PAR,SIG are useful
                         if filter_partial_cross_section_case(react_dict, df):
                             continue
                         process_partial_cross_section_case(
-                            df, react_dict["entry_id"], entry_json, react_dict
+                            df, react_dict["entry_id"], main_bib_dict, react_dict
                         )
 
                 except KeyboardInterrupt:
                     print("CTR + C")
                     break
-                except:
-                    logging.error(f"ERROR: at {target_dict}", exc_info=True)
+                except Exception:
+                    logging.error(f"ERROR: at {ent}", exc_info=True)
 
 
 def thermal(type):
@@ -119,7 +157,7 @@ def thermal(type):
     # targets = ["56-BA-130"]
     for target in targets:
         for reaction in thermal_data_reaction:
-            print(target, reaction)
+            print("thermal()", target, reaction)
             df = observable_data_query(type, target, reaction)
             for prod in df["sf4"].unique():
                 react_dict = {"target": target, "process": reaction, "sf4": prod}
@@ -139,49 +177,97 @@ def thermal(type):
 
                 else:
                     if type == "thermal":
-                        dir = get_thermal_dir_name("thermaldata", react_dict)
+                        dir = get_reference_obs_dir_name("thermal", react_dict)
                         outfile = get_thermal_filename(dir, react_dict)
 
                         write_to_thermal_table(type, dir, outfile, react_dict, df2)
     return
 
 
-def read_ripl3_d0():
-    # Z = El = A = Io = Bn = D0 = dD = S0 = dS = Gg = dG = Com = []
-    path = "/Users/okumuras/Dropbox/Development/exforparser/examples/resonances_0.ripl3"
-    df = pd.read_fwf(
-        path,
-        sep="\s+",
-        comment="#",
-        names=["Z", "El", "A", "Io", "Bn", "D0", "dD", "S0", "dS", "Gg", "dG", "Com."],
-        dtype={"Gg": np.float64, "dG": np.float64},
-        colspecs="infer",
+def _split_endftables_target(target):
+    match = re.match(r"^([A-Z][a-z]?)(\d+)", str(target))
+    if not match:
+        return pd.Series({"Z": np.nan, "El": None, "A": np.nan})
+    el, mass = match.groups()
+    z = elemtoz_nz(el)
+    return pd.Series({"Z": int(z) if z else np.nan, "El": el, "A": int(mass)})
+
+
+def _read_ripl3_from_endftables(level: int):
+    spacing = f"D{level}"
+    gamma = f"gamgam{level}"
+    stmt = """
+        SELECT
+            r.target,
+            r.obs_type,
+            d.value,
+            d.dvalue
+        FROM endf_reactions AS r
+        JOIN resonancetable_data AS d
+          ON r.reaction_id = d.reaction_id
+        WHERE r.evaluation = 'RIPL-3'
+          AND r.obs_type IN (?, ?)
+    """
+    with engines["endftables"].connect() as conn:
+        df = pd.read_sql(stmt, conn, params=(spacing, gamma))
+
+    if df.empty:
+        columns = ["Z", "El", "A", spacing, "dD", "Gg", "dG"]
+        return pd.DataFrame(columns=columns)
+
+    target_parts = df["target"].apply(_split_endftables_target)
+    df = pd.concat([df, target_parts], axis=1)
+    values = df.pivot_table(
+        index=["Z", "El", "A"],
+        columns="obs_type",
+        values=["value", "dvalue"],
+        aggfunc="first",
+    ).reset_index()
+
+    values.columns = [
+        "_".join(str(part) for part in col if part) if isinstance(col, tuple) else col
+        for col in values.columns
+    ]
+    values = values.rename(
+        columns={
+            f"value_{spacing}": spacing,
+            f"dvalue_{spacing}": "dD",
+            f"value_{gamma}": "Gg",
+            f"dvalue_{gamma}": "dG",
+        }
     )
-    return df
+    for column in (spacing, "dD", "Gg", "dG"):
+        if column not in values:
+            values[column] = np.nan
+    return values[["Z", "El", "A", spacing, "dD", "Gg", "dG"]]
+
+
+def read_ripl3_d0():
+    return _read_ripl3_from_endftables(0)
 
 
 def read_ripl3_d1():
-    path = "/Users/okumuras/Dropbox/Development/exforparser/examples/resonances_1.ripl3"
-    df = pd.read_fwf(
-        path,
-        sep="\s+",
-        comment="#",
-        names=["Z", "El", "A", "Io", "Bn", "D1", "dD", "S1", "dS", "Gg", "dG", "Com."],
-        dtype={"Gg": np.float64, "dG": np.float64},
-        colspecs="infer",
-    )
-    return df
+    return _read_ripl3_from_endftables(1)
 
 
-def resonance_spacing():
+def _obs_output_dir(obs_type, react_dict, pure_exfor=False):
+    if pure_exfor:
+        return get_obs_dir_name(obs_type, react_dict)
+    return get_reference_obs_dir_name(obs_type, react_dict)
+
+
+def resonance_spacing(pure_exfor=False):
     """
     To extract the resonance spacing (N,0),,D reactions for Arjan Koning
     """
     type = "resonance_spacing"
     targets = list_of_target(type)
 
-    ripl_d0 = read_ripl3_d0()
-    ripl_d1 = read_ripl3_d1()
+    ripl_d0 = pd.DataFrame()
+    ripl_d1 = pd.DataFrame()
+    if not pure_exfor:
+        ripl_d0 = read_ripl3_d0()
+        ripl_d1 = read_ripl3_d1()
 
     for target in targets:
         reactions = ["N,0", "N,EL"]
@@ -192,32 +278,41 @@ def resonance_spacing():
             if df.empty:
                 continue
 
-            z = target.split("-")[0]
-            el = target.split("-")[1].title()
-            a = target.split("-")[2]
-            # print(z, el, a)
-            df0 = ripl_d0[
-                (ripl_d0["Z"] == int(z))
-                & (ripl_d0["El"] == el)
-                & (ripl_d0["A"] == int(a))
-            ]
-            df1 = ripl_d1[
-                (ripl_d1["Z"] == int(z))
-                & (ripl_d1["El"] == el)
-                & (ripl_d1["A"] == int(a))
-            ]
+            df0 = pd.DataFrame()
+            df1 = pd.DataFrame()
+            if not pure_exfor:
+                z = target.split("-")[0]
+                el = target.split("-")[1].title()
+                a = target.split("-")[2]
+                df0 = ripl_d0[
+                    (ripl_d0["Z"] == int(z))
+                    & (ripl_d0["El"] == el)
+                    & (ripl_d0["A"] == int(a))
+                ]
+                df1 = ripl_d1[
+                    (ripl_d1["Z"] == int(z))
+                    & (ripl_d1["El"] == el)
+                    & (ripl_d1["A"] == int(a))
+                ]
 
-            dir = get_thermal_dir_name("resonance_data/resonance_spacing", react_dict)
+            dir = _obs_output_dir("resonance_spacing", react_dict, pure_exfor)
             outfile = get_thermal_filename(dir, react_dict)
 
             write_to_resonance_spacing_table(
-                type, dir, outfile, react_dict, df, df0, df1
+                type,
+                dir,
+                outfile,
+                react_dict,
+                df,
+                df0,
+                df1,
+                include_reference=not pure_exfor,
             )
 
     return
 
 
-def resonance_integral():
+def resonance_integral(pure_exfor=False):
     """
     To extract the resonance integral data, (N,G),,RI
     """
@@ -228,22 +323,24 @@ def resonance_integral():
     for target in targets:
         for reaction in reactions:
             df = pd.DataFrame()
-            print(target, reaction)
+            print("resonance_integral():", target, reaction)
             react_dict = {"target": target, "process": reaction, "sf4": None}
             df = observable_data_query(type, target, reaction)
 
             if df.empty:
                 continue
 
-            dir = get_thermal_dir_name("resonance_data/resonance_integral", react_dict)
+            dir = _obs_output_dir("resonance_integral", react_dict, pure_exfor)
             outfile = get_thermal_filename(dir, react_dict)
 
-            write_to_thermal_table(type, dir, outfile, react_dict, df)
+            write_to_thermal_table(
+                type, dir, outfile, react_dict, df, append=not pure_exfor
+            )
 
     return
 
 
-def macs():
+def macs(pure_exfor=False):
     """
     To extract the Maxwellian average cross section, (N,x),,SIG,,MXW
     """
@@ -253,7 +350,7 @@ def macs():
     for target in targets:
         for reaction in reactions:
             df = pd.DataFrame()
-            print(target, reaction)
+            print("acs():", target, reaction)
             react_dict = {"target": target, "process": reaction, "sf4": None}
             df = observable_data_query(type, target, reaction)
 
@@ -269,15 +366,42 @@ def macs():
                         df[(df["entry_id"] == i[0]) & (df["en_inc"] != one_en)].index
                     )
 
-            dir = get_thermal_dir_name("resonance_data/macs", react_dict)
+            dir = _obs_output_dir("macs", react_dict, pure_exfor)
             outfile = get_thermal_filename(dir, react_dict)
 
-            write_to_thermal_table(type, dir, outfile, react_dict, df)
+            write_to_thermal_table(
+                type, dir, outfile, react_dict, df, append=not pure_exfor
+            )
 
     return
 
 
-def resonance_parameter():
+def _generic_scalar_observable(obs_type, pure_exfor=False):
+    target_dict = list_of_reactions_and_entries(obs_type)
+    for target in target_dict:
+        for reaction, entries in target_dict[target].items():
+            print(f"{obs_type}():", target, reaction)
+            react_dict = {"target": target, "process": reaction, "sf4": None}
+            frames = [df for _, df in _iter_entry_data(obs_type, entries) if not df.empty]
+            if not frames:
+                continue
+            df = pd.concat(frames, ignore_index=True)
+            dir = _obs_output_dir(obs_type, react_dict, pure_exfor)
+            outfile = get_thermal_filename(dir, react_dict)
+            write_to_thermal_table(
+                obs_type, dir, outfile, react_dict, df, append=not pure_exfor
+            )
+
+
+def level_density(pure_exfor=False):
+    _generic_scalar_observable("level_density", pure_exfor=pure_exfor)
+
+
+def strength_function(pure_exfor=False):
+    _generic_scalar_observable("strength_function", pure_exfor=pure_exfor)
+
+
+def resonance_parameter(pure_exfor=False):
     """
     Extract resonance parameter data grouped by ENTRY-SUBENT,
     combining multiple reactions horizontally.
@@ -308,7 +432,7 @@ def resonance_parameter():
             ]
 
             for sf6 in resonance_parameter_sf6:
-                print(f"Projectile: {projectile} Target: {target} SF6:{sf6}")
+                print(f"resonance_parameter Projectile: {projectile} Target: {target} SF6:{sf6}")
                 react_dict = {
                     "target": target,
                     "process": f"{projectile},0",
@@ -320,7 +444,9 @@ def resonance_parameter():
                     continue
 
                 for (entry_subent, sf8), row in df.groupby(
-                    [df["entry_id"].str[:9], df["sf8"]], group_keys=False
+                    [df["entry_id"].str[:9], df["sf8"]],
+                    group_keys=False,
+                    dropna=False,
                 ):
                     # print(entry_subent)
                     main_bib_dict = (
@@ -343,7 +469,7 @@ def resonance_parameter():
                     react_dict["entry_id"] = row["entry_id"].unique()[0]
                     react_dict["x4_code"] = row["x4_code"].unique()[0]
                     react_dict["sf6"] = sf6
-                    react_dict["sf8"] = sf8
+                    react_dict["sf8"] = None if pd.isna(sf8) else sf8
                     react_dict["process"] = row["process"].unique()[0]
                     react_dict["en_res_type"] = row["en_res_type"].unique()[0]
                     react_dict["target"] = target
@@ -394,8 +520,10 @@ def resonance_parameter():
                     if pivot_df.empty:
                         continue
 
-                    dir = get_resonance_param_dir_name(
-                        "resonance_data/resonance_parameter", react_dict
+                    dir = (
+                        get_resonance_param_dir_name("resonance_parameter", react_dict)
+                        if pure_exfor
+                        else get_reference_resonance_param_dir_name(react_dict)
                     )
                     outfile = get_resonance_param_file_name(
                         dir, entry_subent, main_bib_dict, react_dict
@@ -407,21 +535,185 @@ def resonance_parameter():
     return
 
 
+def _make_bib_dict(react_dict):
+    """Build a flat bib dict from a DB row (as returned by data_query_by_id)."""
+    return {
+        "first_author": react_dict["first_author"],
+        "year": react_dict["year"],
+        "first_author_institute": react_dict["first_author_institute"],
+        "main_facility_institute": react_dict["main_facility_institute"],
+        "main_facility_type": react_dict["main_facility_type"],
+        "main_reference": react_dict["main_reference"],
+    }
+
+
+def angular_distribution():
+    """Write angular distribution (DA) files for all entries in the DB."""
+    obs_type = "angular_distribution"
+    target_dict = list_of_reactions_and_entries(obs_type)
+
+    for target in reversed(target_dict.keys()):
+        for reaction, entries in target_dict[target].items():
+            for ent, df in _iter_entry_data(obs_type, entries):
+                print("angular_distribution():", target, reaction, ent)
+
+                react_dict = df.iloc[0].to_dict()
+                if filter_angular_distribution_case(react_dict, df):
+                    continue
+
+                main_bib_dict = _make_bib_dict(react_dict)
+                try:
+                    if react_dict["sf5"] != "PAR":
+                        process_angular_distribution_section_case(
+                            df, react_dict["entry_id"], main_bib_dict, react_dict
+                        )
+                    elif (
+                        react_dict["sf5"] == "PAR"
+                        and react_dict["process"].split(",")[1] == "INL"
+                    ):
+                        if filter_partial_angular_distribution_case(react_dict, df):
+                            continue
+                        process_partial_angular_distribution_case(
+                            df, react_dict["entry_id"], main_bib_dict, react_dict
+                        )
+
+                except KeyboardInterrupt:
+                    print("CTR + C")
+                    break
+                except Exception:
+                    logging.error(f"ERROR: at {ent}", exc_info=True)
+
+
+def energy_distribution():
+    """Write energy distribution (DE) files for all entries in the DB."""
+    obs_type = "energy_distribution"
+    target_dict = list_of_reactions_and_entries(obs_type)
+
+    for target in reversed(target_dict.keys()):
+        for reaction, entries in target_dict[target].items():
+            for ent, df in _iter_entry_data(obs_type, entries):
+                print("energy_distribution():", target, reaction, ent)
+
+                react_dict = df.iloc[0].to_dict()
+                if filter_energy_distribution_case(react_dict, df):
+                    continue
+
+                main_bib_dict = _make_bib_dict(react_dict)
+                try:
+                    process_energy_distribution_case(
+                        df, react_dict["entry_id"], main_bib_dict, react_dict
+                    )
+                except KeyboardInterrupt:
+                    print("CTR + C")
+                    break
+                except Exception:
+                    logging.error(f"ERROR: at {ent}", exc_info=True)
+
+
+def double_differential_cross_section():
+    """Write double differential cross section (DA/DE) files for all entries in the DB."""
+    obs_type = "double_differential_cross_section"
+    target_dict = list_of_reactions_and_entries(obs_type)
+
+    for target in reversed(target_dict.keys()):
+        for reaction, entries in target_dict[target].items():
+            for ent, df in _iter_entry_data(obs_type, entries):
+                print("DDX:", target, reaction, ent)
+
+                react_dict = df.iloc[0].to_dict()
+                if filter_double_differential_cross_section_case(react_dict, df):
+                    continue
+
+                main_bib_dict = _make_bib_dict(react_dict)
+                try:
+                    process_double_differential_cross_section_case(
+                        df, react_dict["entry_id"], main_bib_dict, react_dict
+                    )
+                except KeyboardInterrupt:
+                    print("CTR + C")
+                    break
+                except Exception:
+                    logging.error(f"ERROR: at {ent}", exc_info=True)
+
+
+def fission_yield():
+    """Write fission yield (FY) files for all entries in the DB."""
+    obs_type = "fission_yield"
+    target_dict = list_of_reactions_and_entries(obs_type)
+
+    for target in reversed(target_dict.keys()):
+        for reaction, entries in target_dict[target].items():
+            for ent, df in _iter_entry_data(obs_type, entries):
+                print("fission_yield()", target, reaction, ent)
+
+                react_dict = df.iloc[0].to_dict()
+                if filter_fission_yield_case(react_dict, df):
+                    continue
+
+                main_bib_dict = _make_bib_dict(react_dict)
+                try:
+                    process_fission_yield_case(
+                        df, react_dict["entry_id"], main_bib_dict, react_dict
+                    )
+                except KeyboardInterrupt:
+                    print("CTR + C")
+                    break
+                except Exception:
+                    logging.error(f"ERROR: at {ent}", exc_info=True)
+
+
+def neutron_observables():
+    """Write neutron multiplicity / emission spectra (NU) files for all entries in the DB."""
+    obs_type = "neutrons"
+    target_dict = list_of_reactions_and_entries(obs_type)
+
+    for target in reversed(target_dict.keys()):
+        for reaction, entries in target_dict[target].items():
+            for ent, df in _iter_entry_data(obs_type, entries):
+                print("neutron_observables()", target, reaction, ent)
+
+                react_dict = df.iloc[0].to_dict()
+                if filter_misc_neutron_observables_case(react_dict, df):
+                    continue
+
+                main_bib_dict = _make_bib_dict(react_dict)
+                try:
+                    if (
+                        react_dict["sf5"] == "PR"
+                        and react_dict["sf6"] not in ("NU/DE", "FY/DE")
+                    ):
+                        process_neutron_observables_case(
+                            df, react_dict["entry_id"], main_bib_dict, react_dict
+                        )
+                    else:
+                        process_misc_neutron_observables_case(
+                            df, react_dict["entry_id"], main_bib_dict, react_dict
+                        )
+                except KeyboardInterrupt:
+                    print("CTR + C")
+                    break
+                except Exception:
+                    logging.error(f"ERROR: at {ent}", exc_info=True)
+
+
 def extract_reaction(x4_code):
     match = re.search(r"\(.*?\((N,[^)]+)\)", x4_code)
     return match.group(1).split(",")[1] if match else None
 
 
-def gamma_gamma():
+def gamma_gamma(pure_exfor=False):
     resonance_data_reaction = ["N,G"]
     type = "gamma_gamma"
     targets = list_of_target(type)
 
-    ripl_d0 = read_ripl3_d0()
-    ripl_d1 = read_ripl3_d1()
+    ripl_d0 = pd.DataFrame()
+    ripl_d1 = pd.DataFrame()
+    if not pure_exfor:
+        ripl_d0 = read_ripl3_d0()
+        ripl_d1 = read_ripl3_d1()
 
     for target in targets:
-        print(target)
+        print("gamma_gamma()", target)
         for reaction in resonance_data_reaction:
             react_dict = {"target": target, "process": reaction, "sf4": None}
             df = observable_data_query(type, target, reaction)
@@ -429,27 +721,36 @@ def gamma_gamma():
             if df.empty:
                 continue
 
-            z = target.split("-")[0]
-            el = target.split("-")[1].title()
-            a = target.split("-")[2]
-            # print(z, el, a)
-            df0 = ripl_d0[
-                (ripl_d0["Z"] == int(z))
-                & (ripl_d0["El"] == el)
-                & (ripl_d0["A"] == int(a))
-            ]
-            df1 = ripl_d1[
-                (ripl_d1["Z"] == int(z))
-                & (ripl_d1["El"] == el)
-                & (ripl_d1["A"] == int(a))
-            ]
-            df0 = df0.drop(df0[df0["Gg"].isnull()].index)
-            df1 = df1.drop(df1[df1["Gg"].isnull()].index)
+            df0 = pd.DataFrame()
+            df1 = pd.DataFrame()
+            if not pure_exfor:
+                z = target.split("-")[0]
+                el = target.split("-")[1].title()
+                a = target.split("-")[2]
+                df0 = ripl_d0[
+                    (ripl_d0["Z"] == int(z))
+                    & (ripl_d0["El"] == el)
+                    & (ripl_d0["A"] == int(a))
+                ]
+                df1 = ripl_d1[
+                    (ripl_d1["Z"] == int(z))
+                    & (ripl_d1["El"] == el)
+                    & (ripl_d1["A"] == int(a))
+                ]
+                df0 = df0.drop(df0[df0["Gg"].isnull()].index)
+                df1 = df1.drop(df1[df1["Gg"].isnull()].index)
 
-            dir = get_thermal_dir_name("resonance_data/gamma_gamma", react_dict)
+            dir = _obs_output_dir("gamma_gamma", react_dict, pure_exfor)
             outfile = get_thermal_filename(dir, react_dict)
             write_to_resonance_spacing_table(
-                type, dir, outfile, react_dict, df, df0, df1
+                type,
+                dir,
+                outfile,
+                react_dict,
+                df,
+                df0,
+                df1,
+                include_reference=not pure_exfor,
             )
 
     return

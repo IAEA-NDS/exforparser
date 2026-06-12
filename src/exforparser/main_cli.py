@@ -1,8 +1,9 @@
 import argparse
+import os
 import sqlalchemy as db
 from sqlalchemy.exc import OperationalError
 
-from exforparser.config import engines
+from exforparser.config import engines, OUT_PATH
 from exforparser.sql.initialize import initialize_db, load_pickles
 from exforparser.json_converter import convert, convert_all, convert_updated_entry
 from exforparser.tabulate import process, process_all, process_updated_entry
@@ -14,7 +15,15 @@ from exforparser.tabulator.data_observables import (
     gamma_gamma,
     macs,
     resonance_parameter,
+    level_density,
+    strength_function,
+    angular_distribution,
+    energy_distribution,
+    double_differential_cross_section,
+    fission_yield,
+    neutron_observables,
 )
+from exforparser.tabulator.data_dir_files import write_list_files
 import logging
 
 
@@ -41,7 +50,7 @@ def cli():
     parser.add_argument(
         "-t",
         "--tabulate",
-        help="Convert EXFOR into tabulated tables in ASCII text. 'all', 'updated', and an entry number is allowed.",
+        help="Parse EXFOR entries into JSON and SQL (SQLite). 'all', 'updated', and an entry number is allowed. Use -o ll to also write EXFORTABLES-format text files.",
     )
 
     parser.add_argument(
@@ -56,10 +65,12 @@ def cli():
         "-o",
         "--observables",
         choices=[
+            "ll",
             "all",
             "thermal",
             "xs",
             "energy",
+            "ddx",
             "angle",
             "fy",
             "resonance_integral",
@@ -69,8 +80,20 @@ def cli():
             "resonance_spacing",
             "level_density",
             "strength_function",
+            "list",
         ],
-        help='output EXFORTABLES like format from SQLite Database \n options: "all", "thermal": thermal cross section, "rp": resonance parameters, "ri": resonance integral, "xs": all cross sections, "energy": energy distributions, "angle": angular distributions, "fy": fission yields',
+        help='Write EXFORTABLES-format text files from SQLite Database. '
+             '"ll": pure EXFOR observable types into exfortables_py (xs, angle, energy, ddx, fy, neutrons); '
+             '"all": pure EXFOR plus legacy thermal/resonance outputs; '
+             '"xs": cross sections; "angle": angular distributions; "energy": energy distributions; '
+             '"ddx": double differential cross sections; '
+             '"fy": fission yields; "thermal": thermal cross sections; '
+             '"resonance_integral": resonance integrals; "macs": Maxwellian average cross sections; '
+             '"gamma_gamma": average radiative widths; "resonance_spacing": level spacings; '
+             '"resonance_parameter": resonance parameters; '
+             '"level_density": level-density parameters; "strength_function": strength functions; '
+             '"list": scan output tree and write .list index files. '
+             'Legacy options (all, level_density, strength_function) are kept for backwards compatibility.',
     )
 
     args = parser.parse_args()
@@ -105,15 +128,17 @@ def cli():
         convert(args.convert)
 
     elif args.tabulate == "all":
-        process_all()
+        process_all(write_files=False)
 
     elif args.tabulate == "updated":
-        process_updated_entry()
+        process_updated_entry(write_files=False)
 
     elif args.tabulate:
-        process(args.tabulate)
+        process(args.tabulate, write_files=False)
 
     elif args.observables:
+        logging.basicConfig(filename="observables.log", level=logging.DEBUG, filemode="w", force=True)
+
         try:
             connection = engines["exfor"].connect()
             metadata = db.MetaData()
@@ -124,26 +149,87 @@ def cli():
             )
             exit()
 
-        if args.observables == "xs":
+        if args.observables == "ll":
+            # crosssection()
+            # angular_distribution()
+            # energy_distribution()
+            # double_differential_cross_section()
+            # fission_yield()
+            # neutron_observables()
+            # resonance_integral(pure_exfor=True)
+            # macs(pure_exfor=True)
+            # gamma_gamma(pure_exfor=True)
+            # resonance_spacing(pure_exfor=True)
+            # resonance_parameter(pure_exfor=True)
+            level_density(pure_exfor=True)
+            strength_function(pure_exfor=True)
+            # write_list_files(root=os.path.join(OUT_PATH, "exfortables_py"))
+
+        elif args.observables == "all":
+            crosssection()
+            angular_distribution()
+            energy_distribution()
+            double_differential_cross_section()
+            fission_yield()
+            neutron_observables()
+            resonance_integral(pure_exfor=True)
+            macs(pure_exfor=True)
+            gamma_gamma(pure_exfor=True)
+            resonance_spacing(pure_exfor=True)
+            resonance_parameter(pure_exfor=True)
+            level_density(pure_exfor=True)
+            strength_function(pure_exfor=True)
+            thermal("thermal")
+            resonance_integral()
+            macs()
+            gamma_gamma()
+            resonance_spacing()
+            resonance_parameter()
+            level_density()
+            strength_function()
+            write_list_files()
+
+        elif args.observables == "xs":
             crosssection()
 
-        if args.observables == "thermal":
+        elif args.observables == "thermal":
             thermal("thermal")
 
-        if args.observables == "resonance_integral":
+        elif args.observables == "resonance_integral":
             resonance_integral()
 
-        if args.observables == "macs":
+        elif args.observables == "macs":
             macs()
 
-        if args.observables == "gamma_gamma":
+        elif args.observables == "gamma_gamma":
             gamma_gamma()
 
-        if args.observables == "resonance_spacing":
+        elif args.observables == "resonance_spacing":
             resonance_spacing()
 
-        if args.observables == "resonance_parameter":
+        elif args.observables == "resonance_parameter":
             resonance_parameter()
+
+        elif args.observables == "level_density":
+            level_density()
+
+        elif args.observables == "strength_function":
+            strength_function()
+
+        elif args.observables == "angle":
+            angular_distribution()
+
+        elif args.observables == "energy":
+            energy_distribution()
+
+        elif args.observables == "ddx":
+            double_differential_cross_section()
+
+        elif args.observables == "fy":
+            fission_yield()
+
+        elif args.observables == "list":
+            write_list_files()
 
 
 if __name__ == "__main__":

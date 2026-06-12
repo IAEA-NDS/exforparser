@@ -15,6 +15,17 @@ import math
 import numpy as np
 
 
+_DEFAULT_STAT_LABELS = {
+    "thermal": "Thermal",
+    "resonance_integral": "Resonance Integral",
+    "macs": "Maxwellian Average",
+    "level_density": "Level Density",
+    "strength_function": "Strength Function",
+    "gamma_gamma": "Average Gamma Width",
+    "resonance_spacing": "Resonance Spacing",
+}
+
+
 def get_mean(data_list):
     return statistics.mean(data_list)
 
@@ -31,12 +42,7 @@ def thermal_mean(type, df):
         # Filter by
         if sf8 is None:
             df2 = df[df["sf8"].isnull()]
-            if type == "thermal":
-                sf8 = "Thermal"
-            if type == "resonance_integral":
-                sf8 = "Resonance Integral"
-            if type == "macs":
-                sf8 = "Maxwellian Average"
+            sf8 = _DEFAULT_STAT_LABELS.get(type, type.replace("_", " ").title())
         else:
             df2 = df[df["sf8"] == sf8]
 

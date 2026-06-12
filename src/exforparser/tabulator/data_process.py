@@ -27,7 +27,6 @@ from exforparser.submodules.utilities.reaction import (
 )
 from exforparser.submodules.utilities.util import (
     cos_to_angle_degrees,
-    convert_angle_cm_lab,
 )
 
 from .data_locations import (
@@ -48,6 +47,7 @@ from .data_write import (
     write_to_exfortables_format_sig,
     write_to_exfortables_format_da,
     write_to_exfortables_format_de,
+    write_to_exfortables_format_ddx,
     write_to_exfortables_format_fy,
     write_to_exfortables_format_nu,
     write_to_exfortables_format_kinetic_e,
@@ -211,6 +211,7 @@ def get_y(entnum, subent, pointer, locs, data_dict_conv):
     ddata_unit_flag = False
     y_head = None   # bare head name of the observable column
     y_unit = None   # base unit after unify_units (e.g. "B", "B/SR")
+    data_frame = None
 
     ## ----------------------------------   DATA (Y axis)    --------------------------------- ##
     locs["locs_y"], locs["locs_dy"] = get_y_locs(data_dict_conv)
@@ -230,6 +231,7 @@ def get_y(entnum, subent, pointer, locs, data_dict_conv):
         loc0 = locs["locs_y"][0]
         y_head = _bare_head(data_dict_conv["heads"][loc0])
         y_unit = data_dict_conv["units"][loc0]
+        data_frame = _frame_from_head(data_dict_conv["heads"][loc0])
         if data_dict_conv["units"][loc0] in ("ARB-UNITS", "NO-DIM"):
             data_unit_flag = True
 
@@ -254,7 +256,7 @@ def get_y(entnum, subent, pointer, locs, data_dict_conv):
                 dy if dy is not None else None
                 for dy in data_dict_conv["data"][locs["locs_dy"][0]]
             ]
-    return locs, data, ddata, data_unit_flag, ddata_unit_flag, y_head, y_unit
+    return locs, data, ddata, data_frame, data_unit_flag, ddata_unit_flag, y_head, y_unit
 
 
 def get_residual(locs, react_dict, data_dict_conv):
@@ -387,11 +389,24 @@ def _bare_head(head: str) -> str:
     return head.strip().split()[0]
 
 
+def _frame_from_head(head: str | None):
+    """Return frame metadata encoded in an EXFOR head without changing values."""
+    if not head:
+        return None
+    bare = _bare_head(head)
+    if "-CM" in bare:
+        return "CM"
+    if "-LAB" in bare:
+        return "LAB"
+    return None
+
+
 def get_en_inc(pointer, locs, react_dict, data_dict_conv, data):
     en_inc = []
     en_inc_min = []
     en_inc_max = []
     den_inc = []
+    en_inc_frame = None
     x_head = None   # bare head name of the incident-energy column
     x_unit = None   # base unit after unify_units (e.g. "EV", "ADEG")
 
@@ -411,6 +426,7 @@ def get_en_inc(pointer, locs, react_dict, data_dict_conv, data):
         loc0 = locs["locs_en"][0]
         x_head = _bare_head(data_dict_conv["heads"][loc0])
         x_unit = data_dict_conv["units"][loc0]
+        en_inc_frame = _frame_from_head(data_dict_conv["heads"][loc0])
         en_inc = [
             en if en is not None else None
             for en in data_dict_conv["data"][loc0]
@@ -431,6 +447,7 @@ def get_en_inc(pointer, locs, react_dict, data_dict_conv, data):
         loc0 = locs["locs_en"][0]
         x_head = _bare_head(data_dict_conv["heads"][loc0])
         x_unit = data_dict_conv["units"][loc0]
+        en_inc_frame = _frame_from_head(data_dict_conv["heads"][loc0])
         en_inc = [
             en if en is not None else None
             for en in get_average(
@@ -466,7 +483,7 @@ def get_en_inc(pointer, locs, react_dict, data_dict_conv, data):
                 for den in data_dict_conv["data"][locs["locs_den"][0]]
             ]
 
-    return locs, en_inc, den_inc, en_inc_min, en_inc_max, x_head, x_unit
+    return locs, en_inc, den_inc, en_inc_min, en_inc_max, en_inc_frame, x_head, x_unit
 
 
 def get_outgoing(pointer, locs, react_dict, data_dict_conv, data):
@@ -514,9 +531,7 @@ def get_outgoing(pointer, locs, react_dict, data_dict_conv, data):
             e if e is not None else None
             for e in data_dict_conv["data"][locs["locs_e"][0]]
         ]
-        e_out_frame = [
-            ("-CM" in data_dict_conv["heads"][locs["locs_e"][0]])
-        ] * len(data)
+        e_out_frame = [_frame_from_head(data_dict_conv["heads"][locs["locs_e"][0]])] * len(data)
         e_out_min = [None] * len(data)
         e_out_max = [None] * len(data)
 
@@ -526,20 +541,18 @@ def get_outgoing(pointer, locs, react_dict, data_dict_conv, data):
                 e_out_min = [
                     en if en is not None else None for en in data_dict_conv["data"][loc]
                 ]
-                e_out_frame = [("-CM" in data_dict_conv["heads"][loc])] * len(data)
+                e_out_frame = [_frame_from_head(data_dict_conv["heads"][loc])] * len(data)
             if "-MAX" in data_dict_conv["heads"][loc]:
                 e_out_max = [
                     en if en is not None else None for en in data_dict_conv["data"][loc]
                 ]
-                e_out_frame = [("-CM" in data_dict_conv["heads"][loc])] * len(data)
+                e_out_frame = [_frame_from_head(data_dict_conv["heads"][loc])] * len(data)
 
         e_out = [
             e if e is not None else None
             for e in data_dict_conv["data"][locs["locs_e"][0]]
         ]
-        e_out_frame = [
-            ("-CM" in data_dict_conv["heads"][locs["locs_e"][0]])
-        ] * len(data)
+        e_out_frame = [_frame_from_head(data_dict_conv["heads"][locs["locs_e"][0]])] * len(data)
 
     if (
         not react_dict["target"].endswith("-0")
@@ -583,6 +596,7 @@ def get_outgoing(pointer, locs, react_dict, data_dict_conv, data):
 def get_angle(pointer, locs, react_dict, data_dict_conv, data):
     angle = []
     dangle = []
+    angle_frame = None
     locs["locs_ang"], locs["locs_dang"] = get_angle_locs(data_dict_conv)
 
     if not locs["locs_ang"] and not locs["locs_dang"]:
@@ -590,45 +604,35 @@ def get_angle(pointer, locs, react_dict, data_dict_conv, data):
         dangle = [None] * len(data)
 
     elif len(locs["locs_ang"]) == 1:
-        if "CM" in data_dict_conv["heads"][locs["locs_ang"][0]]:
-            angle = [
-                convert_angle_cm_lab(a, "CM_to_LAB") if a is not None else None
-                for a in data_dict_conv["data"][locs["locs_ang"][0]]
-            ]
-        if data_dict_conv["units"][locs["locs_ang"][0]] == "COS":
-            angle = [cos_to_angle_degrees(a) for a in angle]
+        raw = data_dict_conv["data"][locs["locs_ang"][0]]
+        head = data_dict_conv["heads"][locs["locs_ang"][0]]
+        unit = data_dict_conv["units"][locs["locs_ang"][0]]
+        angle_frame = _frame_from_head(head)
 
+        if unit == "COS":
+            # Fallback: unit still marked COS (unify_units did not convert for some reason)
+            angle = [cos_to_angle_degrees(a) if a is not None else None for a in raw]
         else:
-            angle = [
-                a if a is not None else None
-                for a in data_dict_conv["data"][locs["locs_ang"][0]]
-            ]
+            angle = [a if a is not None else None for a in raw]
 
     elif len(locs["locs_ang"]) > 1:
-        ## need to take into account of CM cases
-        angle = [
-            a if a is not None else None
-            for a in get_average(
-                "ANG", limit_data_dict_by_locs(locs["locs_ang"], data_dict_conv)
-            )
-        ]
+        avg = get_average(
+            "ANG", limit_data_dict_by_locs(locs["locs_ang"], data_dict_conv)
+        )
+        first_head = data_dict_conv["heads"][locs["locs_ang"][0]]
+        angle_frame = _frame_from_head(first_head)
+        angle = [a if a is not None else None for a in avg]
 
     if len(locs["locs_dang"]) == 1:
-        if "CM" in data_dict_conv["heads"][locs["locs_dang"][0]]:
-            dangle = [
-                convert_angle_cm_lab(a, "CM_to_LAB") if a is not None else None
-                for a in data_dict_conv["data"][locs["locs_dang"][0]]
-            ]
-        if data_dict_conv["units"][locs["locs_dang"][0]] == "COS":
-            dangle = [cos_to_angle_degrees(a) for a in dangle]
+        raw_d = data_dict_conv["data"][locs["locs_dang"][0]]
+        unit_d = data_dict_conv["units"][locs["locs_dang"][0]]
 
+        if unit_d == "COS":
+            dangle = [cos_to_angle_degrees(a) if a is not None else None for a in raw_d]
         else:
-            dangle = [
-                a if a is not None else None
-                for a in data_dict_conv["data"][locs["locs_dang"][0]]
-            ]
+            dangle = [a if a is not None else None for a in raw_d]
 
-    return locs, angle, dangle
+    return locs, angle, dangle, angle_frame
 
 
 def get_flags(data_dict_conv, data):
@@ -671,7 +675,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
     ## --------------------------------------------------------------------------------------- ##
     ## -----------------------   Y (DATA)    --------------------- ##
     ## --------------------------------------------------------------------------------------- ##
-    locs, data, ddata, data_unit_flag, ddata_unit_flag, y_head, y_unit = get_y(
+    locs, data, ddata, data_frame, data_unit_flag, ddata_unit_flag, y_head, y_unit = get_y(
         entnum, subent, pointer, locs, data_dict_conv
     )
     # Once the data length is fixed, get MF number based on reaction
@@ -687,7 +691,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
     ## --------------------------------------------------------------------------------------- ##
     ## -----------------------   Incident energy    --------------------- ##
     ## --------------------------------------------------------------------------------------- ##
-    locs, en_inc, den_inc, en_inc_min, en_inc_max, x_head, x_unit = get_en_inc(
+    locs, en_inc, den_inc, en_inc_min, en_inc_max, en_inc_frame, x_head, x_unit = get_en_inc(
         pointer, locs, react_dict, data_dict_conv, data
     )
     # print(en_inc)
@@ -726,7 +730,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
     ## -----------------------     Angle    -------------------------------------------------- ##
     ##              Get angle
     ## --------------------------------------------------------------------------------------- ##
-    locs, angle, dangle = get_angle(pointer, locs, react_dict, data_dict_conv, data)
+    locs, angle, dangle, angle_frame = get_angle(pointer, locs, react_dict, data_dict_conv, data)
 
     ## --------------------------------------------------------------------------------------- ##
     ##              Data Store
@@ -741,6 +745,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
             "den_inc": den_inc if den_inc else None,
             "en_inc_min": en_inc_min if en_inc_min else None,
             "en_inc_max": en_inc_max if en_inc_max else None,
+            "en_inc_frame": [en_inc_frame] * len(data),
             "charge": charge if charge else None,
             "mass": mass if mass else None,
             "isomer": state if state else None,
@@ -749,6 +754,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
             "level_num": level_num if level_num else None,
             "data": data if data else None,
             "ddata": ddata if ddata else None,
+            "data_frame": [data_frame] * len(data),
             "arbitrary_data": data_unit_flag,
             "arbitrary_ddata": ddata_unit_flag,
             "e_out": e_out if e_out else None,
@@ -758,6 +764,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
             "e_out_frame": e_out_frame if e_out_frame else None,
             "angle": angle if angle else None,
             "dangle": dangle if dangle else None,
+            "angle_frame": [angle_frame] * len(data),
             "flags": flags if flags else None,
             "mf": mf if mf else None,
             "mt": mt if mt else None,
@@ -972,7 +979,7 @@ def process_energy_distribution_case(df, entry_id, main_bib_dict, react_dict):
         else:
             df2 = df[df["en_inc"] == en]
 
-        if react_dict["target"].split("-")[2] == "0" and react_dict["sf4"] is None:
+        if react_dict["target"].split("-")[2] == "0" or react_dict["sf4"] is None:
             ## case for ,DE without product such as (40-ZR-0(N,G),,DE)
             filename = exfortables_filename(
                 dir,
@@ -1009,6 +1016,62 @@ def process_energy_distribution_case(df, entry_id, main_bib_dict, react_dict):
                 )
 
                 write_to_exfortables_format_de(
+                    entry_id,
+                    dir,
+                    filename,
+                    main_bib_dict,
+                    react_dict,
+                    str(mf) + " - " + str(mt),
+                    df3,
+                )
+
+
+def process_double_differential_cross_section_case(df, entry_id, main_bib_dict, react_dict):
+    """Write DA/DE as x=outgoing energy, y=DDX, z=angle for each incident energy."""
+    mf, mt = get_unique_mf_mt(df)
+    dir = get_dir_name("exfortables_py", react_dict, level_num=None, subdir=None)
+
+    for en in df["en_inc"].unique():
+        if pd.isna(en):
+            df2 = df[df["en_inc"].isna()]
+        else:
+            df2 = df[df["en_inc"] == en]
+
+        if react_dict["target"].split("-")[2] == "0" or react_dict["sf4"] is None:
+            filename = exfortables_filename(
+                dir,
+                entry_id,
+                react_dict["process"].replace(",", "-").lower(),
+                react_dict,
+                main_bib_dict,
+                en,
+                None,
+            )
+
+            write_to_exfortables_format_ddx(
+                entry_id,
+                dir,
+                filename,
+                main_bib_dict,
+                react_dict,
+                str(mf) + " - " + str(mt),
+                df2,
+            )
+
+        else:
+            for prod in df2["residual"].unique():
+                df3 = df2[df2["residual"] == prod]
+                filename = exfortables_filename(
+                    dir,
+                    entry_id,
+                    react_dict["process"].replace(",", "-").lower(),
+                    react_dict,
+                    main_bib_dict,
+                    en,
+                    prod,
+                )
+
+                write_to_exfortables_format_ddx(
                     entry_id,
                     dir,
                     filename,
