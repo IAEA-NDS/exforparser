@@ -23,6 +23,7 @@ _DEFAULT_STAT_LABELS = {
     "strength_function": "Strength Function",
     "gamma_gamma": "Average Gamma Width",
     "resonance_spacing": "Resonance Spacing",
+    "transmission": "Transmission",
 }
 
 

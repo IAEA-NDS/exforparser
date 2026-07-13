@@ -11,7 +11,7 @@ authors = [
 version = "1.1.0"
 description = "EXFOR Parser"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 keywords = ["EXFOR", "Nuclear Data"]
 license = {file = "LICENSE"}
 classifiers = [

@@ -26,6 +26,26 @@ d = Diction("35")
 sf9_list = d.get_diction()
 
 
+def _dict_desc(method, fallback_method, code):
+    for name in (method, fallback_method):
+        func = getattr(d, name, None)
+        if not func:
+            continue
+        try:
+            return func(code)
+        except KeyError:
+            return code
+    return code
+
+
+def _institute_desc(code):
+    return _dict_desc("get_institute", "get_institute_desc", code)
+
+
+def _facility_desc(code):
+    return _dict_desc("get_facility", "get_facility_desc", code)
+
+
 def bib_table_original(entry_id, main_bib_dict, react_dict, mfmt, df):
     print(
         "# Entry-Subent-Pointer  :",
@@ -75,7 +95,7 @@ def bib_table_original(entry_id, main_bib_dict, react_dict, mfmt, df):
         (
             main_bib_dict["institutes"][0]["x4_code"]
             + ": "
-            + d.get_institute(main_bib_dict["institutes"][0]["x4_code"])
+            + _institute_desc(main_bib_dict["institutes"][0]["x4_code"])
             if main_bib_dict.get("institutes")
             else None
         ),
@@ -95,13 +115,13 @@ def bib_table_original(entry_id, main_bib_dict, react_dict, mfmt, df):
         (
             main_bib_dict["facilities"][0]["facility_type"]
             + ": "
-            + d.get_facility(main_bib_dict["facilities"][0]["facility_type"])
+            + _facility_desc(main_bib_dict["facilities"][0]["facility_type"])
             if main_bib_dict.get("facilities")
             and main_bib_dict["facilities"][0].get("facility_type")
             else (
                 main_bib_dict["facilities"][0]["institute"]
                 + ": "
-                + d.get_facility(main_bib_dict["facilities"][0]["institute"])
+                + _facility_desc(main_bib_dict["facilities"][0]["institute"])
                 if main_bib_dict.get("facilities")
                 and main_bib_dict["facilities"][0].get("institute")
                 else (
@@ -182,11 +202,21 @@ def _uncertainty_header(df, default_unit):
 
 
 def _sf6_title(sf6):
+    titles = {
+        "SIG": "Cross section",
+        "DA": "Angular distribution",
+        "DE": "Energy distribution",
+        "DA/DE": "Double differential cross section",
+        "FY": "Fission yield",
+        "TRN": "Transmission",
+    }
+    if sf6 in titles:
+        return titles[sf6]
     if sf6 == "DA/DE":
         return "Double differential cross section"
     try:
         return d.get_sf6(sf6)
-    except KeyError:
+    except (AttributeError, KeyError):
         return sf6
 
 
@@ -245,7 +275,7 @@ def bib_table(entry_id, main_bib_dict, react_dict, mfmt, df):
         (
             main_bib_dict["first_author_institute"]
             + ": "
-            + d.get_institute(main_bib_dict["first_author_institute"])
+            + _institute_desc(main_bib_dict["first_author_institute"])
             if main_bib_dict.get("first_author_institute")
             else None
         ),
@@ -261,12 +291,12 @@ def bib_table(entry_id, main_bib_dict, react_dict, mfmt, df):
         (
             main_bib_dict["main_facility_type"]
             + ": "
-            + d.get_facility(main_bib_dict["main_facility_type"])
+            + _facility_desc(main_bib_dict["main_facility_type"])
             if main_bib_dict.get("main_facility_type")
             else (
                 main_bib_dict["main_facility_institute"]
                 + ": "
-                + d.get_facility(main_bib_dict["main_facility_institute"])
+                + _facility_desc(main_bib_dict["main_facility_institute"])
                 if main_bib_dict.get("main_facility_institute")
                 else None
             )
@@ -305,7 +335,7 @@ def bib_table_resonance_parameter(entry_id, main_bib_dict, react_dict, mfmt, df)
         (
             main_bib_dict["first_author_institute"]
             + ": "
-            + d.get_institute(main_bib_dict["first_author_institute"])
+            + _institute_desc(main_bib_dict["first_author_institute"])
             if main_bib_dict.get("first_author_institute")
             else None
         ),
@@ -321,14 +351,14 @@ def bib_table_resonance_parameter(entry_id, main_bib_dict, react_dict, mfmt, df)
         (
             main_bib_dict["main_facility_type"]
             + ": "
-            + d.get_facility(main_bib_dict["main_facility_type"])
+            + _facility_desc(main_bib_dict["main_facility_type"])
             if main_bib_dict.get("main_facility_type")
             else (
                 None
                 + " in "
                 + main_bib_dict["main_facility_institute"]
                 + ": "
-                + d.get_facility(main_bib_dict["main_facility_institute"])
+                + _facility_desc(main_bib_dict["main_facility_institute"])
                 if main_bib_dict.get("main_facility_institute")
                 else None
             )
@@ -564,6 +594,13 @@ def write_to_thermal_table(obs_type, dir, outfile, react_dict, df, append=True):
         incident_energy = "{:.4e} MeV".format(en_values.unique()[0] / 1e6)
     else:
         incident_energy = "N/A"
+    data_units = df["y_unit"].dropna().unique() if "y_unit" in df else []
+    data_unit = data_units[0] if len(data_units) == 1 else "B"
+    obs_title = (
+        f"{obs_type} cross section"
+        if obs_type in ("thermal", "resonance_integral", "macs")
+        else obs_type.replace("_", " ")
+    )
 
     with open(outfile, "a" if append else "w") as f:
         ## must be addition mode because the reaction production are different
@@ -571,7 +608,7 @@ def write_to_thermal_table(obs_type, dir, outfile, react_dict, df, append=True):
             print(
                 f"# Header:",
                 "\n"
-                f"#   title: {react_dict['target']}({react_dict['process']}) {obs_type} cross section",
+                f"#   title: {react_dict['target']}({react_dict['process']}) {obs_title}",
                 "\n" f"#   source: EXFOR",
                 "\n" f"#   date created: {str(today)}",
                 "\n" f"# Target:",
@@ -643,7 +680,7 @@ def write_to_thermal_table(obs_type, dir, outfile, react_dict, df, append=True):
                         print("#   Recom./Eval./Deriv./Calc. Data")
 
                     print(
-                        "# EXFOR ID          First Author            Year   En_inc [MeV] dEn_inc      Data [B]     dData         sf8    sf9"
+                        f"# EXFOR ID          First Author            Year   En_inc [MeV] dEn_inc      Data [{data_unit}]     dData         sf8    sf9"
                     )
                     for i, row in df_sf9.iterrows():
                         print(

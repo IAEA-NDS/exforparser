@@ -110,10 +110,7 @@ def list_of_target(obs_type) -> list:
 
 def list_of_reactions_and_entries(obs_type: str) -> dict:
     if obs_type in ["xs", "thermal", "macs"]:
-        conditions = and_(
-            exfor_indexes.c.sf6 == "SIG",
-            exfor_indexes.c.projectile.in_(["0", "N", "P", "D", "G", "T"]),
-        )
+        conditions = exfor_indexes.c.sf6 == "SIG"
     elif obs_type == "angular_distribution":
         conditions = exfor_indexes.c.sf6 == "DA"
     elif obs_type == "energy_distribution":
@@ -128,6 +125,8 @@ def list_of_reactions_and_entries(obs_type: str) -> dict:
         conditions = exfor_indexes.c.sf6 == "LDP"
     elif obs_type == "strength_function":
         conditions = exfor_indexes.c.sf6 == "STF"
+    elif obs_type == "transmission":
+        conditions = exfor_indexes.c.sf6 == "TRN"
     elif obs_type == "tty":
         conditions = exfor_indexes.c.sf6 == "TTY"
     else:
@@ -347,6 +346,10 @@ def observable_data_query(obs_type, target, reaction):
     elif obs_type == "strength_function":
         conditions += [
             exfor_indexes.c.sf6 == "STF",
+        ]
+    elif obs_type == "transmission":
+        conditions += [
+            exfor_indexes.c.sf6 == "TRN",
         ]
 
     stmt = select(exfor_indexes.c.entry_id).where(and_(*conditions))

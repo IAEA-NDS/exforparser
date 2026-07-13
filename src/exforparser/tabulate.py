@@ -47,6 +47,7 @@ from exforparser.tabulator.data_process import (
     process_double_differential_cross_section_case,
     process_neutron_observables_case,
     process_misc_neutron_observables_case,
+    process_transmission_case,
     process_fission_yield_case,
     process_thick_target_yield_case,
 )
@@ -588,6 +589,15 @@ def tabulate_into_exfortables_format(entry_id, main_bib_dict, react_dict, df):
         if filter_energy_distribution_case(react_dict, df):
             return
         process_energy_distribution_case(df, entry_id, main_bib_dict, react_dict)
+
+    # --------------------------------------------------------------------------------------- ##
+    # ------------------------            Transmission             ------------------------  ##
+    # --------------------------------------------------------------------------------------- ##
+
+    elif react_dict["sf6"] == "TRN":
+        if filter_cross_section_case(react_dict, df):
+            return
+        process_transmission_case(df, entry_id, main_bib_dict, react_dict)
 
     # --------------------------------------------------------------------------------------- ##
     # --------------------   Double differential cross sections      ------------------------  ##

@@ -34,6 +34,7 @@ from .data_dir_files import (
     get_resonance_param_dir_name,
     get_reference_resonance_param_dir_name,
     get_resonance_param_file_name,
+    is_ion_projectile,
 )
 from .data_write import (
     write_to_thermal_table,
@@ -60,6 +61,7 @@ from .data_process import (
     process_fission_yield_case,
     process_neutron_observables_case,
     process_misc_neutron_observables_case,
+    process_transmission_case,
 )
 import logging
 
@@ -90,7 +92,7 @@ def _iter_entry_data(obs_type, entries, chunk_size=25):
                 yield ent, df
 
 
-def crosssection():
+def crosssection(ion_only=False):
     type = "xs"
 
     target_dict = list_of_reactions_and_entries(type)
@@ -113,6 +115,9 @@ def crosssection():
 
     for target in reversed(target_dict.keys()):
         for reaction, entries in target_dict[target].items():
+            if ion_only and not is_ion_projectile(reaction.split(",")[0]):
+                continue
+
             for ent, df in _iter_entry_data(type, entries):
                 print("crosssection():", target, reaction, ent)
 
@@ -151,7 +156,11 @@ def crosssection():
                     logging.error(f"ERROR: at {ent}", exc_info=True)
 
 
-def thermal(type):
+def ion_crosssection():
+    crosssection(ion_only=True)
+
+
+def thermal(type, pure_exfor=False):
     thermal_data_reaction = ["N,TOT", "N,G", "N,P", "N,A", "N,EL", "N,F"]
     targets = list_of_target(type)
     # targets = ["56-BA-130"]
@@ -159,6 +168,7 @@ def thermal(type):
         for reaction in thermal_data_reaction:
             print("thermal()", target, reaction)
             df = observable_data_query(type, target, reaction)
+            first_output = True
             for prod in df["sf4"].unique():
                 react_dict = {"target": target, "process": reaction, "sf4": prod}
 
@@ -177,10 +187,18 @@ def thermal(type):
 
                 else:
                     if type == "thermal":
-                        dir = get_reference_obs_dir_name("thermal", react_dict)
+                        dir = _obs_output_dir("thermal", react_dict, pure_exfor)
                         outfile = get_thermal_filename(dir, react_dict)
 
-                        write_to_thermal_table(type, dir, outfile, react_dict, df2)
+                        write_to_thermal_table(
+                            type,
+                            dir,
+                            outfile,
+                            react_dict,
+                            df2,
+                            append=(not pure_exfor) or (not first_output),
+                        )
+                        first_output = False
     return
 
 
@@ -399,6 +417,31 @@ def level_density(pure_exfor=False):
 
 def strength_function(pure_exfor=False):
     _generic_scalar_observable("strength_function", pure_exfor=pure_exfor)
+
+
+def transmission(pure_exfor=True):
+    obs_type = "transmission"
+    target_dict = list_of_reactions_and_entries(obs_type)
+
+    for target in reversed(target_dict.keys()):
+        for reaction, entries in target_dict[target].items():
+            for ent, df in _iter_entry_data(obs_type, entries):
+                print("transmission():", target, reaction, ent)
+
+                react_dict = df.iloc[0].to_dict()
+                if filter_cross_section_case(react_dict, df):
+                    continue
+
+                main_bib_dict = _make_bib_dict(react_dict)
+                try:
+                    process_transmission_case(
+                        df, react_dict["entry_id"], main_bib_dict, react_dict
+                    )
+                except KeyboardInterrupt:
+                    print("CTR + C")
+                    break
+                except Exception:
+                    logging.error(f"ERROR: at {ent}", exc_info=True)
 
 
 def resonance_parameter(pure_exfor=False):

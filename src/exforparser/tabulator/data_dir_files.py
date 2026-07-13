@@ -14,6 +14,42 @@ from exforparser.config import OUT_PATH
 from exforparser.submodules.utilities.reaction import sf6_to_dir
 
 
+LIGHT_ION_PROJECTILES = {
+    "P": "p",
+    "D": "d",
+    "T": "t",
+    "A": "a",
+    "HE3": "He-3",
+}
+
+
+def nuclide_reformat(code):
+    parts = str(code).split("-")
+    if len(parts) >= 3 and parts[0].isdigit():
+        nuclide = parts[1].capitalize() + "-" + parts[2]
+        if len(parts) > 3:
+            nuclide += "-" + parts[3].lower()
+        return nuclide
+    return str(code)
+
+
+def projectile_reformat(projectile):
+    projectile = str(projectile).upper()
+    if projectile in LIGHT_ION_PROJECTILES:
+        return LIGHT_ION_PROJECTILES[projectile]
+    return nuclide_reformat(projectile)
+
+
+def is_ion_projectile(projectile):
+    projectile = str(projectile).upper()
+    if projectile in LIGHT_ION_PROJECTILES:
+        return True
+    if projectile in ("0", "N", "G"):
+        return False
+    parts = projectile.split("-")
+    return len(parts) >= 3 and parts[0].isdigit() and int(parts[0]) > 0
+
+
 def target_reformat(react_dict):
 
     if len(react_dict["target"].split("-")) == 3:
@@ -52,6 +88,24 @@ def process_reformat(react_dict):
 
 def get_dir_name(type, react_dict, level_num=None, subdir=None):
     ### generate output dir and filename
+    if type == "exfortables_py" and is_ion_projectile(
+        react_dict["process"].split(",")[0]
+    ):
+        outgoing = react_dict["process"].split(",", 1)[1].lower()
+        return os.path.join(
+            OUT_PATH,
+            type,
+            "ion",
+            target_reformat(react_dict),
+            projectile_reformat(react_dict["process"].split(",")[0]),
+            (
+                outgoing
+                if not level_num
+                else f"{outgoing}-L{str(int(level_num))}"
+            ),
+            sf6_to_dir[react_dict["sf6"]] if react_dict.get("sf6") else "",
+            subdir if subdir else "",
+        )
 
     return os.path.join(
         OUT_PATH,

@@ -836,6 +836,10 @@ def process_cross_section_case(df, entry_id, main_bib_dict, react_dict):
             )
 
 
+def process_transmission_case(df, entry_id, main_bib_dict, react_dict):
+    process_cross_section_case(df, entry_id, main_bib_dict, react_dict)
+
+
 def process_partial_cross_section_case(df, entry_id, main_bib_dict, react_dict):
     for level_num in df["level_num"].unique():
         df2 = df[df["level_num"] == level_num]

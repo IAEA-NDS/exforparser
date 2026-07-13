@@ -17,11 +17,13 @@ from exforparser.tabulator.data_observables import (
     resonance_parameter,
     level_density,
     strength_function,
+    transmission,
     angular_distribution,
     energy_distribution,
     double_differential_cross_section,
     fission_yield,
     neutron_observables,
+    ion_crosssection,
 )
 from exforparser.tabulator.data_dir_files import write_list_files
 import logging
@@ -69,6 +71,7 @@ def cli():
             "all",
             "thermal",
             "xs",
+            "ion",
             "energy",
             "ddx",
             "angle",
@@ -80,18 +83,21 @@ def cli():
             "resonance_spacing",
             "level_density",
             "strength_function",
+            "transmission",
             "list",
         ],
         help='Write EXFORTABLES-format text files from SQLite Database. '
              '"ll": pure EXFOR observable types into exfortables_py (xs, angle, energy, ddx, fy, neutrons); '
              '"all": pure EXFOR plus legacy thermal/resonance outputs; '
-             '"xs": cross sections; "angle": angular distributions; "energy": energy distributions; '
+             '"xs": cross sections; "ion": ion-induced cross sections; '
+             '"angle": angular distributions; "energy": energy distributions; '
              '"ddx": double differential cross sections; '
              '"fy": fission yields; "thermal": thermal cross sections; '
              '"resonance_integral": resonance integrals; "macs": Maxwellian average cross sections; '
              '"gamma_gamma": average radiative widths; "resonance_spacing": level spacings; '
              '"resonance_parameter": resonance parameters; '
              '"level_density": level-density parameters; "strength_function": strength functions; '
+             '"transmission": transmission data; '
              '"list": scan output tree and write .list index files. '
              'Legacy options (all, level_density, strength_function) are kept for backwards compatibility.',
     )
@@ -161,8 +167,10 @@ def cli():
             # gamma_gamma(pure_exfor=True)
             # resonance_spacing(pure_exfor=True)
             # resonance_parameter(pure_exfor=True)
+            thermal("thermal", pure_exfor=True)
             level_density(pure_exfor=True)
             strength_function(pure_exfor=True)
+            transmission(pure_exfor=True)
             # write_list_files(root=os.path.join(OUT_PATH, "exfortables_py"))
 
         elif args.observables == "all":
@@ -179,6 +187,7 @@ def cli():
             resonance_parameter(pure_exfor=True)
             level_density(pure_exfor=True)
             strength_function(pure_exfor=True)
+            transmission(pure_exfor=True)
             thermal("thermal")
             resonance_integral()
             macs()
@@ -187,13 +196,16 @@ def cli():
             resonance_parameter()
             level_density()
             strength_function()
-            write_list_files()
+            # write_list_files()
 
         elif args.observables == "xs":
             crosssection()
 
+        elif args.observables == "ion":
+            ion_crosssection()
+
         elif args.observables == "thermal":
-            thermal("thermal")
+            thermal("thermal", pure_exfor=True)
 
         elif args.observables == "resonance_integral":
             resonance_integral()
@@ -215,6 +227,9 @@ def cli():
 
         elif args.observables == "strength_function":
             strength_function()
+
+        elif args.observables == "transmission":
+            transmission(pure_exfor=True)
 
         elif args.observables == "angle":
             angular_distribution()
