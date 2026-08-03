@@ -67,22 +67,30 @@ def cli():
         "-o",
         "--observables",
         choices=[
-            "ll",
             "all",
             "thermal",
+            "thermal_reference",
             "xs",
             "ion",
             "energy",
             "ddx",
             "angle",
             "fy",
+            "neutrons",
             "resonance_integral",
+            "resonance_integral_pure_exfor",
             "resonance_parameter",
+            "resonance_parameter_pure_exfor",
             "gamma_gamma",
+            "gamma_gamma_pure_exfor",
             "macs",
+            "macs_pure_exfor",
             "resonance_spacing",
+            "resonance_spacing_pure_exfor",
             "level_density",
+            "level_density_pure_exfor",
             "strength_function",
+            "strength_function_pure_exfor",
             "transmission",
             "list",
         ],
@@ -92,11 +100,14 @@ def cli():
              '"xs": cross sections; "ion": ion-induced cross sections; '
              '"angle": angular distributions; "energy": energy distributions; '
              '"ddx": double differential cross sections; '
-             '"fy": fission yields; "thermal": thermal cross sections; '
+             '"fy": fission yields; "neutrons": neutron observables; '
+             '"thermal": pure EXFOR thermal cross sections; '
+             '"thermal_reference": thermal cross sections in the reference output tree; '
              '"resonance_integral": resonance integrals; "macs": Maxwellian average cross sections; '
              '"gamma_gamma": average radiative widths; "resonance_spacing": level spacings; '
              '"resonance_parameter": resonance parameters; '
              '"level_density": level-density parameters; "strength_function": strength functions; '
+             'append "_pure_exfor" to these resonance/scalar options to write only into exfortables_py; '
              '"transmission": transmission data; '
              '"list": scan output tree and write .list index files. '
              'Legacy options (all, level_density, strength_function) are kept for backwards compatibility.',
@@ -155,25 +166,7 @@ def cli():
             )
             exit()
 
-        if args.observables == "ll":
-            # crosssection()
-            # angular_distribution()
-            # energy_distribution()
-            # double_differential_cross_section()
-            # fission_yield()
-            # neutron_observables()
-            # resonance_integral(pure_exfor=True)
-            # macs(pure_exfor=True)
-            # gamma_gamma(pure_exfor=True)
-            # resonance_spacing(pure_exfor=True)
-            # resonance_parameter(pure_exfor=True)
-            thermal("thermal", pure_exfor=True)
-            level_density(pure_exfor=True)
-            strength_function(pure_exfor=True)
-            transmission(pure_exfor=True)
-            # write_list_files(root=os.path.join(OUT_PATH, "exfortables_py"))
-
-        elif args.observables == "all":
+        if args.observables == "all":
             crosssection()
             angular_distribution()
             energy_distribution()
@@ -206,6 +199,9 @@ def cli():
 
         elif args.observables == "thermal":
             thermal("thermal", pure_exfor=True)
+
+        elif args.observables == "thermal_reference":
+            thermal("thermal")
 
         elif args.observables == "resonance_integral":
             resonance_integral()
@@ -243,8 +239,35 @@ def cli():
         elif args.observables == "fy":
             fission_yield()
 
+        elif args.observables == "neutrons":
+            neutron_observables()
+
         elif args.observables == "list":
             write_list_files()
+
+        # for backward compatibility
+        # to write files in resonance_data[https://github.com/shinokumura/resonance_data] and thermaldata[github.com/shinokumura/thermaldata] repos.
+        elif args.observables == "resonance_integral_pure_exfor":
+            resonance_integral(pure_exfor=True)
+
+        elif args.observables == "macs_pure_exfor":
+            macs(pure_exfor=True)
+
+        elif args.observables == "gamma_gamma_pure_exfor":
+            gamma_gamma(pure_exfor=True)
+
+        elif args.observables == "resonance_spacing_pure_exfor":
+            resonance_spacing(pure_exfor=True)
+
+        elif args.observables == "resonance_parameter_pure_exfor":
+            resonance_parameter(pure_exfor=True)
+
+        elif args.observables == "level_density_pure_exfor":
+            level_density(pure_exfor=True)
+
+
+        elif args.observables == "strength_function_pure_exfor":
+            strength_function(pure_exfor=True)
 
 
 if __name__ == "__main__":

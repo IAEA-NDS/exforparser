@@ -25,3 +25,14 @@ def test_ion_cross_section_dir_uses_target_projectile_outgoing_layout(monkeypatc
     )
 
     assert dirname == "/tmp/exfor/exfortables_py/ion/Th-232/Be-9/f/xs/"
+
+
+def test_ion_observable_dir_formats_nuclides_and_uses_outgoing_particle(monkeypatch):
+    monkeypatch.setattr(data_dir_files, "OUT_PATH", "/tmp/exfor")
+
+    dirname = get_dir_name(
+        "exfortables_py",
+        {"target": "2-HE-4", "process": "4-BE-7,P", "sf6": "DA"},
+    )
+
+    assert dirname == "/tmp/exfor/exfortables_py/ion/He-4/Be-7/p/angle/"
