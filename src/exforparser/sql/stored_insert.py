@@ -20,9 +20,21 @@ def ensure_exfor_data_frame_columns(connection):
         row[1]
         for row in connection.exec_driver_sql("PRAGMA table_info(exfor_data)").fetchall()
     }
-    for column in ("en_inc_frame", "data_frame", "e_out_frame", "angle_frame"):
+    required_columns = {
+        "en_inc_frame": "TEXT",
+        "data_frame": "TEXT",
+        "e_out_frame": "TEXT",
+        "angle_frame": "TEXT",
+        "en_inc_min": "FLOAT",
+        "en_inc_max": "FLOAT",
+        "e_out_min": "FLOAT",
+        "e_out_max": "FLOAT",
+    }
+    for column, sql_type in required_columns.items():
         if column not in existing:
-            connection.exec_driver_sql(f"ALTER TABLE exfor_data ADD COLUMN {column} TEXT")
+            connection.exec_driver_sql(
+                f"ALTER TABLE exfor_data ADD COLUMN {column} {sql_type}"
+            )
 
 
 def insert_bib(dictlist):

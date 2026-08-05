@@ -389,14 +389,29 @@ def _bare_head(head: str) -> str:
     return head.strip().split()[0]
 
 
-def _frame_from_head(head: str | None):
-    """Return frame metadata encoded in an EXFOR head without changing values."""
+def _frame_from_head(head: str | None, default: str | None = None):
+    """Return frame metadata encoded in an EXFOR head.
+
+    EXFOR quantities without a ``-CM`` qualifier are conventionally reported
+    in the laboratory system.  Callers handling a physical energy or angle
+    axis pass ``default="LAB"``; callers for frame-independent quantities can
+    retain the default ``None``.
+    """
     if not head:
         return None
     bare = _bare_head(head)
     if "-CM" in bare:
         return "CM"
     if "-LAB" in bare:
+        return "LAB"
+    return default
+
+
+def _observable_frame(react_dict: dict, explicit_frame: str | None):
+    """Return the frame for observables whose value changes with frame."""
+    if explicit_frame:
+        return explicit_frame
+    if react_dict.get("sf6") in {"DA", "DA/DE", "DE"}:
         return "LAB"
     return None
 
@@ -426,7 +441,9 @@ def get_en_inc(pointer, locs, react_dict, data_dict_conv, data):
         loc0 = locs["locs_en"][0]
         x_head = _bare_head(data_dict_conv["heads"][loc0])
         x_unit = data_dict_conv["units"][loc0]
-        en_inc_frame = _frame_from_head(data_dict_conv["heads"][loc0])
+        en_inc_frame = _frame_from_head(
+            data_dict_conv["heads"][loc0], default="LAB"
+        )
         en_inc = [
             en if en is not None else None
             for en in data_dict_conv["data"][loc0]
@@ -447,7 +464,9 @@ def get_en_inc(pointer, locs, react_dict, data_dict_conv, data):
         loc0 = locs["locs_en"][0]
         x_head = _bare_head(data_dict_conv["heads"][loc0])
         x_unit = data_dict_conv["units"][loc0]
-        en_inc_frame = _frame_from_head(data_dict_conv["heads"][loc0])
+        en_inc_frame = _frame_from_head(
+            data_dict_conv["heads"][loc0], default="LAB"
+        )
         en_inc = [
             en if en is not None else None
             for en in get_average(
@@ -531,7 +550,11 @@ def get_outgoing(pointer, locs, react_dict, data_dict_conv, data):
             e if e is not None else None
             for e in data_dict_conv["data"][locs["locs_e"][0]]
         ]
-        e_out_frame = [_frame_from_head(data_dict_conv["heads"][locs["locs_e"][0]])] * len(data)
+        e_out_frame = [
+            _frame_from_head(
+                data_dict_conv["heads"][locs["locs_e"][0]], default="LAB"
+            )
+        ] * len(data)
         e_out_min = [None] * len(data)
         e_out_max = [None] * len(data)
 
@@ -541,18 +564,26 @@ def get_outgoing(pointer, locs, react_dict, data_dict_conv, data):
                 e_out_min = [
                     en if en is not None else None for en in data_dict_conv["data"][loc]
                 ]
-                e_out_frame = [_frame_from_head(data_dict_conv["heads"][loc])] * len(data)
+                e_out_frame = [
+                    _frame_from_head(data_dict_conv["heads"][loc], default="LAB")
+                ] * len(data)
             if "-MAX" in data_dict_conv["heads"][loc]:
                 e_out_max = [
                     en if en is not None else None for en in data_dict_conv["data"][loc]
                 ]
-                e_out_frame = [_frame_from_head(data_dict_conv["heads"][loc])] * len(data)
+                e_out_frame = [
+                    _frame_from_head(data_dict_conv["heads"][loc], default="LAB")
+                ] * len(data)
 
         e_out = [
             e if e is not None else None
             for e in data_dict_conv["data"][locs["locs_e"][0]]
         ]
-        e_out_frame = [_frame_from_head(data_dict_conv["heads"][locs["locs_e"][0]])] * len(data)
+        e_out_frame = [
+            _frame_from_head(
+                data_dict_conv["heads"][locs["locs_e"][0]], default="LAB"
+            )
+        ] * len(data)
 
     if (
         not react_dict["target"].endswith("-0")
@@ -607,7 +638,7 @@ def get_angle(pointer, locs, react_dict, data_dict_conv, data):
         raw = data_dict_conv["data"][locs["locs_ang"][0]]
         head = data_dict_conv["heads"][locs["locs_ang"][0]]
         unit = data_dict_conv["units"][locs["locs_ang"][0]]
-        angle_frame = _frame_from_head(head)
+        angle_frame = _frame_from_head(head, default="LAB")
 
         if unit == "COS":
             # Fallback: unit still marked COS (unify_units did not convert for some reason)
@@ -620,7 +651,7 @@ def get_angle(pointer, locs, react_dict, data_dict_conv, data):
             "ANG", limit_data_dict_by_locs(locs["locs_ang"], data_dict_conv)
         )
         first_head = data_dict_conv["heads"][locs["locs_ang"][0]]
-        angle_frame = _frame_from_head(first_head)
+        angle_frame = _frame_from_head(first_head, default="LAB")
         angle = [a if a is not None else None for a in avg]
 
     if len(locs["locs_dang"]) == 1:
@@ -678,6 +709,7 @@ def process_general(entry_id, entry_json, data_dict_conv):
     locs, data, ddata, data_frame, data_unit_flag, ddata_unit_flag, y_head, y_unit = get_y(
         entnum, subent, pointer, locs, data_dict_conv
     )
+    data_frame = _observable_frame(react_dict, data_frame)
     # Once the data length is fixed, get MF number based on reaction
     mf = [get_mf(react_dict)] * len(data)
 

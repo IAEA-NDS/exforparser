@@ -429,6 +429,8 @@ def data_query_by_id(obs_type, entries):
             exfor_data.c.en_inc_max,
             exfor_data.c.e_out,
             exfor_data.c.de_out,
+            exfor_data.c.e_out_min,
+            exfor_data.c.e_out_max,
             exfor_data.c.e_out_frame,
             exfor_data.c.angle,
             exfor_data.c.dangle,

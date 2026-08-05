@@ -50,6 +50,18 @@ def is_ion_projectile(projectile):
     return len(parts) >= 3 and parts[0].isdigit() and int(parts[0]) > 0
 
 
+def uses_ion_output_layout(projectile):
+    """Return whether *projectile* belongs under the unified ``ion`` tree.
+
+    The legacy layout put every multi-character projectile code (for example
+    ``PIN`` and ``PIP``) below ``i/``.  Keep the stricter physical-ion check in
+    :func:`is_ion_projectile` for reaction filtering, while folding all of the
+    legacy ``i`` output into the new ``ion`` layout.
+    """
+    projectile = str(projectile).upper()
+    return is_ion_projectile(projectile) or len(projectile) > 1
+
+
 def target_reformat(react_dict):
 
     if len(react_dict["target"].split("-")) == 3:
@@ -88,7 +100,7 @@ def process_reformat(react_dict):
 
 def get_dir_name(type, react_dict, level_num=None, subdir=None):
     ### generate output dir and filename
-    if type == "exfortables_py" and is_ion_projectile(
+    if type == "exfortables_py" and uses_ion_output_layout(
         react_dict["process"].split(",")[0]
     ):
         outgoing = react_dict["process"].split(",", 1)[1].lower()
@@ -249,6 +261,18 @@ def get_obs_dir_name(obs_type, react_dict):
     Produces: <OUT_PATH>/exfortables_py/<projectile>/<target>/<process>/<obs_type>/
     e.g.      .../exfortables_py/n/U-235/n-g/thermal/
     """
+    projectile, outgoing = react_dict["process"].split(",", 1)
+    if uses_ion_output_layout(projectile):
+        return os.path.join(
+            OUT_PATH,
+            "exfortables_py",
+            "ion",
+            target_reformat(react_dict),
+            projectile_reformat(projectile),
+            outgoing.lower(),
+            obs_type,
+        )
+
     return os.path.join(
         OUT_PATH,
         "exfortables_py",
@@ -288,6 +312,20 @@ def get_resonance_param_dir_name(obs_type, react_dict):
 
     Produces: <OUT_PATH>/exfortables_py/<projectile>/<target>/<process>/resonance_parameter/<sf6>/<sf8>/
     """
+    projectile, outgoing = react_dict.get("process", "N,0").split(",", 1)
+    if uses_ion_output_layout(projectile):
+        return os.path.join(
+            OUT_PATH,
+            "exfortables_py",
+            "ion",
+            target_reformat(react_dict),
+            projectile_reformat(projectile),
+            outgoing.lower(),
+            "resonance_parameter",
+            react_dict["sf6"].replace("/", "-"),
+            react_dict["sf8"].replace("/", "-") if react_dict.get("sf8") else "",
+        )
+
     return os.path.join(
         OUT_PATH,
         "exfortables_py",

@@ -1,6 +1,23 @@
 """Tests for tabulator data_process utility functions."""
 import pytest
-from exforparser.tabulator.data_process import data_length_unify
+from exforparser.tabulator.data_process import (
+    _frame_from_head,
+    _observable_frame,
+    data_length_unify,
+)
+
+
+def test_exfor_frame_defaults_and_explicit_qualifiers():
+    assert _frame_from_head("ANG", default="LAB") == "LAB"
+    assert _frame_from_head("E-CM", default="LAB") == "CM"
+    assert _frame_from_head("DATA-LAB", default="LAB") == "LAB"
+    assert _frame_from_head("DATA") is None
+
+
+def test_ddx_observable_defaults_to_lab_frame():
+    assert _observable_frame({"sf6": "DA/DE"}, None) == "LAB"
+    assert _observable_frame({"sf6": "DA/DE"}, "CM") == "CM"
+    assert _observable_frame({"sf6": "SIG"}, None) is None
 
 
 class TestDataLengthUnify:
