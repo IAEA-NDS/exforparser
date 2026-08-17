@@ -170,3 +170,4 @@ error.dat
 *.sqlite
 uninstall.txt
 config.py
+!src/exforparser/config.py

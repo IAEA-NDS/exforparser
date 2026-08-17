@@ -1,5 +1,5 @@
 beautifulsoup4==4.14.3
-GitPython==3.1.44
+GitPython>=3.1.58
 numpy==2.4.2
 python-dateutil==2.9.0.post0
 pandas==2.3.3

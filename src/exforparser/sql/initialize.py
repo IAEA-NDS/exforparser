@@ -8,7 +8,7 @@ from exforparser.config import (
     ENTRY_DOI_PICKLE,
     REF_DOI_PICKLE,
     INSTITUTE_PICKLE,
-    EXFOR_MASTER_REPO_PATH,
+    MASTER_GIT_REPO_PATH,
 )
 from .models_core import metadata
 
@@ -150,7 +150,7 @@ def load_pickles():
 
 def get_updated_entries():
     with open(
-        os.path.join(EXFOR_MASTER_REPO_PATH, "entry_updatedate.dat")
+        os.path.join(MASTER_GIT_REPO_PATH, "entry_updatedate.dat")
     ) as ent_up_file:
         """
         read https://github.com/IAEA-NDS/exfor_master/blob/main/entry_updatedate.dat

@@ -21,10 +21,10 @@ from datetime import datetime, timezone
 
 # need version check based on the hash then the only new files should be processed
 
-from exforparser.config import EXFOR_MASTER_REPO_PATH, ENTRY_INDEX_PICKLE, ENTRY_INDEX_HEAD, BUF_SIZE
+from exforparser.config import MASTER_GIT_REPO_PATH, ENTRY_INDEX_PICKLE, ENTRY_INDEX_HEAD, BUF_SIZE
 from .exceptions import *
 
-repo = git.Repo(EXFOR_MASTER_REPO_PATH)
+repo = git.Repo(MASTER_GIT_REPO_PATH)
 
 
 def _parse_entry_line(line: str) -> tuple[str, datetime | None]:
@@ -58,7 +58,7 @@ def _batch_read_entry_lines(blob_shas: list[str]) -> dict[str, tuple[str, dateti
         stdin=subprocess.PIPE,
         stdout=subprocess.PIPE,
         stderr=subprocess.DEVNULL,
-        cwd=EXFOR_MASTER_REPO_PATH,
+        cwd=MASTER_GIT_REPO_PATH,
     )
 
     def _write():
@@ -188,7 +188,7 @@ def list_all_git_history() -> list[dict]:
     is_current=True only for the most recent commit per entry.
     Suitable for passing directly to backfill_history_from_git().
     """
-    EXFOR_ALL_PATH = os.path.join(EXFOR_MASTER_REPO_PATH, "exforall")
+    EXFOR_ALL_PATH = os.path.join(MASTER_GIT_REPO_PATH, "exforall")
     files = []
     if os.path.exists(EXFOR_ALL_PATH):
         dirs = [f for f in os.listdir(EXFOR_ALL_PATH) if not f.startswith(".")]
@@ -338,7 +338,7 @@ def list_exfor_files(force: bool = False) -> pd.DataFrame:
         return df
 
     # --- full scan ---
-    EXFOR_ALL_PATH = os.path.join(EXFOR_MASTER_REPO_PATH, "exforall")
+    EXFOR_ALL_PATH = os.path.join(MASTER_GIT_REPO_PATH, "exforall")
     if not os.path.exists(EXFOR_ALL_PATH):
         Nox4FilesExistenceError(EXFOR_ALL_PATH)
 
