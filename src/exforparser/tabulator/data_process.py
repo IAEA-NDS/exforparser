@@ -52,7 +52,12 @@ from .data_write import (
     write_to_exfortables_format_nu,
     write_to_exfortables_format_kinetic_e,
 )
-from .data_dir_files import get_dir_name, exfortables_filename
+from .data_dir_files import (
+    exfortables_filename,
+    get_dir_name,
+    level_num_reformat,
+    target_reformat,
+)
 
 
 def limit_data_dict_by_locs(locs, data_dict):
@@ -275,6 +280,7 @@ def get_residual(locs, react_dict, data_dict_conv):
 
         if len(react_dict["sf4"].split("-")) == 4:
             charge, elem, mass, state = react_dict["sf4"].split("-")
+            state = _isomer_state_reformat(state)
 
         elif len(react_dict["sf4"].split("-")) == 3:
             charge, elem, mass = react_dict["sf4"].split("-")
@@ -322,7 +328,10 @@ def get_residual(locs, react_dict, data_dict_conv):
         else:
             for j in locs["locs_mass"]:
                 if "ISOMER" in data_dict_conv["heads"][j]:
-                    state = data_dict_conv["data"][j]
+                    state = [
+                        _isomer_state_reformat(value)
+                        for value in data_dict_conv["data"][j]
+                    ]
 
                 elif data_dict_conv["heads"][j] == "MASS":
                     mass = data_dict_conv["data"][j]
@@ -378,6 +387,19 @@ def get_residual(locs, react_dict, data_dict_conv):
             residual_type = ["product"] * len(residual)
 
     return locs, mass, charge, state, residual, residual_type
+
+
+def _isomer_state_reformat(state):
+    """Use integer notation for numeric isomer-state indices."""
+    if state is None or pd.isna(state):
+        return None
+    try:
+        numeric_state = float(state)
+    except (TypeError, ValueError):
+        return str(state)
+    if not numeric_state.is_integer():
+        raise ValueError(f"Isomeric state must be an integer: {state}")
+    return level_num_reformat(numeric_state)
 
 
 def _bare_head(head: str) -> str:
@@ -887,18 +909,15 @@ def process_partial_cross_section_case(df, entry_id, main_bib_dict, react_dict):
         filename = exfortables_filename(
             dir,
             entry_id,
-            react_dict["process"].replace(",", "-").lower() + "-L" + str(level_num),
+            (
+                react_dict["process"].replace(",", "-").lower()
+                + "-L"
+                + level_num_reformat(level_num)
+            ),
             react_dict,
             main_bib_dict,
             None,
-            (
-                react_dict["target"].split("-")[1].capitalize()
-                + react_dict["target"].split("-")[2]
-                if len(react_dict["target"].split("-")) == 3
-                else react_dict["target"].split("-")[1].capitalize()
-                + react_dict["target"].split("-")[2]
-                + react_dict["target"].split("-")[3].lower()
-            ),
+            target_reformat(react_dict),
         )
 
         write_to_exfortables_format_sig(
@@ -979,18 +998,15 @@ def process_partial_angular_distribution_case(df, entry_id, main_bib_dict, react
         filename = exfortables_filename(
             dir,
             entry_id,
-            react_dict["process"].replace(",", "-").lower() + "-L" + str(level_num),
+            (
+                react_dict["process"].replace(",", "-").lower()
+                + "-L"
+                + level_num_reformat(level_num)
+            ),
             react_dict,
             main_bib_dict,
             None,
-            (
-                react_dict["target"].split("-")[1].capitalize()
-                + react_dict["target"].split("-")[2]
-                if len(react_dict["target"].split("-")) == 3
-                else react_dict["target"].split("-")[1].capitalize()
-                + react_dict["target"].split("-")[2]
-                + react_dict["target"].split("-")[3].lower()
-            ),
+            target_reformat(react_dict),
         )
 
         write_to_exfortables_format_da(

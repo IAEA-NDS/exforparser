@@ -72,4 +72,10 @@ More functions will come soon.
 [IAEA-NDS/exfor_json](https://github.com/IAEA-NDS/exfor_json)
 
 [IAEA-NDS/exfor_dictionary](https://github.com/IAEA-NDS/exfor_dictionary)
+# Incremental DOI processing
+
+When the companion `doi_ref_parsing` repository is available, set
+`DOI_REF_PARSING_DIR` to its directory. Running `exforparser -t updated` then
+passes only the successfully tabulated, SHA-changed EXFOR entry IDs to that
+repository's DOI processor.
 

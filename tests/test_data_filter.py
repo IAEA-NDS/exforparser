@@ -42,3 +42,31 @@ def test_filter_cross_section_skips_null_energy():
     }
     df = _make_df(en_inc=[None, None])
     assert filter_cross_section_case(react_dict, df) is True
+
+
+@pytest.mark.parametrize(
+    "projectile", ["0", "A", "D", "E", "G", "H", "HE3", "N", "P", "T"]
+)
+def test_filter_cross_section_accepts_particle_projectiles(projectile):
+    react_dict = {
+        "target": "13-AL-27",
+        "process": f"{projectile},EL",
+        "sf5": None,
+        "sf7": None,
+        "sf8": None,
+    }
+
+    assert filter_cross_section_case(react_dict, _make_df()) is False
+
+
+@pytest.mark.parametrize("projectile", ["2-HE-6", "2-HE-8"])
+def test_filter_cross_section_accepts_neutron_rich_helium_ions(projectile):
+    react_dict = {
+        "target": "6-C-12",
+        "process": f"{projectile},N",
+        "sf5": None,
+        "sf7": None,
+        "sf8": None,
+    }
+
+    assert filter_cross_section_case(react_dict, _make_df()) is False

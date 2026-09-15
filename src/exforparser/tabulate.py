@@ -466,7 +466,7 @@ def process_updated_entry(write_files=True):
     new_df = list_exfor_files()
 
     if old_df.equals(new_df):
-        return
+        return []
 
     # Rows where sha1 or latest_trans changed, plus entirely new entries
     old_indexed = old_df.set_index("entry")
@@ -483,11 +483,13 @@ def process_updated_entry(write_files=True):
     start_time = print_process_time()
     logging.info(f"Start processing {print_time()}")
 
+    processed_entries = []
     for entnum in entries:
         print(entnum)
         # process(entnum)
         try:
             process(entnum, write_files=write_files)
+            processed_entries.append(entnum)
         except KeyboardInterrupt:
             print("CTR + C")
             break
@@ -495,6 +497,7 @@ def process_updated_entry(write_files=True):
             logging.error(f"ERROR: at ENTRY: {entnum}", exc_info=True)
 
     logging.info(f"End processing {print_process_time(start_time)}")
+    return processed_entries
 
 
 def process_pointers(entry_num, main_bib_dict, entry_json, data_dict_conv, write_files=True):

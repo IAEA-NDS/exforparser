@@ -17,7 +17,7 @@ from exforparser.submodules.utilities.reaction import (
     mt_fy_sf5,
 )
 from exfor_dictionary.exfor_dict import Diction
-from .data_dir_files import is_ion_projectile
+from .data_dir_files import is_ion_projectile, is_particle_projectile
 
 d = Diction("209")
 chemical_compound_list = d.get_diction()
@@ -43,7 +43,7 @@ def filter_cross_section_case(react_dict, df):
         return True
 
     projectile = react_dict["process"].split(",")[0]
-    if not projectile in ["0", "N", "G"] and not is_ion_projectile(projectile):
+    if not is_particle_projectile(projectile) and not is_ion_projectile(projectile):
         ## Filter unknown projectile codes.
         logging.info(f"{react_dict} skipped pattern 2")
         return True

@@ -30,6 +30,9 @@ MASTER_GIT_REPO_PATH = os.path.join(DATA_DIR, "EXFOR", "exfor_master")
 EXFOR_JSON_GIT_REPO_PATH = os.path.join(DATA_DIR, "EXFOR", "exfor_json")
 EXFORTABLES_PY_GIT_REPO_PATH = os.path.join(DATA_DIR, "EXFOR", "exfortables_py")
 
+# Optional companion repository used after incremental tabulation.
+DOI_REF_PARSING_DIR = os.environ.get("DOI_REF_PARSING_DIR")
+
 # The parser still uses one output root for several legacy output trees.
 OUT_PATH = os.path.join(DATA_DIR, "EXFOR")
 

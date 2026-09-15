@@ -1,9 +1,12 @@
 import argparse
 import os
+from pathlib import Path
+import subprocess
+import sys
 import sqlalchemy as db
 from sqlalchemy.exc import OperationalError
 
-from exforparser.config import engines, OUT_PATH
+from exforparser.config import engines, OUT_PATH, DOI_REF_PARSING_DIR
 from exforparser.sql.initialize import initialize_db, load_pickles
 from exforparser.json_converter import convert, convert_all, convert_updated_entry
 from exforparser.tabulate import process, process_all, process_updated_entry
@@ -27,6 +30,24 @@ from exforparser.tabulator.data_observables import (
 )
 from exforparser.tabulator.data_dir_files import write_list_files
 import logging
+
+
+def process_updated_dois(entries):
+    """Run the companion DOI processor for successfully tabulated entries."""
+    if not entries or not DOI_REF_PARSING_DIR:
+        return
+
+    main_script = Path(DOI_REF_PARSING_DIR) / "main.py"
+    if not main_script.is_file():
+        raise FileNotFoundError(
+            f"DOI_REF_PARSING_DIR does not contain main.py: {DOI_REF_PARSING_DIR}"
+        )
+
+    subprocess.run(
+        [sys.executable, str(main_script), "updated", *entries],
+        cwd=DOI_REF_PARSING_DIR,
+        check=True,
+    )
 
 
 def cli():
@@ -68,6 +89,7 @@ def cli():
         "--observables",
         choices=[
             "all",
+            "legacy",
             "thermal",
             "thermal_reference",
             "xs",
@@ -95,9 +117,9 @@ def cli():
             "list",
         ],
         help='Write EXFORTABLES-format text files from SQLite Database. '
-             '"ll": pure EXFOR observable types into exfortables_py (xs, angle, energy, ddx, fy, neutrons); '
-             '"all": pure EXFOR plus legacy thermal/resonance outputs; '
-             '"xs": cross sections; "ion": ion-induced cross sections; '
+             '"all": write all pure EXFOR observable types into exfortables_py; '
+             '"legacy": write all legacy thermal and resonance outputs; '
+             '"xs": cross sections; "ion": Heavy Ion-induced cross sections; '
              '"angle": angular distributions; "energy": energy distributions; '
              '"ddx": double differential cross sections; '
              '"fy": fission yields; "neutrons": neutron observables; '
@@ -110,7 +132,7 @@ def cli():
              'append "_pure_exfor" to these resonance/scalar options to write only into exfortables_py; '
              '"transmission": transmission data; '
              '"list": scan output tree and write .list index files. '
-             'Legacy options (all, level_density, strength_function) are kept for backwards compatibility.',
+             'Legacy individual observable options are kept for backwards compatibility.',
     )
 
     args = parser.parse_args()
@@ -148,7 +170,8 @@ def cli():
         process_all(write_files=False)
 
     elif args.tabulate == "updated":
-        process_updated_entry(write_files=False)
+        updated_entries = process_updated_entry(write_files=False)
+        process_updated_dois(updated_entries)
 
     elif args.tabulate:
         process(args.tabulate, write_files=False)
@@ -181,6 +204,9 @@ def cli():
             level_density(pure_exfor=True)
             strength_function(pure_exfor=True)
             transmission(pure_exfor=True)
+            thermal("thermal", pure_exfor=True)
+
+        elif args.observables == "legacy":
             thermal("thermal")
             resonance_integral()
             macs()

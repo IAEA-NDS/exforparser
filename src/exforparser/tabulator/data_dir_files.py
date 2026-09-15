@@ -10,92 +10,92 @@
 #
 ####################################################################
 import os
+import re
 from exforparser.config import OUT_PATH
 from exforparser.submodules.utilities.reaction import sf6_to_dir
 
 
-LIGHT_ION_PROJECTILES = {
-    "P": "p",
-    "D": "d",
-    "T": "t",
+PARTICLE_PROJECTILE_DIRS = {
+    "0": "0",
     "A": "a",
-    "HE3": "He-3",
+    "D": "d",
+    "E": "e",
+    "G": "g",
+    "H": "h",
+    "HE3": "h",
+    "N": "n",
+    "P": "p",
+    "T": "t",
 }
 
 
 def nuclide_reformat(code):
-    parts = str(code).split("-")
-    if len(parts) >= 3 and parts[0].isdigit():
+    value = str(code)
+    parts = value.split("-")
+    if len(parts) >= 3 and parts[0].isdigit() and int(parts[0]) > 0:
         nuclide = parts[1].capitalize() + "-" + parts[2]
         if len(parts) > 3:
-            nuclide += "-" + parts[3].lower()
+            nuclide += "-" + "-".join(parts[3:])
         return nuclide
-    return str(code)
+
+    match = re.fullmatch(r"([A-Za-z]{1,3})-?(\d+)(?:-(.+))?", value)
+    if not match:
+        return value
+    element, mass, state = match.groups()
+    nuclide = f"{element.capitalize()}-{mass}"
+    return f"{nuclide}-{state}" if state else nuclide
 
 
 def projectile_reformat(projectile):
     projectile = str(projectile).upper()
-    if projectile in LIGHT_ION_PROJECTILES:
-        return LIGHT_ION_PROJECTILES[projectile]
+    if projectile in PARTICLE_PROJECTILE_DIRS:
+        return PARTICLE_PROJECTILE_DIRS[projectile]
     return nuclide_reformat(projectile)
 
 
+def is_particle_projectile(projectile):
+    return str(projectile).upper() in PARTICLE_PROJECTILE_DIRS
+
+
 def is_ion_projectile(projectile):
+    """Return whether *projectile* is a nuclide-coded heavy ion."""
     projectile = str(projectile).upper()
-    if projectile in LIGHT_ION_PROJECTILES:
-        return True
-    if projectile in ("0", "N", "G"):
+    if is_particle_projectile(projectile):
         return False
     parts = projectile.split("-")
-    return len(parts) >= 3 and parts[0].isdigit() and int(parts[0]) > 0
+    if len(parts) < 3 or not parts[0].isdigit() or not parts[2].isdigit():
+        return False
+
+    charge = int(parts[0])
+    mass = int(parts[2])
+    return charge > 2 or (charge == 2 and mass > 4)
 
 
 def uses_ion_output_layout(projectile):
-    """Return whether *projectile* belongs under the unified ``ion`` tree.
-
-    The legacy layout put every multi-character projectile code (for example
-    ``PIN`` and ``PIP``) below ``i/``.  Keep the stricter physical-ion check in
-    :func:`is_ion_projectile` for reaction filtering, while folding all of the
-    legacy ``i`` output into the new ``ion`` layout.
-    """
-    projectile = str(projectile).upper()
-    return is_ion_projectile(projectile) or len(projectile) > 1
+    """Return whether *projectile* belongs under the Heavy Ion tree."""
+    return is_ion_projectile(projectile)
 
 
 def target_reformat(react_dict):
-
-    if len(react_dict["target"].split("-")) == 3:
-        target = (
-            react_dict["target"].split("-")[1].capitalize()
-            + "-"
-            + react_dict["target"].split("-")[2]
-        )
-
-    else:
-        target = (
-            react_dict["target"].split("-")[1].capitalize()
-            + "-"
-            + react_dict["target"].split("-")[2]
-            + "-"
-            + react_dict["target"].split("-")[3].lower()
-        )
-
-    return str(target)
+    return nuclide_reformat(react_dict["target"])
 
 
 def process_reformat(react_dict):
-    if len(react_dict["process"].split(",")[0]) == 1:
-        return react_dict["process"].split(",")[0].lower()
+    projectile = react_dict["process"].split(",")[0]
+    if is_particle_projectile(projectile):
+        return projectile_reformat(projectile)
+    if is_ion_projectile(projectile):
+        return "ion"
+    return projectile.lower()
 
-    elif "-" in react_dict["process"].split(",")[0]:
-        return (
-            "i/"
-            + react_dict["process"].split(",")[0].split("-")[1].capitalize()
-            + react_dict["process"].split(",")[0].split("-")[2]
-        )
 
-    else:
-        return "i/" + react_dict["process"].split(",")[0]
+def reaction_reformat(react_dict):
+    projectile, outgoing = react_dict["process"].split(",", 1)
+    return f"{projectile_reformat(projectile)}-{outgoing.lower()}"
+
+
+def level_num_reformat(level_num):
+    return str(int(level_num))
 
 
 def get_dir_name(type, react_dict, level_num=None, subdir=None):
@@ -113,7 +113,7 @@ def get_dir_name(type, react_dict, level_num=None, subdir=None):
             (
                 outgoing
                 if not level_num
-                else f"{outgoing}-L{str(int(level_num))}"
+                else f"{outgoing}-L{level_num_reformat(level_num)}"
             ),
             sf6_to_dir[react_dict["sf6"]] if react_dict.get("sf6") else "",
             subdir if subdir else "",
@@ -125,9 +125,12 @@ def get_dir_name(type, react_dict, level_num=None, subdir=None):
         process_reformat(react_dict),
         target_reformat(react_dict),
         (
-            react_dict["process"].replace(",", "-").lower()
+            reaction_reformat(react_dict)
             if not level_num
-            else f"{react_dict['process'].replace(',', '-').lower()}-L{str(int(level_num))}"
+            else (
+                f"{reaction_reformat(react_dict)}"
+                f"-L{level_num_reformat(level_num)}"
+            )
         ),
         sf6_to_dir[react_dict["sf6"]] if react_dict.get("sf6") else "",
         subdir if subdir else "",
@@ -135,7 +138,7 @@ def get_dir_name(type, react_dict, level_num=None, subdir=None):
 
 
 def exfortables_filename(dir, exfor_id, process, react_dict, bib, en=None, prod=None):
-
+    product = nuclide_reformat(prod) if prod else None
     return os.path.join(
         dir,
         (
@@ -143,7 +146,7 @@ def exfortables_filename(dir, exfor_id, process, react_dict, bib, en=None, prod=
             + "_"
             + process
             + "_"
-            + (str(prod) + "_" if prod else "")
+            + (product + "_" if product else "")
             + ("E" + "{:.3e}".format(en) + "_" if en else "")
             # + bib["authors"][0]["name"].split(".")[-1].replace(" ", "")
             + bib["first_author"]
@@ -163,7 +166,7 @@ def exfortables_filename(dir, exfor_id, process, react_dict, bib, en=None, prod=
 
 
 def exfortables_filename_product(dir, exfor_id, process, prod, react_dict, bib):
-
+    product = nuclide_reformat(prod)
     return os.path.join(
         dir,
         (
@@ -171,7 +174,7 @@ def exfortables_filename_product(dir, exfor_id, process, prod, react_dict, bib):
             + "_"
             + process
             + "_"
-            + str(prod)
+            + product
             + "_"
             # + bib["authors"][0]["name"].split(".")[-1].replace(" ", "")
             + bib["first_author"]
@@ -193,7 +196,7 @@ def exfortables_filename_product(dir, exfor_id, process, prod, react_dict, bib):
 def exfortables_filename_Einc_prodocut(
     dir, exfor_id, process, en, prod, react_dict, bib
 ):
-
+    product = nuclide_reformat(prod)
     return os.path.join(
         dir,
         (
@@ -201,7 +204,7 @@ def exfortables_filename_Einc_prodocut(
             + "_"
             + process
             + "_"
-            + str(prod)
+            + product
             + "_"
             + "E"
             + "{:.3e}".format(en)
@@ -278,7 +281,7 @@ def get_obs_dir_name(obs_type, react_dict):
         "exfortables_py",
         process_reformat(react_dict),
         target_reformat(react_dict),
-        react_dict["process"].replace(",", "-").lower(),
+        reaction_reformat(react_dict),
         obs_type,
     )
 
@@ -302,7 +305,7 @@ def get_reference_obs_dir_name(obs_type, react_dict):
 def get_thermal_filename(dir, react_dict):
     return os.path.join(
         dir,
-        (react_dict["target"] + ".txt"),
+        (target_reformat(react_dict) + ".txt"),
     )
 
 
@@ -329,9 +332,9 @@ def get_resonance_param_dir_name(obs_type, react_dict):
     return os.path.join(
         OUT_PATH,
         "exfortables_py",
-        react_dict["projectile"].lower(),
+        process_reformat(react_dict),
         target_reformat(react_dict),
-        react_dict.get("process", "n-0").replace(",", "-").lower(),
+        reaction_reformat(react_dict),
         "resonance_parameter",
         react_dict["sf6"].replace("/", "-"),
         react_dict["sf8"].replace("/", "-") if react_dict.get("sf8") else "",
@@ -357,7 +360,7 @@ def get_resonance_param_file_name(dir, exfor_id, bib, react_dict):
 
     return os.path.join(
         dir,
-        react_dict["target"]
+        target_reformat(react_dict)
         + "_"
         + bib["first_author"]
         + "-"
