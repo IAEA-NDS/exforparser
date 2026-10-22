@@ -1,12 +1,10 @@
 import argparse
 import os
-from pathlib import Path
-import subprocess
-import sys
 import sqlalchemy as db
 from sqlalchemy.exc import OperationalError
 
-from exforparser.config import engines, OUT_PATH, DOI_REF_PARSING_DIR
+from exforparser.config import engines, OUT_PATH
+from doi_ref_parsing import process_updated_entries
 from exforparser.sql.initialize import initialize_db, load_pickles
 from exforparser.json_converter import convert, convert_all, convert_updated_entry
 from exforparser.tabulate import process, process_all, process_updated_entry
@@ -30,24 +28,6 @@ from exforparser.tabulator.data_observables import (
 )
 from exforparser.tabulator.data_dir_files import write_list_files
 import logging
-
-
-def process_updated_dois(entries):
-    """Run the companion DOI processor for successfully tabulated entries."""
-    if not entries or not DOI_REF_PARSING_DIR:
-        return
-
-    main_script = Path(DOI_REF_PARSING_DIR) / "main.py"
-    if not main_script.is_file():
-        raise FileNotFoundError(
-            f"DOI_REF_PARSING_DIR does not contain main.py: {DOI_REF_PARSING_DIR}"
-        )
-
-    subprocess.run(
-        [sys.executable, str(main_script), "updated", *entries],
-        cwd=DOI_REF_PARSING_DIR,
-        check=True,
-    )
 
 
 def cli():
@@ -171,7 +151,7 @@ def cli():
 
     elif args.tabulate == "updated":
         updated_entries = process_updated_entry(write_files=False)
-        process_updated_dois(updated_entries)
+        process_updated_entries(updated_entries)
 
     elif args.tabulate:
         process(args.tabulate, write_files=False)

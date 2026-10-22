@@ -2,6 +2,10 @@ import pandas as pd
 import json
 import os
 from sqlalchemy import text
+from doi_ref_parsing import (
+    ENTRY_DOI_PICKLE as DOI_REF_ENTRY_DOI_PICKLE,
+    REF_METADATA_PICKLE as DOI_REF_METADATA_PICKLE,
+)
 
 from exforparser.config import (
     engines,
@@ -9,20 +13,8 @@ from exforparser.config import (
     REF_DOI_PICKLE,
     INSTITUTE_PICKLE,
     MASTER_GIT_REPO_PATH,
-    DOI_REF_PARSING_DIR,
 )
 from .models_core import metadata
-
-DOI_REF_ENTRY_DOI_PICKLE = (
-    os.path.join(DOI_REF_PARSING_DIR, "data/entries/entry_dois.pickle")
-    if DOI_REF_PARSING_DIR
-    else None
-)
-DOI_REF_METADATA_PICKLE = (
-    os.path.join(DOI_REF_PARSING_DIR, "data/references/ref_metadata.pickle")
-    if DOI_REF_PARSING_DIR
-    else None
-)
 
 
 def _first_existing_path(*paths):
